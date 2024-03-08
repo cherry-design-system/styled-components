@@ -70,6 +70,20 @@ export default function Home() {
 				</Flex>
 				<Space $xs={20} $lg={40} />
 				<Flex>
+					<Input type="checkbox" $label="Checkbox" />
+					<Input type="checkbox" $label="Checkbox" disabled />
+					<Input type="checkbox" $label="Checkbox" $success />
+					<Input type="checkbox" $label="Checkbox" $error />
+				</Flex>
+				<Space $xs={20} $lg={40} />
+				<Flex>
+					<Input type="radio" $label="Radio" />
+					<Input type="radio" $label="Radio" disabled />
+					<Input type="radio" $label="Radio" $success />
+					<Input type="radio" $label="Radio" $error />
+				</Flex>
+				<Space $xs={20} $lg={40} />
+				<Flex>
 					<Input placeholder="Input" />
 					<Input placeholder="Input" disabled />
 					<Input placeholder="Input" $success />

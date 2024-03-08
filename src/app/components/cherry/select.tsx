@@ -61,12 +61,10 @@ const StyledSelect = styled.select<SelectProps>`
 
 	${({ $size, theme }) =>
 		$size === "big"
-			? `min-width: 220px;
-			font-size: ${theme.fontSizes.inputBig.lg};
+			? `font-size: ${theme.fontSizes.inputBig.lg};
 			line-height: ${theme.lineHeights.inputBig.lg};
 	`
-			: `min-width: 200px;
-			font-size: ${theme.fontSizes.input.lg};
+			: `font-size: ${theme.fontSizes.input.lg};
 			line-height: ${theme.lineHeights.input.lg};`}
 
 	${({ $error, $success, theme }) => {

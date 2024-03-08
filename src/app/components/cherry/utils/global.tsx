@@ -81,6 +81,7 @@ export const resetButton = `
 
 export const resetInput = `
 	cursor: text;
+	min-width: 235px;
 `;
 
 export const fullWidthStyles = (fullWidth: boolean) => {
