@@ -224,7 +224,7 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
 function Input({ ...props }: InputProps) {
 	if (props.type === "checkbox" || props.type === "radio") {
 		return (
-			<StyledInputWrapper $fullWidth type={props.type}>
+			<StyledInputWrapper $fullWidth={props.$fullWidth} type={props.type}>
 				<StyledIconWrapper>
 					<StyledRadioCheckboxInput {...props} />
 					{!props.disabled && props.type === "checkbox" ? (
@@ -241,7 +241,7 @@ function Input({ ...props }: InputProps) {
 	}
 
 	return (
-		<StyledInputWrapper $fullWidth type={props.type}>
+		<StyledInputWrapper $fullWidth={props.$fullWidth} type={props.type}>
 			{props.$label && (
 				<StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>
 			)}

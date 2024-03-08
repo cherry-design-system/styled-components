@@ -29,121 +29,66 @@ const styles = ($size: number | "none", $horizontal: boolean) =>
 		  `;
 
 const StyledSpace = styled.span<SpaceProps>`
-	${({ $horizontal, $size, $xs, $sm, $md, $lg, $xl, $xxl, $xxxl }) => `
+	${({ $xs, $horizontal }) =>
+		$xs &&
+		`
+			${mq("xs")} {
+				${styles($xs, $horizontal || false)};
+				${$xs === "none" && `display: none;`};
+			}
+		`};
+	${({ $sm, $horizontal }) =>
+		$sm &&
+		`
+			${mq("sm")} {
+				${styles($sm, $horizontal || false)};
+				${$sm === "none" && `display: none;`};
+			}
+		`};
+	${({ $md, $horizontal }) =>
+		$md &&
+		`
+			${mq("md")} {
+				${styles($md, $horizontal || false)};
+				${$md === "none" && `display: none;`};
+			}
+		`};
+	${({ $lg, $horizontal }) =>
+		$lg &&
+		`
+			${mq("lg")} {
+				${styles($lg, $horizontal || false)};
+				${$lg === "none" && `display: none;`};
+			}
+		`};
+	${({ $xl, $horizontal }) =>
+		$xl &&
+		`
+			${mq("xl")} {
+				${styles($xl, $horizontal || false)};
+				${$xl === "none" && `display: none;`};
+			}
+		`};
+	${({ $xxl, $horizontal }) =>
+		$xxl &&
+		`
+			${mq("xxl")} {
+				${styles($xxl, $horizontal || false)};
+				${$xxl === "none" && `display: none;`};
+			}
+		`};
+	${({ $xxxl, $horizontal }) =>
+		$xxxl &&
+		`
+			${mq("xxxl")} {
+				${styles($xxxl, $horizontal || false)};
+				${$xxxl === "none" && `display: none;`};
+			}
+		`};
+
+	${({ $horizontal, $size }) => `
 		${$size && styles($size, $horizontal || false)};
 		${$size === "none" && `display: none;`};
-		${
-			$xs &&
-			`
-			${mq("xs")} {
-				${$size && styles($xs, $horizontal || false)};
-			}
-		`
-		};
-		${
-			$xs === "none" &&
-			`
-			${mq("xs")} {
-				display: none;
-			}
-		`
-		};
-		${
-			$sm &&
-			`
-			${mq("sm")} {
-				${$size && styles($sm, $horizontal || false)};
-			}
-		`
-		};
-		${
-			$sm === "none" &&
-			`
-			${mq("sm")} {
-				display: none;
-			}
-		`
-		};
-		${
-			$md &&
-			`
-			${mq("md")} {
-				${$size && styles($md, $horizontal || false)};
-			}
-		`
-		};
-		${
-			$md === "none" &&
-			`
-			${mq("md")} {
-				display: none;
-			}
-		`
-		};
-		${
-			$lg &&
-			`
-			${mq("lg")} {
-				${$size && styles($lg, $horizontal || false)};
-			}
-		`
-		};
-		${
-			$lg === "none" &&
-			`
-			${mq("lg")} {
-				display: none;
-			}
-		`
-		};
-		${
-			$xl &&
-			`
-			${mq("xl")} {
-				${$size && styles($xl, $horizontal || false)};
-			}
-		`
-		};
-		${
-			$xl === "none" &&
-			`
-			${mq("xl")} {
-				display: none;
-			}
-		`
-		};
-		${
-			$xxl &&
-			`
-			${mq("xxl")} {
-				${$size && styles($xxl, $horizontal || false)};
-			}
-		`
-		};
-		${
-			$xxl === "none" &&
-			`
-			${mq("xxl")} {
-				display: none;
-			}
-		`
-		};
-		${
-			$xxxl &&
-			`
-			${mq("xxxl")} {
-				${$size && styles($xxxl, $horizontal || false)};
-			}
-		`
-		};
-		${
-			$xxxl === "none" &&
-			`
-			${mq("xxxl")} {
-				display: none;
-			}
-		`
-		};
 	`}
 `;
 

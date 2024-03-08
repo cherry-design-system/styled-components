@@ -1,13 +1,3 @@
-export interface Breakpoints<TNumber = number> {
-	xs: TNumber;
-	sm: TNumber;
-	md: TNumber;
-	lg: TNumber;
-	xl: TNumber;
-	xxl: TNumber;
-	xxxl: TNumber;
-}
-
 export const breakpoints: Breakpoints = {
 	xs: 0,
 	sm: 576,
@@ -22,43 +12,11 @@ export function mq(minWidth: keyof Breakpoints) {
 	return `@media screen and (min-width: ${breakpoints[minWidth]}px)`;
 }
 
-export interface Spacing<TString = string> {
-	maxWidth: { xs: TString; xxxl: TString };
-	padding: { xs: TString; lg: TString };
-	gridGap: { xs: TString; lg: TString };
-}
-
 export const spacing: Spacing = {
 	maxWidth: { xs: "1280px", xxxl: "1440px" },
 	padding: { xs: "20px", lg: "40px" },
 	gridGap: { xs: "20px", lg: "40px" },
 };
-
-export interface Colors<TString = string> {
-	primaryLight: TString;
-	primary: TString;
-	primaryDark: TString;
-
-	secondaryLight: TString;
-	secondary: TString;
-	secondaryDark: TString;
-
-	tertiaryLight: TString;
-	tertiary: TString;
-	tertiaryDark: TString;
-
-	dark: TString;
-	light: TString;
-
-	grayLight: TString;
-	gray: TString;
-	grayDark: TString;
-
-	success: TString;
-	error: TString;
-	warning: TString;
-	info: TString;
-}
 
 export const colors: Colors = {
 	primaryLight: "#fda4af",
@@ -86,49 +44,12 @@ export const colors: Colors = {
 	info: "#17a2b8",
 };
 
-export interface Fonts<TString = string> {
-	text: TString;
-	head: TString;
-	special: TString;
-	mono: TString;
-}
-
 export const fonts: Fonts = {
 	text: "Inter",
 	head: "Inter",
 	special: "Inter",
 	mono: "monospace",
 };
-
-export interface FontSizes<TString = string> {
-	hero1: { xs: TString; lg: TString };
-	hero2: { xs: TString; lg: TString };
-	hero3: { xs: TString; lg: TString };
-
-	h1: { xs: TString; lg: TString };
-	h2: { xs: TString; lg: TString };
-	h3: { xs: TString; lg: TString };
-	h4: { xs: TString; lg: TString };
-	h5: { xs: TString; lg: TString };
-	h6: { xs: TString; lg: TString };
-
-	eyebrow: { xs: TString; lg: TString };
-	subtitle: { xs: TString; lg: TString };
-	lead: { xs: TString; lg: TString };
-
-	button: { xs: TString; lg: TString };
-	buttonBig: { xs: TString; lg: TString };
-
-	input: { xs: TString; lg: TString };
-	inputBig: { xs: TString; lg: TString };
-
-	text: { xs: TString; lg: TString };
-	strong: { xs: TString; lg: TString };
-	small: { xs: TString; lg: TString };
-
-	blockquote: { xs: TString; lg: TString };
-	code: { xs: TString; lg: TString };
-}
 
 export const fontSizes: FontSizes = {
 	hero1: { xs: "52px", lg: "62px" },
@@ -160,36 +81,6 @@ export const fontSizes: FontSizes = {
 	code: { xs: "14px", lg: "18px" },
 };
 
-export interface LineHeights<TString = string> {
-	hero1: { xs: TString; lg: TString };
-	hero2: { xs: TString; lg: TString };
-	hero3: { xs: TString; lg: TString };
-
-	h1: { xs: TString; lg: TString };
-	h2: { xs: TString; lg: TString };
-	h3: { xs: TString; lg: TString };
-	h4: { xs: TString; lg: TString };
-	h5: { xs: TString; lg: TString };
-	h6: { xs: TString; lg: TString };
-
-	eyebrow: { xs: TString; lg: TString };
-	subtitle: { xs: TString; lg: TString };
-	lead: { xs: TString; lg: TString };
-
-	button: { xs: TString; lg: TString };
-	buttonBig: { xs: TString; lg: TString };
-
-	input: { xs: TString; lg: TString };
-	inputBig: { xs: TString; lg: TString };
-
-	text: { xs: TString; lg: TString };
-	strong: { xs: TString; lg: TString };
-	small: { xs: TString; lg: TString };
-
-	blockquote: { xs: TString; lg: TString };
-	code: { xs: TString; lg: TString };
-}
-
 export const lineHeights: LineHeights = {
 	hero1: { xs: "1.15", lg: "1.15" },
 	hero2: { xs: "1.15", lg: "1.15" },
@@ -220,15 +111,6 @@ export const lineHeights: LineHeights = {
 	code: { xs: "1.50", lg: "1.50" },
 };
 
-export interface Theme {
-	breakpoints: Breakpoints;
-	spacing: Spacing;
-	colors: Colors;
-	fonts: Fonts;
-	fontSizes: FontSizes;
-	lineHeights: LineHeights;
-}
-
 export const theme: Theme = {
 	breakpoints,
 	spacing,
@@ -237,3 +119,121 @@ export const theme: Theme = {
 	fontSizes,
 	lineHeights,
 };
+
+export interface Breakpoints<TNumber = number> {
+	xs: TNumber;
+	sm: TNumber;
+	md: TNumber;
+	lg: TNumber;
+	xl: TNumber;
+	xxl: TNumber;
+	xxxl: TNumber;
+}
+
+export interface Spacing<TString = string> {
+	maxWidth: { xs: TString; xxxl: TString };
+	padding: { xs: TString; lg: TString };
+	gridGap: { xs: TString; lg: TString };
+}
+
+export interface Colors<TString = string> {
+	primaryLight: TString;
+	primary: TString;
+	primaryDark: TString;
+
+	secondaryLight: TString;
+	secondary: TString;
+	secondaryDark: TString;
+
+	tertiaryLight: TString;
+	tertiary: TString;
+	tertiaryDark: TString;
+
+	dark: TString;
+	light: TString;
+
+	grayLight: TString;
+	gray: TString;
+	grayDark: TString;
+
+	success: TString;
+	error: TString;
+	warning: TString;
+	info: TString;
+}
+
+export interface Fonts<TString = string> {
+	text: TString;
+	head: TString;
+	special: TString;
+	mono: TString;
+}
+
+export interface FontSizes<TString = string> {
+	hero1: { xs: TString; lg: TString };
+	hero2: { xs: TString; lg: TString };
+	hero3: { xs: TString; lg: TString };
+
+	h1: { xs: TString; lg: TString };
+	h2: { xs: TString; lg: TString };
+	h3: { xs: TString; lg: TString };
+	h4: { xs: TString; lg: TString };
+	h5: { xs: TString; lg: TString };
+	h6: { xs: TString; lg: TString };
+
+	eyebrow: { xs: TString; lg: TString };
+	subtitle: { xs: TString; lg: TString };
+	lead: { xs: TString; lg: TString };
+
+	button: { xs: TString; lg: TString };
+	buttonBig: { xs: TString; lg: TString };
+
+	input: { xs: TString; lg: TString };
+	inputBig: { xs: TString; lg: TString };
+
+	text: { xs: TString; lg: TString };
+	strong: { xs: TString; lg: TString };
+	small: { xs: TString; lg: TString };
+
+	blockquote: { xs: TString; lg: TString };
+	code: { xs: TString; lg: TString };
+}
+
+export interface LineHeights<TString = string> {
+	hero1: { xs: TString; lg: TString };
+	hero2: { xs: TString; lg: TString };
+	hero3: { xs: TString; lg: TString };
+
+	h1: { xs: TString; lg: TString };
+	h2: { xs: TString; lg: TString };
+	h3: { xs: TString; lg: TString };
+	h4: { xs: TString; lg: TString };
+	h5: { xs: TString; lg: TString };
+	h6: { xs: TString; lg: TString };
+
+	eyebrow: { xs: TString; lg: TString };
+	subtitle: { xs: TString; lg: TString };
+	lead: { xs: TString; lg: TString };
+
+	button: { xs: TString; lg: TString };
+	buttonBig: { xs: TString; lg: TString };
+
+	input: { xs: TString; lg: TString };
+	inputBig: { xs: TString; lg: TString };
+
+	text: { xs: TString; lg: TString };
+	strong: { xs: TString; lg: TString };
+	small: { xs: TString; lg: TString };
+
+	blockquote: { xs: TString; lg: TString };
+	code: { xs: TString; lg: TString };
+}
+
+export interface Theme {
+	breakpoints: Breakpoints;
+	spacing: Spacing;
+	colors: Colors;
+	fonts: Fonts;
+	fontSizes: FontSizes;
+	lineHeights: LineHeights;
+}
