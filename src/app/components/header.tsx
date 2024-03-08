@@ -22,6 +22,10 @@ const StyledHeader = styled.header<{ theme: Theme }>`
 	${mq("lg")} {
 		max-width: 800px;
 	}
+
+	& a {
+		display: inline-flex;
+	}
 `;
 
 export default function Header() {
@@ -35,6 +39,7 @@ export default function Header() {
 							alt="Cherry Logo"
 							width={150}
 							height={38}
+							priority
 						/>
 					</Link>
 				</Container>
