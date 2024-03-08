@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
+import { Theme } from "@/app/theme";
 import { IconCheck } from "./utils/icons";
 import { resetButton, resetInput } from "./utils/global";
-import { Theme } from "@/app/theme";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	children?: React.ReactNode;

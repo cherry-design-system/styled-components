@@ -1,6 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import { StyledSample } from "@/app/sample";
 import { Container } from "@/app/components/cherry/container";
 import { Button } from "@/app/components/cherry/button";
 import { Input } from "@/app/components/cherry/input";
@@ -14,8 +13,6 @@ export const metadata: Metadata = {
 export default function Home() {
 	return (
 		<main>
-			<StyledSample>Hello Cherry</StyledSample>
-			<br />
 			<Container>
 				<RangeSlider $fullWidth />
 				<br />
