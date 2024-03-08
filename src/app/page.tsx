@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Container } from "@/app/components/cherry/container";
-import { Flex } from "@/app/components/cherry/Flex";
+import { Flex } from "@/app/components/cherry/flex";
 import { Button } from "@/app/components/cherry/button";
 import { Input } from "@/app/components/cherry/input";
 import { Textarea } from "@/app/components/cherry/textarea";
