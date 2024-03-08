@@ -2,7 +2,7 @@
 import React from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { theme } from "@/app/theme";
-import { GlobalStyles } from "@/app/components/cherry/global";
+import { GlobalStyles } from "@/app/components/cherry/utils/global";
 
 export default function ThemeProvider({
 	children,

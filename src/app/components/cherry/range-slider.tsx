@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { Theme } from "@/app/theme";
 import { StyledLabel, fullWidthSnippet, statusBorderSnippet } from "./input";
-import { resetButton } from "./global";
+import { resetButton } from "./utils/global";
 
 interface InputProps
 	extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
