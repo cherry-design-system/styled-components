@@ -6,6 +6,7 @@ import { Input } from "@/app/components/cherry/input";
 import { RangeSlider } from "@/app/components/cherry/range-slider";
 import { Textarea } from "@/app/components/cherry/textarea";
 import { Select } from "./components/cherry/select";
+import { Flex } from "./components/cherry/Flex";
 
 export const metadata: Metadata = {
 	title: "Cherry",
@@ -16,11 +17,25 @@ export default function Home() {
 	return (
 		<main>
 			<Container>
-				<Select>
-					<option value="1">Test 1</option>
-					<option value="2">Test 2</option>
-					<option value="3">Test 3</option>
-				</Select>
+				<Flex $gap="20px" $wrap="nowrap">
+					<Input $fullWidth />
+					<Select>
+						<option value="1">Test 1</option>
+						<option value="2">Test 2</option>
+						<option value="3">Test 3</option>
+					</Select>
+					<Button>Submit</Button>
+				</Flex>
+				<br />
+				<Flex $gap="20px" $wrap="nowrap">
+					<Input $fullWidth $size="big" />
+					<Select $size="big">
+						<option value="1">Test 1</option>
+						<option value="2">Test 2</option>
+						<option value="3">Test 3</option>
+					</Select>
+					<Button $size="big">Submit</Button>
+				</Flex>
 				<br />
 				<br />
 				<Textarea>Test</Textarea>
