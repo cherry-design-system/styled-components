@@ -30,20 +30,18 @@ const StyledHeader = styled.header<{ theme: Theme }>`
 
 export default function Header() {
 	return (
-		<>
-			<StyledHeader>
-				<Container $lgPadding="20px">
-					<Link href="/">
-						<Image
-							src="/logo.svg"
-							alt="Cherry Logo"
-							width={150}
-							height={38}
-							priority
-						/>
-					</Link>
-				</Container>
-			</StyledHeader>
-		</>
+		<StyledHeader>
+			<Container $lgPadding="20px">
+				<Link href="/">
+					<Image
+						src="/logo.svg"
+						alt="Cherry Logo"
+						width={150}
+						height={38}
+						priority
+					/>
+				</Link>
+			</Container>
+		</StyledHeader>
 	);
 }
