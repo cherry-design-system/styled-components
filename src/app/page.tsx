@@ -5,8 +5,9 @@ import { Button } from "@/app/components/cherry/button";
 import { Input } from "@/app/components/cherry/input";
 import { RangeSlider } from "@/app/components/cherry/range-slider";
 import { Textarea } from "@/app/components/cherry/textarea";
-import { Select } from "./components/cherry/select";
-import { Flex } from "./components/cherry/Flex";
+import { Select } from "@/app/components/cherry/select";
+import { Flex } from "@/app/components/cherry/Flex";
+import { Toggle } from "@/app/components/cherry/toggle";
 
 export const metadata: Metadata = {
 	title: "Cherry",
@@ -17,9 +18,31 @@ export default function Home() {
 	return (
 		<main>
 			<Container>
+				<br />
+				<br />
+				<Toggle
+					type="checkbox"
+					id="test-x"
+					name="text-x"
+					$label="Test"
+				/>
+				<br />
+				<br />
+				<Toggle type="checkbox" id="test-y" name="text-y" $size="big" />
+				<br />
+				<br />
+				<Toggle
+					type="checkbox"
+					id="test-a"
+					name="text-a"
+					$size="big"
+					disabled
+				/>
+				<br />
+				<br />
 				<Flex $gap="20px" $wrap="nowrap">
 					<Input $fullWidth />
-					<Select>
+					<Select $error>
 						<option value="1">Test 1</option>
 						<option value="2">Test 2</option>
 						<option value="3">Test 3</option>
@@ -38,7 +61,7 @@ export default function Home() {
 				</Flex>
 				<br />
 				<br />
-				<Textarea>Test</Textarea>
+				<Textarea />
 				<br />
 				<br />
 				<RangeSlider $fullWidth />
