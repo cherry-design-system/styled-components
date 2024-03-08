@@ -4,10 +4,10 @@ import styled from "styled-components";
 import { Theme } from "@/app/theme";
 import { StyledInputWrapper, StyledLabel } from "./input";
 import {
-	fullWidthSnippet,
+	fullWidthStyles,
 	resetButton,
 	resetInput,
-	statusBorderSnippet,
+	statusBorderStyles,
 } from "./utils/global";
 
 interface TextareaProps
@@ -36,6 +36,7 @@ const StyledTextarea = styled.textarea<TextareaProps>`
 	border: solid 2px ${({ theme }) => theme.colors.grayLight};
 	box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.secondaryLight};
 	transition: all 0.3s ease;
+	min-height: 80px;
 
 	&::placeholder {
 		color: ${({ theme }) => theme.colors.gray};
@@ -59,13 +60,13 @@ const StyledTextarea = styled.textarea<TextareaProps>`
 	${({ $size, theme }) =>
 		$size === "big"
 			? `font-size: ${theme.fontSizes.inputBig.lg};
-		line-height: ${theme.lineHeights.inputBig.lg};
+			line-height: ${theme.lineHeights.text.lg};
 	`
 			: `font-size: ${theme.fontSizes.input.lg};
-		line-height: ${theme.lineHeights.input.lg};`}
+			line-height: ${theme.lineHeights.text.lg};`}
 
 	${({ $error, $success, theme }) => {
-		return statusBorderSnippet(
+		return statusBorderStyles(
 			$error ? true : false,
 			$success ? true : false,
 			theme,
@@ -80,7 +81,7 @@ const StyledTextarea = styled.textarea<TextareaProps>`
 		color: ${theme.colors.gray};
 	`}
 
-	${({ $fullWidth }) => fullWidthSnippet($fullWidth ? true : false)}
+	${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
 
 function Textarea({ ...props }: TextareaProps) {

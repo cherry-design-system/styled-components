@@ -83,7 +83,7 @@ export const resetInput = `
 	cursor: text;
 `;
 
-export const fullWidthSnippet = (fullWidth: boolean) => {
+export const fullWidthStyles = (fullWidth: boolean) => {
 	if (fullWidth) {
 		return `
 			width: 100%;
@@ -91,7 +91,7 @@ export const fullWidthSnippet = (fullWidth: boolean) => {
 	}
 };
 
-export const statusBorderSnippet = (
+export const statusBorderStyles = (
 	$error: boolean,
 	$success: boolean,
 	theme: Theme,
@@ -107,4 +107,16 @@ export const statusBorderSnippet = (
 			border-color: ${theme?.colors.success};
 		`;
 	}
+};
+
+export const formElementHeightStyles = ($size?: "default" | "big") => {
+	if ($size === "big") {
+		return `
+			height: 60px;
+		`;
+	}
+
+	return `
+		height: 50px;
+	`;
 };

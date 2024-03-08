@@ -4,10 +4,11 @@ import styled from "styled-components";
 import { Theme } from "@/app/theme";
 import { StyledInputWrapper, StyledLabel } from "./input";
 import {
-	fullWidthSnippet,
+	formElementHeightStyles,
+	fullWidthStyles,
 	resetButton,
 	resetInput,
-	statusBorderSnippet,
+	statusBorderStyles,
 } from "./utils/global";
 import { IconArrow } from "./utils/icons";
 
@@ -56,6 +57,8 @@ const StyledSelect = styled.select<SelectProps>`
 		box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secondaryLight};
 	}
 
+	${({ $size }) => formElementHeightStyles($size)}
+
 	${({ $size, theme }) =>
 		$size === "big"
 			? `min-width: 220px;
@@ -67,7 +70,7 @@ const StyledSelect = styled.select<SelectProps>`
 			line-height: ${theme.lineHeights.input.lg};`}
 
 	${({ $error, $success, theme }) => {
-		return statusBorderSnippet(
+		return statusBorderStyles(
 			$error ? true : false,
 			$success ? true : false,
 			theme,
@@ -82,7 +85,7 @@ const StyledSelect = styled.select<SelectProps>`
 		color: ${theme.colors.gray};
 	`}
 
-	${({ $fullWidth }) => fullWidthSnippet($fullWidth ? true : false)}
+	${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
 
 export const StyledIconWrapper = styled.span<SelectProps>`

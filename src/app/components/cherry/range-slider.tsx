@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { Theme } from "@/app/theme";
 import { StyledLabel } from "./input";
 import {
-	fullWidthSnippet,
+	fullWidthStyles,
 	resetButton,
-	statusBorderSnippet,
+	statusBorderStyles,
 } from "./utils/global";
 
 interface InputProps
@@ -27,7 +27,7 @@ const StyledInputWrapper = styled.span<InputProps>`
 	gap: 10px;
 	align-items: center;
 
-	${({ $fullWidth }) => fullWidthSnippet($fullWidth ? true : false)}
+	${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
 
 const StyledInput = styled.input<InputProps>`
@@ -45,7 +45,7 @@ const StyledInput = styled.input<InputProps>`
 		box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.secondaryLight};
 		transition: all 0.3s ease;
 		${({ $error, $success, theme }) => {
-			return statusBorderSnippet(
+			return statusBorderStyles(
 				$error ? true : false,
 				$success ? true : false,
 				theme,
@@ -61,7 +61,7 @@ const StyledInput = styled.input<InputProps>`
 		box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.secondaryLight};
 		transition: all 0.3s ease;
 		${({ $error, $success, theme }) => {
-			return statusBorderSnippet(
+			return statusBorderStyles(
 				$error ? true : false,
 				$success ? true : false,
 				theme,
@@ -155,7 +155,7 @@ const StyledInput = styled.input<InputProps>`
 		}
 	`}
 
-	${({ $fullWidth }) => fullWidthSnippet($fullWidth ? true : false)}
+	${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 
 	${({ $size }) => {
 		if ($size === "big") {

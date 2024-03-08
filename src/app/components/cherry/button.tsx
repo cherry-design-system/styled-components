@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Theme } from "@/app/theme";
-import { resetButton } from "./utils/global";
+import { formElementHeightStyles, resetButton } from "./utils/global";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	children?: React.ReactNode;
@@ -100,13 +100,15 @@ const StyledButton = styled.button<ButtonProps>`
 		}
 	}}
 
+	${({ $size }) => formElementHeightStyles($size)}
+
 	${({ $size, theme }) =>
 		$size === "big"
 			? `font-size: ${theme.fontSizes.buttonBig.lg};
-		line-height: ${theme.lineHeights.buttonBig.lg};
+			line-height: ${theme.lineHeights.buttonBig.lg};
 	`
 			: `font-size: ${theme.fontSizes.button.lg};
-		line-height: ${theme.lineHeights.button.lg};`}
+			line-height: ${theme.lineHeights.button.lg};`}
 
 	${({ disabled, theme }) =>
 		disabled &&

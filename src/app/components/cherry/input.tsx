@@ -4,10 +4,11 @@ import styled from "styled-components";
 import { Theme } from "@/app/theme";
 import { IconCheck } from "./utils/icons";
 import {
-	fullWidthSnippet,
+	formElementHeightStyles,
+	fullWidthStyles,
 	resetButton,
 	resetInput,
-	statusBorderSnippet,
+	statusBorderStyles,
 } from "./utils/global";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -27,7 +28,7 @@ export const StyledInputWrapper = styled.span<InputProps>`
 	gap: 10px;
 	align-items: center;
 
-	${({ $fullWidth }) => fullWidthSnippet($fullWidth ? true : false)}
+	${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
 
 export const StyledLabel = styled.label<InputProps>`
@@ -72,16 +73,18 @@ const StyledInput = styled.input<InputProps>`
 		box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secondaryLight};
 	}
 
+	${({ $size }) => formElementHeightStyles($size)}
+
 	${({ $size, theme }) =>
 		$size === "big"
 			? `font-size: ${theme.fontSizes.inputBig.lg};
-		line-height: ${theme.lineHeights.inputBig.lg};
+			line-height: ${theme.lineHeights.inputBig.lg};
 	`
 			: `font-size: ${theme.fontSizes.input.lg};
-		line-height: ${theme.lineHeights.input.lg};`}
+			line-height: ${theme.lineHeights.input.lg};`}
 
 	${({ $error, $success, theme }) => {
-		return statusBorderSnippet(
+		return statusBorderStyles(
 			$error ? true : false,
 			$success ? true : false,
 			theme,
@@ -96,7 +99,7 @@ const StyledInput = styled.input<InputProps>`
 		color: ${theme.colors.gray};
 	`}
 
-	${({ $fullWidth }) => fullWidthSnippet($fullWidth ? true : false)}
+	${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
 
 const StyledIconWrapper = styled.span<InputProps>`
@@ -156,7 +159,7 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
 	`}
 
 	${({ $error, $success, theme }) => {
-		return statusBorderSnippet(
+		return statusBorderStyles(
 			$error ? true : false,
 			$success ? true : false,
 			theme,
