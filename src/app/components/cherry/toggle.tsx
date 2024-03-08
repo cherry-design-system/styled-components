@@ -117,11 +117,11 @@ const StyledToggle = styled.input<ToggleProps>`
 		& ~ .fake-toggle {
 			border-color: ${theme.colors.gray};
 
-			&:before {
+			&::before {
 				background: ${theme.colors.grayLight};
 			}
 
-			&:after {
+			&::after {
 				background: ${theme.colors.gray};
 			}
 		}`}
