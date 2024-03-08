@@ -3,7 +3,12 @@ import React from "react";
 import styled from "styled-components";
 import { Theme } from "@/app/theme";
 import { IconCheck } from "./utils/icons";
-import { resetButton, resetInput } from "./utils/global";
+import {
+	fullWidthSnippet,
+	resetButton,
+	resetInput,
+	statusBorderSnippet,
+} from "./utils/global";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	children?: React.ReactNode;
@@ -15,36 +20,10 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	theme?: Theme;
 }
 
-export const statusBorderSnippet = (
-	$error: boolean,
-	$success: boolean,
-	theme: Theme,
-) => {
-	if ($error) {
-		return `
-			border-color: ${theme?.colors.error};
-		`;
-	}
-
-	if ($success) {
-		return `
-			border-color: ${theme?.colors.success};
-		`;
-	}
-};
-
-export const fullWidthSnippet = (fullWidth: boolean) => {
-	if (fullWidth) {
-		return `
-			width: 100%;
-		`;
-	}
-};
-
-const StyledInputWrapper = styled.span<InputProps>`
+export const StyledInputWrapper = styled.span<InputProps>`
 	display: inline-flex;
 	flex-wrap: ${({ type }) =>
-		type === "checkbox" || type === "radio" ? "fprnowrap" : "wrap"};
+		type === "checkbox" || type === "radio" ? "nowrap" : "wrap"};
 	gap: 10px;
 	align-items: center;
 
@@ -73,6 +52,10 @@ const StyledInput = styled.input<InputProps>`
 	border: solid 2px ${({ theme }) => theme.colors.grayLight};
 	box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.secondaryLight};
 	transition: all 0.3s ease;
+
+	&::placeholder {
+		color: ${({ theme }) => theme.colors.gray};
+	}
 
 	@media (hover: hover) {
 		&:hover:not([disabled]) {

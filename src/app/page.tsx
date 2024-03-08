@@ -4,6 +4,7 @@ import { Container } from "@/app/components/cherry/container";
 import { Button } from "@/app/components/cherry/button";
 import { Input } from "@/app/components/cherry/input";
 import { RangeSlider } from "@/app/components/cherry/range-slider";
+import { Textarea } from "@/app/components/cherry/textarea";
 
 export const metadata: Metadata = {
 	title: "Cherry",
@@ -14,6 +15,9 @@ export default function Home() {
 	return (
 		<main>
 			<Container>
+				<Textarea>Test</Textarea>
+				<br />
+				<br />
 				<RangeSlider $fullWidth />
 				<br />
 				<br />

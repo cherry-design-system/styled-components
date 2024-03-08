@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { Theme } from "@/app/theme";
 
 export const GlobalStyles = createGlobalStyle`
 html,
@@ -81,3 +82,29 @@ export const resetButton = `
 export const resetInput = `
 	cursor: text;
 `;
+
+export const fullWidthSnippet = (fullWidth: boolean) => {
+	if (fullWidth) {
+		return `
+			width: 100%;
+		`;
+	}
+};
+
+export const statusBorderSnippet = (
+	$error: boolean,
+	$success: boolean,
+	theme: Theme,
+) => {
+	if ($error) {
+		return `
+			border-color: ${theme?.colors.error};
+		`;
+	}
+
+	if ($success) {
+		return `
+			border-color: ${theme?.colors.success};
+		`;
+	}
+};
