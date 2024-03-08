@@ -8,6 +8,7 @@ import { Textarea } from "@/app/components/cherry/textarea";
 import { Select } from "@/app/components/cherry/select";
 import { Flex } from "@/app/components/cherry/Flex";
 import { Toggle } from "@/app/components/cherry/toggle";
+import { Space } from "@/app/components/cherry/space";
 
 export const metadata: Metadata = {
 	title: "Cherry",
@@ -18,24 +19,11 @@ export default function Home() {
 	return (
 		<main>
 			<Container>
-				<br />
-				<br />
-				<Toggle
-					id="test-x"
-					name="text-x"
-					$label="Test"
-					type="radio"
-				/>
-				<br />
-				<br />
+				<Toggle id="test-x" name="text-x" $label="Test" type="radio" />
 				<Toggle id="test-y" name="text-x" $size="big" type="radio" />
 				<br />
 				<br />
-				<Toggle
-					id="test-a"
-					name="text-a"
-					$size="big"
-				/>
+				<Toggle id="test-a" name="text-a" $size="big" />
 				<br />
 				<br />
 				<Flex $gap="20px" $wrap="nowrap">
