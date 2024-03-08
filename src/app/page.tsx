@@ -21,22 +21,20 @@ export default function Home() {
 				<br />
 				<br />
 				<Toggle
-					type="checkbox"
 					id="test-x"
 					name="text-x"
 					$label="Test"
+					type="radio"
 				/>
 				<br />
 				<br />
-				<Toggle type="checkbox" id="test-y" name="text-y" $size="big" />
+				<Toggle id="test-y" name="text-x" $size="big" type="radio" />
 				<br />
 				<br />
 				<Toggle
-					type="checkbox"
 					id="test-a"
 					name="text-a"
 					$size="big"
-					disabled
 				/>
 				<br />
 				<br />

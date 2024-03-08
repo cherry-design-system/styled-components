@@ -127,11 +127,11 @@ const StyledToggle = styled.input<ToggleProps>`
 		}`}
 `;
 
-function Toggle({ ...props }: ToggleProps) {
+function Toggle({ type = "checkbox", ...props }: ToggleProps) {
 	return (
 		<StyledInputWrapper $fullWidth={props.$fullWidth}>
 			<StyledToggleWrapper>
-				<StyledToggle {...props} type="checkbox" />
+				<StyledToggle {...props} type={type} />
 				<StyledFakeToggle
 					$error={props.$error}
 					$success={props.$success}
