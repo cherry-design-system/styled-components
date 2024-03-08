@@ -212,7 +212,7 @@ const StyledInput = styled.input<InputProps>`
 
 function RangeSlider({ ...props }: InputProps) {
 	return (
-		<StyledInputWrapper $fullWidth>
+		<StyledInputWrapper $fullWidth={props.$fullWidth}>
 			{props.$label && (
 				<StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>
 			)}
