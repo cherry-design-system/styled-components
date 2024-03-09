@@ -72,6 +72,15 @@ export const generateColsStyles = (
 	}
 `;
 
+export const generateColSpanStyles = (
+	size: keyof Breakpoints<number>,
+	span: number,
+) => css`
+	${mq(size)} {
+		grid-column: span ${span};
+	}
+`;
+
 export const generatePaddingStyles = (
 	size: keyof Breakpoints<number>,
 	padding: number | "none",

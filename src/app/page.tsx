@@ -10,7 +10,8 @@ import { Toggle } from "@/app/components/cherry/toggle";
 import { RangeSlider } from "@/app/components/cherry/range-slider";
 import { Space } from "@/app/components/cherry/space";
 import { Box } from "@/app/components/cherry/box";
-import { Grid } from "./components/cherry/grid";
+import { Grid } from "@/app/components/cherry/grid";
+import { Col } from "@/app/components/cherry/col";
 
 export const metadata: Metadata = {
 	title: "Cherry",
@@ -202,10 +203,12 @@ export default function Home() {
 					</Flex>
 				</Box>
 				<Space $xs={20} $lg={40} />
-				<Grid>
+				<Grid $xsCols={2}>
 					<Box>1</Box>
 					<Box>2</Box>
-					<Box>3</Box>
+					<Col $span={2}>
+						<Box>3</Box>
+					</Col>
 				</Grid>
 				<Space $xs={20} $lg={40} />
 			</Container>
