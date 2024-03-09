@@ -9,6 +9,7 @@ import { Select } from "@/app/components/cherry/select";
 import { Toggle } from "@/app/components/cherry/toggle";
 import { RangeSlider } from "@/app/components/cherry/range-slider";
 import { Space } from "@/app/components/cherry/space";
+import { Box } from "./components/cherry/box";
 
 export const metadata: Metadata = {
 	title: "Cherry",
@@ -19,132 +20,186 @@ export default function Home() {
 	return (
 		<main>
 			<Container>
-				<Flex>
-					<Button>Button</Button>
-					<Button $variant="secondary">Button</Button>
-					<Button $variant="tertiary">Button</Button>
-					<Button disabled>Button</Button>
-				</Flex>
+				<Box>
+					<Flex>
+						<Button>Button</Button>
+						<Button $variant="secondary">Button</Button>
+						<Button $variant="tertiary">Button</Button>
+						<Button disabled>Button</Button>
+					</Flex>
+				</Box>
 				<Space $xs={20} $lg={40} />
-				<Flex>
-					<Button $size="big">Button</Button>
-					<Button $variant="secondary" $size="big">
-						Button
-					</Button>
-					<Button $variant="tertiary" $size="big">
-						Button
-					</Button>
-					<Button disabled $size="big">
-						Button
-					</Button>
-				</Flex>
+				<Box>
+					<Flex>
+						<Button $size="big">Button</Button>
+						<Button $variant="secondary" $size="big">
+							Button
+						</Button>
+						<Button $variant="tertiary" $size="big">
+							Button
+						</Button>
+						<Button disabled $size="big">
+							Button
+						</Button>
+					</Flex>
+				</Box>
 				<Space $xs={20} $lg={40} />
-				<Flex>
-					<Button $outline>Button</Button>
-					<Button $variant="secondary" $outline>
-						Button
-					</Button>
-					<Button $variant="tertiary" $outline>
-						Button
-					</Button>
-					<Button disabled>Button</Button>
-				</Flex>
+				<Box>
+					<Flex>
+						<Button $outline>Button</Button>
+						<Button $variant="secondary" $outline>
+							Button
+						</Button>
+						<Button $variant="tertiary" $outline>
+							Button
+						</Button>
+						<Button disabled>Button</Button>
+					</Flex>
+				</Box>
 				<Space $xs={20} $lg={40} />
-				<Flex>
-					<Button $outline $size="big">
-						Button
-					</Button>
-					<Button $variant="secondary" $outline $size="big">
-						Button
-					</Button>
-					<Button $variant="tertiary" $outline $size="big">
-						Button
-					</Button>
-					<Button disabled $size="big">
-						Button
-					</Button>
-				</Flex>
+				<Box>
+					<Flex>
+						<Button $outline $size="big">
+							Button
+						</Button>
+						<Button $variant="secondary" $outline $size="big">
+							Button
+						</Button>
+						<Button $variant="tertiary" $outline $size="big">
+							Button
+						</Button>
+						<Button disabled $size="big">
+							Button
+						</Button>
+					</Flex>
+				</Box>
 				<Space $xs={20} $lg={40} />
-				<Flex>
-					<Button $fullWidth>Button</Button>
-				</Flex>
+				<Box>
+					<Flex>
+						<Button $fullWidth>Button</Button>
+					</Flex>
+				</Box>
 				<Space $xs={20} $lg={40} />
-				<Flex>
-					<Input type="checkbox" $label="Checkbox" />
-					<Input type="checkbox" $label="Checkbox" disabled />
-					<Input type="checkbox" $label="Checkbox" $success />
-					<Input type="checkbox" $label="Checkbox" $error />
-				</Flex>
+				<Box>
+					<Flex>
+						<Input type="checkbox" $label="Checkbox" />
+						<Input type="checkbox" $label="Checkbox" disabled />
+						<Input type="checkbox" $label="Checkbox" $success />
+						<Input type="checkbox" $label="Checkbox" $error />
+					</Flex>
+				</Box>
 				<Space $xs={20} $lg={40} />
-				<Flex>
-					<Input type="radio" $label="Radio" />
-					<Input type="radio" $label="Radio" disabled />
-					<Input type="radio" $label="Radio" $success />
-					<Input type="radio" $label="Radio" $error />
-				</Flex>
+				<Box>
+					<Flex>
+						<Input type="radio" $label="Radio" />
+						<Input type="radio" $label="Radio" disabled />
+						<Input type="radio" $label="Radio" $success />
+						<Input type="radio" $label="Radio" $error />
+					</Flex>
+				</Box>
 				<Space $xs={20} $lg={40} />
-				<Flex>
-					<Input placeholder="Input" />
-					<Input placeholder="Input" disabled />
-					<Input placeholder="Input" $success />
-					<Input placeholder="Input" $error />
-				</Flex>
+				<Box>
+					<Flex>
+						<Input placeholder="Input" />
+						<Input placeholder="Input" disabled />
+						<Input placeholder="Input" $success />
+						<Input placeholder="Input" $error />
+					</Flex>
+				</Box>
 				<Space $xs={20} $lg={40} />
-				<Flex>
-					<Input placeholder="Input" $size="big" />
-					<Input placeholder="Input" disabled $size="big" />
-					<Input placeholder="Input" $size="big" $success />
-					<Input placeholder="Input" $size="big" $error />
-				</Flex>
+				<Box>
+					<Flex>
+						<Input placeholder="Input" $label="Label" $fullWidth />
+					</Flex>
+				</Box>
 				<Space $xs={20} $lg={40} />
-				<Flex>
-					<Textarea placeholder="Textarea" />
-					<Textarea placeholder="Textarea" disabled />
-					<Textarea placeholder="Textarea" $size="big" $success />
-					<Textarea placeholder="Textarea" $size="big" $error />
-				</Flex>
+				<Box>
+					<Flex>
+						<Input placeholder="Input" $size="big" />
+						<Input placeholder="Input" disabled $size="big" />
+						<Input placeholder="Input" $size="big" $success />
+						<Input placeholder="Input" $size="big" $error />
+					</Flex>
+				</Box>
 				<Space $xs={20} $lg={40} />
-				<Flex>
-					<Select placeholder="Input" />
-					<Select placeholder="Input" disabled />
-					<Select placeholder="Input" $success />
-					<Select placeholder="Input" $error />
-				</Flex>
+				<Box>
+					<Flex>
+						<Textarea placeholder="Textarea" />
+						<Textarea placeholder="Textarea" disabled />
+						<Textarea placeholder="Textarea" $size="big" $success />
+						<Textarea placeholder="Textarea" $size="big" $error />
+					</Flex>
+				</Box>
 				<Space $xs={20} $lg={40} />
-				<Flex>
-					<Select placeholder="Input" $size="big" />
-					<Select placeholder="Input" disabled $size="big" />
-					<Select placeholder="Input" $size="big" $success />
-					<Select placeholder="Input" $size="big" $error />
-				</Flex>
+				<Box>
+					<Flex>
+						<Select placeholder="Input">
+							<option value="1">Sample</option>
+						</Select>
+						<Select placeholder="Input" disabled>
+							<option value="1">Sample</option>
+						</Select>
+						<Select placeholder="Input" $success>
+							<option value="1">Sample</option>
+						</Select>
+						<Select placeholder="Input" $error>
+							<option value="1">Sample</option>
+						</Select>
+					</Flex>
+				</Box>
 				<Space $xs={20} $lg={40} />
-				<Flex>
-					<Toggle placeholder="Input" />
-					<Toggle placeholder="Input" disabled />
-					<Toggle placeholder="Input" $success />
-					<Toggle placeholder="Input" $error />
-				</Flex>
+				<Box>
+					<Flex>
+						<Select placeholder="Input" $size="big">
+							<option value="1">Sample</option>
+						</Select>
+						<Select placeholder="Input" disabled $size="big">
+							<option value="1">Sample</option>
+						</Select>
+						<Select placeholder="Input" $size="big" $success>
+							<option value="1">Sample</option>
+						</Select>
+						<Select placeholder="Input" $size="big" $error>
+							<option value="1">Sample</option>
+						</Select>
+					</Flex>
+				</Box>
 				<Space $xs={20} $lg={40} />
-				<Flex>
-					<Toggle placeholder="Input" $size="big" />
-					<Toggle placeholder="Input" disabled $size="big" />
-					<Toggle placeholder="Input" $success $size="big" />
-					<Toggle placeholder="Input" $error $size="big" />
-				</Flex>
+				<Box>
+					<Flex>
+						<Toggle placeholder="Input" />
+						<Toggle placeholder="Input" disabled />
+						<Toggle placeholder="Input" $success />
+						<Toggle placeholder="Input" $error />
+					</Flex>
+				</Box>
 				<Space $xs={20} $lg={40} />
-				<Flex>
-					<RangeSlider placeholder="Input" />
-					<RangeSlider placeholder="Input" disabled />
-					<RangeSlider placeholder="Input" $success />
-					<RangeSlider placeholder="Input" $error />
-				</Flex>
+				<Box>
+					<Flex>
+						<Toggle placeholder="Input" $size="big" />
+						<Toggle placeholder="Input" disabled $size="big" />
+						<Toggle placeholder="Input" $success $size="big" />
+						<Toggle placeholder="Input" $error $size="big" />
+					</Flex>
+				</Box>
 				<Space $xs={20} $lg={40} />
-				<Flex>
-					<RangeSlider placeholder="Input" $size="big" />
-					<RangeSlider placeholder="Input" disabled $size="big" />
-					<RangeSlider placeholder="Input" $success $size="big" />
-					<RangeSlider placeholder="Input" $error $size="big" />
-				</Flex>
+				<Box>
+					<Flex>
+						<RangeSlider placeholder="Input" />
+						<RangeSlider placeholder="Input" disabled />
+						<RangeSlider placeholder="Input" $success />
+						<RangeSlider placeholder="Input" $error />
+					</Flex>
+				</Box>
+				<Space $xs={20} $lg={40} />
+				<Box>
+					<Flex>
+						<RangeSlider placeholder="Input" $size="big" />
+						<RangeSlider placeholder="Input" disabled $size="big" />
+						<RangeSlider placeholder="Input" $success $size="big" />
+						<RangeSlider placeholder="Input" $error $size="big" />
+					</Flex>
+				</Box>
 				<Space $xs={20} $lg={40} />
 			</Container>
 		</main>

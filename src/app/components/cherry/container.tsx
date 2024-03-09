@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { Theme, mq } from "@/app/theme";
 
-interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 	className?: string;
 	children?: React.ReactNode;
 	$fluid?: boolean;

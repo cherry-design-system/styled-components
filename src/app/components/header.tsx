@@ -28,20 +28,36 @@ const StyledHeader = styled.header<{ theme: Theme }>`
 	}
 `;
 
+const StyledBg = styled.span<{ theme: Theme }>`
+	width: 100vw;
+	height: 100svh;
+	background: linear-gradient(${({ theme }) => theme.colors.secondary}, ${({ theme }) => theme.colors.tertiary});
+	filter: blur(500px);+
+	background-size: cover;
+	position: absolute;
+	top: -50%;
+	left: 0;
+	z-index: -1;
+	opacity: 0.3;
+`;
+
 export default function Header() {
 	return (
-		<StyledHeader>
-			<Container $lgPadding="20px">
-				<Link href="/">
-					<Image
-						src="/logo.svg"
-						alt="Cherry Logo"
-						width={150}
-						height={38}
-						priority
-					/>
-				</Link>
-			</Container>
-		</StyledHeader>
+		<>
+			<StyledBg />
+			<StyledHeader>
+				<Container $lgPadding="20px">
+					<Link href="/">
+						<Image
+							src="/logo.svg"
+							alt="Cherry Logo"
+							width={150}
+							height={38}
+							priority
+						/>
+					</Link>
+				</Container>
+			</StyledHeader>
+		</>
 	);
 }
