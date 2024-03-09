@@ -1,5 +1,4 @@
-import { createGlobalStyle, css } from "styled-components";
-import { mq, Breakpoints, Theme } from "@/app/theme";
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 html,
