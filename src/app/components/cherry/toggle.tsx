@@ -6,7 +6,7 @@ import { StyledInputWrapper, StyledLabel } from "@/app/components/cherry/input";
 import {
 	resetButton,
 	statusBorderStyles,
-} from "@/app/components/cherry/utils/global";
+} from "@/app/components/cherry/utils/mixins";
 
 interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	children?: React.ReactNode;

@@ -7,7 +7,7 @@ import {
 	fullWidthStyles,
 	resetButton,
 	statusBorderStyles,
-} from "@/app/components/cherry/utils/global";
+} from "@/app/components/cherry/utils/mixins";
 
 interface InputProps
 	extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {

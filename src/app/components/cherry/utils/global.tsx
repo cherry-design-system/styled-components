@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import { Theme } from "@/app/theme";
+import { createGlobalStyle, css } from "styled-components";
+import { mq, Breakpoints, Theme } from "@/app/theme";
 
 export const GlobalStyles = createGlobalStyle`
 html,
@@ -68,56 +68,3 @@ strong,
 b {
 	font-weight: 700;
 }`;
-
-export const resetButton = `
-	appearance: none;
-	border: none;
-	background: none;
-	padding: 0;
-	margin: 0;
-	cursor: pointer;
-	outline: none;
-`;
-
-export const resetInput = `
-	cursor: text;
-	min-width: 235px;
-`;
-
-export const fullWidthStyles = (fullWidth: boolean) => {
-	if (fullWidth) {
-		return `
-			width: 100%;
-		`;
-	}
-};
-
-export const statusBorderStyles = (
-	$error: boolean,
-	$success: boolean,
-	theme: Theme,
-) => {
-	if ($error) {
-		return `
-			border-color: ${theme?.colors.error};
-		`;
-	}
-
-	if ($success) {
-		return `
-			border-color: ${theme?.colors.success};
-		`;
-	}
-};
-
-export const formElementHeightStyles = ($size?: "default" | "big") => {
-	if ($size === "big") {
-		return `
-			height: 60px;
-		`;
-	}
-
-	return `
-		height: 50px;
-	`;
-};

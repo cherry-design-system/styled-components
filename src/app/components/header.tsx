@@ -46,7 +46,7 @@ export default function Header() {
 		<>
 			<StyledBg />
 			<StyledHeader>
-				<Container $lgPadding="20px">
+				<Container $lgPadding={20}>
 					<Link href="/">
 						<Image
 							src="/logo.svg"

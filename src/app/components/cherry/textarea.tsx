@@ -8,7 +8,7 @@ import {
 	resetButton,
 	resetInput,
 	statusBorderStyles,
-} from "@/app/components/cherry/utils/global";
+} from "@/app/components/cherry/utils/mixins";
 
 interface TextareaProps
 	extends Omit<React.InputHTMLAttributes<HTMLTextAreaElement>, "size"> {

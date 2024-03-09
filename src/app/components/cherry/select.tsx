@@ -9,7 +9,7 @@ import {
 	resetButton,
 	resetInput,
 	statusBorderStyles,
-} from "@/app/components/cherry/utils/global";
+} from "@/app/components/cherry/utils/mixins";
 import { IconArrow } from "@/app/components/cherry/utils/icons";
 
 interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {

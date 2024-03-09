@@ -29,6 +29,11 @@ const styles = ($size: number | "none", $horizontal: boolean) =>
 		  `;
 
 const StyledSpace = styled.span<SpaceProps>`
+	${({ $horizontal, $size }) => `
+		${$size && styles($size, $horizontal || false)};
+		${$size === "none" && `display: none;`};
+	`}
+
 	${({ $xs, $horizontal }) =>
 		$xs &&
 		`
@@ -85,11 +90,6 @@ const StyledSpace = styled.span<SpaceProps>`
 				${$xxxl === "none" && `display: none;`};
 			}
 		`};
-
-	${({ $horizontal, $size }) => `
-		${$size && styles($size, $horizontal || false)};
-		${$size === "none" && `display: none;`};
-	`}
 `;
 
 function Space({ ...props }: SpaceProps) {

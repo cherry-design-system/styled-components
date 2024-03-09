@@ -5,7 +5,7 @@ import { Theme } from "@/app/theme";
 import {
 	formElementHeightStyles,
 	resetButton,
-} from "@/app/components/cherry/utils/global";
+} from "@/app/components/cherry/utils/mixins";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	children?: React.ReactNode;

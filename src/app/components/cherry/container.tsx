@@ -2,19 +2,21 @@
 import React from "react";
 import styled from "styled-components";
 import { Theme, mq } from "@/app/theme";
+import { generatePaddingStyles } from "@/app/components/cherry/utils/mixins";
 
 export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 	className?: string;
 	children?: React.ReactNode;
 	$fluid?: boolean;
 	$textAlign?: "right" | "left" | "center";
-	$xsPadding?: string;
-	$smPadding?: string;
-	$mdPadding?: string;
-	$lgPadding?: string;
-	$xlPadding?: string;
-	$xxlPadding?: string;
-	$xxxlPadding?: string;
+	$padding?: number | "none";
+	$xsPadding?: number | "none";
+	$smPadding?: number | "none";
+	$mdPadding?: number | "none";
+	$lgPadding?: number | "none";
+	$xlPadding?: number | "none";
+	$xxlPadding?: number | "none";
+	$xxxlPadding?: number | "none";
 	theme?: Theme;
 }
 
@@ -24,38 +26,27 @@ const StyledContainer = styled.div<ContainerProps>`
 	max-width: ${({ theme, $fluid }) =>
 		$fluid ? `100%` : theme.spacing.maxWidth.xs};
 	${({ $textAlign }) => $textAlign && `text-align: ${$textAlign}`};
-
-	${mq("xs")} {
-		padding: ${({ $xsPadding, theme }) =>
-			$xsPadding ? $xsPadding : theme.spacing.padding.xs};
-	}
-
-	${mq("sm")} {
-		${({ $smPadding }) => $smPadding && `padding: ${$smPadding}`};
-	}
-
-	${mq("md")} {
-		${({ $mdPadding }) => $mdPadding && `padding: ${$mdPadding}`};
-	}
+	padding: ${({ $padding, theme }) =>
+		($padding && `${$padding}px`) || theme.spacing.padding.xs};
 
 	${mq("lg")} {
-		padding: ${({ $lgPadding, theme }) =>
-			$lgPadding ? $lgPadding : theme.spacing.padding.lg};
-	}
-
-	${mq("xl")} {
-		${({ $xlPadding }) => $xlPadding && `padding: ${$xlPadding}`};
-	}
-
-	${mq("xxl")} {
-		${({ $xxlPadding }) => $xxlPadding && `padding: ${$xxlPadding}`};
+		padding: ${({ $padding, theme }) =>
+			($padding && `${$padding}px`) || theme.spacing.padding.lg};
 	}
 
 	${mq("xxxl")} {
-		${({ $xxxlPadding }) => $xxxlPadding && `padding: ${$xxxlPadding}`};
 		max-width: ${({ theme, $fluid }) =>
 			$fluid ? `100%` : theme.spacing.maxWidth.xxxl};
 	}
+
+	${({ $xsPadding }) => $xsPadding && generatePaddingStyles("xs", $xsPadding)}
+	${({ $smPadding }) => $smPadding && generatePaddingStyles("sm", $smPadding)}
+	${({ $mdPadding }) => $mdPadding && generatePaddingStyles("md", $mdPadding)}
+	${({ $lgPadding }) => $lgPadding && generatePaddingStyles("lg", $lgPadding)}
+	${({ $xlPadding }) => $xlPadding && generatePaddingStyles("xl", $xlPadding)}
+	${({ $xxlPadding }) => $xxlPadding && generatePaddingStyles("xxl", $xxlPadding)}
+	${({ $xxxlPadding }) =>
+		$xxxlPadding && generatePaddingStyles("xxxl", $xxxlPadding)}
 `;
 
 function Container({ ...props }: ContainerProps) {
