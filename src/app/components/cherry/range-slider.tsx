@@ -185,7 +185,7 @@ const StyledInput = styled.input<InputProps>`
 		} else {
 			return `
 					min-width: 130px;
-					height: 32px;
+					height: 22px;
 
 					&::-webkit-slider-runnable-track {
 						height: 10px;

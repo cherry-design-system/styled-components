@@ -44,7 +44,7 @@ const StyledInput = styled.input<InputProps>`
 	font-family: inherit;
 	display: inline-block;
 	padding: 15px;
-	border-radius: 6px;
+	border-radius: ${({ theme }) => theme.spacing.radius.xs};
 	font-weight: 400;
 	white-space: nowrap;
 	hyphens: auto;
@@ -148,7 +148,7 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
 		box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secondaryLight};
 	}
 
-	${({ type }) => (type === "checkbox" ? `border-radius: 6px;` : `border-radius: 50%;`)}
+	${({ type, theme }) => (type === "checkbox" ? `border-radius: ${theme.spacing.radius.xs};` : `border-radius: 50%;`)}
 
 	${({ disabled, theme }) =>
 		disabled &&

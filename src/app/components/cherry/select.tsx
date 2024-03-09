@@ -28,7 +28,7 @@ const StyledSelect = styled.select<SelectProps>`
 	font-family: inherit;
 	display: inline-block;
 	padding: 15px;
-	border-radius: 6px;
+	border-radius: ${({ theme }) => theme.spacing.radius.xs};
 	font-weight: 400;
 	white-space: nowrap;
 	hyphens: auto;
