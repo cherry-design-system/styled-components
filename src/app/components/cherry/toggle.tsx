@@ -2,8 +2,11 @@
 import React from "react";
 import styled from "styled-components";
 import { Theme } from "@/app/theme";
-import { StyledInputWrapper, StyledLabel } from "./input";
-import { resetButton, statusBorderStyles } from "./utils/global";
+import { StyledInputWrapper, StyledLabel } from "@/app/components/cherry/input";
+import {
+	resetButton,
+	statusBorderStyles,
+} from "@/app/components/cherry/utils/global";
 
 interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	children?: React.ReactNode;

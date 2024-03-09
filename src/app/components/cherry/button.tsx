@@ -2,7 +2,10 @@
 import React from "react";
 import styled from "styled-components";
 import { Theme } from "@/app/theme";
-import { formElementHeightStyles, resetButton } from "./utils/global";
+import {
+	formElementHeightStyles,
+	resetButton,
+} from "@/app/components/cherry/utils/global";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	children?: React.ReactNode;

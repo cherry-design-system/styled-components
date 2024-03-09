@@ -9,7 +9,7 @@ import { Select } from "@/app/components/cherry/select";
 import { Toggle } from "@/app/components/cherry/toggle";
 import { RangeSlider } from "@/app/components/cherry/range-slider";
 import { Space } from "@/app/components/cherry/space";
-import { Box } from "./components/cherry/box";
+import { Box } from "@/app/components/cherry/box";
 
 export const metadata: Metadata = {
 	title: "Cherry",

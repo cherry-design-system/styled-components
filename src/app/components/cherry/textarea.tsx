@@ -2,13 +2,13 @@
 import React from "react";
 import styled from "styled-components";
 import { Theme } from "@/app/theme";
-import { StyledInputWrapper, StyledLabel } from "./input";
+import { StyledInputWrapper, StyledLabel } from "@/app/components/cherry/input";
 import {
 	fullWidthStyles,
 	resetButton,
 	resetInput,
 	statusBorderStyles,
-} from "./utils/global";
+} from "@/app/components/cherry/utils/global";
 
 interface TextareaProps
 	extends Omit<React.InputHTMLAttributes<HTMLTextAreaElement>, "size"> {

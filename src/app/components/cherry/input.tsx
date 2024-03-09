@@ -2,14 +2,14 @@
 import React from "react";
 import styled from "styled-components";
 import { Theme } from "@/app/theme";
-import { IconCheck } from "./utils/icons";
+import { IconCheck } from "@/app/components/cherry/utils/icons";
 import {
 	formElementHeightStyles,
 	fullWidthStyles,
 	resetButton,
 	resetInput,
 	statusBorderStyles,
-} from "./utils/global";
+} from "@/app/components/cherry/utils/global";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	children?: React.ReactNode;

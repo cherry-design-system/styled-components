@@ -2,15 +2,15 @@
 import React from "react";
 import styled from "styled-components";
 import { Theme } from "@/app/theme";
-import { StyledInputWrapper, StyledLabel } from "./input";
+import { StyledInputWrapper, StyledLabel } from "@/app/components/cherry/input";
 import {
 	formElementHeightStyles,
 	fullWidthStyles,
 	resetButton,
 	resetInput,
 	statusBorderStyles,
-} from "./utils/global";
-import { IconArrow } from "./utils/icons";
+} from "@/app/components/cherry/utils/global";
+import { IconArrow } from "@/app/components/cherry/utils/icons";
 
 interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
 	children?: React.ReactNode;
