@@ -43,10 +43,7 @@ export default function RootLayout({
 					color="#ffffff"
 				/>
 				<link rel="shortcut icon" href={v("/favicons/favicon.ico")} />
-				<meta
-					name="apple-mobile-web-app-title"
-					content="Cherry"
-				/>
+				<meta name="apple-mobile-web-app-title" content="Cherry" />
 				<meta name="application-name" content="Cherry" />
 				<meta name="theme-color" content="#ffffff" />
 			</head>
