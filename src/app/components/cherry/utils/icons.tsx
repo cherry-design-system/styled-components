@@ -1,6 +1,9 @@
 import React from "react";
+import { useTheme } from "styled-components";
+import { Theme } from "@/app/theme";
 
 function IconCheck(props: React.SVGProps<SVGSVGElement>) {
+	const theme: Theme = useTheme() as Theme;
 	return (
 		<svg
 			width="12"
@@ -12,7 +15,7 @@ function IconCheck(props: React.SVGProps<SVGSVGElement>) {
 		>
 			<path
 				d="M10 2L4.4 8L2 5.75"
-				stroke="#0EA5E9"
+				stroke={theme.colors.primary}
 				strokeWidth="3"
 				strokeLinecap="round"
 				strokeLinejoin="round"
@@ -22,6 +25,7 @@ function IconCheck(props: React.SVGProps<SVGSVGElement>) {
 }
 
 function IconArrow(props: React.SVGProps<SVGSVGElement>) {
+	const theme: Theme = useTheme() as Theme;
 	return (
 		<svg
 			width="16"
@@ -33,7 +37,7 @@ function IconArrow(props: React.SVGProps<SVGSVGElement>) {
 		>
 			<path
 				d="M2 2L8 8L14 2"
-				stroke="#0EA5E9"
+				stroke={theme.colors.primary}
 				strokeWidth="3"
 				strokeLinecap="round"
 				strokeLinejoin="round"

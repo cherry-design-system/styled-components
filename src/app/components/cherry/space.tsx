@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import { mq } from "@/app/theme";
+import { Breakpoints, mq } from "@/app/theme";
 
 interface SpaceProps {
 	$size?: number | "none";
@@ -17,79 +17,34 @@ interface SpaceProps {
 
 const styles = ($size: number | "none", $horizontal: boolean) =>
 	$horizontal
-		? `
-				display: inline-block;
-				max-height: 0;
-				min-width: ${$size}px;
-				max-width: ${$size}px;`
-		: `
-				display: block;
-				min-height: ${$size}px;
-				max-height: ${$size}px;
-		  `;
+		? `display: inline-block;
+			max-height: 0;
+			min-width: ${$size}px;
+			max-width: ${$size}px;`
+		: `display: block;
+			min-height: ${$size}px;
+			max-height: ${$size}px;`;
+
+function responsiveStyles(props: any) {
+	return Object.keys(props)
+		.filter((key) => key.startsWith("$"))
+		.map((key) => {
+			const size = key.substring(1) as keyof Breakpoints<number>;
+			return (
+				props[key] &&
+				mq(size) +
+					`{ ${styles(props[key], props.$horizontal || false)} }`
+			);
+		})
+		.join("");
+}
 
 const StyledSpace = styled.span<SpaceProps>`
 	${({ $horizontal, $size }) => `
 		${$size && styles($size, $horizontal || false)};
 		${$size === "none" && `display: none;`};
 	`}
-
-	${({ $xs, $horizontal }) =>
-		$xs &&
-		`
-			${mq("xs")} {
-				${styles($xs, $horizontal || false)};
-				${$xs === "none" && `display: none;`};
-			}
-		`};
-	${({ $sm, $horizontal }) =>
-		$sm &&
-		`
-			${mq("sm")} {
-				${styles($sm, $horizontal || false)};
-				${$sm === "none" && `display: none;`};
-			}
-		`};
-	${({ $md, $horizontal }) =>
-		$md &&
-		`
-			${mq("md")} {
-				${styles($md, $horizontal || false)};
-				${$md === "none" && `display: none;`};
-			}
-		`};
-	${({ $lg, $horizontal }) =>
-		$lg &&
-		`
-			${mq("lg")} {
-				${styles($lg, $horizontal || false)};
-				${$lg === "none" && `display: none;`};
-			}
-		`};
-	${({ $xl, $horizontal }) =>
-		$xl &&
-		`
-			${mq("xl")} {
-				${styles($xl, $horizontal || false)};
-				${$xl === "none" && `display: none;`};
-			}
-		`};
-	${({ $xxl, $horizontal }) =>
-		$xxl &&
-		`
-			${mq("xxl")} {
-				${styles($xxl, $horizontal || false)};
-				${$xxl === "none" && `display: none;`};
-			}
-		`};
-	${({ $xxxl, $horizontal }) =>
-		$xxxl &&
-		`
-			${mq("xxxl")} {
-				${styles($xxxl, $horizontal || false)};
-				${$xxxl === "none" && `display: none;`};
-			}
-		`};
+	${(props) => responsiveStyles(props)}
 `;
 
 function Space({ ...props }: SpaceProps) {
