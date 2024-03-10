@@ -7,7 +7,7 @@ import { Input } from "@/app/components/cherry/input";
 import { Textarea } from "@/app/components/cherry/textarea";
 import { Select } from "@/app/components/cherry/select";
 import { Toggle } from "@/app/components/cherry/toggle";
-import { RangeSlider } from "@/app/components/cherry/range-slider";
+import { Range } from "@/app/components/cherry/range";
 import { Space } from "@/app/components/cherry/space";
 import { Box } from "@/app/components/cherry/box";
 import { Grid } from "@/app/components/cherry/grid";
@@ -290,19 +290,19 @@ export default function Home() {
 				<Space $xs={20} $lg={40} />
 				<Box>
 					<Grid $xsCols={1} $xlCols={4}>
-						<RangeSlider placeholder="Input" />
-						<RangeSlider placeholder="Input" disabled />
-						<RangeSlider placeholder="Input" $success />
-						<RangeSlider placeholder="Input" $error />
+						<Range placeholder="Input" />
+						<Range placeholder="Input" disabled />
+						<Range placeholder="Input" $success />
+						<Range placeholder="Input" $error />
 					</Grid>
 				</Box>
 				<Space $xs={20} $lg={40} />
 				<Box>
 					<Grid $xsCols={1} $xlCols={4}>
-						<RangeSlider placeholder="Input" $size="big" />
-						<RangeSlider placeholder="Input" disabled $size="big" />
-						<RangeSlider placeholder="Input" $success $size="big" />
-						<RangeSlider placeholder="Input" $error $size="big" />
+						<Range placeholder="Input" $size="big" />
+						<Range placeholder="Input" disabled $size="big" />
+						<Range placeholder="Input" $success $size="big" />
+						<Range placeholder="Input" $error $size="big" />
 					</Grid>
 				</Box>
 				<Space $xs={20} $lg={40} />

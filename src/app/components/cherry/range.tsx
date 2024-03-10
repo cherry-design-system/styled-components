@@ -210,7 +210,7 @@ const StyledInput = styled.input<InputProps>`
 	}}}
 `;
 
-function RangeSlider({ ...props }: InputProps) {
+function Range({ ...props }: InputProps) {
 	return (
 		<StyledInputWrapper $fullWidth={props.$fullWidth}>
 			{props.$label && (
@@ -221,4 +221,4 @@ function RangeSlider({ ...props }: InputProps) {
 	);
 }
 
-export { RangeSlider };
+export { Range };
