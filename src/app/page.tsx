@@ -16,6 +16,13 @@ import { Col } from "@/app/components/cherry/col";
 export const metadata: Metadata = {
 	title: "Cherry",
 	description: "Design System",
+	openGraph: {
+		title: "Cherry",
+		description: "Design System",
+		type: "website",
+		url: "https://cherry.design",
+		images: "https://cherry.design/favicons/og-preview.jpg",
+	},
 };
 
 export default function Home() {
