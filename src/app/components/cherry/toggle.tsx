@@ -30,7 +30,7 @@ const StyledFakeToggle = styled.span<ToggleProps>`
 	display: block;
 	border: solid 2px ${({ theme }) => theme.colors.grayLight};
 	background: ${({ theme }) => theme.colors.light};
-	border-radius: 30px;
+	border-radius: ${({ theme }) => theme.spacing.radius.xl};
 	pointer-events: none;
 	transition: all 0.3s ease;
 	box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primaryLight};
@@ -59,9 +59,9 @@ const StyledFakeToggle = styled.span<ToggleProps>`
 		width: calc(100% - 10px);
 		height: calc(100% - 10px);
 		max-width: 0;
-		border-radius: 30px;
-		transition: all 0.3s ease;
+		border-radius: ${({ theme }) => theme.spacing.radius.xl};
 		background: ${({ theme }) => theme.colors.light};
+		transition: all 0.3s ease;
 	}
 
 	&::after {

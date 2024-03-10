@@ -15,7 +15,7 @@ export function mq(minWidth: keyof Breakpoints) {
 export const spacing: Spacing = {
 	maxWidth: { xs: "1280px", xxxl: "1440px" },
 	padding: { xs: "20px", lg: "40px" },
-	radius: { xs: "6px", lg: "12px" },
+	radius: { xs: "6px", lg: "12px", xl: "30px" },
 	gridGap: { xs: "20px", lg: "40px" },
 };
 
@@ -126,7 +126,7 @@ export interface Breakpoints<TNumber = number> {
 export interface Spacing<TString = string> {
 	maxWidth: { xs: TString; xxxl: TString };
 	padding: { xs: TString; lg: TString };
-	radius: { xs: TString; lg: TString };
+	radius: { xs: TString; lg: TString; xl: TString };
 	gridGap: { xs: TString; lg: TString };
 }
 

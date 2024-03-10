@@ -36,11 +36,12 @@ const StyledInput = styled.input<InputProps>`
 	height: 10px;
 	font-size: 0;
 	background: transparent;
+	min-width: 235px;
 
 	&::-webkit-slider-runnable-track {
 		width: 100%;
 		cursor: pointer;
-		border-radius: 25px;
+		border-radius: ${({ theme }) => theme.spacing.radius.xl};
 		border: solid 2px ${({ theme }) => theme.colors.grayLight};,
 		box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primaryLight};
 		transition: all 0.3s ease;
@@ -56,7 +57,7 @@ const StyledInput = styled.input<InputProps>`
 	&::-moz-range-track {
 		width: 100%;
 		cursor: pointer;
-		border-radius: 25px;
+		border-radius: ${({ theme }) => theme.spacing.radius.xl};
 		border: solid 2px ${({ theme }) => theme.colors.grayLight};,
 		box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primaryLight};
 		transition: all 0.3s ease;
@@ -160,7 +161,6 @@ const StyledInput = styled.input<InputProps>`
 	${({ $size }) => {
 		if ($size === "big") {
 			return `
-					min-width: 200px;
 					height: 32px;
 
 					&::-webkit-slider-runnable-track {
@@ -168,7 +168,7 @@ const StyledInput = styled.input<InputProps>`
 					}
 
 					&::-moz-range-track {
-						height: 14px;
+						height: 10px;
 					}
 
 					&::-webkit-slider-thumb {
@@ -184,7 +184,6 @@ const StyledInput = styled.input<InputProps>`
 				`;
 		} else {
 			return `
-					min-width: 130px;
 					height: 22px;
 
 					&::-webkit-slider-runnable-track {
@@ -192,7 +191,7 @@ const StyledInput = styled.input<InputProps>`
 					}
 
 					&::-moz-range-track {
-						height: 10px;
+						height: 6px;
 					}
 
 					&::-webkit-slider-thumb {
