@@ -10,7 +10,7 @@ const StyledHeader = styled.header<{ theme: Theme }>`
 	background: ${({ theme }) => theme.colors.light};
 	border-radius: 100px;
 	max-width: calc(100% - 40px);
-	margin: 40px auto 0;
+	margin: 20px auto 0;
 	position: sticky;
 	top: 20px;
 	z-index: 100;
@@ -20,6 +20,7 @@ const StyledHeader = styled.header<{ theme: Theme }>`
 		0px 1px 0px 0px rgba(0, 0, 0, 0.05);
 
 	${mq("lg")} {
+		margin: 40px auto 0;
 		max-width: 800px;
 	}
 
@@ -31,17 +32,13 @@ const StyledHeader = styled.header<{ theme: Theme }>`
 const StyledBg = styled.span<{ theme: Theme }>`
 	width: 100vw;
 	height: 100svh;
-	background: linear-gradient(
-		${({ theme }) => theme.colors.secondary},
-		${({ theme }) => theme.colors.tertiary}
-	);
-	filter: blur(500px);
+	background: url("/bg.jpg");
 	background-size: cover;
 	position: absolute;
-	top: -50%;
+	top: 0;
 	left: 0;
 	z-index: -1;
-	opacity: 0.1;
+	opacity: 0.5;
 `;
 
 export default function Header() {
