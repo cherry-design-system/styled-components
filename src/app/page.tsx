@@ -148,12 +148,6 @@ export default function Home() {
 				</Box>
 				<Space $xs={20} $lg={40} />
 				<Box>
-					<Flex>
-						<Input placeholder="Input" $label="Label" $fullWidth />
-					</Flex>
-				</Box>
-				<Space $xs={20} $lg={40} />
-				<Box>
 					<Grid $xsCols={1} $xlCols={4}>
 						<Input placeholder="Input" $size="big" $fullWidth />
 						<Input
