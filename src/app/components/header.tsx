@@ -31,8 +31,11 @@ const StyledHeader = styled.header<{ theme: Theme }>`
 const StyledBg = styled.span<{ theme: Theme }>`
 	width: 100vw;
 	height: 100svh;
-	background: linear-gradient(${({ theme }) => theme.colors.secondary}, ${({ theme }) => theme.colors.tertiary});
-	filter: blur(500px);+
+	background: linear-gradient(
+		${({ theme }) => theme.colors.secondary},
+		${({ theme }) => theme.colors.tertiary}
+	);
+	filter: blur(500px);
 	background-size: cover;
 	position: absolute;
 	top: -50%;
