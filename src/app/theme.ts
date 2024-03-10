@@ -79,9 +79,9 @@ export const fontSizes: FontSizes = {
 };
 
 export const lineHeights: LineHeights = {
-	hero1: { xs: "1.3", lg: "1.1" },
-	hero2: { xs: "1.3", lg: "1.2" },
-	hero3: { xs: "1.4", lg: "1.3" },
+	hero1: { xs: "1.1", lg: "1.1" },
+	hero2: { xs: "1.1", lg: "1.2" },
+	hero3: { xs: "1.2", lg: "1.1" },
 
 	h1: { xs: "1.5", lg: "1.4" },
 	h2: { xs: "1.5", lg: "1.5" },
