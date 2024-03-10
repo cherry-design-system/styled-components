@@ -96,10 +96,11 @@ export const StyledIconWrapper = styled.span<SelectProps>`
 		right: 15px;
 		transform: translateY(-50%) rotate(0);
 		transition: all 0.3s ease;
+		pointer-events: none;
 	}
 
-	& select:active ~ svg,
-	& select:focus ~ svg {
+	& select:active:not([disabled]) ~ svg,
+	& select:focus:not([disabled]) ~ svg {
 		transform: translateY(-50%) rotate(180deg);
 	}
 `;
