@@ -33,9 +33,9 @@ export const StyledInputWrapper = styled.span<InputProps>`
 
 export const StyledLabel = styled.label<InputProps>`
 	display: inline-block;
-	color: ${({ theme }) => theme.colors.gray};
+	color: ${({ theme }) => theme.colors.grayDark};
 	font-size: ${({ theme }) => theme.fontSizes.text.lg};
-	line-height: : ${({ theme }) => theme.lineHeights.text.lg};
+	line-height: ${({ theme }) => theme.lineHeights.text.lg};
 `;
 
 const StyledInput = styled.input<InputProps>`
@@ -51,7 +51,7 @@ const StyledInput = styled.input<InputProps>`
 	color: ${({ theme }) => theme.colors.dark};
 	background: ${({ theme }) => theme.colors.light};
 	border: solid 2px ${({ theme }) => theme.colors.grayLight};
-	box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.secondaryLight};
+	box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.primaryLight};
 	transition: all 0.3s ease;
 
 	&::placeholder {
@@ -60,17 +60,17 @@ const StyledInput = styled.input<InputProps>`
 
 	@media (hover: hover) {
 		&:hover:not([disabled]) {
-			border-color: ${({ theme }) => theme.colors.secondary};
+			border-color: ${({ theme }) => theme.colors.primary};
 		}
 	}
 
 	&:focus:not([disabled]) {
-		box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.secondaryLight};
-		border-color: ${({ theme }) => theme.colors.secondary};
+		box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.primaryLight};
+		border-color: ${({ theme }) => theme.colors.primary};
 	}
 
 	&:active:not([disabled]) {
-		box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secondaryLight};
+		box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primaryLight};
 	}
 
 	${({ $size }) => formElementHeightStyles($size)}
@@ -110,7 +110,7 @@ const StyledIconWrapper = styled.span<InputProps>`
 	& em {
 		display: block;
 		border-radius: 50%;
-		background: ${({ theme }) => theme.colors.secondary};
+		background: ${({ theme }) => theme.colors.primary};
 	}
 
 	& svg,
@@ -130,22 +130,22 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
 	${resetButton};
 	display: inline-block;
 	border: solid 2px ${({ theme }) => theme.colors.grayLight};
-	box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.secondaryLight};
+	box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.primaryLight};
 	transition: all 0.3s ease;
 
 	@media (hover: hover) {
 		&:hover:not([disabled]) {
-			border-color: ${({ theme }) => theme.colors.secondary};
+			border-color: ${({ theme }) => theme.colors.primary};
 		}
 	}
 
 	&:focus:not([disabled]) {
-		box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.secondaryLight};
-		border-color: ${({ theme }) => theme.colors.secondary};
+		box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.primaryLight};
+		border-color: ${({ theme }) => theme.colors.primary};
 	}
 
 	&:active:not([disabled]) {
-		box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secondaryLight};
+		box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primaryLight};
 	}
 
 	${({ type, theme }) => (type === "checkbox" ? `border-radius: ${theme.spacing.radius.xs};` : `border-radius: 50%;`)}
@@ -164,20 +164,6 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
 			$success ? true : false,
 			theme,
 		);
-	}}
-
-	${({ $error, $success, theme }) => {
-		if ($error) {
-			return `
-				border-color: ${theme.colors.error};
-			`;
-		}
-
-		if ($success) {
-			return `
-				border-color: ${theme.colors.success};
-			`;
-		}
 	}}
 
 	${({ $size }) => {

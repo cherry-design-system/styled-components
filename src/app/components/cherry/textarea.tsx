@@ -34,7 +34,7 @@ const StyledTextarea = styled.textarea<TextareaProps>`
 	color: ${({ theme }) => theme.colors.dark};
 	background: ${({ theme }) => theme.colors.light};
 	border: solid 2px ${({ theme }) => theme.colors.grayLight};
-	box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.secondaryLight};
+	box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.primaryLight};
 	transition: all 0.3s ease;
 	min-height: 80px;
 
@@ -44,17 +44,17 @@ const StyledTextarea = styled.textarea<TextareaProps>`
 
 	@media (hover: hover) {
 		&:hover:not([disabled]) {
-			border-color: ${({ theme }) => theme.colors.secondary};
+			border-color: ${({ theme }) => theme.colors.primary};
 		}
 	}
 
 	&:focus:not([disabled]) {
-		box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.secondaryLight};
-		border-color: ${({ theme }) => theme.colors.secondary};
+		box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.primaryLight};
+		border-color: ${({ theme }) => theme.colors.primary};
 	}
 
 	&:active:not([disabled]) {
-		box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secondaryLight};
+		box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primaryLight};
 	}
 
 	${({ $size, theme }) =>

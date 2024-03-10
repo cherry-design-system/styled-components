@@ -10,7 +10,7 @@ const StyledHeader = styled.header<{ theme: Theme }>`
 	background: ${({ theme }) => theme.colors.light};
 	border-radius: 100px;
 	max-width: calc(100% - 40px);
-	margin: auto auto 20px;
+	margin: 40px auto 0;
 	position: sticky;
 	top: 20px;
 	z-index: 100;
@@ -38,7 +38,7 @@ const StyledBg = styled.span<{ theme: Theme }>`
 	top: -50%;
 	left: 0;
 	z-index: -1;
-	opacity: 0.3;
+	opacity: 0.1;
 `;
 
 export default function Header() {

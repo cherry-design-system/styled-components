@@ -83,30 +83,68 @@ export default function Home() {
 				</Box>
 				<Space $xs={20} $lg={40} />
 				<Box>
-					<Flex>
-						<Input type="checkbox" $label="Checkbox" />
-						<Input type="checkbox" $label="Checkbox" disabled />
-						<Input type="checkbox" $label="Checkbox" $success />
-						<Input type="checkbox" $label="Checkbox" $error />
-					</Flex>
+					<Grid $xsCols={1} $xlCols={4}>
+						<Input type="checkbox" id="check-1" $label="Checkbox" />
+						<Input
+							type="checkbox"
+							id="check-2"
+							disabled
+							$label="Checkbox"
+						/>
+						<Input
+							type="checkbox"
+							id="check-3"
+							$label="Checkbox"
+							$success
+						/>
+						<Input
+							type="checkbox"
+							id="check-4"
+							$label="Checkbox"
+							$error
+						/>
+					</Grid>
 				</Box>
 				<Space $xs={20} $lg={40} />
 				<Box>
-					<Flex>
-						<Input type="radio" $label="Radio" />
-						<Input type="radio" $label="Radio" disabled />
-						<Input type="radio" $label="Radio" $success />
-						<Input type="radio" $label="Radio" $error />
-					</Flex>
+					<Grid $xsCols={1} $xlCols={4}>
+						<Input
+							type="radio"
+							id="radio-1"
+							name="radio-1"
+							$label="Radio"
+						/>
+						<Input
+							type="radio"
+							disabled
+							id="radio-2"
+							name="radio-1"
+							$label="Radio"
+						/>
+						<Input
+							type="radio"
+							id="radio-3"
+							name="radio-1"
+							$label="Radio"
+							$success
+						/>
+						<Input
+							type="radio"
+							id="radio-4"
+							name="radio-1"
+							$label="Radio"
+							$error
+						/>
+					</Grid>
 				</Box>
 				<Space $xs={20} $lg={40} />
 				<Box>
-					<Flex>
-						<Input placeholder="Input" />
-						<Input placeholder="Input" disabled />
-						<Input placeholder="Input" $success />
-						<Input placeholder="Input" $error />
-					</Flex>
+					<Grid $xsCols={1} $xlCols={4}>
+						<Input placeholder="Input" $fullWidth />
+						<Input placeholder="Input" disabled $fullWidth />
+						<Input placeholder="Input" $success $fullWidth />
+						<Input placeholder="Input" $error $fullWidth />
+					</Grid>
 				</Box>
 				<Space $xs={20} $lg={40} />
 				<Box>
@@ -116,98 +154,170 @@ export default function Home() {
 				</Box>
 				<Space $xs={20} $lg={40} />
 				<Box>
-					<Flex>
-						<Input placeholder="Input" $size="big" />
-						<Input placeholder="Input" disabled $size="big" />
-						<Input placeholder="Input" $size="big" $success />
-						<Input placeholder="Input" $size="big" $error />
-					</Flex>
+					<Grid $xsCols={1} $xlCols={4}>
+						<Input placeholder="Input" $size="big" $fullWidth />
+						<Input
+							placeholder="Input"
+							disabled
+							$size="big"
+							$fullWidth
+						/>
+						<Input
+							placeholder="Input"
+							$size="big"
+							$success
+							$fullWidth
+						/>
+						<Input
+							placeholder="Input"
+							$size="big"
+							$error
+							$fullWidth
+						/>
+					</Grid>
 				</Box>
 				<Space $xs={20} $lg={40} />
 				<Box>
-					<Flex>
-						<Textarea placeholder="Textarea" />
-						<Textarea placeholder="Textarea" disabled />
-						<Textarea placeholder="Textarea" $size="big" $success />
-						<Textarea placeholder="Textarea" $size="big" $error />
-					</Flex>
+					<Grid $xsCols={1} $xlCols={4}>
+						<Textarea placeholder="Textarea" $fullWidth />
+						<Textarea placeholder="Textarea" disabled $fullWidth />
+						<Textarea
+							placeholder="Textarea"
+							$size="big"
+							$success
+							$fullWidth
+						/>
+						<Textarea
+							placeholder="Textarea"
+							$size="big"
+							$error
+							$fullWidth
+						/>
+					</Grid>
 				</Box>
 				<Space $xs={20} $lg={40} />
 				<Box>
-					<Flex>
-						<Select placeholder="Input">
+					<Grid $xsCols={1} $xlCols={4}>
+						<Select
+							id="select-1"
+							placeholder="Input"
+							$label="Select"
+							$fullWidth
+						>
 							<option value="1">Sample</option>
 						</Select>
-						<Select placeholder="Input" disabled>
+						<Select
+							id="select-2"
+							placeholder="Input"
+							disabled
+							$label="Select"
+							$fullWidth
+						>
 							<option value="1">Sample</option>
 						</Select>
-						<Select placeholder="Input" $success>
+						<Select
+							id="select-3"
+							placeholder="Input"
+							$success
+							$label="Select"
+							$fullWidth
+						>
 							<option value="1">Sample</option>
 						</Select>
-						<Select placeholder="Input" $error>
+						<Select
+							id="select-4"
+							placeholder="Input"
+							$error
+							$label="Select"
+							$fullWidth
+						>
 							<option value="1">Sample</option>
 						</Select>
-					</Flex>
+					</Grid>
 				</Box>
 				<Space $xs={20} $lg={40} />
 				<Box>
-					<Flex>
-						<Select placeholder="Input" $size="big">
+					<Grid $xsCols={1} $xlCols={4}>
+						<Select
+							id="select-5"
+							placeholder="Input"
+							$size="big"
+							$label="Select"
+						>
 							<option value="1">Sample</option>
 						</Select>
-						<Select placeholder="Input" disabled $size="big">
+						<Select
+							id="select-6"
+							placeholder="Input"
+							disabled
+							$size="big"
+							$label="Select"
+						>
 							<option value="1">Sample</option>
 						</Select>
-						<Select placeholder="Input" $size="big" $success>
+						<Select
+							id="select-7"
+							placeholder="Input"
+							$size="big"
+							$success
+							$label="Select"
+						>
 							<option value="1">Sample</option>
 						</Select>
-						<Select placeholder="Input" $size="big" $error>
+						<Select
+							id="select-8"
+							placeholder="Input"
+							$size="big"
+							$error
+							$label="Select"
+						>
 							<option value="1">Sample</option>
 						</Select>
-					</Flex>
+					</Grid>
 				</Box>
 				<Space $xs={20} $lg={40} />
 				<Box>
-					<Flex>
+					<Grid $xsCols={1} $xlCols={4}>
 						<Toggle placeholder="Input" />
 						<Toggle placeholder="Input" disabled />
 						<Toggle placeholder="Input" $success />
 						<Toggle placeholder="Input" $error />
-					</Flex>
+					</Grid>
 				</Box>
 				<Space $xs={20} $lg={40} />
 				<Box>
-					<Flex>
+					<Grid $xsCols={1} $xlCols={4}>
 						<Toggle placeholder="Input" $size="big" />
 						<Toggle placeholder="Input" disabled $size="big" />
 						<Toggle placeholder="Input" $success $size="big" />
 						<Toggle placeholder="Input" $error $size="big" />
-					</Flex>
+					</Grid>
 				</Box>
 				<Space $xs={20} $lg={40} />
 				<Box>
-					<Flex>
+					<Grid $xsCols={1} $xlCols={4}>
 						<RangeSlider placeholder="Input" />
 						<RangeSlider placeholder="Input" disabled />
 						<RangeSlider placeholder="Input" $success />
 						<RangeSlider placeholder="Input" $error />
-					</Flex>
+					</Grid>
 				</Box>
 				<Space $xs={20} $lg={40} />
 				<Box>
-					<Flex>
+					<Grid $xsCols={1} $xlCols={4}>
 						<RangeSlider placeholder="Input" $size="big" />
 						<RangeSlider placeholder="Input" disabled $size="big" />
 						<RangeSlider placeholder="Input" $success $size="big" />
 						<RangeSlider placeholder="Input" $error $size="big" />
-					</Flex>
+					</Grid>
 				</Box>
 				<Space $xs={20} $lg={40} />
-				<Grid $xsCols={2}>
+				<Grid $xsCols={3}>
 					<Box>1</Box>
 					<Box>2</Box>
-					<Col $span={2}>
-						<Box>3</Box>
+					<Box>3</Box>
+					<Col $span={3}>
+						<Box>4</Box>
 					</Col>
 				</Grid>
 				<Space $xs={20} $lg={40} />

@@ -33,7 +33,7 @@ const StyledFakeToggle = styled.span<ToggleProps>`
 	border-radius: 30px;
 	pointer-events: none;
 	transition: all 0.3s ease;
-	box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.secondaryLight};
+	box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primaryLight};
 	transform: none;
 	width: ${({ $size }) => ($size === "big" ? "56px" : "46px")};
 	height: ${({ $size }) => ($size === "big" ? "32px" : "22px")};
@@ -70,7 +70,7 @@ const StyledFakeToggle = styled.span<ToggleProps>`
 		border-radius: 50%;
 		transition: all 0.3s ease;
 		transform: translateX(0);
-		background: ${({ theme }) => theme.colors.secondary};
+		background: ${({ theme }) => theme.colors.primary};
 		width: ${({ $size }) => ($size === "big" ? "32px" : "22px")};
 		height: ${({ $size }) => ($size === "big" ? "32px" : "22px")};
 	}
@@ -89,7 +89,7 @@ const StyledToggle = styled.input<ToggleProps>`
 	&:checked ~ .fake-toggle {
 		&::before {
 			max-width: 46px;
-			background: ${({ theme }) => theme.colors.secondaryLight};
+			background: ${({ theme }) => theme.colors.primaryLight};
 		}
 
 		&::after {
@@ -99,18 +99,18 @@ const StyledToggle = styled.input<ToggleProps>`
 
 	@media (hover: hover) {
 		&:hover:not([disabled]) ~ .fake-toggle {
-			border-color: ${({ theme }) => theme.colors.secondary};
+			border-color: ${({ theme }) => theme.colors.primary};
 		}
 	}
 
 	&:focus:not([disabled]) ~ .fake-toggle {
 		outline: none;
-		border-color: ${({ theme }) => theme.colors.secondary};
-		box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.secondaryLight};
+		border-color: ${({ theme }) => theme.colors.primary};
+		box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.primaryLight};
 	}
 
 	&:active:not([disabled]) ~ .fake-toggle {
-		box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secondaryLight};
+		box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primaryLight};
 	}
 
 	${({ disabled, theme }) =>

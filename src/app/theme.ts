@@ -20,29 +20,29 @@ export const spacing: Spacing = {
 };
 
 export const colors: Colors = {
-	primaryLight: "#fda4af",
-	primary: "#f43f5e",
-	primaryDark: "#9f1239",
+	primaryLight: "#91AEC4",
+	primary: "#4D6F8B",
+	primaryDark: "#194569",
 
-	secondaryLight: "#7dd3fc",
-	secondary: "#0ea5e9",
-	secondaryDark: "#075985",
+	secondaryLight: "#A4B17B",
+	secondary: "#5C6E46",
+	secondaryDark: "#354C2B",
 
-	tertiaryLight: "#d8b4fe",
-	tertiary: "#a855f7",
-	tertiaryDark: "#6b21a8",
+	tertiaryLight: "#EBCCB9",
+	tertiary: "#816B5A",
+	tertiaryDark: "#675445",
+
+	grayLight: "#E5E7EB",
+	gray: "#9CA3AF",
+	grayDark: "#4B5563",
+
+	success: "#84CC16",
+	error: "#EF4444",
+	warning: "#EAB308",
+	info: "#06B6D4",
 
 	dark: "#000000",
-	light: "#ffffff",
-
-	grayLight: "#e5e7eb",
-	gray: "#9ca3af",
-	grayDark: "#4b5563",
-
-	success: "#28a745",
-	error: "#dc3545",
-	warning: "#ffc107",
-	info: "#17a2b8",
+	light: "#FFFFFF",
 };
 
 export const fonts: Fonts = {
@@ -53,26 +53,16 @@ export const fonts: Fonts = {
 };
 
 export const fontSizes: FontSizes = {
-	hero1: { xs: "52px", lg: "62px" },
-	hero2: { xs: "42px", lg: "52px" },
-	hero3: { xs: "32px", lg: "42px" },
+	hero1: { xs: "72px", lg: "128px" },
+	hero2: { xs: "60px", lg: "96px" },
+	hero3: { xs: "36px", lg: "72px" },
 
-	h1: { xs: "30px", lg: "40px" },
-	h2: { xs: "22px", lg: "32px" },
-	h3: { xs: "18px", lg: "28px" },
-	h4: { xs: "16px", lg: "24px" },
-	h5: { xs: "14px", lg: "20px" },
-	h6: { xs: "12px", lg: "18px" },
-
-	eyebrow: { xs: "16px", lg: "18px" },
-	subtitle: { xs: "18px", lg: "20px" },
-	lead: { xs: "16px", lg: "18px" },
-
-	button: { xs: "16px", lg: "16px" },
-	buttonBig: { xs: "18px", lg: "18px" },
-
-	input: { xs: "16px", lg: "16px" },
-	inputBig: { xs: "18px", lg: "18px" },
+	h1: { xs: "40px", lg: "60px" },
+	h2: { xs: "30px", lg: "36px" },
+	h3: { xs: "28px", lg: "30px" },
+	h4: { xs: "26px", lg: "24px" },
+	h5: { xs: "18px", lg: "20px" },
+	h6: { xs: "16px", lg: "18px" },
 
 	text: { xs: "14px", lg: "16px" },
 	strong: { xs: "14px", lg: "16px" },
@@ -80,36 +70,38 @@ export const fontSizes: FontSizes = {
 
 	blockquote: { xs: "14px", lg: "18px" },
 	code: { xs: "14px", lg: "18px" },
+
+	button: { xs: "16px", lg: "16px" },
+	buttonBig: { xs: "18px", lg: "18px" },
+
+	input: { xs: "16px", lg: "16px" },
+	inputBig: { xs: "18px", lg: "18px" },
 };
 
 export const lineHeights: LineHeights = {
-	hero1: { xs: "1.15", lg: "1.15" },
-	hero2: { xs: "1.15", lg: "1.15" },
-	hero3: { xs: "1.15", lg: "1.15" },
+	hero1: { xs: "1.3", lg: "1.1" },
+	hero2: { xs: "1.3", lg: "1.2" },
+	hero3: { xs: "1.4", lg: "1.3" },
 
-	h1: { xs: "1.20", lg: "1.20" },
-	h2: { xs: "1.20", lg: "1.20" },
-	h3: { xs: "1.20", lg: "1.20" },
-	h4: { xs: "1.30", lg: "1.30" },
-	h5: { xs: "1.40", lg: "1.40" },
-	h6: { xs: "1.40", lg: "1.40" },
+	h1: { xs: "1.5", lg: "1.4" },
+	h2: { xs: "1.5", lg: "1.5" },
+	h3: { xs: "1.5", lg: "1.6" },
+	h4: { xs: "1.5", lg: "1.6" },
+	h5: { xs: "1.7", lg: "1.6" },
+	h6: { xs: "1.7", lg: "1.7" },
 
-	eyebrow: { xs: "1.35", lg: "1.35" },
-	subtitle: { xs: "1.35", lg: "1.35" },
-	lead: { xs: "1.35", lg: "1.35" },
+	text: { xs: "1.7", lg: "1.7" },
+	strong: { xs: "1.7", lg: "1.7" },
+	small: { xs: "1.7", lg: "1.7" },
+
+	blockquote: { xs: "1.7", lg: "1.7" },
+	code: { xs: "1.7", lg: "1.7" },
 
 	button: { xs: "1", lg: "1" },
 	buttonBig: { xs: "1", lg: "1" },
 
 	input: { xs: "1", lg: "1" },
 	inputBig: { xs: "1", lg: "1" },
-
-	text: { xs: "1.50", lg: "1.50" },
-	strong: { xs: "1.50", lg: "1.50" },
-	small: { xs: "1.30", lg: "1.30" },
-
-	blockquote: { xs: "1.50", lg: "1.50" },
-	code: { xs: "1.50", lg: "1.50" },
 };
 
 export const theme: Theme = {
@@ -151,9 +143,6 @@ export interface Colors<TString = string> {
 	tertiary: TString;
 	tertiaryDark: TString;
 
-	dark: TString;
-	light: TString;
-
 	grayLight: TString;
 	gray: TString;
 	grayDark: TString;
@@ -162,6 +151,9 @@ export interface Colors<TString = string> {
 	error: TString;
 	warning: TString;
 	info: TString;
+
+	dark: TString;
+	light: TString;
 }
 
 export interface Fonts<TString = string> {
@@ -183,22 +175,18 @@ export interface FontSizes<TString = string> {
 	h5: { xs: TString; lg: TString };
 	h6: { xs: TString; lg: TString };
 
-	eyebrow: { xs: TString; lg: TString };
-	subtitle: { xs: TString; lg: TString };
-	lead: { xs: TString; lg: TString };
-
-	button: { xs: TString; lg: TString };
-	buttonBig: { xs: TString; lg: TString };
-
-	input: { xs: TString; lg: TString };
-	inputBig: { xs: TString; lg: TString };
-
 	text: { xs: TString; lg: TString };
 	strong: { xs: TString; lg: TString };
 	small: { xs: TString; lg: TString };
 
 	blockquote: { xs: TString; lg: TString };
 	code: { xs: TString; lg: TString };
+
+	button: { xs: TString; lg: TString };
+	buttonBig: { xs: TString; lg: TString };
+
+	input: { xs: TString; lg: TString };
+	inputBig: { xs: TString; lg: TString };
 }
 
 export interface LineHeights<TString = string> {
@@ -213,22 +201,18 @@ export interface LineHeights<TString = string> {
 	h5: { xs: TString; lg: TString };
 	h6: { xs: TString; lg: TString };
 
-	eyebrow: { xs: TString; lg: TString };
-	subtitle: { xs: TString; lg: TString };
-	lead: { xs: TString; lg: TString };
-
-	button: { xs: TString; lg: TString };
-	buttonBig: { xs: TString; lg: TString };
-
-	input: { xs: TString; lg: TString };
-	inputBig: { xs: TString; lg: TString };
-
 	text: { xs: TString; lg: TString };
 	strong: { xs: TString; lg: TString };
 	small: { xs: TString; lg: TString };
 
 	blockquote: { xs: TString; lg: TString };
 	code: { xs: TString; lg: TString };
+
+	button: { xs: TString; lg: TString };
+	buttonBig: { xs: TString; lg: TString };
+
+	input: { xs: TString; lg: TString };
+	inputBig: { xs: TString; lg: TString };
 }
 
 export interface Theme {

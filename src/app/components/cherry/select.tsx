@@ -35,7 +35,7 @@ const StyledSelect = styled.select<SelectProps>`
 	color: ${({ theme }) => theme.colors.dark};
 	background: ${({ theme }) => theme.colors.light};
 	border: solid 2px ${({ theme }) => theme.colors.grayLight};
-	box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.secondaryLight};
+	box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.primaryLight};
 	transition: all 0.3s ease;
 
 	&::placeholder {
@@ -44,17 +44,17 @@ const StyledSelect = styled.select<SelectProps>`
 
 	@media (hover: hover) {
 		&:hover:not([disabled]) {
-			border-color: ${({ theme }) => theme.colors.secondary};
+			border-color: ${({ theme }) => theme.colors.primary};
 		}
 	}
 
 	&:focus:not([disabled]) {
-		box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.secondaryLight};
-		border-color: ${({ theme }) => theme.colors.secondary};
+		box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.primaryLight};
+		border-color: ${({ theme }) => theme.colors.primary};
 	}
 
 	&:active:not([disabled]) {
-		box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secondaryLight};
+		box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primaryLight};
 	}
 
 	${({ $size }) => formElementHeightStyles($size)}
@@ -88,6 +88,7 @@ const StyledSelect = styled.select<SelectProps>`
 
 export const StyledIconWrapper = styled.span<SelectProps>`
 	position: relative;
+	${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 
 	& svg {
 		position: absolute;
@@ -109,7 +110,7 @@ function Select({ ...props }: SelectProps) {
 			{props.$label && (
 				<StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>
 			)}
-			<StyledIconWrapper>
+			<StyledIconWrapper $fullWidth={props.$fullWidth}>
 				<StyledSelect {...props}>{props.children}</StyledSelect>
 				<IconArrow />
 			</StyledIconWrapper>

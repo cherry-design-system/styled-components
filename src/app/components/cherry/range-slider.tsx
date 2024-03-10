@@ -42,7 +42,7 @@ const StyledInput = styled.input<InputProps>`
 		cursor: pointer;
 		border-radius: 25px;
 		border: solid 2px ${({ theme }) => theme.colors.grayLight};,
-		box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.secondaryLight};
+		box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primaryLight};
 		transition: all 0.3s ease;
 		${({ $error, $success, theme }) => {
 			return statusBorderStyles(
@@ -58,7 +58,7 @@ const StyledInput = styled.input<InputProps>`
 		cursor: pointer;
 		border-radius: 25px;
 		border: solid 2px ${({ theme }) => theme.colors.grayLight};,
-		box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.secondaryLight};
+		box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primaryLight};
 		transition: all 0.3s ease;
 		${({ $error, $success, theme }) => {
 			return statusBorderStyles(
@@ -71,7 +71,7 @@ const StyledInput = styled.input<InputProps>`
 
 	&::-webkit-slider-thumb {
 		${resetButton};
-		background: ${({ theme }) => theme.colors.secondary};
+		background: ${({ theme }) => theme.colors.primary};
 		border: 0 solid transparent;
 		border-radius: 50%;
 		transition: all 0.3s ease;
@@ -79,7 +79,7 @@ const StyledInput = styled.input<InputProps>`
 
 	&::-moz-range-thumb {
 		${resetButton};
-		background: ${({ theme }) => theme.colors.secondary};
+		background: ${({ theme }) => theme.colors.primary};
 		border: 0 solid transparent;
 		border-radius: 50%;
 		transition: all 0.3s ease;
@@ -88,44 +88,44 @@ const StyledInput = styled.input<InputProps>`
 	@media (hover: hover) {
 		&:hover:not([disabled]) {
 			&::-webkit-slider-runnable-track {
-				border: solid 2px ${({ theme }) => theme.colors.secondary};
+				border: solid 2px ${({ theme }) => theme.colors.primary};
 			}
 
 			&::-moz-range-track {
-				border: solid 2px ${({ theme }) => theme.colors.secondary};
+				border: solid 2px ${({ theme }) => theme.colors.primary};
 			}
 		}
 	}
 
 	&:focus:not([disabled]) {
 		&::-webkit-slider-runnable-track {
-			border: solid 2px ${({ theme }) => theme.colors.secondary};
-			box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.secondaryLight};
+			border: solid 2px ${({ theme }) => theme.colors.primary};
+			box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.primaryLight};
 		}
 		&::-webkit-slider-thumb {
-			box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.secondaryLight};
+			box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.primaryLight};
 		}
 		&::-moz-range-track {
-			border: solid 2px ${({ theme }) => theme.colors.secondary};
-			box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.secondaryLight};
+			border: solid 2px ${({ theme }) => theme.colors.primary};
+			box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.primaryLight};
 		}
 		&::-moz-range-thumb {
-			box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.secondaryLight};
+			box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.primaryLight};
 		}
 	}
 
 	&:active:not([disabled]) {
 		&::-webkit-slider-runnable-track {
-			box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secondaryLight};
+			box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primaryLight};
 		}
 		&::-webkit-slider-thumb {
-			box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secondaryLight};
+			box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primaryLight};
 		}
 		&::-moz-range-track {
-			box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secondaryLight};
+			box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primaryLight};
 		}
 		&::-moz-range-thumb {
-			box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secondaryLight};
+			box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primaryLight};
 		}
 	}
 
