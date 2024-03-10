@@ -109,6 +109,38 @@ export default function Home() {
 				<Box>
 					<Grid $xsCols={1} $xlCols={4}>
 						<Input
+							type="checkbox"
+							id="check-1-big"
+							$label="Checkbox"
+							$size="big"
+						/>
+						<Input
+							type="checkbox"
+							id="check-2-big"
+							disabled
+							$label="Checkbox"
+							$size="big"
+						/>
+						<Input
+							type="checkbox"
+							id="check-3-big"
+							$label="Checkbox"
+							$success
+							$size="big"
+						/>
+						<Input
+							type="checkbox"
+							id="check-4-big"
+							$label="Checkbox"
+							$error
+							$size="big"
+						/>
+					</Grid>
+				</Box>
+				<Space $xs={20} $lg={40} />
+				<Box>
+					<Grid $xsCols={1} $xlCols={4}>
+						<Input
 							type="radio"
 							id="radio-1"
 							name="radio-1"
@@ -133,6 +165,42 @@ export default function Home() {
 							id="radio-4"
 							name="radio-1"
 							$label="Radio"
+							$error
+						/>
+					</Grid>
+				</Box>
+				<Space $xs={20} $lg={40} />
+				<Box>
+					<Grid $xsCols={1} $xlCols={4}>
+						<Input
+							type="radio"
+							id="radio-1-big"
+							name="radio-1-big"
+							$label="Radio"
+							$size="big"
+						/>
+						<Input
+							type="radio"
+							disabled
+							id="radio-2-big"
+							name="radio-1-big"
+							$label="Radio"
+							$size="big"
+						/>
+						<Input
+							type="radio"
+							id="radio-3-big"
+							name="radio-1-big"
+							$label="Radio"
+							$size="big"
+							$success
+						/>
+						<Input
+							type="radio"
+							id="radio-4-big"
+							name="radio-1-big"
+							$label="Radio"
+							$size="big"
 							$error
 						/>
 					</Grid>
