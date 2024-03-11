@@ -43,7 +43,7 @@ const StyledInput = styled.input<InputProps>`
 	${resetInput};
 	font-family: inherit;
 	display: inline-block;
-	padding: 15px;
+	padding: 17px 15px;
 	border-radius: ${({ theme }) => theme.spacing.radius.xs};
 	font-weight: 400;
 	white-space: nowrap;

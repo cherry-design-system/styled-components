@@ -17,6 +17,7 @@ body {
 
 * {
 	box-sizing: border-box;
+	min-width: 0;
 }
 
 pre,
