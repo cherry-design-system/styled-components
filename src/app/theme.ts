@@ -45,6 +45,14 @@ export const colors: Colors = {
 	light: "#FFFFFF",
 };
 
+export const shadows: Shadows = {
+	xs: "0px 4px 4px 0px rgba(18, 18, 18, 0.04), 0px 1px 3px 0px rgba(39, 41, 45, 0.02)",
+	sm: "0px 4px 4px 0px rgba(18, 18, 18, 0.08), 0px 1px 3px 0px rgba(39, 41, 45, 0.04)",
+	md: "0px 8px 8px 0px rgba(18, 18, 18, 0.16), 0px 2px 3px 0px rgba(39, 41, 45, 0.06)",
+	lg: "0px 16px 24px 0px rgba(18, 18, 18, 0.20), 0px 2px 3px 0px rgba(39, 41, 45, 0.08)",
+	xl: "0px 24px 32px 0px rgba(18, 18, 18, 0.24), 0px 2px 3px 0px rgba(39, 41, 45, 0.12)",
+};
+
 export const fonts: Fonts = {
 	text: "Inter",
 	head: "Inter",
@@ -108,6 +116,7 @@ export const theme: Theme = {
 	breakpoints,
 	spacing,
 	colors,
+	shadows,
 	fonts,
 	fontSizes,
 	lineHeights,
@@ -154,6 +163,14 @@ export interface Colors<TString = string> {
 
 	dark: TString;
 	light: TString;
+}
+
+interface Shadows<TString = string> {
+	xs: TString;
+	sm: TString;
+	md: TString;
+	lg: TString;
+	xl: TString;
 }
 
 export interface Fonts<TString = string> {
@@ -219,6 +236,7 @@ export interface Theme {
 	breakpoints: Breakpoints;
 	spacing: Spacing;
 	colors: Colors;
+	shadows: Shadows;
 	fonts: Fonts;
 	fontSizes: FontSizes;
 	lineHeights: LineHeights;
