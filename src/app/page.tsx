@@ -365,19 +365,34 @@ export default function Home() {
 				<Space $xs={20} $lg={40} />
 				<Box>
 					<Grid $xsCols={1} $xlCols={4}>
-						<Range placeholder="Input" />
-						<Range placeholder="Input" disabled />
-						<Range placeholder="Input" $success />
-						<Range placeholder="Input" $error />
+						<Range placeholder="Input" $fullWidth />
+						<Range placeholder="Input" disabled $fullWidth />
+						<Range placeholder="Input" $success $fullWidth />
+						<Range placeholder="Input" $error $fullWidth />
 					</Grid>
 				</Box>
 				<Space $xs={20} $lg={40} />
 				<Box>
 					<Grid $xsCols={1} $xlCols={4}>
-						<Range placeholder="Input" $size="big" />
-						<Range placeholder="Input" disabled $size="big" />
-						<Range placeholder="Input" $success $size="big" />
-						<Range placeholder="Input" $error $size="big" />
+						<Range placeholder="Input" $size="big" $fullWidth />
+						<Range
+							placeholder="Input"
+							disabled
+							$size="big"
+							$fullWidth
+						/>
+						<Range
+							placeholder="Input"
+							$success
+							$size="big"
+							$fullWidth
+						/>
+						<Range
+							placeholder="Input"
+							$error
+							$size="big"
+							$fullWidth
+						/>
 					</Grid>
 				</Box>
 				<Space $xs={20} $lg={40} />
