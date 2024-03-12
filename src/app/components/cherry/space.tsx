@@ -41,7 +41,7 @@ function responsiveStyles(props: any) {
 
 const StyledSpace = styled.span<SpaceProps>`
 	${({ $horizontal, $size }) => `
-		${$size && styles($size, $horizontal || false)};
+		${$size && $size !== "none" && styles($size, $horizontal || false)};
 		${$size === "none" && `display: none;`};
 	`}
 	${(props) => responsiveStyles(props)}
