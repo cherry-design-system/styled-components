@@ -5,6 +5,7 @@ export * from "./container";
 export * from "./flex";
 export * from "./grid";
 export * from "./input";
+export * from "./max-width";
 export * from "./range";
 export * from "./select";
 export * from "./space";
