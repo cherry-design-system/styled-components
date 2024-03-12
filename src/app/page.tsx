@@ -1,17 +1,19 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Container } from "@/app/components/cherry/container";
-import { Flex } from "@/app/components/cherry/flex";
-import { Button } from "@/app/components/cherry/button";
-import { Input } from "@/app/components/cherry/input";
-import { Textarea } from "@/app/components/cherry/textarea";
-import { Select } from "@/app/components/cherry/select";
-import { Toggle } from "@/app/components/cherry/toggle";
-import { Range } from "@/app/components/cherry/range";
-import { Space } from "@/app/components/cherry/space";
-import { Box } from "@/app/components/cherry/box";
-import { Grid } from "@/app/components/cherry/grid";
-import { Col } from "@/app/components/cherry/col";
+import {
+	Container,
+	Flex,
+	Button,
+	Input,
+	Textarea,
+	Select,
+	Toggle,
+	Range,
+	Space,
+	Box,
+	Grid,
+	Col,
+} from "@/app/components/cherry";
 
 export const metadata: Metadata = {
 	title: "Cherry",
