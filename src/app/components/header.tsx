@@ -33,7 +33,7 @@ const StyledBg = styled.span<{ theme: Theme }>`
 	height: 100svh;
 	background: url("/gradient.png") no-repeat;
 	background-position: top;
-	background-size: 150%;
+	background-size: contain;
 	position: absolute;
 	top: 0;
 	left: 0;
