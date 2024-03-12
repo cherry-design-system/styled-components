@@ -60,7 +60,8 @@ button,
 input,
 a,
 img,
-svg {
+svg,
+svg * {
 	transition: all 0.3s ease;
 }
 

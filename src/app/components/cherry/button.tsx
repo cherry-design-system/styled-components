@@ -20,7 +20,7 @@ const StyledButton = styled.button<ButtonProps>`
 	${resetButton};
 	font-family: inherit;
 	display: inline-block;
-	padding: 17px 30px;
+	padding: 15px 30px;
 	border-radius: 100px;
 	font-weight: 600;
 	white-space: nowrap;
