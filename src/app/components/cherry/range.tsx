@@ -36,7 +36,7 @@ const StyledInput = styled.input<InputProps>`
 	height: 10px;
 	font-size: 0;
 	background: transparent;
-	min-width: 235px;
+	min-width: 135px;
 
 	&::-webkit-slider-runnable-track {
 		width: 100%;

@@ -145,34 +145,28 @@ const buttonStyles = (
 
 const StyledButton = styled.button<ButtonProps>`
 	${({ theme, $variant, $size, $outline, $fullWidth, disabled }) =>
-		buttonStyles(
-			theme,
-			($variant = "primary"),
-			$size,
-			$outline,
-			$fullWidth,
-			disabled,
-		)}
+		buttonStyles(theme, $variant, $size, $outline, $fullWidth, disabled)}
 `;
 
 const StyledLinkButton = styled(Link)<LinkButtonProps>`
 	${({ theme, $variant, $size, $outline, $fullWidth, disabled }) =>
-		buttonStyles(
-			theme,
-			($variant = "primary"),
-			$size,
-			$outline,
-			$fullWidth,
-			disabled,
-		)}
+		buttonStyles(theme, $variant, $size, $outline, $fullWidth, disabled)}
 `;
 
-function Button({ ...props }: ButtonProps) {
-	return <StyledButton {...props}>{props.children}</StyledButton>;
+function Button({ $variant = "primary", ...props }: ButtonProps) {
+	return (
+		<StyledButton $variant={$variant} {...props}>
+			{props.children}
+		</StyledButton>
+	);
 }
 
-function LinkButton({ ...props }: LinkButtonProps) {
-	return <StyledLinkButton {...props}>{props.children}</StyledLinkButton>;
+function LinkButton({ $variant = "primary", ...props }: LinkButtonProps) {
+	return (
+		<StyledLinkButton $variant={$variant} {...props}>
+			{props.children}
+		</StyledLinkButton>
+	);
 }
 
 export { Button, LinkButton };
