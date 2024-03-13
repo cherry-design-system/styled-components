@@ -275,7 +275,7 @@ function Home() {
 									/>
 									<Input
 										type="radio"
-										id="radio-2"
+										id="radio-3"
 										name="demo-radio"
 										defaultChecked
 									/>

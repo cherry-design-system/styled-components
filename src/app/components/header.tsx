@@ -98,7 +98,9 @@ export default function Header() {
 						</StyledLink>
 
 						<StyledNav>
-							<StyledLink href="/docs">Docs</StyledLink>
+							<StyledLink href="/docs" aria-label="Documentation">
+								Docs
+							</StyledLink>
 							<StyledLink
 								href="https://github.com/"
 								target="_blank"
