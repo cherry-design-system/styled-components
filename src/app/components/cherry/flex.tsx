@@ -7,73 +7,35 @@ import {
 	generateJustifyContentStyles,
 } from "@/app/components/cherry/utils/mixins";
 
+type JustifyContentType =
+	| "center"
+	| "flex-start"
+	| "flex-end"
+	| "space-between"
+	| "space-around"
+	| "space-evenly";
+
+type GapType = number | "none";
+
 interface FlexProps extends React.AllHTMLAttributes<FlexProps> {
 	children?: React.ReactNode;
-	$justifyContent?:
-		| "center"
-		| "flex-start"
-		| "flex-end"
-		| "space-between"
-		| "space-around"
-		| "space-evenly";
-	$xsJustifyContent?:
-		| "center"
-		| "flex-start"
-		| "flex-end"
-		| "space-between"
-		| "space-around"
-		| "space-evenly";
-	$smJustifyContent?:
-		| "center"
-		| "flex-start"
-		| "flex-end"
-		| "space-between"
-		| "space-around"
-		| "space-evenly";
-	$mdJustifyContent?:
-		| "center"
-		| "flex-start"
-		| "flex-end"
-		| "space-between"
-		| "space-around"
-		| "space-evenly";
-	$lgJustifyContent?:
-		| "center"
-		| "flex-start"
-		| "flex-end"
-		| "space-between"
-		| "space-around"
-		| "space-evenly";
-	$xlJustifyContent?:
-		| "center"
-		| "flex-start"
-		| "flex-end"
-		| "space-between"
-		| "space-around"
-		| "space-evenly";
-	$xxlJustifyContent?:
-		| "center"
-		| "flex-start"
-		| "flex-end"
-		| "space-between"
-		| "space-around"
-		| "space-evenly";
-	$xxxlJustifyContent?:
-		| "center"
-		| "flex-start"
-		| "flex-end"
-		| "space-between"
-		| "space-around"
-		| "space-evenly";
+	$justifyContent?: JustifyContentType;
+	$xsJustifyContent?: JustifyContentType;
+	$smJustifyContent?: JustifyContentType;
+	$mdJustifyContent?: JustifyContentType;
+	$lgJustifyContent?: JustifyContentType;
+	$xlJustifyContent?: JustifyContentType;
+	$xxlJustifyContent?: JustifyContentType;
+	$xxxlJustifyContent?: JustifyContentType;
 	$wrap?: "wrap" | "nowrap" | "wrap-reverse";
-	$gap?: number | "none";
-	$xsGap?: number | "none";
-	$smGap?: number | "none";
-	$mdGap?: number | "none";
-	$lgGap?: number | "none";
-	$xlGap?: number | "none";
-	$xxlGap?: number | "none";
-	$xxxlGap?: number | "none";
+	$gap?: GapType;
+	$xsGap?: GapType;
+	$smGap?: GapType;
+	$mdGap?: GapType;
+	$lgGap?: GapType;
+	$xlGap?: GapType;
+	$xxlGap?: GapType;
+	$xxxlGap?: GapType;
 	theme?: Theme;
 }
 
