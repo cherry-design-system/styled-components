@@ -3,6 +3,7 @@ import StyledComponentsRegistry from "@/lib/styled-components/registry";
 import ThemeProvider from "@/lib/styled-components/theme-provider";
 import Header from "@/app/components/header";
 import Footer from "@/app/components/footer";
+import { MinHeight } from "@/app/components/min-height";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -51,9 +52,10 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<StyledComponentsRegistry>
 					<ThemeProvider>
-						<Header />
-						{children}
-						<Footer />
+						<MinHeight>
+							<Header />
+							{children}
+						</MinHeight>
 					</ThemeProvider>
 				</StyledComponentsRegistry>
 			</body>

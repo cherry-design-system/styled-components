@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Theme, mq } from "@/app/theme";
 import { Container, Flex } from "@/app/components/cherry";
 import { IconGitHub } from "@/app/components/cherry/utils/icons";
+import { Search } from "./search/Search";
 
 const StyledHeader = styled.header<{ theme: Theme }>`
 	background: ${({ theme }) => theme.colors.light};
@@ -112,6 +113,7 @@ export default function Header() {
 					</Flex>
 				</Container>
 			</StyledHeader>
+			{/* <Search /> */}
 		</>
 	);
 }
