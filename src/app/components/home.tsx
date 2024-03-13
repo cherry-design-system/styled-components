@@ -20,6 +20,12 @@ import {
 	Toggle,
 } from "@/app/components/cherry";
 import Content from "@/app/docs/snippets/home.mdx";
+import {
+	IconDiscord,
+	IconFigma,
+	IconGitHub,
+} from "@/app/components/cherry/utils/icons";
+import { IconLink } from "./icon-link";
 
 const StyledIntro = styled.h1<{ theme: Theme }>`
 	font-size: ${({ theme }) => theme.fontSizes.hero2.xs};
@@ -281,6 +287,18 @@ function Home() {
 				our Figma community template, star our GitHub repository, and
 				engage in discussions. Together, we’ll build a better web!
 			</StyledParagraph>
+			<Space $size={100} />
+			<Flex $justifyContent="center">
+				<IconLink href="#" $bgColor="#000000" $label="Figma">
+					<IconFigma className="figma" />
+				</IconLink>
+				<IconLink href="#" $bgColor="#000000" $label="GitHub">
+					<IconGitHub />
+				</IconLink>
+				<IconLink href="#" $bgColor="#7289DA" $label="Discord">
+					<IconDiscord />
+				</IconLink>
+			</Flex>
 		</Container>
 	);
 }
