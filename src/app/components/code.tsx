@@ -142,14 +142,14 @@ const Body = styled.div<{ theme: Theme }>`
 
 function Code({ children, ...props }: CodeProps) {
 	return (
-		<div>
+		<>
 			<TopBar {...props}>
 				<Dot />
 				<Dot />
 				<Dot />
 			</TopBar>
 			<Body>{children}</Body>
-		</div>
+		</>
 	);
 }
 
