@@ -63,6 +63,19 @@ const StyledContent = styled.div<ContentProps>`
 	& button {
 		margin: 10px 0;
 	}
+
+	& a:not([class]) {
+		color: ${({ theme }) => theme.colors.primary};
+		font-weight: 500;
+		text-decoration: underline;
+		transition: all 0.3s ease;
+
+		@media (hover: hover) {
+			&:hover {
+				color: ${({ theme }) => theme.colors.primaryDark};
+			}
+		}
+	}
 `;
 
 function Content({ children }: ContentProps) {
