@@ -27,6 +27,10 @@ samp {
 	font-family: monospace, monospace;
 }
 
+pre,
+code,
+kbd,
+samp,
 blockquote,
 p,
 a,
