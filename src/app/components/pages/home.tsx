@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Theme, mq } from "@/app/theme";
 import {
 	Button,
@@ -27,6 +27,26 @@ import {
 } from "@/app/components/cherry/utils/icons";
 import { IconLink } from "@/app/components/icon-link";
 
+const gridDecoration = css`
+	position: relative;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 100vw;
+		max-width: 100vw;
+		background: url("/grid.svg") no-repeat center center;
+		z-index: -1;
+		background-size: 100%;
+		height: 357px;
+		left: 50%;
+		top: 50%;
+		aspect-ratio: 1440 / 357;
+		transform: translate(-50%, -50%);
+	}
+`;
+
 const StyledIntro = styled.h1<{ theme: Theme }>`
 	font-size: ${({ theme }) => theme.fontSizes.hero2.xs};
 	line-height: ${({ theme }) => theme.lineHeights.hero2.xs};
@@ -36,6 +56,16 @@ const StyledIntro = styled.h1<{ theme: Theme }>`
 	${mq("lg")} {
 		font-size: ${({ theme }) => theme.fontSizes.hero2.lg};
 		line-height: ${({ theme }) => theme.lineHeights.hero2.lg};
+	}
+
+	${gridDecoration};
+`;
+
+const GridDecoration = styled.span<{ theme: Theme }>`
+	${gridDecoration};
+
+	&::before {
+		transform: translate(-50%, -50%) rotate(180deg);
 	}
 `;
 
@@ -142,7 +172,9 @@ function Home() {
 			</Flex>
 			<Space $size={80} />
 			<MaxWidth $xs={640}>
-				<Content />
+				<GridDecoration>
+					<Content />
+				</GridDecoration>
 			</MaxWidth>
 			<Space $size={100} />
 			<StyledH2>Streamline Your Design with Cherry</StyledH2>
