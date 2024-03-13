@@ -1,5 +1,6 @@
 import { Container, MaxWidth } from "@/app/components/cherry";
 import { Sidebar } from "@/app/components/sidebar";
+import { Content } from "@/app/components/content";
 
 export default function RootLayout({
 	children,
@@ -9,7 +10,9 @@ export default function RootLayout({
 	return (
 		<Container $fluid>
 			<Sidebar />
-			<MaxWidth $size={800}>{children}</MaxWidth>
+			<MaxWidth $size={800}>
+				<Content>{children}</Content>
+			</MaxWidth>
 		</Container>
 	);
 }

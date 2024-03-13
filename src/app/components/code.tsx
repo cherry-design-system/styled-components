@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { rgba } from "polished";
 import { Theme, mq } from "@/app/theme";
+import { Space } from "@/app/components/cherry";
 
 interface CodeProps {
 	children?: React.ReactNode;
@@ -143,12 +144,14 @@ const Body = styled.div<{ theme: Theme }>`
 function Code({ children, ...props }: CodeProps) {
 	return (
 		<>
+			<Space $size={10} />
 			<TopBar {...props}>
 				<Dot />
 				<Dot />
 				<Dot />
 			</TopBar>
 			<Body>{children}</Body>
+			<Space $size={10} />
 		</>
 	);
 }

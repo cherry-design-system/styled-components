@@ -13,12 +13,12 @@ import { Space } from "@/app/components/cherry";
 
 const StyledSidebar = styled.nav<{ theme: Theme }>`
 	position: fixed;
-	left: calc(50% - 600px);
+	left: calc(50% - 650px);
 	top: 40px;
 	overflow-y: auto;
 	max-height: 100svh;
 	padding: 0 20px 0 0;
-	width: 200px;
+	width: 250px;
 `;
 
 const StyledSidebarList = styled.ul`
