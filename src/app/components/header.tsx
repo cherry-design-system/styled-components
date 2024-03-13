@@ -104,6 +104,7 @@ export default function Header() {
 							<StyledLink
 								href="https://github.com/"
 								target="_blank"
+								aria-label="GitHub Repository"
 							>
 								<IconGitHub />
 							</StyledLink>
