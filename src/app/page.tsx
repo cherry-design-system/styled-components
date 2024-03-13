@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import { Home as HomePage } from "@/app/components/home";
+import { Home as HomePage } from "@/app/components/pages/home";
 
 export const metadata: Metadata = {
 	title: "Cherry v0.1.0",

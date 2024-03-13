@@ -89,3 +89,18 @@ export const generatePaddingStyles = (
 		padding: ${padding === "none" ? "0" : `${padding}px`};
 	}
 `;
+
+export const generateJustifyContentStyles = (
+	size: keyof Breakpoints<number>,
+	justifyContent?:
+		| "center"
+		| "flex-start"
+		| "flex-end"
+		| "space-between"
+		| "space-around"
+		| "space-evenly",
+) => css`
+	${mq(size)} {
+		justify-content: ${justifyContent && `${justifyContent}`};
+	}
+`;

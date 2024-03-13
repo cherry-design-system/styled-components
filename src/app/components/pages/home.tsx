@@ -19,13 +19,13 @@ import {
 	Textarea,
 	Toggle,
 } from "@/app/components/cherry";
-import Content from "@/app/docs/snippets/home.mdx";
+import Content from "@/app/docs/snippets/demo.mdx";
 import {
 	IconDiscord,
 	IconFigma,
 	IconGitHub,
 } from "@/app/components/cherry/utils/icons";
-import { IconLink } from "./icon-link";
+import { IconLink } from "@/app/components/icon-link";
 
 const StyledIntro = styled.h1<{ theme: Theme }>`
 	font-size: ${({ theme }) => theme.fontSizes.hero2.xs};

@@ -4,8 +4,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
 import { Theme, mq } from "@/app/theme";
-import { Container } from "@/app/components/cherry/container";
-import { Flex } from "@/app/components/cherry/flex";
+import { Container, Flex } from "@/app/components/cherry";
 import { IconGitHub } from "@/app/components/cherry/utils/icons";
 
 const StyledHeader = styled.header<{ theme: Theme }>`

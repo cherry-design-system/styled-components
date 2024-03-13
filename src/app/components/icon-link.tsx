@@ -4,11 +4,11 @@ import { lighten } from "polished";
 import { Theme, mq } from "@/app/theme";
 
 interface IconLinkProps {
-	$bgColor: string;
-	theme?: Theme;
 	children?: React.ReactNode;
-	href?: string;
+	$bgColor: string;
 	$label?: string;
+	theme?: Theme;
+	href?: string;
 }
 
 const StyledLink = styled.a<IconLinkProps>`
