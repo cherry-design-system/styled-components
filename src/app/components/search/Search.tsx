@@ -1,7 +1,6 @@
+"use client";
 import algoliasearch from "algoliasearch/lite";
-import "instantsearch.css/themes/satellite.css";
 import { Hits, InstantSearch, SearchBox, Configure } from "react-instantsearch";
-
 import { Hit } from "./Hit";
 
 const searchClient = algoliasearch(
@@ -14,12 +13,11 @@ export const Search = () => {
 		<InstantSearch
 			searchClient={searchClient}
 			indexName="Cherry Documentation"
+			future={{ preserveSharedStateOnUnmount: true }}
 		>
 			<Configure hitsPerPage={5} />
-			<div className="ais-InstantSearch">
-				<SearchBox />
-				<Hits hitComponent={Hit} />
-			</div>
+			<SearchBox />
+			<Hits hitComponent={Hit} />
 		</InstantSearch>
 	);
 };
