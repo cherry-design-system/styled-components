@@ -148,7 +148,10 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
 		box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primaryLight};
 	}
 
-	${({ type, theme }) => (type === "checkbox" ? `border-radius: ${theme.spacing.radius.xs};` : `border-radius: 50%;`)}
+	${({ type, theme }) =>
+		type === "checkbox"
+			? `border-radius: ${theme.spacing.radius.xs};`
+			: `border-radius: 50%;`}
 
 	${({ disabled, theme }) =>
 		disabled &&
@@ -210,7 +213,7 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
 					}
 				`;
 		}
-	}}}
+	}}
 
 	&:checked ~ svg,
 	&:checked ~ em {

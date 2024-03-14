@@ -22,14 +22,12 @@ const StyledSidebar = styled.nav<Props>`
 	position: fixed;
 	overflow-y: auto;
 	max-height: 100svh;
-	padding: 0 20px 0 0;
 	width: 100%;
 	background: ${({ theme }) => theme.colors.light};
 	z-index: 99;
 	top: 0;
 	height: 100%;
-	padding-top: 130px;
-	padding-bottom: 20px;
+	padding: 130px 0 20px 0;
 	opacity: 0;
 	pointer-events: none;
 	transition: all 0.3s ease;
@@ -40,15 +38,14 @@ const StyledSidebar = styled.nav<Props>`
 		left: calc(50% - 477px);
 		top: 0;
 		background: transparent;
-		padding-top: 40px;
-		padding-bottom: 40px;
+		padding: 40px 20px 40px 0;
 		opacity: 1;
 		pointer-events: all;
 		transform: translateY(0);
 	}
 
 	${mq("xl")} {
-		width: 250px;
+		width: 230px;
 		left: calc(50% - 570px);
 	}
 
