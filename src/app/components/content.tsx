@@ -35,8 +35,12 @@ const StyledContent = styled.div<ContentProps>`
 				border-radius: 50%;
 				background: ${({ theme }) => theme.colors.primaryLight};
 				position: absolute;
-				top: 9px;
+				top: 7px;
 				left: 0;
+
+				${mq("lg")} {
+					top: 9px;
+				}
 			}
 		}
 	}
