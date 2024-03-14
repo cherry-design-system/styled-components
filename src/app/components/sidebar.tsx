@@ -27,15 +27,15 @@ const StyledSidebar = styled.nav<Props>`
 	z-index: 99;
 	top: 0;
 	height: 100%;
-	padding-top: 230px;
-	padding-bottom: 40px;
+	padding-top: 130px;
+	padding-bottom: 20px;
 	opacity: 0;
 	pointer-events: none;
 	transition: all 0.3s ease;
 	transform: translateY(30px);
 
 	${mq("lg")} {
-		width: 250px;
+		width: 155px;
 		left: calc(50% - 477px);
 		top: 40px;
 		background: transparent;
@@ -46,6 +46,7 @@ const StyledSidebar = styled.nav<Props>`
 	}
 
 	${mq("xl")} {
+		width: 250px;
 		left: calc(50% - 570px);
 	}
 
@@ -129,6 +130,8 @@ const StyleMobileBar = styled.button<Props>`
 	${mq("lg")} {
 		display: none;
 	}
+
+	${({ $isActive }) => $isActive && `position: fixed; `};
 `;
 
 const StyledMobileBurger = styled.span<Props>`
@@ -189,6 +192,7 @@ function Sidebar() {
 		<>
 			<StyleMobileBar
 				onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+				$isActive={isMobileMenuOpen}
 			>
 				<StyledMobileBurger $isActive={isMobileMenuOpen} />
 				{current ? (

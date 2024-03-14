@@ -20,7 +20,7 @@ const StyledHeader = styled.header<{ theme: Theme }>`
 
 	${mq("lg")} {
 		margin: 40px auto 0;
-		max-width: 640px;
+		max-width: 600px;
 	}
 
 	& a {
