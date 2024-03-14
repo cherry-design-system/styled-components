@@ -264,7 +264,12 @@ function Home() {
 									<option>Select</option>
 								</Select>
 								<Col $lgSpan={2}>
-									<Flex>
+									<Flex
+										$xsGap={10}
+										$lgGap={20}
+										$wrap="nowrap"
+										$justifyContent="space-between"
+									>
 										<Input
 											type="checkbox"
 											id="checkbox-1"
@@ -297,20 +302,30 @@ function Home() {
 					<Space $size={20} />
 					<Grid $xsCols={1} $lgCols={2} $gap={20}>
 						<Col>
-							<Flex>
-								<Button>Buton</Button>
-								<Button $variant="secondary">Buton</Button>
-								<Button $variant="tertiary">Buton</Button>
+							<Flex $wrap="nowrap" $gap={20}>
+								<Button $fullWidth>Button</Button>
+								<Button $variant="secondary" $fullWidth>
+									Button
+								</Button>
+								<Button $variant="tertiary" $fullWidth>
+									Button
+								</Button>
 							</Flex>
 						</Col>
 						<Col>
-							<Flex>
-								<Button $outline>Buton</Button>
-								<Button $variant="secondary" $outline>
-									Buton
+							<Flex $wrap="nowrap" $gap={20}>
+								<Button $outline $fullWidth>
+									Button
 								</Button>
-								<Button $variant="tertiary" $outline>
-									Buton
+								<Button
+									$variant="secondary"
+									$outline
+									$fullWidth
+								>
+									Button
+								</Button>
+								<Button $variant="tertiary" $outline $fullWidth>
+									Button
 								</Button>
 							</Flex>
 						</Col>
@@ -338,6 +353,10 @@ function Home() {
 						<IconDiscord />
 					</IconLink>
 				</Flex>
+				<Space $size={100} />
+				<LinkButton $variant="secondary" href="/docs">
+					Get Started
+				</LinkButton>
 			</Container>
 			<Footer />
 		</>

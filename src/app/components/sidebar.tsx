@@ -127,6 +127,8 @@ const StyleMobileBar = styled.button<Props>`
 	font-weight: 600;
 	display: flex;
 	justify-content: flex-start;
+	width: 100%;
+	max-width: calc(100vw - 40px);
 
 	${mq("lg")} {
 		display: none;

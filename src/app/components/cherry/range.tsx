@@ -36,7 +36,7 @@ const StyledInput = styled.input<InputProps>`
 	height: 10px;
 	font-size: 0;
 	background: transparent;
-	min-width: 135px;
+	min-width: 100px;
 
 	&::-webkit-slider-runnable-track {
 		width: 100%;
@@ -58,7 +58,7 @@ const StyledInput = styled.input<InputProps>`
 		width: 100%;
 		cursor: pointer;
 		border-radius: ${({ theme }) => theme.spacing.radius.xl};
-		border: solid 2px ${({ theme }) => theme.colors.grayLight};,
+		border: solid 2px ${({ theme }) => theme.colors.grayLight};
 		box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primaryLight};
 		transition: all 0.3s ease;
 		${({ $error, $success, theme }) => {

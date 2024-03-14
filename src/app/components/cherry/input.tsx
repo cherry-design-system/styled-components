@@ -169,31 +169,43 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
 	${({ $size }) => {
 		if ($size === "big") {
 			return `
+					min-width: 32px;
 					width: 32px;
+					min-height: 32px;
 					height: 32px;
 
 					& ~ svg {
+						min-width: 18px;
 						width: 18px;
+						min-height: 18px;
 						height: 18px;
 					}
 
 					& ~ em {
+						min-width: 14px;
 						width: 14px;
+						min-height: 14px;
 						height: 14px;
 					}
 				`;
 		} else {
 			return `
+					min-width: 22px;
 					width: 22px;
+					min-height: 22px;
 					height: 22px;
 
 					& ~ svg {
+						min-width: 12px;
 						width: 12px;
+						min-height: 12px;
 						height: 12px;
 					}
 
 					& ~ em {
+						min-width: 8px;
 						width: 8px;
+						min-height: 8px;
 						height: 8px;
 					}
 				`;
