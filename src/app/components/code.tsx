@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { rgba } from "polished";
 import { Theme, mq } from "@/app/theme";
 import { Space } from "@/app/components/cherry";
+import { styledCode } from "./cherry/utils/typography";
 
 interface CodeProps {
 	children?: React.ReactNode;
@@ -38,15 +39,9 @@ const Body = styled.div<{ theme: Theme }>`
 	color: ${({ theme }) => theme.colors.light};
 	padding: 20px;
 	font-family: ${({ theme }) => theme.fonts.mono};
-	font-size: ${({ theme }) => theme.fontSizes.code.xs};
-	line-height: ${({ theme }) => theme.lineHeights.code.xs};
 	text-align: left;
 	overflow-x: auto;
-
-	${mq("lg")} {
-		font-size: ${({ theme }) => theme.fontSizes.code.lg};
-		line-height: ${({ theme }) => theme.lineHeights.code.lg};
-	}
+	${({ theme }) => styledCode(theme)};
 
 	& .hljs {
 		color: #c9d1d9;

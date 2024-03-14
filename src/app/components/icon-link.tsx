@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { lighten } from "polished";
 import { Theme, mq } from "@/app/theme";
+import { styledStrong } from "./cherry/utils/typography";
 
 interface IconLinkProps {
 	children?: React.ReactNode;
@@ -61,13 +62,7 @@ const StyledLabel = styled.span<IconLinkProps>`
 	padding: 5px 0 0;
 	display: block;
 	font-weight: 700;
-	font-size: ${({ theme }) => theme.fontSizes.strong.xs};
-	line-height: ${({ theme }) => theme.lineHeights.strong.xs};
-
-	${mq("lg")} {
-		font-size: ${({ theme }) => theme.fontSizes.strong.lg};
-		line-height: ${({ theme }) => theme.lineHeights.strong.lg};
-	}
+	${({ theme }) => styledStrong(theme)};
 `;
 
 function IconLink({ ...props }: IconLinkProps) {

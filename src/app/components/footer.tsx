@@ -8,6 +8,10 @@ import { Theme, mq } from "@/app/theme";
 import { Col, Container, Flex, Grid, Space } from "@/app/components/cherry";
 import { IconLink } from "@/app/components/icon-link";
 import { IconDribbble, IconThreads } from "@/app/components/cherry/utils/icons";
+import {
+	styledSmall,
+	styledText,
+} from "@/app/components/cherry/utils/typography";
 
 const StyledFooter = styled.footer<{ theme: Theme }>`
 	background: ${({ theme }) => rgba(theme.colors.primaryLight, 0.2)};
@@ -20,13 +24,10 @@ const StyledParagraph = styled.p<{
 }>`
 	margin: auto 0;
 	color: ${({ theme }) => theme.colors.grayDark};
-	font-size: ${({ theme }) => theme.fontSizes.text.xs};
-	line-height: ${({ theme }) => theme.lineHeights.text.xs};
 	text-align: center;
+	${({ theme }) => styledText(theme)};
 
 	${mq("lg")} {
-		font-size: ${({ theme }) => theme.fontSizes.text.lg};
-		line-height: ${({ theme }) => theme.lineHeights.text.lg};
 		text-align: ${({ $align }) => $align};
 	}
 
@@ -144,18 +145,11 @@ function DocsFooter() {
 		border-top: 1px solid ${({ theme }) => theme.colors.grayLight};
 		margin-top: 20px;
 		padding: 20px 0 0;
+		${({ theme }) => styledSmall(theme)};
 
 		${mq("lg")} {
 			margin-top: 40px;
 			padding: 40px 0 0;
-		}
-
-		font-size: ${({ theme }) => theme.fontSizes.small.xs};
-		line-height: ${({ theme }) => theme.lineHeights.small.xs};
-
-		${mq("lg")} {
-			font-size: ${({ theme }) => theme.fontSizes.small.lg};
-			line-height: ${({ theme }) => theme.lineHeights.small.lg};
 		}
 	`;
 	const StyledParagraph = styled.p<{ theme: Theme }>`

@@ -2,6 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Theme, mq } from "@/app/theme";
+import { styledText } from "@/app/components/cherry/utils/typography";
 
 interface ContentProps {
 	children: React.ReactNode;
@@ -12,14 +13,8 @@ const StyledContent = styled.div<ContentProps>`
 	& p,
 	& ul,
 	& ol {
-		font-size: ${({ theme }) => theme.fontSizes.text.xs};
-		line-height: ${({ theme }) => theme.lineHeights.text.xs};
 		margin: 10px 0;
-
-		${mq("lg")} {
-			font-size: ${({ theme }) => theme.fontSizes.text.lg};
-			line-height: ${({ theme }) => theme.lineHeights.text.lg};
-		}
+		${({ theme }) => styledText(theme)};
 	}
 
 	& ul {

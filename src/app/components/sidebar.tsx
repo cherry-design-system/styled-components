@@ -11,6 +11,7 @@ import {
 import { Theme, mq } from "@/app/theme";
 import { Space } from "@/app/components/cherry";
 import { resetButton } from "@/app/components/cherry/utils/mixins";
+import { styledStrong } from "./cherry/utils/typography";
 
 interface Props {
 	theme?: Theme;
@@ -68,13 +69,7 @@ const StyledSidebarList = styled.ul`
 
 const StyledStrong = styled.strong<{ theme: Theme }>`
 	font-weight: 600;
-	font-size: ${({ theme }) => theme.fontSizes.strong.xs};
-	line-height: ${({ theme }) => theme.lineHeights.strong.xs};
-
-	${mq("lg")} {
-		font-size: ${({ theme }) => theme.fontSizes.strong.lg};
-		line-height: ${({ theme }) => theme.lineHeights.strong.lg};
-	}
+	${({ theme }) => styledStrong(theme)};
 `;
 
 const StyledSidebarListItem = styled.li`

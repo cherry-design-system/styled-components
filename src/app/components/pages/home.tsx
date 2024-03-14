@@ -27,6 +27,13 @@ import {
 } from "@/app/components/cherry/utils/icons";
 import { IconLink } from "@/app/components/icon-link";
 import { Footer } from "@/app/components/footer";
+import {
+	styledH1,
+	styledH3,
+	styledHero2,
+	styledStrong,
+	styledText,
+} from "@/app/components/cherry/utils/typography";
 
 const gridDecoration = css`
 	position: relative;
@@ -49,15 +56,9 @@ const gridDecoration = css`
 `;
 
 const StyledIntro = styled.h1<{ theme: Theme }>`
-	font-size: ${({ theme }) => theme.fontSizes.hero2.xs};
-	line-height: ${({ theme }) => theme.lineHeights.hero2.xs};
 	max-width: 900px;
 	margin: auto;
-
-	${mq("lg")} {
-		font-size: ${({ theme }) => theme.fontSizes.hero2.lg};
-		line-height: ${({ theme }) => theme.lineHeights.hero2.lg};
-	}
+	${({ theme }) => styledHero2(theme)};
 
 	${gridDecoration};
 `;
@@ -73,25 +74,13 @@ const GridDecoration = styled.span<{ theme: Theme }>`
 const StyledParagraph = styled.p<{ theme: Theme }>`
 	max-width: 700px;
 	margin: auto;
-	font-size: ${({ theme }) => theme.fontSizes.text.xs};
-	line-height: ${({ theme }) => theme.lineHeights.text.xs};
-
-	${mq("lg")} {
-		font-size: ${({ theme }) => theme.fontSizes.text.lg};
-		line-height: ${({ theme }) => theme.lineHeights.text.lg};
-	}
+	${({ theme }) => styledText(theme)};
 `;
 
 const StyledH2 = styled.h2<{ theme: Theme }>`
-	font-size: ${({ theme }) => theme.fontSizes.h3.xs};
-	line-height: ${({ theme }) => theme.lineHeights.h3.xs};
 	max-width: 900px;
 	margin: auto;
-
-	${mq("lg")} {
-		font-size: ${({ theme }) => theme.fontSizes.h3.lg};
-		line-height: ${({ theme }) => theme.lineHeights.h3.lg};
-	}
+	${({ theme }) => styledH3(theme)};
 `;
 
 interface TileProps {
@@ -124,13 +113,7 @@ const TileImage = styled.div<{ theme: Theme }>`
 const StyledStrong = styled.div<{ theme: Theme }>`
 	display: block;
 	font-weight: 700;
-	font-size: ${({ theme }) => theme.fontSizes.strong.xs};
-	line-height: ${({ theme }) => theme.lineHeights.strong.xs};
-
-	${mq("lg")} {
-		font-size: ${({ theme }) => theme.fontSizes.strong.lg};
-		line-height: ${({ theme }) => theme.lineHeights.strong.lg};
-	}
+	${({ theme }) => styledStrong(theme)};
 `;
 const TileContent = styled.div<{ theme: Theme }>`
 	background: ${({ theme }) => theme.colors.light};
@@ -141,15 +124,9 @@ const TileContent = styled.div<{ theme: Theme }>`
 `;
 
 const StyledH3 = styled.h3<{ theme: Theme }>`
-	font-size: ${({ theme }) => theme.fontSizes.h1.xs};
-	line-height: ${({ theme }) => theme.lineHeights.h1.xs};
 	max-width: 900px;
 	margin: auto;
-
-	${mq("lg")} {
-		font-size: ${({ theme }) => theme.fontSizes.h1.lg};
-		line-height: ${({ theme }) => theme.lineHeights.h1.lg};
-	}
+	${({ theme }) => styledH1(theme)};
 `;
 
 function Home() {
