@@ -2,7 +2,6 @@ import { Inter } from "next/font/google";
 import StyledComponentsRegistry from "@/lib/styled-components/registry";
 import ThemeProvider from "@/lib/styled-components/theme-provider";
 import Header from "@/app/components/header";
-import Footer from "@/app/components/footer";
 import { MinHeight } from "@/app/components/min-height";
 
 const inter = Inter({ subsets: ["latin"] });
