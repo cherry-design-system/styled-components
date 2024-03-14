@@ -28,7 +28,7 @@ export const docsFigmaNav = [
 		icon: "",
 	},
 	{
-		title: "Typohgraphy",
+		title: "Typography",
 		url: "/docs/design/typography",
 		icon: "",
 	},

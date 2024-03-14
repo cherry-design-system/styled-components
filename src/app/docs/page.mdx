@@ -1,13 +1,13 @@
 import { Button } from "@/app/components/cherry";
+import { PAGE_DESCRIPTION, OG_IMAGE } from "@/app/utils/constants";
 
 export const metadata = {
-	title: "Documentation",
-	title: "Documentation",
-	description: "Documentation",
+	title: "Introduction - Cherry Design System",
+	description: PAGE_DESCRIPTION,
 	openGraph: {
-		title: "Documentation",
-		description: "Documentation",
-		images: "https://og-image.vercel.app/Documentation.png",
+		title: "Introduction - Cherry Design System",
+		description: PAGE_DESCRIPTION,
+		images: OG_IMAGE,
 	},
 };
 
@@ -22,27 +22,26 @@ This is a list in markdown:
 - One
 - Two
 - Three
-- OneId ad mollit qui do nostrud nisi elit qui elit irure voluptate sunt. Minim laborum dolore nulla labore culpa magna ullamco do reprehenderit incididunt occaecat ullamco. Magna consectetur aliqua aliquip nostrud irure eu eu culpa elit culpa aute. Aute commodo exercitation exercitation mollit ea ad anim tempor culpa. Id aute dolor cupidatat ad ea occaecat officia culpa adipisicing fugiat excepteur ea irure laborum id. Fugiat quis laboris officia minim dolore proident esse ex cupidatat aute culpa adipisicing culpa laboris. In dolore occaecat culpa cupidatat sit ut consequat nostrud dolor veniam esse incididunt.
-- TwoId ad mollit qui do nostrud nisi elit qui elit irure voluptate sunt. Minim laborum dolore nulla labore culpa magna ullamco do reprehenderit incididunt occaecat ullamco. Magna consectetur aliqua aliquip nostrud irure eu eu culpa elit culpa aute. Aute commodo exercitation exercitation mollit ea ad anim tempor culpa. Id aute dolor cupidatat ad ea occaecat officia culpa adipisicing fugiat excepteur ea irure laborum id. Fugiat quis laboris officia minim dolore proident esse ex cupidatat aute culpa adipisicing culpa laboris. In dolore occaecat culpa cupidatat sit ut consequat nostrud dolor veniam esse incididunt.
-- Id ad mollit qui do nostrud nisi elit qui elit irure voluptate sunt. Minim laborum dolore nulla labore culpa magna ullamco do reprehenderit incididunt occaecat ullamco. Magna consectetur aliqua aliquip nostrud irure eu eu culpa elit culpa aute. Aute commodo exercitation exercitation mollit ea ad anim tempor culpa. Id aute dolor cupidatat ad ea occaecat officia culpa adipisicing fugiat excepteur ea irure laborum id. Fugiat quis laboris officia minim dolore proident esse ex cupidatat aute culpa adipisicing culpa laboris. In dolore occaecat culpa cupidatat sit ut consequat nostrud dolor veniam esse incididunt.
-Id ad mollit qui do nostrud nisi elit qui elit irure voluptate sunt. Minim laborum dolore nulla labore culpa magna ullamco do reprehenderit incididunt occaecat ullamco. Magna consectetur aliqua aliquip nostrud irure eu eu culpa elit culpa aute. Aute commodo exercitation exercitation mollit ea ad anim tempor culpa. Id aute dolor cupidatat ad ea occaecat officia culpa adipisicing fugiat excepteur ea irure laborum id. Fugiat quis laboris officia minim dolore proident esse ex cupidatat aute culpa adipisicing culpa laboris. In dolore occaecat culpa cupidatat sit ut consequat nostrud dolor veniam esse incididunt.
 
-1. OneId ad mollit qui do nostrud nisi elit qui elit irure voluptate sunt. Minim laborum dolore nulla labore culpa magna ullamco do reprehenderit incididunt occaecat ullamco. Magna consectetur aliqua aliquip nostrud irure eu eu culpa elit culpa aute. Aute commodo exercitation exercitation mollit ea ad anim tempor culpa. Id aute dolor cupidatat ad ea occaecat officia culpa adipisicing fugiat excepteur ea irure laborum id. Fugiat quis laboris officia minim dolore proident esse ex cupidatat aute culpa adipisicing culpa laboris. In dolore occaecat culpa cupidatat sit ut consequat nostrud dolor veniam esse incididunt.
-2. TwoId ad mollit qui do nostrud nisi elit qui elit irure voluptate sunt. Minim laborum dolore nulla labore culpa magna ullamco do reprehenderit incididunt occaecat ullamco. Magna consectetur aliqua aliquip nostrud irure eu eu culpa elit culpa aute. Aute commodo exercitation exercitation mollit ea ad anim tempor culpa. Id aute dolor cupidatat ad ea occaecat officia culpa adipisicing fugiat excepteur ea irure laborum id. Fugiat quis laboris officia minim dolore proident esse ex cupidatat aute culpa adipisicing culpa laboris. In dolore occaecat culpa cupidatat sit ut consequat nostrud dolor veniam esse incididunt.
-3. Id ad mollit qui do nostrud nisi elit qui elit irure voluptate sunt. Minim laborum dolore nulla labore culpa magna ullamco do reprehenderit incididunt occaecat ullamco. Magna consectetur aliqua aliquip nostrud irure eu eu culpa elit culpa aute. Aute commodo exercitation exercitation mollit ea ad anim tempor culpa. Id aute dolor cupidatat ad ea occaecat officia culpa adipisicing fugiat excepteur ea irure laborum id. Fugiat quis laboris officia minim dolore proident esse ex cupidatat aute culpa adipisicing culpa laboris. In dolore occaecat culpa cupidatat sit ut consequat nostrud dolor veniam esse incididunt.
+Id non do aliqua ullamco adipisicing proident occaecat ea aliquip excepteur quis mollit tempor. Consectetur do consectetur consectetur cupidatat amet reprehenderit ea consequat voluptate mollit officia et. Officia nostrud exercitation ipsum irure incididunt minim sit ullamco nostrud amet excepteur velit adipisicing amet consectetur. Eu in laborum enim adipisicing nisi exercitation incididunt aliqua consequat magna duis cupidatat occaecat.
+
+- 1 One
+- 2 Two
+- 3 Three
 
 <Button>Hello</Button>
 
 ```jsx
 <Container>
-  <Box>
-    <Flex>
-      <Button>Button</Button>
-      <Button $variant="secondary">Button</Button>
-      <Button $variant="tertiary">Button</Button>
-      <Button disabled>Button</Button>
-    </Flex>
-  </Box>
+  <Grid $xsCols={1} $lgCols={3}>
+      <Col $lgSpan={3}>
+        <Input type="text" $fullWidth />
+      </Col>
+      <Button $variant="primary">Save</Button>
+      <Button $variant="secondary">Cancel</Button>
+      <Button $outline>Remind Later</Button>
+  </Grid>
 </Container>
 ```
+
 Cupidatat dolore ex excepteur est elit voluptate eiusmod elit Lorem do ex ullamco exercitation. Ex aliquip [Google](https://www.google.com) dolore eiusmod exercitation et officia aute magna et nulla nulla cillum reprehenderit ut. Consectetur voluptate amet amet anim deserunt consequat commodo. Ullamco deserunt officia commodo nisi dolor cupidatat dolore eu dolore non consequat tempor Lorem culpa. Velit ipsum nulla reprehenderit. Aliquip quis exercitation amet eu duis officia commodo amet. Elit consequat consectetur nostrud consectetur cupidatat eu labore eiusmod ipsum. Minim nisi nulla labore quis.
