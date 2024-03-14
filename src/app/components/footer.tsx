@@ -82,7 +82,7 @@ const StyledHr = styled.hr<{ theme: Theme }>`
 	background: ${({ theme }) => rgba(theme.colors.primaryLight, 0.5)};
 `;
 
-export default function Footer() {
+function Footer() {
 	const year = new Date().getFullYear();
 	return (
 		<StyledFooter>
@@ -129,7 +129,7 @@ export default function Footer() {
 						</StyledLink>
 					</StyledLinkWrapper>
 					<StyledParagraph $align="right">
-						Copyright © {year} Cherry. All rights reserved
+						Copyright © {year} Cherry. All rights reserved.
 					</StyledParagraph>
 				</Grid>
 				<Space $size={40} />
@@ -137,3 +137,64 @@ export default function Footer() {
 		</StyledFooter>
 	);
 }
+
+function DocsFooter() {
+	const year = new Date().getFullYear();
+	const StyledFooter = styled.footer<{ theme: Theme }>`
+		border-top: 1px solid ${({ theme }) => theme.colors.grayLight};
+		margin-top: 20px;
+		padding: 20px 0 0;
+
+		${mq("lg")} {
+			margin-top: 40px;
+			padding: 40px 0 0;
+		}
+
+		font-size: ${({ theme }) => theme.fontSizes.small.xs};
+		line-height: ${({ theme }) => theme.lineHeights.small.xs};
+
+		${mq("lg")} {
+			font-size: ${({ theme }) => theme.fontSizes.small.lg};
+			line-height: ${({ theme }) => theme.lineHeights.small.lg};
+		}
+	`;
+	const StyledParagraph = styled.p<{ theme: Theme }>`
+		color: ${({ theme }) => theme.colors.gray};
+	`;
+	const StyledLink = styled.a<{ theme: Theme }>`
+		font-weight: 500;
+		text-decoration: none;
+		color: ${({ theme }) => theme.colors.primary};
+		transition: all 0.3s ease;
+
+		@media (hover: hover) {
+			&:hover {
+				color: ${({ theme }) => theme.colors.primaryDark};
+			}
+		}
+
+		${mq("lg")} {
+			text-align: right;
+		}
+	`;
+
+	return (
+		<StyledFooter>
+			<Grid $xsCols={1} $lgCols={3}>
+				<Col $lgSpan={2}>
+					<StyledParagraph>
+						Copyright © {year} Cherry. All rights reserved.
+					</StyledParagraph>
+				</Col>
+				<StyledLink
+					href="https://github.com/cherry-design-system/styled-components"
+					target="_blank"
+				>
+					Edit this page on GitHub
+				</StyledLink>
+			</Grid>
+		</StyledFooter>
+	);
+}
+
+export { Footer, DocsFooter };

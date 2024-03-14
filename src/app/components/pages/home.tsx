@@ -26,7 +26,7 @@ import {
 	IconGitHub,
 } from "@/app/components/cherry/utils/icons";
 import { IconLink } from "@/app/components/icon-link";
-import Footer from "@/app/components/footer";
+import { Footer } from "@/app/components/footer";
 
 const gridDecoration = css`
 	position: relative;
