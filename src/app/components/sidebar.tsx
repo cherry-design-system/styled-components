@@ -37,9 +37,10 @@ const StyledSidebar = styled.nav<Props>`
 	${mq("lg")} {
 		width: 155px;
 		left: calc(50% - 477px);
-		top: 40px;
+		top: 0;
 		background: transparent;
-		padding: 0;
+		padding-top: 40px;
+		padding-bottom: 40px;
 		opacity: 1;
 		pointer-events: all;
 		transform: translateY(0);

@@ -11,7 +11,7 @@ export default function RootLayout({
 	return (
 		<Container $fluid>
 			<Sidebar />
-			<MaxWidth $size={600}>
+			<MaxWidth $lg={600}>
 				<Content>{children}</Content>
 				<DocsFooter />
 			</MaxWidth>
