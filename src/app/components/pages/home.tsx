@@ -151,7 +151,7 @@ function Home() {
 					<Image src="react.svg" alt="React" width={38} height={42} />
 				</Flex>
 				<Space $size={80} />
-				<MaxWidth $xs={640}>
+				<MaxWidth $xs={600}>
 					<GridDecoration>
 						<Content />
 					</GridDecoration>
