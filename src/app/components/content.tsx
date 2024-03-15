@@ -65,8 +65,13 @@ const StyledContent = styled.div<ContentProps>`
 	& h3,
 	& h4,
 	& h5,
-	& h6 {
+	& h6,
+	& img {
 		margin: 20px 0;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 	}
 
 	& h1:first-of-type {
@@ -82,6 +87,23 @@ const StyledContent = styled.div<ContentProps>`
 		@media (hover: hover) {
 			&:hover {
 				color: ${({ theme }) => theme.colors.primaryDark};
+			}
+		}
+	}
+
+	& img {
+		max-width: 100%;
+		border-radius: ${({ theme }) => theme.spacing.padding.xs};
+		box-shadow: ${({ theme }) => theme.shadows.lg};
+		transition: all 0.3s ease;
+	}
+
+	& a {
+		@media (hover: hover) {
+			&:hover {
+				& img {
+					box-shadow: ${({ theme }) => theme.shadows.md};
+				}
 			}
 		}
 	}

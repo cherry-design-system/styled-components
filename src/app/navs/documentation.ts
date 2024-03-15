@@ -23,11 +23,6 @@ export const docsFigmaNav = [
 		icon: "",
 	},
 	{
-		title: "Shadows",
-		url: "/docs/design/shadows",
-		icon: "",
-	},
-	{
 		title: "Typography",
 		url: "/docs/design/typography",
 		icon: "",
@@ -40,6 +35,11 @@ export const docsFigmaNav = [
 	{
 		title: "Inputs",
 		url: "/docs/design/inputs",
+		icon: "",
+	},
+	{
+		title: "Shadows",
+		url: "/docs/design/shadows",
 		icon: "",
 	},
 	{
