@@ -18,7 +18,7 @@ const StyledContent = styled.div<ContentProps>`
 	}
 
 	& ul {
-		& li {
+		& > li {
 			position: relative;
 			padding: 0 0 0 15px;
 
@@ -41,7 +41,7 @@ const StyledContent = styled.div<ContentProps>`
 	}
 
 	& ol {
-		& li {
+		& > li {
 			position: relative;
 			padding: 0;
 			counter-increment: item;
