@@ -92,12 +92,18 @@ function Footer() {
 				<Grid $xsCols={1} $lgCols={2}>
 					<StyledParagraph $align="left">
 						Designed and developed by{" "}
-						<a href="#" target="_blank">
+						<a
+							href="https://www.riangle.com/?ref=cherry.design"
+							target="_blank"
+						>
 							Riangle
 						</a>
 						.<br />
 						Created by{" "}
-						<a href="#" target="_blank">
+						<a
+							href="https://www.threads.net/@luangjokaj?ref=cherry.design"
+							target="_blank"
+						>
 							Luan Gjokaj
 						</a>
 						.
@@ -107,10 +113,18 @@ function Footer() {
 						$lgJustifyContent="flex-end"
 					>
 						<Space $xs={20} $lg="none" />
-						<IconLink href="#" $bgColor="#000000" $label="Threads">
+						<IconLink
+							href="https://www.threads.net/@luangjokaj?ref=cherry.design"
+							$bgColor="#000000"
+							$label="Threads"
+						>
 							<IconThreads />
 						</IconLink>
-						<IconLink href="#" $bgColor="#EA4C89" $label="Dribbble">
+						<IconLink
+							href="https://dribbble.com/luangjokaj?ref=cherry.design"
+							$bgColor="#EA4C89"
+							$label="Dribbble"
+						>
 							<IconDribbble />
 						</IconLink>
 					</Flex>
@@ -181,7 +195,7 @@ function DocsFooter() {
 					</StyledParagraph>
 				</Col>
 				<StyledLink
-					href="https://github.com/cherry-design-system/styled-components"
+					href="https://github.com/cherry-design-system/styled-components?ref=cherry.design"
 					target="_blank"
 				>
 					Edit this page on GitHub

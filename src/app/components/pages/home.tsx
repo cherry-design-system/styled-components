@@ -320,13 +320,25 @@ function Home() {
 				</StyledParagraph>
 				<Space $size={100} />
 				<Flex $justifyContent="center">
-					<IconLink href="#" $bgColor="#000000" $label="Figma">
+					<IconLink
+						href="https://www.figma.com/community/file/943862931766586094?ref=cherry.design"
+						$bgColor="#000000"
+						$label="Figma"
+					>
 						<IconFigma className="figma" />
 					</IconLink>
-					<IconLink href="#" $bgColor="#000000" $label="GitHub">
+					<IconLink
+						href="https://github.com/cherry-design-system/styled-components?ref=cherry.design"
+						$bgColor="#000000"
+						$label="GitHub"
+					>
 						<IconGitHub />
 					</IconLink>
-					<IconLink href="#" $bgColor="#7289DA" $label="Discord">
+					<IconLink
+						href="https://discord.gg/gm8Mz5Pe8u?ref=cherry.design"
+						$bgColor="#7289DA"
+						$label="Discord"
+					>
 						<IconDiscord />
 					</IconLink>
 				</Flex>
