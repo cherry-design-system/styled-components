@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import styled, { css } from "styled-components";
-import { Theme } from "@/app/components/cherry";
+import { Theme } from "@/app/components/cherry/utils";
 import {
 	formElementHeightStyles,
 	resetButton,
