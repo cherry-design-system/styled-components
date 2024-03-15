@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import { Theme } from "@/app/theme";
-import { StyledInputWrapper, StyledLabel } from "@/app/components/cherry/input";
 import {
+	Theme,
 	resetButton,
 	statusBorderStyles,
-} from "@/app/components/cherry/utils/mixins";
+} from "@/app/components/cherry/utils";
+import { StyledInputWrapper, StyledLabel } from "@/app/components/cherry/input";
 
 interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	children?: React.ReactNode;

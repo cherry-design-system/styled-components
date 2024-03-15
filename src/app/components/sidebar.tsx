@@ -8,10 +8,13 @@ import {
 	docsFigmaNav,
 	docsIntroNav,
 } from "@/app/navs/documentation";
-import { Theme, mq } from "@/app/theme";
+import {
+	Theme,
+	mq,
+	resetButton,
+	styledStrong,
+} from "@/app/components/cherry/utils";
 import { Space } from "@/app/components/cherry";
-import { resetButton } from "@/app/components/cherry/utils/mixins";
-import { styledStrong } from "./cherry/utils/typography";
 
 interface Props {
 	theme?: Theme;

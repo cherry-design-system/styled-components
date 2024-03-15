@@ -1,8 +1,8 @@
 import { Inter } from "next/font/google";
-import StyledComponentsRegistry from "@/lib/styled-components/registry";
-import ThemeProvider from "@/lib/styled-components/theme-provider";
 import Header from "@/app/components/header";
 import { MinHeight } from "@/app/components/min-height";
+import StyledComponentsRegistry from "./components/cherry/utils/lib/styled-components/registry";
+import CherryThemeProvider from "./components/cherry/utils/lib/styled-components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -50,12 +50,12 @@ export default function RootLayout({
 			</head>
 			<body className={inter.className}>
 				<StyledComponentsRegistry>
-					<ThemeProvider>
+					<CherryThemeProvider>
 						<MinHeight>
 							<Header />
 							{children}
 						</MinHeight>
-					</ThemeProvider>
+					</CherryThemeProvider>
 				</StyledComponentsRegistry>
 			</body>
 		</html>

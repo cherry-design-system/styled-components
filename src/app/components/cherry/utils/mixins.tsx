@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-import { Breakpoints, Theme, mq } from "@/app/theme";
+import { Breakpoints, Theme, mq } from "@/app/components/cherry/utils";
 
 export const resetButton = css`
 	appearance: none;

@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import { Theme } from "@/app/theme";
-import { StyledLabel } from "@/app/components/cherry/input";
 import {
+	Theme,
 	fullWidthStyles,
 	resetButton,
 	statusBorderStyles,
-} from "@/app/components/cherry/utils/mixins";
+} from "@/app/components/cherry/utils";
+import { StyledLabel } from "@/app/components/cherry/input";
 
 interface InputProps
 	extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
@@ -42,7 +42,7 @@ const StyledInput = styled.input<InputProps>`
 		width: 100%;
 		cursor: pointer;
 		border-radius: ${({ theme }) => theme.spacing.radius.xl};
-		border: solid 2px ${({ theme }) => theme.colors.grayLight};,
+		border: solid 2px ${({ theme }) => theme.colors.grayLight};
 		box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primaryLight};
 		transition: all 0.3s ease;
 		${({ $error, $success, theme }) => {
@@ -206,7 +206,7 @@ const StyledInput = styled.input<InputProps>`
 					}
 				`;
 		}
-	}}}
+	}}
 `;
 
 function Range({ ...props }: InputProps) {

@@ -1,6 +1,6 @@
 import React from "react";
 import { useTheme } from "styled-components";
-import { Theme } from "@/app/theme";
+import { Theme } from "@/app/components/cherry/utils";
 
 function IconCheck(props: React.SVGProps<SVGSVGElement>) {
 	const theme: Theme = useTheme() as Theme;

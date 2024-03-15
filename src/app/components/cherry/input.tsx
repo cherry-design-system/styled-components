@@ -1,15 +1,15 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import { Theme } from "@/app/theme";
-import { IconCheck } from "@/app/components/cherry/utils/icons";
 import {
+	Theme,
+	IconCheck,
 	formElementHeightStyles,
 	fullWidthStyles,
 	resetButton,
 	resetInput,
 	statusBorderStyles,
-} from "@/app/components/cherry/utils/mixins";
+} from "@/app/components/cherry/utils";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	children?: React.ReactNode;

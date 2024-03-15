@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import { Theme } from "@/app/theme";
-import { generateColSpanStyles } from "@/app/components/cherry/utils/mixins";
+import { Theme, generateColSpanStyles } from "@/app/components/cherry/utils";
 
 interface ColProps extends React.HTMLAttributes<HTMLDivElement> {
 	children?: React.ReactNode;

@@ -4,14 +4,16 @@ import styled from "styled-components";
 import Image from "next/image";
 import { rgba } from "polished";
 import Link from "next/link";
-import { Theme, mq } from "@/app/theme";
-import { Col, Container, Flex, Grid, Space } from "@/app/components/cherry";
-import { IconLink } from "@/app/components/icon-link";
-import { IconDribbble, IconThreads } from "@/app/components/cherry/utils/icons";
 import {
+	Theme,
+	mq,
+	IconDribbble,
+	IconThreads,
 	styledSmall,
 	styledText,
-} from "@/app/components/cherry/utils/typography";
+} from "@/app/components/cherry/utils";
+import { Col, Container, Flex, Grid, Space } from "@/app/components/cherry";
+import { IconLink } from "@/app/components/icon-link";
 
 const StyledFooter = styled.footer<{ theme: Theme }>`
 	background: ${({ theme }) => rgba(theme.colors.primaryLight, 0.2)};

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import { Breakpoints, mq } from "@/app/theme";
+import { Breakpoints, mq } from "@/app/components/cherry/utils";
 
 interface SpaceProps {
 	$size?: number | "none";

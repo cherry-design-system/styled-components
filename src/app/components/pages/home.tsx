@@ -3,7 +3,17 @@
 import React from "react";
 import Image from "next/image";
 import styled, { css } from "styled-components";
-import { Theme, mq } from "@/app/theme";
+import {
+	Theme,
+	IconDiscord,
+	IconFigma,
+	IconGitHub,
+	styledH1,
+	styledH3,
+	styledHero2,
+	styledStrong,
+	styledText,
+} from "@/app/components/cherry/utils";
 import {
 	Button,
 	Col,
@@ -20,20 +30,8 @@ import {
 	Toggle,
 } from "@/app/components/cherry";
 import Content from "@/app/docs/snippets/demo.mdx";
-import {
-	IconDiscord,
-	IconFigma,
-	IconGitHub,
-} from "@/app/components/cherry/utils/icons";
 import { IconLink } from "@/app/components/icon-link";
 import { Footer } from "@/app/components/footer";
-import {
-	styledH1,
-	styledH3,
-	styledHero2,
-	styledStrong,
-	styledText,
-} from "@/app/components/cherry/utils/typography";
 
 const gridDecoration = css`
 	position: relative;

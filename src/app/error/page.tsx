@@ -1,4 +1,4 @@
-import { Container } from "@/app/components/cherry/container";
+import { Container } from "@/app/components/cherry";
 import { OG_IMAGE } from "../utils/constants";
 
 export const metadata = {

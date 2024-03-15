@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import { Theme, mq } from "@/app/theme";
-import { styledText } from "@/app/components/cherry/utils/typography";
+import { Theme, mq, styledText } from "@/app/components/cherry/utils";
 
 interface ContentProps {
 	children: React.ReactNode;

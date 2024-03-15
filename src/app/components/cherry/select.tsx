@@ -1,16 +1,16 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import { Theme } from "@/app/theme";
-import { StyledInputWrapper, StyledLabel } from "@/app/components/cherry/input";
 import {
+	Theme,
+	IconArrow,
 	formElementHeightStyles,
 	fullWidthStyles,
 	resetButton,
 	resetInput,
 	statusBorderStyles,
-} from "@/app/components/cherry/utils/mixins";
-import { IconArrow } from "@/app/components/cherry/utils/icons";
+} from "@/app/components/cherry/utils";
+import { StyledInputWrapper, StyledLabel } from "@/app/components/cherry/input";
 
 interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
 	children?: React.ReactNode;

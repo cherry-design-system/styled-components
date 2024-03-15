@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import { Theme } from "@/app/theme";
-import { StyledInputWrapper, StyledLabel } from "@/app/components/cherry/input";
 import {
+	Theme,
 	fullWidthStyles,
 	resetButton,
 	resetInput,
 	statusBorderStyles,
-} from "@/app/components/cherry/utils/mixins";
+} from "@/app/components/cherry/utils";
+import { StyledInputWrapper, StyledLabel } from "@/app/components/cherry/input";
 
 interface TextareaProps
 	extends Omit<React.InputHTMLAttributes<HTMLTextAreaElement>, "size"> {
