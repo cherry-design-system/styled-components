@@ -20,29 +20,29 @@ export const spacing: Spacing = {
 };
 
 export const colors: Colors = {
-	primaryLight: "#91AEC4",
-	primary: "#4D6F8B",
+	primaryLight: "#91aec4",
+	primary: "#4d6f8b",
 	primaryDark: "#194569",
 
-	secondaryLight: "#A4B17B",
-	secondary: "#5C6E46",
-	secondaryDark: "#354C2B",
+	secondaryLight: "#a4b17b",
+	secondary: "#5c6e46",
+	secondaryDark: "#354c2b",
 
-	tertiaryLight: "#EBCCB9",
-	tertiary: "#816B5A",
+	tertiaryLight: "#ebccb9",
+	tertiary: "#816b5a",
 	tertiaryDark: "#675445",
 
-	grayLight: "#E5E7EB",
-	gray: "#9CA3AF",
-	grayDark: "#4B5563",
+	grayLight: "#e5e7eb",
+	gray: "#9ca3af",
+	grayDark: "#4b5563",
 
-	success: "#84CC16",
-	error: "#EF4444",
-	warning: "#EAB308",
-	info: "#06B6D4",
+	success: "#84cc16",
+	error: "#ef4444",
+	warning: "#eab308",
+	info: "#06b6d4",
 
 	dark: "#000000",
-	light: "#FFFFFF",
+	light: "#ffffff",
 };
 
 export const shadows: Shadows = {
@@ -56,7 +56,6 @@ export const shadows: Shadows = {
 export const fonts: Fonts = {
 	text: "Inter",
 	head: "Inter",
-	special: "Inter",
 	mono: "monospace",
 };
 
@@ -76,8 +75,8 @@ export const fontSizes: FontSizes = {
 	strong: { xs: "14px", lg: "16px" },
 	small: { xs: "12px", lg: "14px" },
 
-	blockquote: { xs: "14px", lg: "18px" },
-	code: { xs: "14px", lg: "18px" },
+	blockquote: { xs: "16px", lg: "18px" },
+	code: { xs: "14px", lg: "16px" },
 
 	button: { xs: "16px", lg: "16px" },
 	buttonBig: { xs: "18px", lg: "18px" },
@@ -87,29 +86,29 @@ export const fontSizes: FontSizes = {
 };
 
 export const lineHeights: LineHeights = {
-	hero1: { xs: "1.1", lg: "1.1" },
-	hero2: { xs: "1.1", lg: "1.2" },
-	hero3: { xs: "1.2", lg: "1.1" },
+	hero1: { xs: "1.10", lg: "1.10" },
+	hero2: { xs: "1.10", lg: "1.10" },
+	hero3: { xs: "1.20", lg: "1.10" },
 
-	h1: { xs: "1.5", lg: "1.4" },
-	h2: { xs: "1.5", lg: "1.5" },
-	h3: { xs: "1.3", lg: "1.5" },
-	h4: { xs: "1.3", lg: "1.5" },
-	h5: { xs: "1.6", lg: "1.5" },
-	h6: { xs: "1.6", lg: "1.6" },
+	h1: { xs: "1.50", lg: "1.40" },
+	h2: { xs: "1.50", lg: "1.50" },
+	h3: { xs: "1.30", lg: "1.50" },
+	h4: { xs: "1.30", lg: "1.50" },
+	h5: { xs: "1.60", lg: "1.50" },
+	h6: { xs: "1.60", lg: "1.60" },
 
-	text: { xs: "1.7", lg: "1.7" },
-	strong: { xs: "1.7", lg: "1.7" },
-	small: { xs: "1.7", lg: "1.7" },
+	text: { xs: "1.70", lg: "1.70" },
+	strong: { xs: "1.70", lg: "1.70" },
+	small: { xs: "1.70", lg: "1.70" },
 
-	blockquote: { xs: "1.7", lg: "1.7" },
-	code: { xs: "1.7", lg: "1.7" },
+	blockquote: { xs: "1.70", lg: "1.70" },
+	code: { xs: "1.70", lg: "1.70" },
 
-	button: { xs: "1", lg: "1" },
-	buttonBig: { xs: "1", lg: "1" },
+	button: { xs: "1.00", lg: "1.00" },
+	buttonBig: { xs: "1.00", lg: "1.00" },
 
-	input: { xs: "1", lg: "1" },
-	inputBig: { xs: "1", lg: "1" },
+	input: { xs: "1.00", lg: "1.00" },
+	inputBig: { xs: "1.00", lg: "1.00" },
 };
 
 export const theme: Theme = {
@@ -174,9 +173,8 @@ interface Shadows<TString = string> {
 }
 
 export interface Fonts<TString = string> {
-	text: TString;
 	head: TString;
-	special: TString;
+	text: TString;
 	mono: TString;
 }
 
