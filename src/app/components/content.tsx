@@ -13,7 +13,7 @@ const StyledContent = styled.div<ContentProps>`
 	& p,
 	& ul,
 	& ol {
-		margin: 10px 0;
+		margin: 20px 0;
 		${({ theme }) => styledText(theme)};
 	}
 
@@ -45,12 +45,12 @@ const StyledContent = styled.div<ContentProps>`
 			position: relative;
 			padding: 0;
 			counter-increment: item;
-			display: flex;
-			flex-wrap: nowrap;
+			padding: 0 0 0 15px;
+			text-indent: -15px;
 
 			&::before {
 				content: counter(item) ".";
-				display: block;
+				display: inline;
 				margin: 0 4px 0 0;
 				font-weight: 700;
 				color: ${({ theme }) => theme.colors.primaryLight};
@@ -59,8 +59,18 @@ const StyledContent = styled.div<ContentProps>`
 	}
 
 	& a[class],
-	& button {
-		margin: 10px 0;
+	& button,
+	& h1,
+	& h2,
+	& h3,
+	& h4,
+	& h5,
+	& h6 {
+		margin: 20px 0;
+	}
+
+	& h1:first-of-type {
+		margin-top: 0;
 	}
 
 	& a:not([class]) {
