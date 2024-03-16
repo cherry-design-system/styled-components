@@ -6,6 +6,20 @@
   "files": [
     "/src/app/components/cherry/**"
   ],
+  "author": "Luan Gjokaj <luan@riangle.com>",
+	"homepage": "https://cherry.design",
+  "repository": "https://github.com/cherry-design-system/styled-components",
+  "license": "MIT",
+  "keywords": [
+    "cherry",
+    "react",
+    "components",
+    "css",
+    "framework",
+    "design",
+    "design system",
+    "styled-components"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
