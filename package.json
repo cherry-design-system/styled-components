@@ -1,6 +1,6 @@
 {
   "name": "cherry-styled-components",
-  "version": "0.1.0-1",
+  "version": "0.1.0-2",
   "private": false,
   "main": "src/app/components/index.ts",
   "files": [
@@ -24,7 +24,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:types": "rimraf ./types && tsc",
+    "build:lib": "rimraf ./types && tsc",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"./src/**/*.{js,json,ts,tsx}\" \"!.node_modules/**\""
