@@ -38,3 +38,6 @@ next-env.d.ts
 
 .env
 .vscode
+
+types/.next
+types/tsconfig.tsbuildinfo
