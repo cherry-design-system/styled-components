@@ -1,11 +1,8 @@
 {
   "name": "cherry-styled-components",
-  "version": "0.1.0-4",
+  "version": "0.1.0-5",
   "private": false,
   "type": "module",
-  "files": [
-    "./dist"
-  ],
   "main": "./dist/cherry.umd.cjs",
   "module": "./dist/cherry.js",
   "types": "./dist/lib/index.d.ts",
