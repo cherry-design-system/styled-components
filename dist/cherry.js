@@ -3407,16 +3407,32 @@ const nt = H.span`
 	}
 `;
 function Da({ theme: e = Y, ...t }) {
-  return t.type === "checkbox" || t.type === "radio" ? /* @__PURE__ */ y.jsxs(nt, { $fullWidth: t.$fullWidth, type: t.type, theme: e, children: [
-    /* @__PURE__ */ y.jsxs(Ui, { theme: e, children: [
-      /* @__PURE__ */ y.jsx(Zi, { ...t, theme: e }),
-      !t.disabled && t.type === "checkbox" ? /* @__PURE__ */ y.jsx(zi, {}) : /* @__PURE__ */ y.jsx("em", {})
-    ] }),
-    t.$label && /* @__PURE__ */ y.jsx(Ge, { htmlFor: t.id, theme: e, children: t.$label })
-  ] }) : /* @__PURE__ */ y.jsxs(nt, { $fullWidth: t.$fullWidth, type: t.type, theme: e, children: [
-    t.$label && /* @__PURE__ */ y.jsx(Ge, { htmlFor: t.id, theme: e, children: t.$label }),
-    /* @__PURE__ */ y.jsx(Yi, { ...t, theme: e })
-  ] });
+  return t.type === "checkbox" || t.type === "radio" ? /* @__PURE__ */ y.jsxs(
+    nt,
+    {
+      $fullWidth: t.$fullWidth,
+      type: t.type,
+      theme: e,
+      children: [
+        /* @__PURE__ */ y.jsxs(Ui, { theme: e, children: [
+          /* @__PURE__ */ y.jsx(Zi, { ...t, theme: e }),
+          !t.disabled && t.type === "checkbox" ? /* @__PURE__ */ y.jsx(zi, {}) : /* @__PURE__ */ y.jsx("em", {})
+        ] }),
+        t.$label && /* @__PURE__ */ y.jsx(Ge, { htmlFor: t.id, theme: e, children: t.$label })
+      ]
+    }
+  ) : /* @__PURE__ */ y.jsxs(
+    nt,
+    {
+      $fullWidth: t.$fullWidth,
+      type: t.type,
+      theme: e,
+      children: [
+        t.$label && /* @__PURE__ */ y.jsx(Ge, { htmlFor: t.id, theme: e, children: t.$label }),
+        /* @__PURE__ */ y.jsx(Yi, { ...t, theme: e })
+      ]
+    }
+  );
 }
 const jn = (e) => `max-width: ${e}px;`;
 function Xi(e) {
