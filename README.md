@@ -13,3 +13,15 @@ Getting Started
 To begin using Cherry, refer to our comprehensive documentation at [cherry.design](https://cherry.design/). Explore the components, study the design principles, and integrate them seamlessly into your project. Remember, Cherry is not just a set of rules—it’s a toolkit that empowers you to create delightful user interfaces.
 
 Happy designing! 🍒
+
+---
+
+## Community
+
+For help, discussion about best practices, or any other conversation that would benefit from being searchable:
+
+[Discuss Cherry  on GitHub](https://github.com/cherry-design-system/styled-components/discussions)
+
+For casual chit-chat with others using Cherry:
+
+[Join the Discord Server](https://discord.gg/6JvcWU5bke)
