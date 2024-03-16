@@ -2,11 +2,12 @@
 import React from "react";
 import Link from "next/link";
 import styled, { css } from "styled-components";
-import { Theme } from "@/app/components/cherry/utils";
 import {
+	Theme,
+	theme as localTheme,
 	formElementHeightStyles,
 	resetButton,
-} from "@/app/components/cherry/utils/mixins";
+} from "./utils";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	children?: React.ReactNode;
@@ -161,7 +162,11 @@ function Button({ $variant = "primary", ...props }: ButtonProps) {
 	);
 }
 
-function LinkButton({ $variant = "primary", ...props }: LinkButtonProps) {
+function LinkButton({
+	$variant = "primary",
+	theme = localTheme,
+	...props
+}: LinkButtonProps) {
 	return (
 		<StyledLinkButton $variant={$variant} {...props}>
 			{props.children}

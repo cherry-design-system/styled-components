@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-import { Theme, mq } from "@/app/components/cherry/utils";
+import { Theme, mq } from "./theme";
 
 const styledHero1 = (theme: Theme) => css`
 	font-size: ${theme.fontSizes.hero1.xs};

@@ -9,7 +9,7 @@ import {
 	resetButton,
 	resetInput,
 	statusBorderStyles,
-} from "@/app/components/cherry/utils";
+} from "./utils";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	children?: React.ReactNode;

@@ -1,12 +1,7 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import {
-	Theme,
-	mq,
-	generateColsStyles,
-	generateGapStyles,
-} from "@/app/components/cherry/utils";
+import { Theme, mq, generateColsStyles, generateGapStyles } from "./utils";
 
 interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
 	children?: React.ReactNode;

@@ -9,8 +9,8 @@ import {
 	resetButton,
 	resetInput,
 	statusBorderStyles,
-} from "@/app/components/cherry/utils";
-import { StyledInputWrapper, StyledLabel } from "@/app/components/cherry/input";
+} from "./utils";
+import { StyledInputWrapper, StyledLabel } from "./input";
 
 interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
 	children?: React.ReactNode;

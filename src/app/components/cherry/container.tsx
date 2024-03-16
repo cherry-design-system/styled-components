@@ -1,11 +1,7 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import {
-	Theme,
-	mq,
-	generatePaddingStyles,
-} from "@/app/components/cherry/utils";
+import { Theme, mq, generatePaddingStyles } from "./utils";
 
 export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 	className?: string;

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import { Container, ContainerProps } from "@/app/components/cherry/container";
+import { Container, ContainerProps } from "./container";
 
 const StylesBox = styled(Container)<ContainerProps>`
 	background: ${({ theme }) => theme.colors.light};

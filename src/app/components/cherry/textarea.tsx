@@ -7,8 +7,8 @@ import {
 	resetButton,
 	resetInput,
 	statusBorderStyles,
-} from "@/app/components/cherry/utils";
-import { StyledInputWrapper, StyledLabel } from "@/app/components/cherry/input";
+} from "./utils";
+import { StyledInputWrapper, StyledLabel } from "./input";
 
 interface TextareaProps
 	extends Omit<React.InputHTMLAttributes<HTMLTextAreaElement>, "size"> {

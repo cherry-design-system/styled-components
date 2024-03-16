@@ -6,7 +6,7 @@ import {
 	mq,
 	generateGapStyles,
 	generateJustifyContentStyles,
-} from "@/app/components/cherry/utils";
+} from "./utils";
 
 type JustifyContentType =
 	| "center"

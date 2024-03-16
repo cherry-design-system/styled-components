@@ -1,17 +1,21 @@
 "use client";
 import React from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import { theme, GlobalStyles } from "@/app/components/cherry/utils";
+import { theme as defaultTheme, GlobalStyles } from "../utils";
 
-export default function ThemeProvider({
+function CherryThemeProvider({
 	children,
+	theme,
 }: {
 	children: React.ReactNode;
+	theme?: any;
 }) {
 	return (
-		<StyledThemeProvider theme={theme}>
+		<StyledThemeProvider theme={theme || defaultTheme}>
 			<GlobalStyles />
 			{children}
 		</StyledThemeProvider>
 	);
 }
+
+export { CherryThemeProvider };

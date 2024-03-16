@@ -6,8 +6,8 @@ import {
 	fullWidthStyles,
 	resetButton,
 	statusBorderStyles,
-} from "@/app/components/cherry/utils";
-import { StyledLabel } from "@/app/components/cherry/input";
+} from "./utils";
+import { StyledLabel } from "./input";
 
 interface InputProps
 	extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {

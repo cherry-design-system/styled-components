@@ -2,6 +2,10 @@
   "name": "cherry-styled-components",
   "version": "0.1.0",
   "private": true,
+  "main": "/src/app/components/cherry/index.ts",
+  "files": [
+    "/src/app/components/cherry/**"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
