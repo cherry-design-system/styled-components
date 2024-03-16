@@ -1,6 +1,7 @@
+"use client";
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyles = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
 html,
 body {
 	margin: 0;
@@ -73,3 +74,5 @@ strong,
 b {
 	font-weight: 700;
 }`;
+
+export { GlobalStyles };

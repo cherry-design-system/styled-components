@@ -3,8 +3,13 @@ import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
-import { Theme, mq, IconGitHub } from "@/app/components/cherry/utils";
-import { Container, Flex } from "@/app/components/cherry";
+import {
+	Theme,
+	mq,
+	IconGitHub,
+	Container,
+	Flex,
+} from "@/app/components/cherry";
 import { Search } from "./search/Search";
 
 const StyledHeader = styled.header<{ theme: Theme }>`

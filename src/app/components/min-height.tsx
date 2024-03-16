@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import { mq } from "@/app/components/cherry/utils";
+import { mq } from "@/app/components/cherry";
 
 interface MinHeightProps {
 	children: React.ReactNode;

@@ -13,8 +13,8 @@ import {
 	mq,
 	resetButton,
 	styledStrong,
-} from "@/app/components/cherry/utils";
-import { Space } from "@/app/components/cherry";
+	Space,
+} from "@/app/components/cherry";
 
 interface Props {
 	theme?: Theme;

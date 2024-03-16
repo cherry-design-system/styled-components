@@ -13,8 +13,6 @@ import {
 	styledHero2,
 	styledStrong,
 	styledText,
-} from "@/app/components/cherry/utils";
-import {
 	Button,
 	Col,
 	Container,

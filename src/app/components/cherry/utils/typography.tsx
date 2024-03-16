@@ -1,3 +1,4 @@
+"use client";
 import { css } from "styled-components";
 import { Theme, mq } from "./theme";
 

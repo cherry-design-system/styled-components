@@ -1,3 +1,5 @@
+export * from "./styled-components";
+export * from "./utils/";
 export * from "./box";
 export * from "./button";
 export * from "./col";

@@ -11,8 +11,12 @@ import {
 	IconThreads,
 	styledSmall,
 	styledText,
-} from "@/app/components/cherry/utils";
-import { Col, Container, Flex, Grid, Space } from "@/app/components/cherry";
+	Col,
+	Container,
+	Flex,
+	Grid,
+	Space,
+} from "@/app/components/cherry";
 import { IconLink } from "@/app/components/icon-link";
 
 const StyledFooter = styled.footer<{ theme: Theme }>`
