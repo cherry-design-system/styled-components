@@ -2,11 +2,13 @@
   "name": "cherry-styled-components",
   "version": "0.1.0-2",
   "private": false,
-  "main": "src/app/components/index.ts",
+  "type": "module",
   "files": [
-    "**/*"
+    "./dist"
   ],
-  "types": "types/src/app/components/index.d.ts",
+  "main": "./dist/cherry.umd.cjs",
+  "module": "./dist/cherry.js",
+  "types": "./dist/lib/index.d.ts",
   "author": "Luan Gjokaj <luan@riangle.com>",
   "homepage": "https://cherry.design",
   "repository": "https://github.com/cherry-design-system/styled-components",
@@ -22,30 +24,28 @@
     "styled-components"
   ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "build:lib": "rimraf ./types && tsc",
-    "start": "next start",
-    "lint": "next lint",
+    "dev": "vite dev",
+    "build": "vite build",
     "format": "prettier --write \"./src/**/*.{js,json,ts,tsx}\" \"!.node_modules/**\""
   },
   "dependencies": {
-    "next": "14.1.3",
+    "next": "^14.1.3",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@mdx-js/loader": "^3.0.1",
-    "@next/mdx": "^14.1.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.3",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
     "polished": "^4.3.1",
     "prettier": "^3.2.5",
-    "rimraf": "^5.0.5",
     "styled-components": "^6.1.8",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vite": "^5.1.6",
+    "vite-plugin-dts": "^3.7.3"
   }
 }
