@@ -1,6 +1,6 @@
 {
   "name": "cherry-styled-components",
-  "version": "0.1.0-5",
+  "version": "0.1.0-6",
   "private": false,
   "type": "module",
   "main": "./dist/cherry.umd.cjs",
