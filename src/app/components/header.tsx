@@ -107,7 +107,7 @@ export default function Header() {
 								Docs
 							</StyledLink>
 							<StyledLink
-								href="https://github.com/"
+								href="https://github.com/cherry-design-system/styled-components"
 								target="_blank"
 								aria-label="GitHub Repository"
 							>
