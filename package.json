@@ -1,7 +1,7 @@
 {
   "name": "cherry-styled-components",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "main": "/src/app/components/cherry/index.ts",
   "files": [
     "/src/app/components/cherry/**"
