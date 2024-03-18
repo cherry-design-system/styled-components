@@ -120,7 +120,11 @@ function IconThreads({ theme = defaultTheme, ...props }: IconProps) {
 	);
 }
 
-function IconFigma({ theme = defaultTheme, ...props }: IconProps) {
+function IconFigma({
+	theme = defaultTheme,
+	className = "figma",
+	...props
+}: IconProps) {
 	return (
 		<svg
 			width="19"
@@ -128,6 +132,7 @@ function IconFigma({ theme = defaultTheme, ...props }: IconProps) {
 			viewBox="0 0 19 28"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
+			className={className}
 			{...props}
 		>
 			<path
