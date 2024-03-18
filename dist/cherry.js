@@ -2768,7 +2768,11 @@ function pa({ theme: e = Y, ...t }) {
     }
   );
 }
-function ha({ theme: e = Y, ...t }) {
+function ha({
+  theme: e = Y,
+  className: t = "figma",
+  ...r
+}) {
   return /* @__PURE__ */ y.jsxs(
     "svg",
     {
@@ -2777,7 +2781,8 @@ function ha({ theme: e = Y, ...t }) {
       viewBox: "0 0 19 28",
       fill: "none",
       xmlns: "http://www.w3.org/2000/svg",
-      ...t,
+      className: t,
+      ...r,
       children: [
         /* @__PURE__ */ y.jsx(
           "path",
