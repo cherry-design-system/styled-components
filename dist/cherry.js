@@ -3700,6 +3700,10 @@ const ea = H.select`
 		pointer-events: none;
 	}
 
+	& select {
+		padding-right: 40px;
+	}
+
 	& select:active:not([disabled]) ~ svg,
 	& select:focus:not([disabled]) ~ svg {
 		transform: translateY(-50%) rotate(180deg);
