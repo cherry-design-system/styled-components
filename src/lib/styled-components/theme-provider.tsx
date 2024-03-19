@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import { theme as defaultTheme, GlobalStyles } from "../utils";
+import { GlobalStyles } from "../utils";
 
 function CherryThemeProvider({
 	children,
@@ -13,7 +13,7 @@ function CherryThemeProvider({
 	const GlobalStylesComponent = GlobalStyles(theme);
 
 	return (
-		<StyledThemeProvider theme={theme || defaultTheme}>
+		<StyledThemeProvider theme={theme}>
 			<GlobalStylesComponent />
 			{children}
 		</StyledThemeProvider>
