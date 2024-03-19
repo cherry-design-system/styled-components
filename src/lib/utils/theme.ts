@@ -59,7 +59,7 @@ export const colorsDark: Colors = {
 	tertiary: "#816b5a",
 	tertiaryDark: "#675445",
 
-	grayLight: "#1A1A1A",
+	grayLight: "#1a1a1a",
 	gray: "#454444",
 	grayDark: "#808080",
 
