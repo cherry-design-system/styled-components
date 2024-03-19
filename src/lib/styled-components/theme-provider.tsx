@@ -7,7 +7,7 @@ function CherryThemeProvider({
 	children,
 	theme,
 }: {
-	children: any;
+	children: React.ReactNode;
 	theme: Theme;
 }) {
 	const GlobalStylesComponent = GlobalStyles(theme);
