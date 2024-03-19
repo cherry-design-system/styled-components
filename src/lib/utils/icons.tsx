@@ -1,12 +1,14 @@
 "use client";
 import React from "react";
-import { theme as defaultTheme, Theme } from "./theme";
+import { useTheme } from "styled-components";
+import { Theme } from "./theme";
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
 	theme?: Theme;
 }
 
-function IconCheck({ theme = defaultTheme, ...props }: IconProps) {
+function IconCheck({ ...props }: IconProps) {
+	const theme: Theme = useTheme() as Theme;
 	return (
 		<svg
 			width="12"
@@ -27,7 +29,8 @@ function IconCheck({ theme = defaultTheme, ...props }: IconProps) {
 	);
 }
 
-function IconArrow({ theme = defaultTheme, ...props }: IconProps) {
+function IconArrow({ ...props }: IconProps) {
+	const theme: Theme = useTheme() as Theme;
 	return (
 		<svg
 			width="16"
