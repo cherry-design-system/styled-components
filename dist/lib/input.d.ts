@@ -11,5 +11,5 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 export declare const StyledInputWrapper: import("styled-components").IStyledComponent<"web", import("styled-components/dist/types").Substitute<React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, InputProps>>;
 export declare const StyledLabel: import("styled-components").IStyledComponent<"web", import("styled-components/dist/types").Substitute<React.DetailedHTMLProps<React.LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>, InputProps>>;
-declare function Input({ theme, ...props }: InputProps): React.JSX.Element;
+declare function Input({ ...props }: InputProps): React.JSX.Element;
 export { Input };

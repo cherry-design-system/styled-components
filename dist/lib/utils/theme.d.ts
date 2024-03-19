@@ -2,11 +2,13 @@ export declare const breakpoints: Breakpoints;
 export declare function mq(minWidth: keyof Breakpoints): string;
 export declare const spacing: Spacing;
 export declare const colors: Colors;
+export declare const colorsDark: Colors;
 export declare const shadows: Shadows;
 export declare const fonts: Fonts;
 export declare const fontSizes: FontSizes;
 export declare const lineHeights: LineHeights;
 export declare const theme: Theme;
+export declare const themeDark: Theme;
 export interface Breakpoints<TNumber = number> {
     xs: TNumber;
     sm: TNumber;
@@ -223,5 +225,6 @@ export interface Theme {
     fonts: Fonts;
     fontSizes: FontSizes;
     lineHeights: LineHeights;
+    isDark: boolean;
 }
 export {};

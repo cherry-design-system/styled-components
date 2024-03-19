@@ -10,5 +10,5 @@ interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
     theme?: Theme;
 }
 export declare const StyledIconWrapper: import("styled-components").IStyledComponent<"web", import("styled-components/dist/types").Substitute<React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, SelectProps>>;
-declare function Select({ theme, ...props }: SelectProps): React.JSX.Element;
+declare function Select({ ...props }: SelectProps): React.JSX.Element;
 export { Select };

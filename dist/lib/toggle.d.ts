@@ -10,5 +10,5 @@ interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
     $fullWidth?: boolean;
     theme?: Theme;
 }
-declare function Toggle({ theme, type, ...props }: ToggleProps): React.JSX.Element;
+declare function Toggle({ type, ...props }: ToggleProps): React.JSX.Element;
 export { Toggle };

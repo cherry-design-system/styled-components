@@ -9,5 +9,5 @@ interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "
     $fullWidth?: boolean;
     theme?: Theme;
 }
-declare function Range({ theme, ...props }: InputProps): React.JSX.Element;
+declare function Range({ ...props }: InputProps): React.JSX.Element;
 export { Range };
