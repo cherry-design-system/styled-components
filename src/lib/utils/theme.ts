@@ -46,6 +46,32 @@ export const colors: Colors = {
 	light: "#ffffff",
 };
 
+export const colorsDark: Colors = {
+	primaryLight: "#91aec4",
+	primary: "#4d6f8b",
+	primaryDark: "#194569",
+
+	secondaryLight: "#a4b17b",
+	secondary: "#5c6e46",
+	secondaryDark: "#354c2b",
+
+	tertiaryLight: "#ebccb9",
+	tertiary: "#816b5a",
+	tertiaryDark: "#675445",
+
+	grayLight: "#1A1A1A",
+	gray: "#454444",
+	grayDark: "#808080",
+
+	success: "#84cc16",
+	error: "#ef4444",
+	warning: "#eab308",
+	info: "#06b6d4",
+
+	dark: "#ffffff",
+	light: "#000000",
+};
+
 export const shadows: Shadows = {
 	xs: "0px 4px 4px 0px rgba(18, 18, 18, 0.04), 0px 1px 3px 0px rgba(39, 41, 45, 0.02)",
 	sm: "0px 4px 4px 0px rgba(18, 18, 18, 0.08), 0px 1px 3px 0px rgba(39, 41, 45, 0.04)",
@@ -120,6 +146,18 @@ export const theme: Theme = {
 	fonts,
 	fontSizes,
 	lineHeights,
+	isDark: false,
+};
+
+export const themeDark: Theme = {
+	breakpoints,
+	spacing,
+	colors: colorsDark,
+	shadows,
+	fonts,
+	fontSizes,
+	lineHeights,
+	isDark: true,
 };
 
 export interface Breakpoints<TNumber = number> {
@@ -239,4 +277,5 @@ export interface Theme {
 	fonts: Fonts;
 	fontSizes: FontSizes;
 	lineHeights: LineHeights;
+	isDark: boolean;
 }
