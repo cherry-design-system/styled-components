@@ -1,13 +1,15 @@
 "use client";
 import { createGlobalStyle } from "styled-components";
+import { Theme } from "./theme";
 
-const GlobalStyles = createGlobalStyle`
+const GlobalStyles = (theme: Theme) => createGlobalStyle`
 html,
 body {
 	margin: 0;
 	padding: 0;
 	min-height: 100%;
 	scroll-behavior: smooth;
+	background-color: ${theme.colors.light};
 }
 
 body {
@@ -41,9 +43,16 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+ul li,
+ol li {
 	margin: 0;
 	padding: 0;
+	color: ${theme.colors.dark};
+}
+
+a {
+	color: ${theme.isDark ? theme.colors.dark : theme.colors.primary};
 }
 
 ol,

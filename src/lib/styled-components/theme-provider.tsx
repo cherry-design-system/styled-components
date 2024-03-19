@@ -10,9 +10,11 @@ function CherryThemeProvider({
 	children: any;
 	theme?: any;
 }) {
+	const GlobalStylesComponent = GlobalStyles(theme);
+
 	return (
 		<StyledThemeProvider theme={theme || defaultTheme}>
-			<GlobalStyles />
+			<GlobalStylesComponent />
 			{children}
 		</StyledThemeProvider>
 	);

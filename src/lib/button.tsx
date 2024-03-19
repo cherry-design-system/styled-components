@@ -1,12 +1,7 @@
 "use client";
 import React from "react";
 import styled, { css } from "styled-components";
-import {
-	theme as defaultTheme,
-	Theme,
-	formElementHeightStyles,
-	resetButton,
-} from "./utils";
+import { Theme, formElementHeightStyles, resetButton } from "./utils";
 
 export interface ButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -34,14 +29,18 @@ export const buttonStyles = (
 	font-weight: 600;
 	white-space: nowrap;
 	hyphens: auto;
-	color: ${theme.colors.light};
+	color: ${theme.isDark ? theme.colors.dark : theme.colors.light};
 	text-decoration: none;
 	transition: all 0.3s ease;
 
 	${!disabled &&
 	$variant === "primary" &&
 	css`
-		color: ${$outline ? theme.colors.primary : theme.colors.light};
+		color: ${$outline
+			? theme.colors.primary
+			: theme.isDark
+				? theme.colors.dark
+				: theme.colors.light};
 		background: ${$outline ? "transparent" : theme.colors.primary};
 		border: solid 2px ${theme.colors.primary};
 		box-shadow: 0 0 0 0px ${theme.colors.primary};
@@ -68,7 +67,11 @@ export const buttonStyles = (
 	${!disabled &&
 	$variant === "secondary" &&
 	css`
-		color: ${$outline ? theme.colors.secondary : theme.colors.light};
+		color: ${$outline
+			? theme.colors.secondary
+			: theme.isDark
+				? theme.colors.dark
+				: theme.colors.light};
 		background: ${$outline ? "transparent" : theme.colors.secondary};
 		border: solid 2px ${theme.colors.secondary};
 		box-shadow: 0 0 0 0px ${theme.colors.secondary};
@@ -95,7 +98,11 @@ export const buttonStyles = (
 	${!disabled &&
 	$variant === "tertiary" &&
 	css`
-		color: ${$outline ? theme.colors.tertiary : theme.colors.light};
+		color: ${$outline
+			? theme.colors.tertiary
+			: theme.isDark
+				? theme.colors.dark
+				: theme.colors.light};
 		background: ${$outline ? "transparent" : theme.colors.tertiary};
 		border: solid 2px ${theme.colors.tertiary};
 		box-shadow: 0 0 0 0px ${theme.colors.tertiary};
@@ -144,13 +151,9 @@ const StyledButton = styled.button<ButtonProps>`
 		buttonStyles(theme, $variant, $size, $outline, $fullWidth, disabled)}
 `;
 
-function Button({
-	theme = defaultTheme,
-	$variant = "primary",
-	...props
-}: ButtonProps) {
+function Button({ $variant = "primary", ...props }: ButtonProps) {
 	return (
-		<StyledButton $variant={$variant} {...props} theme={theme}>
+		<StyledButton $variant={$variant} {...props}>
 			{props.children}
 		</StyledButton>
 	);
