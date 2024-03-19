@@ -48,7 +48,4 @@ function IconArrow({ theme = defaultTheme, ...props }: IconProps) {
 	);
 }
 
-export {
-	IconCheck,
-	IconArrow,
-};
+export { IconCheck, IconArrow };

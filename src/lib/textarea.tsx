@@ -88,13 +88,9 @@ function Textarea({ ...props }: TextareaProps) {
 	return (
 		<StyledInputWrapper $fullWidth={props.$fullWidth}>
 			{props.$label && (
-				<StyledLabel htmlFor={props.id}>
-					{props.$label}
-				</StyledLabel>
+				<StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>
 			)}
-			<StyledTextarea {...props}>
-				{props.children}
-			</StyledTextarea>
+			<StyledTextarea {...props}>{props.children}</StyledTextarea>
 		</StyledInputWrapper>
 	);
 }
