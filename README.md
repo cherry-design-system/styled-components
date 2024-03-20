@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Cherry Design System is a versatile foundation for projects. It offers a white label base, ready-to-use Figma designs, open-source React components, theming support with dark mode. Explore the [docs](https://cherry.design/) to create delightful user interfaces.
+Cherry Design System is a versatile foundation for projects. It offers a white label base, ready-to-use Figma designs, open-source React components, built-in support for theming and dark mode. Explore the [docs](https://cherry.design/) to create delightful user interfaces.
 
 ---
 
