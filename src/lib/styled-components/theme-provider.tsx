@@ -4,47 +4,46 @@ import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { GlobalStyles, Theme } from "../utils";
 
 interface ThemeContextProps {
-	setTheme: any;
+  setTheme: any;
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({
-	setTheme: null,
+  setTheme: null,
 });
 
 function CherryThemeProvider({
-	children,
-	theme,
-	themeDark,
+  children,
+  theme,
+  themeDark,
 }: {
-	children: React.ReactNode;
-	theme: Theme;
-	themeDark?: Theme;
+  children: React.ReactNode;
+  theme: Theme;
+  themeDark?: Theme;
 }) {
-	const [currentTheme, setTheme] = useState(theme);
-	useEffect(() => {
-		if (!themeDark) return setTheme(theme);
-		if (
-			localStorage.theme === "dark" ||
-			(!("theme" in localStorage) &&
-				window.matchMedia("(prefers-color-scheme: dark)").matches)
-		) {
-			document.documentElement.classList.add("dark");
-			setTheme(themeDark);
-		} else {
-			document.documentElement.classList.remove("dark");
-			setTheme(theme);
-		}
-	}, []);
-	const GlobalStylesComponent = GlobalStyles(currentTheme);
+  const [currentTheme, setTheme] = useState(theme);
+  useEffect(() => {
+    if (!themeDark) return setTheme(theme);
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+      setTheme(themeDark);
+    } else {
+      document.documentElement.classList.remove("dark");
+      setTheme(theme);
+    }
+  }, []);
+  const GlobalStylesComponent = GlobalStyles(currentTheme);
 
-	return (
-		<StyledThemeProvider theme={currentTheme}>
-			<ThemeContext.Provider value={{ setTheme }}>
-				<GlobalStylesComponent />
-				{children}
-			</ThemeContext.Provider>
-		</StyledThemeProvider>
-	);
+  return (
+    <StyledThemeProvider theme={currentTheme}>
+      <ThemeContext.Provider value={{ setTheme }}>
+        <GlobalStylesComponent />
+        {children}
+      </ThemeContext.Provider>
+    </StyledThemeProvider>
+  );
 }
 
 export { CherryThemeProvider };

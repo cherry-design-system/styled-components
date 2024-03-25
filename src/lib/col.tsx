@@ -4,26 +4,26 @@ import styled from "styled-components";
 import { theme as defaultTheme, Theme, generateColSpanStyles } from "./utils";
 
 interface ColProps extends React.HTMLAttributes<HTMLDivElement> {
-	children?: React.ReactNode;
-	$span?: number;
-	$xsSpan?: number;
-	$smSpan?: number;
-	$mdSpan?: number;
-	$lgSpan?: number;
-	$xlSpan?: number;
-	$xxlSpan?: number;
-	$xxxlSpan?: number;
-	theme?: Theme;
+  children?: React.ReactNode;
+  $span?: number;
+  $xsSpan?: number;
+  $smSpan?: number;
+  $mdSpan?: number;
+  $lgSpan?: number;
+  $xlSpan?: number;
+  $xxlSpan?: number;
+  $xxxlSpan?: number;
+  theme?: Theme;
 }
 
 const StyledCol = styled.div<ColProps>`
-	${({ $span }) =>
-		$span &&
-		`
+  ${({ $span }) =>
+    $span &&
+    `
 		grid-column: span ${$span};
 	`}
 
-	${({ $xsSpan }) => $xsSpan && generateColSpanStyles("xs", $xsSpan)}
+  ${({ $xsSpan }) => $xsSpan && generateColSpanStyles("xs", $xsSpan)}
 	${({ $smSpan }) => $smSpan && generateColSpanStyles("sm", $smSpan)}
 	${({ $mdSpan }) => $mdSpan && generateColSpanStyles("md", $mdSpan)}
 	${({ $lgSpan }) => $lgSpan && generateColSpanStyles("lg", $lgSpan)}
@@ -33,11 +33,11 @@ const StyledCol = styled.div<ColProps>`
 `;
 
 function Col({ theme = defaultTheme, ...props }: ColProps) {
-	return (
-		<StyledCol {...props} theme={theme}>
-			{props.children}
-		</StyledCol>
-	);
+  return (
+    <StyledCol {...props} theme={theme}>
+      {props.children}
+    </StyledCol>
+  );
 }
 
 export { Col };
