@@ -17,7 +17,9 @@ function StyledComponentsRegistry({ children }: { children: React.ReactNode }) {
   if (typeof window !== "undefined") return <>{children}</>;
 
   return (
-    <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>{children}</StyleSheetManager>
+    <StyleSheetManager sheet={styledComponentsStyleSheet.instance} enableVendorPrefixes>
+      {children}
+    </StyleSheetManager>
   );
 }
 
