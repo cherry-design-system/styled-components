@@ -3165,6 +3165,7 @@ const ra = M.div`
   justify-content: ${({ $justifyContent: e }) => e || "flex-start"};
   flex-wrap: ${({ $wrap: e }) => e || "wrap"};
   gap: ${({ $gap: e, theme: t }) => e && `${e}px` || t.spacing.gridGap.xs};
+  flex-direction: ${({ $direction: e }) => e || "row"};
 
   ${I("lg")} {
     gap: ${({ $gap: e, theme: t }) => e && `${e}px` || t.spacing.gridGap.lg};

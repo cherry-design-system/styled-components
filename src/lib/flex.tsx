@@ -38,6 +38,7 @@ interface FlexProps extends React.AllHTMLAttributes<FlexProps> {
   $xlGap?: GapType;
   $xxlGap?: GapType;
   $xxxlGap?: GapType;
+  $direction?: "row" | "column" | "row-reverse" | "column-reverse";
   theme?: Theme;
 }
 
@@ -46,6 +47,7 @@ const StyledFlex = styled.div<FlexProps>`
   justify-content: ${({ $justifyContent }) => $justifyContent || "flex-start"};
   flex-wrap: ${({ $wrap }) => $wrap || "wrap"};
   gap: ${({ $gap, theme }) => ($gap && `${$gap}px`) || theme.spacing.gridGap.xs};
+  flex-direction: ${({ $direction }) => $direction || "row"};
 
   ${mq("lg")} {
     gap: ${({ $gap, theme }) => ($gap && `${$gap}px`) || theme.spacing.gridGap.lg};
@@ -83,3 +85,4 @@ function Flex({ theme = defaultTheme, ...props }: FlexProps) {
 }
 
 export { Flex };
+

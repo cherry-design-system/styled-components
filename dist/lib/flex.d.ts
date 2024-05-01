@@ -22,6 +22,7 @@ interface FlexProps extends React.AllHTMLAttributes<FlexProps> {
     $xlGap?: GapType;
     $xxlGap?: GapType;
     $xxxlGap?: GapType;
+    $direction?: "row" | "column" | "row-reverse" | "column-reverse";
     theme?: Theme;
 }
 declare function Flex({ theme, ...props }: FlexProps): React.JSX.Element;
