@@ -1,5 +1,6 @@
-import React from "react";
-import { Theme } from "./utils";
+import { Theme } from './utils';
+import { default as React } from 'react';
+
 interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
     children?: React.ReactNode;
     type?: "checkbox" | "radio";

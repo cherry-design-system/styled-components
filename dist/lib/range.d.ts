@@ -1,5 +1,6 @@
-import React from "react";
-import { Theme } from "./utils";
+import { Theme } from './utils';
+import { default as React } from 'react';
+
 interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
     className?: string;
     $label?: string;

@@ -1,5 +1,6 @@
-import React from "react";
-import { Theme } from "../utils";
+import { Theme } from '../utils';
+import { default as React } from 'react';
+
 interface ThemeContextProps {
     setTheme: any;
 }

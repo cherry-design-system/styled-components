@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Container, ContainerProps } from "./container";
 import { theme as defaultTheme } from "./utils";
 
-const StylesBox = styled(Container)<ContainerProps>`
+const StyledBox = styled(Container)<ContainerProps>`
   background: ${({ theme }) => theme.colors.light};
   border-radius: ${({ theme }) => theme.spacing.radius.lg};
   border: solid 1px ${({ theme }) => theme.colors.grayLight};
@@ -12,10 +12,11 @@ const StylesBox = styled(Container)<ContainerProps>`
 
 function Box({ theme = defaultTheme, ...props }: ContainerProps) {
   return (
-    <StylesBox {...props} theme={theme}>
+    <StyledBox {...props} theme={theme}>
       {props.children}
-    </StylesBox>
+    </StyledBox>
   );
 }
 
 export { Box };
+

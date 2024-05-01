@@ -1,5 +1,6 @@
-import React from "react";
-import { Theme } from "./utils";
+import { Theme } from './utils';
+import { default as React } from 'react';
+
 interface TextareaProps extends Omit<React.InputHTMLAttributes<HTMLTextAreaElement>, "size"> {
     children?: React.ReactNode;
     $label?: string;

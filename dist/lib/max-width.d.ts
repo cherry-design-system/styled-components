@@ -1,4 +1,5 @@
-import React from "react";
+import { default as React } from 'react';
+
 interface MaxWidthProps extends React.HTMLAttributes<HTMLDivElement> {
     $size?: number;
     $xs?: number;

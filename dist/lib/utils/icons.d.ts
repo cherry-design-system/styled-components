@@ -1,5 +1,6 @@
-import React from "react";
-import { Theme } from "./theme";
+import { Theme } from './theme';
+import { default as React } from 'react';
+
 interface IconProps extends React.SVGProps<SVGSVGElement> {
     theme?: Theme;
 }
