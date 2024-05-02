@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {
   Theme,
   IconCheck,
@@ -18,6 +18,8 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   $error?: boolean;
   $success?: boolean;
   $fullWidth?: boolean;
+  $icon?: React.ReactNode;
+  $iconPosition?: "left" | "right";
   theme?: Theme;
 }
 
@@ -211,6 +213,42 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
   }
 `;
 
+const StyledCustomIconWrapper = styled.span<InputProps>`
+  position: relative;
+  ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)};
+
+  & svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  ${({ $icon, $iconPosition }) =>
+    $icon && $iconPosition === "right"
+      ? css`
+          & svg {
+            right: 16px;
+          }
+
+          & input {
+            padding-right: 50px;
+          }
+        `
+      : css`
+          & svg {
+            left: 16px;
+          }
+
+          & svg ~ input {
+            padding-left: 50px;
+          }
+        `}
+`;
+
 function Input({ ...props }: InputProps) {
   if (props.type === "checkbox" || props.type === "radio") {
     return (
@@ -226,10 +264,17 @@ function Input({ ...props }: InputProps) {
 
   return (
     <StyledInputWrapper $fullWidth={props.$fullWidth} type={props.type}>
-      {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
-      <StyledInput {...props} />
+      <StyledInputWrapper>
+        {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
+      </StyledInputWrapper>
+      <StyledCustomIconWrapper {...props}>
+        {props.$iconPosition !== "right" && props.$icon && props.$icon}
+        <StyledInput {...props} />
+        {props.$iconPosition === "right" && props.$icon && props.$icon}
+      </StyledCustomIconWrapper>
     </StyledInputWrapper>
   );
 }
 
 export { Input };
+
