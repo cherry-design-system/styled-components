@@ -85,4 +85,3 @@ function Flex({ theme = defaultTheme, ...props }: FlexProps) {
 }
 
 export { Flex };
-

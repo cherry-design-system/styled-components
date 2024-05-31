@@ -19,4 +19,3 @@ function Box({ theme = defaultTheme, ...props }: ContainerProps) {
 }
 
 export { Box };
-

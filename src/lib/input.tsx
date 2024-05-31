@@ -26,8 +26,13 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 export const StyledInputWrapper = styled.span<InputProps>`
   display: inline-flex;
   flex-wrap: ${({ type }) => (type === "checkbox" || type === "radio" ? "nowrap" : "wrap")};
-  gap: 10px;
   align-items: center;
+
+  ${({ $label }) =>
+    $label &&
+    css`
+      gap: 10px;
+    `}
 
   ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
@@ -225,6 +230,7 @@ const StyledCustomIconWrapper = styled.span<InputProps>`
     width: 24px;
     height: 24px;
     object-fit: contain;
+    color: ${({ theme }) => theme.colors.primary};
   }
 
   ${({ $icon, $iconPosition }) =>
@@ -252,7 +258,7 @@ const StyledCustomIconWrapper = styled.span<InputProps>`
 function Input({ ...props }: InputProps) {
   if (props.type === "checkbox" || props.type === "radio") {
     return (
-      <StyledInputWrapper $fullWidth={props.$fullWidth} type={props.type}>
+      <StyledInputWrapper $fullWidth={props.$fullWidth} type={props.type} $label={props.$label}>
         <StyledIconWrapper>
           <StyledRadioCheckboxInput {...props} />
           {!props.disabled && props.type === "checkbox" ? <IconCheck /> : <em />}
@@ -263,7 +269,7 @@ function Input({ ...props }: InputProps) {
   }
 
   return (
-    <StyledInputWrapper $fullWidth={props.$fullWidth} type={props.type}>
+    <StyledInputWrapper $fullWidth={props.$fullWidth} type={props.type} $label={props.$label}>
       <StyledInputWrapper>
         {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
       </StyledInputWrapper>
@@ -277,4 +283,3 @@ function Input({ ...props }: InputProps) {
 }
 
 export { Input };
-

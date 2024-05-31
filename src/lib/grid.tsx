@@ -25,6 +25,7 @@ interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const StyledGrid = styled.div<GridProps>`
+  width: 100%;
   display: grid;
   grid-template-columns: ${({ $cols }) => `repeat(${$cols || 3}, minmax(0, 1fr))`};
   gap: ${({ $gap, theme }) => ($gap && `${$gap}px`) || theme.spacing.gridGap.xs};

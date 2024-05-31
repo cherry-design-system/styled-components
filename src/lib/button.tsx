@@ -9,6 +9,8 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   $size?: "default" | "big";
   $outline?: boolean;
   $fullWidth?: boolean;
+  $icon?: React.ReactNode;
+  $iconPosition?: "left" | "right";
   theme?: Theme;
 }
 
@@ -18,11 +20,13 @@ export const buttonStyles = (
   $size?: "default" | "big",
   $outline?: boolean,
   $fullWidth?: boolean,
+  $icon?: React.ReactNode,
+  $iconPosition?: "left" | "right",
   disabled?: boolean,
 ) => css`
   ${resetButton};
   font-family: inherit;
-  display: inline-block;
+  display: inline-flex;
   padding: 15px 30px;
   border-radius: 100px;
   font-weight: 600;
@@ -31,6 +35,16 @@ export const buttonStyles = (
   color: ${theme.isDark ? theme.colors.dark : theme.colors.light};
   text-decoration: none;
   transition: all 0.3s ease;
+  text-align: center;
+  gap: 10px;
+  text-overflow: ellipsis;
+  justify-content: center;
+
+  & .icon,
+  & .lucide {
+    margin: -4px 0 0 0;
+    min-width: 24px;
+  }
 
   ${!disabled &&
   $variant === "primary" &&
@@ -147,7 +161,9 @@ const StyledButton = styled.button<ButtonProps>`
 function Button({ $variant = "primary", ...props }: ButtonProps) {
   return (
     <StyledButton $variant={$variant} {...props}>
+      {props.$iconPosition !== "right" && props.$icon && props.$icon}
       {props.children}
+      {props.$iconPosition === "right" && props.$icon && props.$icon}
     </StyledButton>
   );
 }

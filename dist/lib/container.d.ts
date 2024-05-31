@@ -1,5 +1,5 @@
-import { Theme } from './utils';
 import { default as React } from 'react';
+import { Theme } from './utils';
 
 export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
     className?: string;
