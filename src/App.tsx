@@ -20,8 +20,8 @@ function App() {
         <Grid $xsCols={1} $lgCols={3} $gap={20}>
           <Col $xsSpan={1} $lgSpan={2}>
             <Grid $xsCols={1} $lgCols={2} $gap={20}>
-              <Input placeholder="Placeholder" $fullWidth />
-              <Select $fullWidth>
+              <Input placeholder="Placeholder" $fullWidth $label="Input" id="test1" />
+              <Select $fullWidth $label="Select" id="select">
                 <option>Select</option>
               </Select>
               <Col $lgSpan={2}>

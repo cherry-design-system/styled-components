@@ -270,9 +270,7 @@ function Input({ ...props }: InputProps) {
 
   return (
     <StyledInputWrapper $fullWidth={props.$fullWidth} type={props.type} $label={props.$label}>
-      <StyledInputWrapper>
-        {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
-      </StyledInputWrapper>
+      {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
       <StyledCustomIconWrapper {...props}>
         {props.$iconPosition !== "right" && props.$icon && props.$icon}
         <StyledInput {...props} />

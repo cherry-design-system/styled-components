@@ -107,7 +107,7 @@ export const StyledIconWrapper = styled.span<SelectProps>`
 
 function Select({ ...props }: SelectProps) {
   return (
-    <StyledInputWrapper $fullWidth={props.$fullWidth}>
+    <StyledInputWrapper $fullWidth={props.$fullWidth} $label={props.$label}>
       {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
       <StyledIconWrapper $fullWidth={props.$fullWidth}>
         <StyledSelect {...props}>{props.children}</StyledSelect>
