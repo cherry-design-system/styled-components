@@ -27,7 +27,7 @@ const StyledSelect = styled.select<SelectProps>`
   ${resetInput};
   font-family: inherit;
   display: inline-block;
-  padding: 15px;
+  padding: 0 15px;
   border-radius: ${({ theme }) => theme.spacing.radius.xs};
   font-weight: 400;
   white-space: nowrap;
