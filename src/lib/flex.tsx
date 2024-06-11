@@ -7,6 +7,7 @@ import {
   mq,
   generateGapStyles,
   generateJustifyContentStyles,
+  fullWidthStyles,
 } from "./utils";
 
 type JustifyContentType =
@@ -39,6 +40,7 @@ interface FlexProps extends React.AllHTMLAttributes<FlexProps> {
   $xxlGap?: GapType;
   $xxxlGap?: GapType;
   $direction?: "row" | "column" | "row-reverse" | "column-reverse";
+  $fullWidth?: boolean;
   theme?: Theme;
 }
 
@@ -74,6 +76,7 @@ const StyledFlex = styled.div<FlexProps>`
 	${({ $xxxlGap }) => $xxxlGap && generateGapStyles("xxxl", $xxxlGap)}
 	${({ $xxxlJustifyContent }) =>
     $xxxlJustifyContent && generateJustifyContentStyles("xxxl", $xxxlJustifyContent)}
+  ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
 
 function Flex({ theme = defaultTheme, ...props }: FlexProps) {
