@@ -59,6 +59,7 @@ const StyledInput = styled.input<InputProps>`
   border: solid 2px ${({ theme }) => theme.colors.grayLight};
   box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.primaryLight};
   transition: all 0.3s ease;
+  white-space: nowrap;
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.gray};
