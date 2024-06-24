@@ -1008,8 +1008,8 @@ b {
   padding: 15px;
   border-radius: ${({theme:e})=>e.spacing.radius.xs};
   font-weight: 400;
-  white-space: nowrap;
-  hyphens: auto;
+  white-space: break-spaces;
+  hyphens: none;
   color: ${({theme:e})=>e.colors.dark};
   background: ${({theme:e})=>e.colors.light};
   border: solid 2px ${({theme:e})=>e.colors.grayLight};

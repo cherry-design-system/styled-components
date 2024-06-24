@@ -22,8 +22,8 @@ const StyledTextarea = styled.textarea<TextareaProps>`
   padding: 15px;
   border-radius: ${({ theme }) => theme.spacing.radius.xs};
   font-weight: 400;
-  white-space: nowrap;
-  hyphens: auto;
+  white-space: break-spaces;
+  hyphens: none;
   color: ${({ theme }) => theme.colors.dark};
   background: ${({ theme }) => theme.colors.light};
   border: solid 2px ${({ theme }) => theme.colors.grayLight};
