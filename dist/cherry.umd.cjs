@@ -576,6 +576,7 @@ b {
   border: solid 2px ${({theme:e})=>e.colors.grayLight};
   box-shadow: 0 0 0 0px ${({theme:e})=>e.colors.primaryLight};
   transition: all 0.3s ease;
+  word-break: keep-all;
   white-space: nowrap;
 
   &::placeholder {
