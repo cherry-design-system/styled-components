@@ -12,6 +12,7 @@ interface TextareaProps extends Omit<React.InputHTMLAttributes<HTMLTextAreaEleme
   $success?: boolean;
   $fullWidth?: boolean;
   theme?: Theme;
+  rows?: number;
 }
 
 const StyledTextarea = styled.textarea<TextareaProps>`

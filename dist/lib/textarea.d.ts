@@ -9,6 +9,7 @@ interface TextareaProps extends Omit<React.InputHTMLAttributes<HTMLTextAreaEleme
     $success?: boolean;
     $fullWidth?: boolean;
     theme?: Theme;
+    rows?: number;
 }
 declare function Textarea({ ...props }: TextareaProps): React.JSX.Element;
 export { Textarea };
