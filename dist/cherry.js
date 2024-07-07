@@ -3718,8 +3718,8 @@ const ma = D.textarea`
 	${({ $fullWidth: e }) => fe(!!e)}
 `;
 function Qa({ ...e }) {
-  return /* @__PURE__ */ x.jsxs(Qe, { $fullWidth: e.$fullWidth, children: [
-    e.$label && /* @__PURE__ */ x.jsx(Be, { htmlFor: e.id, children: e.$label }),
+  return /* @__PURE__ */ x.jsxs(Qe, { $fullWidth: e.$fullWidth, $label: e.$label, children: [
+    e.$label && /* @__PURE__ */ x.jsx(Be, { htmlFor: e.id, $label: e.$label, children: e.$label }),
     /* @__PURE__ */ x.jsx(ma, { ...e, children: e.children })
   ] });
 }

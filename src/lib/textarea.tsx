@@ -76,8 +76,12 @@ const StyledTextarea = styled.textarea<TextareaProps>`
 
 function Textarea({ ...props }: TextareaProps) {
   return (
-    <StyledInputWrapper $fullWidth={props.$fullWidth}>
-      {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
+    <StyledInputWrapper $fullWidth={props.$fullWidth} $label={props.$label}>
+      {props.$label && (
+        <StyledLabel htmlFor={props.id} $label={props.$label}>
+          {props.$label}
+        </StyledLabel>
+      )}
       <StyledTextarea {...props}>{props.children}</StyledTextarea>
     </StyledInputWrapper>
   );

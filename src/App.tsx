@@ -37,7 +37,7 @@ function App() {
               </Col>
             </Grid>
           </Col>
-          <Textarea $fullWidth defaultValue="Textarea" />
+          <Textarea $label="Textarea" $fullWidth defaultValue="Textarea" />
         </Grid>
         <Space $size={20} />
         <Grid $xsCols={1} $lgCols={2} $gap={20}>
