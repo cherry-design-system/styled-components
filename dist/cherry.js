@@ -3822,7 +3822,7 @@ const ba = D.span`
 		}`}
 `;
 function es({ type: e = "checkbox", ...t }) {
-  return /* @__PURE__ */ x.jsxs(Qe, { $fullWidth: t.$fullWidth, children: [
+  return /* @__PURE__ */ x.jsxs(Qe, { $fullWidth: t.$fullWidth, $label: t.$label, children: [
     /* @__PURE__ */ x.jsxs(ba, { children: [
       /* @__PURE__ */ x.jsx(xa, { ...t, type: e }),
       /* @__PURE__ */ x.jsx(
