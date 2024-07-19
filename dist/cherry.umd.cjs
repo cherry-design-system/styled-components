@@ -374,7 +374,7 @@ b {
   background: ${({theme:e})=>e.colors.light};
   border-radius: ${({theme:e})=>e.spacing.radius.lg};
   border: solid 1px ${({theme:e})=>e.colors.grayLight};
-`;function Yi({theme:e=Fe,...t}){return x.jsx(Ui,{...t,theme:e,children:t.children})}const An=(e,t,r,n,i,a,s,l)=>R`
+`;function Yi({theme:e=Fe,...t}){return x.jsx(Ui,{...t,theme:e,children:t.children})}const An=(e,t,r,n,i,a)=>R`
   ${se};
   font-family: inherit;
   display: inline-flex;
@@ -397,7 +397,7 @@ b {
     min-width: 24px;
   }
 
-  ${!l&&t==="primary"&&R`
+  ${!a&&t==="primary"&&R`
     color: ${n?e.colors.primary:e.isDark?e.colors.dark:e.colors.light};
     background: ${n?"transparent":e.colors.primary};
     border: solid 2px ${e.colors.primary};
@@ -420,7 +420,7 @@ b {
     }
   `}
 
-  ${!l&&t==="secondary"&&R`
+  ${!a&&t==="secondary"&&R`
     color: ${n?e.colors.secondary:e.isDark?e.colors.dark:e.colors.light};
     background: ${n?"transparent":e.colors.secondary};
     border: solid 2px ${e.colors.secondary};
@@ -443,7 +443,7 @@ b {
     }
   `}
 
-	${!l&&t==="tertiary"&&R`
+	${!a&&t==="tertiary"&&R`
     color: ${n?e.colors.tertiary:e.isDark?e.colors.dark:e.colors.light};
     background: ${n?"transparent":e.colors.tertiary};
     border: solid 2px ${e.colors.tertiary};
@@ -473,7 +473,7 @@ b {
 	`:`font-size: ${e.fontSizes.button.lg};
 			line-height: ${e.lineHeights.button.lg};`}
 
-	${l&&`
+	${a&&`
 		cursor: not-allowed;
 		background: ${e.colors.grayLight};
 		border-color: ${e.colors.grayLight};
@@ -482,7 +482,7 @@ b {
 
 	${i&&"width: 100%;"}
 `,Xi=F.button`
-  ${({theme:e,$variant:t,$size:r,$outline:n,$fullWidth:i,disabled:a})=>An(e,t,r,n,i)}
+  ${({theme:e,$variant:t,$size:r,$outline:n,$fullWidth:i,disabled:a})=>An(e,t,r,n,i,a)}
 `;function Ki({$variant:e="primary",...t}){return x.jsxs(Xi,{$variant:e,...t,children:[t.$iconPosition!=="right"&&t.$icon&&t.$icon,t.children,t.$iconPosition==="right"&&t.$icon&&t.$icon]})}const Ji=F.div`
   ${({$span:e})=>e&&`
 		grid-column: span ${e};

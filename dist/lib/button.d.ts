@@ -11,6 +11,6 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
     $iconPosition?: "left" | "right";
     theme?: Theme;
 }
-export declare const buttonStyles: (theme: Theme, $variant?: "primary" | "secondary" | "tertiary", $size?: "default" | "big", $outline?: boolean, $fullWidth?: boolean, $icon?: React.ReactNode, $iconPosition?: "left" | "right", disabled?: boolean) => import('styled-components').RuleSet<object>;
+export declare const buttonStyles: (theme: Theme, $variant?: "primary" | "secondary" | "tertiary", $size?: "default" | "big", $outline?: boolean, $fullWidth?: boolean, disabled?: boolean) => import('styled-components').RuleSet<object>;
 declare function Button({ $variant, ...props }: ButtonProps): React.JSX.Element;
 export { Button };

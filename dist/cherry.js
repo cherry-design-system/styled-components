@@ -2956,7 +2956,7 @@ const Qi = D(Ji)`
 function Ba({ theme: e = et, ...t }) {
   return /* @__PURE__ */ x.jsx(Qi, { ...t, theme: e, children: t.children });
 }
-const ea = (e, t, r, n, i, a, s, l) => k`
+const ea = (e, t, r, n, i, a) => k`
   ${ue};
   font-family: inherit;
   display: inline-flex;
@@ -2979,7 +2979,7 @@ const ea = (e, t, r, n, i, a, s, l) => k`
     min-width: 24px;
   }
 
-  ${!l && t === "primary" && k`
+  ${!a && t === "primary" && k`
     color: ${n ? e.colors.primary : e.isDark ? e.colors.dark : e.colors.light};
     background: ${n ? "transparent" : e.colors.primary};
     border: solid 2px ${e.colors.primary};
@@ -3002,7 +3002,7 @@ const ea = (e, t, r, n, i, a, s, l) => k`
     }
   `}
 
-  ${!l && t === "secondary" && k`
+  ${!a && t === "secondary" && k`
     color: ${n ? e.colors.secondary : e.isDark ? e.colors.dark : e.colors.light};
     background: ${n ? "transparent" : e.colors.secondary};
     border: solid 2px ${e.colors.secondary};
@@ -3025,7 +3025,7 @@ const ea = (e, t, r, n, i, a, s, l) => k`
     }
   `}
 
-	${!l && t === "tertiary" && k`
+	${!a && t === "tertiary" && k`
     color: ${n ? e.colors.tertiary : e.isDark ? e.colors.dark : e.colors.light};
     background: ${n ? "transparent" : e.colors.tertiary};
     border: solid 2px ${e.colors.tertiary};
@@ -3055,7 +3055,7 @@ const ea = (e, t, r, n, i, a, s, l) => k`
 	` : `font-size: ${e.fontSizes.button.lg};
 			line-height: ${e.lineHeights.button.lg};`}
 
-	${l && `
+	${a && `
 		cursor: not-allowed;
 		background: ${e.colors.grayLight};
 		border-color: ${e.colors.grayLight};
@@ -3064,7 +3064,7 @@ const ea = (e, t, r, n, i, a, s, l) => k`
 
 	${i && "width: 100%;"}
 `, ta = D.button`
-  ${({ theme: e, $variant: t, $size: r, $outline: n, $fullWidth: i, disabled: a }) => ea(e, t, r, n, i)}
+  ${({ theme: e, $variant: t, $size: r, $outline: n, $fullWidth: i, disabled: a }) => ea(e, t, r, n, i, a)}
 `;
 function qa({ $variant: e = "primary", ...t }) {
   return /* @__PURE__ */ x.jsxs(ta, { $variant: e, ...t, children: [

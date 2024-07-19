@@ -20,8 +20,6 @@ export const buttonStyles = (
   $size?: "default" | "big",
   $outline?: boolean,
   $fullWidth?: boolean,
-  $icon?: React.ReactNode,
-  $iconPosition?: "left" | "right",
   disabled?: boolean,
 ) => css`
   ${resetButton};
