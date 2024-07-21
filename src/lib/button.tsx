@@ -47,11 +47,7 @@ export const buttonStyles = (
   ${!disabled &&
   $variant === "primary" &&
   css`
-    color: ${$outline
-      ? theme.colors.primary
-      : theme.isDark
-        ? theme.colors.dark
-        : theme.colors.light};
+    color: ${$outline ? theme.colors.primary : theme.colors.light};
     background: ${$outline ? "transparent" : theme.colors.primary};
     border: solid 2px ${theme.colors.primary};
     box-shadow: 0 0 0 0px ${theme.colors.primary};
@@ -76,11 +72,7 @@ export const buttonStyles = (
   ${!disabled &&
   $variant === "secondary" &&
   css`
-    color: ${$outline
-      ? theme.colors.secondary
-      : theme.isDark
-        ? theme.colors.dark
-        : theme.colors.light};
+    color: ${$outline ? theme.colors.secondary : theme.colors.light};
     background: ${$outline ? "transparent" : theme.colors.secondary};
     border: solid 2px ${theme.colors.secondary};
     box-shadow: 0 0 0 0px ${theme.colors.secondary};
@@ -105,11 +97,7 @@ export const buttonStyles = (
 	${!disabled &&
   $variant === "tertiary" &&
   css`
-    color: ${$outline
-      ? theme.colors.tertiary
-      : theme.isDark
-        ? theme.colors.dark
-        : theme.colors.light};
+    color: ${$outline ? theme.colors.tertiary : theme.colors.light};
     background: ${$outline ? "transparent" : theme.colors.tertiary};
     border: solid 2px ${theme.colors.tertiary};
     box-shadow: 0 0 0 0px ${theme.colors.tertiary};
