@@ -41,10 +41,10 @@
     "eslint-plugin-react-refresh": "^0.4.8",
     "next": "^14.2.5",
     "polished": "^4.3.1",
-    "prettier": "^3.3.2",
-    "styled-components": "^6.1.11",
+    "prettier": "^3.3.3",
+    "styled-components": "^6.1.12",
     "typescript": "^5",
-    "vite": "^5.3.3",
+    "vite": "^5.3.4",
     "vite-plugin-dts": "^3.9.1"
   }
 }
