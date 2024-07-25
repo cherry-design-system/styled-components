@@ -41,7 +41,6 @@ interface FlexProps extends React.AllHTMLAttributes<FlexProps> {
   $xxxlGap?: GapType;
   $direction?: "row" | "column" | "row-reverse" | "column-reverse";
   $fullWidth?: boolean;
-  ref?: React.Ref<HTMLDivElement>;
   theme?: Theme;
 }
 
@@ -80,9 +79,9 @@ const StyledFlex = styled.div<FlexProps>`
   ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
 
-function LocalFlex({ theme = defaultTheme, ...props }: FlexProps) {
+function LocalFlex({ theme = defaultTheme, ...props }: FlexProps, ref: React.Ref<HTMLDivElement>) {
   return (
-    <StyledFlex {...props} theme={theme}>
+    <StyledFlex {...props} theme={theme} ref={ref}>
       {props.children}
     </StyledFlex>
   );

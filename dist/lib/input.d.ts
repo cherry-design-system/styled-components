@@ -10,10 +10,9 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     $fullWidth?: boolean;
     $icon?: React.ReactNode;
     $iconPosition?: "left" | "right";
-    ref?: React.Ref<HTMLInputElement>;
     theme?: Theme;
 }
 export declare const StyledInputWrapper: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components/dist/types').Substitute<React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, InputProps>> & string;
 export declare const StyledLabel: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components/dist/types').Substitute<React.DetailedHTMLProps<React.LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>, InputProps>> & string;
-declare const Input: React.ForwardRefExoticComponent<Omit<InputProps, "ref"> & React.RefAttributes<unknown>>;
+declare const Input: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>>;
 export { Input };

@@ -12,7 +12,6 @@ interface MaxWidthProps extends React.HTMLAttributes<HTMLDivElement> {
   $xl?: number;
   $xxl?: number;
   $xxxl?: number;
-  ref?: React.Ref<HTMLDivElement>;
 }
 
 const styles = ($size: number | "none") => `max-width: ${$size}px;`;
@@ -37,8 +36,12 @@ const StyledMaxWidth = styled.div<MaxWidthProps>`
   ${(props) => responsiveStyles(props)}
 `;
 
-function LocalMaxWidth({ ...props }: MaxWidthProps) {
-  return <StyledMaxWidth {...props}>{props.children}</StyledMaxWidth>;
+function LocalMaxWidth({ ...props }: MaxWidthProps, ref: React.Ref<HTMLDivElement>) {
+  return (
+    <StyledMaxWidth {...props} ref={ref}>
+      {props.children}
+    </StyledMaxWidth>
+  );
 }
 
 const MaxWidth = forwardRef(LocalMaxWidth);

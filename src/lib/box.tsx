@@ -10,9 +10,12 @@ const StyledBox = styled(Container)<ContainerProps>`
   border: solid 1px ${({ theme }) => theme.colors.grayLight};
 `;
 
-function LocalBox({ theme = defaultTheme, ...props }: ContainerProps) {
+function LocalBox(
+  { theme = defaultTheme, ...props }: ContainerProps,
+  ref: React.Ref<HTMLDivElement>,
+) {
   return (
-    <StyledBox {...props} theme={theme}>
+    <StyledBox {...props} theme={theme} ref={ref}>
       {props.children}
     </StyledBox>
   );

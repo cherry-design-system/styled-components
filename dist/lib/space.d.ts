@@ -10,7 +10,6 @@ interface SpaceProps {
     $xxl?: number | "none";
     $xxxl?: number | "none";
     $horizontal?: boolean;
-    ref?: React.Ref<HTMLSpanElement>;
 }
-declare const Space: React.ForwardRefExoticComponent<Omit<SpaceProps, "ref"> & React.RefAttributes<unknown>>;
+declare const Space: React.ForwardRefExoticComponent<SpaceProps & React.RefAttributes<HTMLSpanElement>>;
 export { Space };

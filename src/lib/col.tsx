@@ -13,7 +13,6 @@ interface ColProps extends React.HTMLAttributes<HTMLDivElement> {
   $xlSpan?: number;
   $xxlSpan?: number;
   $xxxlSpan?: number;
-  ref?: React.Ref<HTMLDivElement>;
   theme?: Theme;
 }
 
@@ -33,9 +32,9 @@ const StyledCol = styled.div<ColProps>`
 	${({ $xxxlSpan }) => $xxxlSpan && generateColSpanStyles("xxxl", $xxxlSpan)}
 `;
 
-function LocalCol({ theme = defaultTheme, ...props }: ColProps) {
+function LocalCol({ theme = defaultTheme, ...props }: ColProps, ref: React.Ref<HTMLDivElement>) {
   return (
-    <StyledCol {...props} theme={theme}>
+    <StyledCol {...props} theme={theme} ref={ref}>
       {props.children}
     </StyledCol>
   );

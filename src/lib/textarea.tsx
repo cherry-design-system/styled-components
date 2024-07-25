@@ -13,7 +13,6 @@ interface TextareaProps extends Omit<React.InputHTMLAttributes<HTMLTextAreaEleme
   $fullWidth?: boolean;
   theme?: Theme;
   rows?: number;
-  ref?: React.Ref<HTMLTextAreaElement>;
 }
 
 const StyledTextarea = styled.textarea<TextareaProps>`
@@ -75,7 +74,7 @@ const StyledTextarea = styled.textarea<TextareaProps>`
 	${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
 
-function LocalTextarea({ ...props }: TextareaProps) {
+function LocalTextarea({ ...props }: TextareaProps, ref: React.Ref<HTMLTextAreaElement>) {
   return (
     <StyledInputWrapper $fullWidth={props.$fullWidth} $label={props.$label}>
       {props.$label && (
@@ -83,7 +82,7 @@ function LocalTextarea({ ...props }: TextareaProps) {
           {props.$label}
         </StyledLabel>
       )}
-      <StyledTextarea {...props} ref={props.ref}>
+      <StyledTextarea {...props} ref={ref}>
         {props.children}
       </StyledTextarea>
     </StyledInputWrapper>

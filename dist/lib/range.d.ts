@@ -8,8 +8,7 @@ interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "
     $error?: boolean;
     $success?: boolean;
     $fullWidth?: boolean;
-    ref?: React.Ref<HTMLInputElement>;
     theme?: Theme;
 }
-declare const Range: React.ForwardRefExoticComponent<Omit<InputProps, "ref"> & React.RefAttributes<unknown>>;
+declare const Range: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>>;
 export { Range };

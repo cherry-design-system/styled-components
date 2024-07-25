@@ -24,8 +24,7 @@ interface FlexProps extends React.AllHTMLAttributes<FlexProps> {
     $xxxlGap?: GapType;
     $direction?: "row" | "column" | "row-reverse" | "column-reverse";
     $fullWidth?: boolean;
-    ref?: React.Ref<HTMLDivElement>;
     theme?: Theme;
 }
-declare const Flex: React.ForwardRefExoticComponent<Omit<FlexProps, "ref"> & React.RefAttributes<unknown>>;
+declare const Flex: React.ForwardRefExoticComponent<FlexProps & React.RefAttributes<HTMLDivElement>>;
 export { Flex };

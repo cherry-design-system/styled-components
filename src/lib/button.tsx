@@ -11,7 +11,6 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   $fullWidth?: boolean;
   $icon?: React.ReactNode;
   $iconPosition?: "left" | "right";
-  ref?: React.Ref<HTMLButtonElement>;
   theme?: Theme;
 }
 
@@ -145,9 +144,12 @@ const StyledButton = styled.button<ButtonProps>`
     buttonStyles(theme, $variant, $size, $outline, $fullWidth, disabled)}
 `;
 
-function LocalButton({ $variant = "primary", ...props }: ButtonProps) {
+function LocalButton(
+  { $variant = "primary", ...props }: ButtonProps,
+  ref: React.Ref<HTMLButtonElement>,
+) {
   return (
-    <StyledButton $variant={$variant} {...props}>
+    <StyledButton $variant={$variant} {...props} ref={ref}>
       {props.$iconPosition !== "right" && props.$icon && props.$icon}
       {props.children}
       {props.$iconPosition === "right" && props.$icon && props.$icon}

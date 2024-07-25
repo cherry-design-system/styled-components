@@ -13,7 +13,6 @@ interface SpaceProps {
   $xxl?: number | "none";
   $xxxl?: number | "none";
   $horizontal?: boolean;
-  ref?: React.Ref<HTMLSpanElement>;
 }
 
 const styles = ($size: number | "none", $horizontal: boolean) =>
@@ -44,8 +43,8 @@ const StyledSpace = styled.span<SpaceProps>`
   ${(props) => responsiveStyles(props)}
 `;
 
-function LocalSpace({ ...props }: SpaceProps) {
-  return <StyledSpace {...props} ref={props.ref} />;
+function LocalSpace({ ...props }: SpaceProps, ref: React.Ref<HTMLSpanElement>) {
+  return <StyledSpace {...props} ref={ref} />;
 }
 
 const Space = forwardRef(LocalSpace);

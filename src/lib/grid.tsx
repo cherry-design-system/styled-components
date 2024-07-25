@@ -21,7 +21,6 @@ interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
   $xlCols?: number;
   $xxlCols?: number;
   $xxxlCols?: number;
-  ref?: React.Ref<HTMLDivElement>;
   theme?: Theme;
 }
 
@@ -52,9 +51,9 @@ const StyledGrid = styled.div<GridProps>`
 	${({ $xxxlCols }) => $xxxlCols && generateColsStyles("xxxl", $xxxlCols)}
 `;
 
-function LocalGrid({ theme = defaultTheme, ...props }: GridProps) {
+function LocalGrid({ theme = defaultTheme, ...props }: GridProps, ref: React.Ref<HTMLDivElement>) {
   return (
-    <StyledGrid {...props} theme={theme}>
+    <StyledGrid {...props} theme={theme} ref={ref}>
       {props.children}
     </StyledGrid>
   );

@@ -16,7 +16,6 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   $xlPadding?: number | "none";
   $xxlPadding?: number | "none";
   $xxxlPadding?: number | "none";
-  ref?: React.Ref<HTMLDivElement>;
   theme?: Theme;
 }
 
@@ -44,9 +43,12 @@ const StyledContainer = styled.div<ContainerProps>`
 	${({ $xxxlPadding }) => $xxxlPadding && generatePaddingStyles("xxxl", $xxxlPadding)}
 `;
 
-function LocalContainer({ theme = defaultTheme, ...props }: ContainerProps) {
+function LocalContainer(
+  { theme = defaultTheme, ...props }: ContainerProps,
+  ref: React.Ref<HTMLDivElement>,
+) {
   return (
-    <StyledContainer {...props} theme={theme}>
+    <StyledContainer {...props} theme={theme} ref={ref}>
       {props.children}
     </StyledContainer>
   );

@@ -19,7 +19,6 @@ interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
   $error?: boolean;
   $success?: boolean;
   $fullWidth?: boolean;
-  ref?: React.Ref<HTMLSelectElement>;
   theme?: Theme;
 }
 
@@ -106,12 +105,14 @@ export const StyledIconWrapper = styled.span<SelectProps>`
   }
 `;
 
-function LocalSelect({ ...props }: SelectProps) {
+function LocalSelect({ ...props }: SelectProps, ref: React.Ref<HTMLSelectElement>) {
   return (
     <StyledInputWrapper $fullWidth={props.$fullWidth} $label={props.$label}>
       {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
       <StyledIconWrapper $fullWidth={props.$fullWidth}>
-        <StyledSelect {...props}>{props.children}</StyledSelect>
+        <StyledSelect {...props} ref={ref}>
+          {props.children}
+        </StyledSelect>
         <IconArrow />
       </StyledIconWrapper>
     </StyledInputWrapper>

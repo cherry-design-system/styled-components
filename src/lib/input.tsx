@@ -20,7 +20,6 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   $fullWidth?: boolean;
   $icon?: React.ReactNode;
   $iconPosition?: "left" | "right";
-  ref?: React.Ref<HTMLInputElement>;
   theme?: Theme;
 }
 
@@ -258,12 +257,12 @@ const StyledCustomIconWrapper = styled.span<InputProps>`
         `}
 `;
 
-function LocalInput({ ...props }: InputProps) {
+function LocalInput({ ...props }: InputProps, ref: React.Ref<HTMLInputElement>) {
   if (props.type === "checkbox" || props.type === "radio") {
     return (
       <StyledInputWrapper $fullWidth={props.$fullWidth} type={props.type} $label={props.$label}>
         <StyledIconWrapper>
-          <StyledRadioCheckboxInput {...props} />
+          <StyledRadioCheckboxInput {...props} ref={ref} />
           {!props.disabled && props.type === "checkbox" ? <IconCheck /> : <em />}
         </StyledIconWrapper>
         {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
@@ -280,7 +279,7 @@ function LocalInput({ ...props }: InputProps) {
         $icon={props.$icon}
       >
         {props.$iconPosition !== "right" && props.$icon && props.$icon}
-        <StyledInput {...props} />
+        <StyledInput {...props} ref={ref} />
         {props.$iconPosition === "right" && props.$icon && props.$icon}
       </StyledCustomIconWrapper>
     </StyledInputWrapper>

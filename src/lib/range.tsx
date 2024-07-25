@@ -11,7 +11,6 @@ interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "
   $error?: boolean;
   $success?: boolean;
   $fullWidth?: boolean;
-  ref?: React.Ref<HTMLInputElement>;
   theme?: Theme;
 }
 
@@ -195,11 +194,11 @@ const StyledInput = styled.input<InputProps>`
   }}
 `;
 
-function LocalRange({ ...props }: InputProps) {
+function LocalRange({ ...props }: InputProps, ref: React.Ref<HTMLInputElement>) {
   return (
     <StyledInputWrapper $fullWidth={props.$fullWidth}>
       {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
-      <StyledInput {...props} type="range" />
+      <StyledInput {...props} type="range" ref={ref} />
     </StyledInputWrapper>
   );
 }

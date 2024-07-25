@@ -13,7 +13,6 @@ interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
   $success?: boolean;
   $fullWidth?: boolean;
   theme?: Theme;
-  ref?: React.Ref<HTMLInputElement>;
 }
 
 const StyledToggleWrapper = styled.span<ToggleProps>`
@@ -123,11 +122,14 @@ const StyledToggle = styled.input<ToggleProps>`
 		}`}
 `;
 
-function LocalToggle({ type = "checkbox", ...props }: ToggleProps) {
+function LocalToggle(
+  { type = "checkbox", ...props }: ToggleProps,
+  ref: React.Ref<HTMLInputElement>,
+) {
   return (
     <StyledInputWrapper $fullWidth={props.$fullWidth} $label={props.$label}>
       <StyledToggleWrapper>
-        <StyledToggle {...props} type={type} ref={props.ref} />
+        <StyledToggle {...props} type={type} ref={ref} />
         <StyledFakeToggle
           $error={props.$error}
           $success={props.$success}
