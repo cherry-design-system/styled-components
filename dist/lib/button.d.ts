@@ -9,8 +9,9 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
     $fullWidth?: boolean;
     $icon?: React.ReactNode;
     $iconPosition?: "left" | "right";
+    ref?: React.Ref<HTMLButtonElement>;
     theme?: Theme;
 }
 export declare const buttonStyles: (theme: Theme, $variant?: "primary" | "secondary" | "tertiary", $size?: "default" | "big", $outline?: boolean, $fullWidth?: boolean, disabled?: boolean) => import('styled-components').RuleSet<object>;
-declare function Button({ $variant, ...props }: ButtonProps): React.JSX.Element;
+declare const Button: React.ForwardRefExoticComponent<Omit<ButtonProps, "ref"> & React.RefAttributes<unknown>>;
 export { Button };

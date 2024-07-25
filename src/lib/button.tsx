@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { forwardRef } from "react";
 import styled, { css } from "styled-components";
 import { Theme, formElementHeightStyles, resetButton } from "./utils";
 
@@ -11,6 +11,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   $fullWidth?: boolean;
   $icon?: React.ReactNode;
   $iconPosition?: "left" | "right";
+  ref?: React.Ref<HTMLButtonElement>;
   theme?: Theme;
 }
 
@@ -144,7 +145,7 @@ const StyledButton = styled.button<ButtonProps>`
     buttonStyles(theme, $variant, $size, $outline, $fullWidth, disabled)}
 `;
 
-function Button({ $variant = "primary", ...props }: ButtonProps) {
+function LocalButton({ $variant = "primary", ...props }: ButtonProps) {
   return (
     <StyledButton $variant={$variant} {...props}>
       {props.$iconPosition !== "right" && props.$icon && props.$icon}
@@ -153,5 +154,7 @@ function Button({ $variant = "primary", ...props }: ButtonProps) {
     </StyledButton>
   );
 }
+
+const Button = forwardRef(LocalButton);
 
 export { Button };

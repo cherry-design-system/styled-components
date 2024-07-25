@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 import { theme as defaultTheme, Theme, mq, generatePaddingStyles } from "./utils";
 
@@ -16,6 +16,7 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   $xlPadding?: number | "none";
   $xxlPadding?: number | "none";
   $xxxlPadding?: number | "none";
+  ref?: React.Ref<HTMLDivElement>;
   theme?: Theme;
 }
 
@@ -43,12 +44,14 @@ const StyledContainer = styled.div<ContainerProps>`
 	${({ $xxxlPadding }) => $xxxlPadding && generatePaddingStyles("xxxl", $xxxlPadding)}
 `;
 
-function Container({ theme = defaultTheme, ...props }: ContainerProps) {
+function LocalContainer({ theme = defaultTheme, ...props }: ContainerProps) {
   return (
     <StyledContainer {...props} theme={theme}>
       {props.children}
     </StyledContainer>
   );
 }
+
+const Container = forwardRef(LocalContainer);
 
 export { Container };

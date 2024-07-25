@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { forwardRef } from "react";
 import styled, { css } from "styled-components";
 import {
   Theme,
@@ -20,6 +20,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   $fullWidth?: boolean;
   $icon?: React.ReactNode;
   $iconPosition?: "left" | "right";
+  ref?: React.Ref<HTMLInputElement>;
   theme?: Theme;
 }
 
@@ -257,7 +258,7 @@ const StyledCustomIconWrapper = styled.span<InputProps>`
         `}
 `;
 
-function Input({ ...props }: InputProps) {
+function LocalInput({ ...props }: InputProps) {
   if (props.type === "checkbox" || props.type === "radio") {
     return (
       <StyledInputWrapper $fullWidth={props.$fullWidth} type={props.type} $label={props.$label}>
@@ -285,5 +286,7 @@ function Input({ ...props }: InputProps) {
     </StyledInputWrapper>
   );
 }
+
+const Input = forwardRef(LocalInput);
 
 export { Input };

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 import { theme as defaultTheme, Theme, mq, generateColsStyles, generateGapStyles } from "./utils";
 
@@ -21,6 +21,7 @@ interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
   $xlCols?: number;
   $xxlCols?: number;
   $xxxlCols?: number;
+  ref?: React.Ref<HTMLDivElement>;
   theme?: Theme;
 }
 
@@ -51,12 +52,14 @@ const StyledGrid = styled.div<GridProps>`
 	${({ $xxxlCols }) => $xxxlCols && generateColsStyles("xxxl", $xxxlCols)}
 `;
 
-function Grid({ theme = defaultTheme, ...props }: GridProps) {
+function LocalGrid({ theme = defaultTheme, ...props }: GridProps) {
   return (
     <StyledGrid {...props} theme={theme}>
       {props.children}
     </StyledGrid>
   );
 }
+
+const Grid = forwardRef(LocalGrid);
 
 export { Grid };

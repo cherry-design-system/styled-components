@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 import {
   theme as defaultTheme,
@@ -41,6 +41,7 @@ interface FlexProps extends React.AllHTMLAttributes<FlexProps> {
   $xxxlGap?: GapType;
   $direction?: "row" | "column" | "row-reverse" | "column-reverse";
   $fullWidth?: boolean;
+  ref?: React.Ref<HTMLDivElement>;
   theme?: Theme;
 }
 
@@ -79,12 +80,14 @@ const StyledFlex = styled.div<FlexProps>`
   ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
 
-function Flex({ theme = defaultTheme, ...props }: FlexProps) {
+function LocalFlex({ theme = defaultTheme, ...props }: FlexProps) {
   return (
     <StyledFlex {...props} theme={theme}>
       {props.children}
     </StyledFlex>
   );
 }
+
+const Flex = forwardRef(LocalFlex);
 
 export { Flex };

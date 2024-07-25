@@ -10,6 +10,7 @@ interface TextareaProps extends Omit<React.InputHTMLAttributes<HTMLTextAreaEleme
     $fullWidth?: boolean;
     theme?: Theme;
     rows?: number;
+    ref?: React.Ref<HTMLTextAreaElement>;
 }
-declare function Textarea({ ...props }: TextareaProps): React.JSX.Element;
+declare const Textarea: React.ForwardRefExoticComponent<Omit<TextareaProps, "ref"> & React.RefAttributes<unknown>>;
 export { Textarea };

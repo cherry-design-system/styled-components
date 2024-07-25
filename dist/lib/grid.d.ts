@@ -19,7 +19,8 @@ interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
     $xlCols?: number;
     $xxlCols?: number;
     $xxxlCols?: number;
+    ref?: React.Ref<HTMLDivElement>;
     theme?: Theme;
 }
-declare function Grid({ theme, ...props }: GridProps): React.JSX.Element;
+declare const Grid: React.ForwardRefExoticComponent<Omit<GridProps, "ref"> & React.RefAttributes<unknown>>;
 export { Grid };

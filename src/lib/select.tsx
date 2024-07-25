@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 import {
   Theme,
@@ -19,6 +19,7 @@ interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
   $error?: boolean;
   $success?: boolean;
   $fullWidth?: boolean;
+  ref?: React.Ref<HTMLSelectElement>;
   theme?: Theme;
 }
 
@@ -105,7 +106,7 @@ export const StyledIconWrapper = styled.span<SelectProps>`
   }
 `;
 
-function Select({ ...props }: SelectProps) {
+function LocalSelect({ ...props }: SelectProps) {
   return (
     <StyledInputWrapper $fullWidth={props.$fullWidth} $label={props.$label}>
       {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
@@ -116,5 +117,7 @@ function Select({ ...props }: SelectProps) {
     </StyledInputWrapper>
   );
 }
+
+const Select = forwardRef(LocalSelect);
 
 export { Select };

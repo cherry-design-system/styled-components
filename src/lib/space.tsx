@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 import { Breakpoints, mq } from "./utils";
 
@@ -13,6 +13,7 @@ interface SpaceProps {
   $xxl?: number | "none";
   $xxxl?: number | "none";
   $horizontal?: boolean;
+  ref?: React.Ref<HTMLSpanElement>;
 }
 
 const styles = ($size: number | "none", $horizontal: boolean) =>
@@ -43,8 +44,10 @@ const StyledSpace = styled.span<SpaceProps>`
   ${(props) => responsiveStyles(props)}
 `;
 
-function Space({ ...props }: SpaceProps) {
-  return <StyledSpace {...props} />;
+function LocalSpace({ ...props }: SpaceProps) {
+  return <StyledSpace {...props} ref={props.ref} />;
 }
+
+const Space = forwardRef(LocalSpace);
 
 export { Space };

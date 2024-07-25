@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 import { Theme, resetButton, statusBorderStyles } from "./utils";
 import { StyledInputWrapper, StyledLabel } from "./input";
@@ -13,6 +13,7 @@ interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
   $success?: boolean;
   $fullWidth?: boolean;
   theme?: Theme;
+  ref?: React.Ref<HTMLInputElement>;
 }
 
 const StyledToggleWrapper = styled.span<ToggleProps>`
@@ -122,11 +123,11 @@ const StyledToggle = styled.input<ToggleProps>`
 		}`}
 `;
 
-function Toggle({ type = "checkbox", ...props }: ToggleProps) {
+function LocalToggle({ type = "checkbox", ...props }: ToggleProps) {
   return (
     <StyledInputWrapper $fullWidth={props.$fullWidth} $label={props.$label}>
       <StyledToggleWrapper>
-        <StyledToggle {...props} type={type} />
+        <StyledToggle {...props} type={type} ref={props.ref} />
         <StyledFakeToggle
           $error={props.$error}
           $success={props.$success}
@@ -138,5 +139,7 @@ function Toggle({ type = "checkbox", ...props }: ToggleProps) {
     </StyledInputWrapper>
   );
 }
+
+const Toggle = forwardRef(LocalToggle);
 
 export { Toggle };

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 import { Theme, fullWidthStyles, resetButton, statusBorderStyles } from "./utils";
 import { StyledLabel } from "./input";
@@ -11,6 +11,7 @@ interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "
   $error?: boolean;
   $success?: boolean;
   $fullWidth?: boolean;
+  ref?: React.Ref<HTMLInputElement>;
   theme?: Theme;
 }
 
@@ -194,7 +195,7 @@ const StyledInput = styled.input<InputProps>`
   }}
 `;
 
-function Range({ ...props }: InputProps) {
+function LocalRange({ ...props }: InputProps) {
   return (
     <StyledInputWrapper $fullWidth={props.$fullWidth}>
       {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
@@ -202,5 +203,7 @@ function Range({ ...props }: InputProps) {
     </StyledInputWrapper>
   );
 }
+
+const Range = forwardRef(LocalRange);
 
 export { Range };

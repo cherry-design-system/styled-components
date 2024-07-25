@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 import { Theme, fullWidthStyles, resetButton, resetInput, statusBorderStyles } from "./utils";
 import { StyledInputWrapper, StyledLabel } from "./input";
@@ -13,6 +13,7 @@ interface TextareaProps extends Omit<React.InputHTMLAttributes<HTMLTextAreaEleme
   $fullWidth?: boolean;
   theme?: Theme;
   rows?: number;
+  ref?: React.Ref<HTMLTextAreaElement>;
 }
 
 const StyledTextarea = styled.textarea<TextareaProps>`
@@ -74,7 +75,7 @@ const StyledTextarea = styled.textarea<TextareaProps>`
 	${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
 
-function Textarea({ ...props }: TextareaProps) {
+function LocalTextarea({ ...props }: TextareaProps) {
   return (
     <StyledInputWrapper $fullWidth={props.$fullWidth} $label={props.$label}>
       {props.$label && (
@@ -82,9 +83,13 @@ function Textarea({ ...props }: TextareaProps) {
           {props.$label}
         </StyledLabel>
       )}
-      <StyledTextarea {...props}>{props.children}</StyledTextarea>
+      <StyledTextarea {...props} ref={props.ref}>
+        {props.children}
+      </StyledTextarea>
     </StyledInputWrapper>
   );
 }
+
+const Textarea = forwardRef(LocalTextarea);
 
 export { Textarea };

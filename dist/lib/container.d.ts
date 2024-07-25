@@ -14,7 +14,8 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
     $xlPadding?: number | "none";
     $xxlPadding?: number | "none";
     $xxxlPadding?: number | "none";
+    ref?: React.Ref<HTMLDivElement>;
     theme?: Theme;
 }
-declare function Container({ theme, ...props }: ContainerProps): React.JSX.Element;
+declare const Container: React.ForwardRefExoticComponent<Omit<ContainerProps, "ref"> & React.RefAttributes<unknown>>;
 export { Container };

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 import { Breakpoints, mq } from "./utils";
 
@@ -12,6 +12,7 @@ interface MaxWidthProps extends React.HTMLAttributes<HTMLDivElement> {
   $xl?: number;
   $xxl?: number;
   $xxxl?: number;
+  ref?: React.Ref<HTMLDivElement>;
 }
 
 const styles = ($size: number | "none") => `max-width: ${$size}px;`;
@@ -36,8 +37,10 @@ const StyledMaxWidth = styled.div<MaxWidthProps>`
   ${(props) => responsiveStyles(props)}
 `;
 
-function MaxWidth({ ...props }: MaxWidthProps) {
+function LocalMaxWidth({ ...props }: MaxWidthProps) {
   return <StyledMaxWidth {...props}>{props.children}</StyledMaxWidth>;
 }
+
+const MaxWidth = forwardRef(LocalMaxWidth);
 
 export { MaxWidth };

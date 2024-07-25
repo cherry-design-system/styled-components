@@ -10,6 +10,7 @@ interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
     $success?: boolean;
     $fullWidth?: boolean;
     theme?: Theme;
+    ref?: React.Ref<HTMLInputElement>;
 }
-declare function Toggle({ type, ...props }: ToggleProps): React.JSX.Element;
+declare const Toggle: React.ForwardRefExoticComponent<Omit<ToggleProps, "ref"> & React.RefAttributes<unknown>>;
 export { Toggle };

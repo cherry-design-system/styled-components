@@ -11,7 +11,8 @@ interface ColProps extends React.HTMLAttributes<HTMLDivElement> {
     $xlSpan?: number;
     $xxlSpan?: number;
     $xxxlSpan?: number;
+    ref?: React.Ref<HTMLDivElement>;
     theme?: Theme;
 }
-declare function Col({ theme, ...props }: ColProps): React.JSX.Element;
+declare const Col: React.ForwardRefExoticComponent<Omit<ColProps, "ref"> & React.RefAttributes<unknown>>;
 export { Col };

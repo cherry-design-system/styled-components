@@ -9,6 +9,7 @@ interface MaxWidthProps extends React.HTMLAttributes<HTMLDivElement> {
     $xl?: number;
     $xxl?: number;
     $xxxl?: number;
+    ref?: React.Ref<HTMLDivElement>;
 }
-declare function MaxWidth({ ...props }: MaxWidthProps): React.JSX.Element;
+declare const MaxWidth: React.ForwardRefExoticComponent<Omit<MaxWidthProps, "ref"> & React.RefAttributes<unknown>>;
 export { MaxWidth };
