@@ -11,8 +11,8 @@ import {
   Space,
   Textarea,
   Toggle,
-  ToggleTheme,
 } from "./lib";
+import { ToggleTheme } from "./toggle-theme";
 
 function App() {
   return (
