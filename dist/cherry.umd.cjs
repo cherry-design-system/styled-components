@@ -600,13 +600,26 @@ hr {
   transition: all 0.3s ease;
   word-break: keep-all;
   white-space: nowrap;
+  display: inline-flex;
 
   &[type="date"] {
-    padding: 13px 45px 13px 15px;
+    padding: 17px 45px 17px 15px;
 
     @supports (-moz-appearance: none) {
       padding: 13px 15px;
     }
+  }
+
+  &::-webkit-datetime-edit {
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+  }
+
+  &::-webkit-datetime-edit-fields-wrapper {
+    padding: 4px 0;
+    margin: 0;
+    vertical-align: middle;
   }
 
   &::-webkit-calendar-picker-indicator {
@@ -628,6 +641,7 @@ hr {
     &:focus {
       background: ${({theme:e})=>e.colors.primary};
       color: ${({theme:e})=>e.colors.light};
+      border-radius: 4px;
     }
   }
 
@@ -635,6 +649,7 @@ hr {
     &:focus {
       background: ${({theme:e})=>e.colors.primary};
       color: ${({theme:e})=>e.colors.light};
+      border-radius: 4px;
     }
   }
 
@@ -642,6 +657,7 @@ hr {
     &:focus {
       background: ${({theme:e})=>e.colors.primary};
       color: ${({theme:e})=>e.colors.light};
+      border-radius: 4px;
     }
   }
 

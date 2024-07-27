@@ -21,6 +21,7 @@ function App() {
       <MaxWidth $xs={845}>
         <ToggleTheme />
         <hr />
+        <Input $fullWidth $label="Input" id="data-1" type="date" />
         <Grid $xsCols={1} $lgCols={3} $gap={20}>
           <Col $xsSpan={1} $lgSpan={2}>
             <Grid $xsCols={1} $lgCols={2} $gap={20}>
