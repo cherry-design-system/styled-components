@@ -1,4 +1,5 @@
 import {
+  Container,
   Button,
   Col,
   Flex,
@@ -10,13 +11,16 @@ import {
   Space,
   Textarea,
   Toggle,
+  ToggleTheme,
 } from "./lib";
 
 function App() {
   return (
-    <>
+    <Container>
       <Space $size={100} />
       <MaxWidth $xs={845}>
+        <ToggleTheme />
+        <hr />
         <Grid $xsCols={1} $lgCols={3} $gap={20}>
           <Col $xsSpan={1} $lgSpan={2}>
             <Grid $xsCols={1} $lgCols={2} $gap={20}>
@@ -68,7 +72,7 @@ function App() {
         </Grid>
       </MaxWidth>
       <Space $size={100} />
-    </>
+    </Container>
   );
 }
 

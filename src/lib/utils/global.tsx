@@ -83,6 +83,13 @@ svg * {
 strong,
 b {
 	font-weight: 700;
-}`;
+}
+
+hr {
+  margin: 20px 0;
+  border: none;
+  border-bottom: 1px solid ${theme.colors.grayLight};
+}
+`;
 
 export { GlobalStyles };
