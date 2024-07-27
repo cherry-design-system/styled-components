@@ -24,8 +24,8 @@ function App() {
         <Grid $xsCols={1} $lgCols={3} $gap={20}>
           <Col $xsSpan={1} $lgSpan={2}>
             <Grid $xsCols={1} $lgCols={2} $gap={20}>
-              <Input placeholder="Placeholder" $fullWidth $label="Input" id="test1" />
-              <Select $fullWidth $label="Select" id="select">
+              <Input placeholder="Placeholder" $fullWidth $label="Input" id="input-1" />
+              <Select $fullWidth $label="Select" id="select-1">
                 <option>Select</option>
               </Select>
               <Col $lgSpan={2}>
@@ -41,7 +41,7 @@ function App() {
               </Col>
             </Grid>
           </Col>
-          <Textarea $label="Textarea" $fullWidth defaultValue="Textarea" />
+          <Textarea $label="Textarea" $fullWidth defaultValue="Textarea" id="textarea-1" />
         </Grid>
         <Space $size={20} />
         <Grid $xsCols={1} $lgCols={2} $gap={20}>

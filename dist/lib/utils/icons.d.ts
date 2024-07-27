@@ -6,4 +6,5 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
 }
 declare function IconCheck({ ...props }: IconProps): React.JSX.Element;
 declare function IconArrow({ ...props }: IconProps): React.JSX.Element;
-export { IconCheck, IconArrow };
+declare function IconCalendar({ ...props }: IconProps): React.JSX.Element;
+export { IconCheck, IconArrow, IconCalendar };

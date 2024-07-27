@@ -9,6 +9,7 @@ import {
   resetButton,
   resetInput,
   statusBorderStyles,
+  IconCalendar,
 } from "./utils";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -33,6 +34,21 @@ export const StyledInputWrapper = styled.span<InputProps>`
     css`
       gap: 10px;
     `}
+
+  & .icon-calendar {
+    position: absolute;
+    top: 50%;
+    right: 17px;
+    left: initial;
+    transform: translateY(-50%);
+    pointer-events: none;
+    width: 24px;
+    height: 24px;
+
+    @supports (-moz-appearance: none) {
+      display: none;
+    }
+  }
 
   ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
@@ -61,6 +77,50 @@ const StyledInput = styled.input<InputProps>`
   transition: all 0.3s ease;
   word-break: keep-all;
   white-space: nowrap;
+
+  &[type="date"] {
+    padding: 13px 45px 13px 15px;
+
+    @supports (-moz-appearance: none) {
+      padding: 13px 15px;
+    }
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    background: transparent;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+  }
+
+  &::-webkit-datetime-edit-text {
+    color: ${({ theme }) => theme.colors.gray};
+  }
+
+  &::-webkit-datetime-edit-month-field {
+    &:focus {
+      background: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.light};
+    }
+  }
+
+  &::-webkit-datetime-edit-day-field {
+    &:focus {
+      background: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.light};
+    }
+  }
+
+  &::-webkit-datetime-edit-year-field {
+    &:focus {
+      background: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.light};
+    }
+  }
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.gray};
@@ -281,6 +341,7 @@ function LocalInput({ ...props }: InputProps, ref: React.Ref<HTMLInputElement>) 
         {props.$iconPosition !== "right" && props.$icon && props.$icon}
         <StyledInput {...props} ref={ref} />
         {props.$iconPosition === "right" && props.$icon && props.$icon}
+        {props.type === "date" && <IconCalendar className="icon-calendar" />}
       </StyledCustomIconWrapper>
     </StyledInputWrapper>
   );
