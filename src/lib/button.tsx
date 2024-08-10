@@ -25,7 +25,7 @@ export const buttonStyles = (
   ${resetButton};
   font-family: inherit;
   display: inline-flex;
-  padding: 18px 30px;
+  padding: 15px 30px;
   border-radius: 100px;
   font-weight: 600;
   white-space: nowrap;
@@ -124,6 +124,7 @@ export const buttonStyles = (
 	${$size === "big"
     ? `font-size: ${theme.fontSizes.buttonBig.lg};
 			line-height: ${theme.lineHeights.buttonBig.lg};
+      padding: 18px 30px;
 	`
     : `font-size: ${theme.fontSizes.button.lg};
 			line-height: ${theme.lineHeights.button.lg};`}
