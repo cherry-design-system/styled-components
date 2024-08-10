@@ -1,5 +1,4 @@
 import { Breakpoints, Theme } from './theme';
-
 export declare const resetButton: import('styled-components').RuleSet<object>;
 export declare const resetInput: import('styled-components').RuleSet<object>;
 export declare const fullWidthStyles: (fullWidth: boolean) => import('styled-components').RuleSet<object> | undefined;

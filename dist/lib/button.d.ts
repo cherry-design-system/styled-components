@@ -1,6 +1,5 @@
 import { default as React } from 'react';
 import { Theme } from './utils';
-
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children?: React.ReactNode;
     $variant?: "primary" | "secondary" | "tertiary";

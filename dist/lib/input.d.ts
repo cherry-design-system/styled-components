@@ -1,6 +1,5 @@
 import { default as React } from 'react';
 import { Theme } from './utils';
-
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     children?: React.ReactNode;
     $label?: string;

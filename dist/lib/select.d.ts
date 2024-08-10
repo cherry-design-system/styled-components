@@ -1,6 +1,5 @@
 import { default as React } from 'react';
 import { Theme } from './utils';
-
 interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
     children?: React.ReactNode;
     $label?: string;

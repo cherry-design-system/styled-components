@@ -25,7 +25,7 @@ export const buttonStyles = (
   ${resetButton};
   font-family: inherit;
   display: inline-flex;
-  padding: 15px 30px;
+  padding: 18px 30px;
   border-radius: 100px;
   font-weight: 600;
   white-space: nowrap;

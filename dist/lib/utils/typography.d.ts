@@ -1,5 +1,4 @@
 import { Theme } from './theme';
-
 declare const styledHero1: (theme: Theme) => import('styled-components').RuleSet<object>;
 declare const styledHero2: (theme: Theme) => import('styled-components').RuleSet<object>;
 declare const styledHero3: (theme: Theme) => import('styled-components').RuleSet<object>;

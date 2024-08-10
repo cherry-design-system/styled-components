@@ -1,6 +1,5 @@
 import { default as React } from 'react';
 import { Theme } from './utils';
-
 type JustifyContentType = "center" | "flex-start" | "flex-end" | "space-between" | "space-around" | "space-evenly";
 type GapType = number | "none";
 interface FlexProps extends React.AllHTMLAttributes<FlexProps> {

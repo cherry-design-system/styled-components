@@ -1,6 +1,5 @@
 import { default as React } from 'react';
 import { Theme } from './utils';
-
 interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
     children?: React.ReactNode;
     $gap?: number | "none";
