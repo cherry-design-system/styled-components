@@ -47,9 +47,9 @@ export const colors: Colors = {
 };
 
 export const colorsDark: Colors = {
-  primaryLight: "#91aec4",
-  primary: "#4d6f8b",
-  primaryDark: "#194569",
+  primaryLight: "#79C5FF",
+  primary: "#6198C6",
+  primaryDark: "#339DF4",
 
   secondaryLight: "#a4b17b",
   secondary: "#5c6e46",
