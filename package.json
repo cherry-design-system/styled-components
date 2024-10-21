@@ -36,15 +36,15 @@
     "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@vitejs/plugin-react": "^4.3.2",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-react-refresh": "^0.4.12",
-    "next": "^14.2.14",
+    "@vitejs/plugin-react": "^4.3.3",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.13",
+    "next": "^14.2.15",
     "polished": "^4.3.1",
     "prettier": "^3.3.3",
     "styled-components": "^6.1.13",
     "typescript": "^5",
-    "vite": "^5.4.8",
-    "vite-plugin-dts": "^4.2.3"
+    "vite": "^5.4.9",
+    "vite-plugin-dts": "^4.2.4"
   }
 }
