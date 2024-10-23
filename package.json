@@ -1,6 +1,6 @@
 {
   "name": "cherry-styled-components",
-  "version": "0.1.0-38",
+  "version": "0.1.0-39",
   "description": "Cherry is a design system for the modern web. Designed in Figma, built in React using Typescript.",
   "private": false,
   "type": "module",

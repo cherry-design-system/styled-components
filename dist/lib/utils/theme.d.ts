@@ -4,6 +4,7 @@ export declare const spacing: Spacing;
 export declare const colors: Colors;
 export declare const colorsDark: Colors;
 export declare const shadows: Shadows;
+export declare const shadowsDark: Shadows;
 export declare const fonts: Fonts;
 export declare const fontSizes: FontSizes;
 export declare const lineHeights: LineHeights;

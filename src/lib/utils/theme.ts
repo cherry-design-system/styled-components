@@ -80,6 +80,14 @@ export const shadows: Shadows = {
   xl: "0px 24px 32px 0px rgba(18, 18, 18, 0.24), 0px 2px 3px 0px rgba(39, 41, 45, 0.12)",
 };
 
+export const shadowsDark: Shadows = {
+  xs: "0px 4px 4px 0px rgba(255, 255, 255, 0.04), 0px 1px 3px 0px rgba(255, 255, 255, 0.02)",
+  sm: "0px 4px 4px 0px rgba(255, 255, 255, 0.08), 0px 1px 3px 0px rgba(255, 255, 255, 0.04)",
+  md: "0px 8px 8px 0px rgba(255, 255, 255, 0.16), 0px 2px 3px 0px rgba(255, 255, 255, 0.06)",
+  lg: "0px 16px 24px 0px rgba(255, 255, 255, 0.20), 0px 2px 3px 0px rgba(255, 255, 255, 0.08)",
+  xl: "0px 24px 32px 0px rgba(255, 255, 255, 0.24), 0px 2px 3px 0px rgba(255, 255, 255, 0.12)",
+};
+
 export const fonts: Fonts = {
   text: "Inter",
   head: "Inter",
@@ -153,7 +161,7 @@ export const themeDark: Theme = {
   breakpoints,
   spacing,
   colors: colorsDark,
-  shadows,
+  shadows: shadowsDark,
   fonts,
   fontSizes,
   lineHeights,
