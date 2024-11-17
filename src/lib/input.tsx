@@ -33,6 +33,7 @@ export const StyledInputWrapper = styled.span<InputProps>`
     $label &&
     css`
       gap: 10px;
+      align-items: flex-start;
     `}
 
   & .icon-calendar {
@@ -58,6 +59,7 @@ export const StyledLabel = styled.label<InputProps>`
   color: ${({ theme }) => theme.colors.grayDark};
   font-size: ${({ theme }) => theme.fontSizes.text.lg};
   line-height: ${({ theme }) => theme.lineHeights.text.lg};
+  margin-top: ${({ type }) => (type === "checkbox" || type === "radio" ? "-2px" : "0")};
 `;
 
 const StyledInput = styled.input<InputProps>`
@@ -186,6 +188,7 @@ const StyledIconWrapper = styled.span<InputProps>`
   display: inline-flex;
   position: relative;
   line-height: 0;
+  min-width: fit-content;
 
   & em {
     display: block;
@@ -341,7 +344,11 @@ function LocalInput({ ...props }: InputProps, ref: React.Ref<HTMLInputElement>) 
           <StyledRadioCheckboxInput {...props} ref={ref} />
           {!props.disabled && props.type === "checkbox" ? <IconCheck /> : <em />}
         </StyledIconWrapper>
-        {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
+        {props.$label && (
+          <StyledLabel htmlFor={props.id} {...props}>
+            {props.$label}
+          </StyledLabel>
+        )}
       </StyledInputWrapper>
     );
   }
