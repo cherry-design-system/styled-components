@@ -3565,7 +3565,7 @@ const cs = ae(sa), ca = (e, t, r, n, o, s) => D`
 	${s && `
 		cursor: not-allowed;
 		background: ${e.colors.grayLight};
-		border-color: ${e.colors.grayLight};
+    border: solid 2px ${e.colors.grayLight};
 		color: ${e.colors.gray};
 	`}
 
@@ -3849,7 +3849,7 @@ const fs = ae(ya), lt = V.span`
 
   ${({ disabled: e, theme: t }) => e && `cursor: not-allowed;
 		background: ${t.colors.grayLight};
-		border-color: ${t.colors.gray};
+    border: solid 2px ${t.colors.gray};
 		color: ${t.colors.gray};
 	`}
 

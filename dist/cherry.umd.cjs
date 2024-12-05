@@ -485,7 +485,7 @@ hr {
 	${s&&`
 		cursor: not-allowed;
 		background: ${e.colors.grayLight};
-		border-color: ${e.colors.grayLight};
+    border: solid 2px ${e.colors.grayLight};
 		color: ${e.colors.gray};
 	`}
 
@@ -749,7 +749,7 @@ hr {
 
   ${({disabled:e,theme:t})=>e&&`cursor: not-allowed;
 		background: ${t.colors.grayLight};
-		border-color: ${t.colors.gray};
+    border: solid 2px ${t.colors.gray};
 		color: ${t.colors.gray};
 	`}
 
