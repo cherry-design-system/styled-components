@@ -238,7 +238,7 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
     disabled &&
     `cursor: not-allowed;
 		background: ${theme.colors.grayLight};
-		border-color: ${theme.colors.gray};
+    border: solid 2px ${theme.colors.gray};
 		color: ${theme.colors.gray};
 	`}
 

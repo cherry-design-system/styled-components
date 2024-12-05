@@ -133,7 +133,7 @@ export const buttonStyles = (
   `
 		cursor: not-allowed;
 		background: ${theme.colors.grayLight};
-		border-color: ${theme.colors.grayLight};
+    border: solid 2px ${theme.colors.grayLight};
 		color: ${theme.colors.gray};
 	`}
 
