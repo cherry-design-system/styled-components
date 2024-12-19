@@ -61,11 +61,8 @@ const StyledSelect = styled.select<SelectProps>`
 
   ${({ $size, theme }) =>
     $size === "big"
-      ? `font-size: ${theme.fontSizes.inputBig.lg};
-			line-height: ${theme.lineHeights.inputBig.lg};
-	`
-      : `font-size: ${theme.fontSizes.input.lg};
-			line-height: ${theme.lineHeights.input.lg};`}
+      ? `font-size: ${theme.fontSizes.inputBig.lg};`
+      : `font-size: ${theme.fontSizes.input.lg};`}
 
 	${({ $error, $success, theme }) => {
     return statusBorderStyles($error ? true : false, $success ? true : false, theme);

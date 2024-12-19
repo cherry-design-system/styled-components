@@ -4185,10 +4185,7 @@ const gs = ae(Ra), Pa = V.select`
 
   ${({ $size: e }) => $r(e)}
 
-  ${({ $size: e, theme: t }) => e === "big" ? `font-size: ${t.fontSizes.inputBig.lg};
-			line-height: ${t.lineHeights.inputBig.lg};
-	` : `font-size: ${t.fontSizes.input.lg};
-			line-height: ${t.lineHeights.input.lg};`}
+  ${({ $size: e, theme: t }) => e === "big" ? `font-size: ${t.fontSizes.inputBig.lg};` : `font-size: ${t.fontSizes.input.lg};`}
 
 	${({ $error: e, $success: t, theme: r }) => Be(!!e, !!t, r)}
 
