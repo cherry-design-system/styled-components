@@ -29,22 +29,22 @@
     "format": "prettier --write \"./src/**/*.{js,json,ts,tsx}\" \"!.node_modules/**\""
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "^19",
+    "react-dom": "^19"
   },
   "devDependencies": {
     "@types/node": "^22",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@vitejs/plugin-react": "^4.3.3",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.14",
-    "next": "^15.0.3",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "next": "^15.1.2",
     "polished": "^4.3.1",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.2",
     "styled-components": "^6.1.13",
     "typescript": "^5",
-    "vite": "^5.4.11",
-    "vite-plugin-dts": "^4.3.0"
+    "vite": "^6.0.5",
+    "vite-plugin-dts": "^4.4.0"
   }
 }
