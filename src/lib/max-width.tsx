@@ -12,6 +12,7 @@ interface MaxWidthProps extends React.HTMLAttributes<HTMLDivElement> {
   $xl?: number;
   $xxl?: number;
   $xxxl?: number;
+  $m0?: boolean;
 }
 
 const styles = ($size: number | "none") => `max-width: ${$size}px;`;
@@ -28,7 +29,7 @@ function responsiveStyles(props: any) {
 
 const StyledMaxWidth = styled.div<MaxWidthProps>`
   display: block;
-  margin: auto;
+  margin: ${({ $m0 }) => ($m0 ? "0" : "auto")};
 
   ${({ $size }) => `
 		${$size && styles($size)};
