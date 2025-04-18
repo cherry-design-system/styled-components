@@ -44,7 +44,7 @@
     "prettier": "^3.5.3",
     "styled-components": "^6.1.17",
     "typescript": "^5",
-    "vite": "^6.3.1",
+    "vite": "^6.3.2",
     "vite-plugin-dts": "^4.5.3"
   }
 }
