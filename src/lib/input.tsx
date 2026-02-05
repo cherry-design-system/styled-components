@@ -1,6 +1,7 @@
 "use client";
 import React, { forwardRef } from "react";
 import styled, { css } from "styled-components";
+import type { IStyledComponent } from "styled-components";
 import {
   Theme,
   IconCheck,
@@ -24,7 +25,16 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   theme?: Theme;
 }
 
-export const StyledInputWrapper = styled.span<InputProps>`
+interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
+  $label?: string;
+  $size?: "default" | "big";
+  $error?: boolean;
+  $success?: boolean;
+  $fullWidth?: boolean;
+  theme?: Theme;
+}
+
+export const StyledInputWrapper: IStyledComponent<"web", React.HTMLAttributes<HTMLSpanElement> & Pick<InputProps, "$label" | "$fullWidth" | "type">> = styled.span<Pick<InputProps, "$label" | "$fullWidth" | "type">>`
   display: inline-flex;
   flex-wrap: ${({ type }) => (type === "checkbox" || type === "radio" ? "nowrap" : "wrap")};
   align-items: center;
@@ -54,12 +64,11 @@ export const StyledInputWrapper = styled.span<InputProps>`
   ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
 
-export const StyledLabel = styled.label<InputProps>`
+export const StyledLabel: IStyledComponent<"web", LabelProps> = styled.label<LabelProps>`
   display: inline-block;
   color: ${({ theme }) => theme.colors.grayDark};
   font-size: ${({ theme }) => theme.fontSizes.text.lg};
   line-height: ${({ theme }) => theme.lineHeights.text.lg};
-  margin-top: ${({ type }) => (type === "checkbox" || type === "radio" ? "-2px" : "0")};
 `;
 
 const StyledInput = styled.input<InputProps>`
@@ -345,7 +354,7 @@ function LocalInput({ ...props }: InputProps, ref: React.Ref<HTMLInputElement>) 
           {!props.disabled && props.type === "checkbox" ? <IconCheck /> : <em />}
         </StyledIconWrapper>
         {props.$label && (
-          <StyledLabel htmlFor={props.id} {...props}>
+          <StyledLabel htmlFor={props.id}>
             {props.$label}
           </StyledLabel>
         )}

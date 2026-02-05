@@ -40,8 +40,7 @@ export const buttonStyles = (
 
   & .icon,
   & .lucide {
-    margin: -4px 0 0 0;
-    min-width: 24px;
+    margin: auto 0;
   }
 
   ${!disabled &&

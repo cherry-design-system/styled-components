@@ -1,6 +1,6 @@
 "use client";
 import React, { forwardRef } from "react";
-import styled from "styled-components";
+import styled, { IStyledComponent } from "styled-components";
 import {
   Theme,
   IconArrow,
@@ -79,7 +79,7 @@ const StyledSelect = styled.select<SelectProps>`
 	${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
 
-export const StyledIconWrapper = styled.span<SelectProps>`
+export const StyledIconWrapper: IStyledComponent<"web", SelectProps> = styled.span<SelectProps>`
   position: relative;
   ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 

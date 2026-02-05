@@ -1,4 +1,5 @@
 import { default as React } from 'react';
+import { IStyledComponent } from 'styled-components';
 import { Theme } from './utils';
 interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
     children?: React.ReactNode;
@@ -9,6 +10,6 @@ interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
     $fullWidth?: boolean;
     theme?: Theme;
 }
-export declare const StyledIconWrapper: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components/dist/types').Substitute<React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, SelectProps>> & string;
+export declare const StyledIconWrapper: IStyledComponent<"web", SelectProps>;
 declare const Select: React.ForwardRefExoticComponent<SelectProps & React.RefAttributes<HTMLSelectElement>>;
 export { Select };
