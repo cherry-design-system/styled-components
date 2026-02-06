@@ -15,6 +15,7 @@ import {
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   children?: React.ReactNode;
+  $wrapperClassName?: string;
   $label?: string;
   $size?: "default" | "big";
   $error?: boolean;
@@ -34,15 +35,20 @@ interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   theme?: Theme;
 }
 
-export const StyledInputWrapper: IStyledComponent<"web", React.HTMLAttributes<HTMLSpanElement> & Pick<InputProps, "$label" | "$fullWidth" | "type">> = styled.span<Pick<InputProps, "$label" | "$fullWidth" | "type">>`
+export const StyledInputWrapper: IStyledComponent<
+  "web",
+  React.HTMLAttributes<HTMLSpanElement> &
+    Pick<InputProps, "$label" | "$fullWidth" | "type">
+> = styled.span<Pick<InputProps, "$label" | "$fullWidth" | "type">>`
   display: inline-flex;
-  flex-wrap: ${({ type }) => (type === "checkbox" || type === "radio" ? "nowrap" : "wrap")};
+  flex-wrap: ${({ type }) =>
+    type === "checkbox" || type === "radio" ? "nowrap" : "wrap"};
   align-items: center;
 
   ${({ $label }) =>
     $label &&
     css`
-      gap: 10px;
+      gap: 5px;
       align-items: flex-start;
     `}
 
@@ -64,12 +70,13 @@ export const StyledInputWrapper: IStyledComponent<"web", React.HTMLAttributes<HT
   ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
 
-export const StyledLabel: IStyledComponent<"web", LabelProps> = styled.label<LabelProps>`
-  display: inline-block;
-  color: ${({ theme }) => theme.colors.grayDark};
-  font-size: ${({ theme }) => theme.fontSizes.text.lg};
-  line-height: ${({ theme }) => theme.lineHeights.text.lg};
-`;
+export const StyledLabel: IStyledComponent<"web", LabelProps> =
+  styled.label<LabelProps>`
+    display: inline-block;
+    color: ${({ theme }) => theme.colors.grayDark};
+    font-size: ${({ theme }) => theme.fontSizes.small.lg};
+    line-height: ${({ theme }) => theme.lineHeights.small.lg};
+  `;
 
 const StyledInput = styled.input<InputProps>`
   ${resetButton};
@@ -179,7 +186,11 @@ const StyledInput = styled.input<InputProps>`
 			line-height: ${theme.lineHeights.input.lg};`}
 
 	${({ $error, $success, theme }) => {
-    return statusBorderStyles($error ? true : false, $success ? true : false, theme);
+    return statusBorderStyles(
+      $error ? true : false,
+      $success ? true : false,
+      theme,
+    );
   }}
 
 	${({ disabled, theme }) =>
@@ -241,7 +252,9 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
   }
 
   ${({ type, theme }) =>
-    type === "checkbox" ? `border-radius: ${theme.spacing.radius.xs};` : `border-radius: 50%;`}
+    type === "checkbox"
+      ? `border-radius: ${theme.spacing.radius.xs};`
+      : `border-radius: 50%;`}
 
   ${({ disabled, theme }) =>
     disabled &&
@@ -252,7 +265,11 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
 	`}
 
 	${({ $error, $success, theme }) => {
-    return statusBorderStyles($error ? true : false, $success ? true : false, theme);
+    return statusBorderStyles(
+      $error ? true : false,
+      $success ? true : false,
+      theme,
+    );
   }}
 
 	${({ $size }) => {
@@ -345,26 +362,43 @@ const StyledCustomIconWrapper = styled.span<InputProps>`
         `}
 `;
 
-function LocalInput({ ...props }: InputProps, ref: React.Ref<HTMLInputElement>) {
+function LocalInput(
+  { ...props }: InputProps,
+  ref: React.Ref<HTMLInputElement>,
+) {
   if (props.type === "checkbox" || props.type === "radio") {
     return (
-      <StyledInputWrapper $fullWidth={props.$fullWidth} type={props.type} $label={props.$label}>
+      <StyledInputWrapper
+        $fullWidth={props.$fullWidth}
+        type={props.type}
+        $label={props.$label}
+        className={props.$wrapperClassName}
+      >
         <StyledIconWrapper>
           <StyledRadioCheckboxInput {...props} ref={ref} />
-          {!props.disabled && props.type === "checkbox" ? <IconCheck /> : <em />}
+          {!props.disabled && props.type === "checkbox" ? (
+            <IconCheck />
+          ) : (
+            <em />
+          )}
         </StyledIconWrapper>
         {props.$label && (
-          <StyledLabel htmlFor={props.id}>
-            {props.$label}
-          </StyledLabel>
+          <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>
         )}
       </StyledInputWrapper>
     );
   }
 
   return (
-    <StyledInputWrapper $fullWidth={props.$fullWidth} type={props.type} $label={props.$label}>
-      {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
+    <StyledInputWrapper
+      $fullWidth={props.$fullWidth}
+      type={props.type}
+      $label={props.$label}
+      className={props.$wrapperClassName}
+    >
+      {props.$label && (
+        <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>
+      )}
       <StyledCustomIconWrapper
         $fullWidth={props.$fullWidth}
         $iconPosition={props.$iconPosition}

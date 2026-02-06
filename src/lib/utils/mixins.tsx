@@ -26,7 +26,11 @@ export const fullWidthStyles = (fullWidth: boolean) => {
   }
 };
 
-export const statusBorderStyles = ($error: boolean, $success: boolean, theme: Theme) => {
+export const statusBorderStyles = (
+  $error: boolean,
+  $success: boolean,
+  theme: Theme,
+) => {
   if ($error) {
     return css`
       border-color: ${theme?.colors.error};
@@ -52,19 +56,28 @@ export const formElementHeightStyles = ($size?: "default" | "big") => {
   `;
 };
 
-export const generateGapStyles = (size: keyof Breakpoints<number>, gap: number | "none") => css`
+export const generateGapStyles = (
+  size: keyof Breakpoints<number>,
+  gap: number | "none",
+) => css`
   ${mq(size)} {
     gap: ${gap === "none" ? "0" : `${gap}px`};
   }
 `;
 
-export const generateColsStyles = (size: keyof Breakpoints<number>, cols: number) => css`
+export const generateColsStyles = (
+  size: keyof Breakpoints<number>,
+  cols: number,
+) => css`
   ${mq(size)} {
     grid-template-columns: repeat(${cols || 3}, minmax(0, 1fr));
   }
 `;
 
-export const generateColSpanStyles = (size: keyof Breakpoints<number>, span: number) => css`
+export const generateColSpanStyles = (
+  size: keyof Breakpoints<number>,
+  span: number,
+) => css`
   ${mq(size)} {
     grid-column: span ${span};
   }

@@ -3,6 +3,7 @@ import { IStyledComponent } from 'styled-components';
 import { Theme } from './utils';
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     children?: React.ReactNode;
+    $wrapperClassName?: string;
     $label?: string;
     $size?: "default" | "big";
     $error?: boolean;

@@ -2,6 +2,7 @@ import { default as React } from 'react';
 import { Theme } from './utils';
 interface TextareaProps extends Omit<React.InputHTMLAttributes<HTMLTextAreaElement>, "size"> {
     children?: React.ReactNode;
+    $wrapperClassName?: string;
     $label?: string;
     $size?: "default" | "big";
     $error?: boolean;

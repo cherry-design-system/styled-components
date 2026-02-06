@@ -7,6 +7,7 @@ import { StyledInputWrapper, StyledLabel } from "./input";
 interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
   children?: React.ReactNode;
   type?: "checkbox" | "radio";
+  $wrapperClassName?: string;
   $label?: string;
   $size?: "default" | "big";
   $error?: boolean;
@@ -35,7 +36,11 @@ const StyledFakeToggle = styled.span<ToggleProps>`
   height: ${({ $size }) => ($size === "big" ? "32px" : "22px")};
 
   ${({ $error, $success, theme }) => {
-    return statusBorderStyles($error ? true : false, $success ? true : false, theme);
+    return statusBorderStyles(
+      $error ? true : false,
+      $success ? true : false,
+      theme,
+    );
   }}
 
   &::before,
@@ -127,7 +132,11 @@ function LocalToggle(
   ref: React.Ref<HTMLInputElement>,
 ) {
   return (
-    <StyledInputWrapper $fullWidth={props.$fullWidth} $label={props.$label}>
+    <StyledInputWrapper
+      $fullWidth={props.$fullWidth}
+      $label={props.$label}
+      className={props.$wrapperClassName}
+    >
       <StyledToggleWrapper>
         <StyledToggle {...props} type={type} ref={ref} />
         <StyledFakeToggle
@@ -137,7 +146,9 @@ function LocalToggle(
           $size={props.$size}
         />
       </StyledToggleWrapper>
-      {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
+      {props.$label && (
+        <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>
+      )}
     </StyledInputWrapper>
   );
 }

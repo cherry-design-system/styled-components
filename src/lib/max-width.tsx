@@ -37,7 +37,10 @@ const StyledMaxWidth = styled.div<MaxWidthProps>`
   ${(props) => responsiveStyles(props)}
 `;
 
-function LocalMaxWidth({ ...props }: MaxWidthProps, ref: React.Ref<HTMLDivElement>) {
+function LocalMaxWidth(
+  { ...props }: MaxWidthProps,
+  ref: React.Ref<HTMLDivElement>,
+) {
   return (
     <StyledMaxWidth {...props} ref={ref}>
       {props.children}

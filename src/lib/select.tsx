@@ -14,6 +14,7 @@ import { StyledInputWrapper, StyledLabel } from "./input";
 
 interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
   children?: React.ReactNode;
+  $wrapperClassName?: string;
   $label?: string;
   $size?: "default" | "big";
   $error?: boolean;
@@ -65,7 +66,11 @@ const StyledSelect = styled.select<SelectProps>`
       : `font-size: ${theme.fontSizes.input.lg};`}
 
 	${({ $error, $success, theme }) => {
-    return statusBorderStyles($error ? true : false, $success ? true : false, theme);
+    return statusBorderStyles(
+      $error ? true : false,
+      $success ? true : false,
+      theme,
+    );
   }}
 
 	${({ disabled, theme }) =>
@@ -79,33 +84,43 @@ const StyledSelect = styled.select<SelectProps>`
 	${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
 
-export const StyledIconWrapper: IStyledComponent<"web", SelectProps> = styled.span<SelectProps>`
-  position: relative;
-  ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
+export const StyledIconWrapper: IStyledComponent<"web", SelectProps> =
+  styled.span<SelectProps>`
+    position: relative;
+    ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 
-  & svg {
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%) rotate(0);
-    transition: all 0.3s ease;
-    pointer-events: none;
-  }
+    & svg {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%) rotate(0);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
 
-  & select {
-    padding-right: 40px;
-  }
+    & select {
+      padding-right: 40px;
+    }
 
-  & select:active:not([disabled]) ~ svg,
-  & select:focus:not([disabled]) ~ svg {
-    transform: translateY(-50%) rotate(180deg);
-  }
-`;
+    & select:active:not([disabled]) ~ svg,
+    & select:focus:not([disabled]) ~ svg {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  `;
 
-function LocalSelect({ ...props }: SelectProps, ref: React.Ref<HTMLSelectElement>) {
+function LocalSelect(
+  { ...props }: SelectProps,
+  ref: React.Ref<HTMLSelectElement>,
+) {
   return (
-    <StyledInputWrapper $fullWidth={props.$fullWidth} $label={props.$label}>
-      {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
+    <StyledInputWrapper
+      $fullWidth={props.$fullWidth}
+      $label={props.$label}
+      className={props.$wrapperClassName}
+    >
+      {props.$label && (
+        <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>
+      )}
       <StyledIconWrapper $fullWidth={props.$fullWidth}>
         <StyledSelect {...props} ref={ref}>
           {props.children}

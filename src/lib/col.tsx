@@ -32,7 +32,10 @@ const StyledCol = styled.div<ColProps>`
 	${({ $xxxlSpan }) => $xxxlSpan && generateColSpanStyles("xxxl", $xxxlSpan)}
 `;
 
-function LocalCol({ theme = defaultTheme, ...props }: ColProps, ref: React.Ref<HTMLDivElement>) {
+function LocalCol(
+  { theme = defaultTheme, ...props }: ColProps,
+  ref: React.Ref<HTMLDivElement>,
+) {
   return (
     <StyledCol {...props} theme={theme} ref={ref}>
       {props.children}

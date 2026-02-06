@@ -2,6 +2,7 @@ import { default as React } from 'react';
 import { Theme } from './utils';
 interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
     className?: string;
+    $wrapperClassName?: string;
     $label?: string;
     $size?: "default" | "big";
     $error?: boolean;

@@ -1,7 +1,12 @@
 "use client";
 import React, { forwardRef } from "react";
 import styled from "styled-components";
-import { theme as defaultTheme, Theme, mq, generatePaddingStyles } from "./utils";
+import {
+  theme as defaultTheme,
+  Theme,
+  mq,
+  generatePaddingStyles,
+} from "./utils";
 
 export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
@@ -22,16 +27,20 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 const StyledContainer = styled.div<ContainerProps>`
   margin: auto;
   width: 100%;
-  max-width: ${({ theme, $fluid }) => ($fluid ? `100%` : theme.spacing.maxWidth.xs)};
+  max-width: ${({ theme, $fluid }) =>
+    $fluid ? `100%` : theme.spacing.maxWidth.xs};
   ${({ $textAlign }) => $textAlign && `text-align: ${$textAlign}`};
-  padding: ${({ $padding, theme }) => ($padding && `${$padding}px`) || theme.spacing.padding.xs};
+  padding: ${({ $padding, theme }) =>
+    ($padding && `${$padding}px`) || theme.spacing.padding.xs};
 
   ${mq("lg")} {
-    padding: ${({ $padding, theme }) => ($padding && `${$padding}px`) || theme.spacing.padding.lg};
+    padding: ${({ $padding, theme }) =>
+      ($padding && `${$padding}px`) || theme.spacing.padding.lg};
   }
 
   ${mq("xxxl")} {
-    max-width: ${({ theme, $fluid }) => ($fluid ? `100%` : theme.spacing.maxWidth.xxxl)};
+    max-width: ${({ theme, $fluid }) =>
+      $fluid ? `100%` : theme.spacing.maxWidth.xxxl};
   }
 
   ${({ $xsPadding }) => $xsPadding && generatePaddingStyles("xs", $xsPadding)}
@@ -40,7 +49,8 @@ const StyledContainer = styled.div<ContainerProps>`
 	${({ $lgPadding }) => $lgPadding && generatePaddingStyles("lg", $lgPadding)}
 	${({ $xlPadding }) => $xlPadding && generatePaddingStyles("xl", $xlPadding)}
 	${({ $xxlPadding }) => $xxlPadding && generatePaddingStyles("xxl", $xxlPadding)}
-	${({ $xxxlPadding }) => $xxxlPadding && generatePaddingStyles("xxxl", $xxxlPadding)}
+	${({ $xxxlPadding }) =>
+    $xxxlPadding && generatePaddingStyles("xxxl", $xxxlPadding)}
 `;
 
 function LocalContainer(

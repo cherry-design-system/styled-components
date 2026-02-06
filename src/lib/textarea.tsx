@@ -1,11 +1,21 @@
 "use client";
 import React, { forwardRef } from "react";
 import styled from "styled-components";
-import { Theme, fullWidthStyles, resetButton, resetInput, statusBorderStyles } from "./utils";
+import {
+  Theme,
+  fullWidthStyles,
+  resetButton,
+  resetInput,
+  statusBorderStyles,
+} from "./utils";
 import { StyledInputWrapper, StyledLabel } from "./input";
 
-interface TextareaProps extends Omit<React.InputHTMLAttributes<HTMLTextAreaElement>, "size"> {
+interface TextareaProps extends Omit<
+  React.InputHTMLAttributes<HTMLTextAreaElement>,
+  "size"
+> {
   children?: React.ReactNode;
+  $wrapperClassName?: string;
   $label?: string;
   $size?: "default" | "big";
   $error?: boolean;
@@ -60,7 +70,11 @@ const StyledTextarea = styled.textarea<TextareaProps>`
 			line-height: ${theme.lineHeights.text.lg};`}
 
   ${({ $error, $success, theme }) => {
-    return statusBorderStyles($error ? true : false, $success ? true : false, theme);
+    return statusBorderStyles(
+      $error ? true : false,
+      $success ? true : false,
+      theme,
+    );
   }}
 
 	${({ disabled, theme }) =>
@@ -74,9 +88,16 @@ const StyledTextarea = styled.textarea<TextareaProps>`
 	${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
 `;
 
-function LocalTextarea({ ...props }: TextareaProps, ref: React.Ref<HTMLTextAreaElement>) {
+function LocalTextarea(
+  { ...props }: TextareaProps,
+  ref: React.Ref<HTMLTextAreaElement>,
+) {
   return (
-    <StyledInputWrapper $fullWidth={props.$fullWidth} $label={props.$label}>
+    <StyledInputWrapper
+      $fullWidth={props.$fullWidth}
+      $label={props.$label}
+      className={props.$wrapperClassName}
+    >
       {props.$label && (
         <StyledLabel htmlFor={props.id} $label={props.$label}>
           {props.$label}

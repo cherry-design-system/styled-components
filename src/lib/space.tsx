@@ -30,7 +30,10 @@ function responsiveStyles(props: any) {
     .filter((key) => key.startsWith("$"))
     .map((key) => {
       const size = key.substring(1) as keyof Breakpoints<number>;
-      return props[key] && mq(size) + `{ ${styles(props[key], props.$horizontal || false)} }`;
+      return (
+        props[key] &&
+        mq(size) + `{ ${styles(props[key], props.$horizontal || false)} }`
+      );
     })
     .join("");
 }

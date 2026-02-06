@@ -1,11 +1,20 @@
 "use client";
 import React, { forwardRef } from "react";
 import styled from "styled-components";
-import { Theme, fullWidthStyles, resetButton, statusBorderStyles } from "./utils";
+import {
+  Theme,
+  fullWidthStyles,
+  resetButton,
+  statusBorderStyles,
+} from "./utils";
 import { StyledLabel } from "./input";
 
-interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
+interface InputProps extends Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  "size"
+> {
   className?: string;
+  $wrapperClassName?: string;
   $label?: string;
   $size?: "default" | "big";
   $error?: boolean;
@@ -16,7 +25,8 @@ interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "
 
 const StyledInputWrapper = styled.span<InputProps>`
   display: inline-flex;
-  flex-wrap: ${({ type }) => (type === "checkbox" || type === "radio" ? "fprnowrap" : "wrap")};
+  flex-wrap: ${({ type }) =>
+    type === "checkbox" || type === "radio" ? "fprnowrap" : "wrap"};
   gap: 10px;
   align-items: center;
 
@@ -39,7 +49,11 @@ const StyledInput = styled.input<InputProps>`
     box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primaryLight};
     transition: all 0.3s ease;
     ${({ $error, $success, theme }) => {
-      return statusBorderStyles($error ? true : false, $success ? true : false, theme);
+      return statusBorderStyles(
+        $error ? true : false,
+        $success ? true : false,
+        theme,
+      );
     }}
   }
 
@@ -51,7 +65,11 @@ const StyledInput = styled.input<InputProps>`
     box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primaryLight};
     transition: all 0.3s ease;
     ${({ $error, $success, theme }) => {
-      return statusBorderStyles($error ? true : false, $success ? true : false, theme);
+      return statusBorderStyles(
+        $error ? true : false,
+        $success ? true : false,
+        theme,
+      );
     }}
   }
 
@@ -194,10 +212,18 @@ const StyledInput = styled.input<InputProps>`
   }}
 `;
 
-function LocalRange({ ...props }: InputProps, ref: React.Ref<HTMLInputElement>) {
+function LocalRange(
+  { ...props }: InputProps,
+  ref: React.Ref<HTMLInputElement>,
+) {
   return (
-    <StyledInputWrapper $fullWidth={props.$fullWidth}>
-      {props.$label && <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>}
+    <StyledInputWrapper
+      $fullWidth={props.$fullWidth}
+      className={props.$wrapperClassName}
+    >
+      {props.$label && (
+        <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>
+      )}
       <StyledInput {...props} type="range" ref={ref} />
     </StyledInputWrapper>
   );
