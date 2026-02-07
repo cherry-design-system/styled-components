@@ -41,6 +41,7 @@ export const buttonStyles = (
   gap: 10px;
   text-overflow: ellipsis;
   justify-content: center;
+  min-height: fit-content;
 
   & .icon,
   & .lucide {

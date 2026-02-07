@@ -4946,6 +4946,7 @@ const Un = (t, a, o, n, c, r, h) => V`
   gap: 10px;
   text-overflow: ellipsis;
   justify-content: center;
+  min-height: fit-content;
 
   & .icon,
   & .lucide {
