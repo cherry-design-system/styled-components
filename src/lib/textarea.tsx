@@ -46,10 +46,8 @@ const StyledTextarea = styled.textarea<TextareaProps>`
     color: ${({ theme }) => theme.colors.gray};
   }
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) {
-      border-color: ${({ theme }) => theme.colors.primary};
-    }
+  &:hover:not([disabled]) {
+    border-color: ${({ theme }) => theme.colors.primary};
   }
 
   &:focus:not([disabled]) {

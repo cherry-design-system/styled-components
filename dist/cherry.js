@@ -4960,12 +4960,10 @@ const Un = (t, a, o, n, c, r, h) => V`
     border: solid 2px ${t.colors.primary};
     box-shadow: 0 0 0 0px ${t.colors.primary};
 
-    @media (hover: hover) {
-      &:hover {
-        background: ${n ? "transparent" : t.colors.primaryDark};
-        border-color: ${t.colors.primaryDark};
-        ${n && `color: ${t.colors.primaryDark}`};
-      }
+    &:hover {
+      background: ${n ? "transparent" : t.colors.primaryDark};
+      border-color: ${t.colors.primaryDark};
+      ${n && `color: ${t.colors.primaryDark}`};
     }
 
     &:focus {
@@ -4983,12 +4981,10 @@ const Un = (t, a, o, n, c, r, h) => V`
     border: solid 2px ${t.colors.secondary};
     box-shadow: 0 0 0 0px ${t.colors.secondary};
 
-    @media (hover: hover) {
-      &:hover {
-        background: ${n ? "transparent" : t.colors.secondaryDark};
-        border-color: ${t.colors.secondaryDark};
-        ${n && `color: ${t.colors.secondaryDark}`};
-      }
+    &:hover {
+      background: ${n ? "transparent" : t.colors.secondaryDark};
+      border-color: ${t.colors.secondaryDark};
+      ${n && `color: ${t.colors.secondaryDark}`};
     }
 
     &:focus {
@@ -5006,12 +5002,10 @@ const Un = (t, a, o, n, c, r, h) => V`
     border: solid 2px ${t.colors.tertiary};
     box-shadow: 0 0 0 0px ${t.colors.tertiary};
 
-    @media (hover: hover) {
-      &:hover {
-        background: ${n ? "transparent" : t.colors.tertiaryDark};
-        border-color: ${t.colors.tertiaryDark};
-        ${n && `color: ${t.colors.tertiaryDark}`};
-      }
+    &:hover {
+      background: ${n ? "transparent" : t.colors.tertiaryDark};
+      border-color: ${t.colors.tertiaryDark};
+      ${n && `color: ${t.colors.tertiaryDark}`};
     }
 
     &:focus {
@@ -5029,12 +5023,10 @@ const Un = (t, a, o, n, c, r, h) => V`
     border: solid 2px ${t.colors.error};
     box-shadow: 0 0 0 0px ${t.colors.error};
 
-    @media (hover: hover) {
-      &:hover {
-        background: ${n ? "transparent" : j2(0.1, t.colors.error)};
-        border-color: ${j2(0.1, t.colors.error)};
-        ${n && `color: ${j2(0.1, t.colors.error)}`};
-      }
+    &:hover {
+      background: ${n ? "transparent" : j2(0.1, t.colors.error)};
+      border-color: ${j2(0.1, t.colors.error)};
+      ${n && `color: ${j2(0.1, t.colors.error)}`};
     }
 
     &:focus {
@@ -21921,10 +21913,8 @@ const Ga1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
     color: ${({ theme: t }) => t.colors.gray};
   }
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) {
-      border-color: ${({ theme: t }) => t.colors.primary};
-    }
+  &:hover:not([disabled]) {
+    border-color: ${({ theme: t }) => t.colors.primary};
   }
 
   &:focus:not([disabled]) {
@@ -21986,10 +21976,8 @@ const Ga1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   box-shadow: 0 0 0 0px ${({ theme: t }) => t.colors.primaryLight};
   transition: all 0.3s ease;
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) {
-      border-color: ${({ theme: t }) => t.colors.primary};
-    }
+  &:hover:not([disabled]) {
+    border-color: ${({ theme: t }) => t.colors.primary};
   }
 
   &:focus:not([disabled]) {
@@ -22214,15 +22202,13 @@ const Zo1 = J(ao1), oo1 = W.span`
     transition: all 0.3s ease;
   }
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) {
-      &::-webkit-slider-runnable-track {
-        border: solid 2px ${({ theme: t }) => t.colors.primary};
-      }
+  &:hover:not([disabled]) {
+    &::-webkit-slider-runnable-track {
+      border: solid 2px ${({ theme: t }) => t.colors.primary};
+    }
 
-      &::-moz-range-track {
-        border: solid 2px ${({ theme: t }) => t.colors.primary};
-      }
+    &::-moz-range-track {
+      border: solid 2px ${({ theme: t }) => t.colors.primary};
     }
   }
 
@@ -22361,10 +22347,8 @@ const Go1 = J(co1), ro1 = W.select`
     color: ${({ theme: t }) => t.colors.gray};
   }
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) {
-      border-color: ${({ theme: t }) => t.colors.primary};
-    }
+  &:hover:not([disabled]) {
+    border-color: ${({ theme: t }) => t.colors.primary};
   }
 
   &:focus:not([disabled]) {
@@ -22475,10 +22459,8 @@ const Yo1 = J(yo1), po1 = W.textarea`
     color: ${({ theme: t }) => t.colors.gray};
   }
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) {
-      border-color: ${({ theme: t }) => t.colors.primary};
-    }
+  &:hover:not([disabled]) {
+    border-color: ${({ theme: t }) => t.colors.primary};
   }
 
   &:focus:not([disabled]) {
@@ -22595,10 +22577,8 @@ const Ko1 = J(ko1), lo1 = W.span`
     }
   }
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) ~ .fake-toggle {
-      border-color: ${({ theme: t }) => t.colors.primary};
-    }
+  &:hover:not([disabled]) ~ .fake-toggle {
+    border-color: ${({ theme: t }) => t.colors.primary};
   }
 
   &:focus:not([disabled]) ~ .fake-toggle {

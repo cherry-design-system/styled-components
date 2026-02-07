@@ -160,10 +160,8 @@ const StyledInput = styled.input<InputProps>`
     color: ${({ theme }) => theme.colors.gray};
   }
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) {
-      border-color: ${({ theme }) => theme.colors.primary};
-    }
+  &:hover:not([disabled]) {
+    border-color: ${({ theme }) => theme.colors.primary};
   }
 
   &:focus:not([disabled]) {
@@ -236,10 +234,8 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
   box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.primaryLight};
   transition: all 0.3s ease;
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) {
-      border-color: ${({ theme }) => theme.colors.primary};
-    }
+  &:hover:not([disabled]) {
+    border-color: ${({ theme }) => theme.colors.primary};
   }
 
   &:focus:not([disabled]) {

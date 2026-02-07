@@ -94,10 +94,8 @@ const StyledToggle = styled.input<ToggleProps>`
     }
   }
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) ~ .fake-toggle {
-      border-color: ${({ theme }) => theme.colors.primary};
-    }
+  &:hover:not([disabled]) ~ .fake-toggle {
+    border-color: ${({ theme }) => theme.colors.primary};
   }
 
   &:focus:not([disabled]) ~ .fake-toggle {

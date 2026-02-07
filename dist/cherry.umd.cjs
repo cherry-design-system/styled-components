@@ -545,12 +545,10 @@ To pass a single animation please supply them in simple values, e.g. animation('
     border: solid 2px ${t.colors.primary};
     box-shadow: 0 0 0 0px ${t.colors.primary};
 
-    @media (hover: hover) {
-      &:hover {
-        background: ${n?"transparent":t.colors.primaryDark};
-        border-color: ${t.colors.primaryDark};
-        ${n&&`color: ${t.colors.primaryDark}`};
-      }
+    &:hover {
+      background: ${n?"transparent":t.colors.primaryDark};
+      border-color: ${t.colors.primaryDark};
+      ${n&&`color: ${t.colors.primaryDark}`};
     }
 
     &:focus {
@@ -568,12 +566,10 @@ To pass a single animation please supply them in simple values, e.g. animation('
     border: solid 2px ${t.colors.secondary};
     box-shadow: 0 0 0 0px ${t.colors.secondary};
 
-    @media (hover: hover) {
-      &:hover {
-        background: ${n?"transparent":t.colors.secondaryDark};
-        border-color: ${t.colors.secondaryDark};
-        ${n&&`color: ${t.colors.secondaryDark}`};
-      }
+    &:hover {
+      background: ${n?"transparent":t.colors.secondaryDark};
+      border-color: ${t.colors.secondaryDark};
+      ${n&&`color: ${t.colors.secondaryDark}`};
     }
 
     &:focus {
@@ -591,12 +587,10 @@ To pass a single animation please supply them in simple values, e.g. animation('
     border: solid 2px ${t.colors.tertiary};
     box-shadow: 0 0 0 0px ${t.colors.tertiary};
 
-    @media (hover: hover) {
-      &:hover {
-        background: ${n?"transparent":t.colors.tertiaryDark};
-        border-color: ${t.colors.tertiaryDark};
-        ${n&&`color: ${t.colors.tertiaryDark}`};
-      }
+    &:hover {
+      background: ${n?"transparent":t.colors.tertiaryDark};
+      border-color: ${t.colors.tertiaryDark};
+      ${n&&`color: ${t.colors.tertiaryDark}`};
     }
 
     &:focus {
@@ -614,12 +608,10 @@ To pass a single animation please supply them in simple values, e.g. animation('
     border: solid 2px ${t.colors.error};
     box-shadow: 0 0 0 0px ${t.colors.error};
 
-    @media (hover: hover) {
-      &:hover {
-        background: ${n?"transparent":at(.1,t.colors.error)};
-        border-color: ${at(.1,t.colors.error)};
-        ${n&&`color: ${at(.1,t.colors.error)}`};
-      }
+    &:hover {
+      background: ${n?"transparent":at(.1,t.colors.error)};
+      border-color: ${at(.1,t.colors.error)};
+      ${n&&`color: ${at(.1,t.colors.error)}`};
     }
 
     &:focus {
@@ -826,10 +818,8 @@ To pass a single animation please supply them in simple values, e.g. animation('
     color: ${({theme:t})=>t.colors.gray};
   }
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) {
-      border-color: ${({theme:t})=>t.colors.primary};
-    }
+  &:hover:not([disabled]) {
+    border-color: ${({theme:t})=>t.colors.primary};
   }
 
   &:focus:not([disabled]) {
@@ -887,10 +877,8 @@ To pass a single animation please supply them in simple values, e.g. animation('
   box-shadow: 0 0 0 0px ${({theme:t})=>t.colors.primaryLight};
   transition: all 0.3s ease;
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) {
-      border-color: ${({theme:t})=>t.colors.primary};
-    }
+  &:hover:not([disabled]) {
+    border-color: ${({theme:t})=>t.colors.primary};
   }
 
   &:focus:not([disabled]) {
@@ -1048,15 +1036,13 @@ To pass a single animation please supply them in simple values, e.g. animation('
     transition: all 0.3s ease;
   }
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) {
-      &::-webkit-slider-runnable-track {
-        border: solid 2px ${({theme:t})=>t.colors.primary};
-      }
+  &:hover:not([disabled]) {
+    &::-webkit-slider-runnable-track {
+      border: solid 2px ${({theme:t})=>t.colors.primary};
+    }
 
-      &::-moz-range-track {
-        border: solid 2px ${({theme:t})=>t.colors.primary};
-      }
+    &::-moz-range-track {
+      border: solid 2px ${({theme:t})=>t.colors.primary};
     }
   }
 
@@ -1181,10 +1167,8 @@ To pass a single animation please supply them in simple values, e.g. animation('
     color: ${({theme:t})=>t.colors.gray};
   }
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) {
-      border-color: ${({theme:t})=>t.colors.primary};
-    }
+  &:hover:not([disabled]) {
+    border-color: ${({theme:t})=>t.colors.primary};
   }
 
   &:focus:not([disabled]) {
@@ -1262,10 +1246,8 @@ To pass a single animation please supply them in simple values, e.g. animation('
     color: ${({theme:t})=>t.colors.gray};
   }
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) {
-      border-color: ${({theme:t})=>t.colors.primary};
-    }
+  &:hover:not([disabled]) {
+    border-color: ${({theme:t})=>t.colors.primary};
   }
 
   &:focus:not([disabled]) {
@@ -1359,10 +1341,8 @@ To pass a single animation please supply them in simple values, e.g. animation('
     }
   }
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) ~ .fake-toggle {
-      border-color: ${({theme:t})=>t.colors.primary};
-    }
+  &:hover:not([disabled]) ~ .fake-toggle {
+    border-color: ${({theme:t})=>t.colors.primary};
   }
 
   &:focus:not([disabled]) ~ .fake-toggle {

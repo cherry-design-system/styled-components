@@ -89,15 +89,13 @@ const StyledInput = styled.input<InputProps>`
     transition: all 0.3s ease;
   }
 
-  @media (hover: hover) {
-    &:hover:not([disabled]) {
-      &::-webkit-slider-runnable-track {
-        border: solid 2px ${({ theme }) => theme.colors.primary};
-      }
+  &:hover:not([disabled]) {
+    &::-webkit-slider-runnable-track {
+      border: solid 2px ${({ theme }) => theme.colors.primary};
+    }
 
-      &::-moz-range-track {
-        border: solid 2px ${({ theme }) => theme.colors.primary};
-      }
+    &::-moz-range-track {
+      border: solid 2px ${({ theme }) => theme.colors.primary};
     }
   }
 

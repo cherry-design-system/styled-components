@@ -57,12 +57,10 @@ export const buttonStyles = (
     border: solid 2px ${theme.colors.primary};
     box-shadow: 0 0 0 0px ${theme.colors.primary};
 
-    @media (hover: hover) {
-      &:hover {
-        background: ${$outline ? "transparent" : theme.colors.primaryDark};
-        border-color: ${theme.colors.primaryDark};
-        ${$outline && `color: ${theme.colors.primaryDark}`};
-      }
+    &:hover {
+      background: ${$outline ? "transparent" : theme.colors.primaryDark};
+      border-color: ${theme.colors.primaryDark};
+      ${$outline && `color: ${theme.colors.primaryDark}`};
     }
 
     &:focus {
@@ -82,12 +80,10 @@ export const buttonStyles = (
     border: solid 2px ${theme.colors.secondary};
     box-shadow: 0 0 0 0px ${theme.colors.secondary};
 
-    @media (hover: hover) {
-      &:hover {
-        background: ${$outline ? "transparent" : theme.colors.secondaryDark};
-        border-color: ${theme.colors.secondaryDark};
-        ${$outline && `color: ${theme.colors.secondaryDark}`};
-      }
+    &:hover {
+      background: ${$outline ? "transparent" : theme.colors.secondaryDark};
+      border-color: ${theme.colors.secondaryDark};
+      ${$outline && `color: ${theme.colors.secondaryDark}`};
     }
 
     &:focus {
@@ -107,12 +103,10 @@ export const buttonStyles = (
     border: solid 2px ${theme.colors.tertiary};
     box-shadow: 0 0 0 0px ${theme.colors.tertiary};
 
-    @media (hover: hover) {
-      &:hover {
-        background: ${$outline ? "transparent" : theme.colors.tertiaryDark};
-        border-color: ${theme.colors.tertiaryDark};
-        ${$outline && `color: ${theme.colors.tertiaryDark}`};
-      }
+    &:hover {
+      background: ${$outline ? "transparent" : theme.colors.tertiaryDark};
+      border-color: ${theme.colors.tertiaryDark};
+      ${$outline && `color: ${theme.colors.tertiaryDark}`};
     }
 
     &:focus {
@@ -132,14 +126,12 @@ export const buttonStyles = (
     border: solid 2px ${theme.colors.error};
     box-shadow: 0 0 0 0px ${theme.colors.error};
 
-    @media (hover: hover) {
-      &:hover {
-        background: ${$outline
-          ? "transparent"
-          : darken(0.1, theme.colors.error)};
-        border-color: ${darken(0.1, theme.colors.error)};
-        ${$outline && `color: ${darken(0.1, theme.colors.error)}`};
-      }
+    &:hover {
+      background: ${$outline
+        ? "transparent"
+        : darken(0.1, theme.colors.error)};
+      border-color: ${darken(0.1, theme.colors.error)};
+      ${$outline && `color: ${darken(0.1, theme.colors.error)}`};
     }
 
     &:focus {
