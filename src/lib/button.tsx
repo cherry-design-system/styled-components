@@ -1,6 +1,8 @@
 "use client";
 import React, { forwardRef } from "react";
 import styled, { css } from "styled-components";
+import { lighten, darken } from "polished";
+
 import { Theme, formElementHeightStyles, resetButton } from "./utils";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -11,6 +13,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   $fullWidth?: boolean;
   $icon?: React.ReactNode;
   $iconPosition?: "left" | "right";
+  $isError?: boolean;
   theme?: Theme;
 }
 
@@ -20,6 +23,7 @@ export const buttonStyles = (
   $size?: "default" | "big",
   $outline?: boolean,
   $fullWidth?: boolean,
+  $isError?: boolean,
   disabled?: boolean,
 ) => css`
   ${resetButton};
@@ -118,6 +122,34 @@ export const buttonStyles = (
     }
   `}
 
+  ${!disabled &&
+  $isError &&
+  css`
+    color: ${$outline ? theme.colors.error : theme.colors.light};
+    background: ${$outline ? "transparent" : theme.colors.error};
+    border: solid 2px ${theme.colors.error};
+    box-shadow: 0 0 0 0px ${theme.colors.error};
+
+    @media (hover: hover) {
+      &:hover {
+        background: ${$outline
+          ? "transparent"
+          : darken(0.1, theme.colors.error)};
+        border-color: ${darken(0.1, theme.colors.error)};
+        ${$outline && `color: ${darken(0.1, theme.colors.error)}`};
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 4px ${lighten(0.1, theme.colors.error)};
+    }
+
+    &:active {
+      box-shadow: 0 0 0 2px ${lighten(0.1, theme.colors.error)};
+    }
+  `}
+
+
 	${formElementHeightStyles($size)}
 
 	${$size === "big"
@@ -140,8 +172,16 @@ export const buttonStyles = (
 `;
 
 const StyledButton = styled.button<ButtonProps>`
-  ${({ theme, $variant, $size, $outline, $fullWidth, disabled }) =>
-    buttonStyles(theme, $variant, $size, $outline, $fullWidth, disabled)}
+  ${({ theme, $variant, $isError, $size, $outline, $fullWidth, disabled }) =>
+    buttonStyles(
+      theme,
+      $variant,
+      $size,
+      $outline,
+      $fullWidth,
+      $isError,
+      disabled,
+    )}
 `;
 
 function LocalButton(
@@ -149,7 +189,12 @@ function LocalButton(
   ref: React.Ref<HTMLButtonElement>,
 ) {
   return (
-    <StyledButton $variant={$variant} {...props} ref={ref}>
+    <StyledButton
+      $variant={$variant}
+      $isError={props.$isError}
+      {...props}
+      ref={ref}
+    >
       {props.$iconPosition !== "right" && props.$icon && props.$icon}
       {props.children}
       {props.$iconPosition === "right" && props.$icon && props.$icon}
