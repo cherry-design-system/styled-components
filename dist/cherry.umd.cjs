@@ -531,6 +531,7 @@ To pass a single animation please supply them in simple values, e.g. animation('
   gap: 10px;
   text-overflow: ellipsis;
   justify-content: center;
+  align-items: center;
   min-height: fit-content;
 
   & .icon,
