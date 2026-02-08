@@ -127,9 +127,7 @@ export const buttonStyles = (
     box-shadow: 0 0 0 0px ${theme.colors.error};
 
     &:hover {
-      background: ${$outline
-        ? "transparent"
-        : darken(0.1, theme.colors.error)};
+      background: ${$outline ? "transparent" : darken(0.1, theme.colors.error)};
       border-color: ${darken(0.1, theme.colors.error)};
       ${$outline && `color: ${darken(0.1, theme.colors.error)}`};
     }
