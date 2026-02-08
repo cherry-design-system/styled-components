@@ -21972,6 +21972,7 @@ const Ga1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
 `, Ka1 = W.input`
   ${v1};
   display: inline-block;
+  background: ${({ theme: t }) => t.colors.light};
   border: solid 2px ${({ theme: t }) => t.colors.grayLight};
   box-shadow: 0 0 0 0px ${({ theme: t }) => t.colors.primaryLight};
   transition: all 0.3s ease;

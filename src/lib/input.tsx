@@ -230,6 +230,7 @@ const StyledIconWrapper = styled.span<InputProps>`
 const StyledRadioCheckboxInput = styled.input<InputProps>`
   ${resetButton};
   display: inline-block;
+  background: ${({ theme }) => theme.colors.light};
   border: solid 2px ${({ theme }) => theme.colors.grayLight};
   box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.primaryLight};
   transition: all 0.3s ease;
