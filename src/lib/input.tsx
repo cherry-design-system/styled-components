@@ -17,7 +17,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   children?: React.ReactNode;
   $wrapperClassName?: string;
   $label?: string;
-  $size?: "default" | "big";
+  $size?: "default" | "big" | "small";
   $error?: boolean;
   $success?: boolean;
   $fullWidth?: boolean;
@@ -28,7 +28,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   $label?: string;
-  $size?: "default" | "big";
+  $size?: "default" | "big" | "small";
   $error?: boolean;
   $success?: boolean;
   $fullWidth?: boolean;
@@ -180,7 +180,12 @@ const StyledInput = styled.input<InputProps>`
       ? `font-size: ${theme.fontSizes.inputBig.lg};
 			line-height: ${theme.lineHeights.inputBig.lg};
 	`
-      : `font-size: ${theme.fontSizes.input.lg};
+      : $size === "small"
+        ? `font-size: ${theme.fontSizes.inputSmall.lg};
+			line-height: ${theme.lineHeights.inputSmall.lg};
+      padding: 12px 12px;
+	`
+        : `font-size: ${theme.fontSizes.input.lg};
 			line-height: ${theme.lineHeights.input.lg};`}
 
 	${({ $error, $success, theme }) => {
@@ -289,6 +294,27 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
 						width: 14px;
 						min-height: 14px;
 						height: 14px;
+					}
+				`;
+    } else if ($size === "small") {
+      return `
+					min-width: 18px;
+					width: 18px;
+					min-height: 18px;
+					height: 18px;
+
+					& ~ svg {
+						min-width: 10px;
+						width: 10px;
+						min-height: 10px;
+						height: 10px;
+					}
+
+					& ~ em {
+						min-width: 6px;
+						width: 6px;
+						min-height: 6px;
+						height: 6px;
 					}
 				`;
     } else {

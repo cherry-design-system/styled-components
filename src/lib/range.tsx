@@ -16,7 +16,7 @@ interface InputProps extends Omit<
   className?: string;
   $wrapperClassName?: string;
   $label?: string;
-  $size?: "default" | "big";
+  $size?: "default" | "big" | "small";
   $error?: boolean;
   $success?: boolean;
   $fullWidth?: boolean;
@@ -45,6 +45,7 @@ const StyledInput = styled.input<InputProps>`
     width: 100%;
     cursor: pointer;
     border-radius: ${({ theme }) => theme.spacing.radius.xl};
+    background: ${({ theme }) => theme.colors.light};
     border: solid 2px ${({ theme }) => theme.colors.grayLight};
     box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primaryLight};
     transition: all 0.3s ease;
@@ -61,6 +62,7 @@ const StyledInput = styled.input<InputProps>`
     width: 100%;
     cursor: pointer;
     border-radius: ${({ theme }) => theme.spacing.radius.xl};
+    background: ${({ theme }) => theme.colors.light};
     border: solid 2px ${({ theme }) => theme.colors.grayLight};
     box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primaryLight};
     transition: all 0.3s ease;
@@ -181,6 +183,29 @@ const StyledInput = styled.input<InputProps>`
 					&::-moz-range-thumb {
 						width: 32px;
 						height: 32px;
+					}
+				`;
+    } else if ($size === "small") {
+      return `
+					height: 18px;
+
+					&::-webkit-slider-runnable-track {
+						height: 8px;
+					}
+
+					&::-moz-range-track {
+						height: 4px;
+					}
+
+					&::-webkit-slider-thumb {
+						width: 18px;
+						height: 18px;
+						margin-top: -7px;
+					}
+
+					&::-moz-range-thumb {
+						width: 18px;
+						height: 18px;
 					}
 				`;
     } else {

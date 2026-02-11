@@ -5,7 +5,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     children?: React.ReactNode;
     $wrapperClassName?: string;
     $label?: string;
-    $size?: "default" | "big";
+    $size?: "default" | "big" | "small";
     $error?: boolean;
     $success?: boolean;
     $fullWidth?: boolean;
@@ -15,7 +15,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
     $label?: string;
-    $size?: "default" | "big";
+    $size?: "default" | "big" | "small";
     $error?: boolean;
     $success?: boolean;
     $fullWidth?: boolean;

@@ -16,7 +16,7 @@ interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
   children?: React.ReactNode;
   $wrapperClassName?: string;
   $label?: string;
-  $size?: "default" | "big";
+  $size?: "default" | "big" | "small";
   $error?: boolean;
   $success?: boolean;
   $fullWidth?: boolean;
@@ -61,7 +61,9 @@ const StyledSelect = styled.select<SelectProps>`
   ${({ $size, theme }) =>
     $size === "big"
       ? `font-size: ${theme.fontSizes.inputBig.lg};`
-      : `font-size: ${theme.fontSizes.input.lg};`}
+      : $size === "small"
+        ? `font-size: ${theme.fontSizes.inputSmall.lg}; padding: 0 12px;`
+        : `font-size: ${theme.fontSizes.input.lg};`}
 
 	${({ $error, $success, theme }) => {
     return statusBorderStyles(

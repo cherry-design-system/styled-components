@@ -115,9 +115,11 @@ export const fontSizes: FontSizes = {
 
   button: { xs: "16px", lg: "16px" },
   buttonBig: { xs: "18px", lg: "18px" },
+  buttonSmall: { xs: "14px", lg: "14px" },
 
   input: { xs: "16px", lg: "16px" },
   inputBig: { xs: "18px", lg: "18px" },
+  inputSmall: { xs: "14px", lg: "14px" },
 };
 
 export const lineHeights: LineHeights = {
@@ -141,9 +143,11 @@ export const lineHeights: LineHeights = {
 
   button: { xs: "1.00", lg: "1.00" },
   buttonBig: { xs: "1.00", lg: "1.00" },
+  buttonSmall: { xs: "1.00", lg: "1.00" },
 
   input: { xs: "1.00", lg: "1.00" },
   inputBig: { xs: "1.00", lg: "1.00" },
+  inputSmall: { xs: "1.00", lg: "1.00" },
 };
 
 export const theme: Theme = {
@@ -246,9 +250,11 @@ export interface FontSizes<TString = string> {
 
   button: { xs: TString; lg: TString };
   buttonBig: { xs: TString; lg: TString };
+  buttonSmall: { xs: TString; lg: TString };
 
   input: { xs: TString; lg: TString };
   inputBig: { xs: TString; lg: TString };
+  inputSmall: { xs: TString; lg: TString };
 }
 
 export interface LineHeights<TString = string> {
@@ -272,9 +278,11 @@ export interface LineHeights<TString = string> {
 
   button: { xs: TString; lg: TString };
   buttonBig: { xs: TString; lg: TString };
+  buttonSmall: { xs: TString; lg: TString };
 
   input: { xs: TString; lg: TString };
   inputBig: { xs: TString; lg: TString };
+  inputSmall: { xs: TString; lg: TString };
 }
 
 export interface Theme {

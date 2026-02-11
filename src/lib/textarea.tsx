@@ -17,7 +17,7 @@ interface TextareaProps extends Omit<
   children?: React.ReactNode;
   $wrapperClassName?: string;
   $label?: string;
-  $size?: "default" | "big";
+  $size?: "default" | "big" | "small";
   $error?: boolean;
   $success?: boolean;
   $fullWidth?: boolean;
@@ -64,7 +64,12 @@ const StyledTextarea = styled.textarea<TextareaProps>`
       ? `font-size: ${theme.fontSizes.inputBig.lg};
 			line-height: ${theme.lineHeights.text.lg};
 	`
-      : `font-size: ${theme.fontSizes.input.lg};
+      : $size === "small"
+        ? `font-size: ${theme.fontSizes.inputSmall.lg};
+			line-height: ${theme.lineHeights.text.lg};
+      padding: 10px 12px;
+	`
+        : `font-size: ${theme.fontSizes.input.lg};
 			line-height: ${theme.lineHeights.text.lg};`}
 
   ${({ $error, $success, theme }) => {

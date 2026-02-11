@@ -9,7 +9,7 @@ interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
   type?: "checkbox" | "radio";
   $wrapperClassName?: string;
   $label?: string;
-  $size?: "default" | "big";
+  $size?: "default" | "big" | "small";
   $error?: boolean;
   $success?: boolean;
   $fullWidth?: boolean;
@@ -32,8 +32,8 @@ const StyledFakeToggle = styled.span<ToggleProps>`
   transition: all 0.3s ease;
   box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primaryLight};
   transform: none;
-  width: ${({ $size }) => ($size === "big" ? "56px" : "46px")};
-  height: ${({ $size }) => ($size === "big" ? "32px" : "22px")};
+  width: ${({ $size }) => ($size === "big" ? "56px" : $size === "small" ? "38px" : "46px")};
+  height: ${({ $size }) => ($size === "big" ? "32px" : $size === "small" ? "18px" : "22px")};
 
   ${({ $error, $success, theme }) => {
     return statusBorderStyles(
@@ -68,8 +68,8 @@ const StyledFakeToggle = styled.span<ToggleProps>`
     transition: all 0.3s ease;
     transform: translateX(0);
     background: ${({ theme }) => theme.colors.primary};
-    width: ${({ $size }) => ($size === "big" ? "32px" : "22px")};
-    height: ${({ $size }) => ($size === "big" ? "32px" : "22px")};
+    width: ${({ $size }) => ($size === "big" ? "32px" : $size === "small" ? "18px" : "22px")};
+    height: ${({ $size }) => ($size === "big" ? "32px" : $size === "small" ? "18px" : "22px")};
   }
 `;
 
@@ -90,7 +90,9 @@ const StyledToggle = styled.input<ToggleProps>`
     }
 
     &::after {
-      transform: translateX(25px);
+      transform: translateX(
+        ${({ $size }) => ($size === "big" ? "25px" : $size === "small" ? "20px" : "25px")}
+      );
     }
   }
 

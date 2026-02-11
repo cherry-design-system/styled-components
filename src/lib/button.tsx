@@ -8,7 +8,7 @@ import { Theme, formElementHeightStyles, resetButton } from "./utils";
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
   $variant?: "primary" | "secondary" | "tertiary";
-  $size?: "default" | "big";
+  $size?: "default" | "big" | "small";
   $outline?: boolean;
   $fullWidth?: boolean;
   $icon?: React.ReactNode;
@@ -20,7 +20,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 export const buttonStyles = (
   theme: Theme,
   $variant?: "primary" | "secondary" | "tertiary",
-  $size?: "default" | "big",
+  $size?: "default" | "big" | "small",
   $outline?: boolean,
   $fullWidth?: boolean,
   $isError?: boolean,
@@ -149,7 +149,12 @@ export const buttonStyles = (
 			line-height: ${theme.lineHeights.buttonBig.lg};
       padding: 18px 30px;
 	`
-    : `font-size: ${theme.fontSizes.button.lg};
+    : $size === "small"
+      ? `font-size: ${theme.fontSizes.buttonSmall.lg};
+			line-height: ${theme.lineHeights.buttonSmall.lg};
+      padding: 10px 20px;
+	`
+      : `font-size: ${theme.fontSizes.button.lg};
 			line-height: ${theme.lineHeights.button.lg};`}
 
 	${disabled &&

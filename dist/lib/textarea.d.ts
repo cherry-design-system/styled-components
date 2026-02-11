@@ -4,7 +4,7 @@ interface TextareaProps extends Omit<React.InputHTMLAttributes<HTMLTextAreaEleme
     children?: React.ReactNode;
     $wrapperClassName?: string;
     $label?: string;
-    $size?: "default" | "big";
+    $size?: "default" | "big" | "small";
     $error?: boolean;
     $success?: boolean;
     $fullWidth?: boolean;

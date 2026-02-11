@@ -135,11 +135,19 @@ export interface FontSizes<TString = string> {
         xs: TString;
         lg: TString;
     };
+    buttonSmall: {
+        xs: TString;
+        lg: TString;
+    };
     input: {
         xs: TString;
         lg: TString;
     };
     inputBig: {
+        xs: TString;
+        lg: TString;
+    };
+    inputSmall: {
         xs: TString;
         lg: TString;
     };
@@ -209,11 +217,19 @@ export interface LineHeights<TString = string> {
         xs: TString;
         lg: TString;
     };
+    buttonSmall: {
+        xs: TString;
+        lg: TString;
+    };
     input: {
         xs: TString;
         lg: TString;
     };
     inputBig: {
+        xs: TString;
+        lg: TString;
+    };
+    inputSmall: {
         xs: TString;
         lg: TString;
     };

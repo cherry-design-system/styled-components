@@ -4,7 +4,7 @@ interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "
     className?: string;
     $wrapperClassName?: string;
     $label?: string;
-    $size?: "default" | "big";
+    $size?: "default" | "big" | "small";
     $error?: boolean;
     $success?: boolean;
     $fullWidth?: boolean;

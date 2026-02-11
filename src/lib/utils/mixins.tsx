@@ -44,10 +44,18 @@ export const statusBorderStyles = (
   }
 };
 
-export const formElementHeightStyles = ($size?: "default" | "big") => {
+export const formElementHeightStyles = (
+  $size?: "default" | "big" | "small",
+) => {
   if ($size === "big") {
     return css`
       height: 60px;
+    `;
+  }
+
+  if ($size === "small") {
+    return css`
+      height: 40px;
     `;
   }
 
