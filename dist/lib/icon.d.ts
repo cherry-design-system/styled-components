@@ -6,5 +6,5 @@ interface Props {
     size?: number;
     className?: string;
 }
-declare const Icon: ({ name, color, size, className }: Props) => import("react").JSX.Element;
+declare const Icon: ({ name, color, size, className }: Props) => import("react").JSX.Element | null;
 export { Icon };
