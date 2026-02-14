@@ -5042,7 +5042,7 @@ const Gn = (t, a, o, n, c, r, h) => S`
   `}
 
   ${!h && r && S`
-    color: ${n ? t.colors.error : t.colors.light};
+    color: ${n ? t.colors.error : t.isDark ? t.colors.dark : t.colors.light};
     background: ${n ? "transparent" : t.colors.error};
     border: solid 2px ${t.colors.error};
     box-shadow: 0 0 0 0px ${t.colors.error};

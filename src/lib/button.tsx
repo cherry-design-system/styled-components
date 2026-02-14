@@ -133,7 +133,11 @@ export const buttonStyles = (
   ${!disabled &&
   $isError &&
   css`
-    color: ${$outline ? theme.colors.error : theme.colors.light};
+    color: ${$outline
+      ? theme.colors.error
+      : theme.isDark
+        ? theme.colors.dark
+        : theme.colors.light};
     background: ${$outline ? "transparent" : theme.colors.error};
     border: solid 2px ${theme.colors.error};
     box-shadow: 0 0 0 0px ${theme.colors.error};
