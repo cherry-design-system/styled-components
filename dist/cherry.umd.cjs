@@ -542,7 +542,7 @@ To pass a single animation please supply them in simple values, e.g. animation('
   }
 
   ${!i&&o==="primary"&&R`
-    color: ${n?t.colors.primary:t.colors.light};
+    color: ${n?t.colors.primary:t.isDark?t.colors.dark:t.colors.light};
     background: ${n?"transparent":t.colors.primary};
     border: solid 2px ${t.colors.primary};
     box-shadow: 0 0 0 0px ${t.colors.primary};
@@ -563,7 +563,7 @@ To pass a single animation please supply them in simple values, e.g. animation('
   `}
 
   ${!i&&o==="secondary"&&R`
-    color: ${n?t.colors.secondary:t.colors.light};
+    color: ${n?t.colors.secondary:t.isDark?t.colors.dark:t.colors.light};
     background: ${n?"transparent":t.colors.secondary};
     border: solid 2px ${t.colors.secondary};
     box-shadow: 0 0 0 0px ${t.colors.secondary};
@@ -584,7 +584,7 @@ To pass a single animation please supply them in simple values, e.g. animation('
   `}
 
 	${!i&&o==="tertiary"&&R`
-    color: ${n?t.colors.tertiary:t.colors.light};
+    color: ${n?t.colors.tertiary:t.isDark?t.colors.dark:t.colors.light};
     background: ${n?"transparent":t.colors.tertiary};
     border: solid 2px ${t.colors.tertiary};
     box-shadow: 0 0 0 0px ${t.colors.tertiary};

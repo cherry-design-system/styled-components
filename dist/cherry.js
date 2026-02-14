@@ -4979,7 +4979,7 @@ const Gn = (t, a, o, n, c, r, h) => S`
   }
 
   ${!h && a === "primary" && S`
-    color: ${n ? t.colors.primary : t.colors.light};
+    color: ${n ? t.colors.primary : t.isDark ? t.colors.dark : t.colors.light};
     background: ${n ? "transparent" : t.colors.primary};
     border: solid 2px ${t.colors.primary};
     box-shadow: 0 0 0 0px ${t.colors.primary};
@@ -5000,7 +5000,7 @@ const Gn = (t, a, o, n, c, r, h) => S`
   `}
 
   ${!h && a === "secondary" && S`
-    color: ${n ? t.colors.secondary : t.colors.light};
+    color: ${n ? t.colors.secondary : t.isDark ? t.colors.dark : t.colors.light};
     background: ${n ? "transparent" : t.colors.secondary};
     border: solid 2px ${t.colors.secondary};
     box-shadow: 0 0 0 0px ${t.colors.secondary};
@@ -5021,7 +5021,7 @@ const Gn = (t, a, o, n, c, r, h) => S`
   `}
 
 	${!h && a === "tertiary" && S`
-    color: ${n ? t.colors.tertiary : t.colors.light};
+    color: ${n ? t.colors.tertiary : t.isDark ? t.colors.dark : t.colors.light};
     background: ${n ? "transparent" : t.colors.tertiary};
     border: solid 2px ${t.colors.tertiary};
     box-shadow: 0 0 0 0px ${t.colors.tertiary};
@@ -7940,7 +7940,7 @@ const Qk = [
   ["path", { d: "M22 9v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9", key: "1rly83" }],
   ["path", { d: "M6 3v8", key: "csox7g" }]
 ], Jk = e("castle", Qk);
-const e3 = [
+const el = [
   [
     "path",
     {
@@ -7951,8 +7951,8 @@ const e3 = [
   ["path", { d: "M8 14v.5", key: "1nzgdb" }],
   ["path", { d: "M16 14v.5", key: "1lajdz" }],
   ["path", { d: "M11.25 16.25h1.5L12 17l-.75-.75Z", key: "12kq1m" }]
-], t3 = e("cat", e3);
-const a3 = [
+], tl = e("cat", el);
+const al = [
   [
     "path",
     {
@@ -7970,8 +7970,8 @@ const a3 = [
   ["path", { d: "M2 19h3.76a2 2 0 0 0 1.8-1.1L9 15", key: "19bib8" }],
   ["path", { d: "M2 21v-4", key: "l40lih" }],
   ["path", { d: "M7 9h.01", key: "19b3jx" }]
-], o3 = e("cctv", a3);
-const n3 = [
+], ol = e("cctv", al);
+const nl = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   [
     "path",
@@ -7980,38 +7980,38 @@ const n3 = [
       key: "q0gr47"
     }
   ]
-], c3 = e("chart-area", n3);
-const r3 = [
+], cl = e("chart-area", nl);
+const rl = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["rect", { x: "7", y: "13", width: "9", height: "4", rx: "1", key: "1iip1u" }],
   ["rect", { x: "7", y: "5", width: "12", height: "4", rx: "1", key: "1anskk" }]
-], h3 = e("chart-bar-big", r3);
-const d3 = [
+], hl = e("chart-bar-big", rl);
+const dl = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M7 11h8", key: "1feolt" }],
   ["path", { d: "M7 16h3", key: "ur6vzw" }],
   ["path", { d: "M7 6h12", key: "sz5b0d" }]
-], i3 = e("chart-bar-decreasing", d3);
-const s3 = [
+], il = e("chart-bar-decreasing", dl);
+const sl = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M7 11h8", key: "1feolt" }],
   ["path", { d: "M7 16h12", key: "wsnu98" }],
   ["path", { d: "M7 6h3", key: "w9rmul" }]
-], y3 = e("chart-bar-increasing", s3);
-const p3 = [
+], yl = e("chart-bar-increasing", sl);
+const pl = [
   ["path", { d: "M11 13v4", key: "vyy2rb" }],
   ["path", { d: "M15 5v4", key: "1gx88a" }],
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["rect", { x: "7", y: "13", width: "9", height: "4", rx: "1", key: "1iip1u" }],
   ["rect", { x: "7", y: "5", width: "12", height: "4", rx: "1", key: "1anskk" }]
-], k3 = e("chart-bar-stacked", p3);
-const l3 = [
+], kl = e("chart-bar-stacked", pl);
+const ll = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M7 16h8", key: "srdodz" }],
   ["path", { d: "M7 11h12", key: "127s9w" }],
   ["path", { d: "M7 6h3", key: "w9rmul" }]
-], u3 = e("chart-bar", l3);
-const M3 = [
+], ul = e("chart-bar", ll);
+const Ml = [
   ["path", { d: "M9 5v4", key: "14uxtq" }],
   ["rect", { width: "4", height: "6", x: "7", y: "9", rx: "1", key: "f4fvz0" }],
   ["path", { d: "M9 15v2", key: "r5rk32" }],
@@ -8019,48 +8019,48 @@ const M3 = [
   ["rect", { width: "4", height: "8", x: "15", y: "5", rx: "1", key: "z38je5" }],
   ["path", { d: "M17 13v3", key: "5l0wba" }],
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }]
-], f3 = e("chart-candlestick", M3);
-const m3 = [
+], fl = e("chart-candlestick", Ml);
+const ml = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["rect", { x: "15", y: "5", width: "4", height: "12", rx: "1", key: "q8uenq" }],
   ["rect", { x: "7", y: "8", width: "4", height: "9", rx: "1", key: "sr5ea" }]
-], g3 = e("chart-column-big", m3);
-const v3 = [
+], gl = e("chart-column-big", ml);
+const vl = [
   ["path", { d: "M13 17V9", key: "1fwyjl" }],
   ["path", { d: "M18 17v-3", key: "1sqioe" }],
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M8 17V5", key: "1wzmnc" }]
-], _3 = e("chart-column-decreasing", v3);
-const x3 = [
+], _l = e("chart-column-decreasing", vl);
+const xl = [
   ["path", { d: "M13 17V9", key: "1fwyjl" }],
   ["path", { d: "M18 17V5", key: "sfb6ij" }],
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M8 17v-3", key: "17ska0" }]
-], b3 = e("chart-column-increasing", x3);
-const w3 = [
+], bl = e("chart-column-increasing", xl);
+const wl = [
   ["path", { d: "M11 13H7", key: "t0o9gq" }],
   ["path", { d: "M19 9h-4", key: "rera1j" }],
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["rect", { x: "15", y: "5", width: "4", height: "12", rx: "1", key: "q8uenq" }],
   ["rect", { x: "7", y: "8", width: "4", height: "9", rx: "1", key: "sr5ea" }]
-], N3 = e("chart-column-stacked", w3);
-const $3 = [
+], Nl = e("chart-column-stacked", wl);
+const $l = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M18 17V9", key: "2bz60n" }],
   ["path", { d: "M13 17V5", key: "1frdt8" }],
   ["path", { d: "M8 17v-3", key: "17ska0" }]
-], z3 = e("chart-column", $3);
-const j3 = [
+], zl = e("chart-column", $l);
+const jl = [
   ["path", { d: "M10 6h8", key: "zvc2xc" }],
   ["path", { d: "M12 16h6", key: "yi5mkt" }],
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M8 11h7", key: "wz2hg0" }]
-], q3 = e("chart-gantt", j3);
-const A3 = [
+], ql = e("chart-gantt", jl);
+const Al = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "m19 9-5 5-4-4-3 3", key: "2osh9i" }]
-], H3 = e("chart-line", A3);
-const S3 = [
+], Hl = e("chart-line", Al);
+const Sl = [
   ["path", { d: "m13.11 7.664 1.78 2.672", key: "go2gg9" }],
   ["path", { d: "m14.162 12.788-3.324 1.424", key: "11x848" }],
   ["path", { d: "m20 4-6.06 1.515", key: "1wxxh7" }],
@@ -8068,23 +8068,23 @@ const S3 = [
   ["circle", { cx: "12", cy: "6", r: "2", key: "1jj5th" }],
   ["circle", { cx: "16", cy: "12", r: "2", key: "4ma0v8" }],
   ["circle", { cx: "9", cy: "15", r: "2", key: "lf2ghp" }]
-], C3 = e("chart-network", S3);
-const V3 = [
+], Cl = e("chart-network", Sl);
+const Vl = [
   ["path", { d: "M5 21V3", key: "clc1r8" }],
   ["path", { d: "M12 21V9", key: "uvy0l4" }],
   ["path", { d: "M19 21v-6", key: "tkawy9" }]
-], R3 = e("chart-no-axes-column-decreasing", V3);
-const E3 = [
+], Rl = e("chart-no-axes-column-decreasing", Vl);
+const El = [
   ["path", { d: "M5 21v-6", key: "1hz6c0" }],
   ["path", { d: "M12 21V9", key: "uvy0l4" }],
   ["path", { d: "M19 21V3", key: "11j9sm" }]
-], L3 = e("chart-no-axes-column-increasing", E3);
-const P3 = [
+], Ll = e("chart-no-axes-column-increasing", El);
+const Pl = [
   ["path", { d: "M5 21v-6", key: "1hz6c0" }],
   ["path", { d: "M12 21V3", key: "1lcnhd" }],
   ["path", { d: "M19 21V9", key: "unv183" }]
-], T3 = e("chart-no-axes-column", P3);
-const O3 = [
+], Tl = e("chart-no-axes-column", Pl);
+const Ol = [
   ["path", { d: "M12 16v5", key: "zza2cw" }],
   ["path", { d: "M16 14v7", key: "1g90b9" }],
   ["path", { d: "M20 10v11", key: "1iqoj0" }],
@@ -8094,13 +8094,13 @@ const O3 = [
   ],
   ["path", { d: "M4 18v3", key: "1yp0dc" }],
   ["path", { d: "M8 14v7", key: "n3cwzv" }]
-], D3 = e("chart-no-axes-combined", O3);
-const I3 = [
+], Dl = e("chart-no-axes-combined", Ol);
+const Il = [
   ["path", { d: "M6 5h12", key: "fvfigv" }],
   ["path", { d: "M4 12h10", key: "oujl3d" }],
   ["path", { d: "M12 19h8", key: "baeox8" }]
-], F3 = e("chart-no-axes-gantt", I3);
-const B3 = [
+], Fl = e("chart-no-axes-gantt", Il);
+const Bl = [
   [
     "path",
     {
@@ -8109,30 +8109,30 @@ const B3 = [
     }
   ],
   ["path", { d: "M21.21 15.89A10 10 0 1 1 8 2.83", key: "k2fpak" }]
-], U3 = e("chart-pie", B3);
-const W3 = [
+], Ul = e("chart-pie", Bl);
+const Wl = [
   ["circle", { cx: "7.5", cy: "7.5", r: ".5", fill: "currentColor", key: "kqv944" }],
   ["circle", { cx: "18.5", cy: "5.5", r: ".5", fill: "currentColor", key: "lysivs" }],
   ["circle", { cx: "11.5", cy: "11.5", r: ".5", fill: "currentColor", key: "byv1b8" }],
   ["circle", { cx: "7.5", cy: "16.5", r: ".5", fill: "currentColor", key: "nkw3mc" }],
   ["circle", { cx: "17.5", cy: "14.5", r: ".5", fill: "currentColor", key: "1gjh6j" }],
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }]
-], Z3 = e("chart-scatter", W3);
-const G3 = [
+], Zl = e("chart-scatter", Wl);
+const Gl = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7", key: "lw07rv" }]
-], X3 = e("chart-spline", G3);
-const Y3 = [
+], Xl = e("chart-spline", Gl);
+const Yl = [
   ["path", { d: "M18 6 7 17l-5-5", key: "116fxf" }],
   ["path", { d: "m22 10-7.5 7.5L13 16", key: "ke71qq" }]
-], K3 = e("check-check", Y3);
-const Q3 = [
+], Kl = e("check-check", Yl);
+const Ql = [
   ["path", { d: "M20 4L9 15", key: "1qkx8z" }],
   ["path", { d: "M21 19L3 19", key: "100sma" }],
   ["path", { d: "M9 15L4 10", key: "9zxff7" }]
-], J3 = e("check-line", Q3);
-const el = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]], tl = e("check", el);
-const al = [
+], Jl = e("check-line", Ql);
+const e3 = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]], t3 = e("check", e3);
+const a3 = [
   [
     "path",
     {
@@ -8141,14 +8141,14 @@ const al = [
     }
   ],
   ["path", { d: "M6 17h12", key: "1jwigz" }]
-], ol = e("chef-hat", al);
-const nl = [
+], o3 = e("chef-hat", a3);
+const n3 = [
   ["path", { d: "M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z", key: "cvxqlc" }],
   ["path", { d: "M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z", key: "1ostrc" }],
   ["path", { d: "M7 14c3.22-2.91 4.29-8.75 5-12 1.66 2.38 4.94 9 5 12", key: "hqx58h" }],
   ["path", { d: "M22 9c-4.29 0-7.14-2.33-10-7 5.71 0 10 4.67 10 7Z", key: "eykp1o" }]
-], cl = e("cherry", nl);
-const rl = [
+], c3 = e("cherry", n3);
+const r3 = [
   [
     "path",
     { d: "M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z", key: "b89hwq" }
@@ -8162,8 +8162,8 @@ const rl = [
   ],
   ["path", { d: "m16 7-2.5 2.5", key: "1jq90w" }],
   ["path", { d: "M9 2h6", key: "1jrp98" }]
-], hl = e("chess-bishop", rl);
-const dl = [
+], h3 = e("chess-bishop", r3);
+const d3 = [
   [
     "path",
     { d: "M4 20a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z", key: "mqzwx6" }
@@ -8177,8 +8177,8 @@ const dl = [
   ],
   ["path", { d: "M10 4h4", key: "1xpv9s" }],
   ["path", { d: "M12 2v6.818", key: "b17a49" }]
-], il = e("chess-king", dl);
-const sl = [
+], i3 = e("chess-king", d3);
+const s3 = [
   [
     "path",
     { d: "M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z", key: "b89hwq" }
@@ -8193,8 +8193,8 @@ const sl = [
   ["path", { d: "m15 5 1.425-1.425", key: "15xz8w" }],
   ["path", { d: "m17 8 1.53-1.53", key: "15zhqh" }],
   ["path", { d: "M9.713 12.185 7 18", key: "1ocm0l" }]
-], yl = e("chess-knight", sl);
-const pl = [
+], y3 = e("chess-knight", s3);
+const p3 = [
   [
     "path",
     { d: "M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z", key: "b89hwq" }
@@ -8203,8 +8203,8 @@ const pl = [
   ["path", { d: "M7 10h10", key: "1101jm" }],
   ["path", { d: "m8 18 1.5-8", key: "ja3yjd" }],
   ["circle", { cx: "12", cy: "6", r: "4", key: "1frrej" }]
-], kl = e("chess-pawn", pl);
-const ll = [
+], k3 = e("chess-pawn", p3);
+const l3 = [
   [
     "path",
     { d: "M4 20a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z", key: "mqzwx6" }
@@ -8216,9 +8216,9 @@ const ll = [
   ["circle", { cx: "12", cy: "4", r: "2", key: "muu5ef" }],
   ["circle", { cx: "20", cy: "7", r: "2", key: "9w7p1x" }],
   ["circle", { cx: "4", cy: "7", r: "2", key: "1d9wy8" }]
-], ul = e("chess-queen", ll);
-const Ml = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]], fl = e("chevron-down", Ml);
-const ml = [
+], u3 = e("chess-queen", l3);
+const M3 = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]], f3 = e("chevron-down", M3);
+const m3 = [
   [
     "path",
     { d: "M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z", key: "b89hwq" }
@@ -8229,65 +8229,65 @@ const ml = [
   ["path", { d: "M6 2v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2", key: "uxf4yx" }],
   ["path", { d: "M6 4h12", key: "1x2ag7" }],
   ["path", { d: "m7 18 1-9", key: "1si9vq" }]
-], gl = e("chess-rook", ml);
-const vl = [
+], g3 = e("chess-rook", m3);
+const v3 = [
   ["path", { d: "m17 18-6-6 6-6", key: "1yerx2" }],
   ["path", { d: "M7 6v12", key: "1p53r6" }]
-], _l = e("chevron-first", vl);
-const xl = [
+], _3 = e("chevron-first", v3);
+const x3 = [
   ["path", { d: "m7 18 6-6-6-6", key: "lwmzdw" }],
   ["path", { d: "M17 6v12", key: "1o0aio" }]
-], bl = e("chevron-last", xl);
-const wl = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]], Nl = e("chevron-left", wl);
-const $l = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]], zl = e("chevron-right", $l);
-const jl = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]], ql = e("chevron-up", jl);
-const Al = [
+], b3 = e("chevron-last", x3);
+const w3 = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]], N3 = e("chevron-left", w3);
+const $3 = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]], z3 = e("chevron-right", $3);
+const j3 = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]], q3 = e("chevron-up", j3);
+const A3 = [
   ["path", { d: "m7 20 5-5 5 5", key: "13a0gw" }],
   ["path", { d: "m7 4 5 5 5-5", key: "1kwcof" }]
-], Hl = e("chevrons-down-up", Al);
-const Sl = [
+], H3 = e("chevrons-down-up", A3);
+const S3 = [
   ["path", { d: "m7 6 5 5 5-5", key: "1lc07p" }],
   ["path", { d: "m7 13 5 5 5-5", key: "1d48rs" }]
-], Cl = e("chevrons-down", Sl);
-const Vl = [
+], C3 = e("chevrons-down", S3);
+const V3 = [
   ["path", { d: "M12 12h.01", key: "1mp3jc" }],
   ["path", { d: "M16 12h.01", key: "1l6xoz" }],
   ["path", { d: "m17 7 5 5-5 5", key: "1xlxn0" }],
   ["path", { d: "m7 7-5 5 5 5", key: "19njba" }],
   ["path", { d: "M8 12h.01", key: "czm47f" }]
-], Rl = e("chevrons-left-right-ellipsis", Vl);
-const El = [
+], R3 = e("chevrons-left-right-ellipsis", V3);
+const E3 = [
   ["path", { d: "m9 7-5 5 5 5", key: "j5w590" }],
   ["path", { d: "m15 7 5 5-5 5", key: "1bl6da" }]
-], Ll = e("chevrons-left-right", El);
-const Pl = [
+], L3 = e("chevrons-left-right", E3);
+const P3 = [
   ["path", { d: "m11 17-5-5 5-5", key: "13zhaf" }],
   ["path", { d: "m18 17-5-5 5-5", key: "h8a8et" }]
-], Tl = e("chevrons-left", Pl);
-const Ol = [
+], T3 = e("chevrons-left", P3);
+const O3 = [
   ["path", { d: "m20 17-5-5 5-5", key: "30x0n2" }],
   ["path", { d: "m4 17 5-5-5-5", key: "16spf4" }]
-], Dl = e("chevrons-right-left", Ol);
-const Il = [
+], D3 = e("chevrons-right-left", O3);
+const I3 = [
   ["path", { d: "m6 17 5-5-5-5", key: "xnjwq" }],
   ["path", { d: "m13 17 5-5-5-5", key: "17xmmf" }]
-], Fl = e("chevrons-right", Il);
-const Bl = [
+], F3 = e("chevrons-right", I3);
+const B3 = [
   ["path", { d: "m7 15 5 5 5-5", key: "1hf1tw" }],
   ["path", { d: "m7 9 5-5 5 5", key: "sgt6xg" }]
-], Ul = e("chevrons-up-down", Bl);
-const Wl = [
+], U3 = e("chevrons-up-down", B3);
+const W3 = [
   ["path", { d: "m17 11-5-5-5 5", key: "e8nh98" }],
   ["path", { d: "m17 18-5-5-5 5", key: "2avn1x" }]
-], Zl = e("chevrons-up", Wl);
-const Gl = [
+], Z3 = e("chevrons-up", W3);
+const G3 = [
   ["path", { d: "M10.88 21.94 15.46 14", key: "xkve6t" }],
   ["path", { d: "M21.17 8H12", key: "19dcdn" }],
   ["path", { d: "M3.95 6.06 8.54 14", key: "g8jz9m" }],
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["circle", { cx: "12", cy: "12", r: "4", key: "4exip2" }]
-], Xl = e("chromium", Gl);
-const Yl = [
+], X3 = e("chromium", G3);
+const Y3 = [
   ["path", { d: "M10 9h4", key: "u4k05v" }],
   ["path", { d: "M12 7v5", key: "ma6bk" }],
   ["path", { d: "M14 21v-3a2 2 0 0 0-4 0v3", key: "1rgiei" }],
@@ -8305,15 +8305,15 @@ const Yl = [
       key: "a5i0n2"
     }
   ]
-], Kl = e("church", Yl);
-const Ql = [
+], K3 = e("church", Y3);
+const Q3 = [
   ["path", { d: "M12 12H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h13", key: "1gdiyg" }],
   ["path", { d: "M18 8c0-2.5-2-2.5-2-5", key: "1il607" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   ["path", { d: "M21 12a1 1 0 0 1 1 1v2a1 1 0 0 1-.5.866", key: "166zjj" }],
   ["path", { d: "M22 8c0-2.5-2-2.5-2-5", key: "1gah44" }],
   ["path", { d: "M7 12v4", key: "jqww69" }]
-], Jl = e("cigarette-off", Ql);
+], J3 = e("cigarette-off", Q3);
 const e8 = [
   ["path", { d: "M17 12H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h14", key: "1mb5g1" }],
   ["path", { d: "M18 8c0-2.5-2-2.5-2-5", key: "1il607" }],
@@ -20473,61 +20473,61 @@ const oo1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   CassetteTape: Xk,
   Cast: Kk,
   Castle: Jk,
-  Cat: t3,
-  Cctv: o3,
-  ChartArea: c3,
-  ChartBar: u3,
-  ChartBarBig: h3,
-  ChartBarDecreasing: i3,
-  ChartBarIncreasing: y3,
-  ChartBarStacked: k3,
-  ChartCandlestick: f3,
-  ChartColumn: z3,
-  ChartColumnBig: g3,
-  ChartColumnDecreasing: _3,
-  ChartColumnIncreasing: b3,
-  ChartColumnStacked: N3,
-  ChartGantt: q3,
-  ChartLine: H3,
-  ChartNetwork: C3,
-  ChartNoAxesColumn: T3,
-  ChartNoAxesColumnDecreasing: R3,
-  ChartNoAxesColumnIncreasing: L3,
-  ChartNoAxesCombined: D3,
-  ChartNoAxesGantt: F3,
-  ChartPie: U3,
-  ChartScatter: Z3,
-  ChartSpline: X3,
-  Check: tl,
-  CheckCheck: K3,
-  CheckLine: J3,
-  ChefHat: ol,
-  Cherry: cl,
-  ChessBishop: hl,
-  ChessKing: il,
-  ChessKnight: yl,
-  ChessPawn: kl,
-  ChessQueen: ul,
-  ChessRook: gl,
-  ChevronDown: fl,
-  ChevronFirst: _l,
-  ChevronLast: bl,
-  ChevronLeft: Nl,
-  ChevronRight: zl,
-  ChevronUp: ql,
-  ChevronsDown: Cl,
-  ChevronsDownUp: Hl,
-  ChevronsLeft: Tl,
-  ChevronsLeftRight: Ll,
-  ChevronsLeftRightEllipsis: Rl,
-  ChevronsRight: Fl,
-  ChevronsRightLeft: Dl,
-  ChevronsUp: Zl,
-  ChevronsUpDown: Ul,
-  Chromium: Xl,
-  Church: Kl,
+  Cat: tl,
+  Cctv: ol,
+  ChartArea: cl,
+  ChartBar: ul,
+  ChartBarBig: hl,
+  ChartBarDecreasing: il,
+  ChartBarIncreasing: yl,
+  ChartBarStacked: kl,
+  ChartCandlestick: fl,
+  ChartColumn: zl,
+  ChartColumnBig: gl,
+  ChartColumnDecreasing: _l,
+  ChartColumnIncreasing: bl,
+  ChartColumnStacked: Nl,
+  ChartGantt: ql,
+  ChartLine: Hl,
+  ChartNetwork: Cl,
+  ChartNoAxesColumn: Tl,
+  ChartNoAxesColumnDecreasing: Rl,
+  ChartNoAxesColumnIncreasing: Ll,
+  ChartNoAxesCombined: Dl,
+  ChartNoAxesGantt: Fl,
+  ChartPie: Ul,
+  ChartScatter: Zl,
+  ChartSpline: Xl,
+  Check: t3,
+  CheckCheck: Kl,
+  CheckLine: Jl,
+  ChefHat: o3,
+  Cherry: c3,
+  ChessBishop: h3,
+  ChessKing: i3,
+  ChessKnight: y3,
+  ChessPawn: k3,
+  ChessQueen: u3,
+  ChessRook: g3,
+  ChevronDown: f3,
+  ChevronFirst: _3,
+  ChevronLast: b3,
+  ChevronLeft: N3,
+  ChevronRight: z3,
+  ChevronUp: q3,
+  ChevronsDown: C3,
+  ChevronsDownUp: H3,
+  ChevronsLeft: T3,
+  ChevronsLeftRight: L3,
+  ChevronsLeftRightEllipsis: R3,
+  ChevronsRight: F3,
+  ChevronsRightLeft: D3,
+  ChevronsUp: Z3,
+  ChevronsUpDown: U3,
+  Chromium: X3,
+  Church: K3,
   Cigarette: t8,
-  CigaretteOff: Jl,
+  CigaretteOff: J3,
   Circle: T6,
   CircleAlert: o8,
   CircleArrowDown: c8,
