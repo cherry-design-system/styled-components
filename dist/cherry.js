@@ -3618,7 +3618,7 @@ var Re = "__sc-".concat(x1, "__");
 process.env.NODE_ENV !== "production" && process.env.NODE_ENV !== "test" && typeof window < "u" && (window[Re] || (window[Re] = 0), window[Re] === 1 && console.warn(`It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.
 
 See https://styled-components.com/docs/faqs#why-am-i-getting-a-warning-about-several-instances-of-module-on-the-page for more info.`), window[Re] += 1);
-function xo1({ children: t }) {
+function jo1({ children: t }) {
   const [a] = p0(() => new Wo());
   return Pa.useServerInsertedHTML(() => {
     const o = a.getStyleElement();
@@ -3921,7 +3921,7 @@ const U0 = {
   fontSizes: Z0,
   lineHeights: G0,
   isDark: !1
-}, bo1 = {
+}, qo1 = {
   breakpoints: tt,
   spacing: U0,
   colors: Qo,
@@ -3982,7 +3982,7 @@ const U0 = {
   ${T(t)} {
     justify-content: ${a && `${a}`};
   }
-`, wo1 = (t) => S`
+`, Ao1 = (t) => S`
   font-size: ${t.fontSizes.hero1.xs};
   line-height: ${t.lineHeights.hero1.xs};
 
@@ -3990,7 +3990,7 @@ const U0 = {
     font-size: ${t.fontSizes.hero1.lg};
     line-height: ${t.lineHeights.hero1.lg};
   }
-`, No1 = (t) => S`
+`, Ho1 = (t) => S`
   font-size: ${t.fontSizes.hero2.xs};
   line-height: ${t.lineHeights.hero2.xs};
 
@@ -3998,7 +3998,7 @@ const U0 = {
     font-size: ${t.fontSizes.hero2.lg};
     line-height: ${t.lineHeights.hero2.lg};
   }
-`, $o1 = (t) => S`
+`, So1 = (t) => S`
   font-size: ${t.fontSizes.hero3.xs};
   line-height: ${t.lineHeights.hero3.xs};
 
@@ -4006,7 +4006,7 @@ const U0 = {
     font-size: ${t.fontSizes.hero3.lg};
     line-height: ${t.lineHeights.hero3.lg};
   }
-`, zo1 = (t) => S`
+`, Co1 = (t) => S`
   font-size: ${t.fontSizes.h1.xs};
   line-height: ${t.lineHeights.h1.xs};
 
@@ -4014,7 +4014,7 @@ const U0 = {
     font-size: ${t.fontSizes.h1.lg};
     line-height: ${t.lineHeights.h1.lg};
   }
-`, jo1 = (t) => S`
+`, Vo1 = (t) => S`
   font-size: ${t.fontSizes.h2.xs};
   line-height: ${t.lineHeights.h2.xs};
 
@@ -4022,7 +4022,7 @@ const U0 = {
     font-size: ${t.fontSizes.h2.lg};
     line-height: ${t.lineHeights.h2.lg};
   }
-`, qo1 = (t) => S`
+`, Ro1 = (t) => S`
   font-size: ${t.fontSizes.h3.xs};
   line-height: ${t.lineHeights.h3.xs};
 
@@ -4030,7 +4030,7 @@ const U0 = {
     font-size: ${t.fontSizes.h3.lg};
     line-height: ${t.lineHeights.h3.lg};
   }
-`, Ao1 = (t) => S`
+`, Eo1 = (t) => S`
   font-size: ${t.fontSizes.h4.xs};
   line-height: ${t.lineHeights.h4.xs};
 
@@ -4038,7 +4038,7 @@ const U0 = {
     font-size: ${t.fontSizes.h4.lg};
     line-height: ${t.lineHeights.h4.lg};
   }
-`, Ho1 = (t) => S`
+`, Lo1 = (t) => S`
   font-size: ${t.fontSizes.h5.xs};
   line-height: ${t.lineHeights.h5.xs};
 
@@ -4046,7 +4046,7 @@ const U0 = {
     font-size: ${t.fontSizes.h5.lg};
     line-height: ${t.lineHeights.h5.lg};
   }
-`, So1 = (t) => S`
+`, Po1 = (t) => S`
   font-size: ${t.fontSizes.h6.xs};
   line-height: ${t.lineHeights.h6.xs};
 
@@ -4054,7 +4054,7 @@ const U0 = {
     font-size: ${t.fontSizes.h6.lg};
     line-height: ${t.lineHeights.h6.lg};
   }
-`, Co1 = (t) => S`
+`, To1 = (t) => S`
   font-size: ${t.fontSizes.text.xs};
   line-height: ${t.lineHeights.text.xs};
 
@@ -4062,7 +4062,7 @@ const U0 = {
     font-size: ${t.fontSizes.text.lg};
     line-height: ${t.lineHeights.text.lg};
   }
-`, Vo1 = (t) => S`
+`, Oo1 = (t) => S`
   font-size: ${t.fontSizes.strong.xs};
   line-height: ${t.lineHeights.strong.xs};
 
@@ -4070,7 +4070,7 @@ const U0 = {
     font-size: ${t.fontSizes.strong.lg};
     line-height: ${t.lineHeights.strong.lg};
   }
-`, Ro1 = (t) => S`
+`, Do1 = (t) => S`
   font-size: ${t.fontSizes.small.xs};
   line-height: ${t.lineHeights.small.xs};
 
@@ -4078,7 +4078,7 @@ const U0 = {
     font-size: ${t.fontSizes.small.lg};
     line-height: ${t.lineHeights.small.lg};
   }
-`, Eo1 = (t) => S`
+`, Io1 = (t) => S`
   font-size: ${t.fontSizes.blockquote.xs};
   line-height: ${t.lineHeights.blockquote.xs};
 
@@ -4086,7 +4086,7 @@ const U0 = {
     font-size: ${t.fontSizes.blockquote.lg};
     line-height: ${t.lineHeights.blockquote.lg};
   }
-`, Lo1 = (t) => S`
+`, Fo1 = (t) => S`
   font-size: ${t.fontSizes.code.xs};
   line-height: ${t.lineHeights.code.xs};
 
@@ -4094,7 +4094,7 @@ const U0 = {
     font-size: ${t.fontSizes.code.lg};
     line-height: ${t.lineHeights.code.lg};
   }
-`, Po1 = (t) => S`
+`, Bo1 = (t) => S`
   font-size: ${t.fontSizes.button.xs};
   line-height: ${t.lineHeights.button.xs};
 
@@ -4102,7 +4102,7 @@ const U0 = {
     font-size: ${t.fontSizes.button.lg};
     line-height: ${t.lineHeights.button.lg};
   }
-`, To1 = (t) => S`
+`, Uo1 = (t) => S`
   font-size: ${t.fontSizes.buttonBig.xs};
   line-height: ${t.lineHeights.buttonBig.xs};
 
@@ -4110,7 +4110,7 @@ const U0 = {
     font-size: ${t.fontSizes.buttonBig.lg};
     line-height: ${t.lineHeights.buttonBig.lg};
   }
-`, Oo1 = (t) => S`
+`, Wo1 = (t) => S`
   font-size: ${t.fontSizes.input.xs};
   line-height: ${t.lineHeights.input.xs};
 
@@ -4118,7 +4118,7 @@ const U0 = {
     font-size: ${t.fontSizes.input.lg};
     line-height: ${t.lineHeights.input.lg};
   }
-`, Do1 = (t) => S`
+`, Zo1 = (t) => S`
   font-size: ${t.fontSizes.inputBig.xs};
   line-height: ${t.lineHeights.inputBig.xs};
 
@@ -4129,7 +4129,7 @@ const U0 = {
 `, tn = ra({
   setTheme: null
 });
-function Io1({
+function Go1({
   children: t,
   theme: a,
   themeDark: o
@@ -4179,7 +4179,7 @@ const nn = e1(on), cn = W(nn)`
 function rn({ theme: t = le, ...a }, o) {
   return /* @__PURE__ */ w.jsx(cn, { ...a, theme: t, ref: o, children: a.children });
 }
-const Fo1 = e1(rn);
+const Xo1 = e1(rn);
 function r1() {
   return r1 = Object.assign ? Object.assign.bind() : function(t) {
     for (var a = 1; a < arguments.length; a++) {
@@ -5109,7 +5109,7 @@ function Yn({ $variant: t = "primary", ...a }, o) {
     }
   );
 }
-const Bo1 = e1(Yn), Kn = W.div`
+const Yo1 = e1(Yn), Kn = W.div`
   ${({ $span: t }) => t && `
 		grid-column: span ${t};
 	`}
@@ -5125,7 +5125,7 @@ const Bo1 = e1(Yn), Kn = W.div`
 function Qn({ theme: t = le, ...a }, o) {
   return /* @__PURE__ */ w.jsx(Kn, { ...a, theme: t, ref: o, children: a.children });
 }
-const Uo1 = e1(Qn), Jn = W.div`
+const Ko1 = e1(Qn), Jn = W.div`
   display: flex;
   justify-content: ${({ $justifyContent: t }) => t || "flex-start"};
   flex-wrap: ${({ $wrap: t }) => t || "wrap"};
@@ -5155,7 +5155,7 @@ const Uo1 = e1(Qn), Jn = W.div`
 function ec({ theme: t = le, ...a }, o) {
   return /* @__PURE__ */ w.jsx(Jn, { ...a, theme: t, ref: o, children: a.children });
 }
-const Wo1 = e1(ec), tc = W.div`
+const Qo1 = e1(ec), tc = W.div`
   width: 100%;
   display: grid;
   grid-template-columns: ${({ $cols: t }) => `repeat(${t || 3}, minmax(0, 1fr))`};
@@ -5184,7 +5184,7 @@ const Wo1 = e1(ec), tc = W.div`
 function ac({ theme: t = le, ...a }, o) {
   return /* @__PURE__ */ w.jsx(tc, { ...a, theme: t, ref: o, children: a.children });
 }
-const Zo1 = e1(ac);
+const Jo1 = e1(ac);
 const ea = (...t) => t.filter((a, o, n) => !!a && a.trim() !== "" && n.indexOf(a) === o).join(" ").trim();
 const oc = (t) => t.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
 const nc = (t) => t.replace(
@@ -5368,19 +5368,19 @@ const Vc = [
   ["polyline", { points: "11 3 11 11 14 8 17 11 17 3", key: "1wcwz3" }]
 ], Rc = e("album", Vc);
 const Ec = [
-  ["path", { d: "M2 12h20", key: "9i4pu4" }],
-  ["path", { d: "M10 16v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4", key: "11f1s0" }],
-  ["path", { d: "M10 8V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v4", key: "t14dx9" }],
-  ["path", { d: "M20 16v1a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-1", key: "1w07xs" }],
-  ["path", { d: "M14 8V7c0-1.1.9-2 2-2h2a2 2 0 0 1 2 2v1", key: "1apec2" }]
-], Lc = e("align-center-horizontal", Ec);
-const Pc = [
   ["path", { d: "M12 2v20", key: "t6zp3m" }],
   ["path", { d: "M8 10H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2h4", key: "14d6g8" }],
   ["path", { d: "M16 10h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-4", key: "1e2lrw" }],
   ["path", { d: "M8 20H7a2 2 0 0 1-2-2v-2c0-1.1.9-2 2-2h1", key: "1fkdwx" }],
   ["path", { d: "M16 14h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1", key: "1euafb" }]
-], Tc = e("align-center-vertical", Pc);
+], Lc = e("align-center-vertical", Ec);
+const Pc = [
+  ["path", { d: "M2 12h20", key: "9i4pu4" }],
+  ["path", { d: "M10 16v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4", key: "11f1s0" }],
+  ["path", { d: "M10 8V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v4", key: "t14dx9" }],
+  ["path", { d: "M20 16v1a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-1", key: "1w07xs" }],
+  ["path", { d: "M14 8V7c0-1.1.9-2 2-2h2a2 2 0 0 1 2 2v1", key: "1apec2" }]
+], Tc = e("align-center-horizontal", Pc);
 const Oc = [
   ["rect", { width: "6", height: "16", x: "4", y: "2", rx: "2", key: "z5wdxg" }],
   ["rect", { width: "6", height: "9", x: "14", y: "9", rx: "2", key: "um7a8w" }],
@@ -5429,15 +5429,15 @@ const Yc = [
   Yc
 );
 const Qc = [
-  ["rect", { width: "6", height: "14", x: "2", y: "5", rx: "2", key: "dy24zr" }],
-  ["rect", { width: "6", height: "10", x: "12", y: "7", rx: "2", key: "1ht384" }],
-  ["path", { d: "M22 2v20", key: "40qfg1" }]
-], Jc = e("align-horizontal-justify-end", Qc);
-const er = [
   ["rect", { width: "6", height: "14", x: "6", y: "5", rx: "2", key: "hsirpf" }],
   ["rect", { width: "6", height: "10", x: "16", y: "7", rx: "2", key: "13zkjt" }],
   ["path", { d: "M2 2v20", key: "1ivd8o" }]
-], tr = e("align-horizontal-justify-start", er);
+], Jc = e("align-horizontal-justify-start", Qc);
+const er = [
+  ["rect", { width: "6", height: "14", x: "2", y: "5", rx: "2", key: "dy24zr" }],
+  ["rect", { width: "6", height: "10", x: "12", y: "7", rx: "2", key: "1ht384" }],
+  ["path", { d: "M22 2v20", key: "40qfg1" }]
+], tr = e("align-horizontal-justify-end", er);
 const ar = [
   ["rect", { width: "6", height: "10", x: "9", y: "7", rx: "2", key: "yn7j0q" }],
   ["path", { d: "M4 22V2", key: "tsjzd3" }],
@@ -5486,15 +5486,15 @@ const lr = [
   lr
 );
 const Mr = [
-  ["rect", { width: "14", height: "6", x: "5", y: "12", rx: "2", key: "4l4tp2" }],
-  ["rect", { width: "10", height: "6", x: "7", y: "2", rx: "2", key: "ypihtt" }],
-  ["path", { d: "M2 22h20", key: "272qi7" }]
-], fr = e("align-vertical-justify-end", Mr);
-const mr = [
   ["rect", { width: "14", height: "6", x: "5", y: "16", rx: "2", key: "1i8z2d" }],
   ["rect", { width: "10", height: "6", x: "7", y: "2", rx: "2", key: "ypihtt" }],
   ["path", { d: "M2 12h20", key: "9i4pu4" }]
-], gr = e("align-vertical-justify-center", mr);
+], fr = e("align-vertical-justify-center", Mr);
+const mr = [
+  ["rect", { width: "14", height: "6", x: "5", y: "12", rx: "2", key: "4l4tp2" }],
+  ["rect", { width: "10", height: "6", x: "7", y: "2", rx: "2", key: "ypihtt" }],
+  ["path", { d: "M2 22h20", key: "272qi7" }]
+], gr = e("align-vertical-justify-end", mr);
 const vr = [
   ["rect", { width: "14", height: "6", x: "5", y: "16", rx: "2", key: "1i8z2d" }],
   ["rect", { width: "10", height: "6", x: "7", y: "6", rx: "2", key: "13squh" }],
@@ -5564,19 +5564,19 @@ const Sr = [
   ["path", { d: "M9 2h6", key: "1jrp98" }]
 ], Cr = e("amphora", Sr);
 const Vr = [
+  ["path", { d: "M12 6v16", key: "nqf5sj" }],
+  ["path", { d: "m19 13 2-1a9 9 0 0 1-18 0l2 1", key: "y7qv08" }],
+  ["path", { d: "M9 11h6", key: "1fldmi" }],
+  ["circle", { cx: "12", cy: "4", r: "2", key: "muu5ef" }]
+], Rr = e("anchor", Vr);
+const Er = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M16 16s-1.5-2-4-2-4 2-4 2", key: "epbg0q" }],
   ["path", { d: "M7.5 8 10 9", key: "olxxln" }],
   ["path", { d: "m14 9 2.5-1", key: "1j6cij" }],
   ["path", { d: "M9 10h.01", key: "qbtxuw" }],
   ["path", { d: "M15 10h.01", key: "1qmjsl" }]
-], Rr = e("angry", Vr);
-const Er = [
-  ["path", { d: "M12 6v16", key: "nqf5sj" }],
-  ["path", { d: "m19 13 2-1a9 9 0 0 1-18 0l2 1", key: "y7qv08" }],
-  ["path", { d: "M9 11h6", key: "1fldmi" }],
-  ["circle", { cx: "12", cy: "4", r: "2", key: "muu5ef" }]
-], Lr = e("anchor", Er);
+], Lr = e("angry", Er);
 const Pr = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M8 15h8", key: "45n4r" }],
@@ -5768,25 +5768,25 @@ const jh = [
   ["path", { d: "m6 15 6 6 6-6", key: "h15q88" }]
 ], qh = e("arrow-down-from-line", jh);
 const Ah = [
-  ["path", { d: "M17 7 7 17", key: "15tmo1" }],
-  ["path", { d: "M17 17H7V7", key: "1org7z" }]
-], Hh = e("arrow-down-left", Ah);
-const Sh = [
   ["path", { d: "m3 16 4 4 4-4", key: "1co6wj" }],
   ["path", { d: "M7 20V4", key: "1yoxec" }],
   ["path", { d: "M11 4h4", key: "6d7r33" }],
   ["path", { d: "M11 8h7", key: "djye34" }],
   ["path", { d: "M11 12h10", key: "1438ji" }]
-], Ch = e("arrow-down-narrow-wide", Sh);
+], Hh = e("arrow-down-narrow-wide", Ah);
+const Sh = [
+  ["path", { d: "M17 7 7 17", key: "15tmo1" }],
+  ["path", { d: "M17 17H7V7", key: "1org7z" }]
+], Ch = e("arrow-down-left", Sh);
 const Vh = [
-  ["path", { d: "m7 7 10 10", key: "1fmybs" }],
-  ["path", { d: "M17 7v10H7", key: "6fjiku" }]
-], Rh = e("arrow-down-right", Vh);
-const Eh = [
   ["path", { d: "M12 2v14", key: "jyx4ut" }],
   ["path", { d: "m19 9-7 7-7-7", key: "1oe3oy" }],
   ["circle", { cx: "12", cy: "21", r: "1", key: "o0uj5v" }]
-], Lh = e("arrow-down-to-dot", Eh);
+], Rh = e("arrow-down-to-dot", Vh);
+const Eh = [
+  ["path", { d: "m7 7 10 10", key: "1fmybs" }],
+  ["path", { d: "M17 7v10H7", key: "6fjiku" }]
+], Lh = e("arrow-down-right", Eh);
 const Ph = [
   ["path", { d: "M12 17V3", key: "1cwfxf" }],
   ["path", { d: "m6 11 6 6 6-6", key: "12ii2o" }],
@@ -5806,16 +5806,16 @@ const Ih = [
   ["path", { d: "M11 12h4", key: "q8tih4" }]
 ], Fh = e("arrow-down-wide-narrow", Ih);
 const Bh = [
+  ["path", { d: "M12 5v14", key: "s699le" }],
+  ["path", { d: "m19 12-7 7-7-7", key: "1idqje" }]
+], Uh = e("arrow-down", Bh);
+const Wh = [
   ["path", { d: "m3 16 4 4 4-4", key: "1co6wj" }],
   ["path", { d: "M7 4v16", key: "1glfcx" }],
   ["path", { d: "M15 4h5l-5 6h5", key: "8asdl1" }],
   ["path", { d: "M15 20v-3.5a2.5 2.5 0 0 1 5 0V20", key: "r6l5cz" }],
   ["path", { d: "M20 18h-5", key: "18j1r2" }]
-], Uh = e("arrow-down-z-a", Bh);
-const Wh = [
-  ["path", { d: "M12 5v14", key: "s699le" }],
-  ["path", { d: "m19 12-7 7-7-7", key: "1idqje" }]
-], Zh = e("arrow-down", Wh);
+], Zh = e("arrow-down-z-a", Wh);
 const Gh = [
   ["path", { d: "m9 6-6 6 6 6", key: "7v63n9" }],
   ["path", { d: "M3 12h14", key: "13k4hi" }],
@@ -5905,14 +5905,14 @@ const wd = [
   ["path", { d: "M11 20h10", key: "jvxblo" }]
 ], Nd = e("arrow-up-narrow-wide", wd);
 const $d = [
-  ["path", { d: "M7 7h10v10", key: "1tivn9" }],
-  ["path", { d: "M7 17 17 7", key: "1vkiza" }]
-], zd = e("arrow-up-right", $d);
-const jd = [
   ["path", { d: "M5 3h14", key: "7usisc" }],
   ["path", { d: "m18 13-6-6-6 6", key: "1kf1n9" }],
   ["path", { d: "M12 7v14", key: "1akyts" }]
-], qd = e("arrow-up-to-line", jd);
+], zd = e("arrow-up-to-line", $d);
+const jd = [
+  ["path", { d: "M7 7h10v10", key: "1tivn9" }],
+  ["path", { d: "M7 17 17 7", key: "1vkiza" }]
+], qd = e("arrow-up-right", jd);
 const Ad = [
   ["path", { d: "m3 8 4-4 4 4", key: "11wl7u" }],
   ["path", { d: "M7 4v16", key: "1glfcx" }],
@@ -5976,21 +5976,21 @@ const Wd = [
   [
     "path",
     {
-      d: "M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2",
-      key: "57tc96"
-    }
-  ]
-], Zd = e("audio-waveform", Wd);
-const Gd = [
-  [
-    "path",
-    {
       d: "m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526",
       key: "1yiouv"
     }
   ],
   ["circle", { cx: "12", cy: "8", r: "6", key: "1vp47v" }]
-], Xd = e("award", Gd);
+], Zd = e("award", Wd);
+const Gd = [
+  [
+    "path",
+    {
+      d: "M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2",
+      key: "57tc96"
+    }
+  ]
+], Xd = e("audio-waveform", Gd);
 const Yd = [
   ["path", { d: "m14 12-8.381 8.38a1 1 0 0 1-3.001-3L11 9", key: "5z9253" }],
   [
@@ -6008,16 +6008,6 @@ const Qd = [
   ["path", { d: "m9 15 1.5-1.5", key: "1xfbes" }]
 ], Jd = e("axis-3d", Qd);
 const ei = [
-  [
-    "path",
-    { d: "M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z", key: "1ol0lm" }
-  ],
-  ["path", { d: "M8 10h8", key: "c7uz4u" }],
-  ["path", { d: "M8 18h8", key: "1no2b1" }],
-  ["path", { d: "M8 22v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6", key: "1fr6do" }],
-  ["path", { d: "M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2", key: "donm21" }]
-], ti = e("backpack", ei);
-const ai = [
   ["path", { d: "M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5", key: "1u7htd" }],
   ["path", { d: "M15 12h.01", key: "1k8ypt" }],
   [
@@ -6028,19 +6018,18 @@ const ai = [
     }
   ],
   ["path", { d: "M9 12h.01", key: "157uk2" }]
-], oi = e("baby", ai);
-const ni = [
+], ti = e("baby", ei);
+const ai = [
   [
     "path",
-    {
-      d: "M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z",
-      key: "3c2336"
-    }
+    { d: "M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z", key: "1ol0lm" }
   ],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
-], ci = e("badge-alert", ni);
-const ri = [
+  ["path", { d: "M8 10h8", key: "c7uz4u" }],
+  ["path", { d: "M8 18h8", key: "1no2b1" }],
+  ["path", { d: "M8 22v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6", key: "1fr6do" }],
+  ["path", { d: "M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2", key: "donm21" }]
+], oi = e("backpack", ai);
+const ni = [
   [
     "path",
     {
@@ -6050,8 +6039,8 @@ const ri = [
   ],
   ["path", { d: "M12 7v10", key: "jspqdw" }],
   ["path", { d: "M15.4 10a4 4 0 1 0 0 4", key: "2eqtx8" }]
-], hi = e("badge-cent", ri);
-const di = [
+], ci = e("badge-cent", ni);
+const ri = [
   [
     "path",
     {
@@ -6060,7 +6049,18 @@ const di = [
     }
   ],
   ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-], ii = e("badge-check", di);
+], hi = e("badge-check", ri);
+const di = [
+  [
+    "path",
+    {
+      d: "M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z",
+      key: "3c2336"
+    }
+  ],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+], ii = e("badge-alert", di);
 const si = [
   [
     "path",
@@ -6080,9 +6080,10 @@ const pi = [
       key: "3c2336"
     }
   ],
-  ["path", { d: "M7 12h5", key: "gblrwe" }],
-  ["path", { d: "M15 9.4a4 4 0 1 0 0 5.2", key: "1makmb" }]
-], ki = e("badge-euro", pi);
+  ["path", { d: "M8 8h8", key: "1bis0t" }],
+  ["path", { d: "M8 12h8", key: "1wcyev" }],
+  ["path", { d: "m13 17-5-1h1a4 4 0 0 0 0-8", key: "nu2bwa" }]
+], ki = e("badge-indian-rupee", pi);
 const li = [
   [
     "path",
@@ -6091,10 +6092,9 @@ const li = [
       key: "3c2336"
     }
   ],
-  ["path", { d: "M8 8h8", key: "1bis0t" }],
-  ["path", { d: "M8 12h8", key: "1wcyev" }],
-  ["path", { d: "m13 17-5-1h1a4 4 0 0 0 0-8", key: "nu2bwa" }]
-], ui = e("badge-indian-rupee", li);
+  ["path", { d: "M7 12h5", key: "gblrwe" }],
+  ["path", { d: "M15 9.4a4 4 0 1 0 0 5.2", key: "1makmb" }]
+], ui = e("badge-euro", li);
 const Mi = [
   [
     "path",
@@ -6221,13 +6221,6 @@ const Ei = [
   ["line", { x1: "9", x2: "15", y1: "9", y2: "15", key: "1shsy8" }]
 ], Li = e("badge-x", Ei);
 const Pi = [
-  ["path", { d: "M22 18H6a2 2 0 0 1-2-2V7a2 2 0 0 0-2-2", key: "4irg2o" }],
-  ["path", { d: "M17 14V4a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v10", key: "14fcyx" }],
-  ["rect", { width: "13", height: "8", x: "8", y: "6", rx: "1", key: "o6oiis" }],
-  ["circle", { cx: "18", cy: "20", r: "2", key: "t9985n" }],
-  ["circle", { cx: "9", cy: "20", r: "2", key: "e5v82j" }]
-], Ti = e("baggage-claim", Pi);
-const Oi = [
   [
     "path",
     {
@@ -6235,7 +6228,14 @@ const Oi = [
       key: "3c2336"
     }
   ]
-], Di = e("badge", Oi);
+], Ti = e("badge", Pi);
+const Oi = [
+  ["path", { d: "M22 18H6a2 2 0 0 1-2-2V7a2 2 0 0 0-2-2", key: "4irg2o" }],
+  ["path", { d: "M17 14V4a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v10", key: "14fcyx" }],
+  ["rect", { width: "13", height: "8", x: "8", y: "6", rx: "1", key: "o6oiis" }],
+  ["circle", { cx: "18", cy: "20", r: "2", key: "t9985n" }],
+  ["circle", { cx: "9", cy: "20", r: "2", key: "e5v82j" }]
+], Di = e("baggage-claim", Oi);
 const Ii = [
   ["path", { d: "M12 16v1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v1", key: "2nz4b" }],
   ["path", { d: "M12 6a2 2 0 0 1 2 2", key: "7y7d82" }],
@@ -6256,22 +6256,22 @@ const Wi = [
   ]
 ], Zi = e("banana", Wi);
 const Gi = [
+  ["path", { d: "M10 10.01h.01", key: "1e9xi7" }],
+  ["path", { d: "M10 14.01h.01", key: "ac23bv" }],
+  ["path", { d: "M14 10.01h.01", key: "2wfrvf" }],
+  ["path", { d: "M14 14.01h.01", key: "8tw8yn" }],
+  ["path", { d: "M18 6v12", key: "1bcixs" }],
+  ["path", { d: "M6 6v12", key: "vkc79e" }],
+  ["rect", { x: "2", y: "6", width: "20", height: "12", rx: "2", key: "1wpnh2" }]
+], Xi = e("bandage", Gi);
+const Yi = [
   ["path", { d: "M12 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5", key: "x6cv4u" }],
   ["path", { d: "m16 19 3 3 3-3", key: "1ibux0" }],
   ["path", { d: "M18 12h.01", key: "yjnet6" }],
   ["path", { d: "M19 16v6", key: "tddt3s" }],
   ["path", { d: "M6 12h.01", key: "c2rlol" }],
   ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }]
-], Xi = e("banknote-arrow-down", Gi);
-const Yi = [
-  ["path", { d: "M10 10.01h.01", key: "1e9xi7" }],
-  ["path", { d: "M10 14.01h.01", key: "ac23bv" }],
-  ["path", { d: "M14 10.01h.01", key: "2wfrvf" }],
-  ["path", { d: "M14 14.01h.01", key: "8tw8yn" }],
-  ["path", { d: "M18 6v11.5", key: "dkbidh" }],
-  ["path", { d: "M6 6v12", key: "vkc79e" }],
-  ["rect", { x: "2", y: "6", width: "20", height: "12", rx: "2", key: "1wpnh2" }]
-], Ki = e("bandage", Yi);
+], Ki = e("banknote-arrow-down", Yi);
 const Qi = [
   ["path", { d: "M12 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5", key: "x6cv4u" }],
   ["path", { d: "M18 12h.01", key: "yjnet6" }],
@@ -6289,17 +6289,17 @@ const es = [
   ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }]
 ], ts = e("banknote-x", es);
 const as = [
+  ["rect", { width: "20", height: "12", x: "2", y: "6", rx: "2", key: "9lu3g6" }],
+  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
+  ["path", { d: "M6 12h.01M18 12h.01", key: "113zkx" }]
+], os = e("banknote", as);
+const ns = [
   ["path", { d: "M3 5v14", key: "1nt18q" }],
   ["path", { d: "M8 5v14", key: "1ybrkv" }],
   ["path", { d: "M12 5v14", key: "s699le" }],
   ["path", { d: "M17 5v14", key: "ycjyhj" }],
   ["path", { d: "M21 5v14", key: "nzette" }]
-], os = e("barcode", as);
-const ns = [
-  ["rect", { width: "20", height: "12", x: "2", y: "6", rx: "2", key: "9lu3g6" }],
-  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
-  ["path", { d: "M6 12h.01M18 12h.01", key: "113zkx" }]
-], cs = e("banknote", ns);
+], cs = e("barcode", ns);
 const rs = [
   ["path", { d: "M10 3a41 41 0 0 0 0 18", key: "1qcnzb" }],
   ["path", { d: "M14 3a41 41 0 0 1 0 18", key: "547vd4" }],
@@ -6370,14 +6370,14 @@ const xs = [
   ["path", { d: "M6 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2", key: "h8lgfh" }]
 ], bs = e("battery-warning", xs);
 const ws = [
+  ["path", { d: "M 22 14 L 22 10", key: "nqc4tb" }],
+  ["rect", { x: "2", y: "6", width: "16", height: "12", rx: "2", key: "13zb55" }]
+], Ns = e("battery", ws);
+const $s = [
   ["path", { d: "M4.5 3h15", key: "c7n0jr" }],
   ["path", { d: "M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3", key: "m1uhx7" }],
   ["path", { d: "M6 14h12", key: "4cwo0f" }]
-], Ns = e("beaker", ws);
-const $s = [
-  ["path", { d: "M 22 14 L 22 10", key: "nqc4tb" }],
-  ["rect", { x: "2", y: "6", width: "16", height: "12", rx: "2", key: "13zb55" }]
-], zs = e("battery", $s);
+], zs = e("beaker", $s);
 const js = [
   [
     "path",
@@ -6460,17 +6460,6 @@ const Os = [
   ["path", { d: "M9 14.6V18", key: "20ek98" }]
 ], Ds = e("beer-off", Os);
 const Is = [
-  ["path", { d: "M10.268 21a2 2 0 0 0 3.464 0", key: "vwvbt9" }],
-  [
-    "path",
-    {
-      d: "M13.916 2.314A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.74 7.327A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673 9 9 0 0 1-.585-.665",
-      key: "1tip0g"
-    }
-  ],
-  ["circle", { cx: "18", cy: "8", r: "3", key: "1g0gzu" }]
-], Fs = e("bell-dot", Is);
-const Bs = [
   ["path", { d: "M17 11h1a3 3 0 0 1 0 6h-1", key: "1yp76v" }],
   ["path", { d: "M9 12v6", key: "1u1cab" }],
   ["path", { d: "M13 12v6", key: "1sugkk" }],
@@ -6482,7 +6471,18 @@ const Bs = [
     }
   ],
   ["path", { d: "M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8", key: "19jb7n" }]
-], Us = e("beer", Bs);
+], Fs = e("beer", Is);
+const Bs = [
+  ["path", { d: "M10.268 21a2 2 0 0 0 3.464 0", key: "vwvbt9" }],
+  [
+    "path",
+    {
+      d: "M11.68 2.009A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673c-.824-.85-1.678-1.731-2.21-3.348",
+      key: "xaq59h"
+    }
+  ],
+  ["circle", { cx: "18", cy: "5", r: "3", key: "gq8acd" }]
+], Us = e("bell-dot", Bs);
 const Ws = [
   ["path", { d: "M18.518 17.347A7 7 0 0 1 14 19", key: "1emhpo" }],
   ["path", { d: "M18.8 4A11 11 0 0 1 20 9", key: "127b67" }],
@@ -6688,13 +6688,13 @@ const Py = [
   ["path", { d: "M20.83 14.83a4 4 0 0 0 0-5.66", key: "k8tn1j" }],
   ["path", { d: "M18 12h.01", key: "yjnet6" }]
 ], Ty = e("bluetooth-searching", Py);
-const Oy = [
+const Oy = [["path", { d: "m7 7 10 10-5 5V2l5 5L7 17", key: "1q5490" }]], Dy = e("bluetooth", Oy);
+const Iy = [
   [
     "path",
     { d: "M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8", key: "mg9rjx" }
   ]
-], Dy = e("bold", Oy);
-const Iy = [["path", { d: "m7 7 10 10-5 5V2l5 5L7 17", key: "1q5490" }]], Fy = e("bluetooth", Iy);
+], Fy = e("bold", Iy);
 const By = [
   [
     "path",
@@ -6706,15 +6706,6 @@ const By = [
   ["circle", { cx: "12", cy: "12", r: "4", key: "4exip2" }]
 ], Uy = e("bolt", By);
 const Wy = [
-  [
-    "path",
-    {
-      d: "M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z",
-      key: "w610uw"
-    }
-  ]
-], Zy = e("bone", Wy);
-const Gy = [
   ["circle", { cx: "11", cy: "13", r: "9", key: "hd149" }],
   [
     "path",
@@ -6724,7 +6715,16 @@ const Gy = [
     }
   ],
   ["path", { d: "m22 2-1.5 1.5", key: "ay92ug" }]
-], Xy = e("bomb", Gy);
+], Zy = e("bomb", Wy);
+const Gy = [
+  [
+    "path",
+    {
+      d: "M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z",
+      key: "w610uw"
+    }
+  ]
+], Xy = e("bone", Gy);
 const Yy = [
   [
     "path",
@@ -6844,11 +6844,11 @@ const lp = [
   ["circle", { cx: "10", cy: "8", r: "2", key: "2qkj4p" }]
 ], up = e("book-image", lp);
 const Mp = [
-  ["path", { d: "m19 3 1 1", key: "ze14oc" }],
-  ["path", { d: "m20 2-4.5 4.5", key: "1sppr8" }],
-  ["path", { d: "M20 7.898V21a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20", key: "1xzogz" }],
-  ["path", { d: "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2h7.844", key: "vtdg6h" }],
-  ["circle", { cx: "14", cy: "8", r: "2", key: "u49eql" }]
+  ["path", { d: "M13 2H6.5A2.5 2.5 0 0 0 4 4.5v15", key: "4azifu" }],
+  ["path", { d: "M17 2v6", key: "qgmh37" }],
+  ["path", { d: "M17 4h2", key: "13vrzo" }],
+  ["path", { d: "M20 15.2V21a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20", key: "192hzx" }],
+  ["circle", { cx: "17", cy: "10", r: "2", key: "y0i25j" }]
 ], fp = e("book-key", Mp);
 const mp = [
   ["path", { d: "M18 6V4a2 2 0 1 0-4 0v2", key: "1aquzs" }],
@@ -6857,16 +6857,6 @@ const mp = [
   ["rect", { x: "12", y: "6", width: "8", height: "5", rx: "1", key: "73l30o" }]
 ], gp = e("book-lock", mp);
 const vp = [
-  [
-    "path",
-    {
-      d: "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20",
-      key: "k3hazp"
-    }
-  ],
-  ["path", { d: "M9 10h6", key: "9gxzsh" }]
-], _p = e("book-minus", vp);
-const xp = [
   ["path", { d: "M10 2v8l3-3 3 3V2", key: "sqw3rj" }],
   [
     "path",
@@ -6875,7 +6865,17 @@ const xp = [
       key: "k3hazp"
     }
   ]
-], bp = e("book-marked", xp);
+], _p = e("book-marked", vp);
+const xp = [
+  [
+    "path",
+    {
+      d: "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20",
+      key: "k3hazp"
+    }
+  ],
+  ["path", { d: "M9 10h6", key: "9gxzsh" }]
+], bp = e("book-minus", xp);
 const wp = [
   ["path", { d: "M12 21V7", key: "gj6g52" }],
   ["path", { d: "m16 12 2 2 4-4", key: "mdajum" }],
@@ -6889,16 +6889,6 @@ const wp = [
 ], Np = e("book-open-check", wp);
 const $p = [
   ["path", { d: "M12 7v14", key: "1akyts" }],
-  [
-    "path",
-    {
-      d: "M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z",
-      key: "ruj8y"
-    }
-  ]
-], zp = e("book-open", $p);
-const jp = [
-  ["path", { d: "M12 7v14", key: "1akyts" }],
   ["path", { d: "M16 12h2", key: "7q9ll5" }],
   ["path", { d: "M16 8h2", key: "msurwy" }],
   [
@@ -6910,7 +6900,17 @@ const jp = [
   ],
   ["path", { d: "M6 12h2", key: "32wvfc" }],
   ["path", { d: "M6 8h2", key: "30oboj" }]
-], qp = e("book-open-text", jp);
+], zp = e("book-open-text", $p);
+const jp = [
+  ["path", { d: "M12 7v14", key: "1akyts" }],
+  [
+    "path",
+    {
+      d: "M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z",
+      key: "ruj8y"
+    }
+  ]
+], qp = e("book-open", jp);
 const Ap = [
   ["path", { d: "M12 7v6", key: "lw1j43" }],
   [
@@ -7075,6 +7075,14 @@ const r4 = [
   ["path", { d: "M9 11v2", key: "1ueba0" }]
 ], h4 = e("bot-message-square", r4);
 const d4 = [
+  ["path", { d: "M12 8V4H8", key: "hb8ula" }],
+  ["rect", { width: "16", height: "12", x: "4", y: "8", rx: "2", key: "enze0r" }],
+  ["path", { d: "M2 14h2", key: "vft8re" }],
+  ["path", { d: "M20 14h2", key: "4cs60a" }],
+  ["path", { d: "M15 13v2", key: "1xurst" }],
+  ["path", { d: "M9 13v2", key: "rq6x2g" }]
+], i4 = e("bot", d4);
+const s4 = [
   ["path", { d: "M13.67 8H18a2 2 0 0 1 2 2v4.33", key: "7az073" }],
   ["path", { d: "M2 14h2", key: "vft8re" }],
   ["path", { d: "M20 14h2", key: "4cs60a" }],
@@ -7082,16 +7090,18 @@ const d4 = [
   ["path", { d: "M8 8H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 1.414-.586", key: "s09a7a" }],
   ["path", { d: "M9 13v2", key: "rq6x2g" }],
   ["path", { d: "M9.67 4H12v2.33", key: "110xot" }]
-], i4 = e("bot-off", d4);
-const s4 = [
-  ["path", { d: "M12 8V4H8", key: "hb8ula" }],
-  ["rect", { width: "16", height: "12", x: "4", y: "8", rx: "2", key: "enze0r" }],
-  ["path", { d: "M2 14h2", key: "vft8re" }],
-  ["path", { d: "M20 14h2", key: "4cs60a" }],
-  ["path", { d: "M15 13v2", key: "1xurst" }],
-  ["path", { d: "M9 13v2", key: "rq6x2g" }]
-], y4 = e("bot", s4);
+], y4 = e("bot-off", s4);
 const p4 = [
+  [
+    "path",
+    {
+      d: "M10 3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a6 6 0 0 0 1.2 3.6l.6.8A6 6 0 0 1 17 13v8a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-8a6 6 0 0 1 1.2-3.6l.6-.8A6 6 0 0 0 10 5z",
+      key: "blqgoc"
+    }
+  ],
+  ["path", { d: "M17 13h-4a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h4", key: "43jbee" }]
+], k4 = e("bottle-wine", p4);
+const l4 = [
   ["path", { d: "M17 3h4v4", key: "19p9u1" }],
   [
     "path",
@@ -7106,17 +7116,7 @@ const p4 = [
     }
   ],
   ["path", { d: "M9.707 14.293 21 3", key: "ydm3bn" }]
-], k4 = e("bow-arrow", p4);
-const l4 = [
-  [
-    "path",
-    {
-      d: "M10 3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a6 6 0 0 0 1.2 3.6l.6.8A6 6 0 0 1 17 13v8a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-8a6 6 0 0 1 1.2-3.6l.6-.8A6 6 0 0 0 10 5z",
-      key: "blqgoc"
-    }
-  ],
-  ["path", { d: "M17 13h-4a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h4", key: "43jbee" }]
-], u4 = e("bottle-wine", l4);
+], u4 = e("bow-arrow", l4);
 const M4 = [
   [
     "path",
@@ -7314,14 +7314,6 @@ const B4 = [
   ["path", { d: "M14 20a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2", key: "1q24h9" }]
 ], U4 = e("bring-to-front", B4);
 const W4 = [
-  ["path", { d: "m11 10 3 3", key: "fzmg1i" }],
-  [
-    "path",
-    { d: "M6.5 21A3.5 3.5 0 1 0 3 17.5a2.62 2.62 0 0 1-.708 1.792A1 1 0 0 0 3 21z", key: "p4q2r7" }
-  ],
-  ["path", { d: "M9.969 17.031 21.378 5.624a1 1 0 0 0-3.002-3.002L6.967 14.031", key: "wy6l02" }]
-], Z4 = e("brush", W4);
-const G4 = [
   ["path", { d: "m16 22-1-4", key: "1ow2iv" }],
   [
     "path",
@@ -7332,24 +7324,34 @@ const G4 = [
   ],
   ["path", { d: "M19 14H5l-1.973 6.767A1 1 0 0 0 4 22h16a1 1 0 0 0 .973-1.233z", key: "bju7h4" }],
   ["path", { d: "m8 22 1-4", key: "s3unb" }]
-], X4 = e("brush-cleaning", G4);
-const Y4 = [
+], Z4 = e("brush-cleaning", W4);
+const G4 = [
   ["path", { d: "M7.001 15.085A1.5 1.5 0 0 1 9 16.5", key: "y44lvh" }],
   ["circle", { cx: "18.5", cy: "8.5", r: "3.5", key: "1wadoa" }],
   ["circle", { cx: "7.5", cy: "16.5", r: "5.5", key: "6mdt3g" }],
   ["circle", { cx: "7.5", cy: "4.5", r: "2.5", key: "637s54" }]
-], K4 = e("bubbles", Y4);
+], X4 = e("bubbles", G4);
+const Y4 = [
+  ["path", { d: "m11 10 3 3", key: "fzmg1i" }],
+  [
+    "path",
+    { d: "M6.5 21A3.5 3.5 0 1 0 3 17.5a2.62 2.62 0 0 1-.708 1.792A1 1 0 0 0 3 21z", key: "p4q2r7" }
+  ],
+  ["path", { d: "M9.969 17.031 21.378 5.624a1 1 0 0 0-3.002-3.002L6.967 14.031", key: "wy6l02" }]
+], K4 = e("brush", Y4);
 const Q4 = [
   ["path", { d: "M12 20v-8", key: "i3yub9" }],
+  ["path", { d: "M12.656 7H14a4 4 0 0 1 4 4v1.344", key: "vvueyn" }],
   ["path", { d: "M14.12 3.88 16 2", key: "qol33r" }],
-  ["path", { d: "M15 7.13V6a3 3 0 0 0-5.14-2.1L8 2", key: "vl8zik" }],
-  ["path", { d: "M18 12.34V11a4 4 0 0 0-4-4h-1.3", key: "sz915m" }],
+  ["path", { d: "M17.123 17.123A6 6 0 0 1 6 14v-3a4 4 0 0 1 1.72-3.287", key: "1cu21y" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   ["path", { d: "M21 5a4 4 0 0 1-3.55 3.97", key: "5cxbf6" }],
-  ["path", { d: "M22 13h-3.34", key: "1y15gv" }],
+  ["path", { d: "M22 13h-3.344", key: "qb08am" }],
   ["path", { d: "M3 21a4 4 0 0 1 3.81-4", key: "1fjd4g" }],
+  ["path", { d: "M3 5a4 4 0 0 0 3.55 3.97", key: "1d7oge" }],
   ["path", { d: "M6 13H2", key: "82j7cp" }],
-  ["path", { d: "M7.7 7.7A4 4 0 0 0 6 11v3a6 6 0 0 0 11.13 3.13", key: "1njkjs" }]
+  ["path", { d: "m8 2 1.88 1.88", key: "fmnt4t" }],
+  ["path", { d: "M9.712 4.06A3 3 0 0 1 15 6v1.13", key: "1bvup6" }]
 ], J4 = e("bug-off", Q4);
 const e5 = [
   ["path", { d: "M10 19.655A6 6 0 0 1 6 14v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 3.97", key: "1gnv52" }],
@@ -7382,19 +7384,6 @@ const a5 = [
   ["path", { d: "M9 7.13V6a3 3 0 1 1 6 0v1.13", key: "1vgav8" }]
 ], o5 = e("bug", a5);
 const n5 = [
-  ["path", { d: "M10 12h4", key: "a56b0p" }],
-  ["path", { d: "M10 8h4", key: "1sr2af" }],
-  ["path", { d: "M14 21v-3a2 2 0 0 0-4 0v3", key: "1rgiei" }],
-  [
-    "path",
-    {
-      d: "M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2",
-      key: "secmi2"
-    }
-  ],
-  ["path", { d: "M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16", key: "16ra0t" }]
-], c5 = e("building-2", n5);
-const r5 = [
   ["path", { d: "M12 10h.01", key: "1nrarc" }],
   ["path", { d: "M12 14h.01", key: "1etili" }],
   ["path", { d: "M12 6h.01", key: "1vi96p" }],
@@ -7406,7 +7395,20 @@ const r5 = [
   ["path", { d: "M8 6h.01", key: "1dz90k" }],
   ["path", { d: "M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3", key: "cabbwy" }],
   ["rect", { x: "4", y: "2", width: "16", height: "20", rx: "2", key: "1uxh74" }]
-], h5 = e("building", r5);
+], c5 = e("building", n5);
+const r5 = [
+  ["path", { d: "M10 12h4", key: "a56b0p" }],
+  ["path", { d: "M10 8h4", key: "1sr2af" }],
+  ["path", { d: "M14 21v-3a2 2 0 0 0-4 0v3", key: "1rgiei" }],
+  [
+    "path",
+    {
+      d: "M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2",
+      key: "secmi2"
+    }
+  ],
+  ["path", { d: "M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16", key: "16ra0t" }]
+], h5 = e("building-2", r5);
 const d5 = [
   ["path", { d: "M4 6 2 7", key: "1mqr15" }],
   ["path", { d: "M10 6h4", key: "1itunk" }],
@@ -7527,20 +7529,20 @@ const j5 = [
   ["path", { d: "m16 20 2 2 4-4", key: "13tcca" }]
 ], q5 = e("calendar-check-2", j5);
 const A5 = [
+  ["path", { d: "M8 2v4", key: "1cmpym" }],
+  ["path", { d: "M16 2v4", key: "4m81vk" }],
+  ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
+  ["path", { d: "M3 10h18", key: "8toen8" }],
+  ["path", { d: "m9 16 2 2 4-4", key: "19s6y9" }]
+], H5 = e("calendar-check", A5);
+const S5 = [
   ["path", { d: "M16 14v2.2l1.6 1", key: "fo4ql5" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["path", { d: "M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5", key: "1osxxc" }],
   ["path", { d: "M3 10h5", key: "r794hk" }],
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["circle", { cx: "16", cy: "16", r: "6", key: "qoo3c4" }]
-], H5 = e("calendar-clock", A5);
-const S5 = [
-  ["path", { d: "M8 2v4", key: "1cmpym" }],
-  ["path", { d: "M16 2v4", key: "4m81vk" }],
-  ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
-  ["path", { d: "M3 10h18", key: "8toen8" }],
-  ["path", { d: "m9 16 2 2 4-4", key: "19s6y9" }]
-], C5 = e("calendar-check", S5);
+], C5 = e("calendar-clock", S5);
 const V5 = [
   ["path", { d: "m15.228 16.852-.923-.383", key: "npixar" }],
   ["path", { d: "m15.228 19.148-.923.383", key: "51cr3n" }],
@@ -7628,14 +7630,6 @@ const G5 = [
   ["path", { d: "M12 14v4", key: "1thi36" }]
 ], X5 = e("calendar-plus-2", G5);
 const Y5 = [
-  ["path", { d: "M16 19h6", key: "xwg31i" }],
-  ["path", { d: "M16 2v4", key: "4m81vk" }],
-  ["path", { d: "M19 16v6", key: "tddt3s" }],
-  ["path", { d: "M21 12.598V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8.5", key: "1glfrc" }],
-  ["path", { d: "M3 10h18", key: "8toen8" }],
-  ["path", { d: "M8 2v4", key: "1cmpym" }]
-], K5 = e("calendar-plus", Y5);
-const Q5 = [
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["path", { d: "M3 10h18", key: "8toen8" }],
@@ -7644,7 +7638,15 @@ const Q5 = [
   ["path", { d: "M13 18H7", key: "bb0bb7" }],
   ["path", { d: "M7 14h.01", key: "1qa3f1" }],
   ["path", { d: "M17 18h.01", key: "1bdyru" }]
-], J5 = e("calendar-range", Q5);
+], K5 = e("calendar-range", Y5);
+const Q5 = [
+  ["path", { d: "M16 19h6", key: "xwg31i" }],
+  ["path", { d: "M16 2v4", key: "4m81vk" }],
+  ["path", { d: "M19 16v6", key: "tddt3s" }],
+  ["path", { d: "M21 12.598V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8.5", key: "1glfrc" }],
+  ["path", { d: "M3 10h18", key: "8toen8" }],
+  ["path", { d: "M8 2v4", key: "1cmpym" }]
+], J5 = e("calendar-plus", Q5);
 const ek = [
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["path", { d: "M21 11.75V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7.25", key: "1jrsq6" }],
@@ -7654,14 +7656,6 @@ const ek = [
   ["circle", { cx: "18", cy: "18", r: "3", key: "1xkwt0" }]
 ], tk = e("calendar-search", ek);
 const ak = [
-  ["path", { d: "M8 2v4", key: "1cmpym" }],
-  ["path", { d: "M16 2v4", key: "4m81vk" }],
-  ["path", { d: "M21 13V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8", key: "3spt84" }],
-  ["path", { d: "M3 10h18", key: "8toen8" }],
-  ["path", { d: "m17 22 5-5", key: "1k6ppv" }],
-  ["path", { d: "m17 17 5 5", key: "p7ous7" }]
-], ok = e("calendar-x-2", ak);
-const nk = [
   ["path", { d: "M11 10v4h4", key: "172dkj" }],
   ["path", { d: "m11 14 1.535-1.605a5 5 0 0 1 8 1.5", key: "vu0qm5" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
@@ -7670,7 +7664,15 @@ const nk = [
   ["path", { d: "M21 8.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4.3", key: "mctw84" }],
   ["path", { d: "M3 10h4", key: "1el30a" }],
   ["path", { d: "M8 2v4", key: "1cmpym" }]
-], ck = e("calendar-sync", nk);
+], ok = e("calendar-sync", ak);
+const nk = [
+  ["path", { d: "M8 2v4", key: "1cmpym" }],
+  ["path", { d: "M16 2v4", key: "4m81vk" }],
+  ["path", { d: "M21 13V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8", key: "3spt84" }],
+  ["path", { d: "M3 10h18", key: "8toen8" }],
+  ["path", { d: "m17 22 5-5", key: "1k6ppv" }],
+  ["path", { d: "m17 17 5 5", key: "p7ous7" }]
+], ck = e("calendar-x-2", nk);
 const rk = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
@@ -7719,6 +7721,19 @@ const lk = [
   ["circle", { cx: "12", cy: "13", r: "3", key: "1vg3eu" }]
 ], uk = e("camera", lk);
 const Mk = [
+  [
+    "path",
+    {
+      d: "M5.7 21a2 2 0 0 1-3.5-2l8.6-14a6 6 0 0 1 10.4 6 2 2 0 1 1-3.464-2 2 2 0 1 0-3.464-2Z",
+      key: "isaq8g"
+    }
+  ],
+  ["path", { d: "M17.75 7 15 2.1", key: "12x7e8" }],
+  ["path", { d: "M10.9 4.8 13 9", key: "100a87" }],
+  ["path", { d: "m7.9 9.7 2 4.4", key: "ntfhaj" }],
+  ["path", { d: "M4.9 14.7 7 18.9", key: "1x43jy" }]
+], fk = e("candy-cane", Mk);
+const mk = [
   ["path", { d: "M10 10v7.9", key: "m8g9tt" }],
   ["path", { d: "M11.802 6.145a5 5 0 0 1 6.053 6.053", key: "dn87i3" }],
   ["path", { d: "M14 6.1v2.243", key: "1kzysn" }],
@@ -7741,20 +7756,7 @@ const Mk = [
       key: "qexcha"
     }
   ]
-], fk = e("candy-off", Mk);
-const mk = [
-  [
-    "path",
-    {
-      d: "M5.7 21a2 2 0 0 1-3.5-2l8.6-14a6 6 0 0 1 10.4 6 2 2 0 1 1-3.464-2 2 2 0 1 0-3.464-2Z",
-      key: "isaq8g"
-    }
-  ],
-  ["path", { d: "M17.75 7 15 2.1", key: "12x7e8" }],
-  ["path", { d: "M10.9 4.8 13 9", key: "100a87" }],
-  ["path", { d: "m7.9 9.7 2 4.4", key: "ntfhaj" }],
-  ["path", { d: "M4.9 14.7 7 18.9", key: "1x43jy" }]
-], gk = e("candy-cane", mk);
+], gk = e("candy-off", mk);
 const vk = [
   ["path", { d: "M10 7v10.9", key: "1gynux" }],
   ["path", { d: "M14 6.1V17", key: "116kdf" }],
@@ -7840,18 +7842,6 @@ const Ak = [
   ["path", { d: "M19 18v2", key: "gy7782" }]
 ], Hk = e("car-front", Ak);
 const Sk = [
-  [
-    "path",
-    {
-      d: "M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2",
-      key: "5owen"
-    }
-  ],
-  ["circle", { cx: "7", cy: "17", r: "2", key: "u2ysq9" }],
-  ["path", { d: "M9 17h6", key: "r8uit2" }],
-  ["circle", { cx: "17", cy: "17", r: "2", key: "axvx0g" }]
-], Ck = e("car", Sk);
-const Vk = [
   ["path", { d: "M10 2h4", key: "n1abiw" }],
   [
     "path",
@@ -7862,8 +7852,26 @@ const Vk = [
   ["rect", { width: "18", height: "8", x: "3", y: "10", rx: "2", key: "a7itu8" }],
   ["path", { d: "M5 18v2", key: "ppbyun" }],
   ["path", { d: "M19 18v2", key: "gy7782" }]
-], Rk = e("car-taxi-front", Vk);
+], Ck = e("car-taxi-front", Sk);
+const Vk = [
+  [
+    "path",
+    {
+      d: "M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2",
+      key: "5owen"
+    }
+  ],
+  ["circle", { cx: "7", cy: "17", r: "2", key: "u2ysq9" }],
+  ["path", { d: "M9 17h6", key: "r8uit2" }],
+  ["circle", { cx: "17", cy: "17", r: "2", key: "axvx0g" }]
+], Rk = e("car", Vk);
 const Ek = [
+  ["path", { d: "M18 19V9a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v8a2 2 0 0 0 2 2h2", key: "19jm3t" }],
+  ["path", { d: "M2 9h3a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2", key: "13hakp" }],
+  ["path", { d: "M22 17v1a1 1 0 0 1-1 1H10v-9a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v9", key: "1crci8" }],
+  ["circle", { cx: "8", cy: "19", r: "2", key: "t8fc5s" }]
+], Lk = e("caravan", Ek);
+const Pk = [
   ["path", { d: "M12 14v4", key: "1thi36" }],
   [
     "path",
@@ -7874,13 +7882,7 @@ const Ek = [
   ],
   ["path", { d: "M8 14h8", key: "1fgep2" }],
   ["rect", { x: "8", y: "10", width: "8", height: "8", rx: "1", key: "1aonk6" }]
-], Lk = e("card-sim", Ek);
-const Pk = [
-  ["path", { d: "M18 19V9a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v8a2 2 0 0 0 2 2h2", key: "19jm3t" }],
-  ["path", { d: "M2 9h3a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2", key: "13hakp" }],
-  ["path", { d: "M22 17v1a1 1 0 0 1-1 1H10v-9a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v9", key: "1crci8" }],
-  ["circle", { cx: "8", cy: "19", r: "2", key: "t8fc5s" }]
-], Tk = e("caravan", Pk);
+], Tk = e("card-sim", Pk);
 const Ok = [
   [
     "path",
@@ -7938,7 +7940,7 @@ const Qk = [
   ["path", { d: "M22 9v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9", key: "1rly83" }],
   ["path", { d: "M6 3v8", key: "csox7g" }]
 ], Jk = e("castle", Qk);
-const el = [
+const e3 = [
   [
     "path",
     {
@@ -7949,8 +7951,8 @@ const el = [
   ["path", { d: "M8 14v.5", key: "1nzgdb" }],
   ["path", { d: "M16 14v.5", key: "1lajdz" }],
   ["path", { d: "M11.25 16.25h1.5L12 17l-.75-.75Z", key: "12kq1m" }]
-], tl = e("cat", el);
-const al = [
+], t3 = e("cat", e3);
+const a3 = [
   [
     "path",
     {
@@ -7968,8 +7970,8 @@ const al = [
   ["path", { d: "M2 19h3.76a2 2 0 0 0 1.8-1.1L9 15", key: "19bib8" }],
   ["path", { d: "M2 21v-4", key: "l40lih" }],
   ["path", { d: "M7 9h.01", key: "19b3jx" }]
-], ol = e("cctv", al);
-const nl = [
+], o3 = e("cctv", a3);
+const n3 = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   [
     "path",
@@ -7978,38 +7980,38 @@ const nl = [
       key: "q0gr47"
     }
   ]
-], cl = e("chart-area", nl);
-const rl = [
+], c3 = e("chart-area", n3);
+const r3 = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["rect", { x: "7", y: "13", width: "9", height: "4", rx: "1", key: "1iip1u" }],
   ["rect", { x: "7", y: "5", width: "12", height: "4", rx: "1", key: "1anskk" }]
-], hl = e("chart-bar-big", rl);
-const dl = [
+], h3 = e("chart-bar-big", r3);
+const d3 = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M7 11h8", key: "1feolt" }],
   ["path", { d: "M7 16h3", key: "ur6vzw" }],
   ["path", { d: "M7 6h12", key: "sz5b0d" }]
-], il = e("chart-bar-decreasing", dl);
-const sl = [
+], i3 = e("chart-bar-decreasing", d3);
+const s3 = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M7 11h8", key: "1feolt" }],
   ["path", { d: "M7 16h12", key: "wsnu98" }],
   ["path", { d: "M7 6h3", key: "w9rmul" }]
-], yl = e("chart-bar-increasing", sl);
-const pl = [
+], y3 = e("chart-bar-increasing", s3);
+const p3 = [
   ["path", { d: "M11 13v4", key: "vyy2rb" }],
   ["path", { d: "M15 5v4", key: "1gx88a" }],
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["rect", { x: "7", y: "13", width: "9", height: "4", rx: "1", key: "1iip1u" }],
   ["rect", { x: "7", y: "5", width: "12", height: "4", rx: "1", key: "1anskk" }]
-], kl = e("chart-bar-stacked", pl);
-const ll = [
+], k3 = e("chart-bar-stacked", p3);
+const l3 = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M7 16h8", key: "srdodz" }],
   ["path", { d: "M7 11h12", key: "127s9w" }],
   ["path", { d: "M7 6h3", key: "w9rmul" }]
-], ul = e("chart-bar", ll);
-const Ml = [
+], u3 = e("chart-bar", l3);
+const M3 = [
   ["path", { d: "M9 5v4", key: "14uxtq" }],
   ["rect", { width: "4", height: "6", x: "7", y: "9", rx: "1", key: "f4fvz0" }],
   ["path", { d: "M9 15v2", key: "r5rk32" }],
@@ -8017,48 +8019,48 @@ const Ml = [
   ["rect", { width: "4", height: "8", x: "15", y: "5", rx: "1", key: "z38je5" }],
   ["path", { d: "M17 13v3", key: "5l0wba" }],
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }]
-], fl = e("chart-candlestick", Ml);
-const ml = [
+], f3 = e("chart-candlestick", M3);
+const m3 = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["rect", { x: "15", y: "5", width: "4", height: "12", rx: "1", key: "q8uenq" }],
   ["rect", { x: "7", y: "8", width: "4", height: "9", rx: "1", key: "sr5ea" }]
-], gl = e("chart-column-big", ml);
-const vl = [
+], g3 = e("chart-column-big", m3);
+const v3 = [
   ["path", { d: "M13 17V9", key: "1fwyjl" }],
   ["path", { d: "M18 17v-3", key: "1sqioe" }],
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M8 17V5", key: "1wzmnc" }]
-], _l = e("chart-column-decreasing", vl);
-const xl = [
+], _3 = e("chart-column-decreasing", v3);
+const x3 = [
   ["path", { d: "M13 17V9", key: "1fwyjl" }],
   ["path", { d: "M18 17V5", key: "sfb6ij" }],
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M8 17v-3", key: "17ska0" }]
-], bl = e("chart-column-increasing", xl);
-const wl = [
+], b3 = e("chart-column-increasing", x3);
+const w3 = [
   ["path", { d: "M11 13H7", key: "t0o9gq" }],
   ["path", { d: "M19 9h-4", key: "rera1j" }],
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["rect", { x: "15", y: "5", width: "4", height: "12", rx: "1", key: "q8uenq" }],
   ["rect", { x: "7", y: "8", width: "4", height: "9", rx: "1", key: "sr5ea" }]
-], Nl = e("chart-column-stacked", wl);
-const $l = [
+], N3 = e("chart-column-stacked", w3);
+const $3 = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M18 17V9", key: "2bz60n" }],
   ["path", { d: "M13 17V5", key: "1frdt8" }],
   ["path", { d: "M8 17v-3", key: "17ska0" }]
-], zl = e("chart-column", $l);
-const jl = [
+], z3 = e("chart-column", $3);
+const j3 = [
   ["path", { d: "M10 6h8", key: "zvc2xc" }],
   ["path", { d: "M12 16h6", key: "yi5mkt" }],
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M8 11h7", key: "wz2hg0" }]
-], ql = e("chart-gantt", jl);
-const Al = [
+], q3 = e("chart-gantt", j3);
+const A3 = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "m19 9-5 5-4-4-3 3", key: "2osh9i" }]
-], Hl = e("chart-line", Al);
-const Sl = [
+], H3 = e("chart-line", A3);
+const S3 = [
   ["path", { d: "m13.11 7.664 1.78 2.672", key: "go2gg9" }],
   ["path", { d: "m14.162 12.788-3.324 1.424", key: "11x848" }],
   ["path", { d: "m20 4-6.06 1.515", key: "1wxxh7" }],
@@ -8066,23 +8068,23 @@ const Sl = [
   ["circle", { cx: "12", cy: "6", r: "2", key: "1jj5th" }],
   ["circle", { cx: "16", cy: "12", r: "2", key: "4ma0v8" }],
   ["circle", { cx: "9", cy: "15", r: "2", key: "lf2ghp" }]
-], Cl = e("chart-network", Sl);
-const Vl = [
+], C3 = e("chart-network", S3);
+const V3 = [
   ["path", { d: "M5 21V3", key: "clc1r8" }],
   ["path", { d: "M12 21V9", key: "uvy0l4" }],
   ["path", { d: "M19 21v-6", key: "tkawy9" }]
-], Rl = e("chart-no-axes-column-decreasing", Vl);
-const El = [
+], R3 = e("chart-no-axes-column-decreasing", V3);
+const E3 = [
   ["path", { d: "M5 21v-6", key: "1hz6c0" }],
   ["path", { d: "M12 21V9", key: "uvy0l4" }],
   ["path", { d: "M19 21V3", key: "11j9sm" }]
-], Ll = e("chart-no-axes-column-increasing", El);
-const Pl = [
+], L3 = e("chart-no-axes-column-increasing", E3);
+const P3 = [
   ["path", { d: "M5 21v-6", key: "1hz6c0" }],
   ["path", { d: "M12 21V3", key: "1lcnhd" }],
   ["path", { d: "M19 21V9", key: "unv183" }]
-], Tl = e("chart-no-axes-column", Pl);
-const Ol = [
+], T3 = e("chart-no-axes-column", P3);
+const O3 = [
   ["path", { d: "M12 16v5", key: "zza2cw" }],
   ["path", { d: "M16 14v7", key: "1g90b9" }],
   ["path", { d: "M20 10v11", key: "1iqoj0" }],
@@ -8092,13 +8094,13 @@ const Ol = [
   ],
   ["path", { d: "M4 18v3", key: "1yp0dc" }],
   ["path", { d: "M8 14v7", key: "n3cwzv" }]
-], Dl = e("chart-no-axes-combined", Ol);
-const Il = [
+], D3 = e("chart-no-axes-combined", O3);
+const I3 = [
   ["path", { d: "M6 5h12", key: "fvfigv" }],
   ["path", { d: "M4 12h10", key: "oujl3d" }],
   ["path", { d: "M12 19h8", key: "baeox8" }]
-], Fl = e("chart-no-axes-gantt", Il);
-const Bl = [
+], F3 = e("chart-no-axes-gantt", I3);
+const B3 = [
   [
     "path",
     {
@@ -8107,30 +8109,30 @@ const Bl = [
     }
   ],
   ["path", { d: "M21.21 15.89A10 10 0 1 1 8 2.83", key: "k2fpak" }]
-], Ul = e("chart-pie", Bl);
-const Wl = [
+], U3 = e("chart-pie", B3);
+const W3 = [
   ["circle", { cx: "7.5", cy: "7.5", r: ".5", fill: "currentColor", key: "kqv944" }],
   ["circle", { cx: "18.5", cy: "5.5", r: ".5", fill: "currentColor", key: "lysivs" }],
   ["circle", { cx: "11.5", cy: "11.5", r: ".5", fill: "currentColor", key: "byv1b8" }],
   ["circle", { cx: "7.5", cy: "16.5", r: ".5", fill: "currentColor", key: "nkw3mc" }],
   ["circle", { cx: "17.5", cy: "14.5", r: ".5", fill: "currentColor", key: "1gjh6j" }],
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }]
-], Zl = e("chart-scatter", Wl);
-const Gl = [
+], Z3 = e("chart-scatter", W3);
+const G3 = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7", key: "lw07rv" }]
-], Xl = e("chart-spline", Gl);
-const Yl = [
+], X3 = e("chart-spline", G3);
+const Y3 = [
   ["path", { d: "M18 6 7 17l-5-5", key: "116fxf" }],
   ["path", { d: "m22 10-7.5 7.5L13 16", key: "ke71qq" }]
-], Kl = e("check-check", Yl);
-const Ql = [
+], K3 = e("check-check", Y3);
+const Q3 = [
   ["path", { d: "M20 4L9 15", key: "1qkx8z" }],
   ["path", { d: "M21 19L3 19", key: "100sma" }],
   ["path", { d: "M9 15L4 10", key: "9zxff7" }]
-], Jl = e("check-line", Ql);
-const e3 = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]], t3 = e("check", e3);
-const a3 = [
+], J3 = e("check-line", Q3);
+const el = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]], tl = e("check", el);
+const al = [
   [
     "path",
     {
@@ -8139,14 +8141,14 @@ const a3 = [
     }
   ],
   ["path", { d: "M6 17h12", key: "1jwigz" }]
-], o3 = e("chef-hat", a3);
-const n3 = [
+], ol = e("chef-hat", al);
+const nl = [
   ["path", { d: "M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z", key: "cvxqlc" }],
   ["path", { d: "M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z", key: "1ostrc" }],
   ["path", { d: "M7 14c3.22-2.91 4.29-8.75 5-12 1.66 2.38 4.94 9 5 12", key: "hqx58h" }],
   ["path", { d: "M22 9c-4.29 0-7.14-2.33-10-7 5.71 0 10 4.67 10 7Z", key: "eykp1o" }]
-], c3 = e("cherry", n3);
-const r3 = [
+], cl = e("cherry", nl);
+const rl = [
   [
     "path",
     { d: "M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z", key: "b89hwq" }
@@ -8160,8 +8162,8 @@ const r3 = [
   ],
   ["path", { d: "m16 7-2.5 2.5", key: "1jq90w" }],
   ["path", { d: "M9 2h6", key: "1jrp98" }]
-], h3 = e("chess-bishop", r3);
-const d3 = [
+], hl = e("chess-bishop", rl);
+const dl = [
   [
     "path",
     { d: "M4 20a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z", key: "mqzwx6" }
@@ -8175,8 +8177,8 @@ const d3 = [
   ],
   ["path", { d: "M10 4h4", key: "1xpv9s" }],
   ["path", { d: "M12 2v6.818", key: "b17a49" }]
-], i3 = e("chess-king", d3);
-const s3 = [
+], il = e("chess-king", dl);
+const sl = [
   [
     "path",
     { d: "M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z", key: "b89hwq" }
@@ -8191,8 +8193,8 @@ const s3 = [
   ["path", { d: "m15 5 1.425-1.425", key: "15xz8w" }],
   ["path", { d: "m17 8 1.53-1.53", key: "15zhqh" }],
   ["path", { d: "M9.713 12.185 7 18", key: "1ocm0l" }]
-], y3 = e("chess-knight", s3);
-const p3 = [
+], yl = e("chess-knight", sl);
+const pl = [
   [
     "path",
     { d: "M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z", key: "b89hwq" }
@@ -8201,8 +8203,8 @@ const p3 = [
   ["path", { d: "M7 10h10", key: "1101jm" }],
   ["path", { d: "m8 18 1.5-8", key: "ja3yjd" }],
   ["circle", { cx: "12", cy: "6", r: "4", key: "1frrej" }]
-], k3 = e("chess-pawn", p3);
-const l3 = [
+], kl = e("chess-pawn", pl);
+const ll = [
   [
     "path",
     { d: "M4 20a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z", key: "mqzwx6" }
@@ -8214,8 +8216,9 @@ const l3 = [
   ["circle", { cx: "12", cy: "4", r: "2", key: "muu5ef" }],
   ["circle", { cx: "20", cy: "7", r: "2", key: "9w7p1x" }],
   ["circle", { cx: "4", cy: "7", r: "2", key: "1d9wy8" }]
-], u3 = e("chess-queen", l3);
-const M3 = [
+], ul = e("chess-queen", ll);
+const Ml = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]], fl = e("chevron-down", Ml);
+const ml = [
   [
     "path",
     { d: "M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z", key: "b89hwq" }
@@ -8226,66 +8229,65 @@ const M3 = [
   ["path", { d: "M6 2v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2", key: "uxf4yx" }],
   ["path", { d: "M6 4h12", key: "1x2ag7" }],
   ["path", { d: "m7 18 1-9", key: "1si9vq" }]
-], f3 = e("chess-rook", M3);
-const m3 = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]], g3 = e("chevron-down", m3);
-const v3 = [
+], gl = e("chess-rook", ml);
+const vl = [
   ["path", { d: "m17 18-6-6 6-6", key: "1yerx2" }],
   ["path", { d: "M7 6v12", key: "1p53r6" }]
-], _3 = e("chevron-first", v3);
-const x3 = [
+], _l = e("chevron-first", vl);
+const xl = [
   ["path", { d: "m7 18 6-6-6-6", key: "lwmzdw" }],
   ["path", { d: "M17 6v12", key: "1o0aio" }]
-], b3 = e("chevron-last", x3);
-const w3 = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]], N3 = e("chevron-left", w3);
-const $3 = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]], z3 = e("chevron-right", $3);
-const j3 = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]], q3 = e("chevron-up", j3);
-const A3 = [
+], bl = e("chevron-last", xl);
+const wl = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]], Nl = e("chevron-left", wl);
+const $l = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]], zl = e("chevron-right", $l);
+const jl = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]], ql = e("chevron-up", jl);
+const Al = [
   ["path", { d: "m7 20 5-5 5 5", key: "13a0gw" }],
   ["path", { d: "m7 4 5 5 5-5", key: "1kwcof" }]
-], H3 = e("chevrons-down-up", A3);
-const S3 = [
+], Hl = e("chevrons-down-up", Al);
+const Sl = [
   ["path", { d: "m7 6 5 5 5-5", key: "1lc07p" }],
   ["path", { d: "m7 13 5 5 5-5", key: "1d48rs" }]
-], C3 = e("chevrons-down", S3);
-const V3 = [
+], Cl = e("chevrons-down", Sl);
+const Vl = [
   ["path", { d: "M12 12h.01", key: "1mp3jc" }],
   ["path", { d: "M16 12h.01", key: "1l6xoz" }],
   ["path", { d: "m17 7 5 5-5 5", key: "1xlxn0" }],
   ["path", { d: "m7 7-5 5 5 5", key: "19njba" }],
   ["path", { d: "M8 12h.01", key: "czm47f" }]
-], R3 = e("chevrons-left-right-ellipsis", V3);
-const E3 = [
+], Rl = e("chevrons-left-right-ellipsis", Vl);
+const El = [
   ["path", { d: "m9 7-5 5 5 5", key: "j5w590" }],
   ["path", { d: "m15 7 5 5-5 5", key: "1bl6da" }]
-], L3 = e("chevrons-left-right", E3);
-const P3 = [
+], Ll = e("chevrons-left-right", El);
+const Pl = [
   ["path", { d: "m11 17-5-5 5-5", key: "13zhaf" }],
   ["path", { d: "m18 17-5-5 5-5", key: "h8a8et" }]
-], T3 = e("chevrons-left", P3);
-const O3 = [
+], Tl = e("chevrons-left", Pl);
+const Ol = [
   ["path", { d: "m20 17-5-5 5-5", key: "30x0n2" }],
   ["path", { d: "m4 17 5-5-5-5", key: "16spf4" }]
-], D3 = e("chevrons-right-left", O3);
-const I3 = [
+], Dl = e("chevrons-right-left", Ol);
+const Il = [
   ["path", { d: "m6 17 5-5-5-5", key: "xnjwq" }],
   ["path", { d: "m13 17 5-5-5-5", key: "17xmmf" }]
-], F3 = e("chevrons-right", I3);
-const B3 = [
+], Fl = e("chevrons-right", Il);
+const Bl = [
   ["path", { d: "m7 15 5 5 5-5", key: "1hf1tw" }],
   ["path", { d: "m7 9 5-5 5 5", key: "sgt6xg" }]
-], U3 = e("chevrons-up-down", B3);
-const W3 = [
+], Ul = e("chevrons-up-down", Bl);
+const Wl = [
   ["path", { d: "m17 11-5-5-5 5", key: "e8nh98" }],
   ["path", { d: "m17 18-5-5-5 5", key: "2avn1x" }]
-], Z3 = e("chevrons-up", W3);
-const G3 = [
+], Zl = e("chevrons-up", Wl);
+const Gl = [
   ["path", { d: "M10.88 21.94 15.46 14", key: "xkve6t" }],
   ["path", { d: "M21.17 8H12", key: "19dcdn" }],
   ["path", { d: "M3.95 6.06 8.54 14", key: "g8jz9m" }],
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["circle", { cx: "12", cy: "12", r: "4", key: "4exip2" }]
-], X3 = e("chromium", G3);
-const Y3 = [
+], Xl = e("chromium", Gl);
+const Yl = [
   ["path", { d: "M10 9h4", key: "u4k05v" }],
   ["path", { d: "M12 7v5", key: "ma6bk" }],
   ["path", { d: "M14 21v-3a2 2 0 0 0-4 0v3", key: "1rgiei" }],
@@ -8303,15 +8305,15 @@ const Y3 = [
       key: "a5i0n2"
     }
   ]
-], K3 = e("church", Y3);
-const Q3 = [
+], Kl = e("church", Yl);
+const Ql = [
   ["path", { d: "M12 12H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h13", key: "1gdiyg" }],
   ["path", { d: "M18 8c0-2.5-2-2.5-2-5", key: "1il607" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   ["path", { d: "M21 12a1 1 0 0 1 1 1v2a1 1 0 0 1-.5.866", key: "166zjj" }],
   ["path", { d: "M22 8c0-2.5-2-2.5-2-5", key: "1gah44" }],
   ["path", { d: "M7 12v4", key: "jqww69" }]
-], J3 = e("cigarette-off", Q3);
+], Jl = e("cigarette-off", Ql);
 const e8 = [
   ["path", { d: "M17 12H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h14", key: "1mb5g1" }],
   ["path", { d: "M18 8c0-2.5-2-2.5-2-5", key: "1il607" }],
@@ -8330,15 +8332,15 @@ const n8 = [
   ["path", { d: "m8 12 4 4 4-4", key: "k98ssh" }]
 ], c8 = e("circle-arrow-down", n8);
 const r8 = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m12 8-4 4 4 4", key: "15vm53" }],
-  ["path", { d: "M16 12H8", key: "1fr5h0" }]
-], h8 = e("circle-arrow-left", r8);
-const d8 = [
   ["path", { d: "M2 12a10 10 0 1 1 10 10", key: "1yn6ov" }],
   ["path", { d: "m2 22 10-10", key: "28ilpk" }],
   ["path", { d: "M8 22H2v-6", key: "sulq54" }]
-], i8 = e("circle-arrow-out-down-left", d8);
+], h8 = e("circle-arrow-out-down-left", r8);
+const d8 = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m12 8-4 4 4 4", key: "15vm53" }],
+  ["path", { d: "M16 12H8", key: "1fr5h0" }]
+], i8 = e("circle-arrow-left", d8);
 const s8 = [
   ["path", { d: "M12 22a10 10 0 1 1 10-10", key: "130bv5" }],
   ["path", { d: "M22 22 12 12", key: "131aw7" }],
@@ -8365,13 +8367,13 @@ const m8 = [
   ["path", { d: "M12 16V8", key: "1sbj14" }]
 ], g8 = e("circle-arrow-up", m8);
 const v8 = [
-  ["path", { d: "M21.801 10A10 10 0 1 1 17 3.335", key: "yps3ct" }],
-  ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
-], _8 = e("circle-check-big", v8);
-const x8 = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-], b8 = e("circle-check", x8);
+], _8 = e("circle-check", v8);
+const x8 = [
+  ["path", { d: "M21.801 10A10 10 0 1 1 17 3.335", key: "yps3ct" }],
+  ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
+], b8 = e("circle-check-big", x8);
 const w8 = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "m16 10-4 4-4-4", key: "894hmk" }]
@@ -8399,16 +8401,16 @@ const S8 = [
   ["path", { d: "M6.391 20.279a10 10 0 0 1-2.69-2.7", key: "1fvljs" }]
 ], C8 = e("circle-dashed", S8);
 const V8 = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8", key: "1h4pet" }],
-  ["path", { d: "M12 18V6", key: "zqpxq5" }]
-], R8 = e("circle-dollar-sign", V8);
-const E8 = [
   ["line", { x1: "8", x2: "16", y1: "12", y2: "12", key: "1jonct" }],
   ["line", { x1: "12", x2: "12", y1: "16", y2: "16", key: "aqc6ln" }],
   ["line", { x1: "12", x2: "12", y1: "8", y2: "8", key: "1mkcni" }],
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
-], L8 = e("circle-divide", E8);
+], R8 = e("circle-divide", V8);
+const E8 = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8", key: "1h4pet" }],
+  ["path", { d: "M12 18V6", key: "zqpxq5" }]
+], L8 = e("circle-dollar-sign", E8);
 const P8 = [
   ["path", { d: "M10.1 2.18a9.93 9.93 0 0 1 3.8 0", key: "1qdqn0" }],
   ["path", { d: "M17.6 3.71a9.95 9.95 0 0 1 2.69 2.7", key: "1bq7p6" }],
@@ -8499,11 +8501,6 @@ const s6 = [
   ["circle", { cx: "8", cy: "12", r: "2", key: "1nvbw3" }]
 ], y6 = e("circle-pile", s6);
 const p6 = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M8 12h8", key: "1wcyev" }],
-  ["path", { d: "M12 8v8", key: "napkw2" }]
-], k6 = e("circle-plus", p6);
-const l6 = [
   [
     "path",
     {
@@ -8512,7 +8509,12 @@ const l6 = [
     }
   ],
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
-], u6 = e("circle-play", l6);
+], k6 = e("circle-play", p6);
+const l6 = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M8 12h8", key: "1wcyev" }],
+  ["path", { d: "M12 8v8", key: "napkw2" }]
+], u6 = e("circle-plus", l6);
 const M6 = [
   ["path", { d: "M10 16V9.5a1 1 0 0 1 5 0", key: "1i1are" }],
   ["path", { d: "M8 12h4", key: "qz6y1c" }],
@@ -8537,7 +8539,8 @@ const w6 = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["line", { x1: "9", x2: "15", y1: "15", y2: "9", key: "1dfufj" }]
 ], N6 = e("circle-slash", w6);
-const $6 = [
+const $6 = [["circle", { cx: "12", cy: "12", r: "6", key: "1vlfrh" }]], z6 = e("circle-small", $6);
+const j6 = [
   [
     "path",
     {
@@ -8546,17 +8549,16 @@ const $6 = [
     }
   ],
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
-], z6 = e("circle-star", $6);
-const j6 = [["circle", { cx: "12", cy: "12", r: "6", key: "1vlfrh" }]], q6 = e("circle-small", j6);
+], q6 = e("circle-star", j6);
 const A6 = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["rect", { x: "9", y: "9", width: "6", height: "6", rx: "1", key: "1ssd4o" }]
-], H6 = e("circle-stop", A6);
-const S6 = [
   ["path", { d: "M18 20a6 6 0 0 0-12 0", key: "1qehca" }],
   ["circle", { cx: "12", cy: "10", r: "4", key: "1h16sb" }],
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
-], C6 = e("circle-user-round", S6);
+], H6 = e("circle-user-round", A6);
+const S6 = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["rect", { x: "9", y: "9", width: "6", height: "6", rx: "1", key: "1ssd4o" }]
+], C6 = e("circle-stop", S6);
 const V6 = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }],
@@ -8786,24 +8788,24 @@ const I7 = [
   ["path", { d: "M18 14v8", key: "irew45" }]
 ], F7 = e("clock-arrow-down", I7);
 const B7 = [
-  ["path", { d: "M12 6v6l1.56.78", key: "14ed3g" }],
-  ["path", { d: "M13.227 21.925a10 10 0 1 1 8.767-9.588", key: "jwkls1" }],
-  ["path", { d: "m14 18 4-4 4 4", key: "ftkppy" }],
-  ["path", { d: "M18 22v-8", key: "su0gjh" }]
-], U7 = e("clock-arrow-up", B7);
-const W7 = [
   ["path", { d: "M12 6v6l4 2", key: "mmk7yg" }],
   ["path", { d: "M22 12a10 10 0 1 0-11 9.95", key: "17dhok" }],
   ["path", { d: "m22 16-5.5 5.5L14 19", key: "1eibut" }]
-], Z7 = e("clock-check", W7);
-const G7 = [
+], U7 = e("clock-check", B7);
+const W7 = [
   ["path", { d: "M12 2a10 10 0 0 1 7.38 16.75", key: "175t95" }],
   ["path", { d: "M12 6v6l4 2", key: "mmk7yg" }],
   ["path", { d: "M2.5 8.875a10 10 0 0 0-.5 3", key: "1vce0s" }],
   ["path", { d: "M2.83 16a10 10 0 0 0 2.43 3.4", key: "o3fkw4" }],
   ["path", { d: "M4.636 5.235a10 10 0 0 1 .891-.857", key: "1szpfk" }],
   ["path", { d: "M8.644 21.42a10 10 0 0 0 7.631-.38", key: "9yhvd4" }]
-], X7 = e("clock-fading", G7);
+], Z7 = e("clock-fading", W7);
+const G7 = [
+  ["path", { d: "M12 6v6l1.56.78", key: "14ed3g" }],
+  ["path", { d: "M13.227 21.925a10 10 0 1 1 8.767-9.588", key: "jwkls1" }],
+  ["path", { d: "m14 18 4-4 4 4", key: "ftkppy" }],
+  ["path", { d: "M18 22v-8", key: "su0gjh" }]
+], X7 = e("clock-arrow-up", G7);
 const Y7 = [
   ["path", { d: "M12 6v6l3.644 1.822", key: "1jmett" }],
   ["path", { d: "M16 19h6", key: "xwg31i" }],
@@ -8822,7 +8824,7 @@ const eu = [
 const au = [
   ["path", { d: "M12 12v4", key: "tww15h" }],
   ["path", { d: "M12 20h.01", key: "zekei9" }],
-  ["path", { d: "M17 18h.5a1 1 0 0 0 0-9h-1.79A7 7 0 1 0 7 17.708", key: "xsb5ju" }]
+  ["path", { d: "M8.128 16.949A7 7 0 1 1 15.71 8h1.79a1 1 0 0 1 0 9h-1.642", key: "1namsd" }]
 ], ou = e("cloud-alert", au);
 const nu = [
   ["path", { d: "M21 15.251A4.5 4.5 0 0 0 17.5 8h-1.79A7 7 0 1 0 3 13.607", key: "xpoh9y" }],
@@ -8837,7 +8839,7 @@ const nu = [
 ], cu = e("cloud-backup", nu);
 const ru = [
   ["path", { d: "m17 15-5.5 5.5L9 18", key: "15q87x" }],
-  ["path", { d: "M5 17.743A7 7 0 1 1 15.71 10h1.79a4.5 4.5 0 0 1 1.5 8.742", key: "9ho6ki" }]
+  ["path", { d: "M5.516 16.07A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 3.501 7.327", key: "1xtj56" }]
 ], hu = e("cloud-check", ru);
 const du = [
   ["path", { d: "m10.852 19.772-.383.924", key: "r7sl7d" }],
@@ -8857,6 +8859,11 @@ const du = [
   ["path", { d: "m9.228 18.148-.923.383", key: "6558rz" }]
 ], iu = e("cloud-cog", du);
 const su = [
+  ["path", { d: "M12 13v8l-4-4", key: "1f5nwf" }],
+  ["path", { d: "m12 21 4-4", key: "1lfcce" }],
+  ["path", { d: "M4.393 15.269A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.436 8.284", key: "ui1hmy" }]
+], yu = e("cloud-download", su);
+const pu = [
   ["path", { d: "M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242", key: "1pljnt" }],
   ["path", { d: "M8 19v1", key: "1dk2by" }],
   ["path", { d: "M8 14v1", key: "84yxot" }],
@@ -8864,12 +8871,7 @@ const su = [
   ["path", { d: "M16 14v1", key: "g12gj6" }],
   ["path", { d: "M12 21v1", key: "q8vafk" }],
   ["path", { d: "M12 16v1", key: "1mx6rx" }]
-], yu = e("cloud-drizzle", su);
-const pu = [
-  ["path", { d: "M12 13v8l-4-4", key: "1f5nwf" }],
-  ["path", { d: "m12 21 4-4", key: "1lfcce" }],
-  ["path", { d: "M4.393 15.269A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.436 8.284", key: "ui1hmy" }]
-], ku = e("cloud-download", pu);
+], ku = e("cloud-drizzle", pu);
 const lu = [
   ["path", { d: "M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242", key: "1pljnt" }],
   ["path", { d: "M16 17H7", key: "pygtm1" }],
@@ -8973,6 +8975,10 @@ const Ou = [
   ["path", { d: "M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z", key: "p7xjir" }]
 ], Du = e("cloud", Ou);
 const Iu = [
+  ["path", { d: "M17.5 12a1 1 0 1 1 0 9H9.006a7 7 0 1 1 6.702-9z", key: "44yre2" }],
+  ["path", { d: "M21.832 9A3 3 0 0 0 19 7h-2.207a5.5 5.5 0 0 0-10.72.61", key: "leugyv" }]
+], Fu = e("cloudy", Iu);
+const Bu = [
   ["path", { d: "M16.17 7.83 2 22", key: "t58vo8" }],
   [
     "path",
@@ -8982,11 +8988,7 @@ const Iu = [
     }
   ],
   ["path", { d: "m7.83 7.83 8.34 8.34", key: "1d7sxk" }]
-], Fu = e("clover", Iu);
-const Bu = [
-  ["path", { d: "M17.5 12a1 1 0 1 1 0 9H9.006a7 7 0 1 1 6.702-9z", key: "44yre2" }],
-  ["path", { d: "M21.832 9A3 3 0 0 0 19 7h-2.207a5.5 5.5 0 0 0-10.72.61", key: "leugyv" }]
-], Uu = e("cloudy", Bu);
+], Uu = e("clover", Bu);
 const Wu = [
   [
     "path",
@@ -9252,17 +9254,17 @@ const Q9 = [
   ["path", { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2", key: "zix9uf" }]
 ], J9 = e("copy-x", Q9);
 const eM = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M9.17 14.83a4 4 0 1 0 0-5.66", key: "1sveal" }]
-], tM = e("copyleft", eM);
-const aM = [
   ["rect", { width: "14", height: "14", x: "8", y: "8", rx: "2", ry: "2", key: "17jyea" }],
   ["path", { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2", key: "zix9uf" }]
-], oM = e("copy", aM);
-const nM = [
+], tM = e("copy", eM);
+const aM = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M14.83 14.83a4 4 0 1 1 0-5.66", key: "1i56pz" }]
-], cM = e("copyright", nM);
+], oM = e("copyright", aM);
+const nM = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M9.17 14.83a4 4 0 1 0 0-5.66", key: "1sveal" }]
+], cM = e("copyleft", nM);
 const rM = [
   ["path", { d: "M20 4v7a4 4 0 0 1-4 4H4", key: "6o5b7l" }],
   ["path", { d: "m9 10-5 5 5 5", key: "1kshq7" }]
@@ -9280,21 +9282,21 @@ const pM = [
   ["path", { d: "M20 20h-7a4 4 0 0 1-4-4V4", key: "1blwi3" }]
 ], kM = e("corner-left-up", pM);
 const lM = [
-  ["path", { d: "m10 15 5 5 5-5", key: "1hpjnr" }],
-  ["path", { d: "M4 4h7a4 4 0 0 1 4 4v12", key: "wcbgct" }]
-], uM = e("corner-right-down", lM);
-const MM = [
   ["path", { d: "m10 9 5-5 5 5", key: "9ctzwi" }],
   ["path", { d: "M4 20h7a4 4 0 0 0 4-4V4", key: "1plgdj" }]
-], fM = e("corner-right-up", MM);
+], uM = e("corner-right-up", lM);
+const MM = [
+  ["path", { d: "m10 15 5 5 5-5", key: "1hpjnr" }],
+  ["path", { d: "M4 4h7a4 4 0 0 1 4 4v12", key: "wcbgct" }]
+], fM = e("corner-right-down", MM);
 const mM = [
-  ["path", { d: "M20 20v-7a4 4 0 0 0-4-4H4", key: "1nkjon" }],
-  ["path", { d: "M9 14 4 9l5-5", key: "102s5s" }]
-], gM = e("corner-up-left", mM);
-const vM = [
   ["path", { d: "m15 14 5-5-5-5", key: "12vg1m" }],
   ["path", { d: "M4 20v-7a4 4 0 0 1 4-4h12", key: "1lu4f8" }]
-], _M = e("corner-up-right", vM);
+], gM = e("corner-up-right", mM);
+const vM = [
+  ["path", { d: "M20 20v-7a4 4 0 0 0-4-4H4", key: "1nkjon" }],
+  ["path", { d: "M9 14 4 9l5-5", key: "102s5s" }]
+], _M = e("corner-up-left", vM);
 const xM = [
   ["path", { d: "M12 20v2", key: "1lh1kg" }],
   ["path", { d: "M12 2v2", key: "tus03m" }],
@@ -9353,6 +9355,13 @@ const SM = [
   ]
 ], CM = e("cross", SM);
 const VM = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "22", x2: "18", y1: "12", y2: "12", key: "l9bcsi" }],
+  ["line", { x1: "6", x2: "2", y1: "12", y2: "12", key: "13hhkx" }],
+  ["line", { x1: "12", x2: "12", y1: "6", y2: "2", key: "10w3f3" }],
+  ["line", { x1: "12", x2: "12", y1: "22", y2: "18", key: "15g9kq" }]
+], RM = e("crosshair", VM);
+const EM = [
   [
     "path",
     {
@@ -9361,14 +9370,7 @@ const VM = [
     }
   ],
   ["path", { d: "M5 21h14", key: "11awu3" }]
-], RM = e("crown", VM);
-const EM = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "22", x2: "18", y1: "12", y2: "12", key: "l9bcsi" }],
-  ["line", { x1: "6", x2: "2", y1: "12", y2: "12", key: "13hhkx" }],
-  ["line", { x1: "12", x2: "12", y1: "6", y2: "2", key: "10w3f3" }],
-  ["line", { x1: "12", x2: "12", y1: "22", y2: "18", key: "15g9kq" }]
-], LM = e("crosshair", EM);
+], LM = e("crown", EM);
 const PM = [
   [
     "path",
@@ -9427,31 +9429,39 @@ const GM = [
   ]
 ], XM = e("database-backup", GM);
 const YM = [
+  ["path", { d: "M21 11.693V5", key: "175m1t" }],
+  ["path", { d: "m22 22-1.875-1.875", key: "13zax7" }],
+  ["path", { d: "M3 12a9 3 0 0 0 8.697 2.998", key: "151u9p" }],
+  ["path", { d: "M3 5v14a9 3 0 0 0 9.28 2.999", key: "q2rs2p" }],
+  ["circle", { cx: "18", cy: "18", r: "3", key: "1xkwt0" }],
+  ["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3", key: "msslwz" }]
+], KM = e("database-search", YM);
+const QM = [
   ["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3", key: "msslwz" }],
   ["path", { d: "M3 5V19A9 3 0 0 0 15 21.84", key: "14ibmq" }],
   ["path", { d: "M21 5V8", key: "1marbg" }],
   ["path", { d: "M21 12L18 17H22L19 22", key: "zafso" }],
   ["path", { d: "M3 12A9 3 0 0 0 14.59 14.87", key: "1y4wr8" }]
-], KM = e("database-zap", YM);
-const QM = [
+], JM = e("database-zap", QM);
+const ef = [
   ["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3", key: "msslwz" }],
   ["path", { d: "M3 5V19A9 3 0 0 0 21 19V5", key: "1wlel7" }],
   ["path", { d: "M3 12A9 3 0 0 0 21 12", key: "mv7ke4" }]
-], JM = e("database", QM);
-const ef = [
+], tf = e("database", ef);
+const af = [
   ["path", { d: "m13 21-3-3 3-3", key: "s3o1nf" }],
   ["path", { d: "M20 18H10", key: "14r3mt" }],
   ["path", { d: "M3 11h.01", key: "1eifu7" }],
   ["rect", { x: "6", y: "3", width: "5", height: "8", rx: "2.5", key: "v9paqo" }]
-], tf = e("decimals-arrow-left", ef);
-const af = [
+], of = e("decimals-arrow-left", af);
+const nf = [
   ["path", { d: "M10 18h10", key: "1y5s8o" }],
   ["path", { d: "m17 21 3-3-3-3", key: "1ammt0" }],
   ["path", { d: "M3 11h.01", key: "1eifu7" }],
   ["rect", { x: "15", y: "3", width: "5", height: "8", rx: "2.5", key: "76md6a" }],
   ["rect", { x: "6", y: "3", width: "5", height: "8", rx: "2.5", key: "v9paqo" }]
-], of = e("decimals-arrow-right", af);
-const nf = [
+], cf = e("decimals-arrow-right", nf);
+const rf = [
   [
     "path",
     {
@@ -9461,8 +9471,8 @@ const nf = [
   ],
   ["path", { d: "m12 9 6 6", key: "anjzzh" }],
   ["path", { d: "m18 9-6 6", key: "1fp51s" }]
-], cf = e("delete", nf);
-const rf = [
+], hf = e("delete", rf);
+const df = [
   [
     "path",
     {
@@ -9472,15 +9482,15 @@ const rf = [
   ],
   ["path", { d: "M20.804 14.869a9 9 0 0 1-17.608 0", key: "1r28rg" }],
   ["circle", { cx: "12", cy: "4", r: "2", key: "muu5ef" }]
-], hf = e("dessert", rf);
-const df = [
+], sf = e("dessert", df);
+const yf = [
   ["circle", { cx: "19", cy: "19", r: "2", key: "17f5cg" }],
   ["circle", { cx: "5", cy: "5", r: "2", key: "1gwv83" }],
   ["path", { d: "M6.48 3.66a10 10 0 0 1 13.86 13.86", key: "xr8kdq" }],
   ["path", { d: "m6.41 6.41 11.18 11.18", key: "uhpjw7" }],
   ["path", { d: "M3.66 6.48a10 10 0 0 0 13.86 13.86", key: "cldpwv" }]
-], sf = e("diameter", df);
-const yf = [
+], pf = e("diameter", yf);
+const kf = [
   [
     "path",
     {
@@ -9489,8 +9499,8 @@ const yf = [
     }
   ],
   ["path", { d: "M8 12h8", key: "1wcyev" }]
-], pf = e("diamond-minus", yf);
-const kf = [
+], lf = e("diamond-minus", kf);
+const uf = [
   [
     "path",
     {
@@ -9501,8 +9511,8 @@ const kf = [
   ["path", { d: "M9.2 9.2h.01", key: "1b7bvt" }],
   ["path", { d: "m14.5 9.5-5 5", key: "17q4r4" }],
   ["path", { d: "M14.7 14.8h.01", key: "17nsh4" }]
-], lf = e("diamond-percent", kf);
-const uf = [
+], Mf = e("diamond-percent", uf);
+const ff = [
   ["path", { d: "M12 8v8", key: "napkw2" }],
   [
     "path",
@@ -9512,8 +9522,8 @@ const uf = [
     }
   ],
   ["path", { d: "M8 12h8", key: "1wcyev" }]
-], Mf = e("diamond-plus", uf);
-const ff = [
+], mf = e("diamond-plus", ff);
+const gf = [
   [
     "path",
     {
@@ -9521,16 +9531,11 @@ const ff = [
       key: "1f1r0c"
     }
   ]
-], mf = e("diamond", ff);
-const gf = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
-  ["path", { d: "M12 12h.01", key: "1mp3jc" }]
-], vf = e("dice-1", gf);
+], vf = e("diamond", gf);
 const _f = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
-  ["path", { d: "M15 9h.01", key: "x1ddxp" }],
-  ["path", { d: "M9 15h.01", key: "fzyn71" }]
-], xf = e("dice-2", _f);
+  ["path", { d: "M12 12h.01", key: "1mp3jc" }]
+], xf = e("dice-1", _f);
 const bf = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
   ["path", { d: "M16 8h.01", key: "cr5u4v" }],
@@ -9539,20 +9544,25 @@ const bf = [
 ], wf = e("dice-3", bf);
 const Nf = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
+  ["path", { d: "M15 9h.01", key: "x1ddxp" }],
+  ["path", { d: "M9 15h.01", key: "fzyn71" }]
+], $f = e("dice-2", Nf);
+const zf = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
   ["path", { d: "M16 8h.01", key: "cr5u4v" }],
   ["path", { d: "M8 8h.01", key: "1e4136" }],
   ["path", { d: "M8 16h.01", key: "18s6g9" }],
   ["path", { d: "M16 16h.01", key: "1f9h7w" }]
-], $f = e("dice-4", Nf);
-const zf = [
+], jf = e("dice-4", zf);
+const qf = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
   ["path", { d: "M16 8h.01", key: "cr5u4v" }],
   ["path", { d: "M8 8h.01", key: "1e4136" }],
   ["path", { d: "M8 16h.01", key: "18s6g9" }],
   ["path", { d: "M16 16h.01", key: "1f9h7w" }],
   ["path", { d: "M12 12h.01", key: "1mp3jc" }]
-], jf = e("dice-5", zf);
-const qf = [
+], Af = e("dice-5", qf);
+const Hf = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
   ["path", { d: "M16 8h.01", key: "cr5u4v" }],
   ["path", { d: "M16 12h.01", key: "1l6xoz" }],
@@ -9560,8 +9570,8 @@ const qf = [
   ["path", { d: "M8 8h.01", key: "1e4136" }],
   ["path", { d: "M8 12h.01", key: "czm47f" }],
   ["path", { d: "M8 16h.01", key: "18s6g9" }]
-], Af = e("dice-6", qf);
-const Hf = [
+], Sf = e("dice-6", Hf);
+const Cf = [
   ["rect", { width: "12", height: "12", x: "2", y: "10", rx: "2", ry: "2", key: "6agr2n" }],
   [
     "path",
@@ -9571,23 +9581,17 @@ const Hf = [
   ["path", { d: "M10 14h.01", key: "ssrbsk" }],
   ["path", { d: "M15 6h.01", key: "cblpky" }],
   ["path", { d: "M18 9h.01", key: "2061c0" }]
-], Sf = e("dices", Hf);
-const Cf = [
+], Vf = e("dices", Cf);
+const Rf = [
   ["path", { d: "M12 3v14", key: "7cf3v8" }],
   ["path", { d: "M5 10h14", key: "elsbfy" }],
   ["path", { d: "M5 21h14", key: "11awu3" }]
-], Vf = e("diff", Cf);
-const Rf = [
+], Ef = e("diff", Rf);
+const Lf = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["circle", { cx: "12", cy: "12", r: "4", key: "4exip2" }],
   ["path", { d: "M12 12h.01", key: "1mp3jc" }]
-], Ef = e("disc-2", Rf);
-const Lf = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M6 12c0-1.7.7-3.2 1.8-4.2", key: "oqkarx" }],
-  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
-  ["path", { d: "M18 12c0 1.7-.7 3.2-1.8 4.2", key: "1eah9h" }]
-], Pf = e("disc-3", Lf);
+], Pf = e("disc-2", Lf);
 const Tf = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["circle", { cx: "12", cy: "12", r: "5", key: "nd82uf" }],
@@ -9595,14 +9599,20 @@ const Tf = [
 ], Of = e("disc-album", Tf);
 const Df = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }]
-], If = e("disc", Df);
+  ["path", { d: "M6 12c0-1.7.7-3.2 1.8-4.2", key: "oqkarx" }],
+  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
+  ["path", { d: "M18 12c0 1.7-.7 3.2-1.8 4.2", key: "1eah9h" }]
+], If = e("disc-3", Df);
 const Ff = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }]
+], Bf = e("disc", Ff);
+const Uf = [
   ["circle", { cx: "12", cy: "6", r: "1", key: "1bh7o1" }],
   ["line", { x1: "5", x2: "19", y1: "12", y2: "12", key: "13b5wn" }],
   ["circle", { cx: "12", cy: "18", r: "1", key: "lqb9t5" }]
-], Bf = e("divide", Ff);
-const Uf = [
+], Wf = e("divide", Uf);
+const Zf = [
   ["path", { d: "M15 2c-1.35 1.5-2.092 3-2.5 4.5L14 8", key: "1bivrr" }],
   ["path", { d: "m17 6-2.891-2.891", key: "xu6p2f" }],
   ["path", { d: "M2 15c3.333-3 6.667-3 10-3", key: "nxix30" }],
@@ -9613,8 +9623,8 @@ const Uf = [
   ["path", { d: "m6.5 12.5 1 1", key: "cs35ky" }],
   ["path", { d: "m7 18 2.891 2.891", key: "1sisit" }],
   ["path", { d: "M9 22c1.35-1.5 2.092-3 2.5-4.5L10 16", key: "rlvei3" }]
-], Wf = e("dna-off", Uf);
-const Zf = [
+], Gf = e("dna-off", Zf);
+const Xf = [
   ["path", { d: "m10 16 1.5 1.5", key: "11lckj" }],
   ["path", { d: "m14 8-1.5-1.5", key: "1ohn8i" }],
   ["path", { d: "M15 2c-1.798 1.998-2.518 3.995-2.807 5.993", key: "80uv8i" }],
@@ -9626,13 +9636,13 @@ const Zf = [
   ["path", { d: "m6.5 12.5 1 1", key: "cs35ky" }],
   ["path", { d: "m7 18 2.891 2.891", key: "1sisit" }],
   ["path", { d: "M9 22c1.798-1.998 2.518-3.995 2.807-5.993", key: "q3hbxp" }]
-], Gf = e("dna", Zf);
-const Xf = [
+], Yf = e("dna", Xf);
+const Kf = [
   ["path", { d: "M2 8h20", key: "d11cs7" }],
   ["rect", { width: "20", height: "16", x: "2", y: "4", rx: "2", key: "18n3k1" }],
   ["path", { d: "M6 16h12", key: "u522kt" }]
-], Yf = e("dock", Xf);
-const Kf = [
+], Qf = e("dock", Kf);
+const Jf = [
   ["path", { d: "M11.25 16.25h1.5L12 17z", key: "w7jh35" }],
   ["path", { d: "M16 14v.5", key: "1lajdz" }],
   [
@@ -9650,12 +9660,12 @@ const Kf = [
       key: "v8hric"
     }
   ]
-], Qf = e("dog", Kf);
-const Jf = [
+], em = e("dog", Jf);
+const tm = [
   ["line", { x1: "12", x2: "12", y1: "2", y2: "22", key: "7eqyqh" }],
   ["path", { d: "M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6", key: "1b0p4s" }]
-], em = e("dollar-sign", Jf);
-const tm = [
+], am = e("dollar-sign", tm);
+const om = [
   [
     "path",
     {
@@ -9664,20 +9674,20 @@ const tm = [
     }
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
-], am = e("donut", tm);
-const om = [
+], nm = e("donut", om);
+const cm = [
   ["path", { d: "M10 12h.01", key: "1kxr2c" }],
   ["path", { d: "M18 9V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14", key: "1bnhmg" }],
   ["path", { d: "M2 20h8", key: "10ntw1" }],
   ["path", { d: "M20 17v-2a2 2 0 1 0-4 0v2", key: "pwaxnr" }],
   ["rect", { x: "14", y: "17", width: "8", height: "5", rx: "1", key: "15pjcy" }]
-], nm = e("door-closed-locked", om);
-const cm = [
+], rm = e("door-closed-locked", cm);
+const hm = [
   ["path", { d: "M10 12h.01", key: "1kxr2c" }],
   ["path", { d: "M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14", key: "36qu9e" }],
   ["path", { d: "M2 20h20", key: "owomy5" }]
-], rm = e("door-closed", cm);
-const hm = [
+], dm = e("door-closed", hm);
+const im = [
   ["path", { d: "M11 20H2", key: "nlcfvz" }],
   [
     "path",
@@ -9689,21 +9699,21 @@ const hm = [
   ["path", { d: "M11 4H8a2 2 0 0 0-2 2v14", key: "74r1mk" }],
   ["path", { d: "M14 12h.01", key: "1jfl7z" }],
   ["path", { d: "M22 20h-3", key: "vhrsz" }]
-], dm = e("door-open", hm);
-const im = [["circle", { cx: "12.1", cy: "12.1", r: "1", key: "18d7e5" }]], sm = e("dot", im);
-const ym = [
+], sm = e("door-open", im);
+const ym = [["circle", { cx: "12.1", cy: "12.1", r: "1", key: "18d7e5" }]], pm = e("dot", ym);
+const km = [
   ["path", { d: "M12 15V3", key: "m9g1x1" }],
   ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
   ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
-], pm = e("download", ym);
-const km = [
+], lm = e("download", km);
+const um = [
   ["path", { d: "m12.99 6.74 1.93 3.44", key: "iwagvd" }],
   ["path", { d: "M19.136 12a10 10 0 0 1-14.271 0", key: "ppmlo4" }],
   ["path", { d: "m21 21-2.16-3.84", key: "vylbct" }],
   ["path", { d: "m3 21 8.02-14.26", key: "1ssaw4" }],
   ["circle", { cx: "12", cy: "5", r: "2", key: "f1ur92" }]
-], lm = e("drafting-compass", km);
-const um = [
+], Mm = e("drafting-compass", um);
+const fm = [
   ["path", { d: "M10 11h.01", key: "d2at3l" }],
   ["path", { d: "M14 6h.01", key: "k028ub" }],
   ["path", { d: "M18 6h.01", key: "1v4wsw" }],
@@ -9718,8 +9728,14 @@ const um = [
     }
   ],
   ["path", { d: "M9.1 16.5c.3-1.1 1.4-1.7 2.4-1.4", key: "1mr6wy" }]
-], Mm = e("drama", um);
-const fm = [
+], mm = e("drama", fm);
+const gm = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94", key: "hpej1" }],
+  ["path", { d: "M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32", key: "1tr44o" }],
+  ["path", { d: "M8.56 2.75c4.37 6 6 9.42 8 17.72", key: "kbh691" }]
+], vm = e("dribbble", gm);
+const _m = [
   [
     "path",
     { d: "M10 18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H5a3 3 0 0 1-3-3 1 1 0 0 1 1-1z", key: "ioqxb1" }
@@ -9735,14 +9751,8 @@ const fm = [
   ["path", { d: "M18 6h4", key: "66u95g" }],
   ["path", { d: "m5 10-2 8", key: "xt2lic" }],
   ["path", { d: "m7 18 2-8", key: "1bzku2" }]
-], mm = e("drill", fm);
-const gm = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94", key: "hpej1" }],
-  ["path", { d: "M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32", key: "1tr44o" }],
-  ["path", { d: "M8.56 2.75c4.37 6 6 9.42 8 17.72", key: "kbh691" }]
-], vm = e("dribbble", gm);
-const _m = [
+], xm = e("drill", _m);
+const bm = [
   ["path", { d: "M10 10 7 7", key: "zp14k7" }],
   ["path", { d: "m10 14-3 3", key: "1jrpxk" }],
   ["path", { d: "m14 10 3-3", key: "7tigam" }],
@@ -9752,8 +9762,8 @@ const _m = [
   ["path", { d: "M4.367 10a4 4 0 1 1 5.438-5.862", key: "1wta6a" }],
   ["path", { d: "M9.795 19.862a4 4 0 1 1-5.429-5.873", key: "q39hpv" }],
   ["rect", { x: "10", y: "8", width: "4", height: "8", rx: "1", key: "phrjt1" }]
-], xm = e("drone", _m);
-const bm = [
+], wm = e("drone", bm);
+const Nm = [
   [
     "path",
     {
@@ -9766,8 +9776,8 @@ const bm = [
     "path",
     { d: "M8.795 8.797A11 11 0 0 1 8 9.5C6 11.1 5 13 5 15a7 7 0 0 0 13.222 3.208", key: "19dw9m" }
   ]
-], wm = e("droplet-off", bm);
-const Nm = [
+], $m = e("droplet-off", Nm);
+const zm = [
   [
     "path",
     {
@@ -9775,8 +9785,8 @@ const Nm = [
       key: "c7niix"
     }
   ]
-], $m = e("droplet", Nm);
-const zm = [
+], jm = e("droplet", zm);
+const qm = [
   [
     "path",
     {
@@ -9791,8 +9801,8 @@ const zm = [
       key: "1sl1rz"
     }
   ]
-], jm = e("droplets", zm);
-const qm = [
+], Am = e("droplets", qm);
+const Hm = [
   ["path", { d: "m2 2 8 8", key: "1v6059" }],
   ["path", { d: "m22 2-8 8", key: "173r8a" }],
   ["ellipse", { cx: "12", cy: "9", rx: "10", ry: "5", key: "liohsx" }],
@@ -9800,8 +9810,8 @@ const qm = [
   ["path", { d: "M12 14v8", key: "1tn2tj" }],
   ["path", { d: "M17 13.4v7.9", key: "eqz2v3" }],
   ["path", { d: "M2 9v8a10 5 0 0 0 20 0V9", key: "1750ul" }]
-], Am = e("drum", qm);
-const Hm = [
+], Sm = e("drum", Hm);
+const Cm = [
   [
     "path",
     { d: "M15.4 15.63a7.875 6 135 1 1 6.23-6.23 4.5 3.43 135 0 0-6.23 6.23", key: "1dtqwm" }
@@ -9813,8 +9823,8 @@ const Hm = [
       key: "1oq1fw"
     }
   ]
-], Sm = e("drumstick", Hm);
-const Cm = [
+], Vm = e("drumstick", Cm);
+const Rm = [
   [
     "path",
     {
@@ -9832,26 +9842,18 @@ const Cm = [
     }
   ],
   ["path", { d: "m9.6 14.4 4.8-4.8", key: "6umqxw" }]
-], Vm = e("dumbbell", Cm);
-const Rm = [
+], Em = e("dumbbell", Rm);
+const Lm = [
   ["path", { d: "M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0", key: "1dfaln" }],
   ["path", { d: "M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4", key: "1qnva7" }]
-], Em = e("ear", Rm);
-const Lm = [
+], Pm = e("ear", Lm);
+const Tm = [
   ["path", { d: "M6 18.5a3.5 3.5 0 1 0 7 0c0-1.57.92-2.52 2.04-3.46", key: "1qngmn" }],
   ["path", { d: "M6 8.5c0-.75.13-1.47.36-2.14", key: "b06bma" }],
   ["path", { d: "M8.8 3.15A6.5 6.5 0 0 1 19 8.5c0 1.63-.44 2.81-1.09 3.76", key: "g10hsz" }],
   ["path", { d: "M12.5 6A2.5 2.5 0 0 1 15 8.5M10 13a2 2 0 0 0 1.82-1.18", key: "ygzou7" }],
   ["line", { x1: "2", x2: "22", y1: "2", y2: "22", key: "a6p6uj" }]
-], Pm = e("ear-off", Lm);
-const Tm = [
-  ["path", { d: "M7 3.34V5a3 3 0 0 0 3 3", key: "w732o8" }],
-  ["path", { d: "M11 21.95V18a2 2 0 0 0-2-2 2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05", key: "f02343" }],
-  ["path", { d: "M21.54 15H17a2 2 0 0 0-2 2v4.54", key: "1djwo0" }],
-  ["path", { d: "M12 2a10 10 0 1 0 9.54 13", key: "zjsr6q" }],
-  ["path", { d: "M20 6V4a2 2 0 1 0-4 0v2", key: "1of5e8" }],
-  ["rect", { width: "8", height: "5", x: "14", y: "6", rx: "1", key: "1fmf51" }]
-], Om = e("earth-lock", Tm);
+], Om = e("ear-off", Tm);
 const Dm = [
   ["path", { d: "M21.54 15H17a2 2 0 0 0-2 2v4.54", key: "1djwo0" }],
   [
@@ -9865,10 +9867,18 @@ const Dm = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
 ], Im = e("earth", Dm);
 const Fm = [
+  ["path", { d: "M7 3.34V5a3 3 0 0 0 3 3", key: "w732o8" }],
+  ["path", { d: "M11 21.95V18a2 2 0 0 0-2-2 2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05", key: "f02343" }],
+  ["path", { d: "M21.54 15H17a2 2 0 0 0-2 2v4.54", key: "1djwo0" }],
+  ["path", { d: "M12 2a10 10 0 1 0 9.54 13", key: "zjsr6q" }],
+  ["path", { d: "M20 6V4a2 2 0 1 0-4 0v2", key: "1of5e8" }],
+  ["rect", { width: "8", height: "5", x: "14", y: "6", rx: "1", key: "1fmf51" }]
+], Bm = e("earth-lock", Fm);
+const Um = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M12 2a7 7 0 1 0 10 10", key: "1yuj32" }]
-], Bm = e("eclipse", Fm);
-const Um = [
+], Wm = e("eclipse", Um);
+const Zm = [
   ["circle", { cx: "11.5", cy: "12.5", r: "3.5", key: "1cl1mi" }],
   [
     "path",
@@ -9877,39 +9887,39 @@ const Um = [
       key: "165ef9"
     }
   ]
-], Wm = e("egg-fried", Um);
-const Zm = [
+], Gm = e("egg-fried", Zm);
+const Xm = [
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   ["path", { d: "M20 14.347V14c0-6-4-12-8-12-1.078 0-2.157.436-3.157 1.19", key: "13g2jy" }],
   ["path", { d: "M6.206 6.21C4.871 8.4 4 11.2 4 14a8 8 0 0 0 14.568 4.568", key: "1581id" }]
-], Gm = e("egg-off", Zm);
-const Xm = [
-  ["path", { d: "M12 2C8 2 4 8 4 14a8 8 0 0 0 16 0c0-6-4-12-8-12", key: "1le142" }]
-], Ym = e("egg", Xm);
+], Ym = e("egg-off", Xm);
 const Km = [
   ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }],
   ["circle", { cx: "12", cy: "5", r: "1", key: "gxeob9" }],
   ["circle", { cx: "12", cy: "19", r: "1", key: "lyex9k" }]
 ], Qm = e("ellipsis-vertical", Km);
 const Jm = [
+  ["path", { d: "M12 2C8 2 4 8 4 14a8 8 0 0 0 16 0c0-6-4-12-8-12", key: "1le142" }]
+], eg = e("egg", Jm);
+const tg = [
   ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }],
   ["circle", { cx: "19", cy: "12", r: "1", key: "1wjl8i" }],
   ["circle", { cx: "5", cy: "12", r: "1", key: "1pcz8c" }]
-], eg = e("ellipsis", Jm);
-const tg = [
+], ag = e("ellipsis", tg);
+const og = [
   ["path", { d: "M5 15a6.5 6.5 0 0 1 7 0 6.5 6.5 0 0 0 7 0", key: "yrdkhy" }],
   ["path", { d: "M5 9a6.5 6.5 0 0 1 7 0 6.5 6.5 0 0 0 7 0", key: "gzkvyz" }]
-], ag = e("equal-approximately", tg);
-const og = [
+], ng = e("equal-approximately", og);
+const cg = [
   ["line", { x1: "5", x2: "19", y1: "9", y2: "9", key: "1nwqeh" }],
   ["line", { x1: "5", x2: "19", y1: "15", y2: "15", key: "g8yjpy" }],
   ["line", { x1: "19", x2: "5", y1: "5", y2: "19", key: "1x9vlm" }]
-], ng = e("equal-not", og);
-const cg = [
+], rg = e("equal-not", cg);
+const hg = [
   ["line", { x1: "5", x2: "19", y1: "9", y2: "9", key: "1nwqeh" }],
   ["line", { x1: "5", x2: "19", y1: "15", y2: "15", key: "g8yjpy" }]
-], rg = e("equal", cg);
-const hg = [
+], dg = e("equal", hg);
+const ig = [
   [
     "path",
     {
@@ -9918,8 +9928,8 @@ const hg = [
     }
   ],
   ["path", { d: "m5.082 11.09 8.828 8.828", key: "1wx5vj" }]
-], dg = e("eraser", hg);
-const ig = [
+], sg = e("eraser", ig);
+const yg = [
   [
     "path",
     {
@@ -9931,8 +9941,8 @@ const ig = [
   ["path", { d: "M10 8v1", key: "1talb4" }],
   ["path", { d: "M14 8v1", key: "1rsfgr" }],
   ["path", { d: "M18 8v1", key: "gnkwox" }]
-], sg = e("ethernet-port", ig);
-const yg = [
+], pg = e("ethernet-port", yg);
+const kg = [
   ["path", { d: "M4 10h12", key: "1y6xl8" }],
   ["path", { d: "M4 14h9", key: "1loblj" }],
   [
@@ -9942,8 +9952,8 @@ const yg = [
       key: "1j6lzo"
     }
   ]
-], pg = e("euro", yg);
-const kg = [
+], lg = e("euro", kg);
+const ug = [
   [
     "path",
     { d: "M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0v-6.998a2 2 0 0 0-.59-1.42L18 5", key: "1wtuz0" }
@@ -9952,8 +9962,13 @@ const kg = [
   ["path", { d: "M2 21h13", key: "1x0fut" }],
   ["path", { d: "M3 7h11", key: "19efrr" }],
   ["path", { d: "m9 11-2 3h3l-2 3", key: "lmzxi1" }]
-], lg = e("ev-charger", kg);
-const ug = [
+], Mg = e("ev-charger", ug);
+const fg = [
+  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
+  ["path", { d: "M10 14 21 3", key: "gplh6r" }],
+  ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
+], mg = e("external-link", fg);
+const gg = [
   ["path", { d: "m15 15 6 6", key: "1s409w" }],
   ["path", { d: "m15 9 6-6", key: "ko1vev" }],
   ["path", { d: "M21 16v5h-5", key: "1ck2sf" }],
@@ -9962,20 +9977,15 @@ const ug = [
   ["path", { d: "m3 21 6-6", key: "wwnumi" }],
   ["path", { d: "M3 8V3h5", key: "1ln10m" }],
   ["path", { d: "M9 9 3 3", key: "v551iv" }]
-], Mg = e("expand", ug);
-const fg = [
-  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
-  ["path", { d: "M10 14 21 3", key: "gplh6r" }],
-  ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
-], mg = e("external-link", fg);
-const gg = [
+], vg = e("expand", gg);
+const _g = [
   ["path", { d: "m15 18-.722-3.25", key: "1j64jw" }],
   ["path", { d: "M2 8a10.645 10.645 0 0 0 20 0", key: "1e7gxb" }],
   ["path", { d: "m20 15-1.726-2.05", key: "1cnuld" }],
   ["path", { d: "m4 15 1.726-2.05", key: "1dsqqd" }],
   ["path", { d: "m9 18 .722-3.25", key: "ypw2yx" }]
-], vg = e("eye-closed", gg);
-const _g = [
+], xg = e("eye-closed", _g);
+const bg = [
   [
     "path",
     {
@@ -9992,8 +10002,8 @@ const _g = [
     }
   ],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
-], xg = e("eye-off", _g);
-const bg = [
+], wg = e("eye-off", bg);
+const Ng = [
   [
     "path",
     {
@@ -10002,14 +10012,14 @@ const bg = [
     }
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
-], wg = e("eye", bg);
-const Ng = [
+], $g = e("eye", Ng);
+const zg = [
   [
     "path",
     { d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z", key: "1jg4f8" }
   ]
-], $g = e("facebook", Ng);
-const zg = [
+], jg = e("facebook", zg);
+const qg = [
   ["path", { d: "M12 16h.01", key: "1drbdi" }],
   ["path", { d: "M16 16h.01", key: "1f9h7w" }],
   [
@@ -10020,17 +10030,7 @@ const zg = [
     }
   ],
   ["path", { d: "M8 16h.01", key: "18s6g9" }]
-], jg = e("factory", zg);
-const qg = [
-  [
-    "path",
-    {
-      d: "M10.827 16.379a6.082 6.082 0 0 1-8.618-7.002l5.412 1.45a6.082 6.082 0 0 1 7.002-8.618l-1.45 5.412a6.082 6.082 0 0 1 8.618 7.002l-5.412-1.45a6.082 6.082 0 0 1-7.002 8.618l1.45-5.412Z",
-      key: "484a7f"
-    }
-  ],
-  ["path", { d: "M12 12v.01", key: "u5ubse" }]
-], Ag = e("fan", qg);
+], Ag = e("factory", qg);
 const Hg = [
   [
     "path",
@@ -10045,14 +10045,24 @@ const Cg = [
   [
     "path",
     {
+      d: "M10.827 16.379a6.082 6.082 0 0 1-8.618-7.002l5.412 1.45a6.082 6.082 0 0 1 7.002-8.618l-1.45 5.412a6.082 6.082 0 0 1 8.618 7.002l-5.412-1.45a6.082 6.082 0 0 1-7.002 8.618l1.45-5.412Z",
+      key: "484a7f"
+    }
+  ],
+  ["path", { d: "M12 12v.01", key: "u5ubse" }]
+], Vg = e("fan", Cg);
+const Rg = [
+  [
+    "path",
+    {
       d: "M12.67 19a2 2 0 0 0 1.416-.588l6.154-6.172a6 6 0 0 0-8.49-8.49L5.586 9.914A2 2 0 0 0 5 11.328V18a1 1 0 0 0 1 1z",
       key: "18jl4k"
     }
   ],
   ["path", { d: "M16 8 2 22", key: "vp34q" }],
   ["path", { d: "M17.5 15H9", key: "1oz8nu" }]
-], Vg = e("feather", Cg);
-const Rg = [
+], Eg = e("feather", Rg);
+const Lg = [
   ["path", { d: "M4 3 2 5v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z", key: "1n2rgs" }],
   ["path", { d: "M6 8h4", key: "utf9t1" }],
   ["path", { d: "M6 18h4", key: "12yh4b" }],
@@ -10060,8 +10070,8 @@ const Rg = [
   ["path", { d: "M14 8h4", key: "1r8wg2" }],
   ["path", { d: "M14 18h4", key: "1t3kbu" }],
   ["path", { d: "m20 3-2 2v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z", key: "dfd4e2" }]
-], Eg = e("fence", Rg);
-const Lg = [
+], Pg = e("fence", Lg);
+const Tg = [
   ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
   ["path", { d: "M12 2v4", key: "3427ic" }],
   ["path", { d: "m6.8 15-3.5 2", key: "hjy98k" }],
@@ -10071,15 +10081,15 @@ const Lg = [
   ["path", { d: "m9 22 3-8 3 8", key: "wees03" }],
   ["path", { d: "M8 22h8", key: "rmew8v" }],
   ["path", { d: "M18 18.7a9 9 0 1 0-12 0", key: "dhzg4g" }]
-], Pg = e("ferris-wheel", Lg);
-const Tg = [
+], Og = e("ferris-wheel", Tg);
+const Dg = [
   ["path", { d: "M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z", key: "1340ok" }],
   ["path", { d: "M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z", key: "1hz3m3" }],
   ["path", { d: "M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z", key: "1oz8n2" }],
   ["path", { d: "M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z", key: "1ff65i" }],
   ["path", { d: "M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z", key: "pdip6e" }]
-], Og = e("figma", Tg);
-const Dg = [
+], Ig = e("figma", Dg);
+const Fg = [
   [
     "path",
     {
@@ -10092,8 +10102,8 @@ const Dg = [
   ["path", { d: "M8 18v-2", key: "qcmpov" }],
   ["path", { d: "M8 7V6", key: "1nbb54" }],
   ["circle", { cx: "8", cy: "20", r: "2", key: "ckkr5m" }]
-], Ig = e("file-archive", Dg);
-const Fg = [
+], Bg = e("file-archive", Fg);
+const Ug = [
   [
     "path",
     {
@@ -10104,8 +10114,8 @@ const Fg = [
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "m8 18 4-4", key: "12zab0" }],
   ["path", { d: "M8 10v8h8", key: "tlaukw" }]
-], Bg = e("file-axis-3d", Fg);
-const Ug = [
+], Wg = e("file-axis-3d", Ug);
+const Zg = [
   [
     "path",
     {
@@ -10122,8 +10132,8 @@ const Ug = [
     }
   ],
   ["circle", { cx: "6", cy: "14", r: "3", key: "a1xfv6" }]
-], Wg = e("file-badge", Ug);
-const Zg = [
+], Gg = e("file-badge", Zg);
+const Xg = [
   [
     "path",
     {
@@ -10141,8 +10151,8 @@ const Zg = [
     }
   ],
   ["path", { d: "M7 17v5", key: "1yj1jh" }]
-], Gg = e("file-box", Zg);
-const Xg = [
+], Yg = e("file-box", Xg);
+const Kg = [
   [
     "path",
     {
@@ -10159,8 +10169,8 @@ const Xg = [
     "path",
     { d: "M9 22a1 1 0 0 0 1-1v-2a1 1 0 0 1 1-1 1 1 0 0 1-1-1v-2a1 1 0 0 0-1-1", key: "w793db" }
   ]
-], Yg = e("file-braces-corner", Xg);
-const Kg = [
+], Qg = e("file-braces-corner", Kg);
+const Jg = [
   [
     "path",
     {
@@ -10177,20 +10187,7 @@ const Kg = [
     "path",
     { d: "M14 18a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1 1 1 0 0 1-1-1v-1a1 1 0 0 0-1-1", key: "mpwhp6" }
   ]
-], Qg = e("file-braces", Kg);
-const Jg = [
-  [
-    "path",
-    {
-      d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
-      key: "1oefj6"
-    }
-  ],
-  ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
-  ["path", { d: "M8 18v-1", key: "zg0ygc" }],
-  ["path", { d: "M12 18v-6", key: "17g6i2" }],
-  ["path", { d: "M16 18v-3", key: "j5jt4h" }]
-], ev = e("file-chart-column", Jg);
+], ev = e("file-braces", Jg);
 const tv = [
   [
     "path",
@@ -10213,9 +10210,22 @@ const ov = [
     }
   ],
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
-  ["path", { d: "m16 13-3.5 3.5-2-2L8 17", key: "zz7yod" }]
-], nv = e("file-chart-line", ov);
+  ["path", { d: "M8 18v-1", key: "zg0ygc" }],
+  ["path", { d: "M12 18v-6", key: "17g6i2" }],
+  ["path", { d: "M16 18v-3", key: "j5jt4h" }]
+], nv = e("file-chart-column", ov);
 const cv = [
+  [
+    "path",
+    {
+      d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
+      key: "1oefj6"
+    }
+  ],
+  ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
+  ["path", { d: "m16 13-3.5 3.5-2-2L8 17", key: "zz7yod" }]
+], rv = e("file-chart-line", cv);
+const hv = [
   [
     "path",
     {
@@ -10232,8 +10242,8 @@ const cv = [
       key: "1dl6s6"
     }
   ]
-], rv = e("file-chart-pie", cv);
-const hv = [
+], dv = e("file-chart-pie", hv);
+const iv = [
   [
     "path",
     {
@@ -10243,8 +10253,8 @@ const hv = [
   ],
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "m14 20 2 2 4-4", key: "15kota" }]
-], dv = e("file-check-corner", hv);
-const iv = [
+], sv = e("file-check-corner", iv);
+const yv = [
   [
     "path",
     {
@@ -10254,19 +10264,7 @@ const iv = [
   ],
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "m9 15 2 2 4-4", key: "1grp1n" }]
-], sv = e("file-check", iv);
-const yv = [
-  [
-    "path",
-    {
-      d: "M16 22h2a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v2.85",
-      key: "ryk6xj"
-    }
-  ],
-  ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
-  ["path", { d: "M8 14v2.2l1.6 1", key: "6m4bie" }],
-  ["circle", { cx: "8", cy: "16", r: "6", key: "10v15b" }]
-], pv = e("file-clock", yv);
+], pv = e("file-check", yv);
 const kv = [
   [
     "path",
@@ -10295,12 +10293,25 @@ const fv = [
   [
     "path",
     {
-      d: "M13.85 22H18a2 2 0 0 0 2-2V8a2 2 0 0 0-.586-1.414l-4-4A2 2 0 0 0 14 2H6a2 2 0 0 0-2 2v6.6",
-      key: "1l4p50"
+      d: "M16 22h2a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v2.85",
+      key: "ryk6xj"
     }
   ],
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
+  ["path", { d: "M8 14v2.2l1.6 1", key: "6m4bie" }],
+  ["circle", { cx: "8", cy: "16", r: "6", key: "10v15b" }]
+], mv = e("file-clock", fv);
+const gv = [
+  [
+    "path",
+    {
+      d: "M15 8a1 1 0 0 1-1-1V2a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8z",
+      key: "1ckgky"
+    }
+  ],
+  ["path", { d: "M20 8v12a2 2 0 0 1-2 2h-4.182", key: "1726p0" }],
   ["path", { d: "m3.305 19.53.923-.382", key: "ao1pio" }],
+  ["path", { d: "M4 10.592V4a2 2 0 0 1 2-2h8", key: "1foop0" }],
   ["path", { d: "m4.228 16.852-.924-.383", key: "1fv9zy" }],
   ["path", { d: "m5.852 15.228-.383-.923", key: "1a9hc2" }],
   ["path", { d: "m5.852 20.772-.383.924", key: "1sh9ke" }],
@@ -10309,8 +10320,20 @@ const fv = [
   ["path", { d: "m9.773 16.852.922-.383", key: "ti6xop" }],
   ["path", { d: "m9.773 19.148.922.383", key: "rws47d" }],
   ["circle", { cx: "7", cy: "18", r: "3", key: "lvkj7j" }]
-], mv = e("file-cog", fv);
-const gv = [
+], vv = e("file-cog", gv);
+const _v = [
+  [
+    "path",
+    {
+      d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
+      key: "1oefj6"
+    }
+  ],
+  ["path", { d: "M9 10h6", key: "9gxzsh" }],
+  ["path", { d: "M12 13V7", key: "h0r20n" }],
+  ["path", { d: "M9 17h6", key: "r8uit2" }]
+], xv = e("file-diff", _v);
+const bv = [
   [
     "path",
     {
@@ -10322,8 +10345,8 @@ const gv = [
   ["path", { d: "M10 16h2v6", key: "1bxocy" }],
   ["path", { d: "M10 22h4", key: "ceow96" }],
   ["rect", { x: "2", y: "16", width: "4", height: "6", rx: "2", key: "r45zd0" }]
-], vv = e("file-digit", gv);
-const _v = [
+], wv = e("file-digit", bv);
+const Nv = [
   [
     "path",
     {
@@ -10334,20 +10357,8 @@ const _v = [
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "M12 18v-6", key: "17g6i2" }],
   ["path", { d: "m9 15 3 3 3-3", key: "1npd3o" }]
-], xv = e("file-down", _v);
-const bv = [
-  [
-    "path",
-    {
-      d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
-      key: "1oefj6"
-    }
-  ],
-  ["path", { d: "M9 10h6", key: "9gxzsh" }],
-  ["path", { d: "M12 13V7", key: "h0r20n" }],
-  ["path", { d: "M9 17h6", key: "r8uit2" }]
-], wv = e("file-diff", bv);
-const Nv = [
+], $v = e("file-down", Nv);
+const zv = [
   [
     "path",
     {
@@ -10357,8 +10368,8 @@ const Nv = [
   ],
   ["path", { d: "M12 9v4", key: "juzpu7" }],
   ["path", { d: "M12 17h.01", key: "p32p05" }]
-], $v = e("file-exclamation-point", Nv);
-const zv = [
+], jv = e("file-exclamation-point", zv);
+const qv = [
   [
     "path",
     {
@@ -10374,8 +10385,8 @@ const zv = [
       key: "1etmh7"
     }
   ]
-], jv = e("file-headphone", zv);
-const qv = [
+], Av = e("file-headphone", qv);
+const Hv = [
   [
     "path",
     {
@@ -10391,8 +10402,8 @@ const qv = [
       key: "rg3psg"
     }
   ]
-], Av = e("file-heart", qv);
-const Hv = [
+], Sv = e("file-heart", Hv);
+const Cv = [
   [
     "path",
     {
@@ -10403,8 +10414,8 @@ const Hv = [
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["circle", { cx: "10", cy: "12", r: "2", key: "737tya" }],
   ["path", { d: "m20 17-1.296-1.296a2.41 2.41 0 0 0-3.408 0L9 22", key: "wt3hpn" }]
-], Sv = e("file-image", Hv);
-const Cv = [
+], Vv = e("file-image", Cv);
+const Rv = [
   [
     "path",
     {
@@ -10415,21 +10426,21 @@ const Cv = [
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "M2 15h10", key: "jfw4w8" }],
   ["path", { d: "m9 18 3-3-3-3", key: "112psh" }]
-], Vv = e("file-input", Cv);
-const Rv = [
+], Ev = e("file-input", Rv);
+const Lv = [
+  ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
+  ["path", { d: "M4 12v6", key: "bg1pfk" }],
+  ["path", { d: "M4 14h2", key: "1sf9f8" }],
   [
     "path",
     {
-      d: "M10.65 22H18a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v10.1",
-      key: "1a2hbp"
+      d: "M9.65 22H18a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v4",
+      key: "d56i0q"
     }
   ],
-  ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
-  ["path", { d: "m10 15 1 1", key: "1h4vmv" }],
-  ["path", { d: "m11 14-4.586 4.586", key: "maylof" }],
-  ["circle", { cx: "5", cy: "20", r: "2", key: "860zyv" }]
-], Ev = e("file-key", Rv);
-const Lv = [
+  ["circle", { cx: "4", cy: "20", r: "2", key: "6kqj1y" }]
+], Pv = e("file-key", Lv);
+const Tv = [
   [
     "path",
     {
@@ -10440,8 +10451,8 @@ const Lv = [
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "M9 17v-2a2 2 0 0 0-4 0v2", key: "168m41" }],
   ["rect", { width: "8", height: "5", x: "3", y: "17", rx: "1", key: "o8vfew" }]
-], Pv = e("file-lock", Lv);
-const Tv = [
+], Ov = e("file-lock", Tv);
+const Dv = [
   [
     "path",
     {
@@ -10451,8 +10462,8 @@ const Tv = [
   ],
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "M14 18h6", key: "1m8k6r" }]
-], Ov = e("file-minus-corner", Tv);
-const Dv = [
+], Iv = e("file-minus-corner", Dv);
+const Fv = [
   [
     "path",
     {
@@ -10462,19 +10473,7 @@ const Dv = [
   ],
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "M9 15h6", key: "cctwl0" }]
-], Iv = e("file-minus", Dv);
-const Fv = [
-  [
-    "path",
-    {
-      d: "M11.65 22H18a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v10.35",
-      key: "5ad7z2"
-    }
-  ],
-  ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
-  ["path", { d: "M8 20v-7l3 1.474", key: "1ggyb9" }],
-  ["circle", { cx: "6", cy: "20", r: "2", key: "j7wjp0" }]
-], Bv = e("file-music", Fv);
+], Bv = e("file-minus", Fv);
 const Uv = [
   [
     "path",
@@ -10491,6 +10490,18 @@ const Zv = [
   [
     "path",
     {
+      d: "M11.65 22H18a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v10.35",
+      key: "5ad7z2"
+    }
+  ],
+  ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
+  ["path", { d: "M8 20v-7l3 1.474", key: "1ggyb9" }],
+  ["circle", { cx: "6", cy: "20", r: "2", key: "j7wjp0" }]
+], Gv = e("file-music", Zv);
+const Xv = [
+  [
+    "path",
+    {
       d: "m18.226 5.226-2.52-2.52A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-.351",
       key: "1k2beg"
     }
@@ -10503,8 +10514,8 @@ const Zv = [
     }
   ],
   ["path", { d: "M8 18h1", key: "13wk12" }]
-], Gv = e("file-pen-line", Zv);
-const Xv = [
+], Yv = e("file-pen-line", Xv);
+const Kv = [
   [
     "path",
     {
@@ -10520,8 +10531,8 @@ const Xv = [
       key: "zhnas1"
     }
   ]
-], Yv = e("file-pen", Xv);
-const Kv = [
+], Qv = e("file-pen", Kv);
+const Jv = [
   [
     "path",
     {
@@ -10537,8 +10548,8 @@ const Kv = [
       key: "1tzo1f"
     }
   ]
-], Qv = e("file-play", Kv);
-const Jv = [
+], e_ = e("file-play", Jv);
+const t_ = [
   [
     "path",
     {
@@ -10549,8 +10560,8 @@ const Jv = [
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "M14 19h6", key: "bvotb8" }],
   ["path", { d: "M17 16v6", key: "18yu1i" }]
-], e_ = e("file-plus-corner", Jv);
-const t_ = [
+], a_ = e("file-plus-corner", t_);
+const o_ = [
   [
     "path",
     {
@@ -10561,8 +10572,8 @@ const t_ = [
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "M9 15h6", key: "cctwl0" }],
   ["path", { d: "M12 18v-6", key: "17g6i2" }]
-], a_ = e("file-plus", t_);
-const o_ = [
+], n_ = e("file-plus", o_);
+const c_ = [
   [
     "path",
     {
@@ -10572,8 +10583,8 @@ const o_ = [
   ],
   ["path", { d: "M12 17h.01", key: "p32p05" }],
   ["path", { d: "M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3", key: "mhlwft" }]
-], n_ = e("file-question-mark", o_);
-const c_ = [
+], r_ = e("file-question-mark", c_);
+const h_ = [
   [
     "path",
     {
@@ -10586,8 +10597,8 @@ const c_ = [
   ["path", { d: "M16 22a2 2 0 0 1-2-2", key: "1wqh5n" }],
   ["path", { d: "M20 14a2 2 0 0 1 2 2", key: "1ny6zw" }],
   ["path", { d: "M20 22a2 2 0 0 0 2-2", key: "1l9q4k" }]
-], r_ = e("file-scan", c_);
-const h_ = [
+], d_ = e("file-scan", h_);
+const i_ = [
   [
     "path",
     {
@@ -10598,8 +10609,8 @@ const h_ = [
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "m21 22-2.88-2.88", key: "9dd25w" }],
   ["circle", { cx: "16", cy: "17", r: "3", key: "11br10" }]
-], d_ = e("file-search-corner", h_);
-const i_ = [
+], s_ = e("file-search-corner", i_);
+const y_ = [
   [
     "path",
     {
@@ -10610,20 +10621,7 @@ const i_ = [
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["circle", { cx: "11.5", cy: "14.5", r: "2.5", key: "1bq0ko" }],
   ["path", { d: "M13.3 16.3 15 18", key: "2quom7" }]
-], s_ = e("file-search", i_);
-const y_ = [
-  [
-    "path",
-    {
-      d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
-      key: "1oefj6"
-    }
-  ],
-  ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
-  ["path", { d: "M8 15h.01", key: "a7atzg" }],
-  ["path", { d: "M11.5 13.5a2.5 2.5 0 0 1 0 3", key: "1fccat" }],
-  ["path", { d: "M15 12a5 5 0 0 1 0 6", key: "ps46cm" }]
-], p_ = e("file-signal", y_);
+], p_ = e("file-search", y_);
 const k_ = [
   [
     "path",
@@ -10647,12 +10645,25 @@ const u_ = [
     }
   ],
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
+  ["path", { d: "M8 15h.01", key: "a7atzg" }],
+  ["path", { d: "M11.5 13.5a2.5 2.5 0 0 1 0 3", key: "1fccat" }],
+  ["path", { d: "M15 12a5 5 0 0 1 0 6", key: "ps46cm" }]
+], M_ = e("file-signal", u_);
+const f_ = [
+  [
+    "path",
+    {
+      d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
+      key: "1oefj6"
+    }
+  ],
+  ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "M8 13h2", key: "yr2amv" }],
   ["path", { d: "M14 13h2", key: "un5t4a" }],
   ["path", { d: "M8 17h2", key: "2yhykz" }],
   ["path", { d: "M14 17h2", key: "10kma7" }]
-], M_ = e("file-spreadsheet", u_);
-const f_ = [
+], m_ = e("file-spreadsheet", f_);
+const g_ = [
   ["path", { d: "M11 21a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1", key: "likhh7" }],
   ["path", { d: "M16 16a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1", key: "17ky3x" }],
   [
@@ -10662,8 +10673,8 @@ const f_ = [
       key: "1hyeo0"
     }
   ]
-], m_ = e("file-stack", f_);
-const g_ = [
+], v_ = e("file-stack", g_);
+const __ = [
   [
     "path",
     {
@@ -10673,8 +10684,8 @@ const g_ = [
   ],
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "m10 18 3-3-3-3", key: "18f6ys" }]
-], v_ = e("file-symlink", g_);
-const __ = [
+], x_ = e("file-symlink", __);
+const b_ = [
   [
     "path",
     {
@@ -10685,8 +10696,8 @@ const __ = [
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "m8 16 2-2-2-2", key: "10vzyd" }],
   ["path", { d: "M12 18h4", key: "1wd2n7" }]
-], x_ = e("file-terminal", __);
-const b_ = [
+], w_ = e("file-terminal", b_);
+const N_ = [
   [
     "path",
     {
@@ -10698,8 +10709,8 @@ const b_ = [
   ["path", { d: "M10 9H8", key: "b1mrlr" }],
   ["path", { d: "M16 13H8", key: "t4e002" }],
   ["path", { d: "M16 17H8", key: "z1uh3a" }]
-], w_ = e("file-text", b_);
-const N_ = [
+], $_ = e("file-text", N_);
+const z_ = [
   [
     "path",
     {
@@ -10711,8 +10722,8 @@ const N_ = [
   ["path", { d: "M3 16v-1.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5V16", key: "s1gz5" }],
   ["path", { d: "M6 22h2", key: "194x9m" }],
   ["path", { d: "M7 14v8", key: "11ixej" }]
-], $_ = e("file-type-corner", N_);
-const z_ = [
+], j_ = e("file-type-corner", z_);
+const q_ = [
   [
     "path",
     {
@@ -10724,8 +10735,8 @@ const z_ = [
   ["path", { d: "M11 18h2", key: "12mj7e" }],
   ["path", { d: "M12 12v6", key: "3ahymv" }],
   ["path", { d: "M9 13v-.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v.5", key: "qbrxap" }]
-], j_ = e("file-type", z_);
-const q_ = [
+], A_ = e("file-type", q_);
+const H_ = [
   [
     "path",
     {
@@ -10736,8 +10747,8 @@ const q_ = [
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "M12 12v6", key: "3ahymv" }],
   ["path", { d: "m15 15-3-3-3 3", key: "15xj92" }]
-], A_ = e("file-up", q_);
-const H_ = [
+], S_ = e("file-up", H_);
+const C_ = [
   [
     "path",
     {
@@ -10748,25 +10759,7 @@ const H_ = [
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "M16 22a4 4 0 0 0-8 0", key: "7a83pg" }],
   ["circle", { cx: "12", cy: "15", r: "3", key: "g36mzq" }]
-], S_ = e("file-user", H_);
-const C_ = [
-  [
-    "path",
-    {
-      d: "M4 11.55V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.706.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2h-1.95",
-      key: "44gpjv"
-    }
-  ],
-  ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
-  ["path", { d: "M12 15a5 5 0 0 1 0 6", key: "oxg87a" }],
-  [
-    "path",
-    {
-      d: "M8 14.502a.5.5 0 0 0-.826-.381l-1.893 1.631a1 1 0 0 1-.651.243H3.5a.5.5 0 0 0-.5.501v3.006a.5.5 0 0 0 .5.501h1.129a1 1 0 0 1 .652.243l1.893 1.633a.5.5 0 0 0 .826-.38z",
-      key: "8rtoi1"
-    }
-  ]
-], V_ = e("file-volume", C_);
+], V_ = e("file-user", C_);
 const R_ = [
   [
     "path",
@@ -10789,6 +10782,24 @@ const L_ = [
   [
     "path",
     {
+      d: "M4 11.55V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.706.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2h-1.95",
+      key: "44gpjv"
+    }
+  ],
+  ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
+  ["path", { d: "M12 15a5 5 0 0 1 0 6", key: "oxg87a" }],
+  [
+    "path",
+    {
+      d: "M8 14.502a.5.5 0 0 0-.826-.381l-1.893 1.631a1 1 0 0 1-.651.243H3.5a.5.5 0 0 0-.5.501v3.006a.5.5 0 0 0 .5.501h1.129a1 1 0 0 1 .652.243l1.893 1.633a.5.5 0 0 0 .826-.38z",
+      key: "8rtoi1"
+    }
+  ]
+], P_ = e("file-volume", L_);
+const T_ = [
+  [
+    "path",
+    {
       d: "M11 22H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.706.706l3.588 3.588A2.4 2.4 0 0 1 20 8v5",
       key: "1jo35a"
     }
@@ -10796,8 +10807,8 @@ const L_ = [
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "m15 17 5 5", key: "36xl1x" }],
   ["path", { d: "m20 17-5 5", key: "vdz27y" }]
-], P_ = e("file-x-corner", L_);
-const T_ = [
+], O_ = e("file-x-corner", T_);
+const D_ = [
   [
     "path",
     {
@@ -10808,8 +10819,8 @@ const T_ = [
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
   ["path", { d: "m14.5 12.5-5 5", key: "b62r18" }],
   ["path", { d: "m9.5 12.5 5 5", key: "1rk7el" }]
-], O_ = e("file-x", T_);
-const D_ = [
+], I_ = e("file-x", D_);
+const F_ = [
   [
     "path",
     {
@@ -10818,8 +10829,8 @@ const D_ = [
     }
   ],
   ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }]
-], I_ = e("file", D_);
-const F_ = [
+], B_ = e("file", F_);
+const U_ = [
   ["path", { d: "M15 2h-4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8", key: "14sh0y" }],
   [
     "path",
@@ -10829,8 +10840,8 @@ const F_ = [
     }
   ],
   ["path", { d: "M5 7a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h8a2 2 0 0 0 1.732-1", key: "l4dndm" }]
-], B_ = e("files", F_);
-const U_ = [
+], W_ = e("files", U_);
+const Z_ = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M7 3v18", key: "bbkbws" }],
   ["path", { d: "M3 7.5h4", key: "zfgn84" }],
@@ -10839,18 +10850,7 @@ const U_ = [
   ["path", { d: "M17 3v18", key: "in4fa5" }],
   ["path", { d: "M17 7.5h4", key: "myr1c1" }],
   ["path", { d: "M17 16.5h4", key: "go4c1d" }]
-], W_ = e("film", U_);
-const Z_ = [
-  ["path", { d: "M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4", key: "1nerag" }],
-  ["path", { d: "M14 13.12c0 2.38 0 6.38-1 8.88", key: "o46ks0" }],
-  ["path", { d: "M17.29 21.02c.12-.6.43-2.3.5-3.02", key: "ptglia" }],
-  ["path", { d: "M2 12a10 10 0 0 1 18-6", key: "ydlgp0" }],
-  ["path", { d: "M2 16h.01", key: "1gqxmh" }],
-  ["path", { d: "M21.8 16c.2-2 .131-5.354 0-6", key: "drycrb" }],
-  ["path", { d: "M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2", key: "1tidbn" }],
-  ["path", { d: "M8.65 22c.21-.66.45-1.32.57-2", key: "13wd9y" }],
-  ["path", { d: "M9 6.8a6 6 0 0 1 9 5.2v2", key: "1fr1j5" }]
-], G_ = e("fingerprint-pattern", Z_);
+], G_ = e("film", Z_);
 const X_ = [
   ["path", { d: "M15 6.5V3a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3.5", key: "sqyvz" }],
   ["path", { d: "M9 18h8", key: "i7pszb" }],
@@ -10860,6 +10860,17 @@ const X_ = [
   ["path", { d: "M17 10a4 4 0 0 0-8 0v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2Z", key: "vsjego" }]
 ], Y_ = e("fire-extinguisher", X_);
 const K_ = [
+  ["path", { d: "M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4", key: "1nerag" }],
+  ["path", { d: "M14 13.12c0 2.38 0 6.38-1 8.88", key: "o46ks0" }],
+  ["path", { d: "M17.29 21.02c.12-.6.43-2.3.5-3.02", key: "ptglia" }],
+  ["path", { d: "M2 12a10 10 0 0 1 18-6", key: "ydlgp0" }],
+  ["path", { d: "M2 16h.01", key: "1gqxmh" }],
+  ["path", { d: "M21.8 16c.2-2 .131-5.354 0-6", key: "drycrb" }],
+  ["path", { d: "M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2", key: "1tidbn" }],
+  ["path", { d: "M8.65 22c.21-.66.45-1.32.57-2", key: "13wd9y" }],
+  ["path", { d: "M9 6.8a6 6 0 0 1 9 5.2v2", key: "1fr1j5" }]
+], Q_ = e("fingerprint-pattern", K_);
+const J_ = [
   [
     "path",
     {
@@ -10881,11 +10892,11 @@ const K_ = [
       key: "1407gh"
     }
   ]
-], Q_ = e("fish-off", K_);
-const J_ = [
-  ["path", { d: "M2 16s9-15 20-4C11 23 2 8 2 8", key: "h4oh4o" }]
-], ex = e("fish-symbol", J_);
+], ex = e("fish-off", J_);
 const tx = [
+  ["path", { d: "M2 16s9-15 20-4C11 23 2 8 2 8", key: "h4oh4o" }]
+], ax = e("fish-symbol", tx);
+const ox = [
   [
     "path",
     {
@@ -10910,8 +10921,8 @@ const tx = [
     "path",
     { d: "m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98", key: "1zlm23" }
   ]
-], ax = e("fish", tx);
-const ox = [
+], nx = e("fish", ox);
+const cx = [
   [
     "path",
     {
@@ -10921,26 +10932,26 @@ const ox = [
   ],
   ["path", { d: "M20.414 8.586 22 7", key: "5g2s34" }],
   ["circle", { cx: "19", cy: "10", r: "2", key: "7363ft" }]
-], nx = e("fishing-hook", ox);
-const cx = [
+], rx = e("fishing-hook", cx);
+const hx = [
   ["path", { d: "M16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528", key: "1q158e" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   ["path", { d: "M4 22V4", key: "1plyxx" }],
   ["path", { d: "M7.656 2H8c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10.347", key: "xj1b71" }]
-], rx = e("flag-off", cx);
-const hx = [
+], dx = e("flag-off", hx);
+const ix = [
   [
     "path",
     { d: "M18 22V2.8a.8.8 0 0 0-1.17-.71L5.45 7.78a.8.8 0 0 0 0 1.44L18 15.5", key: "rbbtmw" }
   ]
-], dx = e("flag-triangle-left", hx);
-const ix = [
+], sx = e("flag-triangle-left", ix);
+const yx = [
   [
     "path",
     { d: "M6 22V2.8a.8.8 0 0 1 1.17-.71l11.38 5.69a.8.8 0 0 1 0 1.44L6 15.5", key: "kfjsu0" }
   ]
-], sx = e("flag-triangle-right", ix);
-const yx = [
+], px = e("flag-triangle-right", yx);
+const kx = [
   [
     "path",
     {
@@ -10948,8 +10959,8 @@ const yx = [
       key: "1jaruq"
     }
   ]
-], px = e("flag", yx);
-const kx = [
+], lx = e("flag", kx);
+const ux = [
   [
     "path",
     {
@@ -10959,8 +10970,8 @@ const kx = [
   ],
   ["path", { d: "m5 22 14-4", key: "1brv4h" }],
   ["path", { d: "m5 18 14 4", key: "lgyyje" }]
-], lx = e("flame-kindling", kx);
-const ux = [
+], Mx = e("flame-kindling", ux);
+const fx = [
   [
     "path",
     {
@@ -10968,8 +10979,8 @@ const ux = [
       key: "1slcih"
     }
   ]
-], Mx = e("flame", ux);
-const fx = [
+], mx = e("flame", fx);
+const gx = [
   ["path", { d: "M11.652 6H18", key: "voqkpr" }],
   ["path", { d: "M12 13v1", key: "176q98" }],
   [
@@ -10984,8 +10995,8 @@ const fx = [
     "path",
     { d: "M7.649 2H17a1 1 0 0 1 1 1v4a3 3 0 0 1-.6 1.8l-.6.8a4 4 0 0 0-.55 1.007", key: "1hvcfn" }
   ]
-], mx = e("flashlight-off", fx);
-const gx = [
+], vx = e("flashlight-off", gx);
+const _x = [
   ["path", { d: "M12 13v1", key: "176q98" }],
   [
     "path",
@@ -10995,16 +11006,21 @@ const gx = [
     }
   ],
   ["path", { d: "M6 6h12", key: "n6hhss" }]
-], vx = e("flashlight", gx);
-const _x = [
+], xx = e("flashlight", _x);
+const bx = [
   ["path", { d: "M10 2v2.343", key: "15t272" }],
   ["path", { d: "M14 2v6.343", key: "sxr80q" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   ["path", { d: "M20 20a2 2 0 0 1-2 2H6a2 2 0 0 1-1.755-2.96l5.227-9.563", key: "k0duyd" }],
   ["path", { d: "M6.453 15H15", key: "1f0z33" }],
   ["path", { d: "M8.5 2h7", key: "csnxdl" }]
-], xx = e("flask-conical-off", _x);
-const bx = [
+], wx = e("flask-conical-off", bx);
+const Nx = [
+  ["path", { d: "M10 2v6.292a7 7 0 1 0 4 0V2", key: "1s42pc" }],
+  ["path", { d: "M5 15h14", key: "m0yey3" }],
+  ["path", { d: "M8.5 2h7", key: "csnxdl" }]
+], $x = e("flask-round", Nx);
+const zx = [
   [
     "path",
     {
@@ -11014,45 +11030,40 @@ const bx = [
   ],
   ["path", { d: "M6.453 15h11.094", key: "3shlmq" }],
   ["path", { d: "M8.5 2h7", key: "csnxdl" }]
-], wx = e("flask-conical", bx);
-const Nx = [
-  ["path", { d: "M10 2v6.292a7 7 0 1 0 4 0V2", key: "1s42pc" }],
-  ["path", { d: "M5 15h14", key: "m0yey3" }],
-  ["path", { d: "M8.5 2h7", key: "csnxdl" }]
-], $x = e("flask-round", Nx);
-const zx = [
+], jx = e("flask-conical", zx);
+const qx = [
   ["path", { d: "m3 7 5 5-5 5V7", key: "couhi7" }],
   ["path", { d: "m21 7-5 5 5 5V7", key: "6ouia7" }],
   ["path", { d: "M12 20v2", key: "1lh1kg" }],
   ["path", { d: "M12 14v2", key: "8jcxud" }],
   ["path", { d: "M12 8v2", key: "1woqiv" }],
   ["path", { d: "M12 2v2", key: "tus03m" }]
-], jx = e("flip-horizontal-2", zx);
-const qx = [
+], Ax = e("flip-horizontal-2", qx);
+const Hx = [
   ["path", { d: "M8 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h3", key: "1i73f7" }],
   ["path", { d: "M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3", key: "saxlbk" }],
   ["path", { d: "M12 20v2", key: "1lh1kg" }],
   ["path", { d: "M12 14v2", key: "8jcxud" }],
   ["path", { d: "M12 8v2", key: "1woqiv" }],
   ["path", { d: "M12 2v2", key: "tus03m" }]
-], Ax = e("flip-horizontal", qx);
-const Hx = [
+], Sx = e("flip-horizontal", Hx);
+const Cx = [
   ["path", { d: "m17 3-5 5-5-5h10", key: "1ftt6x" }],
   ["path", { d: "m17 21-5-5-5 5h10", key: "1m0wmu" }],
   ["path", { d: "M4 12H2", key: "rhcxmi" }],
   ["path", { d: "M10 12H8", key: "s88cx1" }],
   ["path", { d: "M16 12h-2", key: "10asgb" }],
   ["path", { d: "M22 12h-2", key: "14jgyd" }]
-], Sx = e("flip-vertical-2", Hx);
-const Cx = [
+], Vx = e("flip-vertical-2", Cx);
+const Rx = [
   ["path", { d: "M21 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3", key: "14bfxa" }],
   ["path", { d: "M21 16v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3", key: "14rx03" }],
   ["path", { d: "M4 12H2", key: "rhcxmi" }],
   ["path", { d: "M10 12H8", key: "s88cx1" }],
   ["path", { d: "M16 12h-2", key: "10asgb" }],
   ["path", { d: "M22 12h-2", key: "14jgyd" }]
-], Vx = e("flip-vertical", Cx);
-const Rx = [
+], Ex = e("flip-vertical", Rx);
+const Lx = [
   [
     "path",
     {
@@ -11064,8 +11075,8 @@ const Rx = [
   ["path", { d: "M12 10v12", key: "6ubwww" }],
   ["path", { d: "M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z", key: "9hd38g" }],
   ["path", { d: "M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z", key: "ufn41s" }]
-], Ex = e("flower-2", Rx);
-const Lx = [
+], Px = e("flower-2", Lx);
+const Tx = [
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }],
   [
     "path",
@@ -11082,24 +11093,14 @@ const Lx = [
   ["path", { d: "M14.12 9.88 16 8", key: "1lst6k" }],
   ["path", { d: "m8 16 1.88-1.88", key: "h2eex1" }],
   ["path", { d: "M14.12 14.12 16 16", key: "uqkrx3" }]
-], Px = e("flower", Lx);
-const Tx = [
+], Ox = e("flower", Tx);
+const Dx = [
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }],
   ["path", { d: "M3 7V5a2 2 0 0 1 2-2h2", key: "aa7l1z" }],
   ["path", { d: "M17 3h2a2 2 0 0 1 2 2v2", key: "4qcy5o" }],
   ["path", { d: "M21 17v2a2 2 0 0 1-2 2h-2", key: "6vwrx8" }],
   ["path", { d: "M7 21H5a2 2 0 0 1-2-2v-2", key: "ioqczr" }]
-], Ox = e("focus", Tx);
-const Dx = [
-  ["path", { d: "M12 22v-6", key: "6o8u61" }],
-  ["path", { d: "M12 8V2", key: "1wkif3" }],
-  ["path", { d: "M4 12H2", key: "rhcxmi" }],
-  ["path", { d: "M10 12H8", key: "s88cx1" }],
-  ["path", { d: "M16 12h-2", key: "10asgb" }],
-  ["path", { d: "M22 12h-2", key: "14jgyd" }],
-  ["path", { d: "m15 19-3-3-3 3", key: "e37ymu" }],
-  ["path", { d: "m15 5-3 3-3-3", key: "19d6lf" }]
-], Ix = e("fold-vertical", Dx);
+], Ix = e("focus", Dx);
 const Fx = [
   ["path", { d: "M2 12h6", key: "1wqiqv" }],
   ["path", { d: "M22 12h-6", key: "1eg9hc" }],
@@ -11111,6 +11112,16 @@ const Fx = [
   ["path", { d: "m5 15 3-3-3-3", key: "1kdhjc" }]
 ], Bx = e("fold-horizontal", Fx);
 const Ux = [
+  ["path", { d: "M12 22v-6", key: "6o8u61" }],
+  ["path", { d: "M12 8V2", key: "1wkif3" }],
+  ["path", { d: "M4 12H2", key: "rhcxmi" }],
+  ["path", { d: "M10 12H8", key: "s88cx1" }],
+  ["path", { d: "M16 12h-2", key: "10asgb" }],
+  ["path", { d: "M22 12h-2", key: "14jgyd" }],
+  ["path", { d: "m15 19-3-3-3 3", key: "e37ymu" }],
+  ["path", { d: "m15 5-3 3-3-3", key: "19d6lf" }]
+], Wx = e("fold-vertical", Ux);
+const Zx = [
   ["circle", { cx: "15", cy: "19", r: "2", key: "u2pros" }],
   [
     "path",
@@ -11121,8 +11132,8 @@ const Ux = [
   ],
   ["path", { d: "M15 11v-1", key: "cntcp" }],
   ["path", { d: "M15 17v-2", key: "1279jj" }]
-], Wx = e("folder-archive", Ux);
-const Zx = [
+], Gx = e("folder-archive", Zx);
+const Xx = [
   [
     "path",
     {
@@ -11131,8 +11142,8 @@ const Zx = [
     }
   ],
   ["path", { d: "m9 13 2 2 4-4", key: "6343dt" }]
-], Gx = e("folder-check", Zx);
-const Xx = [
+], Yx = e("folder-check", Xx);
+const Kx = [
   ["path", { d: "M16 14v2.2l1.6 1", key: "fo4ql5" }],
   [
     "path",
@@ -11142,17 +11153,7 @@ const Xx = [
     }
   ],
   ["circle", { cx: "16", cy: "16", r: "6", key: "qoo3c4" }]
-], Yx = e("folder-clock", Xx);
-const Kx = [
-  [
-    "path",
-    {
-      d: "M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z",
-      key: "1kt360"
-    }
-  ],
-  ["path", { d: "M2 10h20", key: "1ir3d8" }]
-], Qx = e("folder-closed", Kx);
+], Qx = e("folder-clock", Kx);
 const Jx = [
   ["path", { d: "M10 10.5 8 13l2 2.5", key: "m4t9c1" }],
   ["path", { d: "m14 10.5 2 2.5-2 2.5", key: "14w2eb" }],
@@ -11168,12 +11169,12 @@ const tb = [
   [
     "path",
     {
-      d: "M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z",
-      key: "1fr9dc"
+      d: "M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z",
+      key: "1kt360"
     }
   ],
-  ["circle", { cx: "12", cy: "13", r: "1", key: "49l61u" }]
-], ab = e("folder-dot", tb);
+  ["path", { d: "M2 10h20", key: "1ir3d8" }]
+], ab = e("folder-closed", tb);
 const ob = [
   [
     "path",
@@ -11196,14 +11197,24 @@ const cb = [
   [
     "path",
     {
+      d: "M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z",
+      key: "1fr9dc"
+    }
+  ],
+  ["circle", { cx: "12", cy: "13", r: "1", key: "49l61u" }]
+], rb = e("folder-dot", cb);
+const hb = [
+  [
+    "path",
+    {
       d: "M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z",
       key: "1kt360"
     }
   ],
   ["path", { d: "M12 10v6", key: "1bos4e" }],
   ["path", { d: "m15 13-3 3-3-3", key: "6j2sf0" }]
-], rb = e("folder-down", cb);
-const hb = [
+], db = e("folder-down", hb);
+const ib = [
   ["path", { d: "M18 19a5 5 0 0 1-5-5v8", key: "sz5oeg" }],
   [
     "path",
@@ -11214,8 +11225,8 @@ const hb = [
   ],
   ["circle", { cx: "13", cy: "12", r: "2", key: "1j92g6" }],
   ["circle", { cx: "20", cy: "19", r: "2", key: "1obnsp" }]
-], db = e("folder-git-2", hb);
-const ib = [
+], sb = e("folder-git-2", ib);
+const yb = [
   ["circle", { cx: "12", cy: "13", r: "2", key: "1c1ljs" }],
   [
     "path",
@@ -11226,8 +11237,8 @@ const ib = [
   ],
   ["path", { d: "M14 13h3", key: "1dgedf" }],
   ["path", { d: "M7 13h3", key: "1pygq7" }]
-], sb = e("folder-git", ib);
-const yb = [
+], pb = e("folder-git", yb);
+const kb = [
   [
     "path",
     {
@@ -11242,8 +11253,8 @@ const yb = [
       key: "15cy7q"
     }
   ]
-], pb = e("folder-heart", yb);
-const kb = [
+], lb = e("folder-heart", kb);
+const ub = [
   [
     "path",
     {
@@ -11253,19 +11264,7 @@ const kb = [
   ],
   ["path", { d: "M2 13h10", key: "pgb2dq" }],
   ["path", { d: "m9 16 3-3-3-3", key: "6m91ic" }]
-], lb = e("folder-input", kb);
-const ub = [
-  ["circle", { cx: "16", cy: "20", r: "2", key: "1vifvg" }],
-  [
-    "path",
-    {
-      d: "M10 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v2",
-      key: "3hgo9p"
-    }
-  ],
-  ["path", { d: "m22 14-4.5 4.5", key: "1ef6z8" }],
-  ["path", { d: "m21 15 1 1", key: "1ejcpy" }]
-], Mb = e("folder-key", ub);
+], Mb = e("folder-input", ub);
 const fb = [
   [
     "path",
@@ -11279,6 +11278,18 @@ const fb = [
   ["path", { d: "M16 10v6", key: "1d6xys" }]
 ], mb = e("folder-kanban", fb);
 const gb = [
+  [
+    "path",
+    {
+      d: "M13 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v1.36",
+      key: "1shsnm"
+    }
+  ],
+  ["path", { d: "M19 12v6", key: "kflna4" }],
+  ["path", { d: "M19 14h2", key: "wp2qbk" }],
+  ["circle", { cx: "19", cy: "20", r: "2", key: "1jfyz6" }]
+], vb = e("folder-key", gb);
+const _b = [
   ["rect", { width: "8", height: "5", x: "14", y: "17", rx: "1", key: "19aais" }],
   [
     "path",
@@ -11288,8 +11299,8 @@ const gb = [
     }
   ],
   ["path", { d: "M20 17v-2a2 2 0 1 0-4 0v2", key: "pwaxnr" }]
-], vb = e("folder-lock", gb);
-const _b = [
+], xb = e("folder-lock", _b);
+const bb = [
   ["path", { d: "M9 13h6", key: "1uhe8q" }],
   [
     "path",
@@ -11298,8 +11309,8 @@ const _b = [
       key: "1kt360"
     }
   ]
-], xb = e("folder-minus", _b);
-const bb = [
+], wb = e("folder-minus", bb);
+const Nb = [
   [
     "path",
     {
@@ -11308,8 +11319,8 @@ const bb = [
     }
   ],
   ["circle", { cx: "14", cy: "15", r: "1", key: "1gm4qj" }]
-], wb = e("folder-open-dot", bb);
-const Nb = [
+], $b = e("folder-open-dot", Nb);
+const zb = [
   [
     "path",
     {
@@ -11317,8 +11328,8 @@ const Nb = [
       key: "usdka0"
     }
   ]
-], $b = e("folder-open", Nb);
-const zb = [
+], jb = e("folder-open", zb);
+const qb = [
   [
     "path",
     {
@@ -11328,8 +11339,8 @@ const zb = [
   ],
   ["path", { d: "M2 13h10", key: "pgb2dq" }],
   ["path", { d: "m5 10-3 3 3 3", key: "1r8ie0" }]
-], jb = e("folder-output", zb);
-const qb = [
+], Ab = e("folder-output", qb);
+const Hb = [
   [
     "path",
     {
@@ -11344,8 +11355,8 @@ const qb = [
       key: "1saktj"
     }
   ]
-], Ab = e("folder-pen", qb);
-const Hb = [
+], Sb = e("folder-pen", Hb);
+const Cb = [
   ["path", { d: "M12 10v6", key: "1bos4e" }],
   ["path", { d: "M9 13h6", key: "1uhe8q" }],
   [
@@ -11355,8 +11366,8 @@ const Hb = [
       key: "1kt360"
     }
   ]
-], Sb = e("folder-plus", Hb);
-const Cb = [
+], Vb = e("folder-plus", Cb);
+const Rb = [
   [
     "path",
     {
@@ -11366,8 +11377,8 @@ const Cb = [
   ],
   ["circle", { cx: "12", cy: "13", r: "2", key: "1c1ljs" }],
   ["path", { d: "M12 15v5", key: "11xva1" }]
-], Vb = e("folder-root", Cb);
-const Rb = [
+], Eb = e("folder-root", Rb);
+const Lb = [
   ["circle", { cx: "11.5", cy: "12.5", r: "2.5", key: "1ea5ju" }],
   [
     "path",
@@ -11377,8 +11388,8 @@ const Rb = [
     }
   ],
   ["path", { d: "M13.3 14.3 15 16", key: "1y4v1n" }]
-], Eb = e("folder-search-2", Rb);
-const Lb = [
+], Pb = e("folder-search-2", Lb);
+const Tb = [
   [
     "path",
     {
@@ -11388,8 +11399,8 @@ const Lb = [
   ],
   ["path", { d: "m21 21-1.9-1.9", key: "1g2n9r" }],
   ["circle", { cx: "17", cy: "17", r: "3", key: "18b49y" }]
-], Pb = e("folder-search", Lb);
-const Tb = [
+], Ob = e("folder-search", Tb);
+const Db = [
   [
     "path",
     {
@@ -11398,8 +11409,8 @@ const Tb = [
     }
   ],
   ["path", { d: "m8 16 3-3-3-3", key: "rlqrt1" }]
-], Ob = e("folder-symlink", Tb);
-const Db = [
+], Ib = e("folder-symlink", Db);
+const Fb = [
   [
     "path",
     {
@@ -11411,8 +11422,8 @@ const Db = [
   ["path", { d: "m12 14 1.535-1.605a5 5 0 0 1 8 1.5", key: "lvuxfi" }],
   ["path", { d: "M22 22v-4h-4", key: "1ewp4q" }],
   ["path", { d: "m22 18-1.535 1.605a5 5 0 0 1-8-1.5", key: "14ync0" }]
-], Ib = e("folder-sync", Db);
-const Fb = [
+], Bb = e("folder-sync", Fb);
+const Ub = [
   [
     "path",
     {
@@ -11429,8 +11440,8 @@ const Fb = [
   ],
   ["path", { d: "M3 5a2 2 0 0 0 2 2h3", key: "f2jnh7" }],
   ["path", { d: "M3 3v13a2 2 0 0 0 2 2h3", key: "k8epm1" }]
-], Bb = e("folder-tree", Fb);
-const Ub = [
+], Wb = e("folder-tree", Ub);
+const Zb = [
   [
     "path",
     {
@@ -11440,8 +11451,19 @@ const Ub = [
   ],
   ["path", { d: "M12 10v6", key: "1bos4e" }],
   ["path", { d: "m9 13 3-3 3 3", key: "1pxg3c" }]
-], Wb = e("folder-up", Ub);
-const Zb = [
+], Gb = e("folder-up", Zb);
+const Xb = [
+  [
+    "path",
+    {
+      d: "M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z",
+      key: "1kt360"
+    }
+  ],
+  ["path", { d: "m9.5 10.5 5 5", key: "ra9qjz" }],
+  ["path", { d: "m14.5 10.5-5 5", key: "l2rkpq" }]
+], Yb = e("folder-x", Xb);
+const Kb = [
   [
     "path",
     {
@@ -11449,8 +11471,8 @@ const Zb = [
       key: "1kt360"
     }
   ]
-], Gb = e("folder", Zb);
-const Xb = [
+], Qb = e("folder", Kb);
+const Jb = [
   [
     "path",
     {
@@ -11462,19 +11484,8 @@ const Xb = [
     "path",
     { d: "M3 8.268a2 2 0 0 0-1 1.738V19a2 2 0 0 0 2 2h11a2 2 0 0 0 1.732-1", key: "yxbcw3" }
   ]
-], Yb = e("folders", Xb);
-const Kb = [
-  [
-    "path",
-    {
-      d: "M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z",
-      key: "1kt360"
-    }
-  ],
-  ["path", { d: "m9.5 10.5 5 5", key: "ra9qjz" }],
-  ["path", { d: "m14.5 10.5-5 5", key: "l2rkpq" }]
-], Qb = e("folder-x", Kb);
-const Jb = [
+], ew = e("folders", Jb);
+const tw = [
   [
     "path",
     {
@@ -11491,13 +11502,7 @@ const Jb = [
   ],
   ["path", { d: "M16 17h4", key: "1dejxt" }],
   ["path", { d: "M4 13h4", key: "1bwh8b" }]
-], ew = e("footprints", Jb);
-const tw = [
-  ["path", { d: "M12 12H5a2 2 0 0 0-2 2v5", key: "7zsz91" }],
-  ["circle", { cx: "13", cy: "19", r: "2", key: "wjnkru" }],
-  ["circle", { cx: "5", cy: "19", r: "2", key: "v8kfzx" }],
-  ["path", { d: "M8 19h3m5-17v17h6M6 12V7c0-1.1.9-2 2-2h3l5 5", key: "13bk1p" }]
-], aw = e("forklift", tw);
+], aw = e("footprints", tw);
 const ow = [
   ["path", { d: "M4 14h6", key: "77gv2w" }],
   ["path", { d: "M4 2h10", key: "a2b314" }],
@@ -11509,14 +11514,17 @@ const cw = [
   ["path", { d: "M4 18v-2a4 4 0 0 1 4-4h12", key: "jmiej9" }]
 ], rw = e("forward", cw);
 const hw = [
+  ["path", { d: "M12 12H5a2 2 0 0 0-2 2v5", key: "7zsz91" }],
+  ["circle", { cx: "13", cy: "19", r: "2", key: "wjnkru" }],
+  ["circle", { cx: "5", cy: "19", r: "2", key: "v8kfzx" }],
+  ["path", { d: "M8 19h3m5-17v17h6M6 12V7c0-1.1.9-2 2-2h3l5 5", key: "13bk1p" }]
+], dw = e("forklift", hw);
+const iw = [
   ["line", { x1: "22", x2: "2", y1: "6", y2: "6", key: "15w7dq" }],
   ["line", { x1: "22", x2: "2", y1: "18", y2: "18", key: "1ip48p" }],
   ["line", { x1: "6", x2: "6", y1: "2", y2: "22", key: "a2lnyx" }],
   ["line", { x1: "18", x2: "18", y1: "2", y2: "22", key: "8vb6jd" }]
-], dw = e("frame", hw);
-const iw = [
-  ["path", { d: "M5 16V9h14V2H5l14 14h-7m-7 0 7 7v-7m-7 0h7", key: "1a2nng" }]
-], sw = e("framer", iw);
+], sw = e("frame", iw);
 const yw = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M16 16s-1.5-2-4-2-4 2-4 2", key: "epbg0q" }],
@@ -11533,13 +11541,16 @@ const kw = [
   ["path", { d: "M3 9h11", key: "1p7c0w" }]
 ], lw = e("fuel", kw);
 const uw = [
+  ["path", { d: "M5 16V9h14V2H5l14 14h-7m-7 0 7 7v-7m-7 0h7", key: "1a2nng" }]
+], Mw = e("framer", uw);
+const fw = [
   ["path", { d: "M3 7V5a2 2 0 0 1 2-2h2", key: "aa7l1z" }],
   ["path", { d: "M17 3h2a2 2 0 0 1 2 2v2", key: "4qcy5o" }],
   ["path", { d: "M21 17v2a2 2 0 0 1-2 2h-2", key: "6vwrx8" }],
   ["path", { d: "M7 21H5a2 2 0 0 1-2-2v-2", key: "ioqczr" }],
   ["rect", { width: "10", height: "8", x: "7", y: "8", rx: "1", key: "vys8me" }]
-], Mw = e("fullscreen", uw);
-const fw = [
+], mw = e("fullscreen", fw);
+const gw = [
   [
     "path",
     {
@@ -11549,8 +11560,8 @@ const fw = [
   ],
   ["path", { d: "M16 6h6", key: "1dogtp" }],
   ["path", { d: "M19 3v6", key: "1ytpjt" }]
-], mw = e("funnel-plus", fw);
-const gw = [
+], vw = e("funnel-plus", gw);
+const _w = [
   [
     "path",
     {
@@ -11560,12 +11571,7 @@ const gw = [
   ],
   ["path", { d: "m16.5 3.5 5 5", key: "15e6fa" }],
   ["path", { d: "m21.5 3.5-5 5", key: "m0lwru" }]
-], vw = e("funnel-x", gw);
-const _w = [
-  ["path", { d: "M2 7v10", key: "a2pl2d" }],
-  ["path", { d: "M6 5v14", key: "1kq3d7" }],
-  ["rect", { width: "12", height: "18", x: "10", y: "3", rx: "2", key: "13i7bc" }]
-], xw = e("gallery-horizontal-end", _w);
+], xw = e("funnel-x", _w);
 const bw = [
   [
     "path",
@@ -11576,28 +11582,33 @@ const bw = [
   ]
 ], ww = e("funnel", bw);
 const Nw = [
+  ["path", { d: "M2 7v10", key: "a2pl2d" }],
+  ["path", { d: "M6 5v14", key: "1kq3d7" }],
+  ["rect", { width: "12", height: "18", x: "10", y: "3", rx: "2", key: "13i7bc" }]
+], $w = e("gallery-horizontal-end", Nw);
+const zw = [
   ["path", { d: "M2 3v18", key: "pzttux" }],
   ["rect", { width: "12", height: "18", x: "6", y: "3", rx: "2", key: "btr8bg" }],
   ["path", { d: "M22 3v18", key: "6jf3v" }]
-], $w = e("gallery-horizontal", Nw);
-const zw = [
+], jw = e("gallery-horizontal", zw);
+const qw = [
   ["rect", { width: "18", height: "14", x: "3", y: "3", rx: "2", key: "74y24f" }],
   ["path", { d: "M4 21h1", key: "16zlid" }],
   ["path", { d: "M9 21h1", key: "15o7lz" }],
   ["path", { d: "M14 21h1", key: "v9vybs" }],
   ["path", { d: "M19 21h1", key: "edywat" }]
-], jw = e("gallery-thumbnails", zw);
-const qw = [
+], Aw = e("gallery-thumbnails", qw);
+const Hw = [
   ["path", { d: "M7 2h10", key: "nczekb" }],
   ["path", { d: "M5 6h14", key: "u2x4p" }],
   ["rect", { width: "18", height: "12", x: "3", y: "10", rx: "2", key: "l0tzu3" }]
-], Aw = e("gallery-vertical-end", qw);
-const Hw = [
+], Sw = e("gallery-vertical-end", Hw);
+const Cw = [
   ["path", { d: "M3 2h18", key: "15qxfx" }],
   ["rect", { width: "18", height: "12", x: "3", y: "6", rx: "2", key: "1439r6" }],
   ["path", { d: "M3 22h18", key: "8prr45" }]
-], Sw = e("gallery-vertical", Hw);
-const Cw = [
+], Vw = e("gallery-vertical", Cw);
+const Rw = [
   ["line", { x1: "6", x2: "10", y1: "11", y2: "11", key: "1gktln" }],
   ["line", { x1: "8", x2: "8", y1: "9", y2: "13", key: "qnk9ow" }],
   ["line", { x1: "15", x2: "15.01", y1: "12", y2: "12", key: "krot7o" }],
@@ -11609,8 +11620,8 @@ const Cw = [
       key: "mfqc10"
     }
   ]
-], Vw = e("gamepad-2", Cw);
-const Rw = [
+], Ew = e("gamepad-2", Rw);
+const Lw = [
   [
     "path",
     {
@@ -11639,19 +11650,26 @@ const Rw = [
       key: "19ox6c"
     }
   ]
-], Ew = e("gamepad-directional", Rw);
-const Lw = [
-  ["line", { x1: "6", x2: "10", y1: "12", y2: "12", key: "161bw2" }],
-  ["line", { x1: "8", x2: "8", y1: "10", y2: "14", key: "1i6ji0" }],
-  ["line", { x1: "15", x2: "15.01", y1: "13", y2: "13", key: "dqpgro" }],
-  ["line", { x1: "18", x2: "18.01", y1: "11", y2: "11", key: "meh2c" }],
-  ["rect", { width: "20", height: "12", x: "2", y: "6", rx: "2", key: "9lu3g6" }]
-], Pw = e("gamepad", Lw);
+], Pw = e("gamepad-directional", Lw);
 const Tw = [
   ["path", { d: "m12 14 4-4", key: "9kzdfg" }],
   ["path", { d: "M3.34 19a10 10 0 1 1 17.32 0", key: "19p75a" }]
 ], Ow = e("gauge", Tw);
 const Dw = [
+  ["line", { x1: "6", x2: "10", y1: "12", y2: "12", key: "161bw2" }],
+  ["line", { x1: "8", x2: "8", y1: "10", y2: "14", key: "1i6ji0" }],
+  ["line", { x1: "15", x2: "15.01", y1: "13", y2: "13", key: "dqpgro" }],
+  ["line", { x1: "18", x2: "18.01", y1: "11", y2: "11", key: "meh2c" }],
+  ["rect", { width: "20", height: "12", x: "2", y: "6", rx: "2", key: "9lu3g6" }]
+], Iw = e("gamepad", Dw);
+const Fw = [
+  ["path", { d: "m14 13-8.381 8.38a1 1 0 0 1-3.001-3l8.384-8.381", key: "pgg06f" }],
+  ["path", { d: "m16 16 6-6", key: "vzrcl6" }],
+  ["path", { d: "m21.5 10.5-8-8", key: "a17d9x" }],
+  ["path", { d: "m8 8 6-6", key: "18bi4p" }],
+  ["path", { d: "m8.5 7.5 8 8", key: "1oyaui" }]
+], Bw = e("gavel", Fw);
+const Uw = [
   ["path", { d: "M10.5 3 8 9l4 13 4-13-2.5-6", key: "b3dvk1" }],
   [
     "path",
@@ -11661,25 +11679,7 @@ const Dw = [
     }
   ],
   ["path", { d: "M2 9h20", key: "16fsjt" }]
-], Iw = e("gem", Dw);
-const Fw = [
-  ["path", { d: "m14 13-8.381 8.38a1 1 0 0 1-3.001-3l8.384-8.381", key: "pgg06f" }],
-  ["path", { d: "m16 16 6-6", key: "vzrcl6" }],
-  ["path", { d: "m21.5 10.5-8-8", key: "a17d9x" }],
-  ["path", { d: "m8 8 6-6", key: "18bi4p" }],
-  ["path", { d: "m8.5 7.5 8 8", key: "1oyaui" }]
-], Bw = e("gavel", Fw);
-const Uw = [
-  ["path", { d: "M9 10h.01", key: "qbtxuw" }],
-  ["path", { d: "M15 10h.01", key: "1qmjsl" }],
-  [
-    "path",
-    {
-      d: "M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8z",
-      key: "uwwb07"
-    }
-  ]
-], Ww = e("ghost", Uw);
+], Ww = e("gem", Uw);
 const Zw = [
   ["path", { d: "M11.5 21a7.5 7.5 0 1 1 7.35-9", key: "1gyj8k" }],
   ["path", { d: "M13 12V3", key: "18om2a" }],
@@ -11699,113 +11699,123 @@ const Xw = [
   ]
 ], Yw = e("gift", Xw);
 const Kw = [
+  ["path", { d: "M9 10h.01", key: "qbtxuw" }],
+  ["path", { d: "M15 10h.01", key: "1qmjsl" }],
+  [
+    "path",
+    {
+      d: "M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8z",
+      key: "uwwb07"
+    }
+  ]
+], Qw = e("ghost", Kw);
+const Jw = [
   ["path", { d: "M15 6a9 9 0 0 0-9 9V3", key: "1cii5b" }],
   ["path", { d: "M21 18h-6", key: "139f0c" }],
   ["circle", { cx: "18", cy: "6", r: "3", key: "1h7g24" }],
   ["circle", { cx: "6", cy: "18", r: "3", key: "fqmcym" }]
-], Qw = e("git-branch-minus", Kw);
-const Jw = [
+], eN = e("git-branch-minus", Jw);
+const tN = [
   ["path", { d: "M6 3v12", key: "qpgusn" }],
   ["path", { d: "M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z", key: "1d02ji" }],
   ["path", { d: "M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z", key: "chk6ph" }],
   ["path", { d: "M15 6a9 9 0 0 0-9 9", key: "or332x" }],
   ["path", { d: "M18 15v6", key: "9wciyi" }],
   ["path", { d: "M21 18h-6", key: "139f0c" }]
-], eN = e("git-branch-plus", Jw);
-const tN = [
-  ["line", { x1: "6", x2: "6", y1: "3", y2: "15", key: "17qcm7" }],
-  ["circle", { cx: "18", cy: "6", r: "3", key: "1h7g24" }],
-  ["circle", { cx: "6", cy: "18", r: "3", key: "fqmcym" }],
-  ["path", { d: "M18 9a9 9 0 0 1-9 9", key: "n2h4wq" }]
-], aN = e("git-branch", tN);
+], aN = e("git-branch-plus", tN);
 const oN = [
+  ["path", { d: "M15 6a9 9 0 0 0-9 9V3", key: "1cii5b" }],
+  ["circle", { cx: "18", cy: "6", r: "3", key: "1h7g24" }],
+  ["circle", { cx: "6", cy: "18", r: "3", key: "fqmcym" }]
+], nN = e("git-branch", oN);
+const cN = [
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }],
   ["line", { x1: "3", x2: "9", y1: "12", y2: "12", key: "1dyftd" }],
   ["line", { x1: "15", x2: "21", y1: "12", y2: "12", key: "oup4p8" }]
-], nN = e("git-commit-horizontal", oN);
-const cN = [
+], rN = e("git-commit-horizontal", cN);
+const hN = [
   ["path", { d: "M12 3v6", key: "1holv5" }],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }],
   ["path", { d: "M12 15v6", key: "a9ows0" }]
-], rN = e("git-commit-vertical", cN);
-const hN = [
+], dN = e("git-commit-vertical", hN);
+const iN = [
   ["circle", { cx: "5", cy: "6", r: "3", key: "1qnov2" }],
   ["path", { d: "M12 6h5a2 2 0 0 1 2 2v7", key: "1yj91y" }],
   ["path", { d: "m15 9-3-3 3-3", key: "1lwv8l" }],
   ["circle", { cx: "19", cy: "18", r: "3", key: "1qljk2" }],
   ["path", { d: "M12 18H7a2 2 0 0 1-2-2V9", key: "16sdep" }],
   ["path", { d: "m9 15 3 3-3 3", key: "1m3kbl" }]
-], dN = e("git-compare-arrows", hN);
-const iN = [
+], sN = e("git-compare-arrows", iN);
+const yN = [
   ["circle", { cx: "18", cy: "18", r: "3", key: "1xkwt0" }],
   ["circle", { cx: "6", cy: "6", r: "3", key: "1lh9wr" }],
   ["path", { d: "M13 6h3a2 2 0 0 1 2 2v7", key: "1yeb86" }],
   ["path", { d: "M11 18H8a2 2 0 0 1-2-2V9", key: "19pyzm" }]
-], sN = e("git-compare", iN);
-const yN = [
+], pN = e("git-compare", yN);
+const kN = [
   ["circle", { cx: "12", cy: "18", r: "3", key: "1mpf1b" }],
   ["circle", { cx: "6", cy: "6", r: "3", key: "1lh9wr" }],
   ["circle", { cx: "18", cy: "6", r: "3", key: "1h7g24" }],
   ["path", { d: "M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9", key: "1uq4wg" }],
   ["path", { d: "M12 12v3", key: "158kv8" }]
-], pN = e("git-fork", yN);
-const kN = [
+], lN = e("git-fork", kN);
+const uN = [
   ["circle", { cx: "5", cy: "6", r: "3", key: "1qnov2" }],
   ["path", { d: "M5 9v6", key: "158jrl" }],
   ["circle", { cx: "5", cy: "18", r: "3", key: "104gr9" }],
   ["path", { d: "M12 3v18", key: "108xh3" }],
   ["circle", { cx: "19", cy: "6", r: "3", key: "108a5v" }],
   ["path", { d: "M16 15.7A9 9 0 0 0 19 9", key: "1e3vqb" }]
-], lN = e("git-graph", kN);
-const uN = [
+], MN = e("git-graph", uN);
+const fN = [
   ["circle", { cx: "18", cy: "18", r: "3", key: "1xkwt0" }],
   ["circle", { cx: "6", cy: "6", r: "3", key: "1lh9wr" }],
   ["path", { d: "M6 21V9a9 9 0 0 0 9 9", key: "7kw0sc" }]
-], MN = e("git-merge", uN);
-const fN = [
+], mN = e("git-merge", fN);
+const gN = [
   ["circle", { cx: "5", cy: "6", r: "3", key: "1qnov2" }],
   ["path", { d: "M5 9v12", key: "ih889a" }],
   ["circle", { cx: "19", cy: "18", r: "3", key: "1qljk2" }],
   ["path", { d: "m15 9-3-3 3-3", key: "1lwv8l" }],
   ["path", { d: "M12 6h5a2 2 0 0 1 2 2v7", key: "1yj91y" }]
-], mN = e("git-pull-request-arrow", fN);
-const gN = [
+], vN = e("git-pull-request-arrow", gN);
+const _N = [
   ["circle", { cx: "6", cy: "6", r: "3", key: "1lh9wr" }],
   ["path", { d: "M6 9v12", key: "1sc30k" }],
   ["path", { d: "m21 3-6 6", key: "16nqsk" }],
   ["path", { d: "m21 9-6-6", key: "9j17rh" }],
   ["path", { d: "M18 11.5V15", key: "65xf6f" }],
   ["circle", { cx: "18", cy: "18", r: "3", key: "1xkwt0" }]
-], vN = e("git-pull-request-closed", gN);
-const _N = [
+], xN = e("git-pull-request-closed", _N);
+const bN = [
   ["circle", { cx: "5", cy: "6", r: "3", key: "1qnov2" }],
   ["path", { d: "M5 9v12", key: "ih889a" }],
   ["path", { d: "m15 9-3-3 3-3", key: "1lwv8l" }],
   ["path", { d: "M12 6h5a2 2 0 0 1 2 2v3", key: "1rbwk6" }],
   ["path", { d: "M19 15v6", key: "10aioa" }],
   ["path", { d: "M22 18h-6", key: "1d5gi5" }]
-], xN = e("git-pull-request-create-arrow", _N);
-const bN = [
+], wN = e("git-pull-request-create-arrow", bN);
+const NN = [
   ["circle", { cx: "6", cy: "6", r: "3", key: "1lh9wr" }],
   ["path", { d: "M6 9v12", key: "1sc30k" }],
   ["path", { d: "M13 6h3a2 2 0 0 1 2 2v3", key: "1jb6z3" }],
   ["path", { d: "M18 15v6", key: "9wciyi" }],
   ["path", { d: "M21 18h-6", key: "139f0c" }]
-], wN = e("git-pull-request-create", bN);
-const NN = [
+], $N = e("git-pull-request-create", NN);
+const zN = [
   ["circle", { cx: "18", cy: "18", r: "3", key: "1xkwt0" }],
   ["circle", { cx: "6", cy: "6", r: "3", key: "1lh9wr" }],
   ["path", { d: "M18 6V5", key: "1oao2s" }],
   ["path", { d: "M18 11v-1", key: "11c8tz" }],
   ["line", { x1: "6", x2: "6", y1: "9", y2: "21", key: "rroup" }]
-], $N = e("git-pull-request-draft", NN);
-const zN = [
+], jN = e("git-pull-request-draft", zN);
+const qN = [
   ["circle", { cx: "18", cy: "18", r: "3", key: "1xkwt0" }],
   ["circle", { cx: "6", cy: "6", r: "3", key: "1lh9wr" }],
   ["path", { d: "M13 6h3a2 2 0 0 1 2 2v7", key: "1yeb86" }],
   ["line", { x1: "6", x2: "6", y1: "9", y2: "21", key: "rroup" }]
-], jN = e("git-pull-request", zN);
-const qN = [
+], AN = e("git-pull-request", qN);
+const HN = [
   [
     "path",
     {
@@ -11814,8 +11824,8 @@ const qN = [
     }
   ],
   ["path", { d: "M9 18c-4.51 2-5-2-7-2", key: "9comsn" }]
-], AN = e("github", qN);
-const HN = [
+], SN = e("github", HN);
+const CN = [
   [
     "path",
     {
@@ -11823,8 +11833,8 @@ const HN = [
       key: "148pdi"
     }
   ]
-], SN = e("gitlab", HN);
-const CN = [
+], VN = e("gitlab", CN);
+const RN = [
   [
     "path",
     {
@@ -11833,15 +11843,15 @@ const CN = [
     }
   ],
   ["path", { d: "M6 12a5 5 0 0 1 6 0 5 5 0 0 0 6 0", key: "mjntcy" }]
-], VN = e("glass-water", CN);
-const RN = [
+], EN = e("glass-water", RN);
+const LN = [
   ["circle", { cx: "6", cy: "15", r: "4", key: "vux9w4" }],
   ["circle", { cx: "18", cy: "15", r: "4", key: "18o8ve" }],
   ["path", { d: "M14 15a2 2 0 0 0-2-2 2 2 0 0 0-2 2", key: "1ag4bs" }],
   ["path", { d: "M2.5 13 5 7c.7-1.3 1.4-2 3-2", key: "1hm1gs" }],
   ["path", { d: "M21.5 13 19 7c-.7-1.3-1.5-2-3-2", key: "1r31ai" }]
-], EN = e("glasses", RN);
-const LN = [
+], PN = e("glasses", LN);
+const TN = [
   [
     "path",
     {
@@ -11852,33 +11862,33 @@ const LN = [
   ["path", { d: "M2 12h8.5", key: "ovaggd" }],
   ["path", { d: "M20 6V4a2 2 0 1 0-4 0v2", key: "1of5e8" }],
   ["rect", { width: "8", height: "5", x: "14", y: "6", rx: "1", key: "1fmf51" }]
-], PN = e("globe-lock", LN);
-const TN = [
+], ON = e("globe-lock", TN);
+const DN = [
   ["path", { d: "m16 3 5 5", key: "1husv6" }],
   [
     "path",
     { d: "M2 12h20A10 10 0 1 1 12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 4-10", key: "46evmv" }
   ],
   ["path", { d: "m21 3-5 5", key: "1g5oa7" }]
-], ON = e("globe-x", TN);
-const DN = [
+], IN = e("globe-x", DN);
+const FN = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
   ["path", { d: "M2 12h20", key: "9i4pu4" }]
-], IN = e("globe", DN);
-const FN = [
-  ["path", { d: "M2 21V3", key: "1bzk4w" }],
-  ["path", { d: "M2 5h18a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2.26", key: "1d64pi" }],
-  ["path", { d: "M7 17v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3", key: "5hbqbf" }],
-  ["circle", { cx: "16", cy: "11", r: "2", key: "qt15rb" }],
-  ["circle", { cx: "8", cy: "11", r: "2", key: "ssideg" }]
-], BN = e("gpu", FN);
+], BN = e("globe", FN);
 const UN = [
   ["path", { d: "M12 13V2l8 4-8 4", key: "5wlwwj" }],
   ["path", { d: "M20.561 10.222a9 9 0 1 1-12.55-5.29", key: "1c0wjv" }],
   ["path", { d: "M8.002 9.997a5 5 0 1 0 8.9 2.02", key: "gb1g7m" }]
 ], WN = e("goal", UN);
 const ZN = [
+  ["path", { d: "M2 21V3", key: "1bzk4w" }],
+  ["path", { d: "M2 5h18a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2.26", key: "1d64pi" }],
+  ["path", { d: "M7 17v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3", key: "5hbqbf" }],
+  ["circle", { cx: "16", cy: "11", r: "2", key: "qt15rb" }],
+  ["circle", { cx: "8", cy: "11", r: "2", key: "ssideg" }]
+], GN = e("gpu", ZN);
+const XN = [
   [
     "path",
     {
@@ -11888,8 +11898,8 @@ const ZN = [
   ],
   ["path", { d: "M22 10v6", key: "1lu8f3" }],
   ["path", { d: "M6 12.5V16a6 3 0 0 0 12 0v-3.5", key: "1r8lef" }]
-], GN = e("graduation-cap", ZN);
-const XN = [
+], YN = e("graduation-cap", XN);
+const KN = [
   ["path", { d: "M22 5V2l-5.89 5.89", key: "1eenpo" }],
   ["circle", { cx: "16.6", cy: "15.89", r: "3", key: "xjtalx" }],
   ["circle", { cx: "8.11", cy: "7.4", r: "3", key: "u2fv6i" }],
@@ -11899,8 +11909,8 @@ const XN = [
   ["circle", { cx: "6.56", cy: "13.2", r: "3", key: "17x4xg" }],
   ["circle", { cx: "10.8", cy: "17.44", r: "3", key: "1hogw9" }],
   ["circle", { cx: "5", cy: "19", r: "3", key: "1sn6vo" }]
-], YN = e("grape", XN);
-const KN = [
+], QN = e("grape", KN);
+const JN = [
   [
     "path",
     {
@@ -11909,8 +11919,8 @@ const KN = [
     }
   ],
   ["path", { d: "m16 19 2 2 4-4", key: "1b14m6" }]
-], QN = e("grid-2x2-check", KN);
-const JN = [
+], e$ = e("grid-2x2-check", JN);
+const t$ = [
   [
     "path",
     {
@@ -11920,8 +11930,8 @@ const JN = [
   ],
   ["path", { d: "M16 19h6", key: "xwg31i" }],
   ["path", { d: "M19 22v-6", key: "qhmiwi" }]
-], e$ = e("grid-2x2-plus", JN);
-const t$ = [
+], a$ = e("grid-2x2-plus", t$);
+const o$ = [
   [
     "path",
     {
@@ -11931,41 +11941,33 @@ const t$ = [
   ],
   ["path", { d: "m16 16 5 5", key: "8tpb07" }],
   ["path", { d: "m16 21 5-5", key: "193jll" }]
-], a$ = e("grid-2x2-x", t$);
-const o$ = [
+], n$ = e("grid-2x2-x", o$);
+const c$ = [
   ["path", { d: "M12 3v18", key: "108xh3" }],
   ["path", { d: "M3 12h18", key: "1i2n21" }],
   ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2", key: "h1oib" }]
-], n$ = e("grid-2x2", o$);
-const c$ = [
+], r$ = e("grid-2x2", c$);
+const h$ = [
   ["path", { d: "M15 3v18", key: "14nvp0" }],
   ["path", { d: "M3 12h18", key: "1i2n21" }],
   ["path", { d: "M9 3v18", key: "fh3hqa" }],
   ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2", key: "h1oib" }]
-], r$ = e("grid-3x2", c$);
-const h$ = [
+], d$ = e("grid-3x2", h$);
+const i$ = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M3 9h18", key: "1pudct" }],
   ["path", { d: "M3 15h18", key: "5xshup" }],
   ["path", { d: "M9 3v18", key: "fh3hqa" }],
   ["path", { d: "M15 3v18", key: "14nvp0" }]
-], d$ = e("grid-3x3", h$);
-const i$ = [
+], s$ = e("grid-3x3", i$);
+const y$ = [
   ["circle", { cx: "12", cy: "9", r: "1", key: "124mty" }],
   ["circle", { cx: "19", cy: "9", r: "1", key: "1ruzo2" }],
   ["circle", { cx: "5", cy: "9", r: "1", key: "1a8b28" }],
   ["circle", { cx: "12", cy: "15", r: "1", key: "1e56xg" }],
   ["circle", { cx: "19", cy: "15", r: "1", key: "1a92ep" }],
   ["circle", { cx: "5", cy: "15", r: "1", key: "5r1jwy" }]
-], s$ = e("grip-horizontal", i$);
-const y$ = [
-  ["circle", { cx: "9", cy: "12", r: "1", key: "1vctgf" }],
-  ["circle", { cx: "9", cy: "5", r: "1", key: "hp0tcf" }],
-  ["circle", { cx: "9", cy: "19", r: "1", key: "fkjjf6" }],
-  ["circle", { cx: "15", cy: "12", r: "1", key: "1tmaij" }],
-  ["circle", { cx: "15", cy: "5", r: "1", key: "19l28e" }],
-  ["circle", { cx: "15", cy: "19", r: "1", key: "f4zoj3" }]
-], p$ = e("grip-vertical", y$);
+], p$ = e("grip-horizontal", y$);
 const k$ = [
   ["circle", { cx: "12", cy: "5", r: "1", key: "gxeob9" }],
   ["circle", { cx: "19", cy: "5", r: "1", key: "w8mnmm" }],
@@ -11978,14 +11980,22 @@ const k$ = [
   ["circle", { cx: "5", cy: "19", r: "1", key: "bfqh0e" }]
 ], l$ = e("grip", k$);
 const u$ = [
+  ["circle", { cx: "9", cy: "12", r: "1", key: "1vctgf" }],
+  ["circle", { cx: "9", cy: "5", r: "1", key: "hp0tcf" }],
+  ["circle", { cx: "9", cy: "19", r: "1", key: "fkjjf6" }],
+  ["circle", { cx: "15", cy: "12", r: "1", key: "1tmaij" }],
+  ["circle", { cx: "15", cy: "5", r: "1", key: "19l28e" }],
+  ["circle", { cx: "15", cy: "19", r: "1", key: "f4zoj3" }]
+], M$ = e("grip-vertical", u$);
+const f$ = [
   ["path", { d: "M3 7V5c0-1.1.9-2 2-2h2", key: "adw53z" }],
   ["path", { d: "M17 3h2c1.1 0 2 .9 2 2v2", key: "an4l38" }],
   ["path", { d: "M21 17v2c0 1.1-.9 2-2 2h-2", key: "144t0e" }],
   ["path", { d: "M7 21H5c-1.1 0-2-.9-2-2v-2", key: "rtnfgi" }],
   ["rect", { width: "7", height: "5", x: "7", y: "7", rx: "1", key: "1eyiv7" }],
   ["rect", { width: "7", height: "5", x: "10", y: "12", rx: "1", key: "1qlmkx" }]
-], M$ = e("group", u$);
-const f$ = [
+], m$ = e("group", f$);
+const g$ = [
   ["path", { d: "m11.9 12.1 4.514-4.514", key: "109xqo" }],
   [
     "path",
@@ -12002,8 +12012,8 @@ const f$ = [
       key: "1de1vg"
     }
   ]
-], m$ = e("guitar", f$);
-const g$ = [
+], v$ = e("guitar", g$);
+const _$ = [
   ["path", { d: "M13.144 21.144A7.274 10.445 45 1 0 2.856 10.856", key: "1k1t7q" }],
   [
     "path",
@@ -12020,8 +12030,8 @@ const g$ = [
     }
   ],
   ["path", { d: "m8.5 16.5-1-1", key: "otr954" }]
-], v$ = e("ham", g$);
-const _$ = [
+], x$ = e("ham", _$);
+const b$ = [
   ["path", { d: "M12 16H4a2 2 0 1 1 0-4h16a2 2 0 1 1 0 4h-4.25", key: "5dloqd" }],
   ["path", { d: "M5 12a2 2 0 0 1-2-2 9 7 0 0 1 18 0 2 2 0 0 1-2 2", key: "1vl3my" }],
   [
@@ -12032,8 +12042,8 @@ const _$ = [
     }
   ],
   ["path", { d: "m6.67 12 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2", key: "qqzweh" }]
-], x$ = e("hamburger", _$);
-const b$ = [
+], w$ = e("hamburger", b$);
+const N$ = [
   ["path", { d: "m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9", key: "1hayfq" }],
   ["path", { d: "m18 15 4-4", key: "16gjal" }],
   [
@@ -12043,8 +12053,8 @@ const b$ = [
       key: "15ts47"
     }
   ]
-], w$ = e("hammer", b$);
-const N$ = [
+], $$ = e("hammer", N$);
+const z$ = [
   ["path", { d: "M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17", key: "geh8rc" }],
   [
     "path",
@@ -12056,8 +12066,8 @@ const N$ = [
   ["path", { d: "m2 16 6 6", key: "1pfhp9" }],
   ["circle", { cx: "16", cy: "9", r: "2.9", key: "1n0dlu" }],
   ["circle", { cx: "6", cy: "5", r: "3", key: "151irh" }]
-], $$ = e("hand-coins", N$);
-const z$ = [
+], j$ = e("hand-coins", z$);
+const q$ = [
   [
     "path",
     {
@@ -12068,8 +12078,8 @@ const z$ = [
   ["path", { d: "M13.888 9.662A2 2 0 0 0 17 8V5A2 2 0 1 0 13 5", key: "1xmd21" }],
   ["path", { d: "M9 5A2 2 0 1 0 5 5V10", key: "f3wfjw" }],
   ["path", { d: "M9 7V4A2 2 0 1 1 13 4V7.268", key: "eaoucv" }]
-], j$ = e("hand-fist", z$);
-const q$ = [
+], A$ = e("hand-fist", q$);
+const H$ = [
   ["path", { d: "M18 11.5V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1.4", key: "edstyy" }],
   ["path", { d: "M14 10V8a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2", key: "19wdwo" }],
   ["path", { d: "M10 9.9V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v5", key: "1lugqo" }],
@@ -12078,8 +12088,8 @@ const q$ = [
     "path",
     { d: "M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-4a8 8 0 0 1-8-8 2 2 0 1 1 4 0", key: "1etffm" }
   ]
-], A$ = e("hand-grab", q$);
-const H$ = [
+], S$ = e("hand-grab", H$);
+const C$ = [
   ["path", { d: "M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16", key: "1v1a37" }],
   [
     "path",
@@ -12096,8 +12106,8 @@ const H$ = [
       key: "1x6kdw"
     }
   ]
-], S$ = e("hand-heart", H$);
-const C$ = [
+], V$ = e("hand-heart", C$);
+const R$ = [
   ["path", { d: "M11 12h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 14", key: "1j4xps" }],
   [
     "path",
@@ -12107,8 +12117,8 @@ const C$ = [
     }
   ],
   ["path", { d: "m2 13 6 6", key: "16e5sb" }]
-], V$ = e("hand-helping", C$);
-const R$ = [
+], E$ = e("hand-helping", R$);
+const L$ = [
   ["path", { d: "M18 12.5V10a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1.4", key: "wc6myp" }],
   ["path", { d: "M14 11V9a2 2 0 1 0-4 0v2", key: "94qvcw" }],
   ["path", { d: "M10 10.5V5a2 2 0 1 0-4 0v9", key: "m1ah89" }],
@@ -12119,8 +12129,8 @@ const R$ = [
       key: "t1skq1"
     }
   ]
-], E$ = e("hand-metal", R$);
-const L$ = [
+], P$ = e("hand-metal", L$);
+const T$ = [
   ["path", { d: "M12 3V2", key: "ar7q03" }],
   [
     "path",
@@ -12133,8 +12143,8 @@ const L$ = [
   ["path", { d: "M4 10h16", key: "img6z1" }],
   ["path", { d: "M5 10a7 7 0 0 1 14 0", key: "1ega1o" }],
   ["path", { d: "M5 14v6a1 1 0 0 1-1 1H2", key: "1hescx" }]
-], P$ = e("hand-platter", L$);
-const T$ = [
+], O$ = e("hand-platter", T$);
+const D$ = [
   ["path", { d: "M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2", key: "1fvzgz" }],
   ["path", { d: "M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2", key: "1kc0my" }],
   ["path", { d: "M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8", key: "10h0bg" }],
@@ -12145,8 +12155,8 @@ const T$ = [
       key: "1s1gnw"
     }
   ]
-], O$ = e("hand", T$);
-const D$ = [
+], I$ = e("hand", D$);
+const F$ = [
   [
     "path",
     {
@@ -12155,8 +12165,8 @@ const D$ = [
     }
   ],
   ["path", { d: "M8 11V6a4 4 0 0 1 8 0v5", key: "tcht90" }]
-], I$ = e("handbag", D$);
-const F$ = [
+], B$ = e("handbag", F$);
+const U$ = [
   ["path", { d: "m11 17 2 2a1 1 0 1 0 3-3", key: "efffak" }],
   [
     "path",
@@ -12168,46 +12178,46 @@ const F$ = [
   ["path", { d: "m21 3 1 11h-2", key: "1tisrp" }],
   ["path", { d: "M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3", key: "1uvwmv" }],
   ["path", { d: "M3 4h8", key: "1ep09j" }]
-], B$ = e("handshake", F$);
-const U$ = [
+], W$ = e("handshake", U$);
+const Z$ = [
   ["path", { d: "M12 2v8", key: "1q4o3n" }],
   ["path", { d: "m16 6-4 4-4-4", key: "6wukr" }],
   ["rect", { width: "20", height: "8", x: "2", y: "14", rx: "2", key: "w68u3i" }],
   ["path", { d: "M6 18h.01", key: "uhywen" }],
   ["path", { d: "M10 18h.01", key: "h775k" }]
-], W$ = e("hard-drive-download", U$);
-const Z$ = [
+], G$ = e("hard-drive-download", Z$);
+const X$ = [
   ["path", { d: "m16 6-4-4-4 4", key: "13yo43" }],
   ["path", { d: "M12 2v8", key: "1q4o3n" }],
   ["rect", { width: "20", height: "8", x: "2", y: "14", rx: "2", key: "w68u3i" }],
   ["path", { d: "M6 18h.01", key: "uhywen" }],
   ["path", { d: "M10 18h.01", key: "h775k" }]
-], G$ = e("hard-drive-upload", Z$);
-const X$ = [
+], Y$ = e("hard-drive-upload", X$);
+const K$ = [
+  ["path", { d: "M10 16h.01", key: "1bzywj" }],
+  [
+    "path",
+    {
+      d: "M2.212 11.577a2 2 0 0 0-.212.896V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5.527a2 2 0 0 0-.212-.896L18.55 5.11A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z",
+      key: "18tbho"
+    }
+  ],
+  ["path", { d: "M21.946 12.013H2.054", key: "zqlbp7" }],
+  ["path", { d: "M6 16h.01", key: "1pmjb7" }]
+], Q$ = e("hard-drive", K$);
+const J$ = [
   ["path", { d: "M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5", key: "1p9q5i" }],
   ["path", { d: "M14 6a6 6 0 0 1 6 6v3", key: "1hnv84" }],
   ["path", { d: "M4 15v-3a6 6 0 0 1 6-6", key: "9ciidu" }],
   ["rect", { x: "2", y: "15", width: "20", height: "4", rx: "1", key: "g3x8cw" }]
-], Y$ = e("hard-hat", X$);
-const K$ = [
-  ["line", { x1: "22", x2: "2", y1: "12", y2: "12", key: "1y58io" }],
-  [
-    "path",
-    {
-      d: "M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z",
-      key: "oot6mr"
-    }
-  ],
-  ["line", { x1: "6", x2: "6.01", y1: "16", y2: "16", key: "sgf278" }],
-  ["line", { x1: "10", x2: "10.01", y1: "16", y2: "16", key: "1l4acy" }]
-], Q$ = e("hard-drive", K$);
-const J$ = [
+], ez = e("hard-hat", J$);
+const tz = [
   ["line", { x1: "4", x2: "20", y1: "9", y2: "9", key: "4lhtct" }],
   ["line", { x1: "4", x2: "20", y1: "15", y2: "15", key: "vyu0kd" }],
   ["line", { x1: "10", x2: "8", y1: "3", y2: "21", key: "1ggp8o" }],
   ["line", { x1: "16", x2: "14", y1: "3", y2: "21", key: "weycgp" }]
-], ez = e("hash", J$);
-const tz = [
+], az = e("hash", tz);
+const oz = [
   ["path", { d: "M14 18a2 2 0 0 0-4 0", key: "1v8fkw" }],
   [
     "path",
@@ -12219,8 +12229,8 @@ const tz = [
   ["path", { d: "M2 11h20", key: "3eubbj" }],
   ["circle", { cx: "17", cy: "18", r: "3", key: "82mm0e" }],
   ["circle", { cx: "7", cy: "18", r: "3", key: "lvkj7j" }]
-], az = e("hat-glasses", tz);
-const oz = [
+], nz = e("hat-glasses", oz);
+const cz = [
   ["path", { d: "m5.2 6.2 1.4 1.4", key: "17imol" }],
   ["path", { d: "M2 13h2", key: "13gyu8" }],
   ["path", { d: "M20 13h2", key: "16rner" }],
@@ -12229,8 +12239,8 @@ const oz = [
   ["path", { d: "M22 21H2", key: "1gy6en" }],
   ["path", { d: "M16 13a4 4 0 0 0-8 0", key: "1dyczq" }],
   ["path", { d: "M12 5V2.5", key: "1vytko" }]
-], nz = e("haze", oz);
-const cz = [
+], rz = e("haze", cz);
+const hz = [
   ["path", { d: "M10 12H6", key: "15f2ro" }],
   ["path", { d: "M10 15V9", key: "1lckn7" }],
   [
@@ -12242,8 +12252,8 @@ const cz = [
   ],
   ["path", { d: "M6 15V9", key: "12stmj" }],
   ["rect", { x: "2", y: "5", width: "20", height: "14", rx: "2", key: "qneu4z" }]
-], rz = e("hd", cz);
-const hz = [
+], dz = e("hd", hz);
+const iz = [
   [
     "path",
     {
@@ -12252,34 +12262,34 @@ const hz = [
     }
   ],
   ["path", { d: "M7.5 12h9", key: "1t0ckc" }]
-], dz = e("hdmi-port", hz);
-const iz = [
-  ["path", { d: "M4 12h8", key: "17cfdx" }],
-  ["path", { d: "M4 18V6", key: "1rz3zl" }],
-  ["path", { d: "M12 18V6", key: "zqpxq5" }],
-  ["path", { d: "m17 12 3-2v8", key: "1hhhft" }]
-], sz = e("heading-1", iz);
+], sz = e("hdmi-port", iz);
 const yz = [
   ["path", { d: "M4 12h8", key: "17cfdx" }],
   ["path", { d: "M4 18V6", key: "1rz3zl" }],
   ["path", { d: "M12 18V6", key: "zqpxq5" }],
-  ["path", { d: "M21 18h-4c0-4 4-3 4-6 0-1.5-2-2.5-4-1", key: "9jr5yi" }]
-], pz = e("heading-2", yz);
+  ["path", { d: "m17 12 3-2v8", key: "1hhhft" }]
+], pz = e("heading-1", yz);
 const kz = [
+  ["path", { d: "M4 12h8", key: "17cfdx" }],
+  ["path", { d: "M4 18V6", key: "1rz3zl" }],
+  ["path", { d: "M12 18V6", key: "zqpxq5" }],
+  ["path", { d: "M21 18h-4c0-4 4-3 4-6 0-1.5-2-2.5-4-1", key: "9jr5yi" }]
+], lz = e("heading-2", kz);
+const uz = [
   ["path", { d: "M4 12h8", key: "17cfdx" }],
   ["path", { d: "M4 18V6", key: "1rz3zl" }],
   ["path", { d: "M12 18V6", key: "zqpxq5" }],
   ["path", { d: "M17.5 10.5c1.7-1 3.5 0 3.5 1.5a2 2 0 0 1-2 2", key: "68ncm8" }],
   ["path", { d: "M17 17.5c2 1.5 4 .3 4-1.5a2 2 0 0 0-2-2", key: "1ejuhz" }]
-], lz = e("heading-3", kz);
-const uz = [
+], Mz = e("heading-3", uz);
+const fz = [
   ["path", { d: "M12 18V6", key: "zqpxq5" }],
   ["path", { d: "M17 10v3a1 1 0 0 0 1 1h3", key: "tj5zdr" }],
   ["path", { d: "M21 10v8", key: "1kdml4" }],
   ["path", { d: "M4 12h8", key: "17cfdx" }],
   ["path", { d: "M4 18V6", key: "1rz3zl" }]
-], Mz = e("heading-4", uz);
-const fz = [
+], mz = e("heading-4", fz);
+const gz = [
   ["path", { d: "M4 12h8", key: "17cfdx" }],
   ["path", { d: "M4 18V6", key: "1rz3zl" }],
   ["path", { d: "M12 18V6", key: "zqpxq5" }],
@@ -12288,20 +12298,20 @@ const fz = [
     "path",
     { d: "M17 17.7c.4.2.8.3 1.3.3 1.5 0 2.7-1.1 2.7-2.5S19.8 13 18.3 13H17", key: "2nebdn" }
   ]
-], mz = e("heading-5", fz);
-const gz = [
+], vz = e("heading-5", gz);
+const _z = [
   ["path", { d: "M4 12h8", key: "17cfdx" }],
   ["path", { d: "M4 18V6", key: "1rz3zl" }],
   ["path", { d: "M12 18V6", key: "zqpxq5" }],
   ["circle", { cx: "19", cy: "16", r: "2", key: "15mx69" }],
   ["path", { d: "M20 10c-2 2-3 3.5-3 6", key: "f35dl0" }]
-], vz = e("heading-6", gz);
-const _z = [
+], xz = e("heading-6", _z);
+const bz = [
   ["path", { d: "M6 12h12", key: "8npq4p" }],
   ["path", { d: "M6 20V4", key: "1w1bmo" }],
   ["path", { d: "M18 20V4", key: "o2hl4u" }]
-], xz = e("heading", _z);
-const bz = [
+], wz = e("heading", bz);
+const Nz = [
   ["path", { d: "M21 14h-1.343", key: "1jdnxi" }],
   ["path", { d: "M9.128 3.47A9 9 0 0 1 21 12v3.343", key: "6kipu2" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
@@ -12313,8 +12323,8 @@ const bz = [
       key: "1bkxnm"
     }
   ]
-], wz = e("headphone-off", bz);
-const Nz = [
+], $z = e("headphone-off", Nz);
+const zz = [
   [
     "path",
     {
@@ -12322,8 +12332,8 @@ const Nz = [
       key: "1xhozi"
     }
   ]
-], $z = e("headphones", Nz);
-const zz = [
+], jz = e("headphones", zz);
+const qz = [
   [
     "path",
     {
@@ -12332,8 +12342,8 @@ const zz = [
     }
   ],
   ["path", { d: "M21 16v2a4 4 0 0 1-4 4h-5", key: "1x7m43" }]
-], jz = e("headset", zz);
-const qz = [
+], Az = e("headset", qz);
+const Hz = [
   [
     "path",
     {
@@ -12348,16 +12358,7 @@ const qz = [
       key: "1su70f"
     }
   ]
-], Az = e("heart-crack", qz);
-const Hz = [
-  [
-    "path",
-    {
-      d: "M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762",
-      key: "17lmqv"
-    }
-  ]
-], Sz = e("heart-handshake", Hz);
+], Sz = e("heart-crack", Hz);
 const Cz = [
   [
     "path",
@@ -12369,6 +12370,15 @@ const Cz = [
   ["path", { d: "M15 15h6", key: "1u4692" }]
 ], Vz = e("heart-minus", Cz);
 const Rz = [
+  [
+    "path",
+    {
+      d: "M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762",
+      key: "17lmqv"
+    }
+  ]
+], Ez = e("heart-handshake", Rz);
+const Lz = [
   [
     "path",
     {
@@ -12384,8 +12394,8 @@ const Rz = [
     }
   ],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
-], Ez = e("heart-off", Rz);
-const Lz = [
+], Pz = e("heart-off", Lz);
+const Tz = [
   [
     "path",
     {
@@ -12395,8 +12405,8 @@ const Lz = [
   ],
   ["path", { d: "M15 15h6", key: "1u4692" }],
   ["path", { d: "M18 12v6", key: "1houu1" }]
-], Pz = e("heart-plus", Lz);
-const Tz = [
+], Oz = e("heart-plus", Tz);
+const Dz = [
   [
     "path",
     {
@@ -12405,8 +12415,8 @@ const Tz = [
     }
   ],
   ["path", { d: "M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27", key: "auskq0" }]
-], Oz = e("heart-pulse", Tz);
-const Dz = [
+], Iz = e("heart-pulse", Dz);
+const Fz = [
   [
     "path",
     {
@@ -12414,8 +12424,8 @@ const Dz = [
       key: "mvr1a0"
     }
   ]
-], Iz = e("heart", Dz);
-const Fz = [
+], Bz = e("heart", Fz);
+const Uz = [
   ["path", { d: "M11 8c2-3-2-3 0-6", key: "1ldv5m" }],
   ["path", { d: "M15.5 8c2-3-2-3 0-6", key: "1otqoz" }],
   ["path", { d: "M6 10h.01", key: "1lbq93" }],
@@ -12429,8 +12439,8 @@ const Fz = [
   ],
   ["path", { d: "M5 20v2", key: "1abpe8" }],
   ["path", { d: "M19 20v2", key: "kqn6ft" }]
-], Bz = e("heater", Fz);
-const Uz = [
+], Wz = e("heater", Uz);
+const Zz = [
   ["path", { d: "M11 17v4", key: "14wq8k" }],
   ["path", { d: "M14 3v8a2 2 0 0 0 2 2h5.865", key: "12oo5h" }],
   ["path", { d: "M17 17v4", key: "hdt4hh" }],
@@ -12442,8 +12452,8 @@ const Uz = [
   ["path", { d: "M6 3h16", key: "27qw71" }],
   ["path", { d: "M7 21h14", key: "1ugz0u" }],
   ["path", { d: "M8 13H2", key: "1thz1o" }]
-], Wz = e("helicopter", Uz);
-const Zz = [
+], Gz = e("helicopter", Zz);
+const Xz = [
   [
     "path",
     {
@@ -12451,57 +12461,16 @@ const Zz = [
       key: "yt0hxn"
     }
   ]
-], Gz = e("hexagon", Zz);
-const Xz = [
+], Yz = e("hexagon", Xz);
+const Kz = [
   ["path", { d: "m9 11-6 6v3h9l3-3", key: "1a3l36" }],
   ["path", { d: "m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4", key: "14a9rk" }]
-], Yz = e("highlighter", Xz);
-const Kz = [
+], Qz = e("highlighter", Kz);
+const Jz = [
   ["path", { d: "M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8", key: "1357e3" }],
   ["path", { d: "M3 3v5h5", key: "1xhq8a" }],
   ["path", { d: "M12 7v5l4 2", key: "1fdv2h" }]
-], Qz = e("history", Kz);
-const Jz = [
-  ["path", { d: "M10.82 16.12c1.69.6 3.91.79 5.18.85.28.01.53-.09.7-.27", key: "qyzcap" }],
-  [
-    "path",
-    {
-      d: "M11.14 20.57c.52.24 2.44 1.12 4.08 1.37.46.06.86-.25.9-.71.12-1.52-.3-3.43-.5-4.28",
-      key: "y078lb"
-    }
-  ],
-  ["path", { d: "M16.13 21.05c1.65.63 3.68.84 4.87.91a.9.9 0 0 0 .7-.26", key: "1utre3" }],
-  [
-    "path",
-    {
-      d: "M17.99 5.52a20.83 20.83 0 0 1 3.15 4.5.8.8 0 0 1-.68 1.13c-1.17.1-2.5.02-3.9-.25",
-      key: "17o9hm"
-    }
-  ],
-  ["path", { d: "M20.57 11.14c.24.52 1.12 2.44 1.37 4.08.04.3-.08.59-.31.75", key: "1d1n4p" }],
-  [
-    "path",
-    {
-      d: "M4.93 4.93a10 10 0 0 0-.67 13.4c.35.43.96.4 1.17-.12.69-1.71 1.07-5.07 1.07-6.71 1.34.45 3.1.9 4.88.62a.85.85 0 0 0 .48-.24",
-      key: "9uv3tt"
-    }
-  ],
-  [
-    "path",
-    {
-      d: "M5.52 17.99c1.05.95 2.91 2.42 4.5 3.15a.8.8 0 0 0 1.13-.68c.2-2.34-.33-5.3-1.57-8.28",
-      key: "1292wz"
-    }
-  ],
-  [
-    "path",
-    {
-      d: "M8.35 2.68a10 10 0 0 1 9.98 1.58c.43.35.4.96-.12 1.17-1.5.6-4.3.98-6.07 1.05",
-      key: "7ozu9p"
-    }
-  ],
-  ["path", { d: "m2 2 20 20", key: "1ooewy" }]
-], ej = e("hop-off", Jz);
+], ej = e("history", Jz);
 const tj = [
   [
     "path",
@@ -12555,6 +12524,47 @@ const tj = [
   ]
 ], aj = e("hop", tj);
 const oj = [
+  ["path", { d: "M10.82 16.12c1.69.6 3.91.79 5.18.85.28.01.53-.09.7-.27", key: "qyzcap" }],
+  [
+    "path",
+    {
+      d: "M11.14 20.57c.52.24 2.44 1.12 4.08 1.37.46.06.86-.25.9-.71.12-1.52-.3-3.43-.5-4.28",
+      key: "y078lb"
+    }
+  ],
+  ["path", { d: "M16.13 21.05c1.65.63 3.68.84 4.87.91a.9.9 0 0 0 .7-.26", key: "1utre3" }],
+  [
+    "path",
+    {
+      d: "M17.99 5.52a20.83 20.83 0 0 1 3.15 4.5.8.8 0 0 1-.68 1.13c-1.17.1-2.5.02-3.9-.25",
+      key: "17o9hm"
+    }
+  ],
+  ["path", { d: "M20.57 11.14c.24.52 1.12 2.44 1.37 4.08.04.3-.08.59-.31.75", key: "1d1n4p" }],
+  [
+    "path",
+    {
+      d: "M4.93 4.93a10 10 0 0 0-.67 13.4c.35.43.96.4 1.17-.12.69-1.71 1.07-5.07 1.07-6.71 1.34.45 3.1.9 4.88.62a.85.85 0 0 0 .48-.24",
+      key: "9uv3tt"
+    }
+  ],
+  [
+    "path",
+    {
+      d: "M5.52 17.99c1.05.95 2.91 2.42 4.5 3.15a.8.8 0 0 0 1.13-.68c.2-2.34-.33-5.3-1.57-8.28",
+      key: "1292wz"
+    }
+  ],
+  [
+    "path",
+    {
+      d: "M8.35 2.68a10 10 0 0 1 9.98 1.58c.43.35.4.96-.12 1.17-1.5.6-4.3.98-6.07 1.05",
+      key: "7ozu9p"
+    }
+  ],
+  ["path", { d: "m2 2 20 20", key: "1ooewy" }]
+], nj = e("hop-off", oj);
+const cj = [
   ["path", { d: "M12 7v4", key: "xawao1" }],
   ["path", { d: "M14 21v-3a2 2 0 0 0-4 0v3", key: "1rgiei" }],
   ["path", { d: "M14 9h-4", key: "1w2s2s" }],
@@ -12566,8 +12576,8 @@ const oj = [
     }
   ],
   ["path", { d: "M18 21V5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16", key: "dw4p4i" }]
-], nj = e("hospital", oj);
-const cj = [
+], rj = e("hospital", cj);
+const hj = [
   ["path", { d: "M10 22v-6.57", key: "1wmca3" }],
   ["path", { d: "M12 11h.01", key: "z322tv" }],
   ["path", { d: "M12 7h.01", key: "1ivr5q" }],
@@ -12578,8 +12588,8 @@ const cj = [
   ["path", { d: "M8 11h.01", key: "1dfujw" }],
   ["path", { d: "M8 7h.01", key: "1vti4s" }],
   ["rect", { x: "4", y: "2", width: "16", height: "20", rx: "2", key: "1uxh74" }]
-], rj = e("hotel", cj);
-const hj = [
+], dj = e("hotel", hj);
+const ij = [
   ["path", { d: "M5 22h14", key: "ehvnwv" }],
   ["path", { d: "M5 2h14", key: "pdyrp9" }],
   [
@@ -12593,8 +12603,8 @@ const hj = [
     "path",
     { d: "M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2", key: "1vvvr6" }
   ]
-], dj = e("hourglass", hj);
-const ij = [
+], sj = e("hourglass", ij);
+const yj = [
   [
     "path",
     {
@@ -12609,8 +12619,8 @@ const ij = [
       key: "r6nss1"
     }
   ]
-], sj = e("house-heart", ij);
-const yj = [
+], pj = e("house-heart", yj);
+const kj = [
   ["path", { d: "M10 12V8.964", key: "1vll13" }],
   ["path", { d: "M14 12V8.964", key: "1x3qvg" }],
   [
@@ -12624,8 +12634,8 @@ const yj = [
       key: "365xoy"
     }
   ]
-], pj = e("house-plug", yj);
-const kj = [
+], lj = e("house-plug", kj);
+const uj = [
   [
     "path",
     {
@@ -12636,8 +12646,8 @@ const kj = [
   ["path", { d: "M14.8 12.4A1 1 0 0 0 14 12h-4a1 1 0 0 0-1 1v8", key: "1rbg29" }],
   ["path", { d: "M15 18h6", key: "3b3c90" }],
   ["path", { d: "M18 15v6", key: "9wciyi" }]
-], lj = e("house-plus", kj);
-const uj = [
+], Mj = e("house-plus", uj);
+const fj = [
   ["path", { d: "M9.5 13.866a4 4 0 0 1 5 .01", key: "1wy54i" }],
   ["path", { d: "M12 17h.01", key: "p32p05" }],
   [
@@ -12648,8 +12658,8 @@ const uj = [
     }
   ],
   ["path", { d: "M7 10.754a8 8 0 0 1 10 0", key: "exoy2g" }]
-], Mj = e("house-wifi", uj);
-const fj = [
+], mj = e("house-wifi", fj);
+const gj = [
   ["path", { d: "M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8", key: "5wwlr5" }],
   [
     "path",
@@ -12658,8 +12668,8 @@ const fj = [
       key: "r6nss1"
     }
   ]
-], mj = e("house", fj);
-const gj = [
+], vj = e("house", gj);
+const _j = [
   [
     "path",
     {
@@ -12669,13 +12679,13 @@ const gj = [
   ],
   ["path", { d: "M12.14 11a3.5 3.5 0 1 1 6.71 0", key: "4k3m1s" }],
   ["path", { d: "M15.5 6.5a3.5 3.5 0 1 0-7 0", key: "zmuahr" }]
-], vj = e("ice-cream-bowl", gj);
-const _j = [
+], xj = e("ice-cream-bowl", _j);
+const bj = [
   ["path", { d: "m7 11 4.08 10.35a1 1 0 0 0 1.84 0L17 11", key: "1v6356" }],
   ["path", { d: "M17 7A5 5 0 0 0 7 7", key: "151p3v" }],
   ["path", { d: "M17 7a2 2 0 0 1 0 4H7a2 2 0 0 1 0-4", key: "1sdaij" }]
-], xj = e("ice-cream-cone", _j);
-const bj = [
+], wj = e("ice-cream-cone", bj);
+const Nj = [
   ["path", { d: "M13.5 8h-3", key: "xvov4w" }],
   [
     "path",
@@ -12687,15 +12697,15 @@ const bj = [
   ["path", { d: "M16.899 22A5 5 0 0 0 7.1 22", key: "1d0ppr" }],
   ["path", { d: "m9 2 3 6", key: "1o7bd9" }],
   ["circle", { cx: "12", cy: "15", r: "3", key: "g36mzq" }]
-], wj = e("id-card-lanyard", bj);
-const Nj = [
+], $j = e("id-card-lanyard", Nj);
+const zj = [
   ["path", { d: "M16 10h2", key: "8sgtl7" }],
   ["path", { d: "M16 14h2", key: "epxaof" }],
   ["path", { d: "M6.17 15a3 3 0 0 1 5.66 0", key: "n6f512" }],
   ["circle", { cx: "9", cy: "11", r: "2", key: "yxgjnd" }],
   ["rect", { x: "2", y: "5", width: "20", height: "14", rx: "2", key: "qneu4z" }]
-], $j = e("id-card", Nj);
-const zj = [
+], jj = e("id-card", zj);
+const qj = [
   [
     "path",
     {
@@ -12706,13 +12716,7 @@ const zj = [
   ["path", { d: "m14 19 3 3v-5.5", key: "9ldu5r" }],
   ["path", { d: "m17 22 3-3", key: "1nkfve" }],
   ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }]
-], jj = e("image-down", zj);
-const qj = [
-  ["path", { d: "M21 9v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7", key: "m87ecr" }],
-  ["line", { x1: "16", x2: "22", y1: "5", y2: "5", key: "ez7e4s" }],
-  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
-  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
-], Aj = e("image-minus", qj);
+], Aj = e("image-down", qj);
 const Hj = [
   ["line", { x1: "2", x2: "22", y1: "2", y2: "22", key: "a6p6uj" }],
   ["path", { d: "M10.41 10.41a2 2 0 1 1-2.83-2.83", key: "1bzlo9" }],
@@ -12728,6 +12732,12 @@ const Hj = [
   ["path", { d: "M21 15V5a2 2 0 0 0-2-2H9", key: "43el77" }]
 ], Sj = e("image-off", Hj);
 const Cj = [
+  ["path", { d: "M21 9v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7", key: "m87ecr" }],
+  ["line", { x1: "16", x2: "22", y1: "5", y2: "5", key: "ez7e4s" }],
+  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
+  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
+], Vj = e("image-minus", Cj);
+const Rj = [
   [
     "path",
     {
@@ -12738,15 +12748,15 @@ const Cj = [
   ["path", { d: "M21 12.17V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6", key: "99hgts" }],
   ["path", { d: "m6 21 5-5", key: "1wyjai" }],
   ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }]
-], Vj = e("image-play", Cj);
-const Rj = [
+], Ej = e("image-play", Rj);
+const Lj = [
   ["path", { d: "M16 5h6", key: "1vod17" }],
   ["path", { d: "M19 2v6", key: "4bpg5p" }],
   ["path", { d: "M21 11.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7.5", key: "1ue2ih" }],
   ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }],
   ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }]
-], Ej = e("image-plus", Rj);
-const Lj = [
+], Pj = e("image-plus", Lj);
+const Tj = [
   [
     "path",
     {
@@ -12757,8 +12767,8 @@ const Lj = [
   ["path", { d: "m14 19.5 3-3 3 3", key: "9vmjn0" }],
   ["path", { d: "M17 22v-5.5", key: "1aa6fl" }],
   ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }]
-], Pj = e("image-up", Lj);
-const Tj = [
+], Oj = e("image-up", Tj);
+const Dj = [
   ["path", { d: "M16 3h5v5", key: "1806ms" }],
   ["path", { d: "M17 21h2a2 2 0 0 0 2-2", key: "130fy9" }],
   ["path", { d: "M21 12v3", key: "1wzk3p" }],
@@ -12767,19 +12777,19 @@ const Tj = [
   ["path", { d: "m5 21 4.144-4.144a1.21 1.21 0 0 1 1.712 0L13 19", key: "fyekpt" }],
   ["path", { d: "M9 3h3", key: "d52fa" }],
   ["rect", { x: "3", y: "11", width: "10", height: "10", rx: "1", key: "1wpmix" }]
-], Oj = e("image-upscale", Tj);
-const Dj = [
+], Ij = e("image-upscale", Dj);
+const Fj = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
   ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
   ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
-], Ij = e("image", Dj);
-const Fj = [
+], Bj = e("image", Fj);
+const Uj = [
   ["path", { d: "m22 11-1.296-1.296a2.4 2.4 0 0 0-3.408 0L11 16", key: "9kzy35" }],
   ["path", { d: "M4 8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2", key: "1t0f0t" }],
   ["circle", { cx: "13", cy: "7", r: "1", fill: "currentColor", key: "1obus6" }],
   ["rect", { x: "8", y: "2", width: "14", height: "14", rx: "2", key: "1gvhby" }]
-], Bj = e("images", Fj);
-const Uj = [
+], Wj = e("images", Uj);
+const Zj = [
   ["path", { d: "M12 3v12", key: "1x0j5s" }],
   ["path", { d: "m8 11 4 4 4-4", key: "1dohi6" }],
   [
@@ -12789,8 +12799,8 @@ const Uj = [
       key: "1ywtjm"
     }
   ]
-], Wj = e("import", Uj);
-const Zj = [
+], Gj = e("import", Zj);
+const Xj = [
   ["polyline", { points: "22 12 16 12 14 15 10 15 8 12 2 12", key: "o97t9d" }],
   [
     "path",
@@ -12799,53 +12809,53 @@ const Zj = [
       key: "oot6mr"
     }
   ]
-], Gj = e("inbox", Zj);
-const Xj = [
+], Yj = e("inbox", Xj);
+const Kj = [
   ["path", { d: "M6 3h12", key: "ggurg9" }],
   ["path", { d: "M6 8h12", key: "6g4wlu" }],
   ["path", { d: "m6 13 8.5 8", key: "u1kupk" }],
   ["path", { d: "M6 13h3", key: "wdp6ag" }],
   ["path", { d: "M9 13c6.667 0 6.667-10 0-10", key: "1nkvk2" }]
-], Yj = e("indian-rupee", Xj);
-const Kj = [
-  ["path", { d: "M6 16c5 0 7-8 12-8a4 4 0 0 1 0 8c-5 0-7-8-12-8a4 4 0 1 0 0 8", key: "18ogeb" }]
-], Qj = e("infinity", Kj);
+], Qj = e("indian-rupee", Kj);
 const Jj = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M12 16v-4", key: "1dtifu" }],
   ["path", { d: "M12 8h.01", key: "e9boi3" }]
 ], eq = e("info", Jj);
 const tq = [
+  ["path", { d: "M6 16c5 0 7-8 12-8a4 4 0 0 1 0 8c-5 0-7-8-12-8a4 4 0 1 0 0 8", key: "18ogeb" }]
+], aq = e("infinity", tq);
+const oq = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M7 7h.01", key: "7u93v4" }],
   ["path", { d: "M17 7h.01", key: "14a9sn" }],
   ["path", { d: "M7 17h.01", key: "19xn7k" }],
   ["path", { d: "M17 17h.01", key: "1sd3ek" }]
-], aq = e("inspection-panel", tq);
-const oq = [
+], nq = e("inspection-panel", oq);
+const cq = [
   ["rect", { width: "20", height: "20", x: "2", y: "2", rx: "5", ry: "5", key: "2e1cvw" }],
   ["path", { d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z", key: "9exkf1" }],
   ["line", { x1: "17.5", x2: "17.51", y1: "6.5", y2: "6.5", key: "r4j83e" }]
-], nq = e("instagram", oq);
-const cq = [
+], rq = e("instagram", cq);
+const hq = [
   ["line", { x1: "19", x2: "10", y1: "4", y2: "4", key: "15jd3p" }],
   ["line", { x1: "14", x2: "5", y1: "20", y2: "20", key: "bu0au3" }],
   ["line", { x1: "15", x2: "9", y1: "4", y2: "20", key: "uljnxc" }]
-], rq = e("italic", cq);
-const hq = [
+], dq = e("italic", hq);
+const iq = [
   ["path", { d: "m16 14 4 4-4 4", key: "hkso8o" }],
   ["path", { d: "M20 10a8 8 0 1 0-8 8h8", key: "1bik7b" }]
-], dq = e("iteration-ccw", hq);
-const iq = [
+], sq = e("iteration-ccw", iq);
+const yq = [
   ["path", { d: "M4 10a8 8 0 1 1 8 8H4", key: "svv66n" }],
   ["path", { d: "m8 22-4-4 4-4", key: "6g7gki" }]
-], sq = e("iteration-cw", iq);
-const yq = [
+], pq = e("iteration-cw", yq);
+const kq = [
   ["path", { d: "M12 9.5V21m0-11.5L6 3m6 6.5L18 3", key: "2ej80x" }],
   ["path", { d: "M6 15h12", key: "1hwgt5" }],
   ["path", { d: "M6 11h12", key: "wf4gp6" }]
-], pq = e("japanese-yen", yq);
-const kq = [
+], lq = e("japanese-yen", kq);
+const uq = [
   [
     "path",
     {
@@ -12856,13 +12866,13 @@ const kq = [
   ["path", { d: "M6 15v-2", key: "gd6mvg" }],
   ["path", { d: "M12 15V9", key: "8c7uyn" }],
   ["circle", { cx: "12", cy: "6", r: "3", key: "1gm2ql" }]
-], lq = e("joystick", kq);
-const uq = [
+], Mq = e("joystick", uq);
+const fq = [
   ["path", { d: "M5 3v14", key: "9nsxs2" }],
   ["path", { d: "M12 3v8", key: "1h2ygw" }],
   ["path", { d: "M19 3v18", key: "1sk56x" }]
-], Mq = e("kanban", uq);
-const fq = [
+], mq = e("kanban", fq);
+const gq = [
   ["path", { d: "M18 17a1 1 0 0 0-1 1v1a2 2 0 1 0 2-2z", key: "skzb1g" }],
   [
     "path",
@@ -12873,8 +12883,8 @@ const fq = [
   ],
   ["path", { d: "m6.707 6.707 10.586 10.586", key: "d2l993" }],
   ["path", { d: "M7 5a2 2 0 1 0-2 2h1a1 1 0 0 0 1-1z", key: "i0et4n" }]
-], mq = e("kayak", fq);
-const gq = [
+], vq = e("kayak", gq);
+const _q = [
   [
     "path",
     {
@@ -12883,8 +12893,8 @@ const gq = [
     }
   ],
   ["circle", { cx: "16.5", cy: "7.5", r: ".5", fill: "currentColor", key: "w0ekpg" }]
-], vq = e("key-round", gq);
-const _q = [
+], xq = e("key-round", _q);
+const bq = [
   [
     "path",
     {
@@ -12900,13 +12910,13 @@ const _q = [
       key: "1ubxi2"
     }
   ]
-], xq = e("key-square", _q);
-const bq = [
+], wq = e("key-square", bq);
+const Nq = [
   ["path", { d: "m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4", key: "g0fldk" }],
   ["path", { d: "m21 2-9.6 9.6", key: "1j0ho8" }],
   ["circle", { cx: "7.5", cy: "15.5", r: "5.5", key: "yqb3hr" }]
-], wq = e("key", bq);
-const Nq = [
+], $q = e("key", Nq);
+const zq = [
   ["rect", { width: "20", height: "16", x: "2", y: "4", rx: "2", key: "18n3k1" }],
   ["path", { d: "M6 8h4", key: "utf9t1" }],
   ["path", { d: "M14 8h.01", key: "1primd" }],
@@ -12916,8 +12926,8 @@ const Nq = [
   ["path", { d: "M10 12v4", key: "1fxnav" }],
   ["path", { d: "M14 12v4", key: "1hft58" }],
   ["path", { d: "M18 12v4", key: "tjjnbz" }]
-], $q = e("keyboard-music", Nq);
-const zq = [
+], jq = e("keyboard-music", zq);
+const qq = [
   ["path", { d: "M 20 4 A2 2 0 0 1 22 6", key: "1g1fkt" }],
   ["path", { d: "M 22 6 L 22 16.41", key: "1qjg3w" }],
   ["path", { d: "M 7 16 L 16 16", key: "n0yqwb" }],
@@ -12928,8 +12938,8 @@ const zq = [
   ["path", { d: "M20 20H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2", key: "s23sx2" }],
   ["path", { d: "M6 8h.01", key: "x9i8wu" }],
   ["path", { d: "M8 12h.01", key: "czm47f" }]
-], jq = e("keyboard-off", zq);
-const qq = [
+], Aq = e("keyboard-off", qq);
+const Hq = [
   ["path", { d: "M10 8h.01", key: "1r9ogq" }],
   ["path", { d: "M12 12h.01", key: "1mp3jc" }],
   ["path", { d: "M14 8h.01", key: "1primd" }],
@@ -12939,8 +12949,8 @@ const qq = [
   ["path", { d: "M7 16h10", key: "wp8him" }],
   ["path", { d: "M8 12h.01", key: "czm47f" }],
   ["rect", { width: "20", height: "16", x: "2", y: "4", rx: "2", key: "18n3k1" }]
-], Aq = e("keyboard", qq);
-const Hq = [
+], Sq = e("keyboard", Hq);
+const Cq = [
   ["path", { d: "M12 2v5", key: "nd4vlx" }],
   ["path", { d: "M14.829 15.998a3 3 0 1 1-5.658 0", key: "1pybiy" }],
   [
@@ -12950,8 +12960,8 @@ const Hq = [
       key: "ma1wor"
     }
   ]
-], Sq = e("lamp-ceiling", Hq);
-const Cq = [
+], Vq = e("lamp-ceiling", Cq);
+const Rq = [
   [
     "path",
     {
@@ -12965,8 +12975,8 @@ const Cq = [
     { d: "M3 20a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z", key: "8b3myj" }
   ],
   ["path", { d: "m9.086 6.5-4.793 4.793a1 1 0 0 0-.18 1.17L7 18", key: "43s6cu" }]
-], Vq = e("lamp-desk", Cq);
-const Rq = [
+], Eq = e("lamp-desk", Rq);
+const Lq = [
   ["path", { d: "M12 10v12", key: "6ubwww" }],
   [
     "path",
@@ -12976,8 +12986,8 @@ const Rq = [
     }
   ],
   ["path", { d: "M9 22h6", key: "1rlq3v" }]
-], Eq = e("lamp-floor", Rq);
-const Lq = [
+], Pq = e("lamp-floor", Lq);
+const Tq = [
   [
     "path",
     {
@@ -12990,8 +13000,8 @@ const Lq = [
     { d: "M6 3a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z", key: "15356w" }
   ],
   ["path", { d: "M8 6h4a2 2 0 0 1 2 2v5", key: "1m6m7x" }]
-], Pq = e("lamp-wall-down", Lq);
-const Tq = [
+], Oq = e("lamp-wall-down", Tq);
+const Dq = [
   [
     "path",
     {
@@ -13004,8 +13014,8 @@ const Tq = [
     { d: "M6 15a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H5a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1z", key: "154r2a" }
   ],
   ["path", { d: "M8 18h4a2 2 0 0 0 2-2v-5", key: "z9mbu0" }]
-], Oq = e("lamp-wall-up", Tq);
-const Dq = [
+], Iq = e("lamp-wall-up", Dq);
+const Fq = [
   ["path", { d: "M12 12v6", key: "3ahymv" }],
   [
     "path",
@@ -13018,8 +13028,8 @@ const Dq = [
     "path",
     { d: "M8 20a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1z", key: "1mmzpi" }
   ]
-], Iq = e("lamp", Dq);
-const Fq = [
+], Bq = e("lamp", Fq);
+const Uq = [
   ["path", { d: "m12 8 6-3-6-3v10", key: "mvpnpy" }],
   [
     "path",
@@ -13030,8 +13040,8 @@ const Fq = [
   ],
   ["path", { d: "m6.49 12.85 11.02 6.3", key: "1kt42w" }],
   ["path", { d: "M17.51 12.85 6.5 19.15", key: "v55bdg" }]
-], Bq = e("land-plot", Fq);
-const Uq = [
+], Wq = e("land-plot", Uq);
+const Zq = [
   ["path", { d: "M10 18v-7", key: "wt116b" }],
   [
     "path",
@@ -13044,34 +13054,24 @@ const Uq = [
   ["path", { d: "M18 18v-7", key: "aexdmj" }],
   ["path", { d: "M3 22h18", key: "8prr45" }],
   ["path", { d: "M6 18v-7", key: "1ivflk" }]
-], Wq = e("landmark", Uq);
-const Zq = [
+], Gq = e("landmark", Zq);
+const Xq = [
   ["path", { d: "m5 8 6 6", key: "1wu5hv" }],
   ["path", { d: "m4 14 6-6 2-3", key: "1k1g8d" }],
   ["path", { d: "M2 5h12", key: "or177f" }],
   ["path", { d: "M7 2h1", key: "1t2jsx" }],
   ["path", { d: "m22 22-5-10-5 10", key: "don7ne" }],
   ["path", { d: "M14 18h6", key: "1m8k6r" }]
-], Gq = e("languages", Zq);
-const Xq = [
+], Yq = e("languages", Xq);
+const Kq = [
   ["path", { d: "M2 20h20", key: "owomy5" }],
   ["path", { d: "m9 10 2 2 4-4", key: "1gnqz4" }],
   ["rect", { x: "3", y: "4", width: "18", height: "12", rx: "2", key: "8ur36m" }]
-], Yq = e("laptop-minimal-check", Xq);
-const Kq = [
+], Qq = e("laptop-minimal-check", Kq);
+const Jq = [
   ["rect", { width: "18", height: "12", x: "3", y: "4", rx: "2", ry: "2", key: "1qhy41" }],
   ["line", { x1: "2", x2: "22", y1: "20", y2: "20", key: "ni3hll" }]
-], Qq = e("laptop-minimal", Kq);
-const Jq = [
-  [
-    "path",
-    {
-      d: "M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z",
-      key: "1pdavp"
-    }
-  ],
-  ["path", { d: "M20.054 15.987H3.946", key: "14rxg9" }]
-], eA = e("laptop", Jq);
+], eA = e("laptop-minimal", Jq);
 const tA = [
   ["path", { d: "M7 22a5 5 0 0 1-2-4", key: "umushi" }],
   ["path", { d: "M7 16.93c.96.43 1.96.74 2.99.91", key: "ybbtv3" }],
@@ -13092,17 +13092,27 @@ const tA = [
   ]
 ], aA = e("lasso-select", tA);
 const oA = [
+  [
+    "path",
+    {
+      d: "M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z",
+      key: "1pdavp"
+    }
+  ],
+  ["path", { d: "M20.054 15.987H3.946", key: "14rxg9" }]
+], nA = e("laptop", oA);
+const cA = [
   ["path", { d: "M3.704 14.467a10 8 0 1 1 3.115 2.375", key: "wxgc5m" }],
   ["path", { d: "M7 22a5 5 0 0 1-2-3.994", key: "1xp6a4" }],
   ["circle", { cx: "5", cy: "16", r: "2", key: "18csp3" }]
-], nA = e("lasso", oA);
-const cA = [
+], rA = e("lasso", cA);
+const hA = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M18 13a6 6 0 0 1-6 5 6 6 0 0 1-6-5h12Z", key: "b2q4dd" }],
   ["line", { x1: "9", x2: "9.01", y1: "9", y2: "9", key: "yxxnd0" }],
   ["line", { x1: "15", x2: "15.01", y1: "9", y2: "9", key: "1p4y9e" }]
-], rA = e("laugh", cA);
-const hA = [
+], dA = e("laugh", hA);
+const iA = [
   [
     "path",
     {
@@ -13117,8 +13127,8 @@ const hA = [
       key: "byia6g"
     }
   ]
-], dA = e("layers-2", hA);
-const iA = [
+], sA = e("layers-2", iA);
+const yA = [
   [
     "path",
     {
@@ -13130,8 +13140,8 @@ const iA = [
   ["path", { d: "M19 14v6", key: "1ckrd5" }],
   ["path", { d: "M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 .825.178", key: "1ia9y3" }],
   ["path", { d: "M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l2.116-.962", key: "jksky3" }]
-], sA = e("layers-plus", iA);
-const yA = [
+], pA = e("layers-plus", yA);
+const kA = [
   [
     "path",
     {
@@ -13153,43 +13163,43 @@ const yA = [
       key: "kqbvx6"
     }
   ]
-], pA = e("layers", yA);
-const kA = [
+], lA = e("layers", kA);
+const uA = [
   ["rect", { width: "7", height: "9", x: "3", y: "3", rx: "1", key: "10lvy0" }],
   ["rect", { width: "7", height: "5", x: "14", y: "3", rx: "1", key: "16une8" }],
   ["rect", { width: "7", height: "9", x: "14", y: "12", rx: "1", key: "1hutg5" }],
   ["rect", { width: "7", height: "5", x: "3", y: "16", rx: "1", key: "ldoo1y" }]
-], lA = e("layout-dashboard", kA);
-const uA = [
+], MA = e("layout-dashboard", uA);
+const fA = [
   ["rect", { width: "7", height: "7", x: "3", y: "3", rx: "1", key: "1g98yp" }],
   ["rect", { width: "7", height: "7", x: "14", y: "3", rx: "1", key: "6d4xhi" }],
   ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }],
   ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }]
-], MA = e("layout-grid", uA);
-const fA = [
+], mA = e("layout-grid", fA);
+const gA = [
   ["rect", { width: "7", height: "7", x: "3", y: "3", rx: "1", key: "1g98yp" }],
   ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }],
   ["path", { d: "M14 4h7", key: "3xa0d5" }],
   ["path", { d: "M14 9h7", key: "1icrd9" }],
   ["path", { d: "M14 15h7", key: "1mj8o2" }],
   ["path", { d: "M14 20h7", key: "11slyb" }]
-], mA = e("layout-list", fA);
-const gA = [
+], vA = e("layout-list", gA);
+const _A = [
   ["rect", { width: "7", height: "18", x: "3", y: "3", rx: "1", key: "2obqm" }],
   ["rect", { width: "7", height: "7", x: "14", y: "3", rx: "1", key: "6d4xhi" }],
   ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }]
-], vA = e("layout-panel-left", gA);
-const _A = [
-  ["rect", { width: "18", height: "7", x: "3", y: "3", rx: "1", key: "f1a2em" }],
-  ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }],
-  ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }]
-], xA = e("layout-panel-top", _A);
+], xA = e("layout-panel-left", _A);
 const bA = [
   ["rect", { width: "18", height: "7", x: "3", y: "3", rx: "1", key: "f1a2em" }],
   ["rect", { width: "9", height: "7", x: "3", y: "14", rx: "1", key: "jqznyg" }],
   ["rect", { width: "5", height: "7", x: "16", y: "14", rx: "1", key: "q5h2i8" }]
 ], wA = e("layout-template", bA);
 const NA = [
+  ["rect", { width: "18", height: "7", x: "3", y: "3", rx: "1", key: "f1a2em" }],
+  ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }],
+  ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }]
+], $A = e("layout-panel-top", NA);
+const zA = [
   [
     "path",
     {
@@ -13198,8 +13208,8 @@ const NA = [
     }
   ],
   ["path", { d: "M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12", key: "mt58a7" }]
-], $A = e("leaf", NA);
-const zA = [
+], jA = e("leaf", zA);
+const qA = [
   [
     "path",
     {
@@ -13208,8 +13218,8 @@ const zA = [
     }
   ],
   ["path", { d: "M2 22 17 7", key: "1q7jp2" }]
-], jA = e("leafy-green", zA);
-const qA = [
+], AA = e("leafy-green", qA);
+const HA = [
   [
     "path",
     {
@@ -13219,8 +13229,8 @@ const qA = [
   ],
   ["path", { d: "M18 6V3a1 1 0 0 0-1-1h-3", key: "1550fe" }],
   ["rect", { width: "8", height: "12", x: "8", y: "10", rx: "1", key: "qmu8b6" }]
-], AA = e("lectern", qA);
-const HA = [
+], SA = e("lectern", HA);
+const CA = [
   ["rect", { width: "8", height: "18", x: "3", y: "3", rx: "1", key: "oynpb5" }],
   ["path", { d: "M7 3v18", key: "bbkbws" }],
   [
@@ -13230,36 +13240,36 @@ const HA = [
       key: "1qboyk"
     }
   ]
-], SA = e("library-big", HA);
-const CA = [
+], VA = e("library-big", CA);
+const RA = [
   ["path", { d: "m16 6 4 14", key: "ji33uf" }],
   ["path", { d: "M12 6v14", key: "1n7gus" }],
   ["path", { d: "M8 8v12", key: "1gg7y9" }],
   ["path", { d: "M4 4v16", key: "6qkkli" }]
-], VA = e("library", CA);
-const RA = [
+], EA = e("library", RA);
+const LA = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "m4.93 4.93 4.24 4.24", key: "1ymg45" }],
   ["path", { d: "m14.83 9.17 4.24-4.24", key: "1cb5xl" }],
   ["path", { d: "m14.83 14.83 4.24 4.24", key: "q42g0n" }],
   ["path", { d: "m9.17 14.83-4.24 4.24", key: "bqpfvv" }],
   ["circle", { cx: "12", cy: "12", r: "4", key: "4exip2" }]
-], EA = e("life-buoy", RA);
-const LA = [
+], PA = e("life-buoy", LA);
+const TA = [
   ["path", { d: "M14 12h2v8", key: "c1fccl" }],
   ["path", { d: "M14 20h4", key: "lzx1xo" }],
   ["path", { d: "M6 12h4", key: "a4o3ry" }],
   ["path", { d: "M6 20h4", key: "1i6q5t" }],
   ["path", { d: "M8 20V8a4 4 0 0 1 7.464-2", key: "wk9t6r" }]
-], PA = e("ligature", LA);
-const TA = [
+], OA = e("ligature", TA);
+const DA = [
   ["path", { d: "M16.8 11.2c.8-.9 1.2-2 1.2-3.2a6 6 0 0 0-9.3-5", key: "1fkcox" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   ["path", { d: "M6.3 6.3a4.67 4.67 0 0 0 1.2 5.2c.7.7 1.3 1.5 1.5 2.5", key: "10m8kw" }],
   ["path", { d: "M9 18h6", key: "x1upvd" }],
   ["path", { d: "M10 22h4", key: "ceow96" }]
-], OA = e("lightbulb-off", TA);
-const DA = [
+], IA = e("lightbulb-off", DA);
+const FA = [
   [
     "path",
     {
@@ -13269,8 +13279,8 @@ const DA = [
   ],
   ["path", { d: "M9 18h6", key: "x1upvd" }],
   ["path", { d: "M10 22h4", key: "ceow96" }]
-], IA = e("lightbulb", DA);
-const FA = [
+], BA = e("lightbulb", FA);
+const UA = [
   [
     "path",
     {
@@ -13278,23 +13288,23 @@ const FA = [
       key: "1lrphd"
     }
   ]
-], BA = e("line-squiggle", FA);
-const UA = [
+], WA = e("line-squiggle", UA);
+const ZA = [
   ["path", { d: "M9 17H7A5 5 0 0 1 7 7", key: "10o201" }],
   ["path", { d: "M15 7h2a5 5 0 0 1 4 8", key: "1d3206" }],
   ["line", { x1: "8", x2: "12", y1: "12", y2: "12", key: "rvw6j4" }],
   ["line", { x1: "2", x2: "22", y1: "2", y2: "22", key: "a6p6uj" }]
-], WA = e("link-2-off", UA);
-const ZA = [
+], GA = e("link-2-off", ZA);
+const XA = [
   ["path", { d: "M9 17H7A5 5 0 0 1 7 7h2", key: "8i5ue5" }],
   ["path", { d: "M15 7h2a5 5 0 1 1 0 10h-2", key: "1b9ql8" }],
   ["line", { x1: "8", x2: "16", y1: "12", y2: "12", key: "1jonct" }]
-], GA = e("link-2", ZA);
-const XA = [
+], YA = e("link-2", XA);
+const KA = [
   ["path", { d: "M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71", key: "1cjeqo" }],
   ["path", { d: "M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71", key: "19qd67" }]
-], YA = e("link", XA);
-const KA = [
+], QA = e("link", KA);
+const JA = [
   [
     "path",
     {
@@ -13304,34 +13314,27 @@ const KA = [
   ],
   ["rect", { width: "4", height: "12", x: "2", y: "9", key: "mk3on5" }],
   ["circle", { cx: "4", cy: "4", r: "2", key: "bt5ra8" }]
-], QA = e("linkedin", KA);
-const JA = [
+], eH = e("linkedin", JA);
+const tH = [
   ["path", { d: "M16 5H3", key: "m91uny" }],
   ["path", { d: "M16 12H3", key: "1a2rj7" }],
   ["path", { d: "M11 19H3", key: "zflm78" }],
   ["path", { d: "m15 18 2 2 4-4", key: "1szwhi" }]
-], eH = e("list-check", JA);
-const tH = [
+], aH = e("list-check", tH);
+const oH = [
   ["path", { d: "M13 5h8", key: "a7qcls" }],
   ["path", { d: "M13 12h8", key: "h98zly" }],
   ["path", { d: "M13 19h8", key: "c3s6r1" }],
   ["path", { d: "m3 17 2 2 4-4", key: "1jhpwq" }],
   ["path", { d: "m3 7 2 2 4-4", key: "1obspn" }]
-], aH = e("list-checks", tH);
-const oH = [
+], nH = e("list-checks", oH);
+const cH = [
   ["path", { d: "M3 5h8", key: "18g2rq" }],
   ["path", { d: "M3 12h8", key: "1xfjp6" }],
   ["path", { d: "M3 19h8", key: "fpbke4" }],
   ["path", { d: "m15 5 3 3 3-3", key: "1t4thf" }],
   ["path", { d: "m15 19 3-3 3 3", key: "y4ckd2" }]
-], nH = e("list-chevrons-down-up", oH);
-const cH = [
-  ["path", { d: "M3 5h8", key: "18g2rq" }],
-  ["path", { d: "M3 12h8", key: "1xfjp6" }],
-  ["path", { d: "M3 19h8", key: "fpbke4" }],
-  ["path", { d: "m15 8 3-3 3 3", key: "bc4io6" }],
-  ["path", { d: "m15 16 3 3 3-3", key: "9wmg1l" }]
-], rH = e("list-chevrons-up-down", cH);
+], rH = e("list-chevrons-down-up", cH);
 const hH = [
   ["path", { d: "M10 5h11", key: "1hkqpe" }],
   ["path", { d: "M10 12h11", key: "6m4ad9" }],
@@ -13340,65 +13343,72 @@ const hH = [
   ["path", { d: "m3 20 3-3-3-3", key: "20gx1n" }]
 ], dH = e("list-collapse", hH);
 const iH = [
+  ["path", { d: "M3 5h8", key: "18g2rq" }],
+  ["path", { d: "M3 12h8", key: "1xfjp6" }],
+  ["path", { d: "M3 19h8", key: "fpbke4" }],
+  ["path", { d: "m15 8 3-3 3 3", key: "bc4io6" }],
+  ["path", { d: "m15 16 3 3 3-3", key: "9wmg1l" }]
+], sH = e("list-chevrons-up-down", iH);
+const yH = [
   ["path", { d: "M16 5H3", key: "m91uny" }],
   ["path", { d: "M16 12H3", key: "1a2rj7" }],
   ["path", { d: "M9 19H3", key: "s61nz1" }],
   ["path", { d: "m16 16-3 3 3 3", key: "117b85" }],
   ["path", { d: "M21 5v12a2 2 0 0 1-2 2h-6", key: "hey24a" }]
-], sH = e("list-end", iH);
-const yH = [
+], pH = e("list-end", yH);
+const kH = [
   ["path", { d: "M12 5H2", key: "1o22fu" }],
   ["path", { d: "M6 12h12", key: "8npq4p" }],
   ["path", { d: "M9 19h6", key: "456am0" }],
   ["path", { d: "M16 5h6", key: "1vod17" }],
   ["path", { d: "M19 8V2", key: "1wcffq" }]
-], pH = e("list-filter-plus", yH);
-const kH = [
+], lH = e("list-filter-plus", kH);
+const uH = [
   ["path", { d: "M2 5h20", key: "1fs1ex" }],
   ["path", { d: "M6 12h12", key: "8npq4p" }],
   ["path", { d: "M9 19h6", key: "456am0" }]
-], lH = e("list-filter", kH);
-const uH = [
-  ["path", { d: "M21 5H11", key: "us1j55" }],
-  ["path", { d: "M21 12H11", key: "wd7e0v" }],
-  ["path", { d: "M21 19H11", key: "saa85w" }],
-  ["path", { d: "m7 8-4 4 4 4", key: "o5hrat" }]
-], MH = e("list-indent-decrease", uH);
+], MH = e("list-filter", uH);
 const fH = [
   ["path", { d: "M21 5H11", key: "us1j55" }],
   ["path", { d: "M21 12H11", key: "wd7e0v" }],
   ["path", { d: "M21 19H11", key: "saa85w" }],
-  ["path", { d: "m3 8 4 4-4 4", key: "1a3j6y" }]
-], mH = e("list-indent-increase", fH);
+  ["path", { d: "m7 8-4 4 4 4", key: "o5hrat" }]
+], mH = e("list-indent-decrease", fH);
 const gH = [
+  ["path", { d: "M21 5H11", key: "us1j55" }],
+  ["path", { d: "M21 12H11", key: "wd7e0v" }],
+  ["path", { d: "M21 19H11", key: "saa85w" }],
+  ["path", { d: "m3 8 4 4-4 4", key: "1a3j6y" }]
+], vH = e("list-indent-increase", gH);
+const _H = [
   ["path", { d: "M16 5H3", key: "m91uny" }],
   ["path", { d: "M11 12H3", key: "51ecnj" }],
   ["path", { d: "M16 19H3", key: "zzsher" }],
   ["path", { d: "M21 12h-6", key: "bt1uis" }]
-], vH = e("list-minus", gH);
-const _H = [
+], xH = e("list-minus", _H);
+const bH = [
   ["path", { d: "M16 5H3", key: "m91uny" }],
   ["path", { d: "M11 12H3", key: "51ecnj" }],
   ["path", { d: "M11 19H3", key: "zflm78" }],
   ["path", { d: "M21 16V5", key: "yxg4q8" }],
   ["circle", { cx: "18", cy: "16", r: "3", key: "1hluhg" }]
-], xH = e("list-music", _H);
-const bH = [
+], wH = e("list-music", bH);
+const NH = [
   ["path", { d: "M11 5h10", key: "1cz7ny" }],
   ["path", { d: "M11 12h10", key: "1438ji" }],
   ["path", { d: "M11 19h10", key: "11t30w" }],
   ["path", { d: "M4 4h1v5", key: "10yrso" }],
   ["path", { d: "M4 9h2", key: "r1h2o0" }],
   ["path", { d: "M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02", key: "xtkcd5" }]
-], wH = e("list-ordered", bH);
-const NH = [
+], $H = e("list-ordered", NH);
+const zH = [
   ["path", { d: "M16 5H3", key: "m91uny" }],
   ["path", { d: "M11 12H3", key: "51ecnj" }],
   ["path", { d: "M16 19H3", key: "zzsher" }],
   ["path", { d: "M18 9v6", key: "1twb98" }],
   ["path", { d: "M21 12h-6", key: "bt1uis" }]
-], $H = e("list-plus", NH);
-const zH = [
+], jH = e("list-plus", zH);
+const qH = [
   ["path", { d: "M21 5H3", key: "1fi0y6" }],
   ["path", { d: "M7 12H3", key: "13ou7f" }],
   ["path", { d: "M7 19H3", key: "wbqt3n" }],
@@ -13410,29 +13420,29 @@ const zH = [
     }
   ],
   ["path", { d: "M11 10v4h4", key: "172dkj" }]
-], jH = e("list-restart", zH);
-const qH = [
+], AH = e("list-restart", qH);
+const HH = [
   ["path", { d: "M3 5h6", key: "1ltk0q" }],
   ["path", { d: "M3 12h13", key: "ppymz1" }],
   ["path", { d: "M3 19h13", key: "bpdczq" }],
   ["path", { d: "m16 8-3-3 3-3", key: "1pjpp6" }],
   ["path", { d: "M21 19V7a2 2 0 0 0-2-2h-6", key: "4zzq67" }]
-], AH = e("list-start", qH);
-const HH = [
+], SH = e("list-start", HH);
+const CH = [
   ["path", { d: "M13 5h8", key: "a7qcls" }],
   ["path", { d: "M13 12h8", key: "h98zly" }],
   ["path", { d: "M13 19h8", key: "c3s6r1" }],
   ["path", { d: "m3 17 2 2 4-4", key: "1jhpwq" }],
   ["rect", { x: "3", y: "4", width: "6", height: "6", rx: "1", key: "cif1o7" }]
-], SH = e("list-todo", HH);
-const CH = [
+], VH = e("list-todo", CH);
+const RH = [
   ["path", { d: "M8 5h13", key: "1pao27" }],
   ["path", { d: "M13 12h8", key: "h98zly" }],
   ["path", { d: "M13 19h8", key: "c3s6r1" }],
   ["path", { d: "M3 10a2 2 0 0 0 2 2h3", key: "1npucw" }],
   ["path", { d: "M3 5v12a2 2 0 0 0 2 2h3", key: "x1gjn2" }]
-], VH = e("list-tree", CH);
-const RH = [
+], EH = e("list-tree", RH);
+const LH = [
   ["path", { d: "M21 5H3", key: "1fi0y6" }],
   ["path", { d: "M10 12H3", key: "1ulcyk" }],
   ["path", { d: "M10 19H3", key: "108z41" }],
@@ -13443,30 +13453,30 @@ const RH = [
       key: "ms4nik"
     }
   ]
-], EH = e("list-video", RH);
-const LH = [
+], PH = e("list-video", LH);
+const TH = [
   ["path", { d: "M16 5H3", key: "m91uny" }],
   ["path", { d: "M11 12H3", key: "51ecnj" }],
   ["path", { d: "M16 19H3", key: "zzsher" }],
   ["path", { d: "m15.5 9.5 5 5", key: "ytk86i" }],
   ["path", { d: "m20.5 9.5-5 5", key: "17o44f" }]
-], PH = e("list-x", LH);
-const TH = [
+], OH = e("list-x", TH);
+const DH = [
   ["path", { d: "M3 5h.01", key: "18ugdj" }],
   ["path", { d: "M3 12h.01", key: "nlz23k" }],
   ["path", { d: "M3 19h.01", key: "noohij" }],
   ["path", { d: "M8 5h13", key: "1pao27" }],
   ["path", { d: "M8 12h13", key: "1za7za" }],
   ["path", { d: "M8 19h13", key: "m83p4d" }]
-], OH = e("list", TH);
-const DH = [
+], IH = e("list", DH);
+const FH = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]], BH = e("loader-circle", FH);
+const UH = [
   ["path", { d: "M22 12a1 1 0 0 1-10 0 1 1 0 0 0-10 0", key: "1lzz15" }],
   ["path", { d: "M7 20.7a1 1 0 1 1 5-8.7 1 1 0 1 0 5-8.6", key: "1gnrpi" }],
   ["path", { d: "M7 3.3a1 1 0 1 1 5 8.6 1 1 0 1 0 5 8.6", key: "u9yy5q" }],
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
-], IH = e("loader-pinwheel", DH);
-const FH = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]], BH = e("loader-circle", FH);
-const UH = [
+], WH = e("loader-pinwheel", UH);
+const ZH = [
   ["path", { d: "M12 2v4", key: "3427ic" }],
   ["path", { d: "m16.2 7.8 2.9-2.9", key: "r700ao" }],
   ["path", { d: "M18 12h4", key: "wj9ykh" }],
@@ -13475,16 +13485,16 @@ const UH = [
   ["path", { d: "m4.9 19.1 2.9-2.9", key: "bwix9q" }],
   ["path", { d: "M2 12h4", key: "j09sii" }],
   ["path", { d: "m4.9 4.9 2.9 2.9", key: "giyufr" }]
-], WH = e("loader", UH);
-const ZH = [
+], GH = e("loader", ZH);
+const XH = [
   ["line", { x1: "2", x2: "5", y1: "12", y2: "12", key: "bvdh0s" }],
   ["line", { x1: "19", x2: "22", y1: "12", y2: "12", key: "1tbv5k" }],
   ["line", { x1: "12", x2: "12", y1: "2", y2: "5", key: "11lu5j" }],
   ["line", { x1: "12", x2: "12", y1: "19", y2: "22", key: "x3vr5v" }],
   ["circle", { cx: "12", cy: "12", r: "7", key: "fim9np" }],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
-], GH = e("locate-fixed", ZH);
-const XH = [
+], YH = e("locate-fixed", XH);
+const KH = [
   ["path", { d: "M12 19v3", key: "npa21l" }],
   ["path", { d: "M12 2v3", key: "qbqxhf" }],
   ["path", { d: "M18.89 13.24a7 7 0 0 0-8.13-8.13", key: "1v9jrh" }],
@@ -13492,43 +13502,43 @@ const XH = [
   ["path", { d: "M2 12h3", key: "1wrr53" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   ["path", { d: "M7.05 7.05a7 7 0 0 0 9.9 9.9", key: "rc5l2e" }]
-], YH = e("locate-off", XH);
-const KH = [
+], QH = e("locate-off", KH);
+const JH = [
   ["line", { x1: "2", x2: "5", y1: "12", y2: "12", key: "bvdh0s" }],
   ["line", { x1: "19", x2: "22", y1: "12", y2: "12", key: "1tbv5k" }],
   ["line", { x1: "12", x2: "12", y1: "2", y2: "5", key: "11lu5j" }],
   ["line", { x1: "12", x2: "12", y1: "19", y2: "22", key: "x3vr5v" }],
   ["circle", { cx: "12", cy: "12", r: "7", key: "fim9np" }]
-], QH = e("locate", KH);
-const JH = [
+], eS = e("locate", JH);
+const tS = [
   ["circle", { cx: "12", cy: "16", r: "1", key: "1au0dj" }],
   ["rect", { width: "18", height: "12", x: "3", y: "10", rx: "2", key: "l0tzu3" }],
   ["path", { d: "M7 10V7a5 5 0 0 1 9.33-2.5", key: "car5b7" }]
-], eS = e("lock-keyhole-open", JH);
-const tS = [
+], aS = e("lock-keyhole-open", tS);
+const oS = [
   ["circle", { cx: "12", cy: "16", r: "1", key: "1au0dj" }],
   ["rect", { x: "3", y: "10", width: "18", height: "12", rx: "2", key: "6s8ecr" }],
   ["path", { d: "M7 10V7a5 5 0 0 1 10 0v3", key: "1pqi11" }]
-], aS = e("lock-keyhole", tS);
-const oS = [
-  ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
-  ["path", { d: "M7 11V7a5 5 0 0 1 9.9-1", key: "1mm8w8" }]
-], nS = e("lock-open", oS);
+], nS = e("lock-keyhole", oS);
 const cS = [
   ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
-  ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
-], rS = e("lock", cS);
+  ["path", { d: "M7 11V7a5 5 0 0 1 9.9-1", key: "1mm8w8" }]
+], rS = e("lock-open", cS);
 const hS = [
+  ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
+  ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
+], dS = e("lock", hS);
+const iS = [
   ["path", { d: "m10 17 5-5-5-5", key: "1bsop3" }],
   ["path", { d: "M15 12H3", key: "6jk70r" }],
   ["path", { d: "M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4", key: "u53s6r" }]
-], dS = e("log-in", hS);
-const iS = [
+], sS = e("log-in", iS);
+const yS = [
   ["path", { d: "m16 17 5-5-5-5", key: "1bji2h" }],
   ["path", { d: "M21 12H9", key: "dn1m92" }],
   ["path", { d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4", key: "1uf3rs" }]
-], sS = e("log-out", iS);
-const yS = [
+], pS = e("log-out", yS);
+const kS = [
   ["path", { d: "M3 5h1", key: "1mv5vm" }],
   ["path", { d: "M3 12h1", key: "lp3yf2" }],
   ["path", { d: "M3 19h1", key: "w6f3n9" }],
@@ -13538,13 +13548,13 @@ const yS = [
   ["path", { d: "M13 5h8", key: "a7qcls" }],
   ["path", { d: "M13 12h8", key: "h98zly" }],
   ["path", { d: "M13 19h8", key: "c3s6r1" }]
-], pS = e("logs", yS);
-const kS = [
+], lS = e("logs", kS);
+const uS = [
   ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }],
   ["path", { d: "m21 21-4.3-4.3", key: "1qie3q" }],
   ["path", { d: "M11 11a2 2 0 0 0 4 0 4 4 0 0 0-8 0 6 6 0 0 0 12 0", key: "107gwy" }]
-], lS = e("lollipop", kS);
-const uS = [
+], MS = e("lollipop", uS);
+const fS = [
   [
     "path",
     { d: "M6 20a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2", key: "1m57jg" }
@@ -13553,8 +13563,8 @@ const uS = [
   ["path", { d: "M10 20h4", key: "ni2waw" }],
   ["circle", { cx: "16", cy: "20", r: "2", key: "1vifvg" }],
   ["circle", { cx: "8", cy: "20", r: "2", key: "ckkr5m" }]
-], MS = e("luggage", uS);
-const fS = [
+], mS = e("luggage", fS);
+const gS = [
   ["path", { d: "m12 15 4 4", key: "lnac28" }],
   [
     "path",
@@ -13564,18 +13574,18 @@ const fS = [
     }
   ],
   ["path", { d: "m5 8 4 4", key: "j6kj7e" }]
-], mS = e("magnet", fS);
-const gS = [
+], vS = e("magnet", gS);
+const _S = [
   ["path", { d: "M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8", key: "12jkf8" }],
   ["path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7", key: "1ocrg3" }],
   ["path", { d: "m16 19 2 2 4-4", key: "1b14m6" }]
-], vS = e("mail-check", gS);
-const _S = [
+], xS = e("mail-check", _S);
+const bS = [
   ["path", { d: "M22 15V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8", key: "fuxbkv" }],
   ["path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7", key: "1ocrg3" }],
   ["path", { d: "M16 19h6", key: "xwg31i" }]
-], xS = e("mail-minus", _S);
-const bS = [
+], wS = e("mail-minus", bS);
+const NS = [
   [
     "path",
     {
@@ -13584,8 +13594,14 @@ const bS = [
     }
   ],
   ["path", { d: "m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10", key: "1qfld7" }]
-], wS = e("mail-open", bS);
-const NS = [
+], $S = e("mail-open", NS);
+const zS = [
+  ["path", { d: "M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8", key: "12jkf8" }],
+  ["path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7", key: "1ocrg3" }],
+  ["path", { d: "M19 16v6", key: "tddt3s" }],
+  ["path", { d: "M16 19h6", key: "xwg31i" }]
+], jS = e("mail-plus", zS);
+const qS = [
   ["path", { d: "M22 10.5V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h12.5", key: "e61zoh" }],
   ["path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7", key: "1ocrg3" }],
   [
@@ -13596,30 +13612,20 @@ const NS = [
     }
   ],
   ["path", { d: "M20 22v.01", key: "12bgn6" }]
-], $S = e("mail-question-mark", NS);
-const zS = [
-  ["path", { d: "M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8", key: "12jkf8" }],
-  ["path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7", key: "1ocrg3" }],
-  ["path", { d: "M19 16v6", key: "tddt3s" }],
-  ["path", { d: "M16 19h6", key: "xwg31i" }]
-], jS = e("mail-plus", zS);
-const qS = [
+], AS = e("mail-question-mark", qS);
+const HS = [
   ["path", { d: "M22 12.5V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h7.5", key: "w80f2v" }],
   ["path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7", key: "1ocrg3" }],
   ["path", { d: "M18 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z", key: "8lzu5m" }],
   ["circle", { cx: "18", cy: "18", r: "3", key: "1xkwt0" }],
   ["path", { d: "m22 22-1.5-1.5", key: "1x83k4" }]
-], AS = e("mail-search", qS);
-const HS = [
+], SS = e("mail-search", HS);
+const CS = [
   ["path", { d: "M22 10.5V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h12.5", key: "e61zoh" }],
   ["path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7", key: "1ocrg3" }],
   ["path", { d: "M20 14v4", key: "1hm744" }],
   ["path", { d: "M20 22v.01", key: "12bgn6" }]
-], SS = e("mail-warning", HS);
-const CS = [
-  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
-  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
-], VS = e("mail", CS);
+], VS = e("mail-warning", CS);
 const RS = [
   ["path", { d: "M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h9", key: "1j9vog" }],
   ["path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7", key: "1ocrg3" }],
@@ -13627,6 +13633,15 @@ const RS = [
   ["path", { d: "m21 17-4 4", key: "uinynz" }]
 ], ES = e("mail-x", RS);
 const LS = [
+  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
+  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
+], PS = e("mail", LS);
+const TS = [
+  ["path", { d: "M17 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 1-1.732", key: "1vyzll" }],
+  ["path", { d: "m22 5.5-6.419 4.179a2 2 0 0 1-2.162 0L7 5.5", key: "k7ramc" }],
+  ["rect", { x: "7", y: "3", width: "15", height: "12", rx: "2", key: "17196g" }]
+], OS = e("mails", TS);
+const DS = [
   [
     "path",
     {
@@ -13637,13 +13652,8 @@ const LS = [
   ["polyline", { points: "15,9 18,9 18,11", key: "1pm9c0" }],
   ["path", { d: "M6.5 5C9 5 11 7 11 9.5V17a2 2 0 0 1-2 2", key: "15i455" }],
   ["line", { x1: "6", x2: "7", y1: "10", y2: "10", key: "1e2scm" }]
-], PS = e("mailbox", LS);
-const TS = [
-  ["path", { d: "M17 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 1-1.732", key: "1vyzll" }],
-  ["path", { d: "m22 5.5-6.419 4.179a2 2 0 0 1-2.162 0L7 5.5", key: "k7ramc" }],
-  ["rect", { x: "7", y: "3", width: "15", height: "12", rx: "2", key: "17196g" }]
-], OS = e("mails", TS);
-const DS = [
+], IS = e("mailbox", DS);
+const FS = [
   [
     "path",
     {
@@ -13654,8 +13664,8 @@ const DS = [
   ["path", { d: "M15 5.764V14", key: "1bab71" }],
   ["path", { d: "M21 18h-6", key: "139f0c" }],
   ["path", { d: "M9 3.236v15", key: "1uimfh" }]
-], IS = e("map-minus", DS);
-const FS = [
+], BS = e("map-minus", FS);
+const US = [
   [
     "path",
     {
@@ -13664,8 +13674,8 @@ const FS = [
     }
   ],
   ["path", { d: "m9 10 2 2 4-4", key: "1gnqz4" }]
-], BS = e("map-pin-check-inside", FS);
-const US = [
+], WS = e("map-pin-check-inside", US);
+const ZS = [
   [
     "path",
     {
@@ -13675,8 +13685,8 @@ const US = [
   ],
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }],
   ["path", { d: "m16 18 2 2 4-4", key: "1mkfmb" }]
-], WS = e("map-pin-check", US);
-const ZS = [
+], GS = e("map-pin-check", ZS);
+const XS = [
   [
     "path",
     {
@@ -13693,8 +13703,8 @@ const ZS = [
   ],
   ["path", { d: "M18 22v-3", key: "1t1ugv" }],
   ["circle", { cx: "10", cy: "10", r: "3", key: "1ns7v1" }]
-], GS = e("map-pin-house", ZS);
-const XS = [
+], YS = e("map-pin-house", XS);
+const KS = [
   [
     "path",
     {
@@ -13703,8 +13713,8 @@ const XS = [
     }
   ],
   ["path", { d: "M9 10h6", key: "9gxzsh" }]
-], YS = e("map-pin-minus-inside", XS);
-const KS = [
+], QS = e("map-pin-minus-inside", KS);
+const JS = [
   [
     "path",
     {
@@ -13714,8 +13724,8 @@ const KS = [
   ],
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }],
   ["path", { d: "M16 18h6", key: "987eiv" }]
-], QS = e("map-pin-minus", KS);
-const JS = [
+], eC = e("map-pin-minus", JS);
+const tC = [
   ["path", { d: "M12.75 7.09a3 3 0 0 1 2.16 2.16", key: "1d4wjd" }],
   [
     "path",
@@ -13727,18 +13737,7 @@ const JS = [
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   ["path", { d: "M8.475 2.818A8 8 0 0 1 20 10c0 1.183-.31 2.377-.81 3.533", key: "lhrkcz" }],
   ["path", { d: "M9.13 9.13a3 3 0 0 0 3.74 3.74", key: "13wojd" }]
-], eC = e("map-pin-off", JS);
-const tC = [
-  [
-    "path",
-    {
-      d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0",
-      key: "1r0f0z"
-    }
-  ],
-  ["path", { d: "M12 7v6", key: "lw1j43" }],
-  ["path", { d: "M9 10h6", key: "9gxzsh" }]
-], aC = e("map-pin-plus-inside", tC);
+], aC = e("map-pin-off", tC);
 const oC = [
   ["path", { d: "M17.97 9.304A8 8 0 0 0 2 10c0 4.69 4.887 9.562 7.022 11.468", key: "1fahp3" }],
   [
@@ -13754,6 +13753,17 @@ const cC = [
   [
     "path",
     {
+      d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0",
+      key: "1r0f0z"
+    }
+  ],
+  ["path", { d: "M12 7v6", key: "lw1j43" }],
+  ["path", { d: "M9 10h6", key: "9gxzsh" }]
+], rC = e("map-pin-plus-inside", cC);
+const hC = [
+  [
+    "path",
+    {
       d: "M19.914 11.105A7.298 7.298 0 0 0 20 10a8 8 0 0 0-16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 1.202 0 32 32 0 0 0 .824-.738",
       key: "fcdtly"
     }
@@ -13761,18 +13771,7 @@ const cC = [
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }],
   ["path", { d: "M16 18h6", key: "987eiv" }],
   ["path", { d: "M19 15v6", key: "10aioa" }]
-], rC = e("map-pin-plus", cC);
-const hC = [
-  [
-    "path",
-    {
-      d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0",
-      key: "1r0f0z"
-    }
-  ],
-  ["path", { d: "m14.5 7.5-5 5", key: "3lb6iw" }],
-  ["path", { d: "m9.5 7.5 5 5", key: "ko136h" }]
-], dC = e("map-pin-x-inside", hC);
+], dC = e("map-pin-plus", hC);
 const iC = [
   [
     "path",
@@ -13793,9 +13792,20 @@ const yC = [
       key: "1r0f0z"
     }
   ],
-  ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
-], pC = e("map-pin", yC);
+  ["path", { d: "m14.5 7.5-5 5", key: "3lb6iw" }],
+  ["path", { d: "m9.5 7.5 5 5", key: "ko136h" }]
+], pC = e("map-pin-x-inside", yC);
 const kC = [
+  [
+    "path",
+    {
+      d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0",
+      key: "1r0f0z"
+    }
+  ],
+  ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
+], lC = e("map-pin", kC);
+const uC = [
   [
     "path",
     {
@@ -13811,8 +13821,8 @@ const kC = [
       key: "q8zwxj"
     }
   ]
-], lC = e("map-pinned", kC);
-const uC = [
+], MC = e("map-pinned", uC);
+const fC = [
   [
     "path",
     {
@@ -13824,8 +13834,8 @@ const uC = [
   ["path", { d: "M18 15v6", key: "9wciyi" }],
   ["path", { d: "M21 18h-6", key: "139f0c" }],
   ["path", { d: "M9 3.236v15", key: "1uimfh" }]
-], MC = e("map-plus", uC);
-const fC = [
+], mC = e("map-plus", fC);
+const gC = [
   [
     "path",
     {
@@ -13835,36 +13845,36 @@ const fC = [
   ],
   ["path", { d: "M15 5.764v15", key: "1pn4in" }],
   ["path", { d: "M9 3.236v15", key: "1uimfh" }]
-], mC = e("map", fC);
-const gC = [
+], vC = e("map", gC);
+const _C = [
   ["path", { d: "m14 6 4 4", key: "1q72g9" }],
   ["path", { d: "M17 3h4v4", key: "19p9u1" }],
   ["path", { d: "m21 3-7.75 7.75", key: "1cjbfd" }],
   ["circle", { cx: "9", cy: "15", r: "6", key: "bx5svt" }]
-], vC = e("mars-stroke", gC);
-const _C = [
+], xC = e("mars-stroke", _C);
+const bC = [
   ["path", { d: "M16 3h5v5", key: "1806ms" }],
   ["path", { d: "m21 3-6.75 6.75", key: "pv0uzu" }],
   ["circle", { cx: "10", cy: "14", r: "6", key: "1qwbdc" }]
-], xC = e("mars", _C);
-const bC = [
+], wC = e("mars", bC);
+const NC = [
   ["path", { d: "M8 22h8", key: "rmew8v" }],
   ["path", { d: "M12 11v11", key: "ur9y6a" }],
   ["path", { d: "m19 3-7 8-7-8Z", key: "1sgpiw" }]
-], wC = e("martini", bC);
-const NC = [
+], $C = e("martini", NC);
+const zC = [
   ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
   ["path", { d: "m21 3-7 7", key: "1l2asr" }],
   ["path", { d: "m3 21 7-7", key: "tjx5ai" }],
   ["path", { d: "M9 21H3v-6", key: "wtvkvv" }]
-], $C = e("maximize-2", NC);
-const zC = [
+], jC = e("maximize-2", zC);
+const qC = [
   ["path", { d: "M8 3H5a2 2 0 0 0-2 2v3", key: "1dcmit" }],
   ["path", { d: "M21 8V5a2 2 0 0 0-2-2h-3", key: "1e4gt3" }],
   ["path", { d: "M3 16v3a2 2 0 0 0 2 2h3", key: "wsl5sc" }],
   ["path", { d: "M16 21h3a2 2 0 0 0 2-2v-3", key: "18trek" }]
-], jC = e("maximize", zC);
-const qC = [
+], AC = e("maximize", qC);
+const HC = [
   [
     "path",
     {
@@ -13877,8 +13887,8 @@ const qC = [
   ["path", { d: "M8 7h8", key: "i86dvs" }],
   ["circle", { cx: "12", cy: "17", r: "5", key: "qbz8iq" }],
   ["path", { d: "M12 18v-2h-.5", key: "fawc4q" }]
-], AC = e("medal", qC);
-const HC = [
+], SC = e("medal", HC);
+const CC = [
   ["path", { d: "M11.636 6A13 13 0 0 0 19.4 3.2 1 1 0 0 1 21 4v11.344", key: "bycexp" }],
   [
     "path",
@@ -13887,8 +13897,8 @@ const HC = [
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   ["path", { d: "M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14", key: "1853fq" }],
   ["path", { d: "M8 8v6", key: "aieo6v" }]
-], SC = e("megaphone-off", HC);
-const CC = [
+], VC = e("megaphone-off", CC);
+const RC = [
   [
     "path",
     {
@@ -13898,14 +13908,14 @@ const CC = [
   ],
   ["path", { d: "M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14", key: "1853fq" }],
   ["path", { d: "M8 6v8", key: "15ugcq" }]
-], VC = e("megaphone", CC);
-const RC = [
+], EC = e("megaphone", RC);
+const LC = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["line", { x1: "8", x2: "16", y1: "15", y2: "15", key: "1xb1d9" }],
   ["line", { x1: "9", x2: "9.01", y1: "9", y2: "9", key: "yxxnd0" }],
   ["line", { x1: "15", x2: "15.01", y1: "9", y2: "9", key: "1p4y9e" }]
-], EC = e("meh", RC);
-const LC = [
+], PC = e("meh", LC);
+const TC = [
   ["path", { d: "M12 12v-2", key: "fwoke6" }],
   ["path", { d: "M12 18v-2", key: "qj6yno" }],
   ["path", { d: "M16 12v-2", key: "heuere" }],
@@ -13917,18 +13927,18 @@ const LC = [
   ["path", { d: "M8 12v-2", key: "1mwtfd" }],
   ["path", { d: "M8 18v-2", key: "qcmpov" }],
   ["rect", { x: "2", y: "6", width: "20", height: "10", rx: "2", key: "1qcswk" }]
-], PC = e("memory-stick", LC);
-const TC = [
-  ["path", { d: "M4 5h16", key: "1tepv9" }],
-  ["path", { d: "M4 12h16", key: "1lakjw" }],
-  ["path", { d: "M4 19h16", key: "1djgab" }]
-], OC = e("menu", TC);
+], OC = e("memory-stick", TC);
 const DC = [
   ["path", { d: "m8 6 4-4 4 4", key: "ybng9g" }],
   ["path", { d: "M12 2v10.3a4 4 0 0 1-1.172 2.872L4 22", key: "1hyw0i" }],
   ["path", { d: "m20 22-5-5", key: "1m27yz" }]
 ], IC = e("merge", DC);
 const FC = [
+  ["path", { d: "M4 5h16", key: "1tepv9" }],
+  ["path", { d: "M4 12h16", key: "1lakjw" }],
+  ["path", { d: "M4 19h16", key: "1djgab" }]
+], BC = e("menu", FC);
+const UC = [
   ["path", { d: "m10 9-3 3 3 3", key: "1oro0q" }],
   ["path", { d: "m14 15 3-3-3-3", key: "bz13h7" }],
   [
@@ -13938,8 +13948,8 @@ const FC = [
       key: "1sd12s"
     }
   ]
-], BC = e("message-circle-code", FC);
-const UC = [
+], WC = e("message-circle-code", UC);
+const ZC = [
   ["path", { d: "M10.1 2.182a10 10 0 0 1 3.8 0", key: "5ilxe3" }],
   ["path", { d: "M13.9 21.818a10 10 0 0 1-3.8 0", key: "11zvb9" }],
   ["path", { d: "M17.609 3.72a10 10 0 0 1 2.69 2.7", key: "jiglxs" }],
@@ -13948,8 +13958,8 @@ const UC = [
   ["path", { d: "M21.818 10.1a10 10 0 0 1 0 3.8", key: "qkgqxc" }],
   ["path", { d: "M3.721 6.391a10 10 0 0 1 2.7-2.69", key: "1mcia2" }],
   ["path", { d: "m6.163 21.117-2.906.85a1 1 0 0 1-1.236-1.169l.965-2.98", key: "1qsu07" }]
-], WC = e("message-circle-dashed", UC);
-const ZC = [
+], GC = e("message-circle-dashed", ZC);
+const XC = [
   [
     "path",
     {
@@ -13964,8 +13974,8 @@ const ZC = [
       key: "hoo97p"
     }
   ]
-], GC = e("message-circle-heart", ZC);
-const XC = [
+], YC = e("message-circle-heart", XC);
+const KC = [
   [
     "path",
     {
@@ -13976,8 +13986,8 @@ const XC = [
   ["path", { d: "M8 12h.01", key: "czm47f" }],
   ["path", { d: "M12 12h.01", key: "1mp3jc" }],
   ["path", { d: "M16 12h.01", key: "1l6xoz" }]
-], YC = e("message-circle-more", XC);
-const KC = [
+], QC = e("message-circle-more", KC);
+const JC = [
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   [
     "path",
@@ -13987,8 +13997,8 @@ const KC = [
     }
   ],
   ["path", { d: "M8.35 2.69A10 10 0 0 1 21.3 15.65", key: "1pfsoa" }]
-], QC = e("message-circle-off", KC);
-const JC = [
+], eV = e("message-circle-off", JC);
+const tV = [
   [
     "path",
     {
@@ -13998,8 +14008,8 @@ const JC = [
   ],
   ["path", { d: "M8 12h8", key: "1wcyev" }],
   ["path", { d: "M12 8v8", key: "napkw2" }]
-], eV = e("message-circle-plus", JC);
-const tV = [
+], aV = e("message-circle-plus", tV);
+const oV = [
   [
     "path",
     {
@@ -14009,8 +14019,8 @@ const tV = [
   ],
   ["path", { d: "M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3", key: "1u773s" }],
   ["path", { d: "M12 17h.01", key: "p32p05" }]
-], aV = e("message-circle-question-mark", tV);
-const oV = [
+], nV = e("message-circle-question-mark", oV);
+const cV = [
   [
     "path",
     {
@@ -14020,8 +14030,8 @@ const oV = [
   ],
   ["path", { d: "m10 15-3-3 3-3", key: "1pgupc" }],
   ["path", { d: "M7 12h8a2 2 0 0 1 2 2v1", key: "89sh1g" }]
-], nV = e("message-circle-reply", oV);
-const cV = [
+], rV = e("message-circle-reply", cV);
+const hV = [
   [
     "path",
     {
@@ -14031,8 +14041,8 @@ const cV = [
   ],
   ["path", { d: "M12 8v4", key: "1got3b" }],
   ["path", { d: "M12 16h.01", key: "1drbdi" }]
-], rV = e("message-circle-warning", cV);
-const hV = [
+], dV = e("message-circle-warning", hV);
+const iV = [
   [
     "path",
     {
@@ -14042,8 +14052,8 @@ const hV = [
   ],
   ["path", { d: "m15 9-6 6", key: "1uzhvr" }],
   ["path", { d: "m9 9 6 6", key: "z0biqf" }]
-], dV = e("message-circle-x", hV);
-const iV = [
+], sV = e("message-circle-x", iV);
+const yV = [
   [
     "path",
     {
@@ -14051,8 +14061,8 @@ const iV = [
       key: "1sd12s"
     }
   ]
-], sV = e("message-circle", iV);
-const yV = [
+], pV = e("message-circle", yV);
+const kV = [
   [
     "path",
     {
@@ -14062,8 +14072,8 @@ const yV = [
   ],
   ["path", { d: "m10 8-3 3 3 3", key: "fp6dz7" }],
   ["path", { d: "m14 14 3-3-3-3", key: "1yrceu" }]
-], pV = e("message-square-code", yV);
-const kV = [
+], lV = e("message-square-code", kV);
+const uV = [
   ["path", { d: "M14 3h2", key: "1d12a5" }],
   ["path", { d: "M16 19h-2", key: "1agirb" }],
   ["path", { d: "M2 12v-2", key: "1ey295" }],
@@ -14074,8 +14084,8 @@ const kV = [
   ["path", { d: "M4 3a2 2 0 0 0-2 2v1", key: "11zt7s" }],
   ["path", { d: "M8 19h2", key: "jnunrx" }],
   ["path", { d: "M8 3h2", key: "ysbsee" }]
-], lV = e("message-square-dashed", kV);
-const uV = [
+], MV = e("message-square-dashed", uV);
+const fV = [
   [
     "path",
     {
@@ -14086,8 +14096,8 @@ const uV = [
   ["path", { d: "M10 15h4", key: "192ueg" }],
   ["path", { d: "M10 9h4", key: "u4k05v" }],
   ["path", { d: "M12 7v4", key: "xawao1" }]
-], MV = e("message-square-diff", uV);
-const fV = [
+], mV = e("message-square-diff", fV);
+const gV = [
   [
     "path",
     {
@@ -14096,8 +14106,8 @@ const fV = [
     }
   ],
   ["circle", { cx: "19", cy: "6", r: "3", key: "108a5v" }]
-], mV = e("message-square-dot", fV);
-const gV = [
+], vV = e("message-square-dot", gV);
+const _V = [
   [
     "path",
     {
@@ -14112,8 +14122,8 @@ const gV = [
       key: "1faxuh"
     }
   ]
-], vV = e("message-square-heart", gV);
-const _V = [
+], xV = e("message-square-heart", _V);
+const bV = [
   [
     "path",
     {
@@ -14123,18 +14133,7 @@ const _V = [
   ],
   ["path", { d: "M20 15v-2a2 2 0 0 0-4 0v2", key: "vl8a78" }],
   ["rect", { x: "14", y: "15", width: "8", height: "5", rx: "1", key: "37aafw" }]
-], xV = e("message-square-lock", _V);
-const bV = [
-  [
-    "path",
-    {
-      d: "M19 19H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.7.7 0 0 1 2 21.286V5a2 2 0 0 1 1.184-1.826",
-      key: "1wyg69"
-    }
-  ],
-  ["path", { d: "m2 2 20 20", key: "1ooewy" }],
-  ["path", { d: "M8.656 3H20a2 2 0 0 1 2 2v11.344", key: "mhl4k6" }]
-], wV = e("message-square-off", bV);
+], wV = e("message-square-lock", bV);
 const NV = [
   [
     "path",
@@ -14151,14 +14150,25 @@ const zV = [
   [
     "path",
     {
+      d: "M19 19H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.7.7 0 0 1 2 21.286V5a2 2 0 0 1 1.184-1.826",
+      key: "1wyg69"
+    }
+  ],
+  ["path", { d: "m2 2 20 20", key: "1ooewy" }],
+  ["path", { d: "M8.656 3H20a2 2 0 0 1 2 2v11.344", key: "mhl4k6" }]
+], jV = e("message-square-off", zV);
+const qV = [
+  [
+    "path",
+    {
       d: "M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z",
       key: "18887p"
     }
   ],
   ["path", { d: "M12 8v6", key: "1ib9pf" }],
   ["path", { d: "M9 11h6", key: "1fldmi" }]
-], jV = e("message-square-plus", zV);
-const qV = [
+], AV = e("message-square-plus", qV);
+const HV = [
   ["path", { d: "M14 14a2 2 0 0 0 2-2V8h-2", key: "1r06pg" }],
   [
     "path",
@@ -14168,8 +14178,8 @@ const qV = [
     }
   ],
   ["path", { d: "M8 14a2 2 0 0 0 2-2V8H8", key: "1jzu5j" }]
-], AV = e("message-square-quote", qV);
-const HV = [
+], SV = e("message-square-quote", HV);
+const CV = [
   [
     "path",
     {
@@ -14179,19 +14189,7 @@ const HV = [
   ],
   ["path", { d: "m10 8-3 3 3 3", key: "fp6dz7" }],
   ["path", { d: "M17 14v-1a2 2 0 0 0-2-2H7", key: "1tkjnz" }]
-], SV = e("message-square-reply", HV);
-const CV = [
-  [
-    "path",
-    {
-      d: "M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z",
-      key: "18887p"
-    }
-  ],
-  ["path", { d: "M7 11h10", key: "1twpyw" }],
-  ["path", { d: "M7 15h6", key: "d9of3u" }],
-  ["path", { d: "M7 7h8", key: "af5zfr" }]
-], VV = e("message-square-text", CV);
+], VV = e("message-square-reply", CV);
 const RV = [
   [
     "path",
@@ -14211,10 +14209,22 @@ const LV = [
       key: "18887p"
     }
   ],
+  ["path", { d: "M7 11h10", key: "1twpyw" }],
+  ["path", { d: "M7 15h6", key: "d9of3u" }],
+  ["path", { d: "M7 7h8", key: "af5zfr" }]
+], PV = e("message-square-text", LV);
+const TV = [
+  [
+    "path",
+    {
+      d: "M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z",
+      key: "18887p"
+    }
+  ],
   ["path", { d: "M12 15h.01", key: "q59x07" }],
   ["path", { d: "M12 7v4", key: "xawao1" }]
-], PV = e("message-square-warning", LV);
-const TV = [
+], OV = e("message-square-warning", TV);
+const DV = [
   [
     "path",
     {
@@ -14224,8 +14234,8 @@ const TV = [
   ],
   ["path", { d: "m14.5 8.5-5 5", key: "19tnj2" }],
   ["path", { d: "m9.5 8.5 5 5", key: "1oa8ql" }]
-], OV = e("message-square-x", TV);
-const DV = [
+], IV = e("message-square-x", DV);
+const FV = [
   [
     "path",
     {
@@ -14233,8 +14243,8 @@ const DV = [
       key: "18887p"
     }
   ]
-], IV = e("message-square", DV);
-const FV = [
+], BV = e("message-square", FV);
+const UV = [
   [
     "path",
     {
@@ -14249,21 +14259,8 @@ const FV = [
       key: "1qfcsi"
     }
   ]
-], BV = e("messages-square", FV);
-const UV = [
-  ["path", { d: "M12 19v3", key: "npa21l" }],
-  ["path", { d: "M15 9.34V5a3 3 0 0 0-5.68-1.33", key: "1gzdoj" }],
-  ["path", { d: "M16.95 16.95A7 7 0 0 1 5 12v-2", key: "cqa7eg" }],
-  ["path", { d: "M18.89 13.23A7 7 0 0 0 19 12v-2", key: "16hl24" }],
-  ["path", { d: "m2 2 20 20", key: "1ooewy" }],
-  ["path", { d: "M9 9v3a3 3 0 0 0 5.12 2.12", key: "r2i35w" }]
-], WV = e("mic-off", UV);
+], WV = e("messages-square", UV);
 const ZV = [
-  ["path", { d: "M12 19v3", key: "npa21l" }],
-  ["path", { d: "M19 10v2a7 7 0 0 1-14 0v-2", key: "1vc78b" }],
-  ["rect", { x: "9", y: "2", width: "6", height: "13", rx: "3", key: "s6n7sd" }]
-], GV = e("mic", ZV);
-const XV = [
   [
     "path",
     {
@@ -14279,8 +14276,21 @@ const XV = [
     }
   ],
   ["circle", { cx: "16", cy: "7", r: "5", key: "d08jfb" }]
-], YV = e("mic-vocal", XV);
+], GV = e("mic-vocal", ZV);
+const XV = [
+  ["path", { d: "M12 19v3", key: "npa21l" }],
+  ["path", { d: "M15 9.34V5a3 3 0 0 0-5.68-1.33", key: "1gzdoj" }],
+  ["path", { d: "M16.95 16.95A7 7 0 0 1 5 12v-2", key: "cqa7eg" }],
+  ["path", { d: "M18.89 13.23A7 7 0 0 0 19 12v-2", key: "16hl24" }],
+  ["path", { d: "m2 2 20 20", key: "1ooewy" }],
+  ["path", { d: "M9 9v3a3 3 0 0 0 5.12 2.12", key: "r2i35w" }]
+], YV = e("mic-off", XV);
 const KV = [
+  ["path", { d: "M12 19v3", key: "npa21l" }],
+  ["path", { d: "M19 10v2a7 7 0 0 1-14 0v-2", key: "1vc78b" }],
+  ["rect", { x: "9", y: "2", width: "6", height: "13", rx: "3", key: "s6n7sd" }]
+], QV = e("mic", KV);
+const JV = [
   ["path", { d: "M10 12h4", key: "a56b0p" }],
   ["path", { d: "M10 17h4", key: "pvmtpo" }],
   ["path", { d: "M10 7h4", key: "1vgcok" }],
@@ -14291,23 +14301,23 @@ const KV = [
   ["path", { d: "M4 18h2", key: "1xrofg" }],
   ["path", { d: "M4 6h2", key: "1cx33n" }],
   ["rect", { x: "6", y: "2", width: "12", height: "20", rx: "2", key: "749fme" }]
-], QV = e("microchip", KV);
-const JV = [
+], eR = e("microchip", JV);
+const tR = [
   ["path", { d: "M6 18h8", key: "1borvv" }],
   ["path", { d: "M3 22h18", key: "8prr45" }],
   ["path", { d: "M14 22a7 7 0 1 0 0-14h-1", key: "1jwaiy" }],
   ["path", { d: "M9 14h2", key: "197e7h" }],
   ["path", { d: "M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z", key: "1bmzmy" }],
   ["path", { d: "M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3", key: "1drr47" }]
-], eR = e("microscope", JV);
-const tR = [
+], aR = e("microscope", tR);
+const oR = [
   ["rect", { width: "20", height: "15", x: "2", y: "4", rx: "2", key: "2no95f" }],
   ["rect", { width: "8", height: "7", x: "6", y: "8", rx: "1", key: "zh9wx" }],
   ["path", { d: "M18 8v7", key: "o5zi4n" }],
   ["path", { d: "M6 19v2", key: "1loha6" }],
   ["path", { d: "M18 19v2", key: "1dawf0" }]
-], aR = e("microwave", tR);
-const oR = [
+], nR = e("microwave", oR);
+const cR = [
   ["path", { d: "M12 13v8", key: "1l5pq0" }],
   ["path", { d: "M12 3v3", key: "1n5kay" }],
   [
@@ -14317,8 +14327,8 @@ const oR = [
       key: "1btarq"
     }
   ]
-], nR = e("milestone", oR);
-const cR = [
+], rR = e("milestone", cR);
+const hR = [
   ["path", { d: "M8 2h8", key: "1ssgc1" }],
   [
     "path",
@@ -14329,8 +14339,8 @@ const cR = [
   ],
   ["path", { d: "M7 15a6.47 6.47 0 0 1 5 0 6.472 6.472 0 0 0 3.435.435", key: "iaxqsy" }],
   ["line", { x1: "2", x2: "22", y1: "2", y2: "22", key: "a6p6uj" }]
-], rR = e("milk-off", cR);
-const hR = [
+], dR = e("milk-off", hR);
+const iR = [
   ["path", { d: "M8 2h8", key: "1ssgc1" }],
   [
     "path",
@@ -14340,33 +14350,33 @@ const hR = [
     }
   ],
   ["path", { d: "M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0", key: "ygeh44" }]
-], dR = e("milk", hR);
-const iR = [
+], sR = e("milk", iR);
+const yR = [
   ["path", { d: "m14 10 7-7", key: "oa77jy" }],
   ["path", { d: "M20 10h-6V4", key: "mjg0md" }],
   ["path", { d: "m3 21 7-7", key: "tjx5ai" }],
   ["path", { d: "M4 14h6v6", key: "rmj7iw" }]
-], sR = e("minimize-2", iR);
-const yR = [
+], pR = e("minimize-2", yR);
+const kR = [["path", { d: "M5 12h14", key: "1ays0h" }]], lR = e("minus", kR);
+const uR = [
   ["path", { d: "M8 3v3a2 2 0 0 1-2 2H3", key: "hohbtr" }],
   ["path", { d: "M21 8h-3a2 2 0 0 1-2-2V3", key: "5jw1f3" }],
   ["path", { d: "M3 16h3a2 2 0 0 1 2 2v3", key: "198tvr" }],
   ["path", { d: "M16 21v-3a2 2 0 0 1 2-2h3", key: "ph8mxp" }]
-], pR = e("minimize", yR);
-const kR = [
+], MR = e("minimize", uR);
+const fR = [
   ["path", { d: "m9 10 2 2 4-4", key: "1gnqz4" }],
   ["rect", { width: "20", height: "14", x: "2", y: "3", rx: "2", key: "48i651" }],
   ["path", { d: "M12 17v4", key: "1riwvh" }],
   ["path", { d: "M8 21h8", key: "1ev6f3" }]
-], lR = e("monitor-check", kR);
-const uR = [["path", { d: "M5 12h14", key: "1ays0h" }]], MR = e("minus", uR);
-const fR = [
+], mR = e("monitor-check", fR);
+const gR = [
   ["path", { d: "M11 13a3 3 0 1 1 2.83-4H14a2 2 0 0 1 0 4z", key: "1da4q6" }],
   ["path", { d: "M12 17v4", key: "1riwvh" }],
   ["path", { d: "M8 21h8", key: "1ev6f3" }],
   ["rect", { x: "2", y: "3", width: "20", height: "14", rx: "2", key: "x3v2xh" }]
-], mR = e("monitor-cloud", fR);
-const gR = [
+], vR = e("monitor-cloud", gR);
+const _R = [
   ["path", { d: "M12 17v4", key: "1riwvh" }],
   ["path", { d: "m14.305 7.53.923-.382", key: "1mlnsw" }],
   ["path", { d: "m15.228 4.852-.923-.383", key: "82mpwg" }],
@@ -14379,8 +14389,8 @@ const gR = [
   ["path", { d: "M22 13v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7", key: "1tnzv8" }],
   ["path", { d: "M8 21h8", key: "1ev6f3" }],
   ["circle", { cx: "18", cy: "6", r: "3", key: "1h7g24" }]
-], vR = e("monitor-cog", gR);
-const _R = [
+], xR = e("monitor-cog", _R);
+const bR = [
   ["path", { d: "M12 17v4", key: "1riwvh" }],
   [
     "path",
@@ -14388,29 +14398,29 @@ const _R = [
   ],
   ["path", { d: "M8 21h8", key: "1ev6f3" }],
   ["circle", { cx: "19", cy: "6", r: "3", key: "108a5v" }]
-], xR = e("monitor-dot", _R);
-const bR = [
+], wR = e("monitor-dot", bR);
+const NR = [
   ["path", { d: "M12 13V7", key: "h0r20n" }],
   ["path", { d: "m15 10-3 3-3-3", key: "lzhmyn" }],
   ["rect", { width: "20", height: "14", x: "2", y: "3", rx: "2", key: "48i651" }],
   ["path", { d: "M12 17v4", key: "1riwvh" }],
   ["path", { d: "M8 21h8", key: "1ev6f3" }]
-], wR = e("monitor-down", bR);
-const NR = [
+], $R = e("monitor-down", NR);
+const zR = [
   ["path", { d: "M12 17v4", key: "1riwvh" }],
   ["path", { d: "M17 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 1.184-1.826", key: "cv7jms" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   ["path", { d: "M8 21h8", key: "1ev6f3" }],
   ["path", { d: "M8.656 3H20a2 2 0 0 1 2 2v10a2 2 0 0 1-.293 1.042", key: "z8ni2w" }]
-], $R = e("monitor-off", NR);
-const zR = [
+], jR = e("monitor-off", zR);
+const qR = [
   ["path", { d: "M10 13V7", key: "1u13u9" }],
   ["path", { d: "M14 13V7", key: "1vj9om" }],
   ["rect", { width: "20", height: "14", x: "2", y: "3", rx: "2", key: "48i651" }],
   ["path", { d: "M12 17v4", key: "1riwvh" }],
   ["path", { d: "M8 21h8", key: "1ev6f3" }]
-], jR = e("monitor-pause", zR);
-const qR = [
+], AR = e("monitor-pause", qR);
+const HR = [
   [
     "path",
     {
@@ -14421,33 +14431,26 @@ const qR = [
   ["path", { d: "M12 17v4", key: "1riwvh" }],
   ["path", { d: "M8 21h8", key: "1ev6f3" }],
   ["rect", { x: "2", y: "3", width: "20", height: "14", rx: "2", key: "x3v2xh" }]
-], AR = e("monitor-play", qR);
-const HR = [
+], SR = e("monitor-play", HR);
+const CR = [
   ["path", { d: "M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8", key: "10dyio" }],
   ["path", { d: "M10 19v-3.96 3.15", key: "1irgej" }],
   ["path", { d: "M7 19h5", key: "qswx4l" }],
   ["rect", { width: "6", height: "10", x: "16", y: "12", rx: "2", key: "1egngj" }]
-], SR = e("monitor-smartphone", HR);
-const CR = [
+], VR = e("monitor-smartphone", CR);
+const RR = [
   ["path", { d: "M5.5 20H8", key: "1k40s5" }],
   ["path", { d: "M17 9h.01", key: "1j24nn" }],
   ["rect", { width: "10", height: "16", x: "12", y: "4", rx: "2", key: "ixliua" }],
   ["path", { d: "M8 6H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4", key: "1mp6e1" }],
   ["circle", { cx: "17", cy: "15", r: "1", key: "tqvash" }]
-], VR = e("monitor-speaker", CR);
-const RR = [
+], ER = e("monitor-speaker", RR);
+const LR = [
   ["path", { d: "M12 17v4", key: "1riwvh" }],
   ["path", { d: "M8 21h8", key: "1ev6f3" }],
   ["rect", { x: "2", y: "3", width: "20", height: "14", rx: "2", key: "x3v2xh" }],
   ["rect", { x: "9", y: "7", width: "6", height: "6", rx: "1", key: "5m2oou" }]
-], ER = e("monitor-stop", RR);
-const LR = [
-  ["path", { d: "m14.5 12.5-5-5", key: "1jahn5" }],
-  ["path", { d: "m9.5 12.5 5-5", key: "1k2t7b" }],
-  ["rect", { width: "20", height: "14", x: "2", y: "3", rx: "2", key: "48i651" }],
-  ["path", { d: "M12 17v4", key: "1riwvh" }],
-  ["path", { d: "M8 21h8", key: "1ev6f3" }]
-], PR = e("monitor-x", LR);
+], PR = e("monitor-stop", LR);
 const TR = [
   ["path", { d: "m9 10 3-3 3 3", key: "11gsxs" }],
   ["path", { d: "M12 13V7", key: "h0r20n" }],
@@ -14456,6 +14459,18 @@ const TR = [
   ["path", { d: "M8 21h8", key: "1ev6f3" }]
 ], OR = e("monitor-up", TR);
 const DR = [
+  ["path", { d: "m14.5 12.5-5-5", key: "1jahn5" }],
+  ["path", { d: "m9.5 12.5 5-5", key: "1k2t7b" }],
+  ["rect", { width: "20", height: "14", x: "2", y: "3", rx: "2", key: "48i651" }],
+  ["path", { d: "M12 17v4", key: "1riwvh" }],
+  ["path", { d: "M8 21h8", key: "1ev6f3" }]
+], IR = e("monitor-x", DR);
+const FR = [
+  ["rect", { width: "20", height: "14", x: "2", y: "3", rx: "2", key: "48i651" }],
+  ["line", { x1: "8", x2: "16", y1: "21", y2: "21", key: "1svkeh" }],
+  ["line", { x1: "12", x2: "12", y1: "17", y2: "21", key: "vw1qmm" }]
+], BR = e("monitor", FR);
+const UR = [
   ["path", { d: "M18 5h4", key: "1lhgn2" }],
   ["path", { d: "M20 3v4", key: "1olli1" }],
   [
@@ -14465,13 +14480,8 @@ const DR = [
       key: "kfwtm"
     }
   ]
-], IR = e("moon-star", DR);
-const FR = [
-  ["rect", { width: "20", height: "14", x: "2", y: "3", rx: "2", key: "48i651" }],
-  ["line", { x1: "8", x2: "16", y1: "21", y2: "21", key: "1svkeh" }],
-  ["line", { x1: "12", x2: "12", y1: "17", y2: "21", key: "vw1qmm" }]
-], BR = e("monitor", FR);
-const UR = [
+], WR = e("moon-star", UR);
+const ZR = [
   [
     "path",
     {
@@ -14479,8 +14489,8 @@ const UR = [
       key: "kfwtm"
     }
   ]
-], WR = e("moon", UR);
-const ZR = [
+], GR = e("moon", ZR);
+const XR = [
   ["path", { d: "m18 14-1-3", key: "bdajw9" }],
   ["path", { d: "m3 9 6 2a2 2 0 0 1 2-2h2a2 2 0 0 1 1.99 1.81", key: "f5fotj" }],
   [
@@ -14489,22 +14499,22 @@ const ZR = [
   ],
   ["circle", { cx: "19", cy: "17", r: "3", key: "1otbdv" }],
   ["circle", { cx: "5", cy: "17", r: "3", key: "1d8p0c" }]
-], GR = e("motorbike", ZR);
-const XR = [
+], YR = e("motorbike", XR);
+const KR = [
   ["path", { d: "m8 3 4 8 5-5 5 15H2L8 3z", key: "otkl63" }],
   [
     "path",
     { d: "M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19", key: "1pvmmp" }
   ]
-], YR = e("mountain-snow", XR);
-const KR = [["path", { d: "m8 3 4 8 5-5 5 15H2L8 3z", key: "otkl63" }]], QR = e("mountain", KR);
-const JR = [
+], QR = e("mountain-snow", KR);
+const JR = [["path", { d: "m8 3 4 8 5-5 5 15H2L8 3z", key: "otkl63" }]], eE = e("mountain", JR);
+const tE = [
   ["path", { d: "M12 6v.343", key: "1gyhex" }],
   ["path", { d: "M18.218 18.218A7 7 0 0 1 5 15V9a7 7 0 0 1 .782-3.218", key: "ukzz01" }],
   ["path", { d: "M19 13.343V9A7 7 0 0 0 8.56 2.902", key: "104jy9" }],
   ["path", { d: "M22 22 2 2", key: "1r8tn9" }]
-], eE = e("mouse-off", JR);
-const tE = [
+], aE = e("mouse-off", tE);
+const oE = [
   [
     "path",
     {
@@ -14514,8 +14524,8 @@ const tE = [
   ],
   ["path", { d: "M22 2 2 22", key: "y4kqgn" }],
   ["path", { d: "m6.816 11.528-2.779-6.84a.495.495 0 0 1 .651-.651l6.84 2.779", key: "mymuvk" }]
-], aE = e("mouse-pointer-2-off", tE);
-const oE = [
+], nE = e("mouse-pointer-2-off", oE);
+const cE = [
   [
     "path",
     {
@@ -14523,8 +14533,8 @@ const oE = [
       key: "edeuup"
     }
   ]
-], nE = e("mouse-pointer-2", oE);
-const cE = [
+], rE = e("mouse-pointer-2", cE);
+const hE = [
   [
     "path",
     {
@@ -14534,8 +14544,8 @@ const cE = [
   ],
   ["circle", { cx: "16", cy: "16", r: "6", key: "qoo3c4" }],
   ["path", { d: "m11.8 11.8 8.4 8.4", key: "oogvdj" }]
-], rE = e("mouse-pointer-ban", cE);
-const hE = [
+], dE = e("mouse-pointer-ban", hE);
+const iE = [
   ["path", { d: "M14 4.1 12 6", key: "ita8i4" }],
   ["path", { d: "m5.1 8-2.9-.8", key: "1go3kf" }],
   ["path", { d: "m6 12-1.9 2", key: "mnht97" }],
@@ -14547,8 +14557,8 @@ const hE = [
       key: "s0h3yz"
     }
   ]
-], dE = e("mouse-pointer-click", hE);
-const iE = [
+], sE = e("mouse-pointer-click", iE);
+const yE = [
   ["path", { d: "M12.586 12.586 19 19", key: "ea5xo7" }],
   [
     "path",
@@ -14557,120 +14567,120 @@ const iE = [
       key: "277e5u"
     }
   ]
-], sE = e("mouse-pointer", iE);
-const yE = [
+], pE = e("mouse-pointer", yE);
+const kE = [
   ["rect", { x: "5", y: "2", width: "14", height: "20", rx: "7", key: "11ol66" }],
   ["path", { d: "M12 6v4", key: "16clxf" }]
-], pE = e("mouse", yE);
-const kE = [
+], lE = e("mouse", kE);
+const uE = [
   ["path", { d: "M5 3v16h16", key: "1mqmf9" }],
   ["path", { d: "m5 19 6-6", key: "jh6hbb" }],
   ["path", { d: "m2 6 3-3 3 3", key: "tkyvxa" }],
   ["path", { d: "m18 16 3 3-3 3", key: "1d4glt" }]
-], lE = e("move-3d", kE);
-const uE = [
+], ME = e("move-3d", uE);
+const fE = [
   ["path", { d: "M19 13v6h-6", key: "1hxl6d" }],
   ["path", { d: "M5 11V5h6", key: "12e2xe" }],
   ["path", { d: "m5 5 14 14", key: "11anup" }]
-], ME = e("move-diagonal-2", uE);
-const fE = [
+], mE = e("move-diagonal-2", fE);
+const gE = [
   ["path", { d: "M11 19H5v-6", key: "8awifj" }],
   ["path", { d: "M13 5h6v6", key: "7voy1q" }],
   ["path", { d: "M19 5 5 19", key: "wwaj1z" }]
-], mE = e("move-diagonal", fE);
-const gE = [
+], vE = e("move-diagonal", gE);
+const _E = [
   ["path", { d: "M11 19H5V13", key: "1akmht" }],
   ["path", { d: "M19 5L5 19", key: "72u4yj" }]
-], vE = e("move-down-left", gE);
-const _E = [
+], xE = e("move-down-left", _E);
+const bE = [
   ["path", { d: "M19 13V19H13", key: "10vkzq" }],
   ["path", { d: "M5 5L19 19", key: "5zm2fv" }]
-], xE = e("move-down-right", _E);
-const bE = [
+], wE = e("move-down-right", bE);
+const NE = [
   ["path", { d: "M8 18L12 22L16 18", key: "cskvfv" }],
   ["path", { d: "M12 2V22", key: "r89rzk" }]
-], wE = e("move-down", bE);
-const NE = [
+], $E = e("move-down", NE);
+const zE = [
   ["path", { d: "m18 8 4 4-4 4", key: "1ak13k" }],
   ["path", { d: "M2 12h20", key: "9i4pu4" }],
   ["path", { d: "m6 8-4 4 4 4", key: "15zrgr" }]
-], $E = e("move-horizontal", NE);
-const zE = [
+], jE = e("move-horizontal", zE);
+const qE = [
   ["path", { d: "M6 8L2 12L6 16", key: "kyvwex" }],
   ["path", { d: "M2 12H22", key: "1m8cig" }]
-], jE = e("move-left", zE);
-const qE = [
+], AE = e("move-left", qE);
+const HE = [
   ["path", { d: "M18 8L22 12L18 16", key: "1r0oui" }],
   ["path", { d: "M2 12H22", key: "1m8cig" }]
-], AE = e("move-right", qE);
-const HE = [
+], SE = e("move-right", HE);
+const CE = [
   ["path", { d: "M5 11V5H11", key: "3q78g9" }],
   ["path", { d: "M5 5L19 19", key: "5zm2fv" }]
-], SE = e("move-up-left", HE);
-const CE = [
-  ["path", { d: "M8 6L12 2L16 6", key: "1yvkyx" }],
-  ["path", { d: "M12 2V22", key: "r89rzk" }]
-], VE = e("move-up", CE);
+], VE = e("move-up-left", CE);
 const RE = [
   ["path", { d: "M13 5H19V11", key: "1n1gyv" }],
   ["path", { d: "M19 5L5 19", key: "72u4yj" }]
 ], EE = e("move-up-right", RE);
 const LE = [
-  ["path", { d: "M12 2v20", key: "t6zp3m" }],
-  ["path", { d: "m15 19-3 3-3-3", key: "11eu04" }],
-  ["path", { d: "m19 9 3 3-3 3", key: "1mg7y2" }],
-  ["path", { d: "M2 12h20", key: "9i4pu4" }],
-  ["path", { d: "m5 9-3 3 3 3", key: "j64kie" }],
-  ["path", { d: "m9 5 3-3 3 3", key: "l8vdw6" }]
-], PE = e("move", LE);
+  ["path", { d: "M8 6L12 2L16 6", key: "1yvkyx" }],
+  ["path", { d: "M12 2V22", key: "r89rzk" }]
+], PE = e("move-up", LE);
 const TE = [
   ["path", { d: "M12 2v20", key: "t6zp3m" }],
   ["path", { d: "m8 18 4 4 4-4", key: "bh5tu3" }],
   ["path", { d: "m8 6 4-4 4 4", key: "ybng9g" }]
 ], OE = e("move-vertical", TE);
 const DE = [
+  ["path", { d: "M12 2v20", key: "t6zp3m" }],
+  ["path", { d: "m15 19-3 3-3-3", key: "11eu04" }],
+  ["path", { d: "m19 9 3 3-3 3", key: "1mg7y2" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }],
+  ["path", { d: "m5 9-3 3 3 3", key: "j64kie" }],
+  ["path", { d: "m9 5 3-3 3 3", key: "l8vdw6" }]
+], IE = e("move", DE);
+const FE = [
   ["circle", { cx: "8", cy: "18", r: "4", key: "1fc0mg" }],
   ["path", { d: "M12 18V2l7 4", key: "g04rme" }]
-], IE = e("music-2", DE);
-const FE = [
+], BE = e("music-2", FE);
+const UE = [
   ["circle", { cx: "12", cy: "18", r: "4", key: "m3r9ws" }],
   ["path", { d: "M16 18V2", key: "40x2m5" }]
-], BE = e("music-3", FE);
-const UE = [
+], WE = e("music-3", UE);
+const ZE = [
   ["path", { d: "M9 18V5l12-2v13", key: "1jmyc2" }],
   ["path", { d: "m9 9 12-2", key: "1e64n2" }],
   ["circle", { cx: "6", cy: "18", r: "3", key: "fqmcym" }],
   ["circle", { cx: "18", cy: "16", r: "3", key: "1hluhg" }]
-], WE = e("music-4", UE);
-const ZE = [
+], GE = e("music-4", ZE);
+const XE = [
   ["path", { d: "M9 18V5l12-2v13", key: "1jmyc2" }],
   ["circle", { cx: "6", cy: "18", r: "3", key: "fqmcym" }],
   ["circle", { cx: "18", cy: "16", r: "3", key: "1hluhg" }]
-], GE = e("music", ZE);
-const XE = [
+], YE = e("music", XE);
+const KE = [
   ["path", { d: "M9.31 9.31 5 21l7-4 7 4-1.17-3.17", key: "qoq2o2" }],
   ["path", { d: "M14.53 8.88 12 2l-1.17 3.17", key: "k3sjzy" }],
   ["line", { x1: "2", x2: "22", y1: "2", y2: "22", key: "a6p6uj" }]
-], YE = e("navigation-2-off", XE);
-const KE = [
-  ["polygon", { points: "12 2 19 21 12 17 5 21 12 2", key: "x8c0qg" }]
-], QE = e("navigation-2", KE);
+], QE = e("navigation-2-off", KE);
 const JE = [
+  ["polygon", { points: "12 2 19 21 12 17 5 21 12 2", key: "x8c0qg" }]
+], eL = e("navigation-2", JE);
+const tL = [
   ["path", { d: "M8.43 8.43 3 11l8 2 2 8 2.57-5.43", key: "1vdtb7" }],
   ["path", { d: "M17.39 11.73 22 2l-9.73 4.61", key: "tya3r6" }],
   ["line", { x1: "2", x2: "22", y1: "2", y2: "22", key: "a6p6uj" }]
-], eL = e("navigation-off", JE);
-const tL = [
-  ["polygon", { points: "3 11 22 2 13 21 11 13 3 11", key: "1ltx0t" }]
-], aL = e("navigation", tL);
+], aL = e("navigation-off", tL);
 const oL = [
+  ["polygon", { points: "3 11 22 2 13 21 11 13 3 11", key: "1ltx0t" }]
+], nL = e("navigation", oL);
+const cL = [
   ["rect", { x: "16", y: "16", width: "6", height: "6", rx: "1", key: "4q2zg0" }],
   ["rect", { x: "2", y: "16", width: "6", height: "6", rx: "1", key: "8cvhb9" }],
   ["rect", { x: "9", y: "2", width: "6", height: "6", rx: "1", key: "1egb70" }],
   ["path", { d: "M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3", key: "1jsf9p" }],
   ["path", { d: "M12 12V8", key: "2874zd" }]
-], nL = e("network", oL);
-const cL = [
+], rL = e("network", cL);
+const hL = [
   ["path", { d: "M15 18h-5", key: "95g1m2" }],
   ["path", { d: "M18 14h-8", key: "sponae" }],
   [
@@ -14681,20 +14691,20 @@ const cL = [
     }
   ],
   ["rect", { width: "8", height: "4", x: "10", y: "6", rx: "1", key: "aywv1n" }]
-], rL = e("newspaper", cL);
-const hL = [
+], dL = e("newspaper", hL);
+const iL = [
   ["path", { d: "M6 8.32a7.43 7.43 0 0 1 0 7.36", key: "9iaqei" }],
   ["path", { d: "M9.46 6.21a11.76 11.76 0 0 1 0 11.58", key: "1yha7l" }],
   ["path", { d: "M12.91 4.1a15.91 15.91 0 0 1 .01 15.8", key: "4iu2gk" }],
   ["path", { d: "M16.37 2a20.16 20.16 0 0 1 0 20", key: "sap9u2" }]
-], dL = e("nfc", hL);
-const iL = [
+], sL = e("nfc", iL);
+const yL = [
   ["path", { d: "M12 2v10", key: "mnfbl" }],
   ["path", { d: "m8.5 4 7 4", key: "m1xjk3" }],
   ["path", { d: "m8.5 8 7-4", key: "t0m5j6" }],
   ["circle", { cx: "12", cy: "17", r: "5", key: "qbz8iq" }]
-], sL = e("non-binary", iL);
-const yL = [
+], pL = e("non-binary", yL);
+const kL = [
   ["path", { d: "M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4", key: "re6nr2" }],
   ["path", { d: "M2 6h4", key: "aawbzj" }],
   ["path", { d: "M2 10h4", key: "l0bgd4" }],
@@ -14707,8 +14717,8 @@ const yL = [
       key: "pqwjuv"
     }
   ]
-], pL = e("notebook-pen", yL);
-const kL = [
+], lL = e("notebook-pen", kL);
+const uL = [
   ["path", { d: "M2 6h4", key: "aawbzj" }],
   ["path", { d: "M2 10h4", key: "l0bgd4" }],
   ["path", { d: "M2 14h4", key: "1gsvsf" }],
@@ -14718,8 +14728,8 @@ const kL = [
   ["path", { d: "M15 7h5", key: "1xj5lc" }],
   ["path", { d: "M15 12h5", key: "w5shd9" }],
   ["path", { d: "M15 17h5", key: "1qaofu" }]
-], lL = e("notebook-tabs", kL);
-const uL = [
+], ML = e("notebook-tabs", uL);
+const fL = [
   ["path", { d: "M2 6h4", key: "aawbzj" }],
   ["path", { d: "M2 10h4", key: "l0bgd4" }],
   ["path", { d: "M2 14h4", key: "1gsvsf" }],
@@ -14728,16 +14738,16 @@ const uL = [
   ["path", { d: "M9.5 8h5", key: "11mslq" }],
   ["path", { d: "M9.5 12H16", key: "ktog6x" }],
   ["path", { d: "M9.5 16H14", key: "p1seyn" }]
-], ML = e("notebook-text", uL);
-const fL = [
+], mL = e("notebook-text", fL);
+const gL = [
   ["path", { d: "M2 6h4", key: "aawbzj" }],
   ["path", { d: "M2 10h4", key: "l0bgd4" }],
   ["path", { d: "M2 14h4", key: "1gsvsf" }],
   ["path", { d: "M2 18h4", key: "1bu2t1" }],
   ["rect", { width: "16", height: "20", x: "4", y: "2", rx: "2", key: "1nb95v" }],
   ["path", { d: "M16 2v20", key: "rotuqe" }]
-], mL = e("notebook", fL);
-const gL = [
+], vL = e("notebook", gL);
+const _L = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M12 2v4", key: "3427ic" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
@@ -14751,8 +14761,8 @@ const gL = [
   ["path", { d: "M8 10h6", key: "3oa6kw" }],
   ["path", { d: "M8 14h8", key: "1fgep2" }],
   ["path", { d: "M8 18h5", key: "17enja" }]
-], vL = e("notepad-text-dashed", gL);
-const _L = [
+], xL = e("notepad-text-dashed", _L);
+const bL = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M12 2v4", key: "3427ic" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
@@ -14760,26 +14770,7 @@ const _L = [
   ["path", { d: "M8 10h6", key: "3oa6kw" }],
   ["path", { d: "M8 14h8", key: "1fgep2" }],
   ["path", { d: "M8 18h5", key: "17enja" }]
-], xL = e("notepad-text", _L);
-const bL = [
-  ["path", { d: "M12 4V2", key: "1k5q1u" }],
-  [
-    "path",
-    {
-      d: "M5 10v4a7.004 7.004 0 0 0 5.277 6.787c.412.104.802.292 1.102.592L12 22l.621-.621c.3-.3.69-.488 1.102-.592a7.01 7.01 0 0 0 4.125-2.939",
-      key: "1xcvy9"
-    }
-  ],
-  ["path", { d: "M19 10v3.343", key: "163tfc" }],
-  [
-    "path",
-    {
-      d: "M12 12c-1.349-.573-1.905-1.005-2.5-2-.546.902-1.048 1.353-2.5 2-1.018-.644-1.46-1.08-2-2-1.028.71-1.69.918-3 1 1.081-1.048 1.757-2.03 2-3 .194-.776.84-1.551 1.79-2.21m11.654 5.997c.887-.457 1.28-.891 1.556-1.787 1.032.916 1.683 1.157 3 1-1.297-1.036-1.758-2.03-2-3-.5-2-4-4-8-4-.74 0-1.461.068-2.15.192",
-      key: "17914v"
-    }
-  ],
-  ["line", { x1: "2", x2: "22", y1: "2", y2: "22", key: "a6p6uj" }]
-], wL = e("nut-off", bL);
+], wL = e("notepad-text", bL);
 const NL = [
   ["path", { d: "M12 4V2", key: "1k5q1u" }],
   [
@@ -14798,6 +14789,25 @@ const NL = [
   ]
 ], $L = e("nut", NL);
 const zL = [
+  ["path", { d: "M12 4V2", key: "1k5q1u" }],
+  [
+    "path",
+    {
+      d: "M5 10v4a7.004 7.004 0 0 0 5.277 6.787c.412.104.802.292 1.102.592L12 22l.621-.621c.3-.3.69-.488 1.102-.592a7.01 7.01 0 0 0 4.125-2.939",
+      key: "1xcvy9"
+    }
+  ],
+  ["path", { d: "M19 10v3.343", key: "163tfc" }],
+  [
+    "path",
+    {
+      d: "M12 12c-1.349-.573-1.905-1.005-2.5-2-.546.902-1.048 1.353-2.5 2-1.018-.644-1.46-1.08-2-2-1.028.71-1.69.918-3 1 1.081-1.048 1.757-2.03 2-3 .194-.776.84-1.551 1.79-2.21m11.654 5.997c.887-.457 1.28-.891 1.556-1.787 1.032.916 1.683 1.157 3 1-1.297-1.036-1.758-2.03-2-3-.5-2-4-4-8-4-.74 0-1.461.068-2.15.192",
+      key: "17914v"
+    }
+  ],
+  ["line", { x1: "2", x2: "22", y1: "2", y2: "22", key: "a6p6uj" }]
+], jL = e("nut-off", zL);
+const qL = [
   ["path", { d: "M12 16h.01", key: "1drbdi" }],
   ["path", { d: "M12 8v4", key: "1got3b" }],
   [
@@ -14807,8 +14817,8 @@ const zL = [
       key: "1fd625"
     }
   ]
-], jL = e("octagon-alert", zL);
-const qL = [
+], AL = e("octagon-alert", qL);
+const HL = [
   [
     "path",
     {
@@ -14817,8 +14827,8 @@ const qL = [
     }
   ],
   ["path", { d: "M8 12h8", key: "1wcyev" }]
-], AL = e("octagon-minus", qL);
-const HL = [
+], SL = e("octagon-minus", HL);
+const CL = [
   ["path", { d: "M10 15V9", key: "1lckn7" }],
   ["path", { d: "M14 15V9", key: "1muqhk" }],
   [
@@ -14828,8 +14838,8 @@ const HL = [
       key: "2d38gg"
     }
   ]
-], SL = e("octagon-pause", HL);
-const CL = [
+], VL = e("octagon-pause", CL);
+const RL = [
   ["path", { d: "m15 9-6 6", key: "1uzhvr" }],
   [
     "path",
@@ -14839,8 +14849,8 @@ const CL = [
     }
   ],
   ["path", { d: "m9 9 6 6", key: "z0biqf" }]
-], VL = e("octagon-x", CL);
-const RL = [
+], EL = e("octagon-x", RL);
+const LL = [
   [
     "path",
     {
@@ -14848,8 +14858,8 @@ const RL = [
       key: "2d38gg"
     }
   ]
-], EL = e("octagon", RL);
-const LL = [
+], PL = e("octagon", LL);
+const TL = [
   [
     "path",
     {
@@ -14857,11 +14867,7 @@ const LL = [
       key: "1x94xo"
     }
   ]
-], PL = e("omega", LL);
-const TL = [
-  ["path", { d: "M3 3h6l6 18h6", key: "ph9rgk" }],
-  ["path", { d: "M14 3h7", key: "16f0ms" }]
-], OL = e("option", TL);
+], OL = e("omega", TL);
 const DL = [
   ["path", { d: "M20.341 6.484A10 10 0 0 1 10.266 21.85", key: "1enhxb" }],
   ["path", { d: "M3.659 17.516A10 10 0 0 1 13.74 2.152", key: "1crzgf" }],
@@ -14870,6 +14876,10 @@ const DL = [
   ["circle", { cx: "5", cy: "19", r: "2", key: "v8kfzx" }]
 ], IL = e("orbit", DL);
 const FL = [
+  ["path", { d: "M3 3h6l6 18h6", key: "ph9rgk" }],
+  ["path", { d: "M14 3h7", key: "16f0ms" }]
+], BL = e("option", FL);
+const UL = [
   ["path", { d: "M12 12V4a1 1 0 0 1 1-1h6.297a1 1 0 0 1 .651 1.759l-4.696 4.025", key: "1bx4vc" }],
   [
     "path",
@@ -14885,8 +14895,8 @@ const FL = [
       key: "1hj4wg"
     }
   ]
-], BL = e("origami", FL);
-const UL = [
+], WL = e("origami", UL);
+const ZL = [
   ["path", { d: "M12 3v6", key: "1holv5" }],
   [
     "path",
@@ -14896,8 +14906,8 @@ const UL = [
     }
   ],
   ["path", { d: "M3.054 9.013h17.893", key: "grwhos" }]
-], WL = e("package-2", UL);
-const ZL = [
+], GL = e("package-2", ZL);
+const XL = [
   ["path", { d: "m16 16 2 2 4-4", key: "gfu2re" }],
   [
     "path",
@@ -14909,8 +14919,8 @@ const ZL = [
   ["path", { d: "m7.5 4.27 9 5.15", key: "1c824w" }],
   ["polyline", { points: "3.29 7 12 12 20.71 7", key: "ousv84" }],
   ["line", { x1: "12", x2: "12", y1: "22", y2: "12", key: "a4e8g8" }]
-], GL = e("package-check", ZL);
-const XL = [
+], YL = e("package-check", XL);
+const KL = [
   ["path", { d: "M16 16h6", key: "100bgy" }],
   [
     "path",
@@ -14922,8 +14932,8 @@ const XL = [
   ["path", { d: "m7.5 4.27 9 5.15", key: "1c824w" }],
   ["polyline", { points: "3.29 7 12 12 20.71 7", key: "ousv84" }],
   ["line", { x1: "12", x2: "12", y1: "22", y2: "12", key: "a4e8g8" }]
-], YL = e("package-minus", XL);
-const KL = [
+], QL = e("package-minus", KL);
+const JL = [
   ["path", { d: "M12 22v-9", key: "x3hkom" }],
   [
     "path",
@@ -14946,8 +14956,8 @@ const KL = [
       key: "12ttoo"
     }
   ]
-], QL = e("package-open", KL);
-const JL = [
+], eP = e("package-open", JL);
+const tP = [
   ["path", { d: "M16 16h6", key: "100bgy" }],
   ["path", { d: "M19 13v6", key: "85cyf1" }],
   [
@@ -14960,8 +14970,8 @@ const JL = [
   ["path", { d: "m7.5 4.27 9 5.15", key: "1c824w" }],
   ["polyline", { points: "3.29 7 12 12 20.71 7", key: "ousv84" }],
   ["line", { x1: "12", x2: "12", y1: "22", y2: "12", key: "a4e8g8" }]
-], eP = e("package-plus", JL);
-const tP = [
+], aP = e("package-plus", tP);
+const oP = [
   [
     "path",
     {
@@ -14974,8 +14984,8 @@ const tP = [
   ["line", { x1: "12", x2: "12", y1: "22", y2: "12", key: "a4e8g8" }],
   ["circle", { cx: "18.5", cy: "15.5", r: "2.5", key: "b5zd12" }],
   ["path", { d: "M20.27 17.27 22 19", key: "1l4muz" }]
-], aP = e("package-search", tP);
-const oP = [
+], nP = e("package-search", oP);
+const cP = [
   [
     "path",
     {
@@ -14987,8 +14997,8 @@ const oP = [
   ["polyline", { points: "3.29 7 12 12 20.71 7", key: "ousv84" }],
   ["line", { x1: "12", x2: "12", y1: "22", y2: "12", key: "a4e8g8" }],
   ["path", { d: "m17 13 5 5m-5 0 5-5", key: "im3w4b" }]
-], nP = e("package-x", oP);
-const cP = [
+], rP = e("package-x", cP);
+const hP = [
   [
     "path",
     {
@@ -14999,8 +15009,8 @@ const cP = [
   ["path", { d: "M12 22V12", key: "d0xqtd" }],
   ["polyline", { points: "3.29 7 12 12 20.71 7", key: "ousv84" }],
   ["path", { d: "m7.5 4.27 9 5.15", key: "1c824w" }]
-], rP = e("package", cP);
-const hP = [
+], dP = e("package", hP);
+const iP = [
   ["path", { d: "M11 7 6 2", key: "1jwth8" }],
   ["path", { d: "M18.992 12H2.041", key: "xw1gg" }],
   [
@@ -15017,13 +15027,13 @@ const hP = [
       key: "1nk1rd"
     }
   ]
-], dP = e("paint-bucket", hP);
-const iP = [
+], sP = e("paint-bucket", iP);
+const yP = [
   ["rect", { width: "16", height: "6", x: "2", y: "2", rx: "2", key: "jcyz7m" }],
   ["path", { d: "M10 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2", key: "1b9h7c" }],
   ["rect", { width: "4", height: "6", x: "8", y: "16", rx: "1", key: "d6e7yl" }]
-], sP = e("paint-roller", iP);
-const yP = [
+], pP = e("paint-roller", yP);
+const kP = [
   ["path", { d: "M10 2v2", key: "7u0qdc" }],
   ["path", { d: "M14 2v4", key: "qmzblu" }],
   ["path", { d: "M17 2a1 1 0 0 1 1 1v9H6V3a1 1 0 0 1 1-1z", key: "ycvu00" }],
@@ -15034,8 +15044,8 @@ const yP = [
       key: "iw4wnp"
     }
   ]
-], pP = e("paintbrush-vertical", yP);
-const kP = [
+], lP = e("paintbrush-vertical", kP);
+const uP = [
   ["path", { d: "m14.622 17.897-10.68-2.913", key: "vj2p1u" }],
   [
     "path",
@@ -15051,8 +15061,8 @@ const kP = [
       key: "ytzfxy"
     }
   ]
-], lP = e("paintbrush", kP);
-const uP = [
+], MP = e("paintbrush", uP);
+const fP = [
   [
     "path",
     {
@@ -15064,8 +15074,8 @@ const uP = [
   ["circle", { cx: "17.5", cy: "10.5", r: ".5", fill: "currentColor", key: "f64h9f" }],
   ["circle", { cx: "6.5", cy: "12.5", r: ".5", fill: "currentColor", key: "qy21gx" }],
   ["circle", { cx: "8.5", cy: "7.5", r: ".5", fill: "currentColor", key: "fotxhn" }]
-], MP = e("palette", uP);
-const fP = [
+], mP = e("palette", fP);
+const gP = [
   ["path", { d: "M11.25 17.25h1.5L12 18z", key: "1wmwwj" }],
   ["path", { d: "m15 12 2 2", key: "k60wz4" }],
   ["path", { d: "M18 6.5a.5.5 0 0 0-.5-.5", key: "1ch4h4" }],
@@ -15078,46 +15088,46 @@ const fP = [
   ],
   ["path", { d: "M6 6.5a.495.495 0 0 1 .5-.5", key: "eviuep" }],
   ["path", { d: "m9 12-2 2", key: "326nkw" }]
-], mP = e("panda", fP);
-const gP = [
+], vP = e("panda", gP);
+const _P = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M3 15h18", key: "5xshup" }],
   ["path", { d: "m15 8-3 3-3-3", key: "1oxy1z" }]
-], vP = e("panel-bottom-close", gP);
-const _P = [
+], xP = e("panel-bottom-close", _P);
+const bP = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M14 15h1", key: "171nev" }],
   ["path", { d: "M19 15h2", key: "1vnucp" }],
   ["path", { d: "M3 15h2", key: "8bym0q" }],
   ["path", { d: "M9 15h1", key: "1tg3ks" }]
-], xP = e("panel-bottom-dashed", _P);
-const bP = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "M3 15h18", key: "5xshup" }],
-  ["path", { d: "m9 10 3-3 3 3", key: "11gsxs" }]
-], wP = e("panel-bottom-open", bP);
+], wP = e("panel-bottom-dashed", bP);
 const NP = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M3 15h18", key: "5xshup" }]
 ], $P = e("panel-bottom", NP);
 const zP = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["path", { d: "M3 15h18", key: "5xshup" }],
+  ["path", { d: "m9 10 3-3 3 3", key: "11gsxs" }]
+], jP = e("panel-bottom-open", zP);
+const qP = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M9 3v18", key: "fh3hqa" }],
   ["path", { d: "m16 15-3-3 3-3", key: "14y99z" }]
-], jP = e("panel-left-close", zP);
-const qP = [
+], AP = e("panel-left-close", qP);
+const HP = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M9 14v1", key: "askpd8" }],
   ["path", { d: "M9 19v2", key: "16tejx" }],
   ["path", { d: "M9 3v2", key: "1noubl" }],
   ["path", { d: "M9 9v1", key: "19ebxg" }]
-], AP = e("panel-left-dashed", qP);
-const HP = [
+], SP = e("panel-left-dashed", HP);
+const CP = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M9 3v18", key: "fh3hqa" }],
   ["path", { d: "m14 9 3 3-3 3", key: "8010ee" }]
-], SP = e("panel-left-open", HP);
-const CP = [
+], VP = e("panel-left-open", CP);
+const RP = [
   ["path", { d: "M15 10V9", key: "4dkmfx" }],
   ["path", { d: "M15 15v-1", key: "6a4afx" }],
   ["path", { d: "M15 21v-2", key: "1qshmc" }],
@@ -15127,33 +15137,33 @@ const CP = [
   ["path", { d: "M9 21v-2", key: "1fwk0n" }],
   ["path", { d: "M9 5V3", key: "2q8zi6" }],
   ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2", key: "h1oib" }]
-], VP = e("panel-left-right-dashed", CP);
-const RP = [
+], EP = e("panel-left-right-dashed", RP);
+const LP = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M9 3v18", key: "fh3hqa" }]
-], EP = e("panel-left", RP);
-const LP = [
+], PP = e("panel-left", LP);
+const TP = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M15 3v18", key: "14nvp0" }],
   ["path", { d: "m8 9 3 3-3 3", key: "12hl5m" }]
-], PP = e("panel-right-close", LP);
-const TP = [
+], OP = e("panel-right-close", TP);
+const DP = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M15 14v1", key: "ilsfch" }],
   ["path", { d: "M15 19v2", key: "1fst2f" }],
   ["path", { d: "M15 3v2", key: "z204g4" }],
   ["path", { d: "M15 9v1", key: "z2a8b1" }]
-], OP = e("panel-right-dashed", TP);
-const DP = [
+], IP = e("panel-right-dashed", DP);
+const FP = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M15 3v18", key: "14nvp0" }],
   ["path", { d: "m10 15-3-3 3-3", key: "1pgupc" }]
-], IP = e("panel-right-open", DP);
-const FP = [
+], BP = e("panel-right-open", FP);
+const UP = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M15 3v18", key: "14nvp0" }]
-], BP = e("panel-right", FP);
-const UP = [
+], WP = e("panel-right", UP);
+const ZP = [
   ["path", { d: "M14 15h1", key: "171nev" }],
   ["path", { d: "M14 9h1", key: "l0svgy" }],
   ["path", { d: "M19 15h2", key: "1vnucp" }],
@@ -15163,12 +15173,7 @@ const UP = [
   ["path", { d: "M9 15h1", key: "1tg3ks" }],
   ["path", { d: "M9 9h1", key: "15jzuz" }],
   ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2", key: "h1oib" }]
-], WP = e("panel-top-bottom-dashed", UP);
-const ZP = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "M3 9h18", key: "1pudct" }],
-  ["path", { d: "m9 16 3-3 3 3", key: "1idcnm" }]
-], GP = e("panel-top-close", ZP);
+], GP = e("panel-top-bottom-dashed", ZP);
 const XP = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M14 9h1", key: "l0svgy" }],
@@ -15179,23 +15184,28 @@ const XP = [
 const KP = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M3 9h18", key: "1pudct" }],
-  ["path", { d: "m15 14-3 3-3-3", key: "g215vf" }]
-], QP = e("panel-top-open", KP);
+  ["path", { d: "m9 16 3-3 3 3", key: "1idcnm" }]
+], QP = e("panel-top-close", KP);
 const JP = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "M3 9h18", key: "1pudct" }]
-], eT = e("panel-top", JP);
+  ["path", { d: "M3 9h18", key: "1pudct" }],
+  ["path", { d: "m15 14-3 3-3-3", key: "g215vf" }]
+], eT = e("panel-top-open", JP);
 const tT = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["path", { d: "M3 9h18", key: "1pudct" }]
+], aT = e("panel-top", tT);
+const oT = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M9 3v18", key: "fh3hqa" }],
   ["path", { d: "M9 15h12", key: "5ijen5" }]
-], aT = e("panels-left-bottom", tT);
-const oT = [
+], nT = e("panels-left-bottom", oT);
+const cT = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M3 15h12", key: "1wkqb3" }],
   ["path", { d: "M15 3v18", key: "14nvp0" }]
-], nT = e("panels-right-bottom", oT);
-const cT = [
+], rT = e("panels-right-bottom", cT);
+const hT = [
   [
     "path",
     {
@@ -15203,16 +15213,12 @@ const cT = [
       key: "1miecu"
     }
   ]
-], rT = e("paperclip", cT);
-const hT = [
+], dT = e("paperclip", hT);
+const iT = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M3 9h18", key: "1pudct" }],
   ["path", { d: "M9 21V9", key: "1oto5p" }]
-], dT = e("panels-top-left", hT);
-const iT = [
-  ["path", { d: "M8 21s-4-3-4-9 4-9 4-9", key: "uto9ud" }],
-  ["path", { d: "M16 3s4 3 4 9-4 9-4 9", key: "4w2vsq" }]
-], sT = e("parentheses", iT);
+], sT = e("panels-top-left", iT);
 const yT = [
   ["path", { d: "M11 15h2", key: "199qp6" }],
   ["path", { d: "M12 12v3", key: "158kv8" }],
@@ -15227,6 +15233,10 @@ const yT = [
   ["path", { d: "M9 9a3 3 0 1 1 6 0", key: "jdoeu8" }]
 ], pT = e("parking-meter", yT);
 const kT = [
+  ["path", { d: "M8 21s-4-3-4-9 4-9 4-9", key: "uto9ud" }],
+  ["path", { d: "M16 3s4 3 4 9-4 9-4 9", key: "4w2vsq" }]
+], lT = e("parentheses", kT);
+const uT = [
   ["path", { d: "M5.8 11.3 2 22l10.7-3.79", key: "gwxi1d" }],
   ["path", { d: "M4 3h.01", key: "1vcuye" }],
   ["path", { d: "M22 8h.01", key: "1mrtc2" }],
@@ -15251,12 +15261,12 @@ const kT = [
       key: "4kbmks"
     }
   ]
-], lT = e("party-popper", kT);
-const uT = [
+], MT = e("party-popper", uT);
+const fT = [
   ["rect", { x: "14", y: "3", width: "5", height: "18", rx: "1", key: "kaeet6" }],
   ["rect", { x: "5", y: "3", width: "5", height: "18", rx: "1", key: "1wsw3u" }]
-], MT = e("pause", uT);
-const fT = [
+], mT = e("pause", fT);
+const gT = [
   ["circle", { cx: "11", cy: "4", r: "2", key: "vol9p0" }],
   ["circle", { cx: "18", cy: "8", r: "2", key: "17gozi" }],
   ["circle", { cx: "20", cy: "16", r: "2", key: "1v9bxh" }],
@@ -15267,14 +15277,14 @@ const fT = [
       key: "1ydw1z"
     }
   ]
-], mT = e("paw-print", fT);
-const gT = [
+], vT = e("paw-print", gT);
+const _T = [
   ["rect", { width: "14", height: "20", x: "5", y: "2", rx: "2", key: "1uq1d7" }],
   ["path", { d: "M15 14h.01", key: "1kp3bh" }],
   ["path", { d: "M9 6h6", key: "dgm16u" }],
   ["path", { d: "M9 10h6", key: "9gxzsh" }]
-], vT = e("pc-case", gT);
-const _T = [
+], xT = e("pc-case", _T);
+const bT = [
   ["path", { d: "M13 21h8", key: "1jsn5i" }],
   [
     "path",
@@ -15283,8 +15293,8 @@ const _T = [
       key: "1a8usu"
     }
   ]
-], xT = e("pen-line", _T);
-const bT = [
+], wT = e("pen-line", bT);
+const NT = [
   [
     "path",
     {
@@ -15294,8 +15304,8 @@ const bT = [
   ],
   ["path", { d: "m12.829 7.172 4.359-4.346a1 1 0 1 1 3.986 3.986l-4.353 4.353", key: "16h5ne" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
-], wT = e("pen-off", bT);
-const NT = [
+], $T = e("pen-off", NT);
+const zT = [
   [
     "path",
     {
@@ -15312,8 +15322,8 @@ const NT = [
   ],
   ["path", { d: "m2.3 2.3 7.286 7.286", key: "1wuzzi" }],
   ["circle", { cx: "11", cy: "11", r: "2", key: "xmgehs" }]
-], $T = e("pen-tool", NT);
-const zT = [
+], jT = e("pen-tool", zT);
+const qT = [
   [
     "path",
     {
@@ -15321,8 +15331,8 @@ const zT = [
       key: "1a8usu"
     }
   ]
-], jT = e("pen", zT);
-const qT = [
+], AT = e("pen", qT);
+const HT = [
   ["path", { d: "M13 21h8", key: "1jsn5i" }],
   ["path", { d: "m15 5 4 4", key: "1mk7zo" }],
   [
@@ -15332,8 +15342,8 @@ const qT = [
       key: "1a8usu"
     }
   ]
-], AT = e("pencil-line", qT);
-const HT = [
+], ST = e("pencil-line", HT);
+const CT = [
   [
     "path",
     {
@@ -15344,8 +15354,8 @@ const HT = [
   ["path", { d: "m12.829 7.172 4.359-4.346a1 1 0 1 1 3.986 3.986l-4.353 4.353", key: "16h5ne" }],
   ["path", { d: "m15 5 4 4", key: "1mk7zo" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
-], ST = e("pencil-off", HT);
-const CT = [
+], VT = e("pencil-off", CT);
+const RT = [
   [
     "path",
     { d: "M13 7 8.7 2.7a2.41 2.41 0 0 0-3.4 0L2.7 5.3a2.41 2.41 0 0 0 0 3.4L7 13", key: "orapub" }
@@ -15367,8 +15377,8 @@ const CT = [
     }
   ],
   ["path", { d: "m15 5 4 4", key: "1mk7zo" }]
-], VT = e("pencil-ruler", CT);
-const RT = [
+], ET = e("pencil-ruler", RT);
+const LT = [
   [
     "path",
     {
@@ -15377,8 +15387,8 @@ const RT = [
     }
   ],
   ["path", { d: "m15 5 4 4", key: "1mk7zo" }]
-], ET = e("pencil", RT);
-const LT = [
+], PT = e("pencil", LT);
+const TT = [
   [
     "path",
     {
@@ -15386,24 +15396,24 @@ const LT = [
       key: "2hea0t"
     }
   ]
-], PT = e("pentagon", LT);
-const TT = [
+], OT = e("pentagon", TT);
+const DT = [
   ["line", { x1: "19", x2: "5", y1: "5", y2: "19", key: "1x9vlm" }],
   ["circle", { cx: "6.5", cy: "6.5", r: "2.5", key: "4mh3h7" }],
   ["circle", { cx: "17.5", cy: "17.5", r: "2.5", key: "1mdrzq" }]
-], OT = e("percent", TT);
-const DT = [
-  ["circle", { cx: "12", cy: "5", r: "1", key: "gxeob9" }],
-  ["path", { d: "m9 20 3-6 3 6", key: "se2kox" }],
-  ["path", { d: "m6 8 6 2 6-2", key: "4o3us4" }],
-  ["path", { d: "M12 10v4", key: "1kjpxc" }]
-], IT = e("person-standing", DT);
+], IT = e("percent", DT);
 const FT = [
   ["path", { d: "M20 11H4", key: "6ut86h" }],
   ["path", { d: "M20 7H4", key: "zbl0bi" }],
   ["path", { d: "M7 21V4a1 1 0 0 1 1-1h4a1 1 0 0 1 0 12H7", key: "1ana5r" }]
 ], BT = e("philippine-peso", FT);
 const UT = [
+  ["circle", { cx: "12", cy: "5", r: "1", key: "gxeob9" }],
+  ["path", { d: "m9 20 3-6 3 6", key: "se2kox" }],
+  ["path", { d: "m6 8 6 2 6-2", key: "4o3us4" }],
+  ["path", { d: "M12 10v4", key: "1kjpxc" }]
+], WT = e("person-standing", UT);
+const ZT = [
   ["path", { d: "M13 2a9 9 0 0 1 9 9", key: "1itnx2" }],
   ["path", { d: "M13 6a5 5 0 0 1 5 5", key: "11nki7" }],
   [
@@ -15413,8 +15423,8 @@ const UT = [
       key: "9njp5v"
     }
   ]
-], WT = e("phone-call", UT);
-const ZT = [
+], GT = e("phone-call", ZT);
+const XT = [
   ["path", { d: "M14 6h8", key: "yd68k4" }],
   ["path", { d: "m18 2 4 4-4 4", key: "pucp1d" }],
   [
@@ -15424,8 +15434,8 @@ const ZT = [
       key: "9njp5v"
     }
   ]
-], GT = e("phone-forwarded", ZT);
-const XT = [
+], YT = e("phone-forwarded", XT);
+const KT = [
   ["path", { d: "M16 2v6h6", key: "1mfrl5" }],
   ["path", { d: "m22 2-6 6", key: "6f0sa0" }],
   [
@@ -15435,8 +15445,8 @@ const XT = [
       key: "9njp5v"
     }
   ]
-], YT = e("phone-incoming", XT);
-const KT = [
+], QT = e("phone-incoming", KT);
+const JT = [
   ["path", { d: "m16 2 6 6", key: "1gw87d" }],
   ["path", { d: "m22 2-6 6", key: "6f0sa0" }],
   [
@@ -15446,8 +15456,8 @@ const KT = [
       key: "9njp5v"
     }
   ]
-], QT = e("phone-missed", KT);
-const JT = [
+], eO = e("phone-missed", JT);
+const tO = [
   [
     "path",
     {
@@ -15463,8 +15473,8 @@ const JT = [
       key: "10hv5p"
     }
   ]
-], eO = e("phone-off", JT);
-const tO = [
+], aO = e("phone-off", tO);
+const oO = [
   ["path", { d: "m16 8 6-6", key: "oawc05" }],
   ["path", { d: "M22 8V2h-6", key: "oqy2zc" }],
   [
@@ -15474,8 +15484,8 @@ const tO = [
       key: "9njp5v"
     }
   ]
-], aO = e("phone-outgoing", tO);
-const oO = [
+], nO = e("phone-outgoing", oO);
+const cO = [
   [
     "path",
     {
@@ -15483,13 +15493,13 @@ const oO = [
       key: "9njp5v"
     }
   ]
-], nO = e("phone", oO);
-const cO = [
+], rO = e("phone", cO);
+const hO = [
   ["line", { x1: "9", x2: "9", y1: "4", y2: "20", key: "ovs5a5" }],
   ["path", { d: "M4 7c0-1.7 1.3-3 3-3h13", key: "10pag4" }],
   ["path", { d: "M18 20c-1.7 0-3-1.3-3-3V4", key: "1gaosr" }]
-], rO = e("pi", cO);
-const hO = [
+], dO = e("pi", hO);
+const iO = [
   [
     "path",
     {
@@ -15502,8 +15512,8 @@ const hO = [
   ["path", { d: "M10 14v4", key: "1v8uk5" }],
   ["path", { d: "M14 14v4", key: "1tqops" }],
   ["path", { d: "M18 14v4", key: "18uqwm" }]
-], dO = e("piano", hO);
-const iO = [
+], sO = e("piano", iO);
+const yO = [
   ["path", { d: "m14 13-8.381 8.38a1 1 0 0 1-3.001-3L11 9.999", key: "1lw9ds" }],
   [
     "path",
@@ -15526,19 +15536,19 @@ const iO = [
       key: "hh6h97"
     }
   ]
-], sO = e("pickaxe", iO);
-const yO = [
+], pO = e("pickaxe", yO);
+const kO = [
   ["path", { d: "M21 9V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h4", key: "daa4of" }],
   ["rect", { width: "10", height: "7", x: "12", y: "13", rx: "2", key: "1nb8gs" }]
-], pO = e("picture-in-picture-2", yO);
-const kO = [
+], lO = e("picture-in-picture-2", kO);
+const uO = [
   ["path", { d: "M2 10h6V4", key: "zwrco" }],
   ["path", { d: "m2 4 6 6", key: "ug085t" }],
   ["path", { d: "M21 10V7a2 2 0 0 0-2-2h-7", key: "git5jr" }],
   ["path", { d: "M3 14v2a2 2 0 0 0 2 2h3", key: "1f7fh3" }],
   ["rect", { x: "12", y: "14", width: "10", height: "7", rx: "1", key: "1wjs3o" }]
-], lO = e("picture-in-picture", kO);
-const uO = [
+], MO = e("picture-in-picture", uO);
+const fO = [
   [
     "path",
     {
@@ -15548,39 +15558,39 @@ const uO = [
   ],
   ["path", { d: "M16 10h.01", key: "1m94wz" }],
   ["path", { d: "M2 8v1a2 2 0 0 0 2 2h1", key: "1env43" }]
-], MO = e("piggy-bank", uO);
-const fO = [
+], mO = e("piggy-bank", fO);
+const gO = [
   ["path", { d: "M14 3v11", key: "mlfb7b" }],
   ["path", { d: "M14 9h-3a3 3 0 0 1 0-6h9", key: "1ulc19" }],
   ["path", { d: "M18 3v11", key: "1phi0r" }],
   ["path", { d: "M22 18H2l4-4", key: "yt65j9" }],
   ["path", { d: "m6 22-4-4", key: "6jgyf5" }]
-], mO = e("pilcrow-left", fO);
-const gO = [
+], vO = e("pilcrow-left", gO);
+const _O = [
   ["path", { d: "M10 3v11", key: "o3l5kj" }],
   ["path", { d: "M10 9H7a1 1 0 0 1 0-6h8", key: "1wb1nc" }],
   ["path", { d: "M14 3v11", key: "mlfb7b" }],
   ["path", { d: "m18 14 4 4H2", key: "4r8io1" }],
   ["path", { d: "m22 18-4 4", key: "1hjjrd" }]
-], vO = e("pilcrow-right", gO);
-const _O = [
+], xO = e("pilcrow-right", _O);
+const bO = [
   ["path", { d: "M13 4v16", key: "8vvj80" }],
   ["path", { d: "M17 4v16", key: "7dpous" }],
   ["path", { d: "M19 4H9.5a4.5 4.5 0 0 0 0 9H13", key: "sh4n9v" }]
-], xO = e("pilcrow", _O);
-const bO = [
+], wO = e("pilcrow", bO);
+const NO = [
   ["path", { d: "M18 11h-4a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h4", key: "17ldeb" }],
   ["path", { d: "M6 7v13a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7", key: "nc37y6" }],
   ["rect", { width: "16", height: "5", x: "4", y: "2", rx: "1", key: "3jeezo" }]
-], wO = e("pill-bottle", bO);
-const NO = [
+], $O = e("pill-bottle", NO);
+const zO = [
   [
     "path",
     { d: "m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z", key: "wa1lgi" }
   ],
   ["path", { d: "m8.5 8.5 7 7", key: "rvfmvr" }]
-], $O = e("pill", NO);
-const zO = [
+], jO = e("pill", zO);
+const qO = [
   ["path", { d: "M12 17v5", key: "bb1du9" }],
   ["path", { d: "M15 9.34V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H7.89", key: "znwnzq" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
@@ -15591,8 +15601,8 @@ const zO = [
       key: "c9qhm2"
     }
   ]
-], jO = e("pin-off", zO);
-const qO = [
+], AO = e("pin-off", qO);
+const HO = [
   ["path", { d: "M12 17v5", key: "bb1du9" }],
   [
     "path",
@@ -15601,8 +15611,8 @@ const qO = [
       key: "1nkz8b"
     }
   ]
-], AO = e("pin", qO);
-const HO = [
+], SO = e("pin", HO);
+const CO = [
   [
     "path",
     {
@@ -15618,8 +15628,8 @@ const HO = [
     }
   ],
   ["path", { d: "m2 22 .414-.414", key: "jhxm08" }]
-], SO = e("pipette", HO);
-const CO = [
+], VO = e("pipette", CO);
+const RO = [
   ["path", { d: "m12 14-1 1", key: "11onhr" }],
   ["path", { d: "m13.75 18.25-1.25 1.42", key: "1yisr3" }],
   ["path", { d: "M17.775 5.654a15.68 15.68 0 0 0-12.121 12.12", key: "1qtqk6" }],
@@ -15631,8 +15641,8 @@ const CO = [
       key: "1hyfdd"
     }
   ]
-], VO = e("pizza", CO);
-const RO = [
+], EO = e("pizza", RO);
+const LO = [
   ["path", { d: "M2 22h20", key: "272qi7" }],
   [
     "path",
@@ -15641,8 +15651,8 @@ const RO = [
       key: "1ma21e"
     }
   ]
-], EO = e("plane-landing", RO);
-const LO = [
+], PO = e("plane-landing", LO);
+const TO = [
   ["path", { d: "M2 22h20", key: "272qi7" }],
   [
     "path",
@@ -15651,8 +15661,8 @@ const LO = [
       key: "fkigj9"
     }
   ]
-], PO = e("plane-takeoff", LO);
-const TO = [
+], OO = e("plane-takeoff", TO);
+const DO = [
   [
     "path",
     {
@@ -15660,8 +15670,8 @@ const TO = [
       key: "1v9wt8"
     }
   ]
-], OO = e("plane", TO);
-const DO = [
+], IO = e("plane", DO);
+const FO = [
   [
     "path",
     {
@@ -15669,15 +15679,15 @@ const DO = [
       key: "10ikf1"
     }
   ]
-], IO = e("play", DO);
-const FO = [
+], BO = e("play", FO);
+const UO = [
   ["path", { d: "M9 2v6", key: "17ngun" }],
   ["path", { d: "M15 2v6", key: "s7yy2p" }],
   ["path", { d: "M12 17v5", key: "bb1du9" }],
   ["path", { d: "M5 8h14", key: "pcz4l3" }],
   ["path", { d: "M6 11V8h12v3a6 6 0 1 1-12 0Z", key: "wtfw2c" }]
-], BO = e("plug-2", FO);
-const UO = [
+], WO = e("plug-2", UO);
+const ZO = [
   [
     "path",
     { d: "M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z", key: "goz73y" }
@@ -15686,8 +15696,12 @@ const UO = [
   ["path", { d: "M7.5 13.5 10 11", key: "7xgeeb" }],
   ["path", { d: "M10.5 16.5 13 14", key: "10btkg" }],
   ["path", { d: "m18 3-4 4h6l-4 4", key: "16psg9" }]
-], WO = e("plug-zap", UO);
-const ZO = [
+], GO = e("plug-zap", ZO);
+const XO = [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "M12 5v14", key: "s699le" }]
+], YO = e("plus", XO);
+const KO = [
   ["path", { d: "M12 22v-5", key: "1ega77" }],
   ["path", { d: "M15 8V2", key: "18g5xt" }],
   [
@@ -15695,15 +15709,7 @@ const ZO = [
     { d: "M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z", key: "1xoxul" }
   ],
   ["path", { d: "M9 8V2", key: "14iosj" }]
-], GO = e("plug", ZO);
-const XO = [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "M12 5v14", key: "s699le" }]
-], YO = e("plus", XO);
-const KO = [
-  ["path", { d: "M20 3a2 2 0 0 1 2 2v6a1 1 0 0 1-20 0V5a2 2 0 0 1 2-2z", key: "1uodqw" }],
-  ["path", { d: "m8 10 4 4 4-4", key: "1mxd5q" }]
-], QO = e("pocket", KO);
+], QO = e("plug", KO);
 const JO = [
   ["path", { d: "M3 2v1c0 1 2 1 2 2S3 6 3 7s2 1 2 2-2 1-2 2 2 1 2 2", key: "19w3oe" }],
   ["path", { d: "M18 6h.01", key: "1v4wsw" }],
@@ -15712,14 +15718,9 @@ const JO = [
   ["path", { d: "M18 11.66V22a4 4 0 0 0 4-4V6", key: "1utzek" }]
 ], eD = e("pocket-knife", JO);
 const tD = [
-  [
-    "path",
-    { d: "M13 17a1 1 0 1 0-2 0l.5 4.5a0.5 0.5 0 0 0 1 0z", fill: "currentColor", key: "x1mxqr" }
-  ],
-  ["path", { d: "M16.85 18.58a9 9 0 1 0-9.7 0", key: "d71mpg" }],
-  ["path", { d: "M8 14a5 5 0 1 1 8 0", key: "fc81rn" }],
-  ["circle", { cx: "12", cy: "11", r: "1", fill: "currentColor", key: "vqiwd" }]
-], aD = e("podcast", tD);
+  ["path", { d: "M20 3a2 2 0 0 1 2 2v6a1 1 0 0 1-20 0V5a2 2 0 0 1 2-2z", key: "1uodqw" }],
+  ["path", { d: "m8 10 4 4 4-4", key: "1mxd5q" }]
+], aD = e("pocket", tD);
 const oD = [
   ["path", { d: "M10 4.5V4a2 2 0 0 0-2.41-1.957", key: "jsi14n" }],
   ["path", { d: "M13.9 8.4a2 2 0 0 0-1.26-1.295", key: "hirc7f" }],
@@ -15738,6 +15739,15 @@ const oD = [
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
 ], nD = e("pointer-off", oD);
 const cD = [
+  [
+    "path",
+    { d: "M13 17a1 1 0 1 0-2 0l.5 4.5a0.5 0.5 0 0 0 1 0z", fill: "currentColor", key: "x1mxqr" }
+  ],
+  ["path", { d: "M16.85 18.58a9 9 0 1 0-9.7 0", key: "d71mpg" }],
+  ["path", { d: "M8 14a5 5 0 1 1 8 0", key: "fc81rn" }],
+  ["circle", { cx: "12", cy: "11", r: "1", fill: "currentColor", key: "vqiwd" }]
+], rD = e("podcast", cD);
+const hD = [
   ["path", { d: "M22 14a8 8 0 0 1-8 8", key: "56vcr3" }],
   ["path", { d: "M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2", key: "1agjmk" }],
   ["path", { d: "M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1", key: "wdbh2u" }],
@@ -15749,8 +15759,8 @@ const cD = [
       key: "g6ys72"
     }
   ]
-], rD = e("pointer", cD);
-const hD = [
+], dD = e("pointer", hD);
+const iD = [
   [
     "path",
     {
@@ -15767,8 +15777,8 @@ const hD = [
       key: "1qo33t"
     }
   ]
-], dD = e("popcorn", hD);
-const iD = [
+], sD = e("popcorn", iD);
+const yD = [
   [
     "path",
     {
@@ -15777,55 +15787,41 @@ const iD = [
     }
   ],
   ["path", { d: "m22 22-5.5-5.5", key: "17o70y" }]
-], sD = e("popsicle", iD);
-const yD = [
+], pD = e("popsicle", yD);
+const kD = [
   ["path", { d: "M18 7c0-5.333-8-5.333-8 0", key: "1prm2n" }],
   ["path", { d: "M10 7v14", key: "18tmcs" }],
   ["path", { d: "M6 21h12", key: "4dkmi1" }],
   ["path", { d: "M6 13h10", key: "ybwr4a" }]
-], pD = e("pound-sterling", yD);
-const kD = [
+], lD = e("pound-sterling", kD);
+const uD = [
   ["path", { d: "M18.36 6.64A9 9 0 0 1 20.77 15", key: "dxknvb" }],
   ["path", { d: "M6.16 6.16a9 9 0 1 0 12.68 12.68", key: "1x7qb5" }],
   ["path", { d: "M12 2v4", key: "3427ic" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
-], lD = e("power-off", kD);
-const uD = [
+], MD = e("power-off", uD);
+const fD = [
   ["path", { d: "M12 2v10", key: "mnfbl" }],
   ["path", { d: "M18.4 6.6a9 9 0 1 1-12.77.04", key: "obofu9" }]
-], MD = e("power", uD);
-const fD = [
+], mD = e("power", fD);
+const gD = [
   ["path", { d: "M2 3h20", key: "91anmk" }],
   ["path", { d: "M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3", key: "2k9sn8" }],
   ["path", { d: "m7 21 5-5 5 5", key: "bip4we" }]
-], mD = e("presentation", fD);
-const gD = [
+], vD = e("presentation", gD);
+const _D = [
   ["path", { d: "M13.5 22H7a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v.5", key: "qeb09x" }],
   ["path", { d: "m16 19 2 2 4-4", key: "1b14m6" }],
   ["path", { d: "M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2", key: "1md90i" }],
   ["path", { d: "M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6", key: "1itne7" }]
-], vD = e("printer-check", gD);
-const _D = [
+], xD = e("printer-check", _D);
+const bD = [
   ["path", { d: "M12.531 22H7a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h6.377", key: "1w39xo" }],
   ["path", { d: "m16.5 16.5 5 5", key: "zc9lw7" }],
   ["path", { d: "m16.5 21.5 5-5", key: "1fr29m" }],
   ["path", { d: "M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1.5", key: "18he39" }],
   ["path", { d: "M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6", key: "1itne7" }]
-], xD = e("printer-x", _D);
-const bD = [
-  ["path", { d: "M5 7 3 5", key: "1yys58" }],
-  ["path", { d: "M9 6V3", key: "1ptz9u" }],
-  ["path", { d: "m13 7 2-2", key: "1w3vmq" }],
-  ["circle", { cx: "9", cy: "13", r: "3", key: "1mma13" }],
-  [
-    "path",
-    {
-      d: "M11.83 12H20a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2.17",
-      key: "2frwzc"
-    }
-  ],
-  ["path", { d: "M16 16h2", key: "dnq2od" }]
-], wD = e("projector", bD);
+], wD = e("printer-x", bD);
 const ND = [
   [
     "path",
@@ -15843,6 +15839,20 @@ const zD = [
   ["path", { d: "M2 9h13a2 2 0 0 1 2 2v9", key: "11z3ex" }]
 ], jD = e("proportions", zD);
 const qD = [
+  ["path", { d: "M5 7 3 5", key: "1yys58" }],
+  ["path", { d: "M9 6V3", key: "1ptz9u" }],
+  ["path", { d: "m13 7 2-2", key: "1w3vmq" }],
+  ["circle", { cx: "9", cy: "13", r: "3", key: "1mma13" }],
+  [
+    "path",
+    {
+      d: "M11.83 12H20a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2.17",
+      key: "2frwzc"
+    }
+  ],
+  ["path", { d: "M16 16h2", key: "dnq2od" }]
+], AD = e("projector", qD);
+const HD = [
   [
     "path",
     {
@@ -15850,8 +15860,8 @@ const qD = [
       key: "w46dr5"
     }
   ]
-], AD = e("puzzle", qD);
-const HD = [
+], SD = e("puzzle", HD);
+const CD = [
   [
     "path",
     {
@@ -15860,8 +15870,8 @@ const HD = [
     }
   ],
   ["path", { d: "M12 2v20", key: "t6zp3m" }]
-], SD = e("pyramid", HD);
-const CD = [
+], VD = e("pyramid", CD);
+const RD = [
   ["rect", { width: "5", height: "5", x: "3", y: "3", rx: "1", key: "1tu5fj" }],
   ["rect", { width: "5", height: "5", x: "16", y: "3", rx: "1", key: "1v8r4q" }],
   ["rect", { width: "5", height: "5", x: "3", y: "16", rx: "1", key: "1x03jg" }],
@@ -15874,8 +15884,8 @@ const CD = [
   ["path", { d: "M16 12h1", key: "1slzba" }],
   ["path", { d: "M21 12v.01", key: "1lwtk9" }],
   ["path", { d: "M12 21v-1", key: "1880an" }]
-], VD = e("qr-code", CD);
-const RD = [
+], ED = e("qr-code", RD);
+const LD = [
   [
     "path",
     {
@@ -15890,8 +15900,8 @@ const RD = [
       key: "1ymkrd"
     }
   ]
-], ED = e("quote", RD);
-const LD = [
+], PD = e("quote", LD);
+const TD = [
   ["path", { d: "M13 16a3 3 0 0 1 2.24 5", key: "1epib5" }],
   ["path", { d: "M18 12h.01", key: "yjnet6" }],
   [
@@ -15903,8 +15913,8 @@ const LD = [
   ],
   ["path", { d: "M20 8.54V4a2 2 0 1 0-4 0v3", key: "49iql8" }],
   ["path", { d: "M7.612 12.524a3 3 0 1 0-1.6 4.3", key: "1e33i0" }]
-], PD = e("rabbit", LD);
-const TD = [
+], OD = e("rabbit", TD);
+const DD = [
   ["path", { d: "M19.07 4.93A10 10 0 0 0 6.99 3.34", key: "z3du51" }],
   ["path", { d: "M4 6h.01", key: "oypzma" }],
   ["path", { d: "M2.29 9.62A10 10 0 1 0 21.31 8.35", key: "qzzz0" }],
@@ -15913,16 +15923,7 @@ const TD = [
   ["path", { d: "M17.99 11.66A6 6 0 0 1 15.77 16.67", key: "1u2y91" }],
   ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
   ["path", { d: "m13.41 10.59 5.66-5.66", key: "mhq4k0" }]
-], OD = e("radar", TD);
-const DD = [
-  [
-    "path",
-    {
-      d: "M3 12h3.28a1 1 0 0 1 .948.684l2.298 7.934a.5.5 0 0 0 .96-.044L13.82 4.771A1 1 0 0 1 14.792 4H21",
-      key: "1mqj8i"
-    }
-  ]
-], ID = e("radical", DD);
+], ID = e("radar", DD);
 const FD = [
   ["path", { d: "M12 12h.01", key: "1mp3jc" }],
   [
@@ -15948,12 +15949,21 @@ const FD = [
   ]
 ], BD = e("radiation", FD);
 const UD = [
+  [
+    "path",
+    {
+      d: "M3 12h3.28a1 1 0 0 1 .948.684l2.298 7.934a.5.5 0 0 0 .96-.044L13.82 4.771A1 1 0 0 1 14.792 4H21",
+      key: "1mqj8i"
+    }
+  ]
+], WD = e("radical", UD);
+const ZD = [
   ["path", { d: "M5 16v2", key: "g5qcv5" }],
   ["path", { d: "M19 16v2", key: "1gbaio" }],
   ["rect", { width: "20", height: "8", x: "2", y: "8", rx: "2", key: "vjsjur" }],
   ["path", { d: "M18 12h.01", key: "yjnet6" }]
-], WD = e("radio-receiver", UD);
-const ZD = [
+], GD = e("radio-receiver", ZD);
+const XD = [
   ["path", { d: "M4.9 16.1C1 12.2 1 5.8 4.9 1.9", key: "s0qx1y" }],
   ["path", { d: "M7.8 4.7a6.14 6.14 0 0 0-.8 7.5", key: "1idnkw" }],
   ["circle", { cx: "12", cy: "9", r: "2", key: "1092wv" }],
@@ -15961,31 +15971,31 @@ const ZD = [
   ["path", { d: "M19.1 1.9a9.96 9.96 0 0 1 0 14.1", key: "rhi7fg" }],
   ["path", { d: "M9.5 18h5", key: "mfy3pd" }],
   ["path", { d: "m8 22 4-11 4 11", key: "25yftu" }]
-], GD = e("radio-tower", ZD);
-const XD = [
+], YD = e("radio-tower", XD);
+const KD = [
   ["path", { d: "M16.247 7.761a6 6 0 0 1 0 8.478", key: "1fwjs5" }],
   ["path", { d: "M19.075 4.933a10 10 0 0 1 0 14.134", key: "ehdyv1" }],
   ["path", { d: "M4.925 19.067a10 10 0 0 1 0-14.134", key: "1q22gi" }],
   ["path", { d: "M7.753 16.239a6 6 0 0 1 0-8.478", key: "r2q7qm" }],
   ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }]
-], YD = e("radio", XD);
-const KD = [
+], QD = e("radio", KD);
+const JD = [
   ["path", { d: "M20.34 17.52a10 10 0 1 0-2.82 2.82", key: "fydyku" }],
   ["circle", { cx: "19", cy: "19", r: "2", key: "17f5cg" }],
   ["path", { d: "m13.41 13.41 4.18 4.18", key: "1gqbwc" }],
   ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }]
-], QD = e("radius", KD);
-const JD = [
-  ["path", { d: "M22 17a10 10 0 0 0-20 0", key: "ozegv" }],
-  ["path", { d: "M6 17a6 6 0 0 1 12 0", key: "5giftw" }],
-  ["path", { d: "M10 17a2 2 0 0 1 4 0", key: "gnsikk" }]
-], eI = e("rainbow", JD);
+], eI = e("radius", JD);
 const tI = [
   ["path", { d: "M5 15h14", key: "m0yey3" }],
   ["path", { d: "M5 9h14", key: "7tsvo6" }],
   ["path", { d: "m14 20-5-5 6-6-5-5", key: "1jo42i" }]
 ], aI = e("rail-symbol", tI);
 const oI = [
+  ["path", { d: "M22 17a10 10 0 0 0-20 0", key: "ozegv" }],
+  ["path", { d: "M6 17a6 6 0 0 1 12 0", key: "5giftw" }],
+  ["path", { d: "M10 17a2 2 0 0 1 4 0", key: "gnsikk" }]
+], nI = e("rainbow", oI);
+const cI = [
   ["path", { d: "M13 22H4a2 2 0 0 1 0-4h12", key: "bt3f23" }],
   ["path", { d: "M13.236 18a3 3 0 0 0-2.2-5", key: "1tbvmo" }],
   ["path", { d: "M16 9h.01", key: "1bdo4e" }],
@@ -15997,28 +16007,28 @@ const oI = [
     }
   ],
   ["path", { d: "M17 4.988a3 3 0 1 0-5.2 2.052A7 7 0 0 0 4 14.015 4 4 0 0 0 8 18", key: "3s7e9i" }]
-], nI = e("rat", oI);
-const cI = [
+], rI = e("rat", cI);
+const hI = [
   ["rect", { width: "12", height: "20", x: "6", y: "2", rx: "2", key: "1oxtiu" }],
   ["rect", { width: "20", height: "12", x: "2", y: "6", rx: "2", key: "9lu3g6" }]
-], rI = e("ratio", cI);
-const hI = [
+], dI = e("ratio", hI);
+const iI = [
   [
     "path",
     { d: "M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z", key: "q3az6g" }
   ],
   ["path", { d: "M12 6.5v11", key: "ecfhkf" }],
   ["path", { d: "M15 9.4a4 4 0 1 0 0 5.2", key: "1makmb" }]
-], dI = e("receipt-cent", hI);
-const iI = [
+], sI = e("receipt-cent", iI);
+const yI = [
   [
     "path",
     { d: "M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z", key: "q3az6g" }
   ],
   ["path", { d: "M8 12h5", key: "1g6qi8" }],
   ["path", { d: "M16 9.5a4 4 0 1 0 0 5.2", key: "b2px4r" }]
-], sI = e("receipt-euro", iI);
-const yI = [
+], pI = e("receipt-euro", yI);
+const kI = [
   [
     "path",
     { d: "M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z", key: "q3az6g" }
@@ -16026,8 +16036,8 @@ const yI = [
   ["path", { d: "M8 7h8", key: "i86dvs" }],
   ["path", { d: "M12 17.5 8 15h1a4 4 0 0 0 0-8", key: "grpkl4" }],
   ["path", { d: "M8 11h8", key: "vwpz6n" }]
-], pI = e("receipt-indian-rupee", yI);
-const kI = [
+], lI = e("receipt-indian-rupee", kI);
+const uI = [
   [
     "path",
     { d: "M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z", key: "q3az6g" }
@@ -16036,8 +16046,8 @@ const kI = [
   ["path", { d: "m9 7 3 3v7.5", key: "39i0xv" }],
   ["path", { d: "M9 11h6", key: "1fldmi" }],
   ["path", { d: "M9 15h6", key: "cctwl0" }]
-], lI = e("receipt-japanese-yen", kI);
-const uI = [
+], MI = e("receipt-japanese-yen", uI);
+const fI = [
   [
     "path",
     { d: "M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z", key: "q3az6g" }
@@ -16045,16 +16055,16 @@ const uI = [
   ["path", { d: "M8 13h5", key: "1k9z8w" }],
   ["path", { d: "M10 17V9.5a2.5 2.5 0 0 1 5 0", key: "1dzgp0" }],
   ["path", { d: "M8 17h7", key: "8mjdqu" }]
-], MI = e("receipt-pound-sterling", uI);
-const fI = [
+], mI = e("receipt-pound-sterling", fI);
+const gI = [
   [
     "path",
     { d: "M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z", key: "q3az6g" }
   ],
   ["path", { d: "M8 15h5", key: "vxg57a" }],
   ["path", { d: "M8 11h5a2 2 0 1 0 0-4h-3v10", key: "1usi5u" }]
-], mI = e("receipt-russian-ruble", fI);
-const gI = [
+], vI = e("receipt-russian-ruble", gI);
+const _I = [
   [
     "path",
     { d: "M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z", key: "q3az6g" }
@@ -16062,8 +16072,8 @@ const gI = [
   ["path", { d: "M10 17V7h5", key: "k7jq18" }],
   ["path", { d: "M10 11h4", key: "1i0mka" }],
   ["path", { d: "M8 15h5", key: "vxg57a" }]
-], vI = e("receipt-swiss-franc", gI);
-const _I = [
+], xI = e("receipt-swiss-franc", _I);
+const bI = [
   ["path", { d: "M13 16H8", key: "wsln4y" }],
   ["path", { d: "M14 8H8", key: "1l3xfs" }],
   ["path", { d: "M16 12H8", key: "1fr5h0" }],
@@ -16074,15 +16084,7 @@ const _I = [
       key: "ycz6yz"
     }
   ]
-], xI = e("receipt-text", _I);
-const bI = [
-  [
-    "path",
-    { d: "M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z", key: "q3az6g" }
-  ],
-  ["path", { d: "M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8", key: "1h4pet" }],
-  ["path", { d: "M12 17.5v-11", key: "1jc1ny" }]
-], wI = e("receipt", bI);
+], wI = e("receipt-text", bI);
 const NI = [
   ["path", { d: "M10 6.5v11a5.5 5.5 0 0 0 5.5-5.5", key: "nw10mp" }],
   ["path", { d: "m14 8-6 3", key: "2tb98i" }],
@@ -16092,16 +16094,24 @@ const NI = [
   ]
 ], $I = e("receipt-turkish-lira", NI);
 const zI = [
+  [
+    "path",
+    { d: "M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z", key: "q3az6g" }
+  ],
+  ["path", { d: "M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8", key: "1h4pet" }],
+  ["path", { d: "M12 17.5v-11", key: "1jc1ny" }]
+], jI = e("receipt", zI);
+const qI = [
   ["path", { d: "M14 4v16H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z", key: "1m5n7q" }],
   ["circle", { cx: "14", cy: "12", r: "8", key: "1pag6k" }]
-], jI = e("rectangle-circle", zI);
-const qI = [
+], AI = e("rectangle-circle", qI);
+const HI = [
   ["rect", { width: "20", height: "12", x: "2", y: "6", rx: "2", key: "9lu3g6" }],
   ["path", { d: "M12 12h.01", key: "1mp3jc" }],
   ["path", { d: "M17 12h.01", key: "1m0b6t" }],
   ["path", { d: "M7 12h.01", key: "eqddd0" }]
-], AI = e("rectangle-ellipsis", qI);
-const HI = [
+], SI = e("rectangle-ellipsis", HI);
+const CI = [
   [
     "path",
     {
@@ -16109,23 +16119,14 @@ const HI = [
       key: "d5y1f"
     }
   ]
-], SI = e("rectangle-goggles", HI);
-const CI = [
-  ["rect", { width: "20", height: "12", x: "2", y: "6", rx: "2", key: "9lu3g6" }]
-], VI = e("rectangle-horizontal", CI);
+], VI = e("rectangle-goggles", CI);
 const RI = [
-  ["rect", { width: "12", height: "20", x: "6", y: "2", rx: "2", key: "1oxtiu" }]
-], EI = e("rectangle-vertical", RI);
+  ["rect", { width: "20", height: "12", x: "2", y: "6", rx: "2", key: "9lu3g6" }]
+], EI = e("rectangle-horizontal", RI);
 const LI = [
-  ["path", { d: "m15 14 5-5-5-5", key: "12vg1m" }],
-  ["path", { d: "M20 9H9.5A5.5 5.5 0 0 0 4 14.5A5.5 5.5 0 0 0 9.5 20H13", key: "6uklza" }]
-], PI = e("redo-2", LI);
+  ["rect", { width: "12", height: "20", x: "6", y: "2", rx: "2", key: "1oxtiu" }]
+], PI = e("rectangle-vertical", LI);
 const TI = [
-  ["circle", { cx: "12", cy: "17", r: "1", key: "1ixnty" }],
-  ["path", { d: "M21 7v6h-6", key: "3ptur4" }],
-  ["path", { d: "M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7", key: "1kgawr" }]
-], OI = e("redo-dot", TI);
-const DI = [
   [
     "path",
     {
@@ -16150,24 +16151,27 @@ const DI = [
     }
   ],
   ["path", { d: "m13.378 9.633 4.096 1.098 1.097-4.096", key: "1oe83g" }]
-], II = e("recycle", DI);
+], OI = e("recycle", TI);
+const DI = [
+  ["path", { d: "m15 14 5-5-5-5", key: "12vg1m" }],
+  ["path", { d: "M20 9H9.5A5.5 5.5 0 0 0 4 14.5A5.5 5.5 0 0 0 9.5 20H13", key: "6uklza" }]
+], II = e("redo-2", DI);
 const FI = [
+  ["circle", { cx: "12", cy: "17", r: "1", key: "1ixnty" }],
   ["path", { d: "M21 7v6h-6", key: "3ptur4" }],
   ["path", { d: "M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7", key: "1kgawr" }]
-], BI = e("redo", FI);
+], BI = e("redo-dot", FI);
 const UI = [
+  ["path", { d: "M21 7v6h-6", key: "3ptur4" }],
+  ["path", { d: "M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7", key: "1kgawr" }]
+], WI = e("redo", UI);
+const ZI = [
   ["path", { d: "M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8", key: "14sxne" }],
   ["path", { d: "M3 3v5h5", key: "1xhq8a" }],
   ["path", { d: "M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16", key: "1hlbsb" }],
   ["path", { d: "M16 16h5v5", key: "ccwih5" }],
   ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }]
-], WI = e("refresh-ccw-dot", UI);
-const ZI = [
-  ["path", { d: "M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8", key: "14sxne" }],
-  ["path", { d: "M3 3v5h5", key: "1xhq8a" }],
-  ["path", { d: "M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16", key: "1hlbsb" }],
-  ["path", { d: "M16 16h5v5", key: "ccwih5" }]
-], GI = e("refresh-ccw", ZI);
+], GI = e("refresh-ccw-dot", ZI);
 const XI = [
   ["path", { d: "M21 8L18.74 5.74A9.75 9.75 0 0 0 12 3C11 3 10.03 3.16 9.13 3.47", key: "1krf6h" }],
   ["path", { d: "M8 16H3v5", key: "1cv678" }],
@@ -16178,20 +16182,26 @@ const XI = [
   ["path", { d: "M22 22 2 2", key: "1r8tn9" }]
 ], YI = e("refresh-cw-off", XI);
 const KI = [
+  ["path", { d: "M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8", key: "14sxne" }],
+  ["path", { d: "M3 3v5h5", key: "1xhq8a" }],
+  ["path", { d: "M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16", key: "1hlbsb" }],
+  ["path", { d: "M16 16h5v5", key: "ccwih5" }]
+], QI = e("refresh-ccw", KI);
+const JI = [
   ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
   ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
   ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
   ["path", { d: "M8 16H3v5", key: "1cv678" }]
-], QI = e("refresh-cw", KI);
-const JI = [
+], eF = e("refresh-cw", JI);
+const tF = [
   [
     "path",
     { d: "M5 6a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6Z", key: "fpq118" }
   ],
   ["path", { d: "M5 10h14", key: "elsbfy" }],
   ["path", { d: "M15 7v6", key: "1nx30x" }]
-], eF = e("refrigerator", JI);
-const tF = [
+], aF = e("refrigerator", tF);
+const oF = [
   ["path", { d: "M17 3v10", key: "15fgeh" }],
   ["path", { d: "m12.67 5.5 8.66 5", key: "1gpheq" }],
   ["path", { d: "m12.67 10.5 8.66-5", key: "1dkfa6" }],
@@ -16199,21 +16209,14 @@ const tF = [
     "path",
     { d: "M9 17a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2z", key: "swwfx4" }
   ]
-], aF = e("regex", tF);
-const oF = [
+], nF = e("regex", oF);
+const cF = [
   ["path", { d: "M4 7V4h16v3", key: "9msm58" }],
   ["path", { d: "M5 20h6", key: "1h6pxn" }],
   ["path", { d: "M13 4 8 20", key: "kqq6aj" }],
   ["path", { d: "m15 15 5 5", key: "me55sn" }],
   ["path", { d: "m20 15-5 5", key: "11p7ol" }]
-], nF = e("remove-formatting", oF);
-const cF = [
-  ["path", { d: "m17 2 4 4-4 4", key: "nntrym" }],
-  ["path", { d: "M3 11v-1a4 4 0 0 1 4-4h14", key: "84bu3i" }],
-  ["path", { d: "m7 22-4-4 4-4", key: "1wqhfi" }],
-  ["path", { d: "M21 13v1a4 4 0 0 1-4 4H3", key: "1rx37r" }],
-  ["path", { d: "M11 10h1v4", key: "70cz1p" }]
-], rF = e("repeat-1", cF);
+], rF = e("remove-formatting", cF);
 const hF = [
   ["path", { d: "m2 9 3-3 3 3", key: "1ltn5i" }],
   ["path", { d: "M13 18H7a2 2 0 0 1-2-2V6", key: "1r6tfw" }],
@@ -16224,9 +16227,16 @@ const iF = [
   ["path", { d: "m17 2 4 4-4 4", key: "nntrym" }],
   ["path", { d: "M3 11v-1a4 4 0 0 1 4-4h14", key: "84bu3i" }],
   ["path", { d: "m7 22-4-4 4-4", key: "1wqhfi" }],
-  ["path", { d: "M21 13v1a4 4 0 0 1-4 4H3", key: "1rx37r" }]
-], sF = e("repeat", iF);
+  ["path", { d: "M21 13v1a4 4 0 0 1-4 4H3", key: "1rx37r" }],
+  ["path", { d: "M11 10h1v4", key: "70cz1p" }]
+], sF = e("repeat-1", iF);
 const yF = [
+  ["path", { d: "m17 2 4 4-4 4", key: "nntrym" }],
+  ["path", { d: "M3 11v-1a4 4 0 0 1 4-4h14", key: "84bu3i" }],
+  ["path", { d: "m7 22-4-4 4-4", key: "1wqhfi" }],
+  ["path", { d: "M21 13v1a4 4 0 0 1-4 4H3", key: "1rx37r" }]
+], pF = e("repeat", yF);
+const kF = [
   ["path", { d: "M14 14a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1", key: "zg1ipl" }],
   ["path", { d: "M14 4a1 1 0 0 1 1-1", key: "dhj8ez" }],
   ["path", { d: "M15 10a1 1 0 0 1-1-1", key: "1mnyi5" }],
@@ -16236,8 +16246,8 @@ const yF = [
   ["path", { d: "m3 7 3 3 3-3", key: "x25e72" }],
   ["path", { d: "M6 10V5a2 2 0 0 1 2-2h2", key: "15xut4" }],
   ["rect", { x: "3", y: "14", width: "7", height: "7", rx: "1", key: "1bkyp8" }]
-], pF = e("replace-all", yF);
-const kF = [
+], lF = e("replace-all", kF);
+const uF = [
   ["path", { d: "M14 4a1 1 0 0 1 1-1", key: "dhj8ez" }],
   ["path", { d: "M15 10a1 1 0 0 1-1-1", key: "1mnyi5" }],
   ["path", { d: "M21 4a1 1 0 0 0-1-1", key: "sfs9ap" }],
@@ -16245,17 +16255,17 @@ const kF = [
   ["path", { d: "m3 7 3 3 3-3", key: "x25e72" }],
   ["path", { d: "M6 10V5a2 2 0 0 1 2-2h2", key: "15xut4" }],
   ["rect", { x: "3", y: "14", width: "7", height: "7", rx: "1", key: "1bkyp8" }]
-], lF = e("replace", kF);
-const uF = [
+], MF = e("replace", uF);
+const fF = [
   ["path", { d: "m12 17-5-5 5-5", key: "1s3y5u" }],
   ["path", { d: "M22 18v-2a4 4 0 0 0-4-4H7", key: "1fcyog" }],
   ["path", { d: "m7 17-5-5 5-5", key: "1ed8i2" }]
-], MF = e("reply-all", uF);
-const fF = [
+], mF = e("reply-all", fF);
+const gF = [
   ["path", { d: "M20 18v-2a4 4 0 0 0-4-4H4", key: "5vmcpk" }],
   ["path", { d: "m9 17-5-5 5-5", key: "nvlc11" }]
-], mF = e("reply", fF);
-const gF = [
+], vF = e("reply", gF);
+const _F = [
   [
     "path",
     { d: "M12 6a2 2 0 0 0-3.414-1.414l-6 6a2 2 0 0 0 0 2.828l6 6A2 2 0 0 0 12 18z", key: "2a1g8i" }
@@ -16264,23 +16274,7 @@ const gF = [
     "path",
     { d: "M22 6a2 2 0 0 0-3.414-1.414l-6 6a2 2 0 0 0 0 2.828l6 6A2 2 0 0 0 22 18z", key: "rg3s36" }
   ]
-], vF = e("rewind", gF);
-const _F = [
-  [
-    "path",
-    { d: "M12 11.22C11 9.997 10 9 10 8a2 2 0 0 1 4 0c0 1-.998 2.002-2.01 3.22", key: "1rnhq3" }
-  ],
-  ["path", { d: "m12 18 2.57-3.5", key: "116vt7" }],
-  ["path", { d: "M6.243 9.016a7 7 0 0 1 11.507-.009", key: "10dq0b" }],
-  ["path", { d: "M9.35 14.53 12 11.22", key: "tdsyp2" }],
-  [
-    "path",
-    {
-      d: "M9.35 14.53C7.728 12.246 6 10.221 6 7a6 5 0 0 1 12 0c-.005 3.22-1.778 5.235-3.43 7.5l3.557 4.527a1 1 0 0 1-.203 1.43l-1.894 1.36a1 1 0 0 1-1.384-.215L12 18l-2.679 3.593a1 1 0 0 1-1.39.213l-1.865-1.353a1 1 0 0 1-.203-1.422z",
-      key: "nmifey"
-    }
-  ]
-], xF = e("ribbon", _F);
+], xF = e("rewind", _F);
 const bF = [
   [
     "path",
@@ -16300,12 +16294,28 @@ const bF = [
   ["path", { d: "M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5", key: "qeys4" }]
 ], wF = e("rocket", bF);
 const NF = [
+  [
+    "path",
+    { d: "M12 11.22C11 9.997 10 9 10 8a2 2 0 0 1 4 0c0 1-.998 2.002-2.01 3.22", key: "1rnhq3" }
+  ],
+  ["path", { d: "m12 18 2.57-3.5", key: "116vt7" }],
+  ["path", { d: "M6.243 9.016a7 7 0 0 1 11.507-.009", key: "10dq0b" }],
+  ["path", { d: "M9.35 14.53 12 11.22", key: "tdsyp2" }],
+  [
+    "path",
+    {
+      d: "M9.35 14.53C7.728 12.246 6 10.221 6 7a6 5 0 0 1 12 0c-.005 3.22-1.778 5.235-3.43 7.5l3.557 4.527a1 1 0 0 1-.203 1.43l-1.894 1.36a1 1 0 0 1-1.384-.215L12 18l-2.679 3.593a1 1 0 0 1-1.39.213l-1.865-1.353a1 1 0 0 1-.203-1.422z",
+      key: "nmifey"
+    }
+  ]
+], $F = e("ribbon", NF);
+const zF = [
   ["polyline", { points: "3.5 2 6.5 12.5 18 12.5", key: "y3iy52" }],
   ["line", { x1: "9.5", x2: "5.5", y1: "12.5", y2: "20", key: "19vg5i" }],
   ["line", { x1: "15", x2: "18.5", y1: "12.5", y2: "20", key: "1inpmv" }],
   ["path", { d: "M2.75 18a13 13 0 0 0 18.5 0", key: "1nquas" }]
-], $F = e("rocking-chair", NF);
-const zF = [
+], jF = e("rocking-chair", zF);
+const qF = [
   ["path", { d: "M6 19V5", key: "1r845m" }],
   ["path", { d: "M10 19V6.8", key: "9j2tfs" }],
   ["path", { d: "M14 19v-7.8", key: "10s8qv" }],
@@ -16313,8 +16323,8 @@ const zF = [
   ["path", { d: "M18 19v-6", key: "ielfq3" }],
   ["path", { d: "M22 19V9", key: "158nzp" }],
   ["path", { d: "M2 19V9a4 4 0 0 1 4-4c2 0 4 1.33 6 4s4 4 6 4a4 4 0 1 0-3-6.65", key: "1930oh" }]
-], jF = e("roller-coaster", zF);
-const qF = [
+], AF = e("roller-coaster", qF);
+const HF = [
   ["path", { d: "M17 10h-1a4 4 0 1 1 4-4v.534", key: "7qf5zm" }],
   [
     "path",
@@ -16329,8 +16339,8 @@ const qF = [
   ],
   ["path", { d: "M9.77 12C4 15 2 22 2 22", key: "h28rw0" }],
   ["circle", { cx: "17", cy: "8", r: "2", key: "1330xn" }]
-], AF = e("rose", qF);
-const HF = [
+], SF = e("rose", HF);
+const CF = [
   [
     "path",
     {
@@ -16346,33 +16356,33 @@ const HF = [
       key: "1lxi77"
     }
   ]
-], SF = e("rotate-3d", HF);
-const CF = [
-  ["path", { d: "m14.5 9.5 1 1", key: "159eiq" }],
-  ["path", { d: "m15.5 8.5-4 4", key: "iirg3q" }],
+], VF = e("rotate-3d", CF);
+const RF = [
+  ["path", { d: "M12 7v6", key: "lw1j43" }],
+  ["path", { d: "M12 9h2", key: "1lpap9" }],
   ["path", { d: "M3 12a9 9 0 1 0 9-9 9.74 9.74 0 0 0-6.74 2.74L3 8", key: "g2jlw" }],
   ["path", { d: "M3 3v5h5", key: "1xhq8a" }],
-  ["circle", { cx: "10", cy: "14", r: "2", key: "1239so" }]
-], VF = e("rotate-ccw-key", CF);
-const RF = [
+  ["circle", { cx: "12", cy: "15", r: "2", key: "1vpstw" }]
+], EF = e("rotate-ccw-key", RF);
+const LF = [
   ["path", { d: "M20 9V7a2 2 0 0 0-2-2h-6", key: "19z8uc" }],
   ["path", { d: "m15 2-3 3 3 3", key: "177bxs" }],
   ["path", { d: "M20 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2", key: "d36hnl" }]
-], EF = e("rotate-ccw-square", RF);
-const LF = [
+], PF = e("rotate-ccw-square", LF);
+const TF = [
   ["path", { d: "M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8", key: "1357e3" }],
   ["path", { d: "M3 3v5h5", key: "1xhq8a" }]
-], PF = e("rotate-ccw", LF);
-const TF = [
+], OF = e("rotate-ccw", TF);
+const DF = [
   ["path", { d: "M12 5H6a2 2 0 0 0-2 2v3", key: "l96uqu" }],
   ["path", { d: "m9 8 3-3-3-3", key: "1gzgc3" }],
   ["path", { d: "M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2", key: "1w2k5h" }]
-], OF = e("rotate-cw-square", TF);
-const DF = [
+], IF = e("rotate-cw-square", DF);
+const FF = [
   ["path", { d: "M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8", key: "1p45f6" }],
   ["path", { d: "M21 3v5h-5", key: "1q7to0" }]
-], IF = e("rotate-cw", DF);
-const FF = [
+], BF = e("rotate-cw", FF);
+const UF = [
   ["circle", { cx: "6", cy: "19", r: "3", key: "1kj8tv" }],
   ["path", { d: "M9 19h8.5c.4 0 .9-.1 1.3-.2", key: "1effex" }],
   ["path", { d: "M5.2 5.2A3.5 3.53 0 0 0 6.5 12H12", key: "k9y2ds" }],
@@ -16380,41 +16390,41 @@ const FF = [
   ["path", { d: "M21 15.3a3.5 3.5 0 0 0-3.3-3.3", key: "11nlu2" }],
   ["path", { d: "M15 5h-4.3", key: "6537je" }],
   ["circle", { cx: "18", cy: "5", r: "3", key: "gq8acd" }]
-], BF = e("route-off", FF);
-const UF = [
+], WF = e("route-off", UF);
+const ZF = [
   ["circle", { cx: "6", cy: "19", r: "3", key: "1kj8tv" }],
   ["path", { d: "M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15", key: "1d8sl" }],
   ["circle", { cx: "18", cy: "5", r: "3", key: "gq8acd" }]
-], WF = e("route", UF);
-const ZF = [
+], GF = e("route", ZF);
+const XF = [
   ["rect", { width: "20", height: "8", x: "2", y: "14", rx: "2", key: "w68u3i" }],
   ["path", { d: "M6.01 18H6", key: "19vcac" }],
   ["path", { d: "M10.01 18H10", key: "uamcmx" }],
   ["path", { d: "M15 10v4", key: "qjz1xs" }],
   ["path", { d: "M17.84 7.17a4 4 0 0 0-5.66 0", key: "1rif40" }],
   ["path", { d: "M20.66 4.34a8 8 0 0 0-11.31 0", key: "6a5xfq" }]
-], GF = e("router", ZF);
-const XF = [
+], YF = e("router", XF);
+const KF = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M3 12h18", key: "1i2n21" }]
-], YF = e("rows-2", XF);
-const KF = [
+], QF = e("rows-2", KF);
+const JF = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M21 9H3", key: "1338ky" }],
   ["path", { d: "M21 15H3", key: "9uk58r" }]
-], QF = e("rows-3", KF);
-const JF = [
+], eB = e("rows-3", JF);
+const tB = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M21 7.5H3", key: "1hm9pq" }],
   ["path", { d: "M21 12H3", key: "2avoz0" }],
   ["path", { d: "M21 16.5H3", key: "n7jzkj" }]
-], eB = e("rows-4", JF);
-const tB = [
+], aB = e("rows-4", tB);
+const oB = [
   ["path", { d: "M4 11a9 9 0 0 1 9 9", key: "pv89mb" }],
   ["path", { d: "M4 4a16 16 0 0 1 16 16", key: "k0647b" }],
   ["circle", { cx: "5", cy: "19", r: "1", key: "bfqh0e" }]
-], aB = e("rss", tB);
-const oB = [
+], nB = e("rss", oB);
+const cB = [
   ["path", { d: "M10 15v-3", key: "1pjskw" }],
   ["path", { d: "M14 15v-3", key: "1o1mqj" }],
   ["path", { d: "M18 15v-3", key: "cws6he" }],
@@ -16423,12 +16433,25 @@ const oB = [
   ["path", { d: "M22 8V4", key: "16f4ou" }],
   ["path", { d: "M6 15v-3", key: "1ij1qe" }],
   ["rect", { x: "2", y: "12", width: "20", height: "8", rx: "2", key: "1tqiko" }]
-], nB = e("ruler-dimension-line", oB);
-const cB = [
+], rB = e("ruler-dimension-line", cB);
+const hB = [
+  [
+    "path",
+    {
+      d: "M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z",
+      key: "icamh8"
+    }
+  ],
+  ["path", { d: "m14.5 12.5 2-2", key: "inckbg" }],
+  ["path", { d: "m11.5 9.5 2-2", key: "fmmyf7" }],
+  ["path", { d: "m8.5 6.5 2-2", key: "vc6u1g" }],
+  ["path", { d: "m17.5 15.5 2-2", key: "wo5hmg" }]
+], dB = e("ruler", hB);
+const iB = [
   ["path", { d: "M6 11h8a4 4 0 0 0 0-8H9v18", key: "18ai8t" }],
   ["path", { d: "M6 15h8", key: "1y8f6l" }]
-], rB = e("russian-ruble", cB);
-const hB = [
+], sB = e("russian-ruble", iB);
+const yB = [
   ["path", { d: "M10 2v15", key: "1qf71f" }],
   [
     "path",
@@ -16441,8 +16464,8 @@ const hB = [
       key: "5oog16"
     }
   ]
-], dB = e("sailboat", hB);
-const iB = [
+], pB = e("sailboat", yB);
+const kB = [
   ["path", { d: "M7 21h10", key: "1b0cd5" }],
   ["path", { d: "M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z", key: "4rw317" }],
   [
@@ -16454,34 +16477,21 @@ const iB = [
   ],
   ["path", { d: "m13 12 4-4", key: "1hckqy" }],
   ["path", { d: "M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2", key: "1p4srx" }]
-], sB = e("salad", iB);
-const yB = [
-  [
-    "path",
-    {
-      d: "M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z",
-      key: "icamh8"
-    }
-  ],
-  ["path", { d: "m14.5 12.5 2-2", key: "inckbg" }],
-  ["path", { d: "m11.5 9.5 2-2", key: "fmmyf7" }],
-  ["path", { d: "m8.5 6.5 2-2", key: "vc6u1g" }],
-  ["path", { d: "m17.5 15.5 2-2", key: "wo5hmg" }]
-], pB = e("ruler", yB);
-const kB = [
+], lB = e("salad", kB);
+const uB = [
   ["path", { d: "m2.37 11.223 8.372-6.777a2 2 0 0 1 2.516 0l8.371 6.777", key: "f1wd0e" }],
   ["path", { d: "M21 15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-5.25", key: "1pfu07" }],
   ["path", { d: "M3 15a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h9", key: "1oq9qw" }],
   ["path", { d: "m6.67 15 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2", key: "1fnwu5" }],
   ["rect", { width: "20", height: "4", x: "2", y: "11", rx: "1", key: "itshg" }]
-], lB = e("sandwich", kB);
-const uB = [
+], MB = e("sandwich", uB);
+const fB = [
   ["path", { d: "M4 10a7.31 7.31 0 0 0 10 10Z", key: "1fzpp3" }],
   ["path", { d: "m9 15 3-3", key: "88sc13" }],
   ["path", { d: "M17 13a6 6 0 0 0-6-6", key: "15cc6u" }],
   ["path", { d: "M21 13A10 10 0 0 0 11 3", key: "11nf8s" }]
-], MB = e("satellite-dish", uB);
-const fB = [
+], mB = e("satellite-dish", fB);
+const gB = [
   [
     "path",
     {
@@ -16505,25 +16515,13 @@ const fB = [
       key: "nv9zqy"
     }
   ]
-], mB = e("satellite", fB);
-const gB = [
+], vB = e("satellite", gB);
+const _B = [
   ["path", { d: "m20 19.5-5.5 1.2", key: "1aenhr" }],
   ["path", { d: "M14.5 4v11.22a1 1 0 0 0 1.242.97L20 15.2", key: "2rtezt" }],
   ["path", { d: "m2.978 19.351 5.549-1.363A2 2 0 0 0 10 16V2", key: "1kbm92" }],
   ["path", { d: "M20 10 4 13.5", key: "8nums9" }]
-], vB = e("saudi-riyal", gB);
-const _B = [
-  ["path", { d: "M13 13H8a1 1 0 0 0-1 1v7", key: "h8g396" }],
-  ["path", { d: "M14 8h1", key: "1lfen6" }],
-  ["path", { d: "M17 21v-4", key: "1yknxs" }],
-  ["path", { d: "m2 2 20 20", key: "1ooewy" }],
-  [
-    "path",
-    { d: "M20.41 20.41A2 2 0 0 1 19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 .59-1.41", key: "1t4vdl" }
-  ],
-  ["path", { d: "M29.5 11.5s5 5 4 5", key: "zzn4i6" }],
-  ["path", { d: "M9 3h6.2a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V15", key: "24cby9" }]
-], xB = e("save-off", _B);
+], xB = e("saudi-riyal", _B);
 const bB = [
   ["path", { d: "M10 2v3a1 1 0 0 0 1 1h5", key: "1xspal" }],
   ["path", { d: "M18 18v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6", key: "1ra60u" }],
@@ -16537,6 +16535,18 @@ const bB = [
   ]
 ], wB = e("save-all", bB);
 const NB = [
+  ["path", { d: "M13 13H8a1 1 0 0 0-1 1v7", key: "h8g396" }],
+  ["path", { d: "M14 8h1", key: "1lfen6" }],
+  ["path", { d: "M17 21v-4", key: "1yknxs" }],
+  ["path", { d: "m2 2 20 20", key: "1ooewy" }],
+  [
+    "path",
+    { d: "M20.41 20.41A2 2 0 0 1 19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 .59-1.41", key: "1t4vdl" }
+  ],
+  ["path", { d: "M29.5 11.5s5 5 4 5", key: "zzn4i6" }],
+  ["path", { d: "M9 3h6.2a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V15", key: "24cby9" }]
+], $B = e("save-off", NB);
+const zB = [
   [
     "path",
     {
@@ -16546,27 +16556,27 @@ const NB = [
   ],
   ["path", { d: "M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7", key: "1ydtos" }],
   ["path", { d: "M7 3v4a1 1 0 0 0 1 1h7", key: "t51u73" }]
-], $B = e("save", NB);
-const zB = [
+], jB = e("save", zB);
+const qB = [
   ["path", { d: "M5 7v11a1 1 0 0 0 1 1h11", key: "13dt1j" }],
   ["path", { d: "M5.293 18.707 11 13", key: "ezgbsx" }],
   ["circle", { cx: "19", cy: "19", r: "2", key: "17f5cg" }],
   ["circle", { cx: "5", cy: "5", r: "2", key: "1gwv83" }]
-], jB = e("scale-3d", zB);
-const qB = [
+], AB = e("scale-3d", qB);
+const HB = [
   ["path", { d: "M12 3v18", key: "108xh3" }],
   ["path", { d: "m19 8 3 8a5 5 0 0 1-6 0zV7", key: "zcdpyk" }],
   ["path", { d: "M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1", key: "1yorad" }],
   ["path", { d: "m5 8 3 8a5 5 0 0 1-6 0zV7", key: "eua70x" }],
   ["path", { d: "M7 21h10", key: "1b0cd5" }]
-], AB = e("scale", qB);
-const HB = [
+], SB = e("scale", HB);
+const CB = [
   ["path", { d: "M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7", key: "1m0v6g" }],
   ["path", { d: "M14 15H9v-5", key: "pi4jk9" }],
   ["path", { d: "M16 3h5v5", key: "1806ms" }],
   ["path", { d: "M21 3 9 15", key: "15kdhq" }]
-], SB = e("scaling", HB);
-const CB = [
+], VB = e("scaling", CB);
+const RB = [
   ["path", { d: "M3 7V5a2 2 0 0 1 2-2h2", key: "aa7l1z" }],
   ["path", { d: "M17 3h2a2 2 0 0 1 2 2v2", key: "4qcy5o" }],
   ["path", { d: "M21 17v2a2 2 0 0 1-2 2h-2", key: "6vwrx8" }],
@@ -16574,8 +16584,8 @@ const CB = [
   ["path", { d: "M8 7v10", key: "23sfjj" }],
   ["path", { d: "M12 7v10", key: "jspqdw" }],
   ["path", { d: "M17 7v10", key: "578dap" }]
-], VB = e("scan-barcode", CB);
-const RB = [
+], EB = e("scan-barcode", RB);
+const LB = [
   ["path", { d: "M3 7V5a2 2 0 0 1 2-2h2", key: "aa7l1z" }],
   ["path", { d: "M17 3h2a2 2 0 0 1 2 2v2", key: "4qcy5o" }],
   ["path", { d: "M21 17v2a2 2 0 0 1-2 2h-2", key: "6vwrx8" }],
@@ -16588,8 +16598,8 @@ const RB = [
       key: "11ak4c"
     }
   ]
-], EB = e("scan-eye", RB);
-const LB = [
+], PB = e("scan-eye", LB);
+const TB = [
   ["path", { d: "M3 7V5a2 2 0 0 1 2-2h2", key: "aa7l1z" }],
   ["path", { d: "M17 3h2a2 2 0 0 1 2 2v2", key: "4qcy5o" }],
   ["path", { d: "M21 17v2a2 2 0 0 1-2 2h-2", key: "6vwrx8" }],
@@ -16597,8 +16607,8 @@ const LB = [
   ["path", { d: "M8 14s1.5 2 4 2 4-2 4-2", key: "1y1vjs" }],
   ["path", { d: "M9 9h.01", key: "1q5me6" }],
   ["path", { d: "M15 9h.01", key: "x1ddxp" }]
-], PB = e("scan-face", LB);
-const TB = [
+], OB = e("scan-face", TB);
+const DB = [
   ["path", { d: "M17 3h2a2 2 0 0 1 2 2v2", key: "4qcy5o" }],
   ["path", { d: "M21 17v2a2 2 0 0 1-2 2h-2", key: "6vwrx8" }],
   ["path", { d: "M3 7V5a2 2 0 0 1 2-2h2", key: "aa7l1z" }],
@@ -16610,15 +16620,15 @@ const TB = [
       key: "1ak1ef"
     }
   ]
-], OB = e("scan-heart", TB);
-const DB = [
+], IB = e("scan-heart", DB);
+const FB = [
   ["path", { d: "M3 7V5a2 2 0 0 1 2-2h2", key: "aa7l1z" }],
   ["path", { d: "M17 3h2a2 2 0 0 1 2 2v2", key: "4qcy5o" }],
   ["path", { d: "M21 17v2a2 2 0 0 1-2 2h-2", key: "6vwrx8" }],
   ["path", { d: "M7 21H5a2 2 0 0 1-2-2v-2", key: "ioqczr" }],
   ["path", { d: "M7 12h10", key: "b7w52i" }]
-], IB = e("scan-line", DB);
-const FB = [
+], BB = e("scan-line", FB);
+const UB = [
   ["path", { d: "M17 12v4a1 1 0 0 1-1 1h-4", key: "uk4fdo" }],
   ["path", { d: "M17 3h2a2 2 0 0 1 2 2v2", key: "4qcy5o" }],
   ["path", { d: "M17 8V7", key: "q2g9wo" }],
@@ -16627,21 +16637,15 @@ const FB = [
   ["path", { d: "M7 17h.01", key: "19xn7k" }],
   ["path", { d: "M7 21H5a2 2 0 0 1-2-2v-2", key: "ioqczr" }],
   ["rect", { x: "7", y: "7", width: "5", height: "5", rx: "1", key: "m9kyts" }]
-], BB = e("scan-qr-code", FB);
-const UB = [
+], WB = e("scan-qr-code", UB);
+const ZB = [
   ["path", { d: "M3 7V5a2 2 0 0 1 2-2h2", key: "aa7l1z" }],
   ["path", { d: "M17 3h2a2 2 0 0 1 2 2v2", key: "4qcy5o" }],
   ["path", { d: "M21 17v2a2 2 0 0 1-2 2h-2", key: "6vwrx8" }],
   ["path", { d: "M7 21H5a2 2 0 0 1-2-2v-2", key: "ioqczr" }],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }],
   ["path", { d: "m16 16-1.9-1.9", key: "1dq9hf" }]
-], WB = e("scan-search", UB);
-const ZB = [
-  ["path", { d: "M3 7V5a2 2 0 0 1 2-2h2", key: "aa7l1z" }],
-  ["path", { d: "M17 3h2a2 2 0 0 1 2 2v2", key: "4qcy5o" }],
-  ["path", { d: "M21 17v2a2 2 0 0 1-2 2h-2", key: "6vwrx8" }],
-  ["path", { d: "M7 21H5a2 2 0 0 1-2-2v-2", key: "ioqczr" }]
-], GB = e("scan", ZB);
+], GB = e("scan-search", ZB);
 const XB = [
   ["path", { d: "M3 7V5a2 2 0 0 1 2-2h2", key: "aa7l1z" }],
   ["path", { d: "M17 3h2a2 2 0 0 1 2 2v2", key: "4qcy5o" }],
@@ -16652,14 +16656,11 @@ const XB = [
   ["path", { d: "M7 16h6", key: "1vyc9m" }]
 ], YB = e("scan-text", XB);
 const KB = [
-  ["path", { d: "M5.42 9.42 8 12", key: "12pkuq" }],
-  ["circle", { cx: "4", cy: "8", r: "2", key: "107mxr" }],
-  ["path", { d: "m14 6-8.58 8.58", key: "gvzu5l" }],
-  ["circle", { cx: "4", cy: "16", r: "2", key: "1ehqvc" }],
-  ["path", { d: "M10.8 14.8 14 18", key: "ax7m9r" }],
-  ["path", { d: "M16 12h-2", key: "10asgb" }],
-  ["path", { d: "M22 12h-2", key: "14jgyd" }]
-], QB = e("scissors-line-dashed", KB);
+  ["path", { d: "M3 7V5a2 2 0 0 1 2-2h2", key: "aa7l1z" }],
+  ["path", { d: "M17 3h2a2 2 0 0 1 2 2v2", key: "4qcy5o" }],
+  ["path", { d: "M21 17v2a2 2 0 0 1-2 2h-2", key: "6vwrx8" }],
+  ["path", { d: "M7 21H5a2 2 0 0 1-2-2v-2", key: "ioqczr" }]
+], QB = e("scan", KB);
 const JB = [
   ["path", { d: "M14 21v-3a2 2 0 0 0-4 0v3", key: "1rgiei" }],
   ["path", { d: "M18 5v16", key: "1ethyx" }],
@@ -16675,12 +16676,14 @@ const JB = [
   ["circle", { cx: "12", cy: "9", r: "2", key: "1092wv" }]
 ], eU = e("school", JB);
 const tU = [
-  ["circle", { cx: "6", cy: "6", r: "3", key: "1lh9wr" }],
-  ["path", { d: "M8.12 8.12 12 12", key: "1alkpv" }],
-  ["path", { d: "M20 4 8.12 15.88", key: "xgtan2" }],
-  ["circle", { cx: "6", cy: "18", r: "3", key: "fqmcym" }],
-  ["path", { d: "M14.8 14.8 20 20", key: "ptml3r" }]
-], aU = e("scissors", tU);
+  ["path", { d: "M5.42 9.42 8 12", key: "12pkuq" }],
+  ["circle", { cx: "4", cy: "8", r: "2", key: "107mxr" }],
+  ["path", { d: "m14 6-8.58 8.58", key: "gvzu5l" }],
+  ["circle", { cx: "4", cy: "16", r: "2", key: "1ehqvc" }],
+  ["path", { d: "M10.8 14.8 14 18", key: "ax7m9r" }],
+  ["path", { d: "M16 12h-2", key: "10asgb" }],
+  ["path", { d: "M22 12h-2", key: "14jgyd" }]
+], aU = e("scissors-line-dashed", tU);
 const oU = [
   ["path", { d: "M21 4h-3.5l2 11.05", key: "1gktiw" }],
   [
@@ -16691,36 +16694,27 @@ const oU = [
   ["circle", { cx: "4.5", cy: "17.5", r: "2.5", key: "50vk4p" }]
 ], nU = e("scooter", oU);
 const cU = [
+  ["circle", { cx: "6", cy: "6", r: "3", key: "1lh9wr" }],
+  ["path", { d: "M8.12 8.12 12 12", key: "1alkpv" }],
+  ["path", { d: "M20 4 8.12 15.88", key: "xgtan2" }],
+  ["circle", { cx: "6", cy: "18", r: "3", key: "fqmcym" }],
+  ["path", { d: "M14.8 14.8 20 20", key: "ptml3r" }]
+], rU = e("scissors", cU);
+const hU = [
   ["path", { d: "M13 3H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-3", key: "i8wdob" }],
   ["path", { d: "M8 21h8", key: "1ev6f3" }],
   ["path", { d: "M12 17v4", key: "1riwvh" }],
   ["path", { d: "m22 3-5 5", key: "12jva0" }],
   ["path", { d: "m17 3 5 5", key: "k36vhe" }]
-], rU = e("screen-share-off", cU);
-const hU = [
+], dU = e("screen-share-off", hU);
+const iU = [
   ["path", { d: "M13 3H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-3", key: "i8wdob" }],
   ["path", { d: "M8 21h8", key: "1ev6f3" }],
   ["path", { d: "M12 17v4", key: "1riwvh" }],
   ["path", { d: "m17 8 5-5", key: "fqif7o" }],
   ["path", { d: "M17 3h5v5", key: "1o3tu8" }]
-], dU = e("screen-share", hU);
-const iU = [
-  ["path", { d: "M19 17V5a2 2 0 0 0-2-2H4", key: "zz82l3" }],
-  [
-    "path",
-    {
-      d: "M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3",
-      key: "1ph1d7"
-    }
-  ]
-], sU = e("scroll", iU);
+], sU = e("screen-share", iU);
 const yU = [
-  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }],
-  ["path", { d: "m21 21-4.3-4.3", key: "1qie3q" }],
-  ["path", { d: "M11 7v4", key: "m2edmq" }],
-  ["path", { d: "M11 15h.01", key: "k85uqc" }]
-], pU = e("search-alert", yU);
-const kU = [
   ["path", { d: "M15 12h-5", key: "r7krc0" }],
   ["path", { d: "M15 8h-5", key: "1khuty" }],
   ["path", { d: "M19 17V5a2 2 0 0 0-2-2H4", key: "zz82l3" }],
@@ -16731,38 +16725,54 @@ const kU = [
       key: "1ph1d7"
     }
   ]
-], lU = e("scroll-text", kU);
+], pU = e("scroll-text", yU);
+const kU = [
+  ["path", { d: "M19 17V5a2 2 0 0 0-2-2H4", key: "zz82l3" }],
+  [
+    "path",
+    {
+      d: "M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3",
+      key: "1ph1d7"
+    }
+  ]
+], lU = e("scroll", kU);
 const uU = [
+  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }],
+  ["path", { d: "m21 21-4.3-4.3", key: "1qie3q" }],
+  ["path", { d: "M11 7v4", key: "m2edmq" }],
+  ["path", { d: "M11 15h.01", key: "k85uqc" }]
+], MU = e("search-alert", uU);
+const fU = [
   ["path", { d: "m8 11 2 2 4-4", key: "1sed1v" }],
   ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }],
   ["path", { d: "m21 21-4.3-4.3", key: "1qie3q" }]
-], MU = e("search-check", uU);
-const fU = [
+], mU = e("search-check", fU);
+const gU = [
   ["path", { d: "m13 13.5 2-2.5-2-2.5", key: "1rvxrh" }],
   ["path", { d: "m21 21-4.3-4.3", key: "1qie3q" }],
   ["path", { d: "M9 8.5 7 11l2 2.5", key: "6ffwbx" }],
   ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
-], mU = e("search-code", fU);
-const gU = [
+], vU = e("search-code", gU);
+const _U = [
   ["path", { d: "m13.5 8.5-5 5", key: "1cs55j" }],
   ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }],
   ["path", { d: "m21 21-4.3-4.3", key: "1qie3q" }]
-], vU = e("search-slash", gU);
-const _U = [
+], xU = e("search-slash", _U);
+const bU = [
   ["path", { d: "m13.5 8.5-5 5", key: "1cs55j" }],
   ["path", { d: "m8.5 8.5 5 5", key: "a8mexj" }],
   ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }],
   ["path", { d: "m21 21-4.3-4.3", key: "1qie3q" }]
-], xU = e("search-x", _U);
-const bU = [
+], wU = e("search-x", bU);
+const NU = [
   ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
   ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
-], wU = e("search", bU);
-const NU = [
+], $U = e("search", NU);
+const zU = [
   ["path", { d: "M16 5a4 3 0 0 0-8 0c0 4 8 3 8 7a4 3 0 0 1-8 0", key: "vqan6v" }],
   ["path", { d: "M8 19a4 3 0 0 0 8 0c0-4-8-3-8-7a4 3 0 0 1 8 0", key: "wdjd8o" }]
-], $U = e("section", NU);
-const zU = [
+], jU = e("section", zU);
+const qU = [
   [
     "path",
     {
@@ -16771,14 +16781,14 @@ const zU = [
     }
   ],
   ["path", { d: "M6 12h16", key: "s4cdu5" }]
-], jU = e("send-horizontal", zU);
-const qU = [
+], AU = e("send-horizontal", qU);
+const HU = [
   ["rect", { x: "14", y: "14", width: "8", height: "8", rx: "2", key: "1b0bso" }],
   ["rect", { x: "2", y: "2", width: "8", height: "8", rx: "2", key: "1x09vl" }],
   ["path", { d: "M7 14v1a2 2 0 0 0 2 2h1", key: "pao6x6" }],
   ["path", { d: "M14 7h1a2 2 0 0 1 2 2v1", key: "19tdru" }]
-], AU = e("send-to-back", qU);
-const HU = [
+], SU = e("send-to-back", HU);
+const CU = [
   [
     "path",
     {
@@ -16787,18 +16797,18 @@ const HU = [
     }
   ],
   ["path", { d: "m21.854 2.147-10.94 10.939", key: "12cjpa" }]
-], SU = e("send", HU);
-const CU = [
-  ["path", { d: "m16 16-4 4-4-4", key: "3dv8je" }],
-  ["path", { d: "M3 12h18", key: "1i2n21" }],
-  ["path", { d: "m8 8 4-4 4 4", key: "2bscm2" }]
-], VU = e("separator-horizontal", CU);
+], VU = e("send", CU);
 const RU = [
   ["path", { d: "M12 3v18", key: "108xh3" }],
   ["path", { d: "m16 16 4-4-4-4", key: "1js579" }],
   ["path", { d: "m8 8-4 4 4 4", key: "1whems" }]
 ], EU = e("separator-vertical", RU);
 const LU = [
+  ["path", { d: "m16 16-4 4-4-4", key: "3dv8je" }],
+  ["path", { d: "M3 12h18", key: "1i2n21" }],
+  ["path", { d: "m8 8 4-4 4 4", key: "2bscm2" }]
+], PU = e("separator-horizontal", LU);
+const TU = [
   ["path", { d: "m10.852 14.772-.383.923", key: "11vil6" }],
   ["path", { d: "M13.148 14.772a3 3 0 1 0-2.296-5.544l-.383-.923", key: "1v3clb" }],
   ["path", { d: "m13.148 9.228.383-.923", key: "t2zzyc" }],
@@ -16823,8 +16833,8 @@ const LU = [
   ["path", { d: "M6 6h.01", key: "1utrut" }],
   ["path", { d: "m9.228 10.852-.923-.383", key: "1wtb30" }],
   ["path", { d: "m9.228 13.148-.923.383", key: "1a830x" }]
-], PU = e("server-cog", LU);
-const TU = [
+], OU = e("server-cog", TU);
+const DU = [
   [
     "path",
     {
@@ -16842,28 +16852,28 @@ const TU = [
   ["path", { d: "M6 6h.01", key: "1utrut" }],
   ["path", { d: "M6 18h.01", key: "uhywen" }],
   ["path", { d: "m13 6-4 6h6l-4 6", key: "14hqih" }]
-], OU = e("server-crash", TU);
-const DU = [
+], IU = e("server-crash", DU);
+const FU = [
   ["path", { d: "M7 2h13a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-5", key: "bt2siv" }],
   ["path", { d: "M10 10 2.5 2.5C2 2 2 2.5 2 5v3a2 2 0 0 0 2 2h6z", key: "1hjrv1" }],
   ["path", { d: "M22 17v-1a2 2 0 0 0-2-2h-1", key: "1iynyr" }],
   ["path", { d: "M4 14a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16.5l1-.5.5.5-8-8H4z", key: "161ggg" }],
   ["path", { d: "M6 18h.01", key: "uhywen" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
-], IU = e("server-off", DU);
-const FU = [
+], BU = e("server-off", FU);
+const UU = [
   ["rect", { width: "20", height: "8", x: "2", y: "2", rx: "2", ry: "2", key: "ngkwjq" }],
   ["rect", { width: "20", height: "8", x: "2", y: "14", rx: "2", ry: "2", key: "iecqi9" }],
   ["line", { x1: "6", x2: "6.01", y1: "6", y2: "6", key: "16zg32" }],
   ["line", { x1: "6", x2: "6.01", y1: "18", y2: "18", key: "nzw8ys" }]
-], BU = e("server", FU);
-const UU = [
+], WU = e("server", UU);
+const ZU = [
   ["path", { d: "M14 17H5", key: "gfn3mx" }],
   ["path", { d: "M19 7h-9", key: "6i9tg" }],
   ["circle", { cx: "17", cy: "17", r: "3", key: "18b49y" }],
   ["circle", { cx: "7", cy: "7", r: "3", key: "dfmy0x" }]
-], WU = e("settings-2", UU);
-const ZU = [
+], GU = e("settings-2", ZU);
+const XU = [
   [
     "path",
     {
@@ -16872,8 +16882,8 @@ const ZU = [
     }
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
-], GU = e("settings", ZU);
-const XU = [
+], YU = e("settings", XU);
+const KU = [
   [
     "path",
     {
@@ -16883,27 +16893,27 @@ const XU = [
   ],
   ["rect", { x: "3", y: "14", width: "7", height: "7", rx: "1", key: "1bkyp8" }],
   ["circle", { cx: "17.5", cy: "17.5", r: "3.5", key: "w3z12y" }]
-], YU = e("shapes", XU);
-const KU = [
+], QU = e("shapes", KU);
+const JU = [
   ["circle", { cx: "18", cy: "5", r: "3", key: "gq8acd" }],
   ["circle", { cx: "6", cy: "12", r: "3", key: "w7nqdw" }],
   ["circle", { cx: "18", cy: "19", r: "3", key: "1xt0gg" }],
   ["line", { x1: "8.59", x2: "15.42", y1: "13.51", y2: "17.49", key: "47mynk" }],
   ["line", { x1: "15.41", x2: "8.59", y1: "6.51", y2: "10.49", key: "1n3mei" }]
-], QU = e("share-2", KU);
-const JU = [
+], eW = e("share-2", JU);
+const tW = [
   ["path", { d: "M12 2v13", key: "1km8f5" }],
   ["path", { d: "m16 6-4-4-4 4", key: "13yo43" }],
   ["path", { d: "M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8", key: "1b2hhj" }]
-], eW = e("share", JU);
-const tW = [
+], aW = e("share", tW);
+const oW = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
   ["line", { x1: "3", x2: "21", y1: "9", y2: "9", key: "1vqk6q" }],
   ["line", { x1: "3", x2: "21", y1: "15", y2: "15", key: "o2sbyz" }],
   ["line", { x1: "9", x2: "9", y1: "9", y2: "21", key: "1ib60c" }],
   ["line", { x1: "15", x2: "15", y1: "9", y2: "21", key: "1n26ft" }]
-], aW = e("sheet", tW);
-const oW = [
+], nW = e("sheet", oW);
+const cW = [
   [
     "path",
     {
@@ -16911,8 +16921,8 @@ const oW = [
       key: "1cn552"
     }
   ]
-], nW = e("shell", oW);
-const cW = [
+], rW = e("shell", cW);
+const hW = [
   [
     "path",
     {
@@ -16922,17 +16932,7 @@ const cW = [
   ],
   ["path", { d: "M12 8v4", key: "1got3b" }],
   ["path", { d: "M12 16h.01", key: "1drbdi" }]
-], rW = e("shield-alert", cW);
-const hW = [
-  [
-    "path",
-    {
-      d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
-      key: "oel41y"
-    }
-  ],
-  ["path", { d: "m4.243 5.21 14.39 12.472", key: "1c9a7c" }]
-], dW = e("shield-ban", hW);
+], dW = e("shield-alert", hW);
 const iW = [
   [
     "path",
@@ -16941,8 +16941,8 @@ const iW = [
       key: "oel41y"
     }
   ],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-], sW = e("shield-check", iW);
+  ["path", { d: "m4.243 5.21 14.39 12.472", key: "1c9a7c" }]
+], sW = e("shield-ban", iW);
 const yW = [
   [
     "path",
@@ -16951,8 +16951,8 @@ const yW = [
       key: "oel41y"
     }
   ],
-  ["path", { d: "M12 22V2", key: "zs6s6o" }]
-], pW = e("shield-half", yW);
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+], pW = e("shield-check", yW);
 const kW = [
   [
     "path",
@@ -16973,9 +16973,19 @@ const uW = [
       key: "oel41y"
     }
   ],
-  ["path", { d: "M9 12h6", key: "1c52cq" }]
-], MW = e("shield-minus", uW);
+  ["path", { d: "M12 22V2", key: "zs6s6o" }]
+], MW = e("shield-half", uW);
 const fW = [
+  [
+    "path",
+    {
+      d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
+      key: "oel41y"
+    }
+  ],
+  ["path", { d: "M9 12h6", key: "1c52cq" }]
+], mW = e("shield-minus", fW);
+const gW = [
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   [
     "path",
@@ -16991,8 +17001,8 @@ const fW = [
       key: "18rp1v"
     }
   ]
-], mW = e("shield-off", fW);
-const gW = [
+], vW = e("shield-off", gW);
+const _W = [
   [
     "path",
     {
@@ -17002,8 +17012,8 @@ const gW = [
   ],
   ["path", { d: "M9 12h6", key: "1c52cq" }],
   ["path", { d: "M12 9v6", key: "199k2o" }]
-], vW = e("shield-plus", gW);
-const _W = [
+], xW = e("shield-plus", _W);
+const bW = [
   [
     "path",
     {
@@ -17013,8 +17023,8 @@ const _W = [
   ],
   ["path", { d: "M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3", key: "mhlwft" }],
   ["path", { d: "M12 17h.01", key: "p32p05" }]
-], xW = e("shield-question-mark", _W);
-const bW = [
+], wW = e("shield-question-mark", bW);
+const NW = [
   [
     "path",
     {
@@ -17024,8 +17034,8 @@ const bW = [
   ],
   ["path", { d: "M6.376 18.91a6 6 0 0 1 11.249.003", key: "hnjrf2" }],
   ["circle", { cx: "12", cy: "11", r: "4", key: "1gt34v" }]
-], wW = e("shield-user", bW);
-const NW = [
+], $W = e("shield-user", NW);
+const zW = [
   [
     "path",
     {
@@ -17035,8 +17045,8 @@ const NW = [
   ],
   ["path", { d: "m14.5 9.5-5 5", key: "17q4r4" }],
   ["path", { d: "m9.5 9.5 5 5", key: "18nt4w" }]
-], $W = e("shield-x", NW);
-const zW = [
+], jW = e("shield-x", zW);
+const qW = [
   [
     "path",
     {
@@ -17044,8 +17054,8 @@ const zW = [
       key: "oel41y"
     }
   ]
-], jW = e("shield", zW);
-const qW = [
+], AW = e("shield", qW);
+const HW = [
   ["circle", { cx: "12", cy: "12", r: "8", key: "46899m" }],
   ["path", { d: "M12 2v7.5", key: "1e5rl5" }],
   ["path", { d: "m19 5-5.23 5.23", key: "1ezxxf" }],
@@ -17056,8 +17066,17 @@ const qW = [
   ["path", { d: "M9.5 12H2", key: "r7bup8" }],
   ["path", { d: "M10.23 10.23 5 5", key: "k2y7lj" }],
   ["circle", { cx: "12", cy: "12", r: "2.5", key: "ix0uyj" }]
-], AW = e("ship-wheel", qW);
-const HW = [
+], SW = e("ship-wheel", HW);
+const CW = [
+  [
+    "path",
+    {
+      d: "M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z",
+      key: "1wgbhj"
+    }
+  ]
+], VW = e("shirt", CW);
+const RW = [
   ["path", { d: "M12 10.189V14", key: "1p8cqu" }],
   ["path", { d: "M12 2v3", key: "qbqxhf" }],
   ["path", { d: "M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6", key: "qpkstq" }],
@@ -17075,27 +17094,7 @@ const HW = [
       key: "1924j5"
     }
   ]
-], SW = e("ship", HW);
-const CW = [
-  [
-    "path",
-    {
-      d: "M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z",
-      key: "1wgbhj"
-    }
-  ]
-], VW = e("shirt", CW);
-const RW = [
-  ["path", { d: "M16 10a4 4 0 0 1-8 0", key: "1ltviw" }],
-  ["path", { d: "M3.103 6.034h17.794", key: "awc11p" }],
-  [
-    "path",
-    {
-      d: "M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z",
-      key: "o988cm"
-    }
-  ]
-], EW = e("shopping-bag", RW);
+], EW = e("ship", RW);
 const LW = [
   ["path", { d: "m15 11-1 9", key: "5wnq3a" }],
   ["path", { d: "m19 11-4-7", key: "cnml18" }],
@@ -17106,6 +17105,17 @@ const LW = [
   ["path", { d: "m9 11 1 9", key: "1ojof7" }]
 ], PW = e("shopping-basket", LW);
 const TW = [
+  ["path", { d: "M16 10a4 4 0 0 1-8 0", key: "1ltviw" }],
+  ["path", { d: "M3.103 6.034h17.794", key: "awc11p" }],
+  [
+    "path",
+    {
+      d: "M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z",
+      key: "o988cm"
+    }
+  ]
+], OW = e("shopping-bag", TW);
+const DW = [
   ["circle", { cx: "8", cy: "21", r: "1", key: "jimo8o" }],
   ["circle", { cx: "19", cy: "21", r: "1", key: "13723u" }],
   [
@@ -17115,8 +17125,8 @@ const TW = [
       key: "9zh506"
     }
   ]
-], OW = e("shopping-cart", TW);
-const DW = [
+], IW = e("shopping-cart", DW);
+const FW = [
   [
     "path",
     {
@@ -17132,8 +17142,8 @@ const DW = [
     }
   ],
   ["path", { d: "m9 15 7.879-7.878", key: "1o1zgh" }]
-], IW = e("shovel", DW);
-const FW = [
+], BW = e("shovel", FW);
+const UW = [
   ["path", { d: "m4 4 2.5 2.5", key: "uv2vmf" }],
   ["path", { d: "M13.5 6.5a4.95 4.95 0 0 0-7 7", key: "frdkwv" }],
   ["path", { d: "M15 5 5 15", key: "1ag8rq" }],
@@ -17144,8 +17154,8 @@ const FW = [
   ["path", { d: "M11 20v.01", key: "cj92p8" }],
   ["path", { d: "M17 14v.01", key: "11cswd" }],
   ["path", { d: "M20 11v.01", key: "19e0od" }]
-], BW = e("shower-head", FW);
-const UW = [
+], WW = e("shower-head", UW);
+const ZW = [
   [
     "path",
     {
@@ -17159,8 +17169,8 @@ const UW = [
   ["path", { d: "M18 20v-3", key: "uox2gk" }],
   ["path", { d: "M2 13h20", key: "5evz65" }],
   ["path", { d: "M6 20v-3", key: "c6pdcb" }]
-], WW = e("shredder", UW);
-const ZW = [
+], GW = e("shredder", ZW);
+const XW = [
   ["path", { d: "M11 12h.01", key: "1lr4k6" }],
   ["path", { d: "M13 22c.5-.5 1.12-1 2.5-1-1.38 0-2-.5-2.5-1", key: "fatpdi" }],
   [
@@ -17172,26 +17182,26 @@ const ZW = [
   ],
   ["path", { d: "M14 8a8.5 8.5 0 0 1 0 8", key: "1imjx2" }],
   ["path", { d: "M16 16c2 0 4.5-4 4-6", key: "z0nejz" }]
-], GW = e("shrimp", ZW);
-const XW = [
+], YW = e("shrimp", XW);
+const KW = [
   ["path", { d: "m15 15 6 6m-6-6v4.8m0-4.8h4.8", key: "17vawe" }],
   ["path", { d: "M9 19.8V15m0 0H4.2M9 15l-6 6", key: "chjx8e" }],
   ["path", { d: "M15 4.2V9m0 0h4.8M15 9l6-6", key: "lav6yq" }],
   ["path", { d: "M9 4.2V9m0 0H4.2M9 9 3 3", key: "1pxi2q" }]
-], YW = e("shrink", XW);
-const KW = [
+], QW = e("shrink", KW);
+const JW = [
   ["path", { d: "M12 22v-5.172a2 2 0 0 0-.586-1.414L9.5 13.5", key: "1p17fm" }],
   ["path", { d: "M14.5 14.5 12 17", key: "dy5w4y" }],
   ["path", { d: "M17 8.8A6 6 0 0 1 13.8 20H10A6.5 6.5 0 0 1 7 8a5 5 0 0 1 10 0z", key: "6z7b3o" }]
-], QW = e("shrub", KW);
-const JW = [
+], eZ = e("shrub", JW);
+const tZ = [
   ["path", { d: "m18 14 4 4-4 4", key: "10pe0f" }],
   ["path", { d: "m18 2 4 4-4 4", key: "pucp1d" }],
   ["path", { d: "M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22", key: "1ailkh" }],
   ["path", { d: "M2 6h1.972a4 4 0 0 1 3.6 2.2", key: "km57vx" }],
   ["path", { d: "M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45", key: "os18l9" }]
-], eZ = e("shuffle", JW);
-const tZ = [
+], aZ = e("shuffle", tZ);
+const oZ = [
   [
     "path",
     {
@@ -17199,31 +17209,31 @@ const tZ = [
       key: "wuwx1p"
     }
   ]
-], aZ = e("sigma", tZ);
-const oZ = [
+], nZ = e("sigma", oZ);
+const cZ = [
   ["path", { d: "M2 20h.01", key: "4haj6o" }],
   ["path", { d: "M7 20v-4", key: "j294jx" }],
   ["path", { d: "M12 20v-8", key: "i3yub9" }],
   ["path", { d: "M17 20V8", key: "1tkaf5" }]
-], nZ = e("signal-high", oZ);
-const cZ = [
+], rZ = e("signal-high", cZ);
+const hZ = [
   ["path", { d: "M2 20h.01", key: "4haj6o" }],
   ["path", { d: "M7 20v-4", key: "j294jx" }]
-], rZ = e("signal-low", cZ);
-const hZ = [
+], dZ = e("signal-low", hZ);
+const iZ = [
   ["path", { d: "M2 20h.01", key: "4haj6o" }],
   ["path", { d: "M7 20v-4", key: "j294jx" }],
   ["path", { d: "M12 20v-8", key: "i3yub9" }]
-], dZ = e("signal-medium", hZ);
-const iZ = [["path", { d: "M2 20h.01", key: "4haj6o" }]], sZ = e("signal-zero", iZ);
-const yZ = [
+], sZ = e("signal-medium", iZ);
+const yZ = [["path", { d: "M2 20h.01", key: "4haj6o" }]], pZ = e("signal-zero", yZ);
+const kZ = [
   ["path", { d: "M2 20h.01", key: "4haj6o" }],
   ["path", { d: "M7 20v-4", key: "j294jx" }],
   ["path", { d: "M12 20v-8", key: "i3yub9" }],
   ["path", { d: "M17 20V8", key: "1tkaf5" }],
   ["path", { d: "M22 4v16", key: "sih9yq" }]
-], pZ = e("signal", yZ);
-const kZ = [
+], lZ = e("signal", kZ);
+const uZ = [
   [
     "path",
     {
@@ -17232,14 +17242,14 @@ const kZ = [
     }
   ],
   ["path", { d: "M3 21h18", key: "itz85i" }]
-], lZ = e("signature", kZ);
-const uZ = [
+], MZ = e("signature", uZ);
+const fZ = [
   ["path", { d: "M10 9H4L2 7l2-2h6", key: "1hq7x2" }],
   ["path", { d: "M14 5h6l2 2-2 2h-6", key: "bv62ej" }],
   ["path", { d: "M10 22V4a2 2 0 1 1 4 0v18", key: "eqpcf2" }],
   ["path", { d: "M8 22h8", key: "rmew8v" }]
-], MZ = e("signpost-big", uZ);
-const fZ = [
+], mZ = e("signpost-big", fZ);
+const gZ = [
   ["path", { d: "M12 13v8", key: "1l5pq0" }],
   ["path", { d: "M12 3v3", key: "1n5kay" }],
   [
@@ -17249,8 +17259,8 @@ const fZ = [
       key: "gqqp9m"
     }
   ]
-], mZ = e("signpost", fZ);
-const gZ = [
+], vZ = e("signpost", gZ);
+const _Z = [
   ["path", { d: "M7 18v-6a5 5 0 1 1 10 0v6", key: "pcx96s" }],
   [
     "path",
@@ -17262,8 +17272,8 @@ const gZ = [
   ["path", { d: "M12 2v1", key: "11qlp1" }],
   ["path", { d: "m4.929 4.929.707.707", key: "1i51kw" }],
   ["path", { d: "M12 12v6", key: "3ahymv" }]
-], vZ = e("siren", gZ);
-const _Z = [
+], xZ = e("siren", _Z);
+const bZ = [
   [
     "path",
     {
@@ -17272,8 +17282,8 @@ const _Z = [
     }
   ],
   ["path", { d: "M3 20V4", key: "1ptbpl" }]
-], xZ = e("skip-back", _Z);
-const bZ = [
+], wZ = e("skip-back", bZ);
+const NZ = [
   ["path", { d: "M21 4v16", key: "7j8fe9" }],
   [
     "path",
@@ -17282,8 +17292,8 @@ const bZ = [
       key: "zs4d6"
     }
   ]
-], wZ = e("skip-forward", bZ);
-const NZ = [
+], $Z = e("skip-forward", NZ);
+const zZ = [
   ["path", { d: "m12.5 17-.5-1-.5 1h1z", key: "3me087" }],
   [
     "path",
@@ -17294,8 +17304,8 @@ const NZ = [
   ],
   ["circle", { cx: "15", cy: "12", r: "1", key: "1tmaij" }],
   ["circle", { cx: "9", cy: "12", r: "1", key: "1vctgf" }]
-], $Z = e("skull", NZ);
-const zZ = [
+], jZ = e("skull", zZ);
+const qZ = [
   ["rect", { width: "3", height: "8", x: "13", y: "2", rx: "1.5", key: "diqz80" }],
   ["path", { d: "M19 8.5V10h1.5A1.5 1.5 0 1 0 19 8.5", key: "183iwg" }],
   ["rect", { width: "3", height: "8", x: "8", y: "14", rx: "1.5", key: "hqg7r1" }],
@@ -17304,9 +17314,9 @@ const zZ = [
   ["path", { d: "M15.5 19H14v1.5a1.5 1.5 0 1 0 1.5-1.5", key: "jc4sz0" }],
   ["rect", { width: "8", height: "3", x: "2", y: "8", rx: "1.5", key: "1omvl4" }],
   ["path", { d: "M8.5 5H10V3.5A1.5 1.5 0 1 0 8.5 5", key: "16f3cl" }]
-], jZ = e("slack", zZ);
-const qZ = [["path", { d: "M22 2 2 22", key: "y4kqgn" }]], AZ = e("slash", qZ);
-const HZ = [
+], AZ = e("slack", qZ);
+const HZ = [["path", { d: "M22 2 2 22", key: "y4kqgn" }]], SZ = e("slash", HZ);
+const CZ = [
   [
     "path",
     {
@@ -17314,8 +17324,8 @@ const HZ = [
       key: "1sllp5"
     }
   ]
-], SZ = e("slice", HZ);
-const CZ = [
+], VZ = e("slice", CZ);
+const RZ = [
   ["path", { d: "M10 5H3", key: "1qgfaw" }],
   ["path", { d: "M12 19H3", key: "yhmn1j" }],
   ["path", { d: "M14 3v4", key: "1sua03" }],
@@ -17325,8 +17335,8 @@ const CZ = [
   ["path", { d: "M21 5h-7", key: "1oszz2" }],
   ["path", { d: "M8 10v4", key: "tgpxqk" }],
   ["path", { d: "M8 12H3", key: "a7s4jb" }]
-], VZ = e("sliders-horizontal", CZ);
-const RZ = [
+], EZ = e("sliders-horizontal", RZ);
+const LZ = [
   ["path", { d: "M10 8h4", key: "1sr2af" }],
   ["path", { d: "M12 21v-9", key: "17s77i" }],
   ["path", { d: "M12 8V3", key: "13r4qs" }],
@@ -17336,43 +17346,43 @@ const RZ = [
   ["path", { d: "M3 14h4", key: "bcjad9" }],
   ["path", { d: "M5 10V3", key: "cb8scm" }],
   ["path", { d: "M5 21v-7", key: "1w1uti" }]
-], EZ = e("sliders-vertical", RZ);
-const LZ = [
+], PZ = e("sliders-vertical", LZ);
+const TZ = [
   ["rect", { width: "14", height: "20", x: "5", y: "2", rx: "2", ry: "2", key: "1yt0o3" }],
   ["path", { d: "M12.667 8 10 12h4l-2.667 4", key: "h9lk2d" }]
-], PZ = e("smartphone-charging", LZ);
-const TZ = [
+], OZ = e("smartphone-charging", TZ);
+const DZ = [
   ["rect", { width: "7", height: "12", x: "2", y: "6", rx: "1", key: "5nje8w" }],
   ["path", { d: "M13 8.32a7.43 7.43 0 0 1 0 7.36", key: "1g306n" }],
   ["path", { d: "M16.46 6.21a11.76 11.76 0 0 1 0 11.58", key: "uqvjvo" }],
   ["path", { d: "M19.91 4.1a15.91 15.91 0 0 1 .01 15.8", key: "ujntz3" }]
-], OZ = e("smartphone-nfc", TZ);
-const DZ = [
+], IZ = e("smartphone-nfc", DZ);
+const FZ = [
+  ["rect", { width: "14", height: "20", x: "5", y: "2", rx: "2", ry: "2", key: "1yt0o3" }],
+  ["path", { d: "M12 18h.01", key: "mhygvu" }]
+], BZ = e("smartphone", FZ);
+const UZ = [
   ["path", { d: "M22 11v1a10 10 0 1 1-9-10", key: "ew0xw9" }],
   ["path", { d: "M8 14s1.5 2 4 2 4-2 4-2", key: "1y1vjs" }],
   ["line", { x1: "9", x2: "9.01", y1: "9", y2: "9", key: "yxxnd0" }],
   ["line", { x1: "15", x2: "15.01", y1: "9", y2: "9", key: "1p4y9e" }],
   ["path", { d: "M16 5h6", key: "1vod17" }],
   ["path", { d: "M19 2v6", key: "4bpg5p" }]
-], IZ = e("smile-plus", DZ);
-const FZ = [
-  ["rect", { width: "14", height: "20", x: "5", y: "2", rx: "2", ry: "2", key: "1yt0o3" }],
-  ["path", { d: "M12 18h.01", key: "mhygvu" }]
-], BZ = e("smartphone", FZ);
-const UZ = [
+], WZ = e("smile-plus", UZ);
+const ZZ = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M8 14s1.5 2 4 2 4-2 4-2", key: "1y1vjs" }],
   ["line", { x1: "9", x2: "9.01", y1: "9", y2: "9", key: "yxxnd0" }],
   ["line", { x1: "15", x2: "15.01", y1: "9", y2: "9", key: "1p4y9e" }]
-], WZ = e("smile", UZ);
-const ZZ = [
+], GZ = e("smile", ZZ);
+const XZ = [
   ["path", { d: "M2 13a6 6 0 1 0 12 0 4 4 0 1 0-8 0 2 2 0 0 0 4 0", key: "hneq2s" }],
   ["circle", { cx: "10", cy: "13", r: "8", key: "194lz3" }],
   ["path", { d: "M2 21h12c4.4 0 8-3.6 8-8V7a2 2 0 1 0-4 0v6", key: "ixqyt7" }],
   ["path", { d: "M18 3 19.1 5.2", key: "9tjm43" }],
   ["path", { d: "M22 3 20.9 5.2", key: "j3odrs" }]
-], GZ = e("snail", ZZ);
-const XZ = [
+], YZ = e("snail", XZ);
+const KZ = [
   ["path", { d: "m10 20-1.25-2.5L6 18", key: "18frcb" }],
   ["path", { d: "M10 4 8.75 6.5 6 6", key: "7mghy3" }],
   ["path", { d: "m14 20 1.25-2.5L18 18", key: "1chtki" }],
@@ -17385,8 +17395,8 @@ const XZ = [
   ["path", { d: "m4 10 1.5 2L4 14", key: "k9enpj" }],
   ["path", { d: "m7 21 3-6-1.5-3", key: "j8hb9u" }],
   ["path", { d: "m7 3 3 6h4", key: "1otusx" }]
-], YZ = e("snowflake", XZ);
-const KZ = [
+], QZ = e("snowflake", KZ);
+const JZ = [
   ["path", { d: "M10.5 2v4", key: "1xt6in" }],
   ["path", { d: "M14 2H7a2 2 0 0 0-2 2", key: "e6xig3" }],
   [
@@ -17403,8 +17413,8 @@ const KZ = [
       key: "t9hm96"
     }
   ]
-], QZ = e("soap-dispenser-droplet", KZ);
-const JZ = [
+], eG = e("soap-dispenser-droplet", JZ);
+const tG = [
   ["path", { d: "M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3", key: "1dgpiv" }],
   [
     "path",
@@ -17416,8 +17426,8 @@ const JZ = [
   ["path", { d: "M4 18v2", key: "jwo5n2" }],
   ["path", { d: "M20 18v2", key: "1ar1qi" }],
   ["path", { d: "M12 4v9", key: "oqhhn3" }]
-], eG = e("sofa", JZ);
-const tG = [
+], aG = e("sofa", tG);
+const oG = [
   ["path", { d: "M11 2h2", key: "isr7bz" }],
   ["path", { d: "m14.28 14-4.56 8", key: "4anwcf" }],
   ["path", { d: "m21 22-1.558-4H4.558", key: "enk13h" }],
@@ -17431,8 +17441,8 @@ const tG = [
   ],
   ["path", { d: "M7 2a4 4 0 0 1-4 4", key: "78s8of" }],
   ["path", { d: "m8.66 7.66 1.41 1.41", key: "1vaqj8" }]
-], aG = e("solar-panel", tG);
-const oG = [
+], nG = e("solar-panel", oG);
+const cG = [
   ["path", { d: "M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z", key: "4rw317" }],
   ["path", { d: "M7 21h10", key: "1b0cd5" }],
   ["path", { d: "M19.5 12 22 6", key: "shfsr5" }],
@@ -17454,11 +17464,11 @@ const oG = [
     "path",
     { d: "M6.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.74 1.62", key: "97tijn" }
   ]
-], nG = e("soup", oG);
-const cG = [
-  ["path", { d: "M22 17v1c0 .5-.5 1-1 1H3c-.5 0-1-.5-1-1v-1", key: "lt2kga" }]
-], rG = e("space", cG);
+], rG = e("soup", cG);
 const hG = [
+  ["path", { d: "M22 17v1c0 .5-.5 1-1 1H3c-.5 0-1-.5-1-1v-1", key: "lt2kga" }]
+], dG = e("space", hG);
+const iG = [
   ["path", { d: "M12 18v4", key: "jadmvz" }],
   [
     "path",
@@ -17467,19 +17477,7 @@ const hG = [
       key: "1aw2pz"
     }
   ]
-], dG = e("spade", hG);
-const iG = [
-  [
-    "path",
-    {
-      d: "M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z",
-      key: "1s2grr"
-    }
-  ],
-  ["path", { d: "M20 2v4", key: "1rf3ol" }],
-  ["path", { d: "M22 4h-4", key: "gwowj6" }],
-  ["circle", { cx: "4", cy: "20", r: "2", key: "6kqj1y" }]
-], sG = e("sparkles", iG);
+], sG = e("spade", iG);
 const yG = [
   [
     "path",
@@ -17490,12 +17488,24 @@ const yG = [
   ]
 ], pG = e("sparkle", yG);
 const kG = [
+  [
+    "path",
+    {
+      d: "M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z",
+      key: "1s2grr"
+    }
+  ],
+  ["path", { d: "M20 2v4", key: "1rf3ol" }],
+  ["path", { d: "M22 4h-4", key: "gwowj6" }],
+  ["circle", { cx: "4", cy: "20", r: "2", key: "6kqj1y" }]
+], lG = e("sparkles", kG);
+const uG = [
   ["rect", { width: "16", height: "20", x: "4", y: "2", rx: "2", key: "1nb95v" }],
   ["path", { d: "M12 6h.01", key: "1vi96p" }],
   ["circle", { cx: "12", cy: "14", r: "4", key: "1jruaj" }],
   ["path", { d: "M12 14h.01", key: "1etili" }]
-], lG = e("speaker", kG);
-const uG = [
+], MG = e("speaker", uG);
+const fG = [
   [
     "path",
     {
@@ -17505,8 +17515,8 @@ const uG = [
   ],
   ["path", { d: "M19.8 17.8a7.5 7.5 0 0 0 .003-10.603", key: "yol142" }],
   ["path", { d: "M17 15a3.5 3.5 0 0 0-.025-4.975", key: "ssbmkc" }]
-], MG = e("speech", uG);
-const fG = [
+], mG = e("speech", fG);
+const gG = [
   ["path", { d: "m6 16 6-12 6 12", key: "1b4byz" }],
   ["path", { d: "M8 12h8", key: "1wcyev" }],
   [
@@ -17516,13 +17526,18 @@ const fG = [
       key: "8mdmtu"
     }
   ]
-], mG = e("spell-check-2", fG);
-const gG = [
+], vG = e("spell-check-2", gG);
+const _G = [
   ["path", { d: "m6 16 6-12 6 12", key: "1b4byz" }],
   ["path", { d: "M8 12h8", key: "1wcyev" }],
   ["path", { d: "m16 20 2 2 4-4", key: "13tcca" }]
-], vG = e("spell-check", gG);
-const _G = [
+], xG = e("spell-check", _G);
+const bG = [
+  ["circle", { cx: "19", cy: "5", r: "2", key: "mhkx31" }],
+  ["circle", { cx: "5", cy: "19", r: "2", key: "v8kfzx" }],
+  ["path", { d: "M5 17A12 12 0 0 1 17 5", key: "1okkup" }]
+], wG = e("spline", bG);
+const NG = [
   [
     "path",
     {
@@ -17533,13 +17548,14 @@ const _G = [
   ["path", { d: "M5 17A12 12 0 0 1 17 5", key: "1okkup" }],
   ["circle", { cx: "19", cy: "5", r: "2", key: "mhkx31" }],
   ["circle", { cx: "5", cy: "19", r: "2", key: "v8kfzx" }]
-], xG = e("spline-pointer", _G);
-const bG = [
-  ["circle", { cx: "19", cy: "5", r: "2", key: "mhkx31" }],
-  ["circle", { cx: "5", cy: "19", r: "2", key: "v8kfzx" }],
-  ["path", { d: "M5 17A12 12 0 0 1 17 5", key: "1okkup" }]
-], wG = e("spline", bG);
-const NG = [
+], $G = e("spline-pointer", NG);
+const zG = [
+  ["path", { d: "M16 3h5v5", key: "1806ms" }],
+  ["path", { d: "M8 3H3v5", key: "15dfkv" }],
+  ["path", { d: "M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3", key: "1qrqzj" }],
+  ["path", { d: "m15 9 6-6", key: "ko1vev" }]
+], jG = e("split", zG);
+const qG = [
   [
     "path",
     {
@@ -17554,14 +17570,8 @@ const NG = [
       key: "s8x3u0"
     }
   ]
-], $G = e("spool", NG);
-const zG = [
-  ["path", { d: "M16 3h5v5", key: "1806ms" }],
-  ["path", { d: "M8 3H3v5", key: "15dfkv" }],
-  ["path", { d: "M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3", key: "1qrqzj" }],
-  ["path", { d: "m15 9 6-6", key: "ko1vev" }]
-], jG = e("split", zG);
-const qG = [
+], AG = e("spool", qG);
+const HG = [
   ["path", { d: "M15.295 19.562 16 22", key: "31jsb7" }],
   ["path", { d: "m17 16 3.758 2.098", key: "121ar7" }],
   ["path", { d: "m19 12.5 3.026-.598", key: "19ukd3" }],
@@ -17573,8 +17583,8 @@ const qG = [
     }
   ],
   ["path", { d: "M8 9V2", key: "1xa0v7" }]
-], AG = e("spotlight", qG);
-const HG = [
+], SG = e("spotlight", HG);
+const CG = [
   ["path", { d: "M3 3h.01", key: "159qn6" }],
   ["path", { d: "M7 5h.01", key: "1hq22a" }],
   ["path", { d: "M11 7h.01", key: "1osv80" }],
@@ -17585,8 +17595,8 @@ const HG = [
   ["path", { d: "m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2", key: "aib6hk" }],
   ["path", { d: "m13 14 8-2", key: "1d7bmk" }],
   ["path", { d: "m13 19 8-2", key: "1y2vml" }]
-], SG = e("spray-can", HG);
-const CG = [
+], VG = e("spray-can", CG);
+const RG = [
   [
     "path",
     {
@@ -17596,21 +17606,16 @@ const CG = [
   ],
   ["path", { d: "M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4", key: "1dlkgp" }],
   ["path", { d: "M5 21h14", key: "11awu3" }]
-], VG = e("sprout", CG);
-const RG = [
+], EG = e("sprout", RG);
+const LG = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M17 12h-2l-2 5-2-10-2 5H7", key: "15hlnc" }]
-], EG = e("square-activity", RG);
-const LG = [
+], PG = e("square-activity", LG);
+const TG = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "m16 8-8 8", key: "166keh" }],
   ["path", { d: "M16 16H8V8", key: "1w2ppm" }]
-], PG = e("square-arrow-down-left", LG);
-const TG = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "M12 8v8", key: "napkw2" }],
-  ["path", { d: "m8 12 4 4 4-4", key: "k98ssh" }]
-], OG = e("square-arrow-down", TG);
+], OG = e("square-arrow-down-left", TG);
 const DG = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "m8 8 8 8", key: "1imecy" }],
@@ -17618,44 +17623,44 @@ const DG = [
 ], IG = e("square-arrow-down-right", DG);
 const FG = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["path", { d: "M12 8v8", key: "napkw2" }],
+  ["path", { d: "m8 12 4 4 4-4", key: "k98ssh" }]
+], BG = e("square-arrow-down", FG);
+const UG = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "m12 8-4 4 4 4", key: "15vm53" }],
   ["path", { d: "M16 12H8", key: "1fr5h0" }]
-], BG = e("square-arrow-left", FG);
-const UG = [
+], WG = e("square-arrow-left", UG);
+const ZG = [
   ["path", { d: "M13 21h6a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6", key: "14qz4y" }],
   ["path", { d: "m3 21 9-9", key: "1jfql5" }],
   ["path", { d: "M9 21H3v-6", key: "wtvkvv" }]
-], WG = e("square-arrow-out-down-left", UG);
-const ZG = [
+], GG = e("square-arrow-out-down-left", ZG);
+const XG = [
   ["path", { d: "M21 11V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6", key: "14rsvq" }],
   ["path", { d: "m21 21-9-9", key: "1et2py" }],
   ["path", { d: "M21 15v6h-6", key: "1jko0i" }]
-], GG = e("square-arrow-out-down-right", ZG);
-const XG = [
+], YG = e("square-arrow-out-down-right", XG);
+const KG = [
   ["path", { d: "M13 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6", key: "14mv1t" }],
   ["path", { d: "m3 3 9 9", key: "rks13r" }],
   ["path", { d: "M3 9V3h6", key: "ira0h2" }]
-], YG = e("square-arrow-out-up-left", XG);
-const KG = [
+], QG = e("square-arrow-out-up-left", KG);
+const JG = [
   ["path", { d: "M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6", key: "y09zxi" }],
   ["path", { d: "m21 3-9 9", key: "mpx6sq" }],
   ["path", { d: "M15 3h6v6", key: "1q9fwt" }]
-], QG = e("square-arrow-out-up-right", KG);
-const JG = [
+], eX = e("square-arrow-out-up-right", JG);
+const tX = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M8 12h8", key: "1wcyev" }],
   ["path", { d: "m12 16 4-4-4-4", key: "1i9zcv" }]
-], eX = e("square-arrow-right", JG);
-const tX = [
+], aX = e("square-arrow-right", tX);
+const oX = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M8 16V8h8", key: "19xb1h" }],
   ["path", { d: "M16 16 8 8", key: "1qdy8n" }]
-], aX = e("square-arrow-up-left", tX);
-const oX = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "M8 8h8v8", key: "b65dnt" }],
-  ["path", { d: "m8 16 8-8", key: "13b9ih" }]
-], nX = e("square-arrow-up-right", oX);
+], nX = e("square-arrow-up-left", oX);
 const cX = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "m16 12-4-4-4 4", key: "177agl" }],
@@ -17668,6 +17673,11 @@ const hX = [
   ["path", { d: "m8.5 10 7 4", key: "wwy2dy" }]
 ], dX = e("square-asterisk", hX);
 const iX = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["path", { d: "M8 8h8v8", key: "b65dnt" }],
+  ["path", { d: "m8 16 8-8", key: "13b9ih" }]
+], sX = e("square-arrow-up-right", iX);
+const yX = [
   ["line", { x1: "5", y1: "3", x2: "19", y2: "3", key: "x74652" }],
   ["line", { x1: "3", y1: "5", x2: "3", y2: "19", key: "31ivqu" }],
   ["line", { x1: "21", y1: "5", x2: "21", y2: "19", key: "1am4cd" }],
@@ -17682,46 +17692,46 @@ const iX = [
   ["line", { x1: "17", y1: "17", x2: "14.82", y2: "14.82", key: "1lwi1d" }],
   ["circle", { cx: "8.5", cy: "15.5", r: "1.5", key: "12hfy1" }],
   ["line", { x1: "9.56066", y1: "14.43934", x2: "17", y2: "7", key: "4jyfgs" }]
-], sX = e("square-bottom-dashed-scissors", iX);
-const yX = [
+], pX = e("square-bottom-dashed-scissors", yX);
+const kX = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M9 8h7", key: "kbo1nt" }],
   ["path", { d: "M8 12h6", key: "ikassy" }],
   ["path", { d: "M11 16h5", key: "oq65wt" }]
-], pX = e("square-chart-gantt", yX);
-const kX = [
+], lX = e("square-chart-gantt", kX);
+const uX = [
   [
     "path",
     { d: "M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344", key: "2acyp4" }
   ],
   ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
-], lX = e("square-check-big", kX);
-const uX = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-], MX = e("square-check", uX);
+], MX = e("square-check-big", uX);
 const fX = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "m16 10-4 4-4-4", key: "894hmk" }]
-], mX = e("square-chevron-down", fX);
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+], mX = e("square-check", fX);
 const gX = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "m14 16-4-4 4-4", key: "ojs7w8" }]
-], vX = e("square-chevron-left", gX);
+  ["path", { d: "m16 10-4 4-4-4", key: "894hmk" }]
+], vX = e("square-chevron-down", gX);
 const _X = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "m10 8 4 4-4 4", key: "1wy4r4" }]
-], xX = e("square-chevron-right", _X);
+  ["path", { d: "m14 16-4-4 4-4", key: "ojs7w8" }]
+], xX = e("square-chevron-left", _X);
 const bX = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "m8 14 4-4 4 4", key: "fy2ptz" }]
 ], wX = e("square-chevron-up", bX);
 const NX = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["path", { d: "m10 8 4 4-4 4", key: "1wy4r4" }]
+], $X = e("square-chevron-right", NX);
+const zX = [
   ["path", { d: "m10 9-3 3 3 3", key: "1oro0q" }],
   ["path", { d: "m14 15 3-3-3-3", key: "bz13h7" }],
   ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2", key: "h1oib" }]
-], $X = e("square-code", NX);
-const zX = [
+], jX = e("square-code", zX);
+const qX = [
   ["path", { d: "M10 9.5 8 12l2 2.5", key: "3mjy60" }],
   ["path", { d: "M14 21h1", key: "v9vybs" }],
   ["path", { d: "m14 9.5 2 2.5-2 2.5", key: "1bir2l" }],
@@ -17730,33 +17740,15 @@ const zX = [
     { d: "M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2", key: "as5y1o" }
   ],
   ["path", { d: "M9 21h1", key: "15o7lz" }]
-], jX = e("square-dashed-bottom-code", zX);
-const qX = [
+], AX = e("square-dashed-bottom-code", qX);
+const HX = [
   [
     "path",
     { d: "M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2", key: "as5y1o" }
   ],
   ["path", { d: "M9 21h1", key: "15o7lz" }],
   ["path", { d: "M14 21h1", key: "v9vybs" }]
-], AX = e("square-dashed-bottom", qX);
-const HX = [
-  [
-    "path",
-    {
-      d: "M12.034 12.681a.498.498 0 0 1 .647-.647l9 3.5a.5.5 0 0 1-.033.943l-3.444 1.068a1 1 0 0 0-.66.66l-1.067 3.443a.5.5 0 0 1-.943.033z",
-      key: "xwnzip"
-    }
-  ],
-  ["path", { d: "M5 3a2 2 0 0 0-2 2", key: "y57alp" }],
-  ["path", { d: "M19 3a2 2 0 0 1 2 2", key: "18rm91" }],
-  ["path", { d: "M5 21a2 2 0 0 1-2-2", key: "sbafld" }],
-  ["path", { d: "M9 3h1", key: "1yesri" }],
-  ["path", { d: "M9 21h2", key: "1qve2z" }],
-  ["path", { d: "M14 3h1", key: "1ec4yj" }],
-  ["path", { d: "M3 9v1", key: "1r0deq" }],
-  ["path", { d: "M21 9v2", key: "p14lih" }],
-  ["path", { d: "M3 14v1", key: "vnatye" }]
-], SX = e("square-dashed-mouse-pointer", HX);
+], SX = e("square-dashed-bottom", HX);
 const CX = [
   ["path", { d: "M8 7v7", key: "1x2jlm" }],
   ["path", { d: "M12 7v4", key: "xawao1" }],
@@ -17775,6 +17767,24 @@ const CX = [
   ["path", { d: "M3 9v1", key: "1r0deq" }]
 ], VX = e("square-dashed-kanban", CX);
 const RX = [
+  [
+    "path",
+    {
+      d: "M12.034 12.681a.498.498 0 0 1 .647-.647l9 3.5a.5.5 0 0 1-.033.943l-3.444 1.068a1 1 0 0 0-.66.66l-1.067 3.443a.5.5 0 0 1-.943.033z",
+      key: "xwnzip"
+    }
+  ],
+  ["path", { d: "M5 3a2 2 0 0 0-2 2", key: "y57alp" }],
+  ["path", { d: "M19 3a2 2 0 0 1 2 2", key: "18rm91" }],
+  ["path", { d: "M5 21a2 2 0 0 1-2-2", key: "sbafld" }],
+  ["path", { d: "M9 3h1", key: "1yesri" }],
+  ["path", { d: "M9 21h2", key: "1qve2z" }],
+  ["path", { d: "M14 3h1", key: "1ec4yj" }],
+  ["path", { d: "M3 9v1", key: "1r0deq" }],
+  ["path", { d: "M21 9v2", key: "p14lih" }],
+  ["path", { d: "M3 14v1", key: "vnatye" }]
+], EX = e("square-dashed-mouse-pointer", RX);
+const LX = [
   ["path", { d: "M14 21h1", key: "v9vybs" }],
   ["path", { d: "M21 14v1", key: "169vum" }],
   ["path", { d: "M21 19a2 2 0 0 1-2 2", key: "1j7049" }],
@@ -17784,8 +17794,8 @@ const RX = [
   ["path", { d: "M3 9v1", key: "1r0deq" }],
   ["path", { d: "M5 21a2 2 0 0 1-2-2", key: "sbafld" }],
   ["path", { d: "M9 21h1", key: "15o7lz" }]
-], EX = e("square-dashed-top-solid", RX);
-const LX = [
+], PX = e("square-dashed-top-solid", LX);
+const TX = [
   ["path", { d: "M5 3a2 2 0 0 0-2 2", key: "y57alp" }],
   ["path", { d: "M19 3a2 2 0 0 1 2 2", key: "18rm91" }],
   ["path", { d: "M21 19a2 2 0 0 1-2 2", key: "1j7049" }],
@@ -17798,33 +17808,27 @@ const LX = [
   ["path", { d: "M21 9v1", key: "mxsmne" }],
   ["path", { d: "M3 14v1", key: "vnatye" }],
   ["path", { d: "M21 14v1", key: "169vum" }]
-], PX = e("square-dashed", LX);
-const TX = [
+], OX = e("square-dashed", TX);
+const DX = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
   ["line", { x1: "8", x2: "16", y1: "12", y2: "12", key: "1jonct" }],
   ["line", { x1: "12", x2: "12", y1: "16", y2: "16", key: "aqc6ln" }],
   ["line", { x1: "12", x2: "12", y1: "8", y2: "8", key: "1mkcni" }]
-], OX = e("square-divide", TX);
-const DX = [
+], IX = e("square-divide", DX);
+const FX = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }]
-], IX = e("square-dot", DX);
-const FX = [
+], BX = e("square-dot", FX);
+const UX = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M7 10h10", key: "1101jm" }],
   ["path", { d: "M7 14h10", key: "1mhdw3" }]
-], BX = e("square-equal", FX);
-const UX = [
+], WX = e("square-equal", UX);
+const ZX = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
   ["path", { d: "M9 17c2 0 2.8-1 2.8-2.8V10c0-2 1-3.3 3.2-3", key: "m1af9g" }],
   ["path", { d: "M9 11.2h5.7", key: "3zgcl2" }]
-], WX = e("square-function", UX);
-const ZX = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "M7 7v10", key: "d5nglc" }],
-  ["path", { d: "M11 7v10", key: "pptsnr" }],
-  ["path", { d: "m15 7 2 10", key: "1m7qm5" }]
-], GX = e("square-library", ZX);
+], GX = e("square-function", ZX);
 const XX = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M8 7v7", key: "1x2jlm" }],
@@ -17832,6 +17836,12 @@ const XX = [
   ["path", { d: "M16 7v9", key: "1hp2iy" }]
 ], YX = e("square-kanban", XX);
 const KX = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["path", { d: "M7 7v10", key: "d5nglc" }],
+  ["path", { d: "M11 7v10", key: "pptsnr" }],
+  ["path", { d: "m15 7 2 10", key: "1m7qm5" }]
+], QX = e("square-library", KX);
+const JX = [
   [
     "path",
     {
@@ -17840,18 +17850,18 @@ const KX = [
     }
   ],
   ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2", key: "h1oib" }]
-], QX = e("square-m", KX);
-const JX = [
+], eY = e("square-m", JX);
+const tY = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M7 8h10", key: "1jw688" }],
   ["path", { d: "M7 12h10", key: "b7w52i" }],
   ["path", { d: "M7 16h10", key: "wp8him" }]
-], eY = e("square-menu", JX);
-const tY = [
+], aY = e("square-menu", tY);
+const oY = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M8 12h8", key: "1wcyev" }]
-], aY = e("square-minus", tY);
-const oY = [
+], nY = e("square-minus", oY);
+const cY = [
   [
     "path",
     {
@@ -17860,24 +17870,24 @@ const oY = [
     }
   ],
   ["path", { d: "M21 11V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6", key: "14rsvq" }]
-], nY = e("square-mouse-pointer", oY);
-const cY = [
+], rY = e("square-mouse-pointer", cY);
+const hY = [
   ["path", { d: "M3.6 3.6A2 2 0 0 1 5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-.59 1.41", key: "9l1ft6" }],
   ["path", { d: "M3 8.7V19a2 2 0 0 0 2 2h10.3", key: "17knke" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   ["path", { d: "M13 13a3 3 0 1 0 0-6H9v2", key: "uoagbd" }],
   ["path", { d: "M9 17v-2.3", key: "1jxgo2" }]
-], rY = e("square-parking-off", cY);
-const hY = [
+], dY = e("square-parking-off", hY);
+const iY = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M9 17V7h4a3 3 0 0 1 0 6H9", key: "1dfk2c" }]
-], dY = e("square-parking", hY);
-const iY = [
+], sY = e("square-parking", iY);
+const yY = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["line", { x1: "10", x2: "10", y1: "15", y2: "9", key: "c1nkhi" }],
   ["line", { x1: "14", x2: "14", y1: "15", y2: "9", key: "h65svq" }]
-], sY = e("square-pause", iY);
-const yY = [
+], pY = e("square-pause", yY);
+const kY = [
   ["path", { d: "M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7", key: "1m0v6g" }],
   [
     "path",
@@ -17886,19 +17896,13 @@ const yY = [
       key: "ohrbg2"
     }
   ]
-], pY = e("square-pen", yY);
-const kY = [
+], lY = e("square-pen", kY);
+const uY = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "m15 9-6 6", key: "1uzhvr" }],
   ["path", { d: "M9 9h.01", key: "1q5me6" }],
   ["path", { d: "M15 15h.01", key: "lqbp3k" }]
-], lY = e("square-percent", kY);
-const uY = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "M7 7h10", key: "udp07y" }],
-  ["path", { d: "M10 7v10", key: "i1d9ee" }],
-  ["path", { d: "M16 17a2 2 0 0 1-2-2V7", key: "ftwdc7" }]
-], MY = e("square-pi", uY);
+], MY = e("square-percent", uY);
 const fY = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M12 12H9.5a2.5 2.5 0 0 1 0-5H17", key: "1l9586" }],
@@ -17917,58 +17921,68 @@ const gY = [
 ], vY = e("square-play", gY);
 const _Y = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["path", { d: "M7 7h10", key: "udp07y" }],
+  ["path", { d: "M10 7v10", key: "i1d9ee" }],
+  ["path", { d: "M16 17a2 2 0 0 1-2-2V7", key: "ftwdc7" }]
+], xY = e("square-pi", _Y);
+const bY = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M8 12h8", key: "1wcyev" }],
   ["path", { d: "M12 8v8", key: "napkw2" }]
-], xY = e("square-plus", _Y);
-const bY = [
+], wY = e("square-plus", bY);
+const NY = [
   ["path", { d: "M12 7v4", key: "xawao1" }],
   ["path", { d: "M7.998 9.003a5 5 0 1 0 8-.005", key: "1pek45" }],
   ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2", key: "h1oib" }]
-], wY = e("square-power", bY);
-const NY = [
+], $Y = e("square-power", NY);
+const zY = [
   ["path", { d: "M7 12h2l2 5 2-10h4", key: "1fxv6h" }],
   ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2", key: "h1oib" }]
-], $Y = e("square-radical", NY);
-const zY = [
+], jY = e("square-radical", zY);
+const qY = [
   ["path", { d: "M21 11a8 8 0 0 0-8-8", key: "1lxwo5" }],
   ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4", key: "1dv2y5" }]
-], jY = e("square-round-corner", zY);
-const qY = [
+], AY = e("square-round-corner", qY);
+const HY = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["circle", { cx: "8.5", cy: "8.5", r: "1.5", key: "cn5opk" }],
   ["line", { x1: "9.56066", y1: "9.56066", x2: "12", y2: "12", key: "mksg6j" }],
   ["line", { x1: "17", y1: "17", x2: "14.82", y2: "14.82", key: "1lwi1d" }],
   ["circle", { cx: "8.5", cy: "15.5", r: "1.5", key: "12hfy1" }],
   ["line", { x1: "9.56066", y1: "14.43934", x2: "17", y2: "7", key: "4jyfgs" }]
-], AY = e("square-scissors", qY);
-const HY = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "M16 8.9V7H8l4 5-4 5h8v-1.9", key: "9nih0i" }]
-], SY = e("square-sigma", HY);
+], SY = e("square-scissors", HY);
 const CY = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["line", { x1: "9", x2: "15", y1: "15", y2: "9", key: "1dfufj" }]
-], VY = e("square-slash", CY);
+  ["path", { d: "M16 8.9V7H8l4 5-4 5h8v-1.9", key: "9nih0i" }]
+], VY = e("square-sigma", CY);
 const RY = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["line", { x1: "9", x2: "15", y1: "15", y2: "9", key: "1dfufj" }]
+], EY = e("square-slash", RY);
+const LY = [
   ["path", { d: "M8 19H5c-1 0-2-1-2-2V7c0-1 1-2 2-2h3", key: "lubmu8" }],
   ["path", { d: "M16 5h3c1 0 2 1 2 2v10c0 1-1 2-2 2h-3", key: "1ag34g" }],
   ["line", { x1: "12", x2: "12", y1: "4", y2: "20", key: "1tx1rr" }]
-], EY = e("square-split-horizontal", RY);
-const LY = [
+], PY = e("square-split-horizontal", LY);
+const TY = [
   ["path", { d: "M5 8V5c0-1 1-2 2-2h10c1 0 2 1 2 2v3", key: "1pi83i" }],
   ["path", { d: "M19 16v3c0 1-1 2-2 2H7c-1 0-2-1-2-2v-3", key: "ido5k7" }],
   ["line", { x1: "4", x2: "20", y1: "12", y2: "12", key: "1e0a9i" }]
-], PY = e("square-split-vertical", LY);
-const TY = [
-  ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2", key: "h1oib" }],
-  ["rect", { x: "8", y: "8", width: "8", height: "8", rx: "1", key: "z9xiuo" }]
-], OY = e("square-square", TY);
+], OY = e("square-split-vertical", TY);
 const DY = [
   ["path", { d: "M4 10c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2", key: "4i38lg" }],
   ["path", { d: "M10 16c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2", key: "mlte4a" }],
   ["rect", { width: "8", height: "8", x: "14", y: "14", rx: "2", key: "1fa9i4" }]
 ], IY = e("square-stack", DY);
 const FY = [
+  ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2", key: "h1oib" }],
+  ["rect", { x: "8", y: "8", width: "8", height: "8", rx: "1", key: "z9xiuo" }]
+], BY = e("square-square", FY);
+const UY = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["rect", { x: "9", y: "9", width: "6", height: "6", rx: "1", key: "1ssd4o" }]
+], WY = e("square-stop", UY);
+const ZY = [
   [
     "path",
     {
@@ -17977,35 +17991,31 @@ const FY = [
     }
   ],
   ["rect", { x: "3", y: "3", width: "18", height: "18", rx: "2", key: "h1oib" }]
-], BY = e("square-star", FY);
-const UY = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["rect", { x: "9", y: "9", width: "6", height: "6", rx: "1", key: "1ssd4o" }]
-], WY = e("square-stop", UY);
-const ZY = [
+], GY = e("square-star", ZY);
+const XY = [
   ["path", { d: "m7 11 2-2-2-2", key: "1lz0vl" }],
   ["path", { d: "M11 13h4", key: "1p7l4v" }],
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }]
-], GY = e("square-terminal", ZY);
-const XY = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }],
-  ["path", { d: "M7 21v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2", key: "1m6ac2" }]
-], YY = e("square-user", XY);
+], YY = e("square-terminal", XY);
 const KY = [
   ["path", { d: "M18 21a6 6 0 0 0-12 0", key: "kaz2du" }],
   ["circle", { cx: "12", cy: "11", r: "4", key: "1gt34v" }],
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }]
 ], QY = e("square-user-round", KY);
 const JY = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }],
+  ["path", { d: "M7 21v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2", key: "1m6ac2" }]
+], eK = e("square-user", JY);
+const tK = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
   ["path", { d: "m15 9-6 6", key: "1uzhvr" }],
   ["path", { d: "m9 9 6 6", key: "z0biqf" }]
-], eK = e("square-x", JY);
-const tK = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }]
-], aK = e("square", tK);
+], aK = e("square-x", tK);
 const oK = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }]
+], nK = e("square", oK);
+const cK = [
   [
     "path",
     {
@@ -18020,8 +18030,8 @@ const oK = [
       key: "1r1efp"
     }
   ]
-], nK = e("squares-exclude", oK);
-const cK = [
+], rK = e("squares-exclude", cK);
+const hK = [
   ["path", { d: "M10 22a2 2 0 0 1-2-2", key: "i7yj1i" }],
   ["path", { d: "M14 2a2 2 0 0 1 2 2", key: "170a0m" }],
   ["path", { d: "M16 22h-2", key: "18d249" }],
@@ -18036,16 +18046,7 @@ const cK = [
     { d: "M8 10a2 2 0 0 1 2-2h5a1 1 0 0 1 1 1v5a2 2 0 0 1-2 2H9a1 1 0 0 1-1-1z", key: "ci6f0b" }
   ],
   ["path", { d: "M8 2h2", key: "1gmkwm" }]
-], rK = e("squares-intersect", cK);
-const hK = [
-  [
-    "path",
-    {
-      d: "M4 16a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3a1 1 0 0 0 1 1h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2v-3a1 1 0 0 0-1-1z",
-      key: "17jnth"
-    }
-  ]
-], dK = e("squares-unite", hK);
+], dK = e("squares-intersect", hK);
 const iK = [
   ["path", { d: "M10 22a2 2 0 0 1-2-2", key: "i7yj1i" }],
   ["path", { d: "M16 22h-2", key: "18d249" }],
@@ -18061,6 +18062,15 @@ const iK = [
   ["path", { d: "M22 20a2 2 0 0 1-2 2", key: "qj8q6g" }]
 ], sK = e("squares-subtract", iK);
 const yK = [
+  [
+    "path",
+    {
+      d: "M4 16a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3a1 1 0 0 0 1 1h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2v-3a1 1 0 0 0-1-1z",
+      key: "17jnth"
+    }
+  ]
+], pK = e("squares-unite", yK);
+const kK = [
   ["path", { d: "M13.77 3.043a34 34 0 0 0-3.54 0", key: "1oaobr" }],
   ["path", { d: "M13.771 20.956a33 33 0 0 1-3.541.001", key: "95iq0j" }],
   ["path", { d: "M20.18 17.74c-.51 1.15-1.29 1.93-2.439 2.44", key: "1u6qty" }],
@@ -18069,11 +18079,11 @@ const yK = [
   ["path", { d: "M3.043 10.23a34 34 0 0 0 .001 3.541", key: "1it6jm" }],
   ["path", { d: "M6.26 20.179c-1.15-.508-1.93-1.29-2.44-2.438", key: "14uchd" }],
   ["path", { d: "M6.26 3.82c-1.149.51-1.93 1.291-2.44 2.44", key: "8k4agb" }]
-], pK = e("squircle-dashed", yK);
-const kK = [
-  ["path", { d: "M12 3c7.2 0 9 1.8 9 9s-1.8 9-9 9-9-1.8-9-9 1.8-9 9-9", key: "garfkc" }]
-], lK = e("squircle", kK);
+], lK = e("squircle-dashed", kK);
 const uK = [
+  ["path", { d: "M12 3c7.2 0 9 1.8 9 9s-1.8 9-9 9-9-1.8-9-9 1.8-9 9-9", key: "garfkc" }]
+], MK = e("squircle", uK);
+const fK = [
   ["path", { d: "M15.236 22a3 3 0 0 0-2.2-5", key: "21bitc" }],
   ["path", { d: "M16 20a3 3 0 0 1 3-3h1a2 2 0 0 0 2-2v-2a4 4 0 0 0-4-4V4", key: "oh0fg0" }],
   ["path", { d: "M18 13h.01", key: "9veqaj" }],
@@ -18084,8 +18094,8 @@ const uK = [
       key: "980v8a"
     }
   ]
-], MK = e("squirrel", uK);
-const fK = [
+], mK = e("squirrel", fK);
+const gK = [
   ["path", { d: "M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-6 0c0 2 1 2 1 3.5V13", key: "i9gjdv" }],
   [
     "path",
@@ -18095,8 +18105,17 @@ const fK = [
     }
   ],
   ["path", { d: "M5 22h14", key: "ehvnwv" }]
-], mK = e("stamp", fK);
-const gK = [
+], vK = e("stamp", gK);
+const _K = [
+  [
+    "path",
+    {
+      d: "M12 18.338a2.1 2.1 0 0 0-.987.244L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16l2.309-4.679A.53.53 0 0 1 12 2",
+      key: "2ksp49"
+    }
+  ]
+], xK = e("star-half", _K);
+const bK = [
   [
     "path",
     {
@@ -18112,17 +18131,8 @@ const gK = [
     }
   ],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
-], vK = e("star-off", gK);
-const _K = [
-  [
-    "path",
-    {
-      d: "M12 18.338a2.1 2.1 0 0 0-.987.244L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16l2.309-4.679A.53.53 0 0 1 12 2",
-      key: "2ksp49"
-    }
-  ]
-], xK = e("star-half", _K);
-const bK = [
+], wK = e("star-off", bK);
+const NK = [
   [
     "path",
     {
@@ -18130,8 +18140,8 @@ const bK = [
       key: "r04s7s"
     }
   ]
-], wK = e("star", bK);
-const NK = [
+], $K = e("star", NK);
+const zK = [
   [
     "path",
     {
@@ -18140,8 +18150,8 @@ const NK = [
     }
   ],
   ["path", { d: "M21 20V4", key: "cb8qj8" }]
-], $K = e("step-back", NK);
-const zK = [
+], jK = e("step-back", zK);
+const qK = [
   [
     "path",
     {
@@ -18150,15 +18160,15 @@ const zK = [
     }
   ],
   ["path", { d: "M3 4v16", key: "1ph11n" }]
-], jK = e("step-forward", zK);
-const qK = [
+], AK = e("step-forward", qK);
+const HK = [
   ["path", { d: "M11 2v2", key: "1539x4" }],
   ["path", { d: "M5 2v2", key: "1yf1q8" }],
   ["path", { d: "M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1", key: "rb5t3r" }],
   ["path", { d: "M8 15a6 6 0 0 0 12 0v-3", key: "x18d4x" }],
   ["circle", { cx: "20", cy: "10", r: "2", key: "ts1r5v" }]
-], AK = e("stethoscope", qK);
-const HK = [
+], SK = e("stethoscope", HK);
+const CK = [
   [
     "path",
     {
@@ -18170,8 +18180,8 @@ const HK = [
   ["path", { d: "M8 13h.01", key: "1sbv64" }],
   ["path", { d: "M16 13h.01", key: "wip0gl" }],
   ["path", { d: "M10 16s.8 1 2 1c1.3 0 2-1 2-1", key: "1vvgv3" }]
-], SK = e("sticker", HK);
-const CK = [
+], VK = e("sticker", CK);
+const RK = [
   [
     "path",
     {
@@ -18180,8 +18190,8 @@ const CK = [
     }
   ],
   ["path", { d: "M15 3v5a1 1 0 0 0 1 1h5", key: "6s6qgf" }]
-], VK = e("sticky-note", CK);
-const RK = [
+], EK = e("sticky-note", RK);
+const LK = [
   [
     "path",
     {
@@ -18191,8 +18201,8 @@ const RK = [
   ],
   ["path", { d: "M11.99 22 14 12l7.822 3.184", key: "1u8to0" }],
   ["path", { d: "M14 12 8.47 2.302", key: "guo3d5" }]
-], EK = e("stone", RK);
-const LK = [
+], PK = e("stone", LK);
+const TK = [
   ["path", { d: "M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5", key: "slp6dd" }],
   [
     "path",
@@ -18202,21 +18212,21 @@ const LK = [
     }
   ],
   ["path", { d: "M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05", key: "wn3emo" }]
-], PK = e("store", LK);
-const TK = [
-  ["rect", { width: "20", height: "6", x: "2", y: "4", rx: "2", key: "qdearl" }],
-  ["rect", { width: "20", height: "6", x: "2", y: "14", rx: "2", key: "1xrn6j" }]
-], OK = e("stretch-horizontal", TK);
+], OK = e("store", TK);
 const DK = [
   ["rect", { width: "6", height: "20", x: "4", y: "2", rx: "2", key: "19qu7m" }],
   ["rect", { width: "6", height: "20", x: "14", y: "2", rx: "2", key: "24v0nk" }]
 ], IK = e("stretch-vertical", DK);
 const FK = [
+  ["rect", { width: "20", height: "6", x: "2", y: "4", rx: "2", key: "qdearl" }],
+  ["rect", { width: "20", height: "6", x: "2", y: "14", rx: "2", key: "1xrn6j" }]
+], BK = e("stretch-horizontal", FK);
+const UK = [
   ["path", { d: "M16 4H9a3 3 0 0 0-2.83 4", key: "43sutm" }],
   ["path", { d: "M14 12a4 4 0 0 1 0 8H6", key: "nlfj13" }],
   ["line", { x1: "4", x2: "20", y1: "12", y2: "12", key: "1e0a9i" }]
-], BK = e("strikethrough", FK);
-const UK = [
+], WK = e("strikethrough", UK);
+const ZK = [
   ["path", { d: "m4 5 8 8", key: "1eunvl" }],
   ["path", { d: "m12 5-8 8", key: "1ah0jp" }],
   [
@@ -18226,8 +18236,8 @@ const UK = [
       key: "e8ta8j"
     }
   ]
-], WK = e("subscript", UK);
-const ZK = [
+], GK = e("subscript", ZK);
+const XK = [
   ["circle", { cx: "12", cy: "12", r: "4", key: "4exip2" }],
   ["path", { d: "M12 4h.01", key: "1ujb9j" }],
   ["path", { d: "M20 12h.01", key: "1ykeid" }],
@@ -18237,20 +18247,7 @@ const ZK = [
   ["path", { d: "M17.657 17.657h.01", key: "jehnf4" }],
   ["path", { d: "M6.343 17.657h.01", key: "gdk6ow" }],
   ["path", { d: "M6.343 6.343h.01", key: "1uurf0" }]
-], GK = e("sun-dim", ZK);
-const XK = [
-  ["path", { d: "M12 2v2", key: "tus03m" }],
-  [
-    "path",
-    {
-      d: "M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715",
-      key: "xlf6rm"
-    }
-  ],
-  ["path", { d: "M16 12a4 4 0 0 0-4-4", key: "6vsxu" }],
-  ["path", { d: "m19 5-1.256 1.256", key: "1yg6a6" }],
-  ["path", { d: "M20 12h2", key: "1q8mjw" }]
-], YK = e("sun-moon", XK);
+], YK = e("sun-dim", XK);
 const KK = [
   ["circle", { cx: "12", cy: "12", r: "4", key: "4exip2" }],
   ["path", { d: "M12 3v1", key: "1asbbs" }],
@@ -18263,6 +18260,19 @@ const KK = [
   ["path", { d: "m17.657 17.657.707.707", key: "vl76zb" }]
 ], QK = e("sun-medium", KK);
 const JK = [
+  ["path", { d: "M12 2v2", key: "tus03m" }],
+  [
+    "path",
+    {
+      d: "M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715",
+      key: "xlf6rm"
+    }
+  ],
+  ["path", { d: "M16 12a4 4 0 0 0-4-4", key: "6vsxu" }],
+  ["path", { d: "m19 5-1.256 1.256", key: "1yg6a6" }],
+  ["path", { d: "M20 12h2", key: "1q8mjw" }]
+], eQ = e("sun-moon", JK);
+const tQ = [
   ["path", { d: "M10 21v-1", key: "1u8rkd" }],
   ["path", { d: "M10 4V3", key: "pkzwkn" }],
   ["path", { d: "M10 9a3 3 0 0 0 0 6", key: "gv75dk" }],
@@ -18274,8 +18284,8 @@ const JK = [
   ["path", { d: "m20 10-1.5 2 1.5 2", key: "1swlpi" }],
   ["path", { d: "m3.64 18.36.7-.7", key: "105rm9" }],
   ["path", { d: "m4.34 6.34-.7-.7", key: "d3unjp" }]
-], eQ = e("sun-snow", JK);
-const tQ = [
+], aQ = e("sun-snow", tQ);
+const oQ = [
   ["circle", { cx: "12", cy: "12", r: "4", key: "4exip2" }],
   ["path", { d: "M12 2v2", key: "tus03m" }],
   ["path", { d: "M12 20v2", key: "1lh1kg" }],
@@ -18285,8 +18295,8 @@ const tQ = [
   ["path", { d: "M20 12h2", key: "1q8mjw" }],
   ["path", { d: "m6.34 17.66-1.41 1.41", key: "1m8zz5" }],
   ["path", { d: "m19.07 4.93-1.41 1.41", key: "1shlcs" }]
-], aQ = e("sun", tQ);
-const oQ = [
+], nQ = e("sun", oQ);
+const cQ = [
   ["path", { d: "M12 2v8", key: "1q4o3n" }],
   ["path", { d: "m4.93 10.93 1.41 1.41", key: "2a7f42" }],
   ["path", { d: "M2 18h2", key: "j10viu" }],
@@ -18295,8 +18305,8 @@ const oQ = [
   ["path", { d: "M22 22H2", key: "19qnx5" }],
   ["path", { d: "m8 6 4-4 4 4", key: "ybng9g" }],
   ["path", { d: "M16 18a4 4 0 0 0-8 0", key: "1lzouq" }]
-], nQ = e("sunrise", oQ);
-const cQ = [
+], rQ = e("sunrise", cQ);
+const hQ = [
   ["path", { d: "M12 10V2", key: "16sf7g" }],
   ["path", { d: "m4.93 10.93 1.41 1.41", key: "2a7f42" }],
   ["path", { d: "M2 18h2", key: "j10viu" }],
@@ -18305,8 +18315,8 @@ const cQ = [
   ["path", { d: "M22 22H2", key: "19qnx5" }],
   ["path", { d: "m16 6-4 4-4-4", key: "6wukr" }],
   ["path", { d: "M16 18a4 4 0 0 0-8 0", key: "1lzouq" }]
-], rQ = e("sunset", cQ);
-const hQ = [
+], dQ = e("sunset", hQ);
+const iQ = [
   ["path", { d: "m4 19 8-8", key: "hr47gm" }],
   ["path", { d: "m12 19-8-8", key: "1dhhmo" }],
   [
@@ -18316,8 +18326,8 @@ const hQ = [
       key: "1dfcux"
     }
   ]
-], dQ = e("superscript", hQ);
-const iQ = [
+], sQ = e("superscript", iQ);
+const yQ = [
   ["path", { d: "M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z", key: "1ldrpk" }],
   ["path", { d: "M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7", key: "11i5po" }],
   ["path", { d: "M 7 17h.01", key: "1euzgo" }],
@@ -18328,26 +18338,26 @@ const iQ = [
       key: "o2gii7"
     }
   ]
-], sQ = e("swatch-book", iQ);
-const yQ = [
+], pQ = e("swatch-book", yQ);
+const kQ = [
   ["path", { d: "M10 21V3h8", key: "br2l0g" }],
   ["path", { d: "M6 16h9", key: "2py0wn" }],
   ["path", { d: "M10 9.5h7", key: "13dmhz" }]
-], pQ = e("swiss-franc", yQ);
-const kQ = [
+], lQ = e("swiss-franc", kQ);
+const uQ = [
   ["path", { d: "M11 19H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5", key: "mtk2lu" }],
   ["path", { d: "M13 5h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-5", key: "120jsl" }],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }],
   ["path", { d: "m18 22-3-3 3-3", key: "kgdoj7" }],
   ["path", { d: "m6 2 3 3-3 3", key: "1fnbkv" }]
-], lQ = e("switch-camera", kQ);
-const uQ = [
+], MQ = e("switch-camera", uQ);
+const fQ = [
   ["path", { d: "m11 19-6-6", key: "s7kpr" }],
   ["path", { d: "m5 21-2-2", key: "1kw20b" }],
   ["path", { d: "m8 16-4 4", key: "1oqv8h" }],
   ["path", { d: "M9.5 17.5 21 6V3h-3L6.5 14.5", key: "pkxemp" }]
-], MQ = e("sword", uQ);
-const fQ = [
+], mQ = e("sword", fQ);
+const gQ = [
   ["polyline", { points: "14.5 17.5 3 6 3 3 6 3 17.5 14.5", key: "1hfsw2" }],
   ["line", { x1: "13", x2: "19", y1: "19", y2: "13", key: "1vrmhu" }],
   ["line", { x1: "16", x2: "20", y1: "16", y2: "20", key: "1bron3" }],
@@ -18356,16 +18366,16 @@ const fQ = [
   ["line", { x1: "5", x2: "9", y1: "14", y2: "18", key: "1hf58s" }],
   ["line", { x1: "7", x2: "4", y1: "17", y2: "20", key: "pidxm4" }],
   ["line", { x1: "3", x2: "5", y1: "19", y2: "21", key: "1pehsh" }]
-], mQ = e("swords", fQ);
-const gQ = [
+], vQ = e("swords", gQ);
+const _Q = [
   ["path", { d: "m18 2 4 4", key: "22kx64" }],
   ["path", { d: "m17 7 3-3", key: "1w1zoj" }],
   ["path", { d: "M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5", key: "1exhtz" }],
   ["path", { d: "m9 11 4 4", key: "rovt3i" }],
   ["path", { d: "m5 19-3 3", key: "59f2uf" }],
   ["path", { d: "m14 4 6 6", key: "yqp9t2" }]
-], vQ = e("syringe", gQ);
-const _Q = [
+], xQ = e("syringe", _Q);
+const bQ = [
   [
     "path",
     {
@@ -18373,21 +18383,21 @@ const _Q = [
       key: "gugj83"
     }
   ]
-], xQ = e("table-2", _Q);
-const bQ = [
+], wQ = e("table-2", bQ);
+const NQ = [
   ["path", { d: "M12 21v-6", key: "lihzve" }],
   ["path", { d: "M12 9V3", key: "da5inc" }],
   ["path", { d: "M3 15h18", key: "5xshup" }],
   ["path", { d: "M3 9h18", key: "1pudct" }],
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }]
-], wQ = e("table-cells-merge", bQ);
-const NQ = [
+], $Q = e("table-cells-merge", NQ);
+const zQ = [
   ["path", { d: "M12 15V9", key: "8c7uyn" }],
   ["path", { d: "M3 15h18", key: "5xshup" }],
   ["path", { d: "M3 9h18", key: "1pudct" }],
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }]
-], $Q = e("table-cells-split", NQ);
-const zQ = [
+], jQ = e("table-cells-split", zQ);
+const qQ = [
   ["path", { d: "M14 14v2", key: "w2a1xv" }],
   ["path", { d: "M14 20v2", key: "1lq872" }],
   ["path", { d: "M14 2v2", key: "6buw04" }],
@@ -18399,14 +18409,22 @@ const zQ = [
   ["path", { d: "M22 3h-2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h2", key: "pdjoqf" }],
   ["path", { d: "M22 9h-4", key: "1luja7" }],
   ["path", { d: "M5 3v18", key: "14hmio" }]
-], jQ = e("table-columns-split", zQ);
-const qQ = [
+], AQ = e("table-columns-split", qQ);
+const HQ = [
+  ["path", { d: "M16 5H3", key: "m91uny" }],
+  ["path", { d: "M16 12H3", key: "1a2rj7" }],
+  ["path", { d: "M16 19H3", key: "zzsher" }],
+  ["path", { d: "M21 5h.01", key: "wa75ra" }],
+  ["path", { d: "M21 12h.01", key: "msek7k" }],
+  ["path", { d: "M21 19h.01", key: "qvbq2j" }]
+], SQ = e("table-of-contents", HQ);
+const CQ = [
   ["path", { d: "M15 3v18", key: "14nvp0" }],
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M21 9H3", key: "1338ky" }],
   ["path", { d: "M21 15H3", key: "9uk58r" }]
-], AQ = e("table-properties", qQ);
-const HQ = [
+], VQ = e("table-properties", CQ);
+const RQ = [
   ["path", { d: "M14 10h2", key: "1lstlu" }],
   ["path", { d: "M15 22v-8", key: "1fwwgm" }],
   ["path", { d: "M15 2v4", key: "1044rn" }],
@@ -18418,31 +18436,29 @@ const HQ = [
   ["path", { d: "M8 10h2", key: "66od0" }],
   ["path", { d: "M9 22v-8", key: "fmnu31" }],
   ["path", { d: "M9 2v4", key: "j1yeou" }]
-], SQ = e("table-rows-split", HQ);
-const CQ = [
-  ["path", { d: "M16 5H3", key: "m91uny" }],
-  ["path", { d: "M16 12H3", key: "1a2rj7" }],
-  ["path", { d: "M16 19H3", key: "zzsher" }],
-  ["path", { d: "M21 5h.01", key: "wa75ra" }],
-  ["path", { d: "M21 12h.01", key: "msek7k" }],
-  ["path", { d: "M21 19h.01", key: "qvbq2j" }]
-], VQ = e("table-of-contents", CQ);
-const RQ = [
+], EQ = e("table-rows-split", RQ);
+const LQ = [
   ["path", { d: "M12 3v18", key: "108xh3" }],
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M3 9h18", key: "1pudct" }],
   ["path", { d: "M3 15h18", key: "5xshup" }]
-], EQ = e("table", RQ);
-const LQ = [
+], PQ = e("table", LQ);
+const TQ = [
   ["rect", { width: "10", height: "14", x: "3", y: "8", rx: "2", key: "1vrsiq" }],
   ["path", { d: "M5 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2h-2.4", key: "1j4zmg" }],
   ["path", { d: "M8 18h.01", key: "lrp35t" }]
-], PQ = e("tablet-smartphone", LQ);
-const TQ = [
+], OQ = e("tablet-smartphone", TQ);
+const DQ = [
   ["rect", { width: "16", height: "20", x: "4", y: "2", rx: "2", ry: "2", key: "76otgf" }],
   ["line", { x1: "12", x2: "12.01", y1: "18", y2: "18", key: "1dp563" }]
-], OQ = e("tablet", TQ);
-const DQ = [
+], IQ = e("tablet", DQ);
+const FQ = [
+  ["circle", { cx: "7", cy: "7", r: "5", key: "x29byf" }],
+  ["circle", { cx: "17", cy: "17", r: "5", key: "1op1d2" }],
+  ["path", { d: "M12 17h10", key: "ls21zv" }],
+  ["path", { d: "m3.46 10.54 7.08-7.08", key: "1rehiu" }]
+], BQ = e("tablets", FQ);
+const UQ = [
   [
     "path",
     {
@@ -18451,14 +18467,8 @@ const DQ = [
     }
   ],
   ["circle", { cx: "7.5", cy: "7.5", r: ".5", fill: "currentColor", key: "kqv944" }]
-], IQ = e("tag", DQ);
-const FQ = [
-  ["circle", { cx: "7", cy: "7", r: "5", key: "x29byf" }],
-  ["circle", { cx: "17", cy: "17", r: "5", key: "1op1d2" }],
-  ["path", { d: "M12 17h10", key: "ls21zv" }],
-  ["path", { d: "m3.46 10.54 7.08-7.08", key: "1rehiu" }]
-], BQ = e("tablets", FQ);
-const UQ = [
+], WQ = e("tag", UQ);
+const ZQ = [
   [
     "path",
     {
@@ -18471,42 +18481,42 @@ const UQ = [
     { d: "M2 7v6.172a2 2 0 0 0 .586 1.414l6.71 6.71a2.4 2.4 0 0 0 3.191.193", key: "178nd4" }
   ],
   ["circle", { cx: "10.5", cy: "6.5", r: ".5", fill: "currentColor", key: "12ikhr" }]
-], WQ = e("tags", UQ);
-const ZQ = [["path", { d: "M4 4v16", key: "6qkkli" }]], GQ = e("tally-1", ZQ);
-const XQ = [
+], GQ = e("tags", ZQ);
+const XQ = [["path", { d: "M4 4v16", key: "6qkkli" }]], YQ = e("tally-1", XQ);
+const KQ = [
   ["path", { d: "M4 4v16", key: "6qkkli" }],
   ["path", { d: "M9 4v16", key: "81ygyz" }]
-], YQ = e("tally-2", XQ);
-const KQ = [
+], QQ = e("tally-2", KQ);
+const JQ = [
   ["path", { d: "M4 4v16", key: "6qkkli" }],
   ["path", { d: "M9 4v16", key: "81ygyz" }],
   ["path", { d: "M14 4v16", key: "12vmem" }]
-], QQ = e("tally-3", KQ);
-const JQ = [
+], eJ = e("tally-3", JQ);
+const tJ = [
   ["path", { d: "M4 4v16", key: "6qkkli" }],
   ["path", { d: "M9 4v16", key: "81ygyz" }],
   ["path", { d: "M14 4v16", key: "12vmem" }],
   ["path", { d: "M19 4v16", key: "8ij5ei" }]
-], eJ = e("tally-4", JQ);
-const tJ = [
+], aJ = e("tally-4", tJ);
+const oJ = [
   ["path", { d: "M4 4v16", key: "6qkkli" }],
   ["path", { d: "M9 4v16", key: "81ygyz" }],
   ["path", { d: "M14 4v16", key: "12vmem" }],
   ["path", { d: "M19 4v16", key: "8ij5ei" }],
   ["path", { d: "M22 6 2 18", key: "h9moai" }]
-], aJ = e("tally-5", tJ);
-const oJ = [
+], nJ = e("tally-5", oJ);
+const cJ = [
   ["circle", { cx: "17", cy: "4", r: "2", key: "y5j2s2" }],
   ["path", { d: "M15.59 5.41 5.41 15.59", key: "l0vprr" }],
   ["circle", { cx: "4", cy: "17", r: "2", key: "9p4efm" }],
   ["path", { d: "M12 22s-4-9-1.5-11.5S22 12 22 12", key: "1twk4o" }]
-], nJ = e("tangent", oJ);
-const cJ = [
+], rJ = e("tangent", cJ);
+const hJ = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["circle", { cx: "12", cy: "12", r: "6", key: "1vlfrh" }],
   ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }]
-], rJ = e("target", cJ);
-const hJ = [
+], dJ = e("target", hJ);
+const iJ = [
   [
     "path",
     {
@@ -18526,8 +18536,8 @@ const hJ = [
   ["path", { d: "m6.158 8.633 1.114 4.456", key: "74o979" }],
   ["path", { d: "m8 21 3.105-6.21", key: "1fvxut" }],
   ["circle", { cx: "12", cy: "13", r: "2", key: "1c1ljs" }]
-], dJ = e("telescope", hJ);
-const iJ = [
+], sJ = e("telescope", iJ);
+const yJ = [
   ["circle", { cx: "4", cy: "4", r: "2", key: "bt5ra8" }],
   ["path", { d: "m14 5 3-3 3 3", key: "1sorif" }],
   ["path", { d: "m14 10 3-3 3 3", key: "1jyi9h" }],
@@ -18535,91 +18545,91 @@ const iJ = [
   ["path", { d: "M17 14H7l-5 8h20Z", key: "13ar7p" }],
   ["path", { d: "M8 14v8", key: "1ghmqk" }],
   ["path", { d: "m9 14 5 8", key: "13pgi6" }]
-], sJ = e("tent-tree", iJ);
-const yJ = [
+], pJ = e("tent-tree", yJ);
+const kJ = [
   ["path", { d: "M3.5 21 14 3", key: "1szst5" }],
   ["path", { d: "M20.5 21 10 3", key: "1310c3" }],
   ["path", { d: "M15.5 21 12 15l-3.5 6", key: "1ddtfw" }],
   ["path", { d: "M2 21h20", key: "1nyx9w" }]
-], pJ = e("tent", yJ);
-const kJ = [
+], lJ = e("tent", kJ);
+const uJ = [
   ["path", { d: "M12 19h8", key: "baeox8" }],
   ["path", { d: "m4 17 6-6-6-6", key: "1yngyt" }]
-], lJ = e("terminal", kJ);
-const uJ = [
+], MJ = e("terminal", uJ);
+const fJ = [
   [
     "path",
     { d: "M21 7 6.82 21.18a2.83 2.83 0 0 1-3.99-.01a2.83 2.83 0 0 1 0-4L17 3", key: "1ub6xw" }
   ],
   ["path", { d: "m16 2 6 6", key: "1gw87d" }],
   ["path", { d: "M12 16H4", key: "1cjfip" }]
-], MJ = e("test-tube-diagonal", uJ);
-const fJ = [
+], mJ = e("test-tube-diagonal", fJ);
+const gJ = [
   ["path", { d: "M14.5 2v17.5c0 1.4-1.1 2.5-2.5 2.5c-1.4 0-2.5-1.1-2.5-2.5V2", key: "125lnx" }],
   ["path", { d: "M8.5 2h7", key: "csnxdl" }],
   ["path", { d: "M14.5 16h-5", key: "1ox875" }]
-], mJ = e("test-tube", fJ);
-const gJ = [
+], vJ = e("test-tube", gJ);
+const _J = [
   ["path", { d: "M9 2v17.5A2.5 2.5 0 0 1 6.5 22A2.5 2.5 0 0 1 4 19.5V2", key: "1hjrqt" }],
   ["path", { d: "M20 2v17.5a2.5 2.5 0 0 1-2.5 2.5a2.5 2.5 0 0 1-2.5-2.5V2", key: "16lc8n" }],
   ["path", { d: "M3 2h7", key: "7s29d5" }],
   ["path", { d: "M14 2h7", key: "7sicin" }],
   ["path", { d: "M9 16H4", key: "1bfye3" }],
   ["path", { d: "M20 16h-5", key: "ddnjpe" }]
-], vJ = e("test-tubes", gJ);
-const _J = [
+], xJ = e("test-tubes", _J);
+const bJ = [
   ["path", { d: "M21 5H3", key: "1fi0y6" }],
   ["path", { d: "M17 12H7", key: "16if0g" }],
   ["path", { d: "M19 19H5", key: "vjpgq2" }]
-], xJ = e("text-align-center", _J);
-const bJ = [
+], wJ = e("text-align-center", bJ);
+const NJ = [
   ["path", { d: "M21 5H3", key: "1fi0y6" }],
   ["path", { d: "M21 12H9", key: "dn1m92" }],
   ["path", { d: "M21 19H7", key: "4cu937" }]
-], wJ = e("text-align-end", bJ);
-const NJ = [
+], $J = e("text-align-end", NJ);
+const zJ = [
   ["path", { d: "M3 5h18", key: "1u36vt" }],
   ["path", { d: "M3 12h18", key: "1i2n21" }],
   ["path", { d: "M3 19h18", key: "awlh7x" }]
-], $J = e("text-align-justify", NJ);
-const zJ = [
+], jJ = e("text-align-justify", zJ);
+const qJ = [
   ["path", { d: "M21 5H3", key: "1fi0y6" }],
   ["path", { d: "M15 12H3", key: "6jk70r" }],
   ["path", { d: "M17 19H3", key: "z6ezky" }]
-], jJ = e("text-align-start", zJ);
-const qJ = [
+], AJ = e("text-align-start", qJ);
+const HJ = [
   ["path", { d: "M12 20h-1a2 2 0 0 1-2-2 2 2 0 0 1-2 2H6", key: "1528k5" }],
   ["path", { d: "M13 8h7a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-7", key: "13ksps" }],
   ["path", { d: "M5 16H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1", key: "1n9rhb" }],
   ["path", { d: "M6 4h1a2 2 0 0 1 2 2 2 2 0 0 1 2-2h1", key: "1mj8rg" }],
   ["path", { d: "M9 6v12", key: "velyjx" }]
-], AJ = e("text-cursor-input", qJ);
-const HJ = [
+], SJ = e("text-cursor-input", HJ);
+const CJ = [
   ["path", { d: "M17 22h-1a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h1", key: "uvaxm9" }],
   ["path", { d: "M7 22h1a4 4 0 0 0 4-4v-1", key: "11xy8d" }],
   ["path", { d: "M7 2h1a4 4 0 0 1 4 4v1", key: "1uw06m" }]
-], SJ = e("text-cursor", HJ);
-const CJ = [
+], VJ = e("text-cursor", CJ);
+const RJ = [
   ["path", { d: "M15 5h6", key: "1pr8yx" }],
   ["path", { d: "M15 12h6", key: "upa0zy" }],
   ["path", { d: "M3 19h18", key: "awlh7x" }],
   ["path", { d: "m3 12 3.553-7.724a.5.5 0 0 1 .894 0L11 12", key: "6lvno8" }],
   ["path", { d: "M3.92 10h6.16", key: "1tl8ex" }]
-], VJ = e("text-initial", CJ);
-const RJ = [
+], EJ = e("text-initial", RJ);
+const LJ = [
   ["path", { d: "M17 5H3", key: "1cn7zz" }],
   ["path", { d: "M21 12H8", key: "scolzb" }],
   ["path", { d: "M21 19H8", key: "13qgcb" }],
   ["path", { d: "M3 12v7", key: "1ri8j3" }]
-], EJ = e("text-quote", RJ);
-const LJ = [
+], PJ = e("text-quote", LJ);
+const TJ = [
   ["path", { d: "M21 5H3", key: "1fi0y6" }],
   ["path", { d: "M10 12H3", key: "1ulcyk" }],
   ["path", { d: "M10 19H3", key: "108z41" }],
   ["circle", { cx: "17", cy: "15", r: "3", key: "1upz2a" }],
   ["path", { d: "m21 19-1.9-1.9", key: "dwi7p8" }]
-], PJ = e("text-search", LJ);
-const TJ = [
+], OJ = e("text-search", TJ);
+const DJ = [
   ["path", { d: "M14 21h1", key: "v9vybs" }],
   ["path", { d: "M14 3h1", key: "1ec4yj" }],
   ["path", { d: "M19 3a2 2 0 0 1 2 2", key: "18rm91" }],
@@ -18635,14 +18645,14 @@ const TJ = [
   ["path", { d: "M7 8h8", key: "1jbsf9" }],
   ["path", { d: "M9 21h1", key: "15o7lz" }],
   ["path", { d: "M9 3h1", key: "1yesri" }]
-], OJ = e("text-select", TJ);
-const DJ = [
+], IJ = e("text-select", DJ);
+const FJ = [
   ["path", { d: "m16 16-3 3 3 3", key: "117b85" }],
   ["path", { d: "M3 12h14.5a1 1 0 0 1 0 7H13", key: "18xa6z" }],
   ["path", { d: "M3 19h6", key: "1ygdsz" }],
   ["path", { d: "M3 5h18", key: "1u36vt" }]
-], IJ = e("text-wrap", DJ);
-const FJ = [
+], BJ = e("text-wrap", FJ);
+const UJ = [
   ["path", { d: "M2 10s3-3 3-8", key: "3xiif0" }],
   ["path", { d: "M22 10s-3-3-3-8", key: "ioaa5q" }],
   ["path", { d: "M10 2c0 4.4-3.6 8-8 8", key: "16fkpi" }],
@@ -18652,8 +18662,8 @@ const FJ = [
   ["path", { d: "M8 15h8", key: "45n4r" }],
   ["path", { d: "M2 22v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1", key: "1vsc2m" }],
   ["path", { d: "M14 22v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1", key: "hrha4u" }]
-], BJ = e("theater", FJ);
-const UJ = [
+], WJ = e("theater", UJ);
+const ZJ = [
   ["path", { d: "m10 20-1.25-2.5L6 18", key: "18frcb" }],
   ["path", { d: "M10 4 8.75 6.5 6 6", key: "7mghy3" }],
   ["path", { d: "M10.585 15H10", key: "4nqulp" }],
@@ -18662,19 +18672,19 @@ const UJ = [
   ["path", { d: "m4 10 1.5 2L4 14", key: "k9enpj" }],
   ["path", { d: "m7 21 3-6-1.5-3", key: "j8hb9u" }],
   ["path", { d: "m7 3 3 6h2", key: "1bbqgq" }]
-], WJ = e("thermometer-snowflake", UJ);
-const ZJ = [
+], GJ = e("thermometer-snowflake", ZJ);
+const XJ = [
   ["path", { d: "M12 2v2", key: "tus03m" }],
   ["path", { d: "M12 8a4 4 0 0 0-1.645 7.647", key: "wz5p04" }],
   ["path", { d: "M2 12h2", key: "1t8f8n" }],
   ["path", { d: "M20 14.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0z", key: "yu0u2z" }],
   ["path", { d: "m4.93 4.93 1.41 1.41", key: "149t6j" }],
   ["path", { d: "m6.34 17.66-1.41 1.41", key: "1m8zz5" }]
-], GJ = e("thermometer-sun", ZJ);
-const XJ = [
-  ["path", { d: "M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z", key: "17jzev" }]
-], YJ = e("thermometer", XJ);
+], YJ = e("thermometer-sun", XJ);
 const KJ = [
+  ["path", { d: "M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z", key: "17jzev" }]
+], QJ = e("thermometer", KJ);
+const JJ = [
   [
     "path",
     {
@@ -18683,8 +18693,8 @@ const KJ = [
     }
   ],
   ["path", { d: "M17 14V2", key: "8ymqnk" }]
-], QJ = e("thumbs-down", KJ);
-const JJ = [
+], e11 = e("thumbs-down", JJ);
+const t11 = [
   [
     "path",
     {
@@ -18693,17 +18703,7 @@ const JJ = [
     }
   ],
   ["path", { d: "M7 10v12", key: "1qc93n" }]
-], e11 = e("thumbs-up", JJ);
-const t11 = [
-  [
-    "path",
-    {
-      d: "M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z",
-      key: "qn84l0"
-    }
-  ],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-], a11 = e("ticket-check", t11);
+], a11 = e("thumbs-up", t11);
 const o11 = [
   [
     "path",
@@ -18712,9 +18712,19 @@ const o11 = [
       key: "qn84l0"
     }
   ],
-  ["path", { d: "M9 12h6", key: "1c52cq" }]
-], n11 = e("ticket-minus", o11);
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+], n11 = e("ticket-check", o11);
 const c11 = [
+  [
+    "path",
+    {
+      d: "M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z",
+      key: "qn84l0"
+    }
+  ],
+  ["path", { d: "M9 12h6", key: "1c52cq" }]
+], r11 = e("ticket-minus", c11);
+const h11 = [
   [
     "path",
     {
@@ -18725,8 +18735,8 @@ const c11 = [
   ["path", { d: "M9 9h.01", key: "1q5me6" }],
   ["path", { d: "m15 9-6 6", key: "1uzhvr" }],
   ["path", { d: "M15 15h.01", key: "lqbp3k" }]
-], r11 = e("ticket-percent", c11);
-const h11 = [
+], d11 = e("ticket-percent", h11);
+const i11 = [
   [
     "path",
     {
@@ -18736,8 +18746,8 @@ const h11 = [
   ],
   ["path", { d: "M9 12h6", key: "1c52cq" }],
   ["path", { d: "M12 9v6", key: "199k2o" }]
-], d11 = e("ticket-plus", h11);
-const i11 = [
+], s11 = e("ticket-plus", i11);
+const y11 = [
   [
     "path",
     {
@@ -18746,8 +18756,8 @@ const i11 = [
     }
   ],
   ["path", { d: "m9.5 14.5 5-5", key: "qviqfa" }]
-], s11 = e("ticket-slash", i11);
-const y11 = [
+], p11 = e("ticket-slash", y11);
+const k11 = [
   [
     "path",
     {
@@ -18757,8 +18767,8 @@ const y11 = [
   ],
   ["path", { d: "m9.5 14.5 5-5", key: "qviqfa" }],
   ["path", { d: "m9.5 9.5 5 5", key: "18nt4w" }]
-], p11 = e("ticket-x", y11);
-const k11 = [
+], l11 = e("ticket-x", k11);
+const u11 = [
   [
     "path",
     {
@@ -18769,8 +18779,8 @@ const k11 = [
   ["path", { d: "M13 5v2", key: "dyzc3o" }],
   ["path", { d: "M13 17v2", key: "1ont0d" }],
   ["path", { d: "M13 11v2", key: "1wjjxi" }]
-], l11 = e("ticket", k11);
-const u11 = [
+], M11 = e("ticket", u11);
+const f11 = [
   ["path", { d: "M10.5 17h1.227a2 2 0 0 0 1.345-.52L18 12", key: "16muxl" }],
   ["path", { d: "m12 13.5 3.794.506", key: "6v5z87" }],
   ["path", { d: "m3.173 8.18 11-5a2 2 0 0 1 2.647.993L18.56 8", key: "15hfpj" }],
@@ -18778,26 +18788,21 @@ const u11 = [
   ["path", { d: "M6 14v1", key: "cao2tf" }],
   ["path", { d: "M6 19v2", key: "1loha6" }],
   ["rect", { x: "2", y: "8", width: "20", height: "13", rx: "2", key: "p3bz5l" }]
-], M11 = e("tickets-plane", u11);
-const f11 = [
+], m11 = e("tickets-plane", f11);
+const g11 = [
   ["path", { d: "m3.173 8.18 11-5a2 2 0 0 1 2.647.993L18.56 8", key: "15hfpj" }],
   ["path", { d: "M6 10V8", key: "1y41hn" }],
   ["path", { d: "M6 14v1", key: "cao2tf" }],
   ["path", { d: "M6 19v2", key: "1loha6" }],
   ["rect", { x: "2", y: "8", width: "20", height: "13", rx: "2", key: "p3bz5l" }]
-], m11 = e("tickets", f11);
-const g11 = [
+], v11 = e("tickets", g11);
+const _11 = [
   ["path", { d: "M10 2h4", key: "n1abiw" }],
   ["path", { d: "M4.6 11a8 8 0 0 0 1.7 8.7 8 8 0 0 0 8.7 1.7", key: "10he05" }],
   ["path", { d: "M7.4 7.4a8 8 0 0 1 10.3 1 8 8 0 0 1 .9 10.2", key: "15f7sh" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   ["path", { d: "M12 12v-2", key: "fwoke6" }]
-], v11 = e("timer-off", g11);
-const _11 = [
-  ["line", { x1: "10", x2: "14", y1: "2", y2: "2", key: "14vaq8" }],
-  ["line", { x1: "12", x2: "15", y1: "14", y2: "11", key: "17fdiu" }],
-  ["circle", { cx: "12", cy: "14", r: "8", key: "1e1u0o" }]
-], x11 = e("timer", _11);
+], x11 = e("timer-off", _11);
 const b11 = [
   ["path", { d: "M10 2h4", key: "n1abiw" }],
   ["path", { d: "M12 14v-4", key: "1evpnu" }],
@@ -18805,14 +18810,19 @@ const b11 = [
   ["path", { d: "M9 17H4v5", key: "8t5av" }]
 ], w11 = e("timer-reset", b11);
 const N11 = [
+  ["line", { x1: "10", x2: "14", y1: "2", y2: "2", key: "14vaq8" }],
+  ["line", { x1: "12", x2: "15", y1: "14", y2: "11", key: "17fdiu" }],
+  ["circle", { cx: "12", cy: "14", r: "8", key: "1e1u0o" }]
+], $11 = e("timer", N11);
+const z11 = [
   ["circle", { cx: "9", cy: "12", r: "3", key: "u3jwor" }],
   ["rect", { width: "20", height: "14", x: "2", y: "5", rx: "7", key: "g7kal2" }]
-], $11 = e("toggle-left", N11);
-const z11 = [
+], j11 = e("toggle-left", z11);
+const q11 = [
   ["circle", { cx: "15", cy: "12", r: "3", key: "1afu0r" }],
   ["rect", { width: "20", height: "14", x: "2", y: "5", rx: "7", key: "g7kal2" }]
-], j11 = e("toggle-right", z11);
-const q11 = [
+], A11 = e("toggle-right", q11);
+const H11 = [
   [
     "path",
     {
@@ -18821,8 +18831,21 @@ const q11 = [
     }
   ],
   ["path", { d: "M8 18a5 5 0 0 1-5-5V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8", key: "1tqs57" }]
-], A11 = e("toilet", q11);
-const H11 = [
+], S11 = e("toilet", H11);
+const C11 = [
+  ["path", { d: "M16 12v4", key: "vf1vip" }],
+  [
+    "path",
+    {
+      d: "M16 6a2 2 0 0 1 1.414.586l4 4A2 2 0 0 1 22 12v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 .586-1.414l4-4A2 2 0 0 1 8 6z",
+      key: "1h1rvn"
+    }
+  ],
+  ["path", { d: "M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2", key: "1ksdt3" }],
+  ["path", { d: "M2 14h20", key: "myj16y" }],
+  ["path", { d: "M8 12v4", key: "1w4uao" }]
+], V11 = e("toolbox", C11);
+const R11 = [
   ["path", { d: "M10 15h4", key: "192ueg" }],
   [
     "path",
@@ -18845,45 +18868,32 @@ const H11 = [
       key: "1vaooh"
     }
   ]
-], S11 = e("tool-case", H11);
-const C11 = [
+], E11 = e("tool-case", R11);
+const L11 = [
   ["path", { d: "M21 4H3", key: "1hwok0" }],
   ["path", { d: "M18 8H6", key: "41n648" }],
   ["path", { d: "M19 12H9", key: "1g4lpz" }],
   ["path", { d: "M16 16h-6", key: "1j5d54" }],
   ["path", { d: "M11 20H9", key: "39obr8" }]
-], V11 = e("tornado", C11);
-const R11 = [
-  ["path", { d: "M16 12v4", key: "vf1vip" }],
-  [
-    "path",
-    {
-      d: "M16 6a2 2 0 0 1 1.414.586l4 4A2 2 0 0 1 22 12v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 .586-1.414l4-4A2 2 0 0 1 8 6z",
-      key: "1h1rvn"
-    }
-  ],
-  ["path", { d: "M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2", key: "1ksdt3" }],
-  ["path", { d: "M2 14h20", key: "myj16y" }],
-  ["path", { d: "M8 12v4", key: "1w4uao" }]
-], E11 = e("toolbox", R11);
-const L11 = [
+], P11 = e("tornado", L11);
+const T11 = [
   ["ellipse", { cx: "12", cy: "11", rx: "3", ry: "2", key: "1b2qxu" }],
   ["ellipse", { cx: "12", cy: "12.5", rx: "10", ry: "8.5", key: "h8emeu" }]
-], P11 = e("torus", L11);
-const T11 = [
+], O11 = e("torus", T11);
+const D11 = [
   ["path", { d: "M12 20v-6", key: "1rm09r" }],
   ["path", { d: "M19.656 14H22", key: "170xzr" }],
   ["path", { d: "M2 14h12", key: "d8icqz" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   ["path", { d: "M20 20H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2", key: "s23sx2" }],
   ["path", { d: "M9.656 4H20a2 2 0 0 1 2 2v10.344", key: "ovjcvl" }]
-], O11 = e("touchpad-off", T11);
-const D11 = [
+], I11 = e("touchpad-off", D11);
+const F11 = [
   ["rect", { width: "20", height: "16", x: "2", y: "4", rx: "2", key: "18n3k1" }],
   ["path", { d: "M2 14h20", key: "myj16y" }],
   ["path", { d: "M12 20v-6", key: "1rm09r" }]
-], I11 = e("touchpad", D11);
-const F11 = [
+], B11 = e("touchpad", F11);
+const U11 = [
   [
     "path",
     { d: "M18.2 12.27 20 6H4l1.8 6.27a1 1 0 0 0 .95.73h10.5a1 1 0 0 0 .96-.73Z", key: "1pledb" }
@@ -18894,13 +18904,13 @@ const F11 = [
   ["path", { d: "m15 6-1 7", key: "ls7zgu" }],
   ["path", { d: "M12 6V2", key: "1pj48d" }],
   ["path", { d: "M13 2h-2", key: "mj6ths" }]
-], B11 = e("tower-control", F11);
-const U11 = [
+], W11 = e("tower-control", U11);
+const Z11 = [
   ["rect", { width: "18", height: "12", x: "3", y: "8", rx: "1", key: "158fvp" }],
   ["path", { d: "M10 8V5c0-.6-.4-1-1-1H6a1 1 0 0 0-1 1v3", key: "s0042v" }],
   ["path", { d: "M19 8V5c0-.6-.4-1-1-1h-3a1 1 0 0 0-1 1v3", key: "9wmeh2" }]
-], W11 = e("toy-brick", U11);
-const Z11 = [
+], G11 = e("toy-brick", Z11);
+const X11 = [
   ["path", { d: "m10 11 11 .9a1 1 0 0 1 .8 1.1l-.665 4.158a1 1 0 0 1-.988.842H20", key: "she1j9" }],
   ["path", { d: "M16 18h-5", key: "bq60fd" }],
   ["path", { d: "M18 5a1 1 0 0 0-1 1v5.573", key: "1kv8ia" }],
@@ -18910,8 +18920,8 @@ const Z11 = [
   ["path", { d: "M8 10.1V4", key: "1jgyzo" }],
   ["circle", { cx: "18", cy: "18", r: "2", key: "1emm8v" }],
   ["circle", { cx: "7", cy: "15", r: "5", key: "ddtuc" }]
-], G11 = e("tractor", Z11);
-const X11 = [
+], Y11 = e("tractor", X11);
+const K11 = [
   ["path", { d: "M16.05 10.966a5 2.5 0 0 1-8.1 0", key: "m5jpwb" }],
   [
     "path",
@@ -18922,8 +18932,8 @@ const X11 = [
   ],
   ["path", { d: "M16.949 14.14a5 2.5 0 1 1-9.9 0L10.063 3.5a2 2 0 0 1 3.874 0z", key: "vap8c8" }],
   ["path", { d: "M9.194 6.57a5 2.5 0 0 0 5.61 0", key: "15hn5c" }]
-], Y11 = e("traffic-cone", X11);
-const K11 = [
+], Q11 = e("traffic-cone", K11);
+const J11 = [
   ["path", { d: "M2 22V12a10 10 0 1 1 20 0v10", key: "o0fyp0" }],
   ["path", { d: "M15 6.8v1.4a3 2.8 0 1 1-6 0V6.8", key: "m8q3n9" }],
   ["path", { d: "M10 15h.01", key: "44in9x" }],
@@ -18931,16 +18941,16 @@ const K11 = [
   ["path", { d: "M10 19a4 4 0 0 1-4-4v-3a6 6 0 1 1 12 0v3a4 4 0 0 1-4 4Z", key: "hckbmu" }],
   ["path", { d: "m9 19-2 3", key: "iij7hm" }],
   ["path", { d: "m15 19 2 3", key: "npx8sa" }]
-], Q11 = e("train-front-tunnel", K11);
-const J11 = [
+], ee1 = e("train-front-tunnel", J11);
+const te1 = [
   ["path", { d: "M8 3.1V7a4 4 0 0 0 8 0V3.1", key: "1v71zp" }],
   ["path", { d: "m9 15-1-1", key: "1yrq24" }],
   ["path", { d: "m15 15 1-1", key: "1t0d6s" }],
   ["path", { d: "M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z", key: "1p0hjs" }],
   ["path", { d: "m8 19-2 3", key: "13i0xs" }],
   ["path", { d: "m16 19 2 3", key: "xo31yx" }]
-], ee1 = e("train-front", J11);
-const te1 = [
+], ae1 = e("train-front", te1);
+const oe1 = [
   ["path", { d: "M2 17 17 2", key: "18b09t" }],
   ["path", { d: "m2 14 8 8", key: "1gv9hu" }],
   ["path", { d: "m5 11 8 8", key: "189pqp" }],
@@ -18948,8 +18958,8 @@ const te1 = [
   ["path", { d: "m11 5 8 8", key: "ummqn6" }],
   ["path", { d: "m14 2 8 8", key: "1vk7dn" }],
   ["path", { d: "M7 22 22 7", key: "15mb1i" }]
-], ae1 = e("train-track", te1);
-const oe1 = [
+], ne1 = e("train-track", oe1);
+const ce1 = [
   ["rect", { width: "16", height: "16", x: "4", y: "3", rx: "2", key: "1wxw4b" }],
   ["path", { d: "M4 11h16", key: "mpoxn0" }],
   ["path", { d: "M12 3v8", key: "1h2ygw" }],
@@ -18957,8 +18967,8 @@ const oe1 = [
   ["path", { d: "m18 22-2-3", key: "1p0ohu" }],
   ["path", { d: "M8 15h.01", key: "a7atzg" }],
   ["path", { d: "M16 15h.01", key: "rnfrdf" }]
-], ne1 = e("tram-front", oe1);
-const ce1 = [
+], re1 = e("tram-front", ce1);
+const he1 = [
   ["path", { d: "M12 16v6", key: "c8a4gj" }],
   ["path", { d: "M14 20h-4", key: "m8m19d" }],
   ["path", { d: "M18 2h4v4", key: "1341mj" }],
@@ -18967,20 +18977,20 @@ const ce1 = [
   ["path", { d: "m22 2-7.17 7.17", key: "1epvy4" }],
   ["path", { d: "M8 5 5 8", key: "mgbjhz" }],
   ["circle", { cx: "12", cy: "12", r: "4", key: "4exip2" }]
-], re1 = e("transgender", ce1);
-const he1 = [
+], de1 = e("transgender", he1);
+const ie1 = [
   ["path", { d: "M10 11v6", key: "nco0om" }],
   ["path", { d: "M14 11v6", key: "outv1u" }],
   ["path", { d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6", key: "miytrc" }],
   ["path", { d: "M3 6h18", key: "d0wm0j" }],
   ["path", { d: "M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2", key: "e791ji" }]
-], de1 = e("trash-2", he1);
-const ie1 = [
+], se1 = e("trash-2", ie1);
+const ye1 = [
   ["path", { d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6", key: "miytrc" }],
   ["path", { d: "M3 6h18", key: "d0wm0j" }],
   ["path", { d: "M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2", key: "e791ji" }]
-], se1 = e("trash", ie1);
-const ye1 = [
+], pe1 = e("trash", ye1);
+const ke1 = [
   [
     "path",
     {
@@ -18989,8 +18999,8 @@ const ye1 = [
     }
   ],
   ["path", { d: "M12 19v3", key: "npa21l" }]
-], pe1 = e("tree-deciduous", ye1);
-const ke1 = [
+], le1 = e("tree-deciduous", ke1);
+const ue1 = [
   ["path", { d: "M13 8c0-2.76-2.46-5-5.5-5S2 5.24 2 8h2l1-1 1 1h4", key: "foxbe7" }],
   [
     "path",
@@ -19004,8 +19014,8 @@ const ke1 = [
     }
   ],
   ["path", { d: "M11 15.5c.5 2.5-.17 4.5-1 6.5h4c2-5.5-.5-12-1-14", key: "ft0feo" }]
-], le1 = e("tree-palm", ke1);
-const ue1 = [
+], Me1 = e("tree-palm", ue1);
+const fe1 = [
   [
     "path",
     {
@@ -19014,8 +19024,8 @@ const ue1 = [
     }
   ],
   ["path", { d: "M12 22v-3", key: "kmzjlo" }]
-], Me1 = e("tree-pine", ue1);
-const fe1 = [
+], me1 = e("tree-pine", fe1);
+const ge1 = [
   ["path", { d: "M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z", key: "1l6gj6" }],
   ["path", { d: "M7 16v6", key: "1a82de" }],
   ["path", { d: "M13 19v3", key: "13sx9i" }],
@@ -19026,27 +19036,27 @@ const fe1 = [
       key: "1sj9kv"
     }
   ]
-], me1 = e("trees", fe1);
-const ge1 = [
+], ve1 = e("trees", ge1);
+const _e1 = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
   ["rect", { width: "3", height: "9", x: "7", y: "7", key: "14n3xi" }],
   ["rect", { width: "3", height: "5", x: "14", y: "7", key: "s4azjd" }]
-], ve1 = e("trello", ge1);
-const _e1 = [
+], xe1 = e("trello", _e1);
+const be1 = [
   ["path", { d: "M16 17h6v-6", key: "t6n2it" }],
   ["path", { d: "m22 17-8.5-8.5-5 5L2 7", key: "x473p" }]
-], xe1 = e("trending-down", _e1);
-const be1 = [
+], we1 = e("trending-down", be1);
+const Ne1 = [
   ["path", { d: "M14.828 14.828 21 21", key: "ar5fw7" }],
   ["path", { d: "M21 16v5h-5", key: "1ck2sf" }],
   ["path", { d: "m21 3-9 9-4-4-6 6", key: "1h02xo" }],
   ["path", { d: "M21 8V3h-5", key: "1qoq8a" }]
-], we1 = e("trending-up-down", be1);
-const Ne1 = [
+], $e1 = e("trending-up-down", Ne1);
+const ze1 = [
   ["path", { d: "M16 7h6v6", key: "box55l" }],
   ["path", { d: "m22 7-8.5 8.5-5-5L2 17", key: "1t1m79" }]
-], $e1 = e("trending-up", Ne1);
-const ze1 = [
+], je1 = e("trending-up", ze1);
+const qe1 = [
   [
     "path",
     {
@@ -19056,8 +19066,8 @@ const ze1 = [
   ],
   ["path", { d: "M12 9v4", key: "juzpu7" }],
   ["path", { d: "M12 17h.01", key: "p32p05" }]
-], je1 = e("triangle-alert", ze1);
-const qe1 = [
+], Ae1 = e("triangle-alert", qe1);
+const He1 = [
   ["path", { d: "M10.17 4.193a2 2 0 0 1 3.666.013", key: "pltmmw" }],
   ["path", { d: "M14 21h2", key: "v4qezv" }],
   ["path", { d: "m15.874 7.743 1 1.732", key: "10m0iw" }],
@@ -19067,8 +19077,8 @@ const qe1 = [
   ["path", { d: "m5.136 12.952-1 1.732", key: "1u4ldi" }],
   ["path", { d: "M8 21h2", key: "i9zjee" }],
   ["path", { d: "m8.102 7.743-1 1.732", key: "1zzo4u" }]
-], Ae1 = e("triangle-dashed", qe1);
-const He1 = [
+], Se1 = e("triangle-dashed", He1);
+const Ce1 = [
   [
     "path",
     {
@@ -19076,22 +19086,22 @@ const He1 = [
       key: "183wce"
     }
   ]
-], Se1 = e("triangle-right", He1);
-const Ce1 = [
+], Ve1 = e("triangle-right", Ce1);
+const Re1 = [
   [
     "path",
     { d: "M13.73 4a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z", key: "14u9p9" }
   ]
-], Ve1 = e("triangle", Ce1);
-const Re1 = [
+], Ee1 = e("triangle", Re1);
+const Le1 = [
   ["path", { d: "M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978", key: "1n3hpd" }],
   ["path", { d: "M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978", key: "rfe1zi" }],
   ["path", { d: "M18 9h1.5a1 1 0 0 0 0-5H18", key: "7xy6bh" }],
   ["path", { d: "M4 22h16", key: "57wxv0" }],
   ["path", { d: "M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z", key: "1mhfuq" }],
   ["path", { d: "M6 9H4.5a1 1 0 0 1 0-5H6", key: "tex48p" }]
-], Ee1 = e("trophy", Re1);
-const Le1 = [
+], Pe1 = e("trophy", Le1);
+const Te1 = [
   ["path", { d: "M14 19V7a2 2 0 0 0-2-2H9", key: "15peso" }],
   ["path", { d: "M15 19H9", key: "18q6dt" }],
   [
@@ -19108,8 +19118,8 @@ const Le1 = [
   ],
   ["circle", { cx: "17", cy: "19", r: "2", key: "1nxcgd" }],
   ["circle", { cx: "7", cy: "19", r: "2", key: "gzo7y7" }]
-], Pe1 = e("truck-electric", Le1);
-const Te1 = [
+], Oe1 = e("truck-electric", Te1);
+const De1 = [
   ["path", { d: "M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2", key: "wrbu53" }],
   ["path", { d: "M15 18H9", key: "1lyqi6" }],
   [
@@ -19121,19 +19131,19 @@ const Te1 = [
   ],
   ["circle", { cx: "17", cy: "18", r: "2", key: "332jqn" }],
   ["circle", { cx: "7", cy: "18", r: "2", key: "19iecd" }]
-], Oe1 = e("truck", Te1);
-const De1 = [
+], Ie1 = e("truck", De1);
+const Fe1 = [
   ["path", { d: "M15 4 5 9", key: "14bkc9" }],
   ["path", { d: "m15 8.5-10 5", key: "1grtsx" }],
   ["path", { d: "M18 12a9 9 0 0 1-9 9V3", key: "1sst7f" }]
-], Ie1 = e("turkish-lira", De1);
-const Fe1 = [
+], Be1 = e("turkish-lira", Fe1);
+const Ue1 = [
   ["path", { d: "M10 12.01h.01", key: "7rp0yl" }],
   ["path", { d: "M18 8v4a8 8 0 0 1-1.07 4", key: "1st48v" }],
   ["circle", { cx: "10", cy: "12", r: "4", key: "19levz" }],
   ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
-], Be1 = e("turntable", Fe1);
-const Ue1 = [
+], We1 = e("turntable", Ue1);
+const Ze1 = [
   [
     "path",
     {
@@ -19144,8 +19154,8 @@ const Ue1 = [
   ["path", { d: "M4.82 7.9 8 10", key: "m9wose" }],
   ["path", { d: "M15.18 7.9 12 10", key: "p8dp2u" }],
   ["path", { d: "M16.93 10H20a2 2 0 0 1 0 4H2", key: "12nsm7" }]
-], We1 = e("turtle", Ue1);
-const Ze1 = [
+], Ge1 = e("turtle", Ze1);
+const Xe1 = [
   [
     "path",
     {
@@ -19155,27 +19165,18 @@ const Ze1 = [
   ],
   ["path", { d: "M7 21h10", key: "1b0cd5" }],
   ["rect", { width: "20", height: "14", x: "2", y: "3", rx: "2", key: "48i651" }]
-], Ge1 = e("tv-minimal-play", Ze1);
-const Xe1 = [
+], Ye1 = e("tv-minimal-play", Xe1);
+const Ke1 = [
   ["path", { d: "M7 21h10", key: "1b0cd5" }],
   ["rect", { width: "20", height: "14", x: "2", y: "3", rx: "2", key: "48i651" }]
-], Ye1 = e("tv-minimal", Xe1);
-const Ke1 = [
+], Qe1 = e("tv-minimal", Ke1);
+const Je1 = [
   ["path", { d: "m17 2-5 5-5-5", key: "16satq" }],
   ["rect", { width: "20", height: "15", x: "2", y: "7", rx: "2", key: "1e6viu" }]
-], Qe1 = e("tv", Ke1);
-const Je1 = [
-  ["path", { d: "M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7", key: "c0yzno" }]
-], e21 = e("twitch", Je1);
+], e21 = e("tv", Je1);
 const t21 = [
-  [
-    "path",
-    {
-      d: "M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z",
-      key: "pff0z6"
-    }
-  ]
-], a21 = e("twitter", t21);
+  ["path", { d: "M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7", key: "c0yzno" }]
+], a21 = e("twitch", t21);
 const o21 = [
   ["path", { d: "M12 4v16", key: "1654pz" }],
   ["path", { d: "M4 7V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2", key: "e0r10z" }],
@@ -19185,12 +19186,21 @@ const c21 = [
   [
     "path",
     {
+      d: "M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z",
+      key: "pff0z6"
+    }
+  ]
+], r21 = e("twitter", c21);
+const h21 = [
+  [
+    "path",
+    {
       d: "M14 16.5a.5.5 0 0 0 .5.5h.5a2 2 0 0 1 0 4H9a2 2 0 0 1 0-4h.5a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V8a2 2 0 0 1-4 0V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5Z",
       key: "1reda3"
     }
   ]
-], r21 = e("type-outline", c21);
-const h21 = [
+], d21 = e("type-outline", h21);
+const i21 = [
   ["path", { d: "M12 13v7a2 2 0 0 0 4 0", key: "rpgb42" }],
   ["path", { d: "M12 2v2", key: "tus03m" }],
   [
@@ -19199,8 +19209,8 @@ const h21 = [
   ],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
   ["path", { d: "M5.961 5.957a10.28 10.28 0 0 0-3.922 5.769A1 1 0 0 0 3 13h10", key: "5sfalc" }]
-], d21 = e("umbrella-off", h21);
-const i21 = [
+], s21 = e("umbrella-off", i21);
+const y21 = [
   ["path", { d: "M12 13v7a2 2 0 0 0 4 0", key: "rpgb42" }],
   ["path", { d: "M12 2v2", key: "tus03m" }],
   [
@@ -19210,25 +19220,25 @@ const i21 = [
       key: "124nyo"
     }
   ]
-], s21 = e("umbrella", i21);
-const y21 = [
+], p21 = e("umbrella", y21);
+const k21 = [
   ["path", { d: "M6 4v6a6 6 0 0 0 12 0V4", key: "9kb039" }],
   ["line", { x1: "4", x2: "20", y1: "20", y2: "20", key: "nun2al" }]
-], p21 = e("underline", y21);
-const k21 = [
+], l21 = e("underline", k21);
+const u21 = [
   ["path", { d: "M9 14 4 9l5-5", key: "102s5s" }],
   ["path", { d: "M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11", key: "f3b9sd" }]
-], l21 = e("undo-2", k21);
-const u21 = [
+], M21 = e("undo-2", u21);
+const f21 = [
   ["path", { d: "M21 17a9 9 0 0 0-15-6.7L3 13", key: "8mp6z9" }],
   ["path", { d: "M3 7v6h6", key: "1v2h90" }],
   ["circle", { cx: "12", cy: "17", r: "1", key: "1ixnty" }]
-], M21 = e("undo-dot", u21);
-const f21 = [
+], m21 = e("undo-dot", f21);
+const g21 = [
   ["path", { d: "M3 7v6h6", key: "1v2h90" }],
   ["path", { d: "M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13", key: "1r6uu6" }]
-], m21 = e("undo", f21);
-const g21 = [
+], v21 = e("undo", g21);
+const _21 = [
   ["path", { d: "M16 12h6", key: "15xry1" }],
   ["path", { d: "M8 12H2", key: "1jqql6" }],
   ["path", { d: "M12 2v2", key: "tus03m" }],
@@ -19237,8 +19247,8 @@ const g21 = [
   ["path", { d: "M12 20v2", key: "1lh1kg" }],
   ["path", { d: "m19 15 3-3-3-3", key: "wjy7rq" }],
   ["path", { d: "m5 9-3 3 3 3", key: "j64kie" }]
-], v21 = e("unfold-horizontal", g21);
-const _21 = [
+], x21 = e("unfold-horizontal", _21);
+const b21 = [
   ["path", { d: "M12 22v-6", key: "6o8u61" }],
   ["path", { d: "M12 8V2", key: "1wkif3" }],
   ["path", { d: "M4 12H2", key: "rhcxmi" }],
@@ -19247,26 +19257,11 @@ const _21 = [
   ["path", { d: "M22 12h-2", key: "14jgyd" }],
   ["path", { d: "m15 19-3 3-3-3", key: "11eu04" }],
   ["path", { d: "m15 5-3-3-3 3", key: "itvq4r" }]
-], x21 = e("unfold-vertical", _21);
-const b21 = [
+], w21 = e("unfold-vertical", b21);
+const N21 = [
   ["rect", { width: "8", height: "6", x: "5", y: "4", rx: "1", key: "nzclkv" }],
   ["rect", { width: "8", height: "6", x: "11", y: "14", rx: "1", key: "4tytwb" }]
-], w21 = e("ungroup", b21);
-const N21 = [
-  ["path", { d: "M14 21v-3a2 2 0 0 0-4 0v3", key: "1rgiei" }],
-  ["path", { d: "M18 12h.01", key: "yjnet6" }],
-  ["path", { d: "M18 16h.01", key: "plv8zi" }],
-  [
-    "path",
-    {
-      d: "M22 7a1 1 0 0 0-1-1h-2a2 2 0 0 1-1.143-.359L13.143 2.36a2 2 0 0 0-2.286-.001L6.143 5.64A2 2 0 0 1 5 6H3a1 1 0 0 0-1 1v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2z",
-      key: "1ogmi3"
-    }
-  ],
-  ["path", { d: "M6 12h.01", key: "c2rlol" }],
-  ["path", { d: "M6 16h.01", key: "1pmjb7" }],
-  ["circle", { cx: "12", cy: "10", r: "2", key: "1yojzk" }]
-], $21 = e("university", N21);
+], $21 = e("ungroup", N21);
 const z21 = [
   ["path", { d: "M15 7h2a5 5 0 0 1 0 10h-2m-6 0H7A5 5 0 0 1 7 7h2", key: "1re2ne" }]
 ], j21 = e("unlink-2", z21);
@@ -19291,6 +19286,21 @@ const q21 = [
   ["line", { x1: "19", x2: "22", y1: "16", y2: "16", key: "ox905f" }]
 ], A21 = e("unlink", q21);
 const H21 = [
+  ["path", { d: "M14 21v-3a2 2 0 0 0-4 0v3", key: "1rgiei" }],
+  ["path", { d: "M18 12h.01", key: "yjnet6" }],
+  ["path", { d: "M18 16h.01", key: "plv8zi" }],
+  [
+    "path",
+    {
+      d: "M22 7a1 1 0 0 0-1-1h-2a2 2 0 0 1-1.143-.359L13.143 2.36a2 2 0 0 0-2.286-.001L6.143 5.64A2 2 0 0 1 5 6H3a1 1 0 0 0-1 1v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2z",
+      key: "1ogmi3"
+    }
+  ],
+  ["path", { d: "M6 12h.01", key: "c2rlol" }],
+  ["path", { d: "M6 16h.01", key: "1pmjb7" }],
+  ["circle", { cx: "12", cy: "10", r: "2", key: "1yojzk" }]
+], S21 = e("university", H21);
+const C21 = [
   ["path", { d: "m19 5 3-3", key: "yk6iyv" }],
   ["path", { d: "m2 22 3-3", key: "19mgm9" }],
   [
@@ -19303,12 +19313,7 @@ const H21 = [
     "path",
     { d: "m12 6 6 6 2.3-2.3a2.4 2.4 0 0 0 0-3.4l-2.6-2.6a2.4 2.4 0 0 0-3.4 0Z", key: "1snsnr" }
   ]
-], S21 = e("unplug", H21);
-const C21 = [
-  ["path", { d: "M12 3v12", key: "1x0j5s" }],
-  ["path", { d: "m17 8-5-5-5 5", key: "7q97r8" }],
-  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }]
-], V21 = e("upload", C21);
+], V21 = e("unplug", C21);
 const R21 = [
   ["circle", { cx: "10", cy: "7", r: "1", key: "dypaad" }],
   ["circle", { cx: "4", cy: "20", r: "1", key: "22iqad" }],
@@ -19319,11 +19324,16 @@ const R21 = [
   ["path", { d: "m18 12 1-1 1 1-1 1Z", key: "1bh22v" }]
 ], E21 = e("usb", R21);
 const L21 = [
+  ["path", { d: "M12 3v12", key: "1x0j5s" }],
+  ["path", { d: "m17 8-5-5-5 5", key: "7q97r8" }],
+  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }]
+], P21 = e("upload", L21);
+const T21 = [
   ["path", { d: "m16 11 2 2 4-4", key: "9rsbq5" }],
   ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
   ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }]
-], P21 = e("user-check", L21);
-const T21 = [
+], O21 = e("user-check", T21);
+const D21 = [
   ["path", { d: "M10 15H6a4 4 0 0 0-4 4v2", key: "1nfge6" }],
   ["path", { d: "m14.305 16.53.923-.382", key: "1itpsq" }],
   ["path", { d: "m15.228 13.852-.923-.383", key: "eplpkm" }],
@@ -19335,19 +19345,26 @@ const T21 = [
   ["path", { d: "m20.772 16.148.924.383", key: "1g6xey" }],
   ["circle", { cx: "18", cy: "15", r: "3", key: "gjjjvw" }],
   ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }]
-], O21 = e("user-cog", T21);
-const D21 = [
-  ["circle", { cx: "10", cy: "7", r: "4", key: "e45bow" }],
-  ["path", { d: "M10.3 15H7a4 4 0 0 0-4 4v2", key: "3bnktk" }],
-  ["path", { d: "M15 15.5V14a2 2 0 0 1 4 0v1.5", key: "12ym5i" }],
-  ["rect", { width: "8", height: "5", x: "13", y: "16", rx: ".899", key: "4p176n" }]
-], I21 = e("user-lock", D21);
+], I21 = e("user-cog", D21);
 const F21 = [
+  ["path", { d: "M20 11v6", key: "d77pzp" }],
+  ["path", { d: "M20 13h2", key: "16rner" }],
+  ["path", { d: "M3 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 2.072.578", key: "1yxgtw" }],
+  ["circle", { cx: "10", cy: "7", r: "4", key: "e45bow" }],
+  ["circle", { cx: "20", cy: "19", r: "2", key: "1obnsp" }]
+], B21 = e("user-key", F21);
+const U21 = [
+  ["path", { d: "M19 16v-2a2 2 0 0 0-4 0v2", key: "17sujf" }],
+  ["path", { d: "M9.5 15H7a4 4 0 0 0-4 4v2", key: "9it25y" }],
+  ["circle", { cx: "10", cy: "7", r: "4", key: "e45bow" }],
+  ["rect", { x: "13", y: "16", width: "8", height: "5", rx: ".899", key: "ur80nz" }]
+], W21 = e("user-lock", U21);
+const Z21 = [
   ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
   ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }],
   ["line", { x1: "22", x2: "16", y1: "11", y2: "11", key: "1shjgl" }]
-], B21 = e("user-minus", F21);
-const U21 = [
+], G21 = e("user-minus", Z21);
+const X21 = [
   ["path", { d: "M11.5 15H7a4 4 0 0 0-4 4v2", key: "15lzij" }],
   [
     "path",
@@ -19357,19 +19374,19 @@ const U21 = [
     }
   ],
   ["circle", { cx: "10", cy: "7", r: "4", key: "e45bow" }]
-], W21 = e("user-pen", U21);
-const Z21 = [
+], Y21 = e("user-pen", X21);
+const K21 = [
   ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
   ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }],
   ["line", { x1: "19", x2: "19", y1: "8", y2: "14", key: "1bvyxn" }],
   ["line", { x1: "22", x2: "16", y1: "11", y2: "11", key: "1shjgl" }]
-], G21 = e("user-plus", Z21);
-const X21 = [
+], Q21 = e("user-plus", K21);
+const J21 = [
   ["path", { d: "M2 21a8 8 0 0 1 13.292-6", key: "bjp14o" }],
   ["circle", { cx: "10", cy: "8", r: "5", key: "o932ke" }],
   ["path", { d: "m16 19 2 2 4-4", key: "1b14m6" }]
-], Y21 = e("user-round-check", X21);
-const K21 = [
+], et1 = e("user-round-check", J21);
+const tt1 = [
   ["path", { d: "m14.305 19.53.923-.382", key: "3m78fa" }],
   ["path", { d: "m15.228 16.852-.923-.383", key: "npixar" }],
   ["path", { d: "m16.852 15.228-.383-.923", key: "5xggr7" }],
@@ -19381,13 +19398,20 @@ const K21 = [
   ["path", { d: "m20.772 19.148.924.383", key: "9w9pjp" }],
   ["circle", { cx: "10", cy: "8", r: "5", key: "o932ke" }],
   ["circle", { cx: "18", cy: "18", r: "3", key: "1xkwt0" }]
-], Q21 = e("user-round-cog", K21);
-const J21 = [
+], at1 = e("user-round-cog", tt1);
+const ot1 = [
+  ["path", { d: "M19 11v6", key: "rcqigv" }],
+  ["path", { d: "M19 13h2", key: "1gch44" }],
+  ["path", { d: "M2 21a8 8 0 0 1 12.868-6.349", key: "1lryzn" }],
+  ["circle", { cx: "10", cy: "8", r: "5", key: "o932ke" }],
+  ["circle", { cx: "19", cy: "19", r: "2", key: "17f5cg" }]
+], nt1 = e("user-round-key", ot1);
+const ct1 = [
   ["path", { d: "M2 21a8 8 0 0 1 13.292-6", key: "bjp14o" }],
   ["circle", { cx: "10", cy: "8", r: "5", key: "o932ke" }],
   ["path", { d: "M22 19h-6", key: "vcuq98" }]
-], et1 = e("user-round-minus", J21);
-const tt1 = [
+], rt1 = e("user-round-minus", ct1);
+const ht1 = [
   ["path", { d: "M2 21a8 8 0 0 1 10.821-7.487", key: "1c8h7z" }],
   [
     "path",
@@ -19397,36 +19421,36 @@ const tt1 = [
     }
   ],
   ["circle", { cx: "10", cy: "8", r: "5", key: "o932ke" }]
-], at1 = e("user-round-pen", tt1);
-const ot1 = [
+], dt1 = e("user-round-pen", ht1);
+const it1 = [
   ["path", { d: "M2 21a8 8 0 0 1 13.292-6", key: "bjp14o" }],
   ["circle", { cx: "10", cy: "8", r: "5", key: "o932ke" }],
   ["path", { d: "M19 16v6", key: "tddt3s" }],
   ["path", { d: "M22 19h-6", key: "vcuq98" }]
-], nt1 = e("user-round-plus", ot1);
-const ct1 = [
+], st1 = e("user-round-plus", it1);
+const yt1 = [
   ["circle", { cx: "10", cy: "8", r: "5", key: "o932ke" }],
   ["path", { d: "M2 21a8 8 0 0 1 10.434-7.62", key: "1yezr2" }],
   ["circle", { cx: "18", cy: "18", r: "3", key: "1xkwt0" }],
   ["path", { d: "m22 22-1.9-1.9", key: "1e5ubv" }]
-], rt1 = e("user-round-search", ct1);
-const ht1 = [
+], pt1 = e("user-round-search", yt1);
+const kt1 = [
   ["path", { d: "M2 21a8 8 0 0 1 11.873-7", key: "74fkxq" }],
   ["circle", { cx: "10", cy: "8", r: "5", key: "o932ke" }],
   ["path", { d: "m17 17 5 5", key: "p7ous7" }],
   ["path", { d: "m22 17-5 5", key: "gqnmv0" }]
-], dt1 = e("user-round-x", ht1);
-const it1 = [
+], lt1 = e("user-round-x", kt1);
+const ut1 = [
   ["circle", { cx: "12", cy: "8", r: "5", key: "1hypcn" }],
   ["path", { d: "M20 21a8 8 0 0 0-16 0", key: "rfgkzh" }]
-], st1 = e("user-round", it1);
-const yt1 = [
+], Mt1 = e("user-round", ut1);
+const ft1 = [
   ["circle", { cx: "10", cy: "7", r: "4", key: "e45bow" }],
   ["path", { d: "M10.3 15H7a4 4 0 0 0-4 4v2", key: "3bnktk" }],
   ["circle", { cx: "17", cy: "17", r: "3", key: "18b49y" }],
   ["path", { d: "m21 21-1.9-1.9", key: "1g2n9r" }]
-], pt1 = e("user-search", yt1);
-const kt1 = [
+], mt1 = e("user-search", ft1);
+const gt1 = [
   [
     "path",
     {
@@ -19436,23 +19460,29 @@ const kt1 = [
   ],
   ["path", { d: "M8 15H7a4 4 0 0 0-4 4v2", key: "l9tmp8" }],
   ["circle", { cx: "10", cy: "7", r: "4", key: "e45bow" }]
-], lt1 = e("user-star", kt1);
-const ut1 = [
+], vt1 = e("user-star", gt1);
+const _t1 = [
   ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
   ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }],
   ["line", { x1: "17", x2: "22", y1: "8", y2: "13", key: "3nzzx3" }],
   ["line", { x1: "22", x2: "17", y1: "8", y2: "13", key: "1swrse" }]
-], Mt1 = e("user-x", ut1);
-const ft1 = [
+], xt1 = e("user-x", _t1);
+const bt1 = [
   ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
   ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
-], mt1 = e("user", ft1);
-const gt1 = [
+], wt1 = e("user", bt1);
+const Nt1 = [
   ["path", { d: "M18 21a8 8 0 0 0-16 0", key: "3ypg7q" }],
   ["circle", { cx: "10", cy: "8", r: "5", key: "o932ke" }],
   ["path", { d: "M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3", key: "10s06x" }]
-], vt1 = e("users-round", gt1);
-const _t1 = [
+], $t1 = e("users-round", Nt1);
+const zt1 = [
+  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
+  ["path", { d: "M16 3.128a4 4 0 0 1 0 7.744", key: "16gr8j" }],
+  ["path", { d: "M22 21v-2a4 4 0 0 0-3-3.87", key: "kshegd" }],
+  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }]
+], jt1 = e("users", zt1);
+const qt1 = [
   ["path", { d: "m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8", key: "n7qcjb" }],
   [
     "path",
@@ -19460,19 +19490,13 @@ const _t1 = [
   ],
   ["path", { d: "m2.1 21.8 6.4-6.3", key: "yn04lh" }],
   ["path", { d: "m19 5-7 7", key: "194lzd" }]
-], xt1 = e("utensils-crossed", _t1);
-const bt1 = [
-  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
-  ["path", { d: "M16 3.128a4 4 0 0 1 0 7.744", key: "16gr8j" }],
-  ["path", { d: "M22 21v-2a4 4 0 0 0-3-3.87", key: "kshegd" }],
-  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }]
-], wt1 = e("users", bt1);
-const Nt1 = [
+], At1 = e("utensils-crossed", qt1);
+const Ht1 = [
   ["path", { d: "M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2", key: "cjf0a3" }],
   ["path", { d: "M7 2v20", key: "1473qp" }],
   ["path", { d: "M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7", key: "j28e5" }]
-], $t1 = e("utensils", Nt1);
-const zt1 = [
+], St1 = e("utensils", Ht1);
+const Ct1 = [
   ["path", { d: "M12 2v20", key: "t6zp3m" }],
   ["path", { d: "M2 5h20", key: "1fs1ex" }],
   ["path", { d: "M3 3v2", key: "9imdir" }],
@@ -19480,8 +19504,8 @@ const zt1 = [
   ["path", { d: "M17 3v2", key: "1l2re6" }],
   ["path", { d: "M21 3v2", key: "1duuac" }],
   ["path", { d: "m19 5-7 7-7-7", key: "133zxf" }]
-], jt1 = e("utility-pole", zt1);
-const qt1 = [
+], Vt1 = e("utility-pole", Ct1);
+const Rt1 = [
   [
     "path",
     {
@@ -19496,14 +19520,14 @@ const qt1 = [
   ["path", { d: "M9 18h5", key: "lrx6i" }],
   ["circle", { cx: "16", cy: "18", r: "2", key: "1v4tcr" }],
   ["circle", { cx: "7", cy: "18", r: "2", key: "19iecd" }]
-], At1 = e("van", qt1);
-const Ht1 = [
+], Et1 = e("van", Rt1);
+const Lt1 = [
   ["path", { d: "M8 21s-4-3-4-9 4-9 4-9", key: "uto9ud" }],
   ["path", { d: "M16 3s4 3 4 9-4 9-4 9", key: "4w2vsq" }],
   ["line", { x1: "15", x2: "9", y1: "9", y2: "15", key: "f7djnv" }],
   ["line", { x1: "9", x2: "15", y1: "9", y2: "15", key: "1shsy8" }]
-], St1 = e("variable", Ht1);
-const Ct1 = [
+], Pt1 = e("variable", Lt1);
+const Tt1 = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["circle", { cx: "7.5", cy: "7.5", r: ".5", fill: "currentColor", key: "kqv944" }],
   ["path", { d: "m7.9 7.9 2.7 2.7", key: "hpeyl3" }],
@@ -19514,8 +19538,8 @@ const Ct1 = [
   ["circle", { cx: "16.5", cy: "16.5", r: ".5", fill: "currentColor", key: "fubopw" }],
   ["path", { d: "m13.4 13.4 2.7 2.7", key: "abhel3" }],
   ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }]
-], Vt1 = e("vault", Ct1);
-const Rt1 = [
+], Ot1 = e("vault", Tt1);
+const Dt1 = [
   ["path", { d: "M19.5 7a24 24 0 0 1 0 10", key: "8n60xe" }],
   ["path", { d: "M4.5 7a24 24 0 0 0 0 10", key: "2lmadr" }],
   ["path", { d: "M7 19.5a24 24 0 0 0 10 0", key: "1q94o2" }],
@@ -19524,13 +19548,13 @@ const Rt1 = [
   ["rect", { x: "17", y: "2", width: "5", height: "5", rx: "1", key: "1e7h5j" }],
   ["rect", { x: "2", y: "17", width: "5", height: "5", rx: "1", key: "1t4eah" }],
   ["rect", { x: "2", y: "2", width: "5", height: "5", rx: "1", key: "940dhs" }]
-], Et1 = e("vector-square", Rt1);
-const Lt1 = [
+], It1 = e("vector-square", Dt1);
+const Ft1 = [
   ["path", { d: "M16 8q6 0 6-6-6 0-6 6", key: "qsyyc4" }],
   ["path", { d: "M17.41 3.59a10 10 0 1 0 3 3", key: "41m9h7" }],
   ["path", { d: "M2 2a26.6 26.6 0 0 1 10 20c.9-6.82 1.5-9.5 4-14", key: "qiv7li" }]
-], Pt1 = e("vegan", Lt1);
-const Tt1 = [
+], Bt1 = e("vegan", Ft1);
+const Ut1 = [
   ["path", { d: "M18 11c-1.5 0-2.5.5-3 2", key: "1fod00" }],
   [
     "path",
@@ -19540,47 +19564,40 @@ const Tt1 = [
     }
   ],
   ["path", { d: "M6 11c1.5 0 2.5.5 3 2", key: "136fht" }]
-], Ot1 = e("venetian-mask", Tt1);
-const Dt1 = [
+], Wt1 = e("venetian-mask", Ut1);
+const Zt1 = [
   ["path", { d: "M10 20h4", key: "ni2waw" }],
   ["path", { d: "M12 16v6", key: "c8a4gj" }],
   ["path", { d: "M17 2h4v4", key: "vhe59" }],
   ["path", { d: "m21 2-5.46 5.46", key: "19kypf" }],
   ["circle", { cx: "12", cy: "11", r: "5", key: "16gxyc" }]
-], It1 = e("venus-and-mars", Dt1);
-const Ft1 = [
+], Gt1 = e("venus-and-mars", Zt1);
+const Xt1 = [
   ["path", { d: "M12 15v7", key: "t2xh3l" }],
   ["path", { d: "M9 19h6", key: "456am0" }],
   ["circle", { cx: "12", cy: "9", r: "6", key: "1nw4tq" }]
-], Bt1 = e("venus", Ft1);
-const Ut1 = [
+], Yt1 = e("venus", Xt1);
+const Kt1 = [
   ["path", { d: "m2 8 2 2-2 2 2 2-2 2", key: "sv1b1" }],
   ["path", { d: "m22 8-2 2 2 2-2 2 2 2", key: "101i4y" }],
   ["path", { d: "M8 8v10c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2", key: "1hbad5" }],
   ["path", { d: "M16 10.34V6c0-.55-.45-1-1-1h-4.34", key: "1x5tf0" }],
   ["line", { x1: "2", x2: "22", y1: "2", y2: "22", key: "a6p6uj" }]
-], Wt1 = e("vibrate-off", Ut1);
-const Zt1 = [
+], Qt1 = e("vibrate-off", Kt1);
+const Jt1 = [
   ["path", { d: "m2 8 2 2-2 2 2 2-2 2", key: "sv1b1" }],
   ["path", { d: "m22 8-2 2 2 2-2 2 2 2", key: "101i4y" }],
   ["rect", { width: "8", height: "14", x: "8", y: "5", rx: "1", key: "1oyrl4" }]
-], Gt1 = e("vibrate", Zt1);
-const Xt1 = [
+], e01 = e("vibrate", Jt1);
+const t01 = [
   [
     "path",
     { d: "M10.66 6H14a2 2 0 0 1 2 2v2.5l5.248-3.062A.5.5 0 0 1 22 7.87v8.196", key: "w8jjjt" }
   ],
   ["path", { d: "M16 16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2", key: "1xawa7" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
-], Yt1 = e("video-off", Xt1);
-const Kt1 = [
-  ["rect", { width: "20", height: "16", x: "2", y: "4", rx: "2", key: "18n3k1" }],
-  ["path", { d: "M2 8h20", key: "d11cs7" }],
-  ["circle", { cx: "8", cy: "14", r: "2", key: "1k2qr5" }],
-  ["path", { d: "M8 12h8", key: "1wcyev" }],
-  ["circle", { cx: "16", cy: "14", r: "2", key: "14k7lr" }]
-], Qt1 = e("videotape", Kt1);
-const Jt1 = [
+], a01 = e("video-off", t01);
+const o01 = [
   [
     "path",
     {
@@ -19589,8 +19606,15 @@ const Jt1 = [
     }
   ],
   ["rect", { x: "2", y: "6", width: "14", height: "12", rx: "2", key: "158x01" }]
-], e01 = e("video", Jt1);
-const t01 = [
+], n01 = e("video", o01);
+const c01 = [
+  ["rect", { width: "20", height: "16", x: "2", y: "4", rx: "2", key: "18n3k1" }],
+  ["path", { d: "M2 8h20", key: "d11cs7" }],
+  ["circle", { cx: "8", cy: "14", r: "2", key: "1k2qr5" }],
+  ["path", { d: "M8 12h8", key: "1wcyev" }],
+  ["circle", { cx: "16", cy: "14", r: "2", key: "14k7lr" }]
+], r01 = e("videotape", c01);
+const h01 = [
   ["path", { d: "M21 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2", key: "mrq65r" }],
   ["path", { d: "M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2", key: "be3xqs" }],
   ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }],
@@ -19601,21 +19625,21 @@ const t01 = [
       key: "11ak4c"
     }
   ]
-], a01 = e("view", t01);
-const o01 = [
+], d01 = e("view", h01);
+const i01 = [
   ["circle", { cx: "6", cy: "12", r: "4", key: "1ehtga" }],
   ["circle", { cx: "18", cy: "12", r: "4", key: "4vafl8" }],
   ["line", { x1: "6", x2: "18", y1: "16", y2: "16", key: "pmt8us" }]
-], n01 = e("voicemail", o01);
-const c01 = [
+], s01 = e("voicemail", i01);
+const y01 = [
   ["path", { d: "M11.1 7.1a16.55 16.55 0 0 1 10.9 4", key: "2880wi" }],
   ["path", { d: "M12 12a12.6 12.6 0 0 1-8.7 5", key: "113sja" }],
   ["path", { d: "M16.8 13.6a16.55 16.55 0 0 1-9 7.5", key: "1qmsgl" }],
   ["path", { d: "M20.7 17a12.8 12.8 0 0 0-8.7-5 13.3 13.3 0 0 1 0-10", key: "1bmeqp" }],
   ["path", { d: "M6.3 3.8a16.55 16.55 0 0 0 1.9 11.5", key: "iekzv9" }],
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
-], r01 = e("volleyball", c01);
-const h01 = [
+], p01 = e("volleyball", y01);
+const k01 = [
   [
     "path",
     {
@@ -19624,8 +19648,8 @@ const h01 = [
     }
   ],
   ["path", { d: "M16 9a5 5 0 0 1 0 6", key: "1q6k2b" }]
-], d01 = e("volume-1", h01);
-const i01 = [
+], l01 = e("volume-1", k01);
+const u01 = [
   [
     "path",
     {
@@ -19635,8 +19659,8 @@ const i01 = [
   ],
   ["path", { d: "M16 9a5 5 0 0 1 0 6", key: "1q6k2b" }],
   ["path", { d: "M19.364 18.364a9 9 0 0 0 0-12.728", key: "ijwkga" }]
-], s01 = e("volume-2", i01);
-const y01 = [
+], M01 = e("volume-2", u01);
+const f01 = [
   ["path", { d: "M16 9a5 5 0 0 1 .95 2.293", key: "1fgyg8" }],
   ["path", { d: "M19.364 5.636a9 9 0 0 1 1.889 9.96", key: "l3zxae" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }],
@@ -19648,8 +19672,8 @@ const y01 = [
     }
   ],
   ["path", { d: "M9.828 4.172A.686.686 0 0 1 11 4.657v.686", key: "s2je0y" }]
-], p01 = e("volume-off", y01);
-const k01 = [
+], m01 = e("volume-off", f01);
+const g01 = [
   [
     "path",
     {
@@ -19659,8 +19683,8 @@ const k01 = [
   ],
   ["line", { x1: "22", x2: "16", y1: "9", y2: "15", key: "1ewh16" }],
   ["line", { x1: "16", x2: "22", y1: "9", y2: "15", key: "5ykzw1" }]
-], l01 = e("volume-x", k01);
-const u01 = [
+], v01 = e("volume-x", g01);
+const _01 = [
   [
     "path",
     {
@@ -19668,13 +19692,13 @@ const u01 = [
       key: "uqj9uw"
     }
   ]
-], M01 = e("volume", u01);
-const f01 = [
+], x01 = e("volume", _01);
+const b01 = [
   ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }],
   ["path", { d: "M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z", key: "1ezoue" }],
   ["path", { d: "M22 19H2", key: "nuriw5" }]
-], m01 = e("vote", f01);
-const g01 = [
+], w01 = e("vote", b01);
+const N01 = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2", key: "4125el" }],
   [
@@ -19684,8 +19708,8 @@ const g01 = [
       key: "1dpki6"
     }
   ]
-], v01 = e("wallet-cards", g01);
-const _01 = [
+], $01 = e("wallet-cards", N01);
+const z01 = [
   ["path", { d: "M17 14h.01", key: "7oqj8z" }],
   [
     "path",
@@ -19694,8 +19718,8 @@ const _01 = [
       key: "u1rqew"
     }
   ]
-], x01 = e("wallet-minimal", _01);
-const b01 = [
+], j01 = e("wallet-minimal", z01);
+const q01 = [
   [
     "path",
     {
@@ -19704,15 +19728,15 @@ const b01 = [
     }
   ],
   ["path", { d: "M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4", key: "xoc0q4" }]
-], w01 = e("wallet", b01);
-const N01 = [
+], A01 = e("wallet", q01);
+const H01 = [
   ["path", { d: "M12 17v4", key: "1riwvh" }],
   ["path", { d: "M8 21h8", key: "1ev6f3" }],
   ["path", { d: "m9 17 6.1-6.1a2 2 0 0 1 2.81.01L22 15", key: "1sl52q" }],
   ["circle", { cx: "8", cy: "9", r: "2", key: "gjzl9d" }],
   ["rect", { x: "2", y: "3", width: "20", height: "14", rx: "2", key: "x3v2xh" }]
-], $01 = e("wallpaper", N01);
-const z01 = [
+], S01 = e("wallpaper", H01);
+const C01 = [
   [
     "path",
     {
@@ -19727,8 +19751,8 @@ const z01 = [
   ["path", { d: "M7 8H3", key: "zfb6yr" }],
   ["path", { d: "M21 16h-4", key: "1cnmox" }],
   ["path", { d: "M11 3H9", key: "1obp7u" }]
-], j01 = e("wand-sparkles", z01);
-const q01 = [
+], V01 = e("wand-sparkles", C01);
+const R01 = [
   ["path", { d: "M15 4V2", key: "z1p9b7" }],
   ["path", { d: "M15 16v-2", key: "px0unx" }],
   ["path", { d: "M8 9h2", key: "1g203m" }],
@@ -19738,8 +19762,8 @@ const q01 = [
   ["path", { d: "M17.8 6.2 19 5", key: "fd4us0" }],
   ["path", { d: "m3 21 9-9", key: "1jfql5" }],
   ["path", { d: "M12.2 6.2 11 5", key: "i3da3b" }]
-], A01 = e("wand", q01);
-const H01 = [
+], E01 = e("wand", R01);
+const L01 = [
   ["path", { d: "M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11", key: "pb2vm6" }],
   [
     "path",
@@ -19750,15 +19774,24 @@ const H01 = [
   ],
   ["path", { d: "M6 13h12", key: "yf64js" }],
   ["path", { d: "M6 17h12", key: "1jwigz" }]
-], S01 = e("warehouse", H01);
-const C01 = [
+], P01 = e("warehouse", L01);
+const T01 = [
   ["path", { d: "M3 6h3", key: "155dbl" }],
   ["path", { d: "M17 6h.01", key: "e2y6kg" }],
   ["rect", { width: "18", height: "20", x: "3", y: "2", rx: "2", key: "od3kk9" }],
   ["circle", { cx: "12", cy: "13", r: "5", key: "nlbqau" }],
   ["path", { d: "M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5", key: "17lach" }]
-], V01 = e("washing-machine", C01);
-const R01 = [
+], O01 = e("washing-machine", T01);
+const D01 = [
+  ["path", { d: "M12 10v2.2l1.6 1", key: "n3r21l" }],
+  [
+    "path",
+    { d: "m16.13 7.66-.81-4.05a2 2 0 0 0-2-1.61h-2.68a2 2 0 0 0-2 1.61l-.78 4.05", key: "18k57s" }
+  ],
+  ["path", { d: "m7.88 16.36.8 4a2 2 0 0 0 2 1.61h2.72a2 2 0 0 0 2-1.61l.81-4.05", key: "16ny36" }],
+  ["circle", { cx: "12", cy: "12", r: "6", key: "1vlfrh" }]
+], I01 = e("watch", D01);
+const F01 = [
   ["path", { d: "M12 10L12 2", key: "jvb0aw" }],
   ["path", { d: "M16 6L12 10L8 6", key: "9j6vje" }],
   [
@@ -19775,17 +19808,8 @@ const R01 = [
       key: "u68omc"
     }
   ]
-], E01 = e("waves-arrow-down", R01);
-const L01 = [
-  ["path", { d: "M12 10v2.2l1.6 1", key: "n3r21l" }],
-  [
-    "path",
-    { d: "m16.13 7.66-.81-4.05a2 2 0 0 0-2-1.61h-2.68a2 2 0 0 0-2 1.61l-.78 4.05", key: "18k57s" }
-  ],
-  ["path", { d: "m7.88 16.36.8 4a2 2 0 0 0 2 1.61h2.72a2 2 0 0 0 2-1.61l.81-4.05", key: "16ny36" }],
-  ["circle", { cx: "12", cy: "12", r: "6", key: "1vlfrh" }]
-], P01 = e("watch", L01);
-const T01 = [
+], B01 = e("waves-arrow-down", F01);
+const U01 = [
   ["path", { d: "M12 2v8", key: "1q4o3n" }],
   [
     "path",
@@ -19802,8 +19826,8 @@ const T01 = [
     }
   ],
   ["path", { d: "m8 6 4-4 4 4", key: "ybng9g" }]
-], O01 = e("waves-arrow-up", T01);
-const D01 = [
+], W01 = e("waves-arrow-up", U01);
+const Z01 = [
   ["path", { d: "M19 5a2 2 0 0 0-2 2v11", key: "s41o68" }],
   [
     "path",
@@ -19815,8 +19839,8 @@ const D01 = [
   ["path", { d: "M7 13h10", key: "1rwob1" }],
   ["path", { d: "M7 9h10", key: "12czzb" }],
   ["path", { d: "M9 5a2 2 0 0 0-2 2v11", key: "x0q4gh" }]
-], I01 = e("waves-ladder", D01);
-const F01 = [
+], G01 = e("waves-ladder", Z01);
+const X01 = [
   [
     "path",
     {
@@ -19838,8 +19862,8 @@ const F01 = [
       key: "rd2r6e"
     }
   ]
-], B01 = e("waves", F01);
-const U01 = [
+], Y01 = e("waves", X01);
+const K01 = [
   ["path", { d: "m10.586 5.414-5.172 5.172", key: "4mc350" }],
   ["path", { d: "m18.586 13.414-5.172 5.172", key: "8c96vv" }],
   ["path", { d: "M6 12h12", key: "8npq4p" }],
@@ -19847,14 +19871,14 @@ const U01 = [
   ["circle", { cx: "12", cy: "4", r: "2", key: "muu5ef" }],
   ["circle", { cx: "20", cy: "12", r: "2", key: "1xzzfp" }],
   ["circle", { cx: "4", cy: "12", r: "2", key: "1hvhnz" }]
-], W01 = e("waypoints", U01);
-const Z01 = [
+], Q01 = e("waypoints", K01);
+const J01 = [
   ["circle", { cx: "12", cy: "10", r: "8", key: "1gshiw" }],
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }],
   ["path", { d: "M7 22h10", key: "10w4w3" }],
   ["path", { d: "M12 22v-4", key: "1utk9m" }]
-], G01 = e("webcam", Z01);
-const X01 = [
+], ea1 = e("webcam", J01);
+const ta1 = [
   ["path", { d: "M17 17h-5c-1.09-.02-1.94.92-2.5 1.9A3 3 0 1 1 2.57 15", key: "1tvl6x" }],
   ["path", { d: "M9 3.4a4 4 0 0 1 6.52.66", key: "q04jfq" }],
   ["path", { d: "m6 17 3.1-5.8a2.5 2.5 0 0 0 .057-2.05", key: "azowf0" }],
@@ -19862,8 +19886,8 @@ const X01 = [
   ["path", { d: "M18.6 13a4 4 0 0 1 3.357 3.414", key: "cangb8" }],
   ["path", { d: "m12 6 .6 1", key: "tpjl1n" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
-], Y01 = e("webhook-off", X01);
-const K01 = [
+], aa1 = e("webhook-off", ta1);
+const oa1 = [
   [
     "path",
     {
@@ -19873,8 +19897,8 @@ const K01 = [
   ],
   ["path", { d: "m6 17 3.13-5.78c.53-.97.1-2.18-.5-3.1a4 4 0 1 1 6.89-4.06", key: "1go1hn" }],
   ["path", { d: "m12 6 3.13 5.73C15.66 12.7 16.9 13 18 13a4 4 0 0 1 0 8", key: "qlwsc0" }]
-], Q01 = e("webhook", K01);
-const J01 = [
+], na1 = e("webhook", oa1);
+const ca1 = [
   [
     "path",
     {
@@ -19884,8 +19908,8 @@ const J01 = [
   ],
   ["path", { d: "M7.999 15a2.5 2.5 0 0 1 4 0 2.5 2.5 0 0 0 4 0", key: "1egezo" }],
   ["circle", { cx: "12", cy: "5", r: "3", key: "rqqgnr" }]
-], ea1 = e("weight-tilde", J01);
-const ta1 = [
+], ra1 = e("weight-tilde", ca1);
+const ha1 = [
   ["circle", { cx: "12", cy: "5", r: "3", key: "rqqgnr" }],
   [
     "path",
@@ -19894,8 +19918,8 @@ const ta1 = [
       key: "56o5sh"
     }
   ]
-], aa1 = e("weight", ta1);
-const oa1 = [
+], da1 = e("weight", ha1);
+const ia1 = [
   ["path", { d: "m2 22 10-10", key: "28ilpk" }],
   ["path", { d: "m16 8-1.17 1.17", key: "1qqm82" }],
   [
@@ -19936,8 +19960,15 @@ const oa1 = [
     }
   ],
   ["line", { x1: "2", x2: "22", y1: "2", y2: "22", key: "a6p6uj" }]
-], na1 = e("wheat-off", oa1);
-const ca1 = [
+], sa1 = e("wheat-off", ia1);
+const ya1 = [
+  ["circle", { cx: "7", cy: "12", r: "3", key: "12clwm" }],
+  ["path", { d: "M10 9v6", key: "17i7lo" }],
+  ["circle", { cx: "17", cy: "12", r: "3", key: "gl7c2s" }],
+  ["path", { d: "M14 7v8", key: "dl84cr" }],
+  ["path", { d: "M22 17v1c0 .5-.5 1-1 1H3c-.5 0-1-.5-1-1v-1", key: "lt2kga" }]
+], pa1 = e("whole-word", ya1);
+const ka1 = [
   ["path", { d: "M2 22 16 8", key: "60hf96" }],
   [
     "path",
@@ -19982,15 +20013,8 @@ const ca1 = [
       key: "vex3ng"
     }
   ]
-], ra1 = e("wheat", ca1);
-const ha1 = [
-  ["circle", { cx: "7", cy: "12", r: "3", key: "12clwm" }],
-  ["path", { d: "M10 9v6", key: "17i7lo" }],
-  ["circle", { cx: "17", cy: "12", r: "3", key: "gl7c2s" }],
-  ["path", { d: "M14 7v8", key: "dl84cr" }],
-  ["path", { d: "M22 17v1c0 .5-.5 1-1 1H3c-.5 0-1-.5-1-1v-1", key: "lt2kga" }]
-], da1 = e("whole-word", ha1);
-const ia1 = [
+], la1 = e("wheat", ka1);
+const ua1 = [
   ["path", { d: "m14.305 19.53.923-.382", key: "3m78fa" }],
   ["path", { d: "m15.228 16.852-.923-.383", key: "npixar" }],
   ["path", { d: "m16.852 15.228-.383-.923", key: "5xggr7" }],
@@ -20003,17 +20027,17 @@ const ia1 = [
   ["path", { d: "M5 11.858a10 10 0 0 1 11.5-1.785", key: "3sn16i" }],
   ["path", { d: "M8.5 15.429a5 5 0 0 1 2.413-1.31", key: "1pxovh" }],
   ["circle", { cx: "18", cy: "18", r: "3", key: "1xkwt0" }]
-], sa1 = e("wifi-cog", ia1);
-const ya1 = [
+], Ma1 = e("wifi-cog", ua1);
+const fa1 = [
   ["path", { d: "M12 20h.01", key: "zekei9" }],
   ["path", { d: "M5 12.859a10 10 0 0 1 14 0", key: "1x1e6c" }],
   ["path", { d: "M8.5 16.429a5 5 0 0 1 7 0", key: "1bycff" }]
-], pa1 = e("wifi-high", ya1);
-const ka1 = [
+], ma1 = e("wifi-high", fa1);
+const ga1 = [
   ["path", { d: "M12 20h.01", key: "zekei9" }],
   ["path", { d: "M8.5 16.429a5 5 0 0 1 7 0", key: "1bycff" }]
-], la1 = e("wifi-low", ka1);
-const ua1 = [
+], va1 = e("wifi-low", ga1);
+const _a1 = [
   ["path", { d: "M12 20h.01", key: "zekei9" }],
   ["path", { d: "M8.5 16.429a5 5 0 0 1 7 0", key: "1bycff" }],
   ["path", { d: "M5 12.859a10 10 0 0 1 5.17-2.69", key: "1dl1wf" }],
@@ -20021,8 +20045,8 @@ const ua1 = [
   ["path", { d: "M2 8.82a15 15 0 0 1 4.177-2.643", key: "1grhjp" }],
   ["path", { d: "M22 8.82a15 15 0 0 0-11.288-3.764", key: "z3jwby" }],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
-], Ma1 = e("wifi-off", ua1);
-const fa1 = [
+], xa1 = e("wifi-off", _a1);
+const ba1 = [
   ["path", { d: "M2 8.82a15 15 0 0 1 20 0", key: "dnpr2z" }],
   [
     "path",
@@ -20033,8 +20057,8 @@ const fa1 = [
   ],
   ["path", { d: "M5 12.859a10 10 0 0 1 10.5-2.222", key: "rpb7oy" }],
   ["path", { d: "M8.5 16.429a5 5 0 0 1 3-1.406", key: "r8bmzl" }]
-], ma1 = e("wifi-pen", fa1);
-const ga1 = [
+], wa1 = e("wifi-pen", ba1);
+const Na1 = [
   ["path", { d: "M11.965 10.105v4L13.5 12.5a5 5 0 0 1 8 1.5", key: "1immaq" }],
   ["path", { d: "M11.965 14.105h4", key: "uejny8" }],
   ["path", { d: "M17.965 18.105h4L20.43 19.71a5 5 0 0 1-8-1.5", key: "1i3a7e" }],
@@ -20042,26 +20066,26 @@ const ga1 = [
   ["path", { d: "M21.965 22.105v-4", key: "1ku6vx" }],
   ["path", { d: "M5 12.86a10 10 0 0 1 3-2.032", key: "pemdtu" }],
   ["path", { d: "M8.5 16.429h.01", key: "2bm739" }]
-], va1 = e("wifi-sync", ga1);
-const _a1 = [["path", { d: "M12 20h.01", key: "zekei9" }]], xa1 = e("wifi-zero", _a1);
-const ba1 = [
+], $a1 = e("wifi-sync", Na1);
+const za1 = [["path", { d: "M12 20h.01", key: "zekei9" }]], ja1 = e("wifi-zero", za1);
+const qa1 = [
   ["path", { d: "M12 20h.01", key: "zekei9" }],
   ["path", { d: "M2 8.82a15 15 0 0 1 20 0", key: "dnpr2z" }],
   ["path", { d: "M5 12.859a10 10 0 0 1 14 0", key: "1x1e6c" }],
   ["path", { d: "M8.5 16.429a5 5 0 0 1 7 0", key: "1bycff" }]
-], wa1 = e("wifi", ba1);
-const Na1 = [
+], Aa1 = e("wifi", qa1);
+const Ha1 = [
   ["path", { d: "M10 2v8", key: "d4bbey" }],
   ["path", { d: "M12.8 21.6A2 2 0 1 0 14 18H2", key: "19kp1d" }],
   ["path", { d: "M17.5 10a2.5 2.5 0 1 1 2 4H2", key: "19kpjc" }],
   ["path", { d: "m6 6 4 4 4-4", key: "k13n16" }]
-], $a1 = e("wind-arrow-down", Na1);
-const za1 = [
+], Sa1 = e("wind-arrow-down", Ha1);
+const Ca1 = [
   ["path", { d: "M12.8 19.6A2 2 0 1 0 14 16H2", key: "148xed" }],
   ["path", { d: "M17.5 8a2.5 2.5 0 1 1 2 4H2", key: "1u4tom" }],
   ["path", { d: "M9.8 4.4A2 2 0 1 1 11 8H2", key: "75valh" }]
-], ja1 = e("wind", za1);
-const qa1 = [
+], Va1 = e("wind", Ca1);
+const Ra1 = [
   ["path", { d: "M8 22h8", key: "rmew8v" }],
   ["path", { d: "M7 10h3m7 0h-1.343", key: "v48bem" }],
   ["path", { d: "M12 15v7", key: "t2xh3l" }],
@@ -20073,8 +20097,8 @@ const qa1 = [
     }
   ],
   ["line", { x1: "2", x2: "22", y1: "2", y2: "22", key: "a6p6uj" }]
-], Aa1 = e("wine-off", qa1);
-const Ha1 = [
+], Ea1 = e("wine-off", Ra1);
+const La1 = [
   ["path", { d: "M8 22h8", key: "rmew8v" }],
   ["path", { d: "M7 10h10", key: "1101jm" }],
   ["path", { d: "M12 15v7", key: "t2xh3l" }],
@@ -20082,13 +20106,13 @@ const Ha1 = [
     "path",
     { d: "M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z", key: "10ffi3" }
   ]
-], Sa1 = e("wine", Ha1);
-const Ca1 = [
+], Pa1 = e("wine", La1);
+const Ta1 = [
   ["rect", { width: "8", height: "8", x: "3", y: "3", rx: "2", key: "by2w9f" }],
   ["path", { d: "M7 11v4a2 2 0 0 0 2 2h4", key: "xkn7yn" }],
   ["rect", { width: "8", height: "8", x: "13", y: "13", rx: "2", key: "1cgmvn" }]
-], Va1 = e("workflow", Ca1);
-const Ra1 = [
+], Oa1 = e("workflow", Ta1);
+const Da1 = [
   ["path", { d: "m19 12-1.5 3", key: "9bcu4o" }],
   ["path", { d: "M19.63 18.81 22 20", key: "121v98" }],
   [
@@ -20098,8 +20122,8 @@ const Ra1 = [
       key: "1tij6q"
     }
   ]
-], Ea1 = e("worm", Ra1);
-const La1 = [
+], Ia1 = e("worm", Da1);
+const Fa1 = [
   [
     "path",
     {
@@ -20107,12 +20131,22 @@ const La1 = [
       key: "1ngwbx"
     }
   ]
-], Pa1 = e("wrench", La1);
-const Ta1 = [
+], Ba1 = e("wrench", Fa1);
+const Ua1 = [
   ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
   ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
-], Oa1 = e("x", Ta1);
-const Da1 = [
+], Wa1 = e("x", Ua1);
+const Za1 = [
+  [
+    "path",
+    {
+      d: "M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17",
+      key: "1q2vi4"
+    }
+  ],
+  ["path", { d: "m10 15 5-3-5-3z", key: "1jp15x" }]
+], Ga1 = e("youtube", Za1);
+const Xa1 = [
   ["path", { d: "M10.513 4.856 13.12 2.17a.5.5 0 0 1 .86.46l-1.377 4.317", key: "193nxd" }],
   ["path", { d: "M15.656 10H20a1 1 0 0 1 .78 1.63l-1.72 1.773", key: "27a7lr" }],
   [
@@ -20123,18 +20157,8 @@ const Da1 = [
     }
   ],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
-], Ia1 = e("zap-off", Da1);
-const Fa1 = [
-  [
-    "path",
-    {
-      d: "M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17",
-      key: "1q2vi4"
-    }
-  ],
-  ["path", { d: "m10 15 5-3-5-3z", key: "1jp15x" }]
-], Ba1 = e("youtube", Fa1);
-const Ua1 = [
+], Ya1 = e("zap-off", Xa1);
+const Ka1 = [
   [
     "path",
     {
@@ -20142,19 +20166,19 @@ const Ua1 = [
       key: "1xq2db"
     }
   ]
-], Wa1 = e("zap", Ua1);
-const Za1 = [
+], Qa1 = e("zap", Ka1);
+const Ja1 = [
   ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }],
   ["line", { x1: "21", x2: "16.65", y1: "21", y2: "16.65", key: "13gj7c" }],
   ["line", { x1: "11", x2: "11", y1: "8", y2: "14", key: "1vmskp" }],
   ["line", { x1: "8", x2: "14", y1: "11", y2: "11", key: "durymu" }]
-], Ga1 = e("zoom-in", Za1);
-const Xa1 = [
+], eo1 = e("zoom-in", Ja1);
+const to1 = [
   ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }],
   ["line", { x1: "21", x2: "16.65", y1: "21", y2: "16.65", key: "13gj7c" }],
   ["line", { x1: "8", x2: "14", y1: "11", y2: "11", key: "durymu" }]
-], Ya1 = e("zoom-out", Xa1);
-const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+], ao1 = e("zoom-out", to1);
+const oo1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   AArrowDown: ic,
   AArrowUp: yc,
@@ -20170,16 +20194,16 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   AlarmClockPlus: qc,
   AlarmSmoke: Cc,
   Album: Rc,
-  AlignCenterHorizontal: Lc,
-  AlignCenterVertical: Tc,
+  AlignCenterHorizontal: Tc,
+  AlignCenterVertical: Lc,
   AlignEndHorizontal: Dc,
   AlignEndVertical: Fc,
   AlignHorizontalDistributeCenter: Uc,
   AlignHorizontalDistributeEnd: Zc,
   AlignHorizontalDistributeStart: Xc,
   AlignHorizontalJustifyCenter: Kc,
-  AlignHorizontalJustifyEnd: Jc,
-  AlignHorizontalJustifyStart: tr,
+  AlignHorizontalJustifyEnd: tr,
+  AlignHorizontalJustifyStart: Jc,
   AlignHorizontalSpaceAround: or,
   AlignHorizontalSpaceBetween: cr,
   AlignStartHorizontal: hr,
@@ -20187,8 +20211,8 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   AlignVerticalDistributeCenter: yr,
   AlignVerticalDistributeEnd: kr,
   AlignVerticalDistributeStart: ur,
-  AlignVerticalJustifyCenter: gr,
-  AlignVerticalJustifyEnd: fr,
+  AlignVerticalJustifyCenter: fr,
+  AlignVerticalJustifyEnd: gr,
   AlignVerticalJustifyStart: _r,
   AlignVerticalSpaceAround: br,
   AlignVerticalSpaceBetween: Nr,
@@ -20196,8 +20220,8 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   Ampersand: qr,
   Ampersands: Hr,
   Amphora: Cr,
-  Anchor: Lr,
-  Angry: Rr,
+  Anchor: Rr,
+  Angry: Lr,
   Annoyed: Tr,
   Antenna: Dr,
   Anvil: Fr,
@@ -20217,19 +20241,19 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   ArrowBigRightDash: uh,
   ArrowBigUp: _h,
   ArrowBigUpDash: gh,
-  ArrowDown: Zh,
+  ArrowDown: Uh,
   ArrowDown01: bh,
   ArrowDown10: Nh,
   ArrowDownAZ: zh,
   ArrowDownFromLine: qh,
-  ArrowDownLeft: Hh,
-  ArrowDownNarrowWide: Ch,
-  ArrowDownRight: Rh,
-  ArrowDownToDot: Lh,
+  ArrowDownLeft: Ch,
+  ArrowDownNarrowWide: Hh,
+  ArrowDownRight: Lh,
+  ArrowDownToDot: Rh,
   ArrowDownToLine: Th,
   ArrowDownUp: Dh,
   ArrowDownWideNarrow: Fh,
-  ArrowDownZA: Uh,
+  ArrowDownZA: Zh,
   ArrowLeft: td,
   ArrowLeftFromLine: Xh,
   ArrowLeftRight: Kh,
@@ -20247,8 +20271,8 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   ArrowUpFromLine: _d,
   ArrowUpLeft: bd,
   ArrowUpNarrowWide: Nd,
-  ArrowUpRight: zd,
-  ArrowUpToLine: qd,
+  ArrowUpRight: qd,
+  ArrowUpToLine: zd,
   ArrowUpWideNarrow: Hd,
   ArrowUpZA: Cd,
   ArrowsUpFromLine: Ld,
@@ -20256,19 +20280,19 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   AtSign: Dd,
   Atom: Fd,
   AudioLines: Ud,
-  AudioWaveform: Zd,
-  Award: Xd,
+  AudioWaveform: Xd,
+  Award: Zd,
   Axe: Kd,
   Axis3d: Jd,
-  Baby: oi,
-  Backpack: ti,
-  Badge: Di,
-  BadgeAlert: ci,
-  BadgeCent: hi,
-  BadgeCheck: ii,
+  Baby: ti,
+  Backpack: oi,
+  Badge: Ti,
+  BadgeAlert: ii,
+  BadgeCent: ci,
+  BadgeCheck: hi,
   BadgeDollarSign: yi,
-  BadgeEuro: ki,
-  BadgeIndianRupee: ui,
+  BadgeEuro: ui,
+  BadgeIndianRupee: ki,
   BadgeInfo: fi,
   BadgeJapaneseYen: gi,
   BadgeMinus: _i,
@@ -20280,37 +20304,37 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   BadgeSwissFranc: Ci,
   BadgeTurkishLira: Ri,
   BadgeX: Li,
-  BaggageClaim: Ti,
+  BaggageClaim: Di,
   Balloon: Fi,
   Ban: Ui,
   Banana: Zi,
-  Bandage: Ki,
-  Banknote: cs,
-  BanknoteArrowDown: Xi,
+  Bandage: Xi,
+  Banknote: os,
+  BanknoteArrowDown: Ki,
   BanknoteArrowUp: Ji,
   BanknoteX: ts,
-  Barcode: os,
+  Barcode: cs,
   Barrel: hs,
   Baseline: is,
   Bath: ys,
-  Battery: zs,
+  Battery: Ns,
   BatteryCharging: ks,
   BatteryFull: us,
   BatteryLow: fs,
   BatteryMedium: gs,
   BatteryPlus: _s,
   BatteryWarning: bs,
-  Beaker: Ns,
+  Beaker: zs,
   Bean: Hs,
   BeanOff: qs,
   Bed: Ls,
   BedDouble: Cs,
   BedSingle: Rs,
   Beef: Ts,
-  Beer: Us,
+  Beer: Fs,
   BeerOff: Ds,
   Bell: oy,
-  BellDot: Fs,
+  BellDot: Us,
   BellElectric: Zs,
   BellMinus: Xs,
   BellOff: Ks,
@@ -20331,14 +20355,14 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   Blend: qy,
   Blinds: Hy,
   Blocks: Cy,
-  Bluetooth: Fy,
+  Bluetooth: Dy,
   BluetoothConnected: Ry,
   BluetoothOff: Ly,
   BluetoothSearching: Ty,
-  Bold: Dy,
+  Bold: Fy,
   Bolt: Uy,
-  Bomb: Xy,
-  Bone: Zy,
+  Bomb: Zy,
+  Bone: Xy,
   Book: Zp,
   BookA: Ky,
   BookAlert: Jy,
@@ -20352,11 +20376,11 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   BookImage: up,
   BookKey: fp,
   BookLock: gp,
-  BookMarked: bp,
-  BookMinus: _p,
-  BookOpen: zp,
+  BookMarked: _p,
+  BookMinus: bp,
+  BookOpen: qp,
   BookOpenCheck: Np,
-  BookOpenText: qp,
+  BookOpenText: zp,
   BookPlus: Hp,
   BookSearch: Cp,
   BookText: Rp,
@@ -20371,11 +20395,11 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   BookmarkPlus: Jp,
   BookmarkX: t4,
   BoomBox: c4,
-  Bot: y4,
+  Bot: i4,
   BotMessageSquare: h4,
-  BotOff: i4,
-  BottleWine: u4,
-  BowArrow: k4,
+  BotOff: y4,
+  BottleWine: k4,
+  BowArrow: u4,
   Box: f4,
   Boxes: g4,
   Braces: _4,
@@ -20391,14 +20415,14 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   BriefcaseConveyorBelt: T4,
   BriefcaseMedical: D4,
   BringToFront: U4,
-  Brush: Z4,
-  BrushCleaning: X4,
-  Bubbles: K4,
+  Brush: K4,
+  BrushCleaning: Z4,
+  Bubbles: X4,
   Bug: o5,
   BugOff: J4,
   BugPlay: t5,
-  Building: h5,
-  Building2: c5,
+  Building: c5,
+  Building2: h5,
   Bus: y5,
   BusFront: i5,
   Cable: u5,
@@ -20410,9 +20434,9 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   Calendar1: b5,
   CalendarArrowDown: N5,
   CalendarArrowUp: z5,
-  CalendarCheck: C5,
+  CalendarCheck: H5,
   CalendarCheck2: q5,
-  CalendarClock: H5,
+  CalendarClock: C5,
   CalendarCog: R5,
   CalendarDays: L5,
   CalendarFold: T5,
@@ -20420,28 +20444,28 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   CalendarMinus: U5,
   CalendarMinus2: F5,
   CalendarOff: Z5,
-  CalendarPlus: K5,
+  CalendarPlus: J5,
   CalendarPlus2: X5,
-  CalendarRange: J5,
+  CalendarRange: K5,
   CalendarSearch: tk,
-  CalendarSync: ck,
+  CalendarSync: ok,
   CalendarX: hk,
-  CalendarX2: ok,
+  CalendarX2: ck,
   Calendars: yk,
   Camera: uk,
   CameraOff: kk,
   Candy: _k,
-  CandyCane: gk,
-  CandyOff: fk,
+  CandyCane: fk,
+  CandyOff: gk,
   Cannabis: Nk,
   CannabisOff: bk,
   Captions: qk,
   CaptionsOff: zk,
-  Car: Ck,
+  Car: Rk,
   CarFront: Hk,
-  CarTaxiFront: Rk,
-  Caravan: Tk,
-  CardSim: Lk,
+  CarTaxiFront: Ck,
+  Caravan: Lk,
+  CardSim: Tk,
   Carrot: Dk,
   CaseLower: Fk,
   CaseSensitive: Uk,
@@ -20449,80 +20473,80 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   CassetteTape: Xk,
   Cast: Kk,
   Castle: Jk,
-  Cat: tl,
-  Cctv: ol,
-  ChartArea: cl,
-  ChartBar: ul,
-  ChartBarBig: hl,
-  ChartBarDecreasing: il,
-  ChartBarIncreasing: yl,
-  ChartBarStacked: kl,
-  ChartCandlestick: fl,
-  ChartColumn: zl,
-  ChartColumnBig: gl,
-  ChartColumnDecreasing: _l,
-  ChartColumnIncreasing: bl,
-  ChartColumnStacked: Nl,
-  ChartGantt: ql,
-  ChartLine: Hl,
-  ChartNetwork: Cl,
-  ChartNoAxesColumn: Tl,
-  ChartNoAxesColumnDecreasing: Rl,
-  ChartNoAxesColumnIncreasing: Ll,
-  ChartNoAxesCombined: Dl,
-  ChartNoAxesGantt: Fl,
-  ChartPie: Ul,
-  ChartScatter: Zl,
-  ChartSpline: Xl,
-  Check: t3,
-  CheckCheck: Kl,
-  CheckLine: Jl,
-  ChefHat: o3,
-  Cherry: c3,
-  ChessBishop: h3,
-  ChessKing: i3,
-  ChessKnight: y3,
-  ChessPawn: k3,
-  ChessQueen: u3,
-  ChessRook: f3,
-  ChevronDown: g3,
-  ChevronFirst: _3,
-  ChevronLast: b3,
-  ChevronLeft: N3,
-  ChevronRight: z3,
-  ChevronUp: q3,
-  ChevronsDown: C3,
-  ChevronsDownUp: H3,
-  ChevronsLeft: T3,
-  ChevronsLeftRight: L3,
-  ChevronsLeftRightEllipsis: R3,
-  ChevronsRight: F3,
-  ChevronsRightLeft: D3,
-  ChevronsUp: Z3,
-  ChevronsUpDown: U3,
-  Chromium: X3,
-  Church: K3,
+  Cat: t3,
+  Cctv: o3,
+  ChartArea: c3,
+  ChartBar: u3,
+  ChartBarBig: h3,
+  ChartBarDecreasing: i3,
+  ChartBarIncreasing: y3,
+  ChartBarStacked: k3,
+  ChartCandlestick: f3,
+  ChartColumn: z3,
+  ChartColumnBig: g3,
+  ChartColumnDecreasing: _3,
+  ChartColumnIncreasing: b3,
+  ChartColumnStacked: N3,
+  ChartGantt: q3,
+  ChartLine: H3,
+  ChartNetwork: C3,
+  ChartNoAxesColumn: T3,
+  ChartNoAxesColumnDecreasing: R3,
+  ChartNoAxesColumnIncreasing: L3,
+  ChartNoAxesCombined: D3,
+  ChartNoAxesGantt: F3,
+  ChartPie: U3,
+  ChartScatter: Z3,
+  ChartSpline: X3,
+  Check: tl,
+  CheckCheck: K3,
+  CheckLine: J3,
+  ChefHat: ol,
+  Cherry: cl,
+  ChessBishop: hl,
+  ChessKing: il,
+  ChessKnight: yl,
+  ChessPawn: kl,
+  ChessQueen: ul,
+  ChessRook: gl,
+  ChevronDown: fl,
+  ChevronFirst: _l,
+  ChevronLast: bl,
+  ChevronLeft: Nl,
+  ChevronRight: zl,
+  ChevronUp: ql,
+  ChevronsDown: Cl,
+  ChevronsDownUp: Hl,
+  ChevronsLeft: Tl,
+  ChevronsLeftRight: Ll,
+  ChevronsLeftRightEllipsis: Rl,
+  ChevronsRight: Fl,
+  ChevronsRightLeft: Dl,
+  ChevronsUp: Zl,
+  ChevronsUpDown: Ul,
+  Chromium: Xl,
+  Church: Kl,
   Cigarette: t8,
-  CigaretteOff: J3,
+  CigaretteOff: Jl,
   Circle: T6,
   CircleAlert: o8,
   CircleArrowDown: c8,
-  CircleArrowLeft: h8,
-  CircleArrowOutDownLeft: i8,
+  CircleArrowLeft: i8,
+  CircleArrowOutDownLeft: h8,
   CircleArrowOutDownRight: y8,
   CircleArrowOutUpLeft: k8,
   CircleArrowOutUpRight: u8,
   CircleArrowRight: f8,
   CircleArrowUp: g8,
-  CircleCheck: b8,
-  CircleCheckBig: _8,
+  CircleCheck: _8,
+  CircleCheckBig: b8,
   CircleChevronDown: N8,
   CircleChevronLeft: z8,
   CircleChevronRight: q8,
   CircleChevronUp: H8,
   CircleDashed: C8,
-  CircleDivide: L8,
-  CircleDollarSign: R8,
+  CircleDivide: R8,
+  CircleDollarSign: L8,
   CircleDot: D8,
   CircleDotDashed: T8,
   CircleEllipsis: F8,
@@ -20537,18 +20561,18 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   CirclePause: h6,
   CirclePercent: i6,
   CirclePile: y6,
-  CirclePlay: u6,
-  CirclePlus: k6,
+  CirclePlay: k6,
+  CirclePlus: u6,
   CirclePoundSterling: f6,
   CirclePower: g6,
   CircleQuestionMark: _6,
   CircleSlash: N6,
   CircleSlash2: b6,
-  CircleSmall: q6,
-  CircleStar: z6,
-  CircleStop: H6,
+  CircleSmall: z6,
+  CircleStar: q6,
+  CircleStop: C6,
   CircleUser: R6,
-  CircleUserRound: C6,
+  CircleUserRound: H6,
   CircleX: L6,
   CircuitBoard: D6,
   Citrus: F6,
@@ -20580,9 +20604,9 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   Clock9: T7,
   ClockAlert: D7,
   ClockArrowDown: F7,
-  ClockArrowUp: U7,
-  ClockCheck: Z7,
-  ClockFading: X7,
+  ClockArrowUp: X7,
+  ClockCheck: U7,
+  ClockFading: Z7,
   ClockPlus: K7,
   ClosedCaption: tu,
   Cloud: Du,
@@ -20590,8 +20614,8 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   CloudBackup: cu,
   CloudCheck: hu,
   CloudCog: iu,
-  CloudDownload: ku,
-  CloudDrizzle: yu,
+  CloudDownload: yu,
+  CloudDrizzle: ku,
   CloudFog: uu,
   CloudHail: fu,
   CloudLightning: gu,
@@ -20605,8 +20629,8 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   CloudSunRain: Cu,
   CloudSync: Lu,
   CloudUpload: Tu,
-  Cloudy: Uu,
-  Clover: Fu,
+  Cloudy: Fu,
+  Clover: Uu,
   Club: Zu,
   Code: Ku,
   CodeXml: Xu,
@@ -20633,1199 +20657,1202 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   Contrast: T9,
   Cookie: D9,
   CookingPot: F9,
-  Copy: oM,
+  Copy: tM,
   CopyCheck: U9,
   CopyMinus: Z9,
   CopyPlus: X9,
   CopySlash: K9,
   CopyX: J9,
-  Copyleft: tM,
-  Copyright: cM,
+  Copyleft: cM,
+  Copyright: oM,
   CornerDownLeft: hM,
   CornerDownRight: iM,
   CornerLeftDown: yM,
   CornerLeftUp: kM,
-  CornerRightDown: uM,
-  CornerRightUp: fM,
-  CornerUpLeft: gM,
-  CornerUpRight: _M,
+  CornerRightDown: fM,
+  CornerRightUp: uM,
+  CornerUpLeft: _M,
+  CornerUpRight: gM,
   Cpu: bM,
   CreativeCommons: NM,
   CreditCard: zM,
   Croissant: qM,
   Crop: HM,
   Cross: CM,
-  Crosshair: LM,
-  Crown: RM,
+  Crosshair: RM,
+  Crown: LM,
   Cuboid: TM,
   CupSoda: DM,
   Currency: FM,
   Cylinder: UM,
   Dam: ZM,
-  Database: JM,
+  Database: tf,
   DatabaseBackup: XM,
-  DatabaseZap: KM,
-  DecimalsArrowLeft: tf,
-  DecimalsArrowRight: of,
-  Delete: cf,
-  Dessert: hf,
-  Diameter: sf,
-  Diamond: mf,
-  DiamondMinus: pf,
-  DiamondPercent: lf,
-  DiamondPlus: Mf,
-  Dice1: vf,
-  Dice2: xf,
+  DatabaseSearch: KM,
+  DatabaseZap: JM,
+  DecimalsArrowLeft: of,
+  DecimalsArrowRight: cf,
+  Delete: hf,
+  Dessert: sf,
+  Diameter: pf,
+  Diamond: vf,
+  DiamondMinus: lf,
+  DiamondPercent: Mf,
+  DiamondPlus: mf,
+  Dice1: xf,
+  Dice2: $f,
   Dice3: wf,
-  Dice4: $f,
-  Dice5: jf,
-  Dice6: Af,
-  Dices: Sf,
-  Diff: Vf,
-  Disc: If,
-  Disc2: Ef,
-  Disc3: Pf,
+  Dice4: jf,
+  Dice5: Af,
+  Dice6: Sf,
+  Dices: Vf,
+  Diff: Ef,
+  Disc: Bf,
+  Disc2: Pf,
+  Disc3: If,
   DiscAlbum: Of,
-  Divide: Bf,
-  Dna: Gf,
-  DnaOff: Wf,
-  Dock: Yf,
-  Dog: Qf,
-  DollarSign: em,
-  Donut: am,
-  DoorClosed: rm,
-  DoorClosedLocked: nm,
-  DoorOpen: dm,
-  Dot: sm,
-  Download: pm,
-  DraftingCompass: lm,
-  Drama: Mm,
+  Divide: Wf,
+  Dna: Yf,
+  DnaOff: Gf,
+  Dock: Qf,
+  Dog: em,
+  DollarSign: am,
+  Donut: nm,
+  DoorClosed: dm,
+  DoorClosedLocked: rm,
+  DoorOpen: sm,
+  Dot: pm,
+  Download: lm,
+  DraftingCompass: Mm,
+  Drama: mm,
   Dribbble: vm,
-  Drill: mm,
-  Drone: xm,
-  Droplet: $m,
-  DropletOff: wm,
-  Droplets: jm,
-  Drum: Am,
-  Drumstick: Sm,
-  Dumbbell: Vm,
-  Ear: Em,
-  EarOff: Pm,
+  Drill: xm,
+  Drone: wm,
+  Droplet: jm,
+  DropletOff: $m,
+  Droplets: Am,
+  Drum: Sm,
+  Drumstick: Vm,
+  Dumbbell: Em,
+  Ear: Pm,
+  EarOff: Om,
   Earth: Im,
-  EarthLock: Om,
-  Eclipse: Bm,
-  Egg: Ym,
-  EggFried: Wm,
-  EggOff: Gm,
-  Ellipsis: eg,
+  EarthLock: Bm,
+  Eclipse: Wm,
+  Egg: eg,
+  EggFried: Gm,
+  EggOff: Ym,
+  Ellipsis: ag,
   EllipsisVertical: Qm,
-  Equal: rg,
-  EqualApproximately: ag,
-  EqualNot: ng,
-  Eraser: dg,
-  EthernetPort: sg,
-  Euro: pg,
-  EvCharger: lg,
-  Expand: Mg,
+  Equal: dg,
+  EqualApproximately: ng,
+  EqualNot: rg,
+  Eraser: sg,
+  EthernetPort: pg,
+  Euro: lg,
+  EvCharger: Mg,
+  Expand: vg,
   ExternalLink: mg,
-  Eye: wg,
-  EyeClosed: vg,
-  EyeOff: xg,
-  Facebook: $g,
-  Factory: jg,
-  Fan: Ag,
+  Eye: $g,
+  EyeClosed: xg,
+  EyeOff: wg,
+  Facebook: jg,
+  Factory: Ag,
+  Fan: Vg,
   FastForward: Sg,
-  Feather: Vg,
-  Fence: Eg,
-  FerrisWheel: Pg,
-  Figma: Og,
-  File: I_,
-  FileArchive: Ig,
-  FileAxis3d: Bg,
-  FileBadge: Wg,
-  FileBox: Gg,
-  FileBraces: Qg,
-  FileBracesCorner: Yg,
-  FileChartColumn: ev,
+  Feather: Eg,
+  Fence: Pg,
+  FerrisWheel: Og,
+  Figma: Ig,
+  File: B_,
+  FileArchive: Bg,
+  FileAxis3d: Wg,
+  FileBadge: Gg,
+  FileBox: Yg,
+  FileBraces: ev,
+  FileBracesCorner: Qg,
+  FileChartColumn: nv,
   FileChartColumnIncreasing: av,
-  FileChartLine: nv,
-  FileChartPie: rv,
-  FileCheck: sv,
-  FileCheckCorner: dv,
-  FileClock: pv,
+  FileChartLine: rv,
+  FileChartPie: dv,
+  FileCheck: pv,
+  FileCheckCorner: sv,
+  FileClock: mv,
   FileCode: Mv,
   FileCodeCorner: lv,
-  FileCog: mv,
-  FileDiff: wv,
-  FileDigit: vv,
-  FileDown: xv,
-  FileExclamationPoint: $v,
-  FileHeadphone: jv,
-  FileHeart: Av,
-  FileImage: Sv,
-  FileInput: Vv,
-  FileKey: Ev,
-  FileLock: Pv,
-  FileMinus: Iv,
-  FileMinusCorner: Ov,
-  FileMusic: Bv,
+  FileCog: vv,
+  FileDiff: xv,
+  FileDigit: wv,
+  FileDown: $v,
+  FileExclamationPoint: jv,
+  FileHeadphone: Av,
+  FileHeart: Sv,
+  FileImage: Vv,
+  FileInput: Ev,
+  FileKey: Pv,
+  FileLock: Ov,
+  FileMinus: Bv,
+  FileMinusCorner: Iv,
+  FileMusic: Gv,
   FileOutput: Wv,
-  FilePen: Yv,
-  FilePenLine: Gv,
-  FilePlay: Qv,
-  FilePlus: a_,
-  FilePlusCorner: e_,
-  FileQuestionMark: n_,
-  FileScan: r_,
-  FileSearch: s_,
-  FileSearchCorner: d_,
-  FileSignal: p_,
+  FilePen: Qv,
+  FilePenLine: Yv,
+  FilePlay: e_,
+  FilePlus: n_,
+  FilePlusCorner: a_,
+  FileQuestionMark: r_,
+  FileScan: d_,
+  FileSearch: p_,
+  FileSearchCorner: s_,
+  FileSignal: M_,
   FileSliders: l_,
-  FileSpreadsheet: M_,
-  FileStack: m_,
-  FileSymlink: v_,
-  FileTerminal: x_,
-  FileText: w_,
-  FileType: j_,
-  FileTypeCorner: $_,
-  FileUp: A_,
-  FileUser: S_,
+  FileSpreadsheet: m_,
+  FileStack: v_,
+  FileSymlink: x_,
+  FileTerminal: w_,
+  FileText: $_,
+  FileType: A_,
+  FileTypeCorner: j_,
+  FileUp: S_,
+  FileUser: V_,
   FileVideoCamera: E_,
-  FileVolume: V_,
-  FileX: O_,
-  FileXCorner: P_,
-  Files: B_,
-  Film: W_,
-  FingerprintPattern: G_,
+  FileVolume: P_,
+  FileX: I_,
+  FileXCorner: O_,
+  Files: W_,
+  Film: G_,
+  FingerprintPattern: Q_,
   FireExtinguisher: Y_,
-  Fish: ax,
-  FishOff: Q_,
-  FishSymbol: ex,
-  FishingHook: nx,
-  Flag: px,
-  FlagOff: rx,
-  FlagTriangleLeft: dx,
-  FlagTriangleRight: sx,
-  Flame: Mx,
-  FlameKindling: lx,
-  Flashlight: vx,
-  FlashlightOff: mx,
-  FlaskConical: wx,
-  FlaskConicalOff: xx,
+  Fish: nx,
+  FishOff: ex,
+  FishSymbol: ax,
+  FishingHook: rx,
+  Flag: lx,
+  FlagOff: dx,
+  FlagTriangleLeft: sx,
+  FlagTriangleRight: px,
+  Flame: mx,
+  FlameKindling: Mx,
+  Flashlight: xx,
+  FlashlightOff: vx,
+  FlaskConical: jx,
+  FlaskConicalOff: wx,
   FlaskRound: $x,
-  FlipHorizontal: Ax,
-  FlipHorizontal2: jx,
-  FlipVertical: Vx,
-  FlipVertical2: Sx,
-  Flower: Px,
-  Flower2: Ex,
-  Focus: Ox,
+  FlipHorizontal: Sx,
+  FlipHorizontal2: Ax,
+  FlipVertical: Ex,
+  FlipVertical2: Vx,
+  Flower: Ox,
+  Flower2: Px,
+  Focus: Ix,
   FoldHorizontal: Bx,
-  FoldVertical: Ix,
-  Folder: Gb,
-  FolderArchive: Wx,
-  FolderCheck: Gx,
-  FolderClock: Yx,
-  FolderClosed: Qx,
+  FoldVertical: Wx,
+  Folder: Qb,
+  FolderArchive: Gx,
+  FolderCheck: Yx,
+  FolderClock: Qx,
+  FolderClosed: ab,
   FolderCode: eb,
   FolderCog: nb,
-  FolderDot: ab,
-  FolderDown: rb,
-  FolderGit: sb,
-  FolderGit2: db,
-  FolderHeart: pb,
-  FolderInput: lb,
+  FolderDot: rb,
+  FolderDown: db,
+  FolderGit: pb,
+  FolderGit2: sb,
+  FolderHeart: lb,
+  FolderInput: Mb,
   FolderKanban: mb,
-  FolderKey: Mb,
-  FolderLock: vb,
-  FolderMinus: xb,
-  FolderOpen: $b,
-  FolderOpenDot: wb,
-  FolderOutput: jb,
-  FolderPen: Ab,
-  FolderPlus: Sb,
-  FolderRoot: Vb,
-  FolderSearch: Pb,
-  FolderSearch2: Eb,
-  FolderSymlink: Ob,
-  FolderSync: Ib,
-  FolderTree: Bb,
-  FolderUp: Wb,
-  FolderX: Qb,
-  Folders: Yb,
-  Footprints: ew,
-  Forklift: aw,
+  FolderKey: vb,
+  FolderLock: xb,
+  FolderMinus: wb,
+  FolderOpen: jb,
+  FolderOpenDot: $b,
+  FolderOutput: Ab,
+  FolderPen: Sb,
+  FolderPlus: Vb,
+  FolderRoot: Eb,
+  FolderSearch: Ob,
+  FolderSearch2: Pb,
+  FolderSymlink: Ib,
+  FolderSync: Bb,
+  FolderTree: Wb,
+  FolderUp: Gb,
+  FolderX: Yb,
+  Folders: ew,
+  Footprints: aw,
+  Forklift: dw,
   Form: nw,
   Forward: rw,
-  Frame: dw,
-  Framer: sw,
+  Frame: sw,
+  Framer: Mw,
   Frown: pw,
   Fuel: lw,
-  Fullscreen: Mw,
+  Fullscreen: mw,
   Funnel: ww,
-  FunnelPlus: mw,
-  FunnelX: vw,
-  GalleryHorizontal: $w,
-  GalleryHorizontalEnd: xw,
-  GalleryThumbnails: jw,
-  GalleryVertical: Sw,
-  GalleryVerticalEnd: Aw,
-  Gamepad: Pw,
-  Gamepad2: Vw,
-  GamepadDirectional: Ew,
+  FunnelPlus: vw,
+  FunnelX: xw,
+  GalleryHorizontal: jw,
+  GalleryHorizontalEnd: $w,
+  GalleryThumbnails: Aw,
+  GalleryVertical: Vw,
+  GalleryVerticalEnd: Sw,
+  Gamepad: Iw,
+  Gamepad2: Ew,
+  GamepadDirectional: Pw,
   Gauge: Ow,
   Gavel: Bw,
-  Gem: Iw,
+  Gem: Ww,
   GeorgianLari: Gw,
-  Ghost: Ww,
+  Ghost: Qw,
   Gift: Yw,
-  GitBranch: aN,
-  GitBranchMinus: Qw,
-  GitBranchPlus: eN,
-  GitCommitHorizontal: nN,
-  GitCommitVertical: rN,
-  GitCompare: sN,
-  GitCompareArrows: dN,
-  GitFork: pN,
-  GitGraph: lN,
-  GitMerge: MN,
-  GitPullRequest: jN,
-  GitPullRequestArrow: mN,
-  GitPullRequestClosed: vN,
-  GitPullRequestCreate: wN,
-  GitPullRequestCreateArrow: xN,
-  GitPullRequestDraft: $N,
-  Github: AN,
-  Gitlab: SN,
-  GlassWater: VN,
-  Glasses: EN,
-  Globe: IN,
-  GlobeLock: PN,
-  GlobeX: ON,
+  GitBranch: nN,
+  GitBranchMinus: eN,
+  GitBranchPlus: aN,
+  GitCommitHorizontal: rN,
+  GitCommitVertical: dN,
+  GitCompare: pN,
+  GitCompareArrows: sN,
+  GitFork: lN,
+  GitGraph: MN,
+  GitMerge: mN,
+  GitPullRequest: AN,
+  GitPullRequestArrow: vN,
+  GitPullRequestClosed: xN,
+  GitPullRequestCreate: $N,
+  GitPullRequestCreateArrow: wN,
+  GitPullRequestDraft: jN,
+  Github: SN,
+  Gitlab: VN,
+  GlassWater: EN,
+  Glasses: PN,
+  Globe: BN,
+  GlobeLock: ON,
+  GlobeX: IN,
   Goal: WN,
-  Gpu: BN,
-  GraduationCap: GN,
-  Grape: YN,
-  Grid2x2: n$,
-  Grid2x2Check: QN,
-  Grid2x2Plus: e$,
-  Grid2x2X: a$,
-  Grid3x2: r$,
-  Grid3x3: d$,
+  Gpu: GN,
+  GraduationCap: YN,
+  Grape: QN,
+  Grid2x2: r$,
+  Grid2x2Check: e$,
+  Grid2x2Plus: a$,
+  Grid2x2X: n$,
+  Grid3x2: d$,
+  Grid3x3: s$,
   Grip: l$,
-  GripHorizontal: s$,
-  GripVertical: p$,
-  Group: M$,
-  Guitar: m$,
-  Ham: v$,
-  Hamburger: x$,
-  Hammer: w$,
-  Hand: O$,
-  HandCoins: $$,
-  HandFist: j$,
-  HandGrab: A$,
-  HandHeart: S$,
-  HandHelping: V$,
-  HandMetal: E$,
-  HandPlatter: P$,
-  Handbag: I$,
-  Handshake: B$,
+  GripHorizontal: p$,
+  GripVertical: M$,
+  Group: m$,
+  Guitar: v$,
+  Ham: x$,
+  Hamburger: w$,
+  Hammer: $$,
+  Hand: I$,
+  HandCoins: j$,
+  HandFist: A$,
+  HandGrab: S$,
+  HandHeart: V$,
+  HandHelping: E$,
+  HandMetal: P$,
+  HandPlatter: O$,
+  Handbag: B$,
+  Handshake: W$,
   HardDrive: Q$,
-  HardDriveDownload: W$,
-  HardDriveUpload: G$,
-  HardHat: Y$,
-  Hash: ez,
-  HatGlasses: az,
-  Haze: nz,
-  Hd: rz,
-  HdmiPort: dz,
-  Heading: xz,
-  Heading1: sz,
-  Heading2: pz,
-  Heading3: lz,
-  Heading4: Mz,
-  Heading5: mz,
-  Heading6: vz,
-  HeadphoneOff: wz,
-  Headphones: $z,
-  Headset: jz,
-  Heart: Iz,
-  HeartCrack: Az,
-  HeartHandshake: Sz,
+  HardDriveDownload: G$,
+  HardDriveUpload: Y$,
+  HardHat: ez,
+  Hash: az,
+  HatGlasses: nz,
+  Haze: rz,
+  Hd: dz,
+  HdmiPort: sz,
+  Heading: wz,
+  Heading1: pz,
+  Heading2: lz,
+  Heading3: Mz,
+  Heading4: mz,
+  Heading5: vz,
+  Heading6: xz,
+  HeadphoneOff: $z,
+  Headphones: jz,
+  Headset: Az,
+  Heart: Bz,
+  HeartCrack: Sz,
+  HeartHandshake: Ez,
   HeartMinus: Vz,
-  HeartOff: Ez,
-  HeartPlus: Pz,
-  HeartPulse: Oz,
-  Heater: Bz,
-  Helicopter: Wz,
-  Hexagon: Gz,
-  Highlighter: Yz,
-  History: Qz,
+  HeartOff: Pz,
+  HeartPlus: Oz,
+  HeartPulse: Iz,
+  Heater: Wz,
+  Helicopter: Gz,
+  Hexagon: Yz,
+  Highlighter: Qz,
+  History: ej,
   Hop: aj,
-  HopOff: ej,
-  Hospital: nj,
-  Hotel: rj,
-  Hourglass: dj,
-  House: mj,
-  HouseHeart: sj,
-  HousePlug: pj,
-  HousePlus: lj,
-  HouseWifi: Mj,
-  IceCreamBowl: vj,
-  IceCreamCone: xj,
-  IdCard: $j,
-  IdCardLanyard: wj,
-  Image: Ij,
-  ImageDown: jj,
-  ImageMinus: Aj,
+  HopOff: nj,
+  Hospital: rj,
+  Hotel: dj,
+  Hourglass: sj,
+  House: vj,
+  HouseHeart: pj,
+  HousePlug: lj,
+  HousePlus: Mj,
+  HouseWifi: mj,
+  IceCreamBowl: xj,
+  IceCreamCone: wj,
+  IdCard: jj,
+  IdCardLanyard: $j,
+  Image: Bj,
+  ImageDown: Aj,
+  ImageMinus: Vj,
   ImageOff: Sj,
-  ImagePlay: Vj,
-  ImagePlus: Ej,
-  ImageUp: Pj,
-  ImageUpscale: Oj,
-  Images: Bj,
-  Import: Wj,
-  Inbox: Gj,
-  IndianRupee: Yj,
-  Infinity: Qj,
+  ImagePlay: Ej,
+  ImagePlus: Pj,
+  ImageUp: Oj,
+  ImageUpscale: Ij,
+  Images: Wj,
+  Import: Gj,
+  Inbox: Yj,
+  IndianRupee: Qj,
+  Infinity: aq,
   Info: eq,
-  InspectionPanel: aq,
-  Instagram: nq,
-  Italic: rq,
-  IterationCcw: dq,
-  IterationCw: sq,
-  JapaneseYen: pq,
-  Joystick: lq,
-  Kanban: Mq,
-  Kayak: mq,
-  Key: wq,
-  KeyRound: vq,
-  KeySquare: xq,
-  Keyboard: Aq,
-  KeyboardMusic: $q,
-  KeyboardOff: jq,
-  Lamp: Iq,
-  LampCeiling: Sq,
-  LampDesk: Vq,
-  LampFloor: Eq,
-  LampWallDown: Pq,
-  LampWallUp: Oq,
-  LandPlot: Bq,
-  Landmark: Wq,
-  Languages: Gq,
-  Laptop: eA,
-  LaptopMinimal: Qq,
-  LaptopMinimalCheck: Yq,
-  Lasso: nA,
+  InspectionPanel: nq,
+  Instagram: rq,
+  Italic: dq,
+  IterationCcw: sq,
+  IterationCw: pq,
+  JapaneseYen: lq,
+  Joystick: Mq,
+  Kanban: mq,
+  Kayak: vq,
+  Key: $q,
+  KeyRound: xq,
+  KeySquare: wq,
+  Keyboard: Sq,
+  KeyboardMusic: jq,
+  KeyboardOff: Aq,
+  Lamp: Bq,
+  LampCeiling: Vq,
+  LampDesk: Eq,
+  LampFloor: Pq,
+  LampWallDown: Oq,
+  LampWallUp: Iq,
+  LandPlot: Wq,
+  Landmark: Gq,
+  Languages: Yq,
+  Laptop: nA,
+  LaptopMinimal: eA,
+  LaptopMinimalCheck: Qq,
+  Lasso: rA,
   LassoSelect: aA,
-  Laugh: rA,
-  Layers: pA,
-  Layers2: dA,
-  LayersPlus: sA,
-  LayoutDashboard: lA,
-  LayoutGrid: MA,
-  LayoutList: mA,
-  LayoutPanelLeft: vA,
-  LayoutPanelTop: xA,
+  Laugh: dA,
+  Layers: lA,
+  Layers2: sA,
+  LayersPlus: pA,
+  LayoutDashboard: MA,
+  LayoutGrid: mA,
+  LayoutList: vA,
+  LayoutPanelLeft: xA,
+  LayoutPanelTop: $A,
   LayoutTemplate: wA,
-  Leaf: $A,
-  LeafyGreen: jA,
-  Lectern: AA,
-  Library: VA,
-  LibraryBig: SA,
-  LifeBuoy: EA,
-  Ligature: PA,
-  Lightbulb: IA,
-  LightbulbOff: OA,
-  LineSquiggle: BA,
-  Link: YA,
-  Link2: GA,
-  Link2Off: WA,
-  Linkedin: QA,
-  List: OH,
-  ListCheck: eH,
-  ListChecks: aH,
-  ListChevronsDownUp: nH,
-  ListChevronsUpDown: rH,
+  Leaf: jA,
+  LeafyGreen: AA,
+  Lectern: SA,
+  Library: EA,
+  LibraryBig: VA,
+  LifeBuoy: PA,
+  Ligature: OA,
+  Lightbulb: BA,
+  LightbulbOff: IA,
+  LineSquiggle: WA,
+  Link: QA,
+  Link2: YA,
+  Link2Off: GA,
+  Linkedin: eH,
+  List: IH,
+  ListCheck: aH,
+  ListChecks: nH,
+  ListChevronsDownUp: rH,
+  ListChevronsUpDown: sH,
   ListCollapse: dH,
-  ListEnd: sH,
-  ListFilter: lH,
-  ListFilterPlus: pH,
-  ListIndentDecrease: MH,
-  ListIndentIncrease: mH,
-  ListMinus: vH,
-  ListMusic: xH,
-  ListOrdered: wH,
-  ListPlus: $H,
-  ListRestart: jH,
-  ListStart: AH,
-  ListTodo: SH,
-  ListTree: VH,
-  ListVideo: EH,
-  ListX: PH,
-  Loader: WH,
+  ListEnd: pH,
+  ListFilter: MH,
+  ListFilterPlus: lH,
+  ListIndentDecrease: mH,
+  ListIndentIncrease: vH,
+  ListMinus: xH,
+  ListMusic: wH,
+  ListOrdered: $H,
+  ListPlus: jH,
+  ListRestart: AH,
+  ListStart: SH,
+  ListTodo: VH,
+  ListTree: EH,
+  ListVideo: PH,
+  ListX: OH,
+  Loader: GH,
   LoaderCircle: BH,
-  LoaderPinwheel: IH,
-  Locate: QH,
-  LocateFixed: GH,
-  LocateOff: YH,
-  Lock: rS,
-  LockKeyhole: aS,
-  LockKeyholeOpen: eS,
-  LockOpen: nS,
-  LogIn: dS,
-  LogOut: sS,
-  Logs: pS,
-  Lollipop: lS,
-  Luggage: MS,
-  Magnet: mS,
-  Mail: VS,
-  MailCheck: vS,
-  MailMinus: xS,
-  MailOpen: wS,
+  LoaderPinwheel: WH,
+  Locate: eS,
+  LocateFixed: YH,
+  LocateOff: QH,
+  Lock: dS,
+  LockKeyhole: nS,
+  LockKeyholeOpen: aS,
+  LockOpen: rS,
+  LogIn: sS,
+  LogOut: pS,
+  Logs: lS,
+  Lollipop: MS,
+  Luggage: mS,
+  Magnet: vS,
+  Mail: PS,
+  MailCheck: xS,
+  MailMinus: wS,
+  MailOpen: $S,
   MailPlus: jS,
-  MailQuestionMark: $S,
-  MailSearch: AS,
-  MailWarning: SS,
+  MailQuestionMark: AS,
+  MailSearch: SS,
+  MailWarning: VS,
   MailX: ES,
-  Mailbox: PS,
+  Mailbox: IS,
   Mails: OS,
-  Map: mC,
-  MapMinus: IS,
-  MapPin: pC,
-  MapPinCheck: WS,
-  MapPinCheckInside: BS,
-  MapPinHouse: GS,
-  MapPinMinus: QS,
-  MapPinMinusInside: YS,
-  MapPinOff: eC,
+  Map: vC,
+  MapMinus: BS,
+  MapPin: lC,
+  MapPinCheck: GS,
+  MapPinCheckInside: WS,
+  MapPinHouse: YS,
+  MapPinMinus: eC,
+  MapPinMinusInside: QS,
+  MapPinOff: aC,
   MapPinPen: nC,
-  MapPinPlus: rC,
-  MapPinPlusInside: aC,
+  MapPinPlus: dC,
+  MapPinPlusInside: rC,
   MapPinX: sC,
-  MapPinXInside: dC,
-  MapPinned: lC,
-  MapPlus: MC,
-  Mars: xC,
-  MarsStroke: vC,
-  Martini: wC,
-  Maximize: jC,
-  Maximize2: $C,
-  Medal: AC,
-  Megaphone: VC,
-  MegaphoneOff: SC,
-  Meh: EC,
-  MemoryStick: PC,
-  Menu: OC,
+  MapPinXInside: pC,
+  MapPinned: MC,
+  MapPlus: mC,
+  Mars: wC,
+  MarsStroke: xC,
+  Martini: $C,
+  Maximize: AC,
+  Maximize2: jC,
+  Medal: SC,
+  Megaphone: EC,
+  MegaphoneOff: VC,
+  Meh: PC,
+  MemoryStick: OC,
+  Menu: BC,
   Merge: IC,
-  MessageCircle: sV,
-  MessageCircleCode: BC,
-  MessageCircleDashed: WC,
-  MessageCircleHeart: GC,
-  MessageCircleMore: YC,
-  MessageCircleOff: QC,
-  MessageCirclePlus: eV,
-  MessageCircleQuestionMark: aV,
-  MessageCircleReply: nV,
-  MessageCircleWarning: rV,
-  MessageCircleX: dV,
-  MessageSquare: IV,
-  MessageSquareCode: pV,
-  MessageSquareDashed: lV,
-  MessageSquareDiff: MV,
-  MessageSquareDot: mV,
-  MessageSquareHeart: vV,
-  MessageSquareLock: xV,
+  MessageCircle: pV,
+  MessageCircleCode: WC,
+  MessageCircleDashed: GC,
+  MessageCircleHeart: YC,
+  MessageCircleMore: QC,
+  MessageCircleOff: eV,
+  MessageCirclePlus: aV,
+  MessageCircleQuestionMark: nV,
+  MessageCircleReply: rV,
+  MessageCircleWarning: dV,
+  MessageCircleX: sV,
+  MessageSquare: BV,
+  MessageSquareCode: lV,
+  MessageSquareDashed: MV,
+  MessageSquareDiff: mV,
+  MessageSquareDot: vV,
+  MessageSquareHeart: xV,
+  MessageSquareLock: wV,
   MessageSquareMore: $V,
-  MessageSquareOff: wV,
-  MessageSquarePlus: jV,
-  MessageSquareQuote: AV,
-  MessageSquareReply: SV,
+  MessageSquareOff: jV,
+  MessageSquarePlus: AV,
+  MessageSquareQuote: SV,
+  MessageSquareReply: VV,
   MessageSquareShare: EV,
-  MessageSquareText: VV,
-  MessageSquareWarning: PV,
-  MessageSquareX: OV,
-  MessagesSquare: BV,
-  Mic: GV,
-  MicOff: WV,
-  MicVocal: YV,
-  Microchip: QV,
-  Microscope: eR,
-  Microwave: aR,
-  Milestone: nR,
-  Milk: dR,
-  MilkOff: rR,
-  Minimize: pR,
-  Minimize2: sR,
-  Minus: MR,
+  MessageSquareText: PV,
+  MessageSquareWarning: OV,
+  MessageSquareX: IV,
+  MessagesSquare: WV,
+  Mic: QV,
+  MicOff: YV,
+  MicVocal: GV,
+  Microchip: eR,
+  Microscope: aR,
+  Microwave: nR,
+  Milestone: rR,
+  Milk: sR,
+  MilkOff: dR,
+  Minimize: MR,
+  Minimize2: pR,
+  Minus: lR,
   Monitor: BR,
-  MonitorCheck: lR,
-  MonitorCloud: mR,
-  MonitorCog: vR,
-  MonitorDot: xR,
-  MonitorDown: wR,
-  MonitorOff: $R,
-  MonitorPause: jR,
-  MonitorPlay: AR,
-  MonitorSmartphone: SR,
-  MonitorSpeaker: VR,
-  MonitorStop: ER,
+  MonitorCheck: mR,
+  MonitorCloud: vR,
+  MonitorCog: xR,
+  MonitorDot: wR,
+  MonitorDown: $R,
+  MonitorOff: jR,
+  MonitorPause: AR,
+  MonitorPlay: SR,
+  MonitorSmartphone: VR,
+  MonitorSpeaker: ER,
+  MonitorStop: PR,
   MonitorUp: OR,
-  MonitorX: PR,
-  Moon: WR,
-  MoonStar: IR,
-  Motorbike: GR,
-  Mountain: QR,
-  MountainSnow: YR,
-  Mouse: pE,
-  MouseOff: eE,
-  MousePointer: sE,
-  MousePointer2: nE,
-  MousePointer2Off: aE,
-  MousePointerBan: rE,
-  MousePointerClick: dE,
-  Move: PE,
-  Move3d: lE,
-  MoveDiagonal: mE,
-  MoveDiagonal2: ME,
-  MoveDown: wE,
-  MoveDownLeft: vE,
-  MoveDownRight: xE,
-  MoveHorizontal: $E,
-  MoveLeft: jE,
-  MoveRight: AE,
-  MoveUp: VE,
-  MoveUpLeft: SE,
+  MonitorX: IR,
+  Moon: GR,
+  MoonStar: WR,
+  Motorbike: YR,
+  Mountain: eE,
+  MountainSnow: QR,
+  Mouse: lE,
+  MouseOff: aE,
+  MousePointer: pE,
+  MousePointer2: rE,
+  MousePointer2Off: nE,
+  MousePointerBan: dE,
+  MousePointerClick: sE,
+  Move: IE,
+  Move3d: ME,
+  MoveDiagonal: vE,
+  MoveDiagonal2: mE,
+  MoveDown: $E,
+  MoveDownLeft: xE,
+  MoveDownRight: wE,
+  MoveHorizontal: jE,
+  MoveLeft: AE,
+  MoveRight: SE,
+  MoveUp: PE,
+  MoveUpLeft: VE,
   MoveUpRight: EE,
   MoveVertical: OE,
-  Music: GE,
-  Music2: IE,
-  Music3: BE,
-  Music4: WE,
-  Navigation: aL,
-  Navigation2: QE,
-  Navigation2Off: YE,
-  NavigationOff: eL,
-  Network: nL,
-  Newspaper: rL,
-  Nfc: dL,
-  NonBinary: sL,
-  Notebook: mL,
-  NotebookPen: pL,
-  NotebookTabs: lL,
-  NotebookText: ML,
-  NotepadText: xL,
-  NotepadTextDashed: vL,
+  Music: YE,
+  Music2: BE,
+  Music3: WE,
+  Music4: GE,
+  Navigation: nL,
+  Navigation2: eL,
+  Navigation2Off: QE,
+  NavigationOff: aL,
+  Network: rL,
+  Newspaper: dL,
+  Nfc: sL,
+  NonBinary: pL,
+  Notebook: vL,
+  NotebookPen: lL,
+  NotebookTabs: ML,
+  NotebookText: mL,
+  NotepadText: wL,
+  NotepadTextDashed: xL,
   Nut: $L,
-  NutOff: wL,
-  Octagon: EL,
-  OctagonAlert: jL,
-  OctagonMinus: AL,
-  OctagonPause: SL,
-  OctagonX: VL,
-  Omega: PL,
-  Option: OL,
+  NutOff: jL,
+  Octagon: PL,
+  OctagonAlert: AL,
+  OctagonMinus: SL,
+  OctagonPause: VL,
+  OctagonX: EL,
+  Omega: OL,
+  Option: BL,
   Orbit: IL,
-  Origami: BL,
-  Package: rP,
-  Package2: WL,
-  PackageCheck: GL,
-  PackageMinus: YL,
-  PackageOpen: QL,
-  PackagePlus: eP,
-  PackageSearch: aP,
-  PackageX: nP,
-  PaintBucket: dP,
-  PaintRoller: sP,
-  Paintbrush: lP,
-  PaintbrushVertical: pP,
-  Palette: MP,
-  Panda: mP,
+  Origami: WL,
+  Package: dP,
+  Package2: GL,
+  PackageCheck: YL,
+  PackageMinus: QL,
+  PackageOpen: eP,
+  PackagePlus: aP,
+  PackageSearch: nP,
+  PackageX: rP,
+  PaintBucket: sP,
+  PaintRoller: pP,
+  Paintbrush: MP,
+  PaintbrushVertical: lP,
+  Palette: mP,
+  Panda: vP,
   PanelBottom: $P,
-  PanelBottomClose: vP,
-  PanelBottomDashed: xP,
-  PanelBottomOpen: wP,
-  PanelLeft: EP,
-  PanelLeftClose: jP,
-  PanelLeftDashed: AP,
-  PanelLeftOpen: SP,
-  PanelLeftRightDashed: VP,
-  PanelRight: BP,
-  PanelRightClose: PP,
-  PanelRightDashed: OP,
-  PanelRightOpen: IP,
-  PanelTop: eT,
-  PanelTopBottomDashed: WP,
-  PanelTopClose: GP,
+  PanelBottomClose: xP,
+  PanelBottomDashed: wP,
+  PanelBottomOpen: jP,
+  PanelLeft: PP,
+  PanelLeftClose: AP,
+  PanelLeftDashed: SP,
+  PanelLeftOpen: VP,
+  PanelLeftRightDashed: EP,
+  PanelRight: WP,
+  PanelRightClose: OP,
+  PanelRightDashed: IP,
+  PanelRightOpen: BP,
+  PanelTop: aT,
+  PanelTopBottomDashed: GP,
+  PanelTopClose: QP,
   PanelTopDashed: YP,
-  PanelTopOpen: QP,
-  PanelsLeftBottom: aT,
-  PanelsRightBottom: nT,
-  PanelsTopLeft: dT,
-  Paperclip: rT,
-  Parentheses: sT,
+  PanelTopOpen: eT,
+  PanelsLeftBottom: nT,
+  PanelsRightBottom: rT,
+  PanelsTopLeft: sT,
+  Paperclip: dT,
+  Parentheses: lT,
   ParkingMeter: pT,
-  PartyPopper: lT,
-  Pause: MT,
-  PawPrint: mT,
-  PcCase: vT,
-  Pen: jT,
-  PenLine: xT,
-  PenOff: wT,
-  PenTool: $T,
-  Pencil: ET,
-  PencilLine: AT,
-  PencilOff: ST,
-  PencilRuler: VT,
-  Pentagon: PT,
-  Percent: OT,
-  PersonStanding: IT,
+  PartyPopper: MT,
+  Pause: mT,
+  PawPrint: vT,
+  PcCase: xT,
+  Pen: AT,
+  PenLine: wT,
+  PenOff: $T,
+  PenTool: jT,
+  Pencil: PT,
+  PencilLine: ST,
+  PencilOff: VT,
+  PencilRuler: ET,
+  Pentagon: OT,
+  Percent: IT,
+  PersonStanding: WT,
   PhilippinePeso: BT,
-  Phone: nO,
-  PhoneCall: WT,
-  PhoneForwarded: GT,
-  PhoneIncoming: YT,
-  PhoneMissed: QT,
-  PhoneOff: eO,
-  PhoneOutgoing: aO,
-  Pi: rO,
-  Piano: dO,
-  Pickaxe: sO,
-  PictureInPicture: lO,
-  PictureInPicture2: pO,
-  PiggyBank: MO,
-  Pilcrow: xO,
-  PilcrowLeft: mO,
-  PilcrowRight: vO,
-  Pill: $O,
-  PillBottle: wO,
-  Pin: AO,
-  PinOff: jO,
-  Pipette: SO,
-  Pizza: VO,
-  Plane: OO,
-  PlaneLanding: EO,
-  PlaneTakeoff: PO,
-  Play: IO,
-  Plug: GO,
-  Plug2: BO,
-  PlugZap: WO,
+  Phone: rO,
+  PhoneCall: GT,
+  PhoneForwarded: YT,
+  PhoneIncoming: QT,
+  PhoneMissed: eO,
+  PhoneOff: aO,
+  PhoneOutgoing: nO,
+  Pi: dO,
+  Piano: sO,
+  Pickaxe: pO,
+  PictureInPicture: MO,
+  PictureInPicture2: lO,
+  PiggyBank: mO,
+  Pilcrow: wO,
+  PilcrowLeft: vO,
+  PilcrowRight: xO,
+  Pill: jO,
+  PillBottle: $O,
+  Pin: SO,
+  PinOff: AO,
+  Pipette: VO,
+  Pizza: EO,
+  Plane: IO,
+  PlaneLanding: PO,
+  PlaneTakeoff: OO,
+  Play: BO,
+  Plug: QO,
+  Plug2: WO,
+  PlugZap: GO,
   Plus: YO,
-  Pocket: QO,
+  Pocket: aD,
   PocketKnife: eD,
-  Podcast: aD,
-  Pointer: rD,
+  Podcast: rD,
+  Pointer: dD,
   PointerOff: nD,
-  Popcorn: dD,
-  Popsicle: sD,
-  PoundSterling: pD,
-  Power: MD,
-  PowerOff: lD,
-  Presentation: mD,
+  Popcorn: sD,
+  Popsicle: pD,
+  PoundSterling: lD,
+  Power: mD,
+  PowerOff: MD,
+  Presentation: vD,
   Printer: $D,
-  PrinterCheck: vD,
-  PrinterX: xD,
-  Projector: wD,
+  PrinterCheck: xD,
+  PrinterX: wD,
+  Projector: AD,
   Proportions: jD,
-  Puzzle: AD,
-  Pyramid: SD,
-  QrCode: VD,
-  Quote: ED,
-  Rabbit: PD,
-  Radar: OD,
+  Puzzle: SD,
+  Pyramid: VD,
+  QrCode: ED,
+  Quote: PD,
+  Rabbit: OD,
+  Radar: ID,
   Radiation: BD,
-  Radical: ID,
-  Radio: YD,
-  RadioReceiver: WD,
-  RadioTower: GD,
-  Radius: QD,
+  Radical: WD,
+  Radio: QD,
+  RadioReceiver: GD,
+  RadioTower: YD,
+  Radius: eI,
   RailSymbol: aI,
-  Rainbow: eI,
-  Rat: nI,
-  Ratio: rI,
-  Receipt: wI,
-  ReceiptCent: dI,
-  ReceiptEuro: sI,
-  ReceiptIndianRupee: pI,
-  ReceiptJapaneseYen: lI,
-  ReceiptPoundSterling: MI,
-  ReceiptRussianRuble: mI,
-  ReceiptSwissFranc: vI,
-  ReceiptText: xI,
+  Rainbow: nI,
+  Rat: rI,
+  Ratio: dI,
+  Receipt: jI,
+  ReceiptCent: sI,
+  ReceiptEuro: pI,
+  ReceiptIndianRupee: lI,
+  ReceiptJapaneseYen: MI,
+  ReceiptPoundSterling: mI,
+  ReceiptRussianRuble: vI,
+  ReceiptSwissFranc: xI,
+  ReceiptText: wI,
   ReceiptTurkishLira: $I,
-  RectangleCircle: jI,
-  RectangleEllipsis: AI,
-  RectangleGoggles: SI,
-  RectangleHorizontal: VI,
-  RectangleVertical: EI,
-  Recycle: II,
-  Redo: BI,
-  Redo2: PI,
-  RedoDot: OI,
-  RefreshCcw: GI,
-  RefreshCcwDot: WI,
-  RefreshCw: QI,
+  RectangleCircle: AI,
+  RectangleEllipsis: SI,
+  RectangleGoggles: VI,
+  RectangleHorizontal: EI,
+  RectangleVertical: PI,
+  Recycle: OI,
+  Redo: WI,
+  Redo2: II,
+  RedoDot: BI,
+  RefreshCcw: QI,
+  RefreshCcwDot: GI,
+  RefreshCw: eF,
   RefreshCwOff: YI,
-  Refrigerator: eF,
-  Regex: aF,
-  RemoveFormatting: nF,
-  Repeat: sF,
-  Repeat1: rF,
+  Refrigerator: aF,
+  Regex: nF,
+  RemoveFormatting: rF,
+  Repeat: pF,
+  Repeat1: sF,
   Repeat2: dF,
-  Replace: lF,
-  ReplaceAll: pF,
-  Reply: mF,
-  ReplyAll: MF,
-  Rewind: vF,
-  Ribbon: xF,
+  Replace: MF,
+  ReplaceAll: lF,
+  Reply: vF,
+  ReplyAll: mF,
+  Rewind: xF,
+  Ribbon: $F,
   Rocket: wF,
-  RockingChair: $F,
-  RollerCoaster: jF,
-  Rose: AF,
-  Rotate3d: SF,
-  RotateCcw: PF,
-  RotateCcwKey: VF,
-  RotateCcwSquare: EF,
-  RotateCw: IF,
-  RotateCwSquare: OF,
-  Route: WF,
-  RouteOff: BF,
-  Router: GF,
-  Rows2: YF,
-  Rows3: QF,
-  Rows4: eB,
-  Rss: aB,
-  Ruler: pB,
-  RulerDimensionLine: nB,
-  RussianRuble: rB,
-  Sailboat: dB,
-  Salad: sB,
-  Sandwich: lB,
-  Satellite: mB,
-  SatelliteDish: MB,
-  SaudiRiyal: vB,
-  Save: $B,
+  RockingChair: jF,
+  RollerCoaster: AF,
+  Rose: SF,
+  Rotate3d: VF,
+  RotateCcw: OF,
+  RotateCcwKey: EF,
+  RotateCcwSquare: PF,
+  RotateCw: BF,
+  RotateCwSquare: IF,
+  Route: GF,
+  RouteOff: WF,
+  Router: YF,
+  Rows2: QF,
+  Rows3: eB,
+  Rows4: aB,
+  Rss: nB,
+  Ruler: dB,
+  RulerDimensionLine: rB,
+  RussianRuble: sB,
+  Sailboat: pB,
+  Salad: lB,
+  Sandwich: MB,
+  Satellite: vB,
+  SatelliteDish: mB,
+  SaudiRiyal: xB,
+  Save: jB,
   SaveAll: wB,
-  SaveOff: xB,
-  Scale: AB,
-  Scale3d: jB,
-  Scaling: SB,
-  Scan: GB,
-  ScanBarcode: VB,
-  ScanEye: EB,
-  ScanFace: PB,
-  ScanHeart: OB,
-  ScanLine: IB,
-  ScanQrCode: BB,
-  ScanSearch: WB,
+  SaveOff: $B,
+  Scale: SB,
+  Scale3d: AB,
+  Scaling: VB,
+  Scan: QB,
+  ScanBarcode: EB,
+  ScanEye: PB,
+  ScanFace: OB,
+  ScanHeart: IB,
+  ScanLine: BB,
+  ScanQrCode: WB,
+  ScanSearch: GB,
   ScanText: YB,
   School: eU,
-  Scissors: aU,
-  ScissorsLineDashed: QB,
+  Scissors: rU,
+  ScissorsLineDashed: aU,
   Scooter: nU,
-  ScreenShare: dU,
-  ScreenShareOff: rU,
-  Scroll: sU,
-  ScrollText: lU,
-  Search: wU,
-  SearchAlert: pU,
-  SearchCheck: MU,
-  SearchCode: mU,
-  SearchSlash: vU,
-  SearchX: xU,
-  Section: $U,
-  Send: SU,
-  SendHorizontal: jU,
-  SendToBack: AU,
-  SeparatorHorizontal: VU,
+  ScreenShare: sU,
+  ScreenShareOff: dU,
+  Scroll: lU,
+  ScrollText: pU,
+  Search: $U,
+  SearchAlert: MU,
+  SearchCheck: mU,
+  SearchCode: vU,
+  SearchSlash: xU,
+  SearchX: wU,
+  Section: jU,
+  Send: VU,
+  SendHorizontal: AU,
+  SendToBack: SU,
+  SeparatorHorizontal: PU,
   SeparatorVertical: EU,
-  Server: BU,
-  ServerCog: PU,
-  ServerCrash: OU,
-  ServerOff: IU,
-  Settings: GU,
-  Settings2: WU,
-  Shapes: YU,
-  Share: eW,
-  Share2: QU,
-  Sheet: aW,
-  Shell: nW,
-  Shield: jW,
-  ShieldAlert: rW,
-  ShieldBan: dW,
-  ShieldCheck: sW,
+  Server: WU,
+  ServerCog: OU,
+  ServerCrash: IU,
+  ServerOff: BU,
+  Settings: YU,
+  Settings2: GU,
+  Shapes: QU,
+  Share: aW,
+  Share2: eW,
+  Sheet: nW,
+  Shell: rW,
+  Shield: AW,
+  ShieldAlert: dW,
+  ShieldBan: sW,
+  ShieldCheck: pW,
   ShieldEllipsis: lW,
-  ShieldHalf: pW,
-  ShieldMinus: MW,
-  ShieldOff: mW,
-  ShieldPlus: vW,
-  ShieldQuestionMark: xW,
-  ShieldUser: wW,
-  ShieldX: $W,
-  Ship: SW,
-  ShipWheel: AW,
+  ShieldHalf: MW,
+  ShieldMinus: mW,
+  ShieldOff: vW,
+  ShieldPlus: xW,
+  ShieldQuestionMark: wW,
+  ShieldUser: $W,
+  ShieldX: jW,
+  Ship: EW,
+  ShipWheel: SW,
   Shirt: VW,
-  ShoppingBag: EW,
+  ShoppingBag: OW,
   ShoppingBasket: PW,
-  ShoppingCart: OW,
-  Shovel: IW,
-  ShowerHead: BW,
-  Shredder: WW,
-  Shrimp: GW,
-  Shrink: YW,
-  Shrub: QW,
-  Shuffle: eZ,
-  Sigma: aZ,
-  Signal: pZ,
-  SignalHigh: nZ,
-  SignalLow: rZ,
-  SignalMedium: dZ,
-  SignalZero: sZ,
-  Signature: lZ,
-  Signpost: mZ,
-  SignpostBig: MZ,
-  Siren: vZ,
-  SkipBack: xZ,
-  SkipForward: wZ,
-  Skull: $Z,
-  Slack: jZ,
-  Slash: AZ,
-  Slice: SZ,
-  SlidersHorizontal: VZ,
-  SlidersVertical: EZ,
+  ShoppingCart: IW,
+  Shovel: BW,
+  ShowerHead: WW,
+  Shredder: GW,
+  Shrimp: YW,
+  Shrink: QW,
+  Shrub: eZ,
+  Shuffle: aZ,
+  Sigma: nZ,
+  Signal: lZ,
+  SignalHigh: rZ,
+  SignalLow: dZ,
+  SignalMedium: sZ,
+  SignalZero: pZ,
+  Signature: MZ,
+  Signpost: vZ,
+  SignpostBig: mZ,
+  Siren: xZ,
+  SkipBack: wZ,
+  SkipForward: $Z,
+  Skull: jZ,
+  Slack: AZ,
+  Slash: SZ,
+  Slice: VZ,
+  SlidersHorizontal: EZ,
+  SlidersVertical: PZ,
   Smartphone: BZ,
-  SmartphoneCharging: PZ,
-  SmartphoneNfc: OZ,
-  Smile: WZ,
-  SmilePlus: IZ,
-  Snail: GZ,
-  Snowflake: YZ,
-  SoapDispenserDroplet: QZ,
-  Sofa: eG,
-  SolarPanel: aG,
-  Soup: nG,
-  Space: rG,
-  Spade: dG,
+  SmartphoneCharging: OZ,
+  SmartphoneNfc: IZ,
+  Smile: GZ,
+  SmilePlus: WZ,
+  Snail: YZ,
+  Snowflake: QZ,
+  SoapDispenserDroplet: eG,
+  Sofa: aG,
+  SolarPanel: nG,
+  Soup: rG,
+  Space: dG,
+  Spade: sG,
   Sparkle: pG,
-  Sparkles: sG,
-  Speaker: lG,
-  Speech: MG,
-  SpellCheck: vG,
-  SpellCheck2: mG,
+  Sparkles: lG,
+  Speaker: MG,
+  Speech: mG,
+  SpellCheck: xG,
+  SpellCheck2: vG,
   Spline: wG,
-  SplinePointer: xG,
+  SplinePointer: $G,
   Split: jG,
-  Spool: $G,
-  Spotlight: AG,
-  SprayCan: SG,
-  Sprout: VG,
-  Square: aK,
-  SquareActivity: EG,
-  SquareArrowDown: OG,
-  SquareArrowDownLeft: PG,
+  Spool: AG,
+  Spotlight: SG,
+  SprayCan: VG,
+  Sprout: EG,
+  Square: nK,
+  SquareActivity: PG,
+  SquareArrowDown: BG,
+  SquareArrowDownLeft: OG,
   SquareArrowDownRight: IG,
-  SquareArrowLeft: BG,
-  SquareArrowOutDownLeft: WG,
-  SquareArrowOutDownRight: GG,
-  SquareArrowOutUpLeft: YG,
-  SquareArrowOutUpRight: QG,
-  SquareArrowRight: eX,
+  SquareArrowLeft: WG,
+  SquareArrowOutDownLeft: GG,
+  SquareArrowOutDownRight: YG,
+  SquareArrowOutUpLeft: QG,
+  SquareArrowOutUpRight: eX,
+  SquareArrowRight: aX,
   SquareArrowUp: rX,
-  SquareArrowUpLeft: aX,
-  SquareArrowUpRight: nX,
+  SquareArrowUpLeft: nX,
+  SquareArrowUpRight: sX,
   SquareAsterisk: dX,
-  SquareBottomDashedScissors: sX,
-  SquareChartGantt: pX,
-  SquareCheck: MX,
-  SquareCheckBig: lX,
-  SquareChevronDown: mX,
-  SquareChevronLeft: vX,
-  SquareChevronRight: xX,
+  SquareBottomDashedScissors: pX,
+  SquareChartGantt: lX,
+  SquareCheck: mX,
+  SquareCheckBig: MX,
+  SquareChevronDown: vX,
+  SquareChevronLeft: xX,
+  SquareChevronRight: $X,
   SquareChevronUp: wX,
-  SquareCode: $X,
-  SquareDashed: PX,
-  SquareDashedBottom: AX,
-  SquareDashedBottomCode: jX,
+  SquareCode: jX,
+  SquareDashed: OX,
+  SquareDashedBottom: SX,
+  SquareDashedBottomCode: AX,
   SquareDashedKanban: VX,
-  SquareDashedMousePointer: SX,
-  SquareDashedTopSolid: EX,
-  SquareDivide: OX,
-  SquareDot: IX,
-  SquareEqual: BX,
-  SquareFunction: WX,
+  SquareDashedMousePointer: EX,
+  SquareDashedTopSolid: PX,
+  SquareDivide: IX,
+  SquareDot: BX,
+  SquareEqual: WX,
+  SquareFunction: GX,
   SquareKanban: YX,
-  SquareLibrary: GX,
-  SquareM: QX,
-  SquareMenu: eY,
-  SquareMinus: aY,
-  SquareMousePointer: nY,
-  SquareParking: dY,
-  SquareParkingOff: rY,
-  SquarePause: sY,
-  SquarePen: pY,
-  SquarePercent: lY,
-  SquarePi: MY,
+  SquareLibrary: QX,
+  SquareM: eY,
+  SquareMenu: aY,
+  SquareMinus: nY,
+  SquareMousePointer: rY,
+  SquareParking: sY,
+  SquareParkingOff: dY,
+  SquarePause: pY,
+  SquarePen: lY,
+  SquarePercent: MY,
+  SquarePi: xY,
   SquarePilcrow: mY,
   SquarePlay: vY,
-  SquarePlus: xY,
-  SquarePower: wY,
-  SquareRadical: $Y,
-  SquareRoundCorner: jY,
-  SquareScissors: AY,
-  SquareSigma: SY,
-  SquareSlash: VY,
-  SquareSplitHorizontal: EY,
-  SquareSplitVertical: PY,
-  SquareSquare: OY,
+  SquarePlus: wY,
+  SquarePower: $Y,
+  SquareRadical: jY,
+  SquareRoundCorner: AY,
+  SquareScissors: SY,
+  SquareSigma: VY,
+  SquareSlash: EY,
+  SquareSplitHorizontal: PY,
+  SquareSplitVertical: OY,
+  SquareSquare: BY,
   SquareStack: IY,
-  SquareStar: BY,
+  SquareStar: GY,
   SquareStop: WY,
-  SquareTerminal: GY,
-  SquareUser: YY,
+  SquareTerminal: YY,
+  SquareUser: eK,
   SquareUserRound: QY,
-  SquareX: eK,
-  SquaresExclude: nK,
-  SquaresIntersect: rK,
+  SquareX: aK,
+  SquaresExclude: rK,
+  SquaresIntersect: dK,
   SquaresSubtract: sK,
-  SquaresUnite: dK,
-  Squircle: lK,
-  SquircleDashed: pK,
-  Squirrel: MK,
-  Stamp: mK,
-  Star: wK,
+  SquaresUnite: pK,
+  Squircle: MK,
+  SquircleDashed: lK,
+  Squirrel: mK,
+  Stamp: vK,
+  Star: $K,
   StarHalf: xK,
-  StarOff: vK,
-  StepBack: $K,
-  StepForward: jK,
-  Stethoscope: AK,
-  Sticker: SK,
-  StickyNote: VK,
-  Stone: EK,
-  Store: PK,
-  StretchHorizontal: OK,
+  StarOff: wK,
+  StepBack: jK,
+  StepForward: AK,
+  Stethoscope: SK,
+  Sticker: VK,
+  StickyNote: EK,
+  Stone: PK,
+  Store: OK,
+  StretchHorizontal: BK,
   StretchVertical: IK,
-  Strikethrough: BK,
-  Subscript: WK,
-  Sun: aQ,
-  SunDim: GK,
+  Strikethrough: WK,
+  Subscript: GK,
+  Sun: nQ,
+  SunDim: YK,
   SunMedium: QK,
-  SunMoon: YK,
-  SunSnow: eQ,
-  Sunrise: nQ,
-  Sunset: rQ,
-  Superscript: dQ,
-  SwatchBook: sQ,
-  SwissFranc: pQ,
-  SwitchCamera: lQ,
-  Sword: MQ,
-  Swords: mQ,
-  Syringe: vQ,
-  Table: EQ,
-  Table2: xQ,
-  TableCellsMerge: wQ,
-  TableCellsSplit: $Q,
-  TableColumnsSplit: jQ,
-  TableOfContents: VQ,
-  TableProperties: AQ,
-  TableRowsSplit: SQ,
-  Tablet: OQ,
-  TabletSmartphone: PQ,
+  SunMoon: eQ,
+  SunSnow: aQ,
+  Sunrise: rQ,
+  Sunset: dQ,
+  Superscript: sQ,
+  SwatchBook: pQ,
+  SwissFranc: lQ,
+  SwitchCamera: MQ,
+  Sword: mQ,
+  Swords: vQ,
+  Syringe: xQ,
+  Table: PQ,
+  Table2: wQ,
+  TableCellsMerge: $Q,
+  TableCellsSplit: jQ,
+  TableColumnsSplit: AQ,
+  TableOfContents: SQ,
+  TableProperties: VQ,
+  TableRowsSplit: EQ,
+  Tablet: IQ,
+  TabletSmartphone: OQ,
   Tablets: BQ,
-  Tag: IQ,
-  Tags: WQ,
-  Tally1: GQ,
-  Tally2: YQ,
-  Tally3: QQ,
-  Tally4: eJ,
-  Tally5: aJ,
-  Tangent: nJ,
-  Target: rJ,
-  Telescope: dJ,
-  Tent: pJ,
-  TentTree: sJ,
-  Terminal: lJ,
-  TestTube: mJ,
-  TestTubeDiagonal: MJ,
-  TestTubes: vJ,
-  TextAlignCenter: xJ,
-  TextAlignEnd: wJ,
-  TextAlignJustify: $J,
-  TextAlignStart: jJ,
-  TextCursor: SJ,
-  TextCursorInput: AJ,
-  TextInitial: VJ,
-  TextQuote: EJ,
-  TextSearch: PJ,
-  TextSelect: OJ,
-  TextWrap: IJ,
-  Theater: BJ,
-  Thermometer: YJ,
-  ThermometerSnowflake: WJ,
-  ThermometerSun: GJ,
-  ThumbsDown: QJ,
-  ThumbsUp: e11,
-  Ticket: l11,
-  TicketCheck: a11,
-  TicketMinus: n11,
-  TicketPercent: r11,
-  TicketPlus: d11,
-  TicketSlash: s11,
-  TicketX: p11,
-  Tickets: m11,
-  TicketsPlane: M11,
-  Timer: x11,
-  TimerOff: v11,
+  Tag: WQ,
+  Tags: GQ,
+  Tally1: YQ,
+  Tally2: QQ,
+  Tally3: eJ,
+  Tally4: aJ,
+  Tally5: nJ,
+  Tangent: rJ,
+  Target: dJ,
+  Telescope: sJ,
+  Tent: lJ,
+  TentTree: pJ,
+  Terminal: MJ,
+  TestTube: vJ,
+  TestTubeDiagonal: mJ,
+  TestTubes: xJ,
+  TextAlignCenter: wJ,
+  TextAlignEnd: $J,
+  TextAlignJustify: jJ,
+  TextAlignStart: AJ,
+  TextCursor: VJ,
+  TextCursorInput: SJ,
+  TextInitial: EJ,
+  TextQuote: PJ,
+  TextSearch: OJ,
+  TextSelect: IJ,
+  TextWrap: BJ,
+  Theater: WJ,
+  Thermometer: QJ,
+  ThermometerSnowflake: GJ,
+  ThermometerSun: YJ,
+  ThumbsDown: e11,
+  ThumbsUp: a11,
+  Ticket: M11,
+  TicketCheck: n11,
+  TicketMinus: r11,
+  TicketPercent: d11,
+  TicketPlus: s11,
+  TicketSlash: p11,
+  TicketX: l11,
+  Tickets: v11,
+  TicketsPlane: m11,
+  Timer: $11,
+  TimerOff: x11,
   TimerReset: w11,
-  ToggleLeft: $11,
-  ToggleRight: j11,
-  Toilet: A11,
-  ToolCase: S11,
-  Toolbox: E11,
-  Tornado: V11,
-  Torus: P11,
-  Touchpad: I11,
-  TouchpadOff: O11,
-  TowerControl: B11,
-  ToyBrick: W11,
-  Tractor: G11,
-  TrafficCone: Y11,
-  TrainFront: ee1,
-  TrainFrontTunnel: Q11,
-  TrainTrack: ae1,
-  TramFront: ne1,
-  Transgender: re1,
-  Trash: se1,
-  Trash2: de1,
-  TreeDeciduous: pe1,
-  TreePalm: le1,
-  TreePine: Me1,
-  Trees: me1,
-  Trello: ve1,
-  TrendingDown: xe1,
-  TrendingUp: $e1,
-  TrendingUpDown: we1,
-  Triangle: Ve1,
-  TriangleAlert: je1,
-  TriangleDashed: Ae1,
-  TriangleRight: Se1,
-  Trophy: Ee1,
-  Truck: Oe1,
-  TruckElectric: Pe1,
-  TurkishLira: Ie1,
-  Turntable: Be1,
-  Turtle: We1,
-  Tv: Qe1,
-  TvMinimal: Ye1,
-  TvMinimalPlay: Ge1,
-  Twitch: e21,
-  Twitter: a21,
+  ToggleLeft: j11,
+  ToggleRight: A11,
+  Toilet: S11,
+  ToolCase: E11,
+  Toolbox: V11,
+  Tornado: P11,
+  Torus: O11,
+  Touchpad: B11,
+  TouchpadOff: I11,
+  TowerControl: W11,
+  ToyBrick: G11,
+  Tractor: Y11,
+  TrafficCone: Q11,
+  TrainFront: ae1,
+  TrainFrontTunnel: ee1,
+  TrainTrack: ne1,
+  TramFront: re1,
+  Transgender: de1,
+  Trash: pe1,
+  Trash2: se1,
+  TreeDeciduous: le1,
+  TreePalm: Me1,
+  TreePine: me1,
+  Trees: ve1,
+  Trello: xe1,
+  TrendingDown: we1,
+  TrendingUp: je1,
+  TrendingUpDown: $e1,
+  Triangle: Ee1,
+  TriangleAlert: Ae1,
+  TriangleDashed: Se1,
+  TriangleRight: Ve1,
+  Trophy: Pe1,
+  Truck: Ie1,
+  TruckElectric: Oe1,
+  TurkishLira: Be1,
+  Turntable: We1,
+  Turtle: Ge1,
+  Tv: e21,
+  TvMinimal: Qe1,
+  TvMinimalPlay: Ye1,
+  Twitch: a21,
+  Twitter: r21,
   Type: n21,
-  TypeOutline: r21,
-  Umbrella: s21,
-  UmbrellaOff: d21,
-  Underline: p21,
-  Undo: m21,
-  Undo2: l21,
-  UndoDot: M21,
-  UnfoldHorizontal: v21,
-  UnfoldVertical: x21,
-  Ungroup: w21,
-  University: $21,
+  TypeOutline: d21,
+  Umbrella: p21,
+  UmbrellaOff: s21,
+  Underline: l21,
+  Undo: v21,
+  Undo2: M21,
+  UndoDot: m21,
+  UnfoldHorizontal: x21,
+  UnfoldVertical: w21,
+  Ungroup: $21,
+  University: S21,
   Unlink: A21,
   Unlink2: j21,
-  Unplug: S21,
-  Upload: V21,
+  Unplug: V21,
+  Upload: P21,
   Usb: E21,
-  User: mt1,
-  UserCheck: P21,
-  UserCog: O21,
-  UserLock: I21,
-  UserMinus: B21,
-  UserPen: W21,
-  UserPlus: G21,
-  UserRound: st1,
-  UserRoundCheck: Y21,
-  UserRoundCog: Q21,
-  UserRoundMinus: et1,
-  UserRoundPen: at1,
-  UserRoundPlus: nt1,
-  UserRoundSearch: rt1,
-  UserRoundX: dt1,
-  UserSearch: pt1,
-  UserStar: lt1,
-  UserX: Mt1,
-  Users: wt1,
-  UsersRound: vt1,
-  Utensils: $t1,
-  UtensilsCrossed: xt1,
-  UtilityPole: jt1,
-  Van: At1,
-  Variable: St1,
-  Vault: Vt1,
-  VectorSquare: Et1,
-  Vegan: Pt1,
-  VenetianMask: Ot1,
-  Venus: Bt1,
-  VenusAndMars: It1,
-  Vibrate: Gt1,
-  VibrateOff: Wt1,
-  Video: e01,
-  VideoOff: Yt1,
-  Videotape: Qt1,
-  View: a01,
-  Voicemail: n01,
-  Volleyball: r01,
-  Volume: M01,
-  Volume1: d01,
-  Volume2: s01,
-  VolumeOff: p01,
-  VolumeX: l01,
-  Vote: m01,
-  Wallet: w01,
-  WalletCards: v01,
-  WalletMinimal: x01,
-  Wallpaper: $01,
-  Wand: A01,
-  WandSparkles: j01,
-  Warehouse: S01,
-  WashingMachine: V01,
-  Watch: P01,
-  Waves: B01,
-  WavesArrowDown: E01,
-  WavesArrowUp: O01,
-  WavesLadder: I01,
-  Waypoints: W01,
-  Webcam: G01,
-  Webhook: Q01,
-  WebhookOff: Y01,
-  Weight: aa1,
-  WeightTilde: ea1,
-  Wheat: ra1,
-  WheatOff: na1,
-  WholeWord: da1,
-  Wifi: wa1,
-  WifiCog: sa1,
-  WifiHigh: pa1,
-  WifiLow: la1,
-  WifiOff: Ma1,
-  WifiPen: ma1,
-  WifiSync: va1,
-  WifiZero: xa1,
-  Wind: ja1,
-  WindArrowDown: $a1,
-  Wine: Sa1,
-  WineOff: Aa1,
-  Workflow: Va1,
-  Worm: Ea1,
-  Wrench: Pa1,
-  X: Oa1,
-  Youtube: Ba1,
-  Zap: Wa1,
-  ZapOff: Ia1,
-  ZoomIn: Ga1,
-  ZoomOut: Ya1
-}, Symbol.toStringTag, { value: "Module" })), Go1 = ({ name: t, color: a, size: o, className: n }) => {
-  const c = Ka1[t];
+  User: wt1,
+  UserCheck: O21,
+  UserCog: I21,
+  UserKey: B21,
+  UserLock: W21,
+  UserMinus: G21,
+  UserPen: Y21,
+  UserPlus: Q21,
+  UserRound: Mt1,
+  UserRoundCheck: et1,
+  UserRoundCog: at1,
+  UserRoundKey: nt1,
+  UserRoundMinus: rt1,
+  UserRoundPen: dt1,
+  UserRoundPlus: st1,
+  UserRoundSearch: pt1,
+  UserRoundX: lt1,
+  UserSearch: mt1,
+  UserStar: vt1,
+  UserX: xt1,
+  Users: jt1,
+  UsersRound: $t1,
+  Utensils: St1,
+  UtensilsCrossed: At1,
+  UtilityPole: Vt1,
+  Van: Et1,
+  Variable: Pt1,
+  Vault: Ot1,
+  VectorSquare: It1,
+  Vegan: Bt1,
+  VenetianMask: Wt1,
+  Venus: Yt1,
+  VenusAndMars: Gt1,
+  Vibrate: e01,
+  VibrateOff: Qt1,
+  Video: n01,
+  VideoOff: a01,
+  Videotape: r01,
+  View: d01,
+  Voicemail: s01,
+  Volleyball: p01,
+  Volume: x01,
+  Volume1: l01,
+  Volume2: M01,
+  VolumeOff: m01,
+  VolumeX: v01,
+  Vote: w01,
+  Wallet: A01,
+  WalletCards: $01,
+  WalletMinimal: j01,
+  Wallpaper: S01,
+  Wand: E01,
+  WandSparkles: V01,
+  Warehouse: P01,
+  WashingMachine: O01,
+  Watch: I01,
+  Waves: Y01,
+  WavesArrowDown: B01,
+  WavesArrowUp: W01,
+  WavesLadder: G01,
+  Waypoints: Q01,
+  Webcam: ea1,
+  Webhook: na1,
+  WebhookOff: aa1,
+  Weight: da1,
+  WeightTilde: ra1,
+  Wheat: la1,
+  WheatOff: sa1,
+  WholeWord: pa1,
+  Wifi: Aa1,
+  WifiCog: Ma1,
+  WifiHigh: ma1,
+  WifiLow: va1,
+  WifiOff: xa1,
+  WifiPen: wa1,
+  WifiSync: $a1,
+  WifiZero: ja1,
+  Wind: Va1,
+  WindArrowDown: Sa1,
+  Wine: Pa1,
+  WineOff: Ea1,
+  Workflow: Oa1,
+  Worm: Ia1,
+  Wrench: Ba1,
+  X: Wa1,
+  Youtube: Ga1,
+  Zap: Qa1,
+  ZapOff: Ya1,
+  ZoomIn: eo1,
+  ZoomOut: ao1
+}, Symbol.toStringTag, { value: "Module" })), en1 = ({ name: t, color: a, size: o, className: n }) => {
+  const c = oo1[t];
   return c ? /* @__PURE__ */ w.jsx(c, { color: a, size: o, className: n }) : null;
 }, ke = W.span`
   display: inline-flex;
@@ -21858,7 +21885,7 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
     color: ${({ theme: t }) => t.colors.grayDark};
     font-size: ${({ theme: t }) => t.fontSizes.small.lg};
     line-height: ${({ theme: t }) => t.lineHeights.small.lg};
-  `, Qa1 = W.input`
+  `, no1 = W.input`
   ${_1};
   ${at};
   font-family: inherit;
@@ -21976,7 +22003,7 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
 	`}
 
 	${({ $fullWidth: t }) => b1(!!t)}
-`, Ja1 = W.span`
+`, co1 = W.span`
   display: inline-flex;
   position: relative;
   line-height: 0;
@@ -21999,7 +22026,7 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
     pointer-events: none;
     transition: all 0.3s ease;
   }
-`, eo1 = W.input`
+`, ro1 = W.input`
   ${_1};
   display: inline-block;
   background: ${({ theme: t }) => t.colors.light};
@@ -22098,7 +22125,7 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
-`, to1 = W.span`
+`, ho1 = W.span`
   position: relative;
   ${({ $fullWidth: t }) => b1(!!t)};
 
@@ -22131,7 +22158,7 @@ const Ka1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
           }
         `}
 `;
-function ao1({ ...t }, a) {
+function do1({ ...t }, a) {
   return t.type === "checkbox" || t.type === "radio" ? /* @__PURE__ */ w.jsxs(
     ke,
     {
@@ -22140,8 +22167,8 @@ function ao1({ ...t }, a) {
       $label: t.$label,
       className: t.$wrapperClassName,
       children: [
-        /* @__PURE__ */ w.jsxs(Ja1, { children: [
-          /* @__PURE__ */ w.jsx(eo1, { ...t, ref: a }),
+        /* @__PURE__ */ w.jsxs(co1, { children: [
+          /* @__PURE__ */ w.jsx(ro1, { ...t, ref: a }),
           !t.disabled && t.type === "checkbox" ? /* @__PURE__ */ w.jsx(Go, {}) : /* @__PURE__ */ w.jsx("em", {})
         ] }),
         t.$label && /* @__PURE__ */ w.jsx(te, { htmlFor: t.id, children: t.$label })
@@ -22157,14 +22184,14 @@ function ao1({ ...t }, a) {
       children: [
         t.$label && /* @__PURE__ */ w.jsx(te, { htmlFor: t.id, children: t.$label }),
         /* @__PURE__ */ w.jsxs(
-          to1,
+          ho1,
           {
             $fullWidth: t.$fullWidth,
             $iconPosition: t.$iconPosition,
             $icon: t.$icon,
             children: [
               t.$iconPosition !== "right" && t.$icon && t.$icon,
-              /* @__PURE__ */ w.jsx(Qa1, { ...t, ref: a }),
+              /* @__PURE__ */ w.jsx(no1, { ...t, ref: a }),
               t.$iconPosition === "right" && t.$icon && t.$icon,
               t.type === "date" && /* @__PURE__ */ w.jsx(Yo, { className: "icon-calendar" })
             ]
@@ -22174,33 +22201,33 @@ function ao1({ ...t }, a) {
     }
   );
 }
-const Xo1 = e1(ao1), ta = (t) => `max-width: ${t}px;`;
-function oo1(t) {
+const tn1 = e1(do1), ta = (t) => `max-width: ${t}px;`;
+function io1(t) {
   return Object.keys(t).filter((a) => a.startsWith("$")).map((a) => {
     const o = a.substring(1);
     return t[a] && T(o) + `{ ${ta(t[a])} }`;
   }).join("");
 }
-const no1 = W.div`
+const so1 = W.div`
   display: block;
   margin: ${({ $m0: t }) => t ? "0" : "auto"};
 
   ${({ $size: t }) => `
 		${t && ta(t)};
 	`}
-  ${(t) => oo1(t)}
+  ${(t) => io1(t)}
 `;
-function co1({ ...t }, a) {
-  return /* @__PURE__ */ w.jsx(no1, { ...t, ref: a, children: t.children });
+function yo1({ ...t }, a) {
+  return /* @__PURE__ */ w.jsx(so1, { ...t, ref: a, children: t.children });
 }
-const Yo1 = e1(co1), ro1 = W.span`
+const an1 = e1(yo1), po1 = W.span`
   display: inline-flex;
   flex-wrap: ${({ type: t }) => t === "checkbox" || t === "radio" ? "fprnowrap" : "wrap"};
   gap: 10px;
   align-items: center;
 
   ${({ $fullWidth: t }) => b1(!!t)}
-`, ho1 = W.input`
+`, ko1 = W.input`
   ${_1};
   padding: 0;
   height: 10px;
@@ -22387,20 +22414,20 @@ const Yo1 = e1(co1), ro1 = W.span`
 					}
 				`}
 `;
-function do1({ ...t }, a) {
+function lo1({ ...t }, a) {
   return /* @__PURE__ */ w.jsxs(
-    ro1,
+    po1,
     {
       $fullWidth: t.$fullWidth,
       className: t.$wrapperClassName,
       children: [
         t.$label && /* @__PURE__ */ w.jsx(te, { htmlFor: t.id, children: t.$label }),
-        /* @__PURE__ */ w.jsx(ho1, { ...t, type: "range", ref: a })
+        /* @__PURE__ */ w.jsx(ko1, { ...t, type: "range", ref: a })
       ]
     }
   );
 }
-const Ko1 = e1(do1), io1 = W.select`
+const on1 = e1(lo1), uo1 = W.select`
   ${_1};
   ${at};
   font-family: inherit;
@@ -22450,7 +22477,7 @@ const Ko1 = e1(do1), io1 = W.select`
 	`}
 
 	${({ $fullWidth: t }) => b1(!!t)}
-`, so1 = W.span`
+`, Mo1 = W.span`
     position: relative;
     ${({ $fullWidth: t }) => b1(!!t)}
 
@@ -22472,7 +22499,7 @@ const Ko1 = e1(do1), io1 = W.select`
       transform: translateY(-50%) rotate(180deg);
     }
   `;
-function yo1({ ...t }, a) {
+function fo1({ ...t }, a) {
   return /* @__PURE__ */ w.jsxs(
     ke,
     {
@@ -22481,34 +22508,34 @@ function yo1({ ...t }, a) {
       className: t.$wrapperClassName,
       children: [
         t.$label && /* @__PURE__ */ w.jsx(te, { htmlFor: t.id, children: t.$label }),
-        /* @__PURE__ */ w.jsxs(so1, { $fullWidth: t.$fullWidth, children: [
-          /* @__PURE__ */ w.jsx(io1, { ...t, ref: a, children: t.children }),
+        /* @__PURE__ */ w.jsxs(Mo1, { $fullWidth: t.$fullWidth, children: [
+          /* @__PURE__ */ w.jsx(uo1, { ...t, ref: a, children: t.children }),
           /* @__PURE__ */ w.jsx(Xo, {})
         ] })
       ]
     }
   );
 }
-const Qo1 = e1(yo1), aa = (t, a) => t === "none" ? "display: none;" : a ? `display: inline-block;
+const nn1 = e1(fo1), aa = (t, a) => t === "none" ? "display: none;" : a ? `display: inline-block;
 			max-height: 0;
 			min-width: ${t}px;
 			max-width: ${t}px;` : `display: block;
 			min-height: ${t}px;
 			max-height: ${t}px;`;
-function po1(t) {
+function mo1(t) {
   return Object.keys(t).filter((a) => a.startsWith("$")).map((a) => {
     const o = a.substring(1);
     return t[a] && T(o) + `{ ${aa(t[a], t.$horizontal || !1)} }`;
   }).join("");
 }
-const ko1 = W.span`
+const go1 = W.span`
   ${({ $horizontal: t, $size: a }) => a ? aa(a, t || !1) : ""}
-  ${(t) => po1(t)}
+  ${(t) => mo1(t)}
 `;
-function lo1({ ...t }, a) {
-  return /* @__PURE__ */ w.jsx(ko1, { ...t, ref: a });
+function vo1({ ...t }, a) {
+  return /* @__PURE__ */ w.jsx(go1, { ...t, ref: a });
 }
-const Jo1 = e1(lo1), uo1 = W.textarea`
+const cn1 = e1(vo1), _o1 = W.textarea`
   ${_1};
   ${at};
   font-family: inherit;
@@ -22564,7 +22591,7 @@ const Jo1 = e1(lo1), uo1 = W.textarea`
 
 	${({ $fullWidth: t }) => b1(!!t)}
 `;
-function Mo1({ ...t }, a) {
+function xo1({ ...t }, a) {
   return /* @__PURE__ */ w.jsxs(
     ke,
     {
@@ -22573,17 +22600,17 @@ function Mo1({ ...t }, a) {
       className: t.$wrapperClassName,
       children: [
         t.$label && /* @__PURE__ */ w.jsx(te, { htmlFor: t.id, $label: t.$label, children: t.$label }),
-        /* @__PURE__ */ w.jsx(uo1, { ...t, ref: a, children: t.children })
+        /* @__PURE__ */ w.jsx(_o1, { ...t, ref: a, children: t.children })
       ]
     }
   );
 }
-const en1 = e1(Mo1), fo1 = W.span`
+const rn1 = e1(xo1), bo1 = W.span`
   display: inline-block;
   margin: auto 0;
   position: relative;
   vertical-align: middle;
-`, mo1 = W.span`
+`, wo1 = W.span`
   display: block;
   border: solid 2px ${({ theme: t }) => t.colors.grayLight};
   background: ${({ theme: t }) => t.colors.light};
@@ -22629,7 +22656,7 @@ const en1 = e1(Mo1), fo1 = W.span`
     width: ${({ $size: t }) => t === "big" ? "32px" : t === "small" ? "18px" : "22px"};
     height: ${({ $size: t }) => t === "big" ? "32px" : t === "small" ? "18px" : "22px"};
   }
-`, go1 = W.input`
+`, No1 = W.input`
   ${_1};
   position: absolute;
   left: 0;
@@ -22680,7 +22707,7 @@ const en1 = e1(Mo1), fo1 = W.span`
 			}
 		}`}
 `;
-function vo1({ type: t = "checkbox", ...a }, o) {
+function $o1({ type: t = "checkbox", ...a }, o) {
   return /* @__PURE__ */ w.jsxs(
     ke,
     {
@@ -22688,10 +22715,10 @@ function vo1({ type: t = "checkbox", ...a }, o) {
       $label: a.$label,
       className: a.$wrapperClassName,
       children: [
-        /* @__PURE__ */ w.jsxs(fo1, { children: [
-          /* @__PURE__ */ w.jsx(go1, { ...a, type: t, ref: o }),
+        /* @__PURE__ */ w.jsxs(bo1, { children: [
+          /* @__PURE__ */ w.jsx(No1, { ...a, type: t, ref: o }),
           /* @__PURE__ */ w.jsx(
-            mo1,
+            wo1,
             {
               $error: a.$error,
               $success: a.$success,
@@ -22705,32 +22732,32 @@ function vo1({ type: t = "checkbox", ...a }, o) {
     }
   );
 }
-const tn1 = e1(vo1);
+const hn1 = e1($o1);
 export {
-  Fo1 as Box,
-  Bo1 as Button,
-  Io1 as CherryThemeProvider,
-  Uo1 as Col,
+  Xo1 as Box,
+  Yo1 as Button,
+  Go1 as CherryThemeProvider,
+  Ko1 as Col,
   nn as Container,
-  Wo1 as Flex,
+  Qo1 as Flex,
   Zo as GlobalStyles,
-  Zo1 as Grid,
-  Go1 as Icon,
+  Jo1 as Grid,
+  en1 as Icon,
   Xo as IconArrow,
   Yo as IconCalendar,
   Go as IconCheck,
-  Xo1 as Input,
-  Yo1 as MaxWidth,
-  Ko1 as Range,
-  Qo1 as Select,
-  Jo1 as Space,
-  xo1 as StyledComponentsRegistry,
-  so1 as StyledIconWrapper,
+  tn1 as Input,
+  an1 as MaxWidth,
+  on1 as Range,
+  nn1 as Select,
+  cn1 as Space,
+  jo1 as StyledComponentsRegistry,
+  Mo1 as StyledIconWrapper,
   ke as StyledInputWrapper,
   te as StyledLabel,
-  en1 as Textarea,
+  rn1 as Textarea,
   tn as ThemeContext,
-  tn1 as Toggle,
+  hn1 as Toggle,
   tt as breakpoints,
   Gn as buttonStyles,
   Ko as colors,
@@ -22752,24 +22779,24 @@ export {
   en as shadowsDark,
   U0 as spacing,
   U1 as statusBorderStyles,
-  Eo1 as styledBlockquote,
-  Po1 as styledButton,
-  To1 as styledButtonBig,
-  Lo1 as styledCode,
-  zo1 as styledH1,
-  jo1 as styledH2,
-  qo1 as styledH3,
-  Ao1 as styledH4,
-  Ho1 as styledH5,
-  So1 as styledH6,
-  wo1 as styledHero1,
-  No1 as styledHero2,
-  $o1 as styledHero3,
-  Oo1 as styledInput,
-  Do1 as styledInputBig,
-  Ro1 as styledSmall,
-  Vo1 as styledStrong,
-  Co1 as styledText,
+  Io1 as styledBlockquote,
+  Bo1 as styledButton,
+  Uo1 as styledButtonBig,
+  Fo1 as styledCode,
+  Co1 as styledH1,
+  Vo1 as styledH2,
+  Ro1 as styledH3,
+  Eo1 as styledH4,
+  Lo1 as styledH5,
+  Po1 as styledH6,
+  Ao1 as styledHero1,
+  Ho1 as styledHero2,
+  So1 as styledHero3,
+  Wo1 as styledInput,
+  Zo1 as styledInputBig,
+  Do1 as styledSmall,
+  Oo1 as styledStrong,
+  To1 as styledText,
   le as theme,
-  bo1 as themeDark
+  qo1 as themeDark
 };
