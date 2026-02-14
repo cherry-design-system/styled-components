@@ -1265,16 +1265,13 @@ To pass a single animation please supply them in simple values, e.g. animation('
     & select:focus:not([disabled]) ~ svg {
       transform: translateY(-50%) rotate(180deg);
     }
-  `;function Oq({...t},o){return b.jsxs(ae,{$fullWidth:t.$fullWidth,$label:t.$label,className:t.$wrapperClassName,children:[t.$label&&b.jsx(U1,{htmlFor:t.id,children:t.$label}),b.jsxs(po,{$fullWidth:t.$fullWidth,children:[b.jsx(Tq,{...t,ref:o,children:t.children}),b.jsx(W0,{})]})]})}const Dq=$.forwardRef(Oq),ko=(t,o)=>o?`display: inline-block;
+  `;function Oq({...t},o){return b.jsxs(ae,{$fullWidth:t.$fullWidth,$label:t.$label,className:t.$wrapperClassName,children:[t.$label&&b.jsx(U1,{htmlFor:t.id,children:t.$label}),b.jsxs(po,{$fullWidth:t.$fullWidth,children:[b.jsx(Tq,{...t,ref:o,children:t.children}),b.jsx(W0,{})]})]})}const Dq=$.forwardRef(Oq),ko=(t,o)=>t==="none"?"display: none;":o?`display: inline-block;
 			max-height: 0;
 			min-width: ${t}px;
 			max-width: ${t}px;`:`display: block;
 			min-height: ${t}px;
 			max-height: ${t}px;`;function Iq(t){return Object.keys(t).filter(o=>o.startsWith("$")).map(o=>{const a=o.substring(1);return t[o]&&T(a)+`{ ${ko(t[o],t.$horizontal||!1)} }`}).join("")}const Fq=Z.span`
-  ${({$horizontal:t,$size:o})=>`
-		${o&&o!=="none"&&ko(o,t||!1)};
-		${o==="none"&&"display: none;"};
-	`}
+  ${({$horizontal:t,$size:o})=>o?ko(o,t||!1):""}
   ${t=>Iq(t)}
 `;function Bq({...t},o){return b.jsx(Fq,{...t,ref:o})}const Uq=$.forwardRef(Bq),Wq=Z.textarea`
   ${l1};

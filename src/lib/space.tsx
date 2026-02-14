@@ -16,12 +16,14 @@ interface SpaceProps {
 }
 
 const styles = ($size: number | "none", $horizontal: boolean) =>
-  $horizontal
-    ? `display: inline-block;
+  $size === "none"
+    ? `display: none;`
+    : $horizontal
+      ? `display: inline-block;
 			max-height: 0;
 			min-width: ${$size}px;
 			max-width: ${$size}px;`
-    : `display: block;
+      : `display: block;
 			min-height: ${$size}px;
 			max-height: ${$size}px;`;
 
@@ -39,10 +41,8 @@ function responsiveStyles(props: any) {
 }
 
 const StyledSpace = styled.span<SpaceProps>`
-  ${({ $horizontal, $size }) => `
-		${$size && $size !== "none" && styles($size, $horizontal || false)};
-		${$size === "none" && `display: none;`};
-	`}
+  ${({ $horizontal, $size }) =>
+    $size ? styles($size, $horizontal || false) : ""}
   ${(props) => responsiveStyles(props)}
 `;
 

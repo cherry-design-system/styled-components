@@ -22489,7 +22489,7 @@ function yo1({ ...t }, a) {
     }
   );
 }
-const Qo1 = e1(yo1), aa = (t, a) => a ? `display: inline-block;
+const Qo1 = e1(yo1), aa = (t, a) => t === "none" ? "display: none;" : a ? `display: inline-block;
 			max-height: 0;
 			min-width: ${t}px;
 			max-width: ${t}px;` : `display: block;
@@ -22502,10 +22502,7 @@ function po1(t) {
   }).join("");
 }
 const ko1 = W.span`
-  ${({ $horizontal: t, $size: a }) => `
-		${a && a !== "none" && aa(a, t || !1)};
-		${a === "none" && "display: none;"};
-	`}
+  ${({ $horizontal: t, $size: a }) => a ? aa(a, t || !1) : ""}
   ${(t) => po1(t)}
 `;
 function lo1({ ...t }, a) {
