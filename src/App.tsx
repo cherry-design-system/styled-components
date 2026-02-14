@@ -118,7 +118,12 @@ function App() {
                 $label="Input Big"
                 id="input-big"
               />
-              <Select $size="big" $fullWidth $label="Select Big" id="select-big">
+              <Select
+                $size="big"
+                $fullWidth
+                $label="Select Big"
+                id="select-big"
+              >
                 <option>Select</option>
               </Select>
               <Col $lgSpan={2}>
