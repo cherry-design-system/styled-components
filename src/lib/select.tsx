@@ -2,7 +2,6 @@
 import React, { forwardRef } from "react";
 import styled, { IStyledComponent } from "styled-components";
 import {
-  Theme,
   IconArrow,
   formElementHeightStyles,
   fullWidthStyles,
@@ -20,7 +19,6 @@ interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
   $error?: boolean;
   $success?: boolean;
   $fullWidth?: boolean;
-  theme?: Theme;
 }
 
 const StyledSelect = styled.select<SelectProps>`
@@ -66,11 +64,7 @@ const StyledSelect = styled.select<SelectProps>`
         : `font-size: ${theme.fontSizes.input.lg};`}
 
 	${({ $error, $success, theme }) => {
-    return statusBorderStyles(
-      $error ? true : false,
-      $success ? true : false,
-      theme,
-    );
+    return statusBorderStyles($error, $success, theme);
   }}
 
 	${({ disabled, theme }) =>
@@ -81,13 +75,13 @@ const StyledSelect = styled.select<SelectProps>`
 		color: ${theme.colors.gray};
 	`}
 
-	${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
+	${({ $fullWidth }) => fullWidthStyles($fullWidth)}
 `;
 
 export const StyledIconWrapper: IStyledComponent<"web", SelectProps> =
   styled.span<SelectProps>`
     position: relative;
-    ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
+    ${({ $fullWidth }) => fullWidthStyles($fullWidth)}
 
     & svg {
       position: absolute;
@@ -122,10 +116,14 @@ function LocalSelect(
         <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>
       )}
       <StyledIconWrapper $fullWidth={props.$fullWidth}>
-        <StyledSelect {...props} ref={ref}>
+        <StyledSelect
+          {...props}
+          aria-invalid={props.$error || undefined}
+          ref={ref}
+        >
           {props.children}
         </StyledSelect>
-        <IconArrow />
+        <IconArrow aria-hidden="true" />
       </StyledIconWrapper>
     </StyledInputWrapper>
   );

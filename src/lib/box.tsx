@@ -2,7 +2,6 @@
 import React, { forwardRef } from "react";
 import styled from "styled-components";
 import { Container, ContainerProps } from "./container";
-import { theme as defaultTheme } from "./utils";
 
 const StyledBox = styled(Container)<ContainerProps>`
   background: ${({ theme }) => theme.colors.light};
@@ -11,11 +10,11 @@ const StyledBox = styled(Container)<ContainerProps>`
 `;
 
 function LocalBox(
-  { theme = defaultTheme, ...props }: ContainerProps,
+  { ...props }: ContainerProps,
   ref: React.Ref<HTMLDivElement>,
 ) {
   return (
-    <StyledBox {...props} theme={theme} ref={ref}>
+    <StyledBox {...props} ref={ref}>
       {props.children}
     </StyledBox>
   );

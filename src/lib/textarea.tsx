@@ -2,7 +2,6 @@
 import React, { forwardRef } from "react";
 import styled from "styled-components";
 import {
-  Theme,
   fullWidthStyles,
   resetButton,
   resetInput,
@@ -21,7 +20,6 @@ interface TextareaProps extends Omit<
   $error?: boolean;
   $success?: boolean;
   $fullWidth?: boolean;
-  theme?: Theme;
   rows?: number;
 }
 
@@ -73,11 +71,7 @@ const StyledTextarea = styled.textarea<TextareaProps>`
 			line-height: ${theme.lineHeights.text.lg};`}
 
   ${({ $error, $success, theme }) => {
-    return statusBorderStyles(
-      $error ? true : false,
-      $success ? true : false,
-      theme,
-    );
+    return statusBorderStyles($error, $success, theme);
   }}
 
 	${({ disabled, theme }) =>
@@ -88,7 +82,7 @@ const StyledTextarea = styled.textarea<TextareaProps>`
 		color: ${theme.colors.gray};
 	`}
 
-	${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
+	${({ $fullWidth }) => fullWidthStyles($fullWidth)}
 `;
 
 function LocalTextarea(
@@ -106,7 +100,11 @@ function LocalTextarea(
           {props.$label}
         </StyledLabel>
       )}
-      <StyledTextarea {...props} ref={ref}>
+      <StyledTextarea
+        {...props}
+        aria-invalid={props.$error || undefined}
+        ref={ref}
+      >
         {props.children}
       </StyledTextarea>
     </StyledInputWrapper>

@@ -1,7 +1,7 @@
 "use client";
 import React, { forwardRef } from "react";
 import styled from "styled-components";
-import { theme as defaultTheme, Theme, generateColSpanStyles } from "./utils";
+import { generateColSpanStyles } from "./utils";
 
 interface ColProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
@@ -13,7 +13,6 @@ interface ColProps extends React.HTMLAttributes<HTMLDivElement> {
   $xlSpan?: number;
   $xxlSpan?: number;
   $xxxlSpan?: number;
-  theme?: Theme;
 }
 
 const StyledCol = styled.div<ColProps>`
@@ -32,12 +31,9 @@ const StyledCol = styled.div<ColProps>`
 	${({ $xxxlSpan }) => $xxxlSpan && generateColSpanStyles("xxxl", $xxxlSpan)}
 `;
 
-function LocalCol(
-  { theme = defaultTheme, ...props }: ColProps,
-  ref: React.Ref<HTMLDivElement>,
-) {
+function LocalCol({ ...props }: ColProps, ref: React.Ref<HTMLDivElement>) {
   return (
-    <StyledCol {...props} theme={theme} ref={ref}>
+    <StyledCol {...props} ref={ref}>
       {props.children}
     </StyledCol>
   );

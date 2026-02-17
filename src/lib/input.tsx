@@ -3,7 +3,6 @@ import React, { forwardRef } from "react";
 import styled, { css } from "styled-components";
 import type { IStyledComponent } from "styled-components";
 import {
-  Theme,
   IconCheck,
   formElementHeightStyles,
   fullWidthStyles,
@@ -23,7 +22,6 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   $fullWidth?: boolean;
   $icon?: React.ReactNode;
   $iconPosition?: "left" | "right";
-  theme?: Theme;
 }
 
 interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
@@ -32,7 +30,6 @@ interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   $error?: boolean;
   $success?: boolean;
   $fullWidth?: boolean;
-  theme?: Theme;
 }
 
 export const StyledInputWrapper: IStyledComponent<
@@ -67,7 +64,7 @@ export const StyledInputWrapper: IStyledComponent<
     }
   }
 
-  ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
+  ${({ $fullWidth }) => fullWidthStyles($fullWidth)}
 `;
 
 export const StyledLabel: IStyledComponent<"web", LabelProps> =
@@ -189,11 +186,7 @@ const StyledInput = styled.input<InputProps>`
 			line-height: ${theme.lineHeights.input.lg};`}
 
 	${({ $error, $success, theme }) => {
-    return statusBorderStyles(
-      $error ? true : false,
-      $success ? true : false,
-      theme,
-    );
+    return statusBorderStyles($error, $success, theme);
   }}
 
 	${({ disabled, theme }) =>
@@ -204,7 +197,7 @@ const StyledInput = styled.input<InputProps>`
 		color: ${theme.colors.gray};
 	`}
 
-	${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
+	${({ $fullWidth }) => fullWidthStyles($fullWidth)}
 `;
 
 const StyledIconWrapper = styled.span<InputProps>`
@@ -267,11 +260,7 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
 	`}
 
 	${({ $error, $success, theme }) => {
-    return statusBorderStyles(
-      $error ? true : false,
-      $success ? true : false,
-      theme,
-    );
+    return statusBorderStyles($error, $success, theme);
   }}
 
 	${({ $size }) => {
@@ -350,7 +339,7 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
 
 const StyledCustomIconWrapper = styled.span<InputProps>`
   position: relative;
-  ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)};
+  ${({ $fullWidth }) => fullWidthStyles($fullWidth)};
 
   & svg {
     position: absolute;
@@ -398,7 +387,11 @@ function LocalInput(
         className={props.$wrapperClassName}
       >
         <StyledIconWrapper>
-          <StyledRadioCheckboxInput {...props} ref={ref} />
+          <StyledRadioCheckboxInput
+            {...props}
+            aria-invalid={props.$error || undefined}
+            ref={ref}
+          />
           {!props.disabled && props.type === "checkbox" ? (
             <IconCheck />
           ) : (
@@ -428,7 +421,11 @@ function LocalInput(
         $icon={props.$icon}
       >
         {props.$iconPosition !== "right" && props.$icon && props.$icon}
-        <StyledInput {...props} ref={ref} />
+        <StyledInput
+          {...props}
+          aria-invalid={props.$error || undefined}
+          ref={ref}
+        />
         {props.$iconPosition === "right" && props.$icon && props.$icon}
         {props.type === "date" && <IconCalendar className="icon-calendar" />}
       </StyledCustomIconWrapper>

@@ -1,7 +1,7 @@
 "use client";
 import React, { forwardRef } from "react";
 import styled from "styled-components";
-import { Theme, resetButton, statusBorderStyles } from "./utils";
+import { resetButton, statusBorderStyles } from "./utils";
 import { StyledInputWrapper, StyledLabel } from "./input";
 
 interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -13,7 +13,6 @@ interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
   $error?: boolean;
   $success?: boolean;
   $fullWidth?: boolean;
-  theme?: Theme;
 }
 
 const StyledToggleWrapper = styled.span<ToggleProps>`
@@ -38,11 +37,7 @@ const StyledFakeToggle = styled.span<ToggleProps>`
     $size === "big" ? "32px" : $size === "small" ? "18px" : "22px"};
 
   ${({ $error, $success, theme }) => {
-    return statusBorderStyles(
-      $error ? true : false,
-      $success ? true : false,
-      theme,
-    );
+    return statusBorderStyles($error, $success, theme);
   }}
 
   &::before,
@@ -143,7 +138,7 @@ function LocalToggle(
       className={props.$wrapperClassName}
     >
       <StyledToggleWrapper>
-        <StyledToggle {...props} type={type} ref={ref} />
+        <StyledToggle {...props} type={type} role="switch" ref={ref} />
         <StyledFakeToggle
           $error={props.$error}
           $success={props.$success}

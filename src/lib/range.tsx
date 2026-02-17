@@ -1,12 +1,7 @@
 "use client";
 import React, { forwardRef } from "react";
 import styled from "styled-components";
-import {
-  Theme,
-  fullWidthStyles,
-  resetButton,
-  statusBorderStyles,
-} from "./utils";
+import { fullWidthStyles, resetButton, statusBorderStyles } from "./utils";
 import { StyledLabel } from "./input";
 
 interface InputProps extends Omit<
@@ -20,17 +15,16 @@ interface InputProps extends Omit<
   $error?: boolean;
   $success?: boolean;
   $fullWidth?: boolean;
-  theme?: Theme;
 }
 
 const StyledInputWrapper = styled.span<InputProps>`
   display: inline-flex;
   flex-wrap: ${({ type }) =>
-    type === "checkbox" || type === "radio" ? "fprnowrap" : "wrap"};
+    type === "checkbox" || type === "radio" ? "nowrap" : "wrap"};
   gap: 10px;
   align-items: center;
 
-  ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
+  ${({ $fullWidth }) => fullWidthStyles($fullWidth)}
 `;
 
 const StyledInput = styled.input<InputProps>`
@@ -50,11 +44,7 @@ const StyledInput = styled.input<InputProps>`
     box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primaryLight};
     transition: all 0.3s ease;
     ${({ $error, $success, theme }) => {
-      return statusBorderStyles(
-        $error ? true : false,
-        $success ? true : false,
-        theme,
-      );
+      return statusBorderStyles($error, $success, theme);
     }}
   }
 
@@ -67,11 +57,7 @@ const StyledInput = styled.input<InputProps>`
     box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.primaryLight};
     transition: all 0.3s ease;
     ${({ $error, $success, theme }) => {
-      return statusBorderStyles(
-        $error ? true : false,
-        $success ? true : false,
-        theme,
-      );
+      return statusBorderStyles($error, $success, theme);
     }}
   }
 
@@ -159,7 +145,7 @@ const StyledInput = styled.input<InputProps>`
 		}
 	`}
 
-  ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
+  ${({ $fullWidth }) => fullWidthStyles($fullWidth)}
 
 	${({ $size }) => {
     if ($size === "big") {
@@ -247,7 +233,12 @@ function LocalRange(
       {props.$label && (
         <StyledLabel htmlFor={props.id}>{props.$label}</StyledLabel>
       )}
-      <StyledInput {...props} type="range" ref={ref} />
+      <StyledInput
+        {...props}
+        aria-invalid={props.$error || undefined}
+        type="range"
+        ref={ref}
+      />
     </StyledInputWrapper>
   );
 }

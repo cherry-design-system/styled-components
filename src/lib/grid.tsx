@@ -1,13 +1,7 @@
 "use client";
 import React, { forwardRef } from "react";
 import styled from "styled-components";
-import {
-  theme as defaultTheme,
-  Theme,
-  mq,
-  generateColsStyles,
-  generateGapStyles,
-} from "./utils";
+import { mq, generateColsStyles, generateGapStyles } from "./utils";
 
 interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
@@ -27,7 +21,6 @@ interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
   $xlCols?: number;
   $xxlCols?: number;
   $xxxlCols?: number;
-  theme?: Theme;
 }
 
 const StyledGrid = styled.div<GridProps>`
@@ -36,20 +29,25 @@ const StyledGrid = styled.div<GridProps>`
   grid-template-columns: ${({ $cols }) =>
     `repeat(${$cols || 3}, minmax(0, 1fr))`};
   gap: ${({ $gap, theme }) =>
-    ($gap && `${$gap}px`) || theme.spacing.gridGap.xs};
+    $gap !== undefined && $gap !== "none"
+      ? `${$gap}px`
+      : theme.spacing.gridGap.xs};
 
   ${mq("lg")} {
     gap: ${({ $gap, theme }) =>
-      ($gap && `${$gap}px`) || theme.spacing.gridGap.lg};
+      $gap !== undefined && $gap !== "none"
+        ? `${$gap}px`
+        : theme.spacing.gridGap.lg};
   }
 
-  ${({ $xsGap }) => $xsGap && generateGapStyles("xs", $xsGap)}
-  ${({ $smGap }) => $smGap && generateGapStyles("sm", $smGap)}
-	${({ $mdGap }) => $mdGap && generateGapStyles("md", $mdGap)}
-	${({ $lgGap }) => $lgGap && generateGapStyles("lg", $lgGap)}
-	${({ $xlGap }) => $xlGap && generateGapStyles("xl", $xlGap)}
-	${({ $xxlGap }) => $xxlGap && generateGapStyles("xxl", $xxlGap)}
-	${({ $xxxlGap }) => $xxxlGap && generateGapStyles("xxxl", $xxxlGap)}
+  ${({ $xsGap }) => $xsGap !== undefined && generateGapStyles("xs", $xsGap)}
+  ${({ $smGap }) => $smGap !== undefined && generateGapStyles("sm", $smGap)}
+	${({ $mdGap }) => $mdGap !== undefined && generateGapStyles("md", $mdGap)}
+	${({ $lgGap }) => $lgGap !== undefined && generateGapStyles("lg", $lgGap)}
+	${({ $xlGap }) => $xlGap !== undefined && generateGapStyles("xl", $xlGap)}
+	${({ $xxlGap }) => $xxlGap !== undefined && generateGapStyles("xxl", $xxlGap)}
+	${({ $xxxlGap }) =>
+    $xxxlGap !== undefined && generateGapStyles("xxxl", $xxxlGap)}
 
 	${({ $xsCols }) => $xsCols && generateColsStyles("xs", $xsCols)}
 	${({ $smCols }) => $smCols && generateColsStyles("sm", $smCols)}
@@ -60,12 +58,9 @@ const StyledGrid = styled.div<GridProps>`
 	${({ $xxxlCols }) => $xxxlCols && generateColsStyles("xxxl", $xxxlCols)}
 `;
 
-function LocalGrid(
-  { theme = defaultTheme, ...props }: GridProps,
-  ref: React.Ref<HTMLDivElement>,
-) {
+function LocalGrid({ ...props }: GridProps, ref: React.Ref<HTMLDivElement>) {
   return (
-    <StyledGrid {...props} theme={theme} ref={ref}>
+    <StyledGrid {...props} ref={ref}>
       {props.children}
     </StyledGrid>
   );
