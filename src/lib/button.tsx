@@ -13,8 +13,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   $fullWidth?: boolean;
   $icon?: React.ReactNode;
   $iconPosition?: "left" | "right";
-  $isError?: boolean;
-  theme?: Theme;
+  $error?: boolean;
 }
 
 export const buttonStyles = (
@@ -23,7 +22,7 @@ export const buttonStyles = (
   $size?: "default" | "big" | "small",
   $outline?: boolean,
   $fullWidth?: boolean,
-  $isError?: boolean,
+  $error?: boolean,
   disabled?: boolean,
 ) => css`
   ${resetButton};
@@ -131,7 +130,7 @@ export const buttonStyles = (
   `}
 
   ${!disabled &&
-  $isError &&
+  $error &&
   css`
     color: ${$outline
       ? theme.colors.error
@@ -185,14 +184,14 @@ export const buttonStyles = (
 `;
 
 const StyledButton = styled.button<ButtonProps>`
-  ${({ theme, $variant, $isError, $size, $outline, $fullWidth, disabled }) =>
+  ${({ theme, $variant, $error, $size, $outline, $fullWidth, disabled }) =>
     buttonStyles(
       theme,
       $variant,
       $size,
       $outline,
       $fullWidth,
-      $isError,
+      $error,
       disabled,
     )}
 `;
@@ -204,7 +203,7 @@ function LocalButton(
   return (
     <StyledButton
       $variant={$variant}
-      $isError={props.$isError}
+      $error={props.$error}
       {...props}
       ref={ref}
     >
