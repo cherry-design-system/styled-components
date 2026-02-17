@@ -4,11 +4,11 @@ import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { GlobalStyles, Theme } from "../utils";
 
 interface ThemeContextProps {
-  setTheme: any;
+  setTheme: React.Dispatch<React.SetStateAction<Theme>>;
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({
-  setTheme: null,
+  setTheme: () => {},
 });
 
 function CherryThemeProvider({
@@ -34,7 +34,7 @@ function CherryThemeProvider({
       document.documentElement.classList.remove("dark");
       setTheme(theme);
     }
-  }, []);
+  }, [theme, themeDark]);
   const GlobalStylesComponent = GlobalStyles(currentTheme);
 
   return (
