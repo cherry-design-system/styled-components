@@ -1,5 +1,7 @@
 # Cherry React Library
 
+[![npm version](https://img.shields.io/npm/v/cherry-styled-components.svg?style=flat)](https://www.npmjs.com/package/cherry-styled-components)
+
 ## Introduction
 
 Cherry Design System is a versatile foundation for projects. It offers a white label base, ready-to-use Figma designs, open-source React components, built-in support for theming and dark mode. Explore the [docs](https://cherry.al/) to create delightful user interfaces.
