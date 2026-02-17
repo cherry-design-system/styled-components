@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
+import preserveDirectives from "rollup-plugin-preserve-directives";
 
 export default defineConfig({
   plugins: [react(), dts()],
@@ -8,16 +9,24 @@ export default defineConfig({
     lib: {
       entry: "src/lib/index.ts",
       name: "Cherry",
-      formats: ["es", "umd"],
-      fileName: "cherry",
+      formats: ["es"],
     },
+    minify: false,
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: [
+        "react",
+        "react-dom",
+        "react/jsx-runtime",
+        "styled-components",
+        "polished",
+        "lucide-react",
+        "next/navigation",
+      ],
+      plugins: [preserveDirectives()],
       output: {
-        globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
-        },
+        preserveModules: true,
+        preserveModulesRoot: "src/lib",
+        entryFileNames: "[name].js",
       },
     },
   },
