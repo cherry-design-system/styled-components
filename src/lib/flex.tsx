@@ -2,8 +2,6 @@
 import React, { forwardRef } from "react";
 import styled from "styled-components";
 import {
-  theme as defaultTheme,
-  Theme,
   mq,
   generateGapStyles,
   generateJustifyContentStyles,
@@ -20,7 +18,7 @@ type JustifyContentType =
 
 type GapType = number | "none";
 
-interface FlexProps extends React.AllHTMLAttributes<FlexProps> {
+interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   $justifyContent?: JustifyContentType;
   $xsJustifyContent?: JustifyContentType;
@@ -41,7 +39,6 @@ interface FlexProps extends React.AllHTMLAttributes<FlexProps> {
   $xxxlGap?: GapType;
   $direction?: "row" | "column" | "row-reverse" | "column-reverse";
   $fullWidth?: boolean;
-  theme?: Theme;
 }
 
 const StyledFlex = styled.div<FlexProps>`
@@ -49,46 +46,48 @@ const StyledFlex = styled.div<FlexProps>`
   justify-content: ${({ $justifyContent }) => $justifyContent || "flex-start"};
   flex-wrap: ${({ $wrap }) => $wrap || "wrap"};
   gap: ${({ $gap, theme }) =>
-    ($gap && `${$gap}px`) || theme.spacing.gridGap.xs};
+    $gap !== undefined && $gap !== "none"
+      ? `${$gap}px`
+      : theme.spacing.gridGap.xs};
   flex-direction: ${({ $direction }) => $direction || "row"};
 
   ${mq("lg")} {
     gap: ${({ $gap, theme }) =>
-      ($gap && `${$gap}px`) || theme.spacing.gridGap.lg};
+      $gap !== undefined && $gap !== "none"
+        ? `${$gap}px`
+        : theme.spacing.gridGap.lg};
   }
 
-  ${({ $xsGap }) => $xsGap && generateGapStyles("xs", $xsGap)}
+  ${({ $xsGap }) => $xsGap !== undefined && generateGapStyles("xs", $xsGap)}
   ${({ $xsJustifyContent }) =>
     $xsJustifyContent && generateJustifyContentStyles("xs", $xsJustifyContent)}
-	${({ $smGap }) => $smGap && generateGapStyles("sm", $smGap)}
+	${({ $smGap }) => $smGap !== undefined && generateGapStyles("sm", $smGap)}
 	${({ $smJustifyContent }) =>
     $smJustifyContent && generateJustifyContentStyles("sm", $smJustifyContent)}
-	${({ $mdGap }) => $mdGap && generateGapStyles("md", $mdGap)}
+	${({ $mdGap }) => $mdGap !== undefined && generateGapStyles("md", $mdGap)}
 	${({ $mdJustifyContent }) =>
     $mdJustifyContent && generateJustifyContentStyles("md", $mdJustifyContent)}
-	${({ $lgGap }) => $lgGap && generateGapStyles("lg", $lgGap)}
+	${({ $lgGap }) => $lgGap !== undefined && generateGapStyles("lg", $lgGap)}
 	${({ $lgJustifyContent }) =>
     $lgJustifyContent && generateJustifyContentStyles("lg", $lgJustifyContent)}
-	${({ $xlGap }) => $xlGap && generateGapStyles("xl", $xlGap)}
+	${({ $xlGap }) => $xlGap !== undefined && generateGapStyles("xl", $xlGap)}
 	${({ $xlJustifyContent }) =>
     $xlJustifyContent && generateJustifyContentStyles("xl", $xlJustifyContent)}
-	${({ $xxlGap }) => $xxlGap && generateGapStyles("xxl", $xxlGap)}
+	${({ $xxlGap }) => $xxlGap !== undefined && generateGapStyles("xxl", $xxlGap)}
 	${({ $xxlJustifyContent }) =>
     $xxlJustifyContent &&
     generateJustifyContentStyles("xxl", $xxlJustifyContent)}
-	${({ $xxxlGap }) => $xxxlGap && generateGapStyles("xxxl", $xxxlGap)}
+	${({ $xxxlGap }) =>
+    $xxxlGap !== undefined && generateGapStyles("xxxl", $xxxlGap)}
 	${({ $xxxlJustifyContent }) =>
     $xxxlJustifyContent &&
     generateJustifyContentStyles("xxxl", $xxxlJustifyContent)}
-  ${({ $fullWidth }) => fullWidthStyles($fullWidth ? true : false)}
+  ${({ $fullWidth }) => fullWidthStyles($fullWidth)}
 `;
 
-function LocalFlex(
-  { theme = defaultTheme, ...props }: FlexProps,
-  ref: React.Ref<HTMLDivElement>,
-) {
+function LocalFlex({ ...props }: FlexProps, ref: React.Ref<HTMLDivElement>) {
   return (
-    <StyledFlex {...props} theme={theme} ref={ref}>
+    <StyledFlex {...props} ref={ref}>
       {props.children}
     </StyledFlex>
   );

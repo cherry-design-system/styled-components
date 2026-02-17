@@ -18,7 +18,7 @@ export const resetInput = css`
   min-width: 100px;
 `;
 
-export const fullWidthStyles = (fullWidth: boolean) => {
+export const fullWidthStyles = (fullWidth?: boolean) => {
   if (fullWidth) {
     return css`
       width: 100%;
@@ -27,9 +27,9 @@ export const fullWidthStyles = (fullWidth: boolean) => {
 };
 
 export const statusBorderStyles = (
-  $error: boolean,
-  $success: boolean,
-  theme: Theme,
+  $error?: boolean,
+  $success?: boolean,
+  theme?: Theme,
 ) => {
   if ($error) {
     return css`
