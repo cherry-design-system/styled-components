@@ -73,3 +73,4 @@ Two complete theme objects (light and dark) defining: breakpoints (xs to xxxl), 
 ## Git Commits
 
 When asked to commit, always follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification. Do not add a Co-Authored-By line.
+When asked to commit and push, use the `mr-deployer` agent.
