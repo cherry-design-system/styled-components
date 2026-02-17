@@ -215,7 +215,7 @@ export interface Colors<TString = string> {
   light: TString;
 }
 
-interface Shadows<TString = string> {
+export interface Shadows<TString = string> {
   xs: TString;
   sm: TString;
   md: TString;
