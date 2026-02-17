@@ -1,7 +1,7 @@
 "use client";
 import React, { forwardRef } from "react";
 import styled from "styled-components";
-import { Breakpoints, mq } from "./utils";
+import { mq } from "./utils";
 
 interface MaxWidthProps extends React.HTMLAttributes<HTMLDivElement> {
   $size?: number;
@@ -15,15 +15,24 @@ interface MaxWidthProps extends React.HTMLAttributes<HTMLDivElement> {
   $m0?: boolean;
 }
 
-const styles = ($size: number | "none") => `max-width: ${$size}px;`;
+const styles = ($size: number) => `max-width: ${$size}px;`;
 
-function responsiveStyles(props: any) {
-  return Object.keys(props)
-    .filter((key) => key.startsWith("$"))
-    .map((key) => {
-      const size = key.substring(1) as keyof Breakpoints<number>;
-      return props[key] && mq(size) + `{ ${styles(props[key])} }`;
-    })
+const breakpointKeys = ["xs", "sm", "md", "lg", "xl", "xxl", "xxxl"] as const;
+
+function responsiveStyles(props: MaxWidthProps) {
+  const propMap: Record<string, number | undefined> = {
+    xs: props.$xs,
+    sm: props.$sm,
+    md: props.$md,
+    lg: props.$lg,
+    xl: props.$xl,
+    xxl: props.$xxl,
+    xxxl: props.$xxxl,
+  };
+
+  return breakpointKeys
+    .filter((key) => propMap[key] !== undefined)
+    .map((key) => mq(key) + `{ ${styles(propMap[key]!)} }`)
     .join("");
 }
 

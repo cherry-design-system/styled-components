@@ -1,7 +1,7 @@
 "use client";
 import React, { forwardRef } from "react";
 import styled from "styled-components";
-import { Breakpoints, mq } from "./utils";
+import { mq } from "./utils";
 
 interface SpaceProps {
   $size?: number | "none";
@@ -27,16 +27,25 @@ const styles = ($size: number | "none", $horizontal: boolean) =>
 			min-height: ${$size}px;
 			max-height: ${$size}px;`;
 
-function responsiveStyles(props: any) {
-  return Object.keys(props)
-    .filter((key) => key.startsWith("$"))
-    .map((key) => {
-      const size = key.substring(1) as keyof Breakpoints<number>;
-      return (
-        props[key] &&
-        mq(size) + `{ ${styles(props[key], props.$horizontal || false)} }`
-      );
-    })
+const breakpointKeys = ["xs", "sm", "md", "lg", "xl", "xxl", "xxxl"] as const;
+
+function responsiveStyles(props: SpaceProps) {
+  const propMap: Record<string, number | "none" | undefined> = {
+    xs: props.$xs,
+    sm: props.$sm,
+    md: props.$md,
+    lg: props.$lg,
+    xl: props.$xl,
+    xxl: props.$xxl,
+    xxxl: props.$xxxl,
+  };
+
+  return breakpointKeys
+    .filter((key) => propMap[key] !== undefined)
+    .map(
+      (key) =>
+        mq(key) + `{ ${styles(propMap[key]!, props.$horizontal || false)} }`,
+    )
     .join("");
 }
 
