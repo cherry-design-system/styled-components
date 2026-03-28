@@ -16,7 +16,7 @@ export default defineConfig({
         ],
       ],
     }),
-    dts(),
+    dts({ include: ["src/lib", "src/vite-env.d.ts"] }),
   ],
   build: {
     lib: {

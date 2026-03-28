@@ -5,10 +5,10 @@
   "private": false,
   "type": "module",
   "module": "./dist/index.js",
-  "types": "./dist/lib/index.d.ts",
+  "types": "./dist/src/lib/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/lib/index.d.ts",
+      "types": "./dist/src/lib/index.d.ts",
       "import": "./dist/index.js"
     }
   },
