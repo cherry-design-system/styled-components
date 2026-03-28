@@ -1,10 +1,23 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import react from "@vitejs/plugin-react-swc";
 import dts from "vite-plugin-dts";
 import preserveDirectives from "rollup-plugin-preserve-directives";
 
 export default defineConfig({
-  plugins: [react(), dts()],
+  plugins: [
+    react({
+      plugins: [
+        [
+          "@swc/plugin-styled-components",
+          {
+            displayName: true,
+            ssr: true,
+          },
+        ],
+      ],
+    }),
+    dts(),
+  ],
   build: {
     lib: {
       entry: "src/lib/index.ts",

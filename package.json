@@ -41,7 +41,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "lucide-react": "^1.6.0",
+    "lucide-react": "^1.7.0",
     "polished": "^4.3.1"
   },
   "peerDependencies": {
@@ -50,10 +50,11 @@
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
+    "@swc/plugin-styled-components": "^12.7.0",
     "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
+    "@vitejs/plugin-react-swc": "^4.3.0",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "next": "^16.2.1",
@@ -63,7 +64,7 @@
     "rollup-plugin-preserve-directives": "^0.4.0",
     "styled-components": "^6.3.12",
     "typescript": "^6.0.2",
-    "vite": "^8.0.2",
+    "vite": "^8.0.3",
     "vite-plugin-dts": "^4.5.4"
   }
 }
