@@ -94,7 +94,11 @@ const StyledInput = styled.input<InputProps>`
   white-space: nowrap;
   display: inline-flex;
 
-  &[type="date"] {
+  &[type="date"],
+  &[type="datetime-local"],
+  &[type="month"],
+  &[type="week"],
+  &[type="time"] {
     padding: 17px 45px 17px 15px;
 
     @supports (-moz-appearance: none) {
@@ -146,6 +150,38 @@ const StyledInput = styled.input<InputProps>`
   }
 
   &::-webkit-datetime-edit-year-field {
+    &:focus {
+      background: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.light};
+      border-radius: 4px;
+    }
+  }
+
+  &::-webkit-datetime-edit-hour-field {
+    &:focus {
+      background: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.light};
+      border-radius: 4px;
+    }
+  }
+
+  &::-webkit-datetime-edit-minute-field {
+    &:focus {
+      background: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.light};
+      border-radius: 4px;
+    }
+  }
+
+  &::-webkit-datetime-edit-second-field {
+    &:focus {
+      background: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.light};
+      border-radius: 4px;
+    }
+  }
+
+  &::-webkit-datetime-edit-ampm-field {
     &:focus {
       background: ${({ theme }) => theme.colors.primary};
       color: ${({ theme }) => theme.colors.light};
@@ -427,7 +463,11 @@ function LocalInput(
           ref={ref}
         />
         {props.$iconPosition === "right" && props.$icon && props.$icon}
-        {props.type === "date" && <IconCalendar className="icon-calendar" />}
+        {(props.type === "date" ||
+          props.type === "datetime-local" ||
+          props.type === "month" ||
+          props.type === "week" ||
+          props.type === "time") && <IconCalendar className="icon-calendar" />}
       </StyledCustomIconWrapper>
     </StyledInputWrapper>
   );
