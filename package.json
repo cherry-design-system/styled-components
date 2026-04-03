@@ -50,14 +50,14 @@
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
-    "@swc/plugin-styled-components": "^12.7.0",
-    "@types/node": "^25.5.0",
+    "@swc/plugin-styled-components": "^12.8.0",
+    "@types/node": "^25.5.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react-swc": "^4.3.0",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
-    "next": "^16.2.1",
+    "next": "^16.2.2",
     "prettier": "^3.8.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
