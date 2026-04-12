@@ -47,6 +47,7 @@ export const StyledInputWrapper: IStyledComponent<
     css`
       gap: 5px;
       align-items: flex-start;
+      align-content: flex-start;
     `}
 
   & .icon-calendar {
@@ -93,18 +94,6 @@ const StyledInput = styled.input<InputProps>`
   word-break: keep-all;
   white-space: nowrap;
   display: inline-flex;
-
-  &[type="date"],
-  &[type="datetime-local"],
-  &[type="month"],
-  &[type="week"],
-  &[type="time"] {
-    padding: 17px 45px 17px 15px;
-
-    @supports (-moz-appearance: none) {
-      padding: 13px 15px;
-    }
-  }
 
   &::-webkit-datetime-edit {
     padding: 0;
@@ -408,6 +397,14 @@ const StyledCustomIconWrapper = styled.span<InputProps>`
             padding-left: 50px;
           }
         `}
+
+  &:has(.icon-calendar) > input {
+    padding-right: 45px;
+
+    @supports (-moz-appearance: none) {
+      padding-right: 15px;
+    }
+  }
 `;
 
 function LocalInput(
