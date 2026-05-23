@@ -50,9 +50,9 @@
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
-    "@swc/plugin-styled-components": "^12.9.0",
-    "@types/node": "^25.9.0",
-    "@types/react": "^19.2.14",
+    "@swc/plugin-styled-components": "^12.10.0",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react-swc": "^4.3.1",
     "eslint-plugin-react-hooks": "^7.1.1",
@@ -62,9 +62,9 @@
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "rollup-plugin-preserve-directives": "^0.4.0",
-    "styled-components": "^6.4.1",
+    "styled-components": "^6.4.2",
     "typescript": "^6.0.3",
-    "vite": "^8.0.13",
-    "vite-plugin-dts": "^5.0.0"
+    "vite": "^8.0.14",
+    "vite-plugin-dts": "^5.0.1"
   }
 }
