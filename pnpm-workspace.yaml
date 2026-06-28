@@ -4,3 +4,4 @@ allowBuilds:
 minimumReleaseAgeExclude:
   - '@types/node@25.9.3 || 26.0.0'
   - prettier@3.9.1
+  - lucide-react@1.22.0
