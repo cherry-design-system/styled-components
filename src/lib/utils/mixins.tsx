@@ -114,3 +114,37 @@ export const generateJustifyContentStyles = (
     justify-content: ${justifyContent && `${justifyContent}`};
   }
 `;
+
+export const generateAlignItemsStyles = (
+  size: keyof Breakpoints<number>,
+  alignItems?: "stretch" | "center" | "flex-start" | "flex-end" | "baseline",
+) => css`
+  ${mq(size)} {
+    align-items: ${alignItems && `${alignItems}`};
+  }
+`;
+
+export const generateAlignContentStyles = (
+  size: keyof Breakpoints<number>,
+  alignContent?:
+    | "stretch"
+    | "center"
+    | "flex-start"
+    | "flex-end"
+    | "space-between"
+    | "space-around"
+    | "space-evenly",
+) => css`
+  ${mq(size)} {
+    align-content: ${alignContent && `${alignContent}`};
+  }
+`;
+
+export const generateDirectionStyles = (
+  size: keyof Breakpoints<number>,
+  direction?: "row" | "column" | "row-reverse" | "column-reverse",
+) => css`
+  ${mq(size)} {
+    flex-direction: ${direction && `${direction}`};
+  }
+`;

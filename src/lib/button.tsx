@@ -48,137 +48,157 @@ export const buttonStyles = (
     margin: auto 0;
   }
 
-  ${!disabled &&
-  $variant === "primary" &&
-  css`
-    color: ${$outline
-      ? theme.colors.primary
-      : theme.isDark
-        ? theme.colors.dark
-        : theme.colors.light};
-    background: ${$outline ? "transparent" : theme.colors.primary};
-    border: solid 2px ${theme.colors.primary};
-    box-shadow: 0 0 0 0px ${theme.colors.primary};
+  ${
+    !disabled &&
+    $variant === "primary" &&
+    css`
+      color: ${
+      $outline
+        ? theme.colors.primary
+        : theme.isDark
+          ? theme.colors.dark
+          : theme.colors.light
+    };
+      background: ${$outline ? "transparent" : theme.colors.primary};
+      border: solid 2px ${theme.colors.primary};
+      box-shadow: 0 0 0 0px ${theme.colors.primary};
 
-    &:hover {
-      background: ${$outline ? "transparent" : theme.colors.primaryDark};
-      border-color: ${theme.colors.primaryDark};
-      ${$outline && `color: ${theme.colors.primaryDark}`};
-    }
+      &:hover {
+        background: ${$outline ? "transparent" : theme.colors.primaryDark};
+        border-color: ${theme.colors.primaryDark};
+        ${$outline && `color: ${theme.colors.primaryDark}`};
+      }
 
-    &:focus {
-      box-shadow: 0 0 0 4px ${theme.colors.primaryLight};
-    }
+      &:focus {
+        box-shadow: 0 0 0 4px ${theme.colors.primaryLight};
+      }
 
-    &:active {
-      box-shadow: 0 0 0 2px ${theme.colors.primaryLight};
-    }
-  `}
+      &:active {
+        box-shadow: 0 0 0 2px ${theme.colors.primaryLight};
+      }
+    `
+  }
 
-  ${!disabled &&
-  $variant === "secondary" &&
-  css`
-    color: ${$outline
-      ? theme.colors.secondary
-      : theme.isDark
-        ? theme.colors.dark
-        : theme.colors.light};
-    background: ${$outline ? "transparent" : theme.colors.secondary};
-    border: solid 2px ${theme.colors.secondary};
-    box-shadow: 0 0 0 0px ${theme.colors.secondary};
+  ${
+    !disabled &&
+    $variant === "secondary" &&
+    css`
+      color: ${
+      $outline
+        ? theme.colors.secondary
+        : theme.isDark
+          ? theme.colors.dark
+          : theme.colors.light
+    };
+      background: ${$outline ? "transparent" : theme.colors.secondary};
+      border: solid 2px ${theme.colors.secondary};
+      box-shadow: 0 0 0 0px ${theme.colors.secondary};
 
-    &:hover {
-      background: ${$outline ? "transparent" : theme.colors.secondaryDark};
-      border-color: ${theme.colors.secondaryDark};
-      ${$outline && `color: ${theme.colors.secondaryDark}`};
-    }
+      &:hover {
+        background: ${$outline ? "transparent" : theme.colors.secondaryDark};
+        border-color: ${theme.colors.secondaryDark};
+        ${$outline && `color: ${theme.colors.secondaryDark}`};
+      }
 
-    &:focus {
-      box-shadow: 0 0 0 4px ${theme.colors.secondaryLight};
-    }
+      &:focus {
+        box-shadow: 0 0 0 4px ${theme.colors.secondaryLight};
+      }
 
-    &:active {
-      box-shadow: 0 0 0 2px ${theme.colors.secondaryLight};
-    }
-  `}
+      &:active {
+        box-shadow: 0 0 0 2px ${theme.colors.secondaryLight};
+      }
+    `
+  }
 
-	${!disabled &&
-  $variant === "tertiary" &&
-  css`
-    color: ${$outline
-      ? theme.colors.tertiary
-      : theme.isDark
-        ? theme.colors.dark
-        : theme.colors.light};
-    background: ${$outline ? "transparent" : theme.colors.tertiary};
-    border: solid 2px ${theme.colors.tertiary};
-    box-shadow: 0 0 0 0px ${theme.colors.tertiary};
+	${
+    !disabled &&
+    $variant === "tertiary" &&
+    css`
+      color: ${
+      $outline
+        ? theme.colors.tertiary
+        : theme.isDark
+          ? theme.colors.dark
+          : theme.colors.light
+    };
+      background: ${$outline ? "transparent" : theme.colors.tertiary};
+      border: solid 2px ${theme.colors.tertiary};
+      box-shadow: 0 0 0 0px ${theme.colors.tertiary};
 
-    &:hover {
-      background: ${$outline ? "transparent" : theme.colors.tertiaryDark};
-      border-color: ${theme.colors.tertiaryDark};
-      ${$outline && `color: ${theme.colors.tertiaryDark}`};
-    }
+      &:hover {
+        background: ${$outline ? "transparent" : theme.colors.tertiaryDark};
+        border-color: ${theme.colors.tertiaryDark};
+        ${$outline && `color: ${theme.colors.tertiaryDark}`};
+      }
 
-    &:focus {
-      box-shadow: 0 0 0 4px ${theme.colors.tertiaryLight};
-    }
+      &:focus {
+        box-shadow: 0 0 0 4px ${theme.colors.tertiaryLight};
+      }
 
-    &:active {
-      box-shadow: 0 0 0 2px ${theme.colors.tertiaryLight};
-    }
-  `}
+      &:active {
+        box-shadow: 0 0 0 2px ${theme.colors.tertiaryLight};
+      }
+    `
+  }
 
-  ${!disabled &&
-  $error &&
-  css`
-    color: ${$outline
-      ? theme.colors.error
-      : theme.isDark
-        ? theme.colors.dark
-        : theme.colors.light};
-    background: ${$outline ? "transparent" : theme.colors.error};
-    border: solid 2px ${theme.colors.error};
-    box-shadow: 0 0 0 0px ${theme.colors.error};
+  ${
+    !disabled &&
+    $error &&
+    css`
+      color: ${
+      $outline
+        ? theme.colors.error
+        : theme.isDark
+          ? theme.colors.dark
+          : theme.colors.light
+    };
+      background: ${$outline ? "transparent" : theme.colors.error};
+      border: solid 2px ${theme.colors.error};
+      box-shadow: 0 0 0 0px ${theme.colors.error};
 
-    &:hover {
-      background: ${$outline ? "transparent" : darken(0.1, theme.colors.error)};
-      border-color: ${darken(0.1, theme.colors.error)};
-      ${$outline && `color: ${darken(0.1, theme.colors.error)}`};
-    }
+      &:hover {
+        background: ${$outline ? "transparent" : darken(0.1, theme.colors.error)};
+        border-color: ${darken(0.1, theme.colors.error)};
+        ${$outline && `color: ${darken(0.1, theme.colors.error)}`};
+      }
 
-    &:focus {
-      box-shadow: 0 0 0 4px ${lighten(0.1, theme.colors.error)};
-    }
+      &:focus {
+        box-shadow: 0 0 0 4px ${lighten(0.1, theme.colors.error)};
+      }
 
-    &:active {
-      box-shadow: 0 0 0 2px ${lighten(0.1, theme.colors.error)};
-    }
-  `}
+      &:active {
+        box-shadow: 0 0 0 2px ${lighten(0.1, theme.colors.error)};
+      }
+    `
+  }
 
 
 	${formElementHeightStyles($size)}
 
-	${$size === "big"
-    ? `font-size: ${theme.fontSizes.buttonBig.lg};
+	${
+    $size === "big"
+      ? `font-size: ${theme.fontSizes.buttonBig.lg};
 			line-height: ${theme.lineHeights.buttonBig.lg};
       padding: 18px 30px;
 	`
-    : $size === "small"
-      ? `font-size: ${theme.fontSizes.buttonSmall.lg};
+      : $size === "small"
+        ? `font-size: ${theme.fontSizes.buttonSmall.lg};
 			line-height: ${theme.lineHeights.buttonSmall.lg};
       padding: 10px 20px;
 	`
-      : `font-size: ${theme.fontSizes.button.lg};
-			line-height: ${theme.lineHeights.button.lg};`}
+        : `font-size: ${theme.fontSizes.button.lg};
+			line-height: ${theme.lineHeights.button.lg};`
+  }
 
-	${disabled &&
-  `
+	${
+    disabled &&
+    `
 		cursor: not-allowed;
 		background: ${theme.colors.grayLight};
     border: solid 2px ${theme.colors.grayLight};
 		color: ${theme.colors.gray};
-	`}
+	`
+  }
 
 	${$fullWidth && `width: 100%;`}
 `;

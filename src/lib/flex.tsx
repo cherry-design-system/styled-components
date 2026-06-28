@@ -5,6 +5,9 @@ import {
   mq,
   generateGapStyles,
   generateJustifyContentStyles,
+  generateAlignItemsStyles,
+  generateAlignContentStyles,
+  generateDirectionStyles,
   fullWidthStyles,
 } from "./utils";
 
@@ -15,6 +18,20 @@ type JustifyContentType =
   | "space-between"
   | "space-around"
   | "space-evenly";
+
+type AlignItemsType =
+  "stretch" | "center" | "flex-start" | "flex-end" | "baseline";
+
+type AlignContentType =
+  | "stretch"
+  | "center"
+  | "flex-start"
+  | "flex-end"
+  | "space-between"
+  | "space-around"
+  | "space-evenly";
+
+type DirectionType = "row" | "column" | "row-reverse" | "column-reverse";
 
 type GapType = number | "none";
 
@@ -28,6 +45,22 @@ interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
   $xlJustifyContent?: JustifyContentType;
   $xxlJustifyContent?: JustifyContentType;
   $xxxlJustifyContent?: JustifyContentType;
+  $alignItems?: AlignItemsType;
+  $xsAlignItems?: AlignItemsType;
+  $smAlignItems?: AlignItemsType;
+  $mdAlignItems?: AlignItemsType;
+  $lgAlignItems?: AlignItemsType;
+  $xlAlignItems?: AlignItemsType;
+  $xxlAlignItems?: AlignItemsType;
+  $xxxlAlignItems?: AlignItemsType;
+  $alignContent?: AlignContentType;
+  $xsAlignContent?: AlignContentType;
+  $smAlignContent?: AlignContentType;
+  $mdAlignContent?: AlignContentType;
+  $lgAlignContent?: AlignContentType;
+  $xlAlignContent?: AlignContentType;
+  $xxlAlignContent?: AlignContentType;
+  $xxxlAlignContent?: AlignContentType;
   $wrap?: "wrap" | "nowrap" | "wrap-reverse";
   $gap?: GapType;
   $xsGap?: GapType;
@@ -37,13 +70,22 @@ interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
   $xlGap?: GapType;
   $xxlGap?: GapType;
   $xxxlGap?: GapType;
-  $direction?: "row" | "column" | "row-reverse" | "column-reverse";
+  $direction?: DirectionType;
+  $xsDirection?: DirectionType;
+  $smDirection?: DirectionType;
+  $mdDirection?: DirectionType;
+  $lgDirection?: DirectionType;
+  $xlDirection?: DirectionType;
+  $xxlDirection?: DirectionType;
+  $xxxlDirection?: DirectionType;
   $fullWidth?: boolean;
 }
 
 const StyledFlex = styled.div<FlexProps>`
   display: flex;
   justify-content: ${({ $justifyContent }) => $justifyContent || "flex-start"};
+  align-items: ${({ $alignItems }) => $alignItems || "stretch"};
+  align-content: ${({ $alignContent }) => $alignContent || "stretch"};
   flex-wrap: ${({ $wrap }) => $wrap || "wrap"};
   gap: ${({ $gap, theme }) =>
     $gap !== undefined && $gap !== "none"
@@ -61,27 +103,69 @@ const StyledFlex = styled.div<FlexProps>`
   ${({ $xsGap }) => $xsGap !== undefined && generateGapStyles("xs", $xsGap)}
   ${({ $xsJustifyContent }) =>
     $xsJustifyContent && generateJustifyContentStyles("xs", $xsJustifyContent)}
+  ${({ $xsAlignItems }) =>
+    $xsAlignItems && generateAlignItemsStyles("xs", $xsAlignItems)}
+  ${({ $xsAlignContent }) =>
+    $xsAlignContent && generateAlignContentStyles("xs", $xsAlignContent)}
+  ${({ $xsDirection }) =>
+    $xsDirection && generateDirectionStyles("xs", $xsDirection)}
 	${({ $smGap }) => $smGap !== undefined && generateGapStyles("sm", $smGap)}
 	${({ $smJustifyContent }) =>
     $smJustifyContent && generateJustifyContentStyles("sm", $smJustifyContent)}
+  ${({ $smAlignItems }) =>
+    $smAlignItems && generateAlignItemsStyles("sm", $smAlignItems)}
+  ${({ $smAlignContent }) =>
+    $smAlignContent && generateAlignContentStyles("sm", $smAlignContent)}
+  ${({ $smDirection }) =>
+    $smDirection && generateDirectionStyles("sm", $smDirection)}
 	${({ $mdGap }) => $mdGap !== undefined && generateGapStyles("md", $mdGap)}
 	${({ $mdJustifyContent }) =>
     $mdJustifyContent && generateJustifyContentStyles("md", $mdJustifyContent)}
+  ${({ $mdAlignItems }) =>
+    $mdAlignItems && generateAlignItemsStyles("md", $mdAlignItems)}
+  ${({ $mdAlignContent }) =>
+    $mdAlignContent && generateAlignContentStyles("md", $mdAlignContent)}
+  ${({ $mdDirection }) =>
+    $mdDirection && generateDirectionStyles("md", $mdDirection)}
 	${({ $lgGap }) => $lgGap !== undefined && generateGapStyles("lg", $lgGap)}
 	${({ $lgJustifyContent }) =>
     $lgJustifyContent && generateJustifyContentStyles("lg", $lgJustifyContent)}
+  ${({ $lgAlignItems }) =>
+    $lgAlignItems && generateAlignItemsStyles("lg", $lgAlignItems)}
+  ${({ $lgAlignContent }) =>
+    $lgAlignContent && generateAlignContentStyles("lg", $lgAlignContent)}
+  ${({ $lgDirection }) =>
+    $lgDirection && generateDirectionStyles("lg", $lgDirection)}
 	${({ $xlGap }) => $xlGap !== undefined && generateGapStyles("xl", $xlGap)}
 	${({ $xlJustifyContent }) =>
     $xlJustifyContent && generateJustifyContentStyles("xl", $xlJustifyContent)}
+  ${({ $xlAlignItems }) =>
+    $xlAlignItems && generateAlignItemsStyles("xl", $xlAlignItems)}
+  ${({ $xlAlignContent }) =>
+    $xlAlignContent && generateAlignContentStyles("xl", $xlAlignContent)}
+  ${({ $xlDirection }) =>
+    $xlDirection && generateDirectionStyles("xl", $xlDirection)}
 	${({ $xxlGap }) => $xxlGap !== undefined && generateGapStyles("xxl", $xxlGap)}
 	${({ $xxlJustifyContent }) =>
     $xxlJustifyContent &&
     generateJustifyContentStyles("xxl", $xxlJustifyContent)}
+  ${({ $xxlAlignItems }) =>
+    $xxlAlignItems && generateAlignItemsStyles("xxl", $xxlAlignItems)}
+  ${({ $xxlAlignContent }) =>
+    $xxlAlignContent && generateAlignContentStyles("xxl", $xxlAlignContent)}
+  ${({ $xxlDirection }) =>
+    $xxlDirection && generateDirectionStyles("xxl", $xxlDirection)}
 	${({ $xxxlGap }) =>
     $xxxlGap !== undefined && generateGapStyles("xxxl", $xxxlGap)}
 	${({ $xxxlJustifyContent }) =>
     $xxxlJustifyContent &&
     generateJustifyContentStyles("xxxl", $xxxlJustifyContent)}
+  ${({ $xxxlAlignItems }) =>
+    $xxxlAlignItems && generateAlignItemsStyles("xxxl", $xxxlAlignItems)}
+  ${({ $xxxlAlignContent }) =>
+    $xxxlAlignContent && generateAlignContentStyles("xxxl", $xxxlAlignContent)}
+  ${({ $xxxlDirection }) =>
+    $xxxlDirection && generateDirectionStyles("xxxl", $xxxlDirection)}
   ${({ $fullWidth }) => fullWidthStyles($fullWidth)}
 `;
 

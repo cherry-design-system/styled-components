@@ -1,6 +1,6 @@
 {
   "name": "cherry-styled-components",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "Cherry is a design system for the modern web. Designed in Figma, built in React using Typescript.",
   "private": false,
   "type": "module",
@@ -50,21 +50,21 @@
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
-    "@swc/plugin-styled-components": "^12.13.0",
-    "@types/node": "^26.0.0",
+    "@swc/plugin-styled-components": "^12.14.0",
+    "@types/node": "^26.0.1",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react-swc": "^4.3.1",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",
     "next": "^16.2.9",
-    "prettier": "^3.8.4",
+    "prettier": "^3.9.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "rollup-plugin-preserve-directives": "^0.4.0",
-    "styled-components": "^6.4.2",
+    "styled-components": "^6.4.3",
     "typescript": "^6.0.3",
-    "vite": "^8.0.16",
-    "vite-plugin-dts": "^5.0.2"
+    "vite": "^8.1.0",
+    "vite-plugin-dts": "^5.0.3"
   }
 }
