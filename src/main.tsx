@@ -15,7 +15,8 @@ import { Preview } from "./preview";
 const previewMatch = window.location.pathname.match(
   /^\/preview(?:\/([\w-]*))?\/?$/,
 );
-const forcedTheme = new URLSearchParams(window.location.search).get("theme");
+const searchParams = new URLSearchParams(window.location.search);
+const forcedTheme = searchParams.get("theme");
 if (forcedTheme === "dark" || forcedTheme === "light") {
   document.cookie = `theme=${forcedTheme};path=/;max-age=31536000;SameSite=Lax`;
   localStorage.theme = forcedTheme;
@@ -37,12 +38,41 @@ const initialTheme =
     ? "dark"
     : "light";
 
+// Optional color overrides for previews: ?colors=<URI-encoded JSON> shaped
+// like { default: { primary: "#..." }, dark: { ... } }. Only valid CSS color
+// strings are accepted (values land in generated CSS).
+function mergeColors(base: typeof theme, overrides: unknown): typeof theme {
+  if (!overrides || typeof overrides !== "object") return base;
+  const safe = Object.fromEntries(
+    Object.entries(overrides).filter(
+      ([key, value]) =>
+        key in base.colors &&
+        typeof value === "string" &&
+        CSS.supports("color", value),
+    ),
+  );
+  return { ...base, colors: { ...base.colors, ...safe } };
+}
+
+let previewTheme = theme;
+let previewThemeDark = themeDark;
+const colorsParam = searchParams.get("colors");
+if (previewMatch && colorsParam) {
+  try {
+    const parsed = JSON.parse(colorsParam);
+    previewTheme = mergeColors(theme, parsed.default);
+    previewThemeDark = mergeColors(themeDark, parsed.dark);
+  } catch {
+    console.warn("Ignoring invalid ?colors= JSON");
+  }
+}
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <StyledComponentsRegistry>
       <ClientThemeProvider
-        theme={theme}
-        themeDark={themeDark}
+        theme={previewTheme}
+        themeDark={previewThemeDark}
         $initial={initialTheme}
       >
         {previewMatch ? <Preview name={previewMatch[1] ?? ""} /> : <App />}

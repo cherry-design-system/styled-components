@@ -9,6 +9,9 @@
  *   PREVIEW_URL  Base URL of the preview route (default http://localhost:5173/preview)
  *   OUT_DIR      Output directory (default ../cherry-documentation/public/components)
  *   CHROME_PATH  Chrome/Chromium executable (default macOS Google Chrome)
+ *   THEME_JSON   Path to a theme JSON file with { default, dark } color maps;
+ *                colors are passed to the preview via ?colors= and override
+ *                the built-in theme colors
  */
 const path = require("path");
 const fs = require("fs");
@@ -23,8 +26,16 @@ const CHROME =
   process.env.CHROME_PATH ||
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 
-// theme.colors.grayLight per theme (src/lib/utils/theme.ts)
-const BORDER = { light: "#e5e7eb", dark: "#1a1a1a" };
+// Optional custom theme colors ({ default, dark } maps, e.g. a docs theme.json)
+const customColors = process.env.THEME_JSON
+  ? JSON.parse(fs.readFileSync(process.env.THEME_JSON, "utf8"))
+  : null;
+
+// theme.colors.grayLight per theme (src/lib/utils/theme.ts), or the override
+const BORDER = {
+  light: customColors?.default?.grayLight || "#e5e7eb",
+  dark: customColors?.dark?.grayLight || "#1a1a1a",
+};
 // theme.spacing.radius.lg (12px) and a 1px border, at deviceScaleFactor 2
 const RADIUS = 24;
 const STROKE = 2;
@@ -99,7 +110,17 @@ async function frame(file, color) {
           ? { width: 1100, height: 700 }
           : { width: 800, height: 600 },
       );
-      await page.goto(`${BASE}/${name}?theme=${theme}`, {
+      const params = new URLSearchParams({ theme });
+      if (customColors) {
+        params.set(
+          "colors",
+          JSON.stringify({
+            default: customColors.default,
+            dark: customColors.dark,
+          }),
+        );
+      }
+      await page.goto(`${BASE}/${name}?${params}`, {
         waitUntil: "networkidle",
       });
       if (name === "toast") {

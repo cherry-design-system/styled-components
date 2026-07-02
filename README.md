@@ -150,6 +150,10 @@ Append `?theme=dark` or `?theme=light` to any preview URL to force a theme:
 
 The value is persisted to the `theme` cookie and `localStorage`, exactly like a `ThemeToggle` click, and the demo resolves it synchronously before the first render. It persists for subsequent navigations in the same browser context, so always pass the parameter explicitly when comparing themes to avoid leakage from a previous visit.
 
+### Custom theme colors
+
+Append `?colors=<URI-encoded JSON>` to any preview URL to override theme colors. The JSON has the shape `{ "default": { "primary": "#BE123C", ... }, "dark": { ... } }` where `default` patches the light theme's colors and `dark` patches the dark theme's. Unknown keys and values that are not valid CSS colors are ignored, and the parameter only applies to preview routes.
+
 ### Taking screenshots
 
 `scripts/screenshot-previews.cjs` captures every preview in both themes and writes the framed images used by the documentation site. With the dev server running in another terminal:
@@ -178,6 +182,13 @@ The script drives your installed Chrome through `playwright-core` (no browser do
 | `PREVIEW_URL` | `http://localhost:5173/preview`                                |
 | `OUT_DIR`     | `../cherry-documentation/public/components`                    |
 | `CHROME_PATH` | `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome` |
+| `THEME_JSON`  | none (path to a JSON file with `default`/`dark` color maps)    |
+
+`THEME_JSON` points at a file like the documentation site's `theme.json`; its colors are passed to the preview via `?colors=` and also drive the baked-in border color (`grayLight`). Example:
+
+```bash
+THEME_JSON=../cherry-documentation/theme.json pnpm run screenshots
+```
 
 For one-off manual screenshots, target the `#preview-box` selector:
 
