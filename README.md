@@ -96,7 +96,7 @@ For each component it produces `<name>-light.png` and `<name>-dark.png` at 2x re
 
 The border and radius are baked into the PNG rather than applied in CSS so that all images get the identical frame, including the two special captures:
 
-- `modal` overlays the whole viewport, so it is captured as a full-page screenshot to include the backdrop.
+- `modal` overlays the whole viewport, so it is captured as a full-page screenshot to include the backdrop. It is shot on a desktop-size viewport (1100px wide) so the modal's built-in `max-width: 500px` (active from the `lg` breakpoint) applies.
 - `toast` renders in a corner outside `#preview-box`, so the toast list element is captured instead, with 40px of padding injected at capture time for breathing room.
 
 Everything else is cropped to the `#preview-box` element. Animated previews (accordion, modal, toast) get a one-second settle delay before capture.

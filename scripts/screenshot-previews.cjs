@@ -91,6 +91,13 @@ async function frame(file, color) {
     const page = await context.newPage();
 
     for (const name of components) {
+      // The modal caps at max-width 500px only from the lg breakpoint (992px),
+      // so capture it on a desktop-size viewport to keep it narrow.
+      await page.setViewportSize(
+        name === "modal"
+          ? { width: 1100, height: 700 }
+          : { width: 800, height: 600 },
+      );
       await page.goto(`${BASE}/${name}?theme=${theme}`, {
         waitUntil: "networkidle",
       });
