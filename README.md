@@ -28,6 +28,75 @@ To build the library for production, use the following command:
 npm run build
 ```
 
+## Theming
+
+Cherry ships two theme providers:
+
+- `CherryThemeProvider` - the original client-only provider. It resolves the theme from `localStorage` and the OS preference after mount. Simple, but in a server-rendered app the first paint is always the light theme.
+- `ClientThemeProvider` - the SSR-aware provider for flash-free dark mode. The server resolves the `theme` cookie and passes `$initial`, so the first paint is already correct. On mount it reconciles against the cookie and OS preference (Safari and Firefox don't send color-scheme client hints, so their first server render can guess wrong) and swaps in place. Theme changes persist to the `theme` cookie and `localStorage` directly; no API route is needed.
+
+Both providers expose `setTheme` and `toggleTheme` through `ThemeContext`, and the `ThemeToggle` component works under either.
+
+A Next.js App Router setup looks like this:
+
+```tsx
+// app/layout.tsx (server component)
+import { cookies } from "next/headers";
+import {
+  ClientThemeProvider,
+  StyledComponentsRegistry,
+  themeInitScript,
+} from "cherry-styled-components";
+import { theme, themeDark } from "./theme";
+
+export default async function RootLayout({ children }) {
+  const cookieTheme = (await cookies()).get("theme")?.value;
+
+  return (
+    <html lang="en">
+      <head>
+        {/* Seeds the theme cookie and prevents the dark-mode flash in
+            browsers without color-scheme client hints. */}
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body>
+        <StyledComponentsRegistry>
+          <ClientThemeProvider
+            theme={theme}
+            themeDark={themeDark}
+            $initial={cookieTheme === "dark" ? "dark" : "light"}
+          >
+            {children}
+          </ClientThemeProvider>
+        </StyledComponentsRegistry>
+      </body>
+    </html>
+  );
+}
+```
+
+For the best first-visit experience in Chrome, also opt into color-scheme client hints in your middleware so the very first server render matches the OS preference:
+
+```ts
+// middleware.ts
+res.headers.set("Accept-CH", "Sec-CH-Prefers-Color-Scheme");
+res.headers.set("Vary", "Sec-CH-Prefers-Color-Scheme");
+res.headers.set("Critical-CH", "Sec-CH-Prefers-Color-Scheme");
+
+const hint = req.headers.get("Sec-CH-Prefers-Color-Scheme");
+if (!req.cookies.get("theme")?.value && hint) {
+  res.cookies.set("theme", hint === "dark" ? "dark" : "light", {
+    path: "/",
+    maxAge: 60 * 60 * 24 * 365,
+    sameSite: "lax",
+  });
+}
+```
+
+`resolveTheme(cookieValue, theme, themeDark)` is exported for other server code that needs the active theme object, e.g. `generateViewport` for the initial `theme-color`.
+
+In a client-only app (like this repo's demo, see `src/main.tsx`), resolve the initial theme synchronously from the cookie, `localStorage`, or `matchMedia` before rendering and pass it as `$initial`.
+
 ## Component Previews
 
 The dev server ships with a preview route that renders a single component in isolation, centered on the page. It is meant for visual inspection and for taking automated screenshots (e.g. with Playwright).
@@ -65,6 +134,7 @@ The route is handled in `src/main.tsx` and the previews live in `src/preview.tsx
 | `range`            | Range slider                                      |
 | `select`           | Select with label                                 |
 | `textarea`         | Textarea with label and value                     |
+| `theme-toggle`     | Pill-shaped sun/moon theme switch                 |
 | `toast`            | Success, error, and info toasts, fired on mount   |
 | `toggle`           | Checked toggle                                    |
 
@@ -78,7 +148,7 @@ Append `?theme=dark` or `?theme=light` to any preview URL to force a theme:
 /preview/button?theme=dark
 ```
 
-The value is written to `localStorage.theme`, which `CherryThemeProvider` reads, so it persists for subsequent navigations in the same browser context. Always pass the parameter explicitly when comparing themes to avoid leakage from a previous visit.
+The value is persisted to the `theme` cookie and `localStorage`, exactly like a `ThemeToggle` click, and the demo resolves it synchronously before the first render. It persists for subsequent navigations in the same browser context, so always pass the parameter explicitly when comparing themes to avoid leakage from a previous visit.
 
 ### Taking screenshots
 

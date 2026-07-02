@@ -17,6 +17,7 @@ import {
   Range,
   Select,
   Textarea,
+  ThemeToggle,
   ToastNotifications,
   ToastNotificationsProvider,
   Toggle,
@@ -167,6 +168,7 @@ const previews: Record<string, React.ReactNode> = {
       <option>Select</option>
     </Select>
   ),
+  "theme-toggle": <ThemeToggle />,
   textarea: (
     <Textarea
       $fullWidth

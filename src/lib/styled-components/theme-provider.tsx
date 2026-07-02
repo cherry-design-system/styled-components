@@ -5,10 +5,12 @@ import { GlobalStyles, Theme } from "../utils";
 
 interface ThemeContextProps {
   setTheme: React.Dispatch<React.SetStateAction<Theme>>;
+  toggleTheme: () => void;
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({
   setTheme: () => {},
+  toggleTheme: () => {},
 });
 
 function CherryThemeProvider({
@@ -35,11 +37,19 @@ function CherryThemeProvider({
       setTheme(theme);
     }
   }, [theme, themeDark]);
+  const toggleTheme = () => {
+    if (!themeDark) return;
+    const next = currentTheme.isDark ? theme : themeDark;
+    setTheme(next);
+    localStorage.theme = next.isDark ? "dark" : "light";
+    document.documentElement.classList.toggle("dark", next.isDark);
+  };
+
   const GlobalStylesComponent = GlobalStyles(currentTheme);
 
   return (
     <StyledThemeProvider theme={currentTheme}>
-      <ThemeContext.Provider value={{ setTheme }}>
+      <ThemeContext.Provider value={{ setTheme, toggleTheme }}>
         <GlobalStylesComponent />
         {children}
       </ThemeContext.Provider>

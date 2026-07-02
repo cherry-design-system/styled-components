@@ -50,6 +50,7 @@ const components = [
   "accordion-inline",
   "modal",
   "toast",
+  "theme-toggle",
   "box",
   "flex",
   "grid",

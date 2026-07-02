@@ -20,12 +20,12 @@ import {
   Select,
   Space,
   Textarea,
+  ThemeToggle,
   ToastNotifications,
   ToastNotificationsProvider,
   Toggle,
   useToastNotifications,
 } from "./lib";
-import { ToggleTheme } from "./toggle-theme";
 
 // Fills the grid column and bottom-aligns the icon buttons with a padding that
 // centers them on the form field next to them ((field height - button) / 2),
@@ -207,7 +207,7 @@ function App() {
       <Container>
         <Space $size={100} />
         <MaxWidth $xs={845}>
-          <ToggleTheme />
+          <ThemeToggle />
           <hr />
           <Input $fullWidth $label="Input" id="data-1" type="date" />
           <Space $size={20} />

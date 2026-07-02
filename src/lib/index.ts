@@ -19,5 +19,6 @@ export * from "./range";
 export * from "./select";
 export * from "./space";
 export * from "./textarea";
+export * from "./theme-toggle";
 export * from "./toast";
 export * from "./toggle";
