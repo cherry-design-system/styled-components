@@ -12,7 +12,7 @@ import {
   IconCalendar,
 } from "./utils";
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   children?: React.ReactNode;
   $wrapperClassName?: string;
   $label?: string;

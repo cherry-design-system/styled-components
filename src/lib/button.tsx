@@ -53,12 +53,12 @@ export const buttonStyles = (
     $variant === "primary" &&
     css`
       color: ${
-      $outline
-        ? theme.colors.primary
-        : theme.isDark
-          ? theme.colors.dark
-          : theme.colors.light
-    };
+        $outline
+          ? theme.colors.primary
+          : theme.isDark
+            ? theme.colors.dark
+            : theme.colors.light
+      };
       background: ${$outline ? "transparent" : theme.colors.primary};
       border: solid 2px ${theme.colors.primary};
       box-shadow: 0 0 0 0px ${theme.colors.primary};
@@ -84,12 +84,12 @@ export const buttonStyles = (
     $variant === "secondary" &&
     css`
       color: ${
-      $outline
-        ? theme.colors.secondary
-        : theme.isDark
-          ? theme.colors.dark
-          : theme.colors.light
-    };
+        $outline
+          ? theme.colors.secondary
+          : theme.isDark
+            ? theme.colors.dark
+            : theme.colors.light
+      };
       background: ${$outline ? "transparent" : theme.colors.secondary};
       border: solid 2px ${theme.colors.secondary};
       box-shadow: 0 0 0 0px ${theme.colors.secondary};
@@ -115,12 +115,12 @@ export const buttonStyles = (
     $variant === "tertiary" &&
     css`
       color: ${
-      $outline
-        ? theme.colors.tertiary
-        : theme.isDark
-          ? theme.colors.dark
-          : theme.colors.light
-    };
+        $outline
+          ? theme.colors.tertiary
+          : theme.isDark
+            ? theme.colors.dark
+            : theme.colors.light
+      };
       background: ${$outline ? "transparent" : theme.colors.tertiary};
       border: solid 2px ${theme.colors.tertiary};
       box-shadow: 0 0 0 0px ${theme.colors.tertiary};
@@ -146,12 +146,12 @@ export const buttonStyles = (
     $error &&
     css`
       color: ${
-      $outline
-        ? theme.colors.error
-        : theme.isDark
-          ? theme.colors.dark
-          : theme.colors.light
-    };
+        $outline
+          ? theme.colors.error
+          : theme.isDark
+            ? theme.colors.dark
+            : theme.colors.light
+      };
       background: ${$outline ? "transparent" : theme.colors.error};
       border: solid 2px ${theme.colors.error};
       box-shadow: 0 0 0 0px ${theme.colors.error};
