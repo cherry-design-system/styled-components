@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `themeInitScript` and `createThemeInitScript(darkBackground)`: blocking head script that seeds the `theme` cookie and prevents the dark-mode flash in browsers without color-scheme client hints (Safari, Firefox). Exported from a server-safe module so it can be used in server components
 - `resolveTheme(cookieValue, theme, themeDark)` helper for resolving the `theme` cookie to a theme object in server code
 - `toggleTheme()` on `ThemeContext`, provided by both theme providers
+- `interactiveStyles` and `errorInteractiveStyles` mixins: hover/focus/active border + focus ring treatment for interactive surfaces, in the primary color and the error red respectively
 
 ## [0.1.19] - Released
 

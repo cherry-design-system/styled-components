@@ -1,6 +1,60 @@
 "use client";
 import { css } from "styled-components";
+import { rgba } from "polished";
 import { Breakpoints, Theme, mq } from "./theme";
+
+/**
+ * Hover/focus/active affordance for interactive surfaces (cards, tiles,
+ * links-as-blocks): a transparent 1px border that picks up the primary color
+ * on hover, with a soft focus ring. Pair with resetButton for clickable
+ * elements that aren't Buttons.
+ */
+export const interactiveStyles = css<{ theme: Theme }>`
+  transition: all 0.3s ease;
+  border: solid 1px transparent;
+  box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.primary};
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: ${({ theme }) => theme.colors.primary};
+    }
+  }
+
+  &:focus {
+    border-color: ${({ theme }) => theme.colors.primary};
+    box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.primaryLight};
+  }
+
+  &:active {
+    box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primaryLight};
+  }
+`;
+
+/**
+ * The destructive-action sibling of interactiveStyles: identical
+ * hover/focus/active border + ring behavior, but in the theme error red (the
+ * same red the $error Button uses). Use for delete/remove affordances.
+ */
+export const errorInteractiveStyles = css<{ theme: Theme }>`
+  transition: all 0.3s ease;
+  border: solid 1px transparent;
+  box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.error};
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: ${({ theme }) => theme.colors.error};
+    }
+  }
+
+  &:focus {
+    border-color: ${({ theme }) => theme.colors.error};
+    box-shadow: 0 0 0 4px ${({ theme }) => rgba(theme.colors.error, 0.3)};
+  }
+
+  &:active {
+    box-shadow: 0 0 0 2px ${({ theme }) => rgba(theme.colors.error, 0.3)};
+  }
+`;
 
 export const resetButton = css`
   box-sizing: border-box;
