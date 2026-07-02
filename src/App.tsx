@@ -2,9 +2,12 @@ import { useState } from "react";
 import styled from "styled-components";
 import {
   Accordion,
+  AvatarDropzone,
   Container,
+  type DropzoneRejection,
   Button,
   Col,
+  Dropzone,
   Flex,
   Grid,
   Icon,
@@ -34,6 +37,96 @@ const StyledIconButtonRow = styled.div<{ $offset: number }>`
   height: 100%;
   padding-bottom: ${({ $offset }) => $offset}px;
 `;
+
+function DropzoneDemo() {
+  const { addNotification } = useToastNotifications();
+
+  return (
+    <Dropzone
+      id="dropzone-1"
+      accept="image/png,image/jpeg,image/webp,image/gif"
+      multiple
+      $maxFiles={5}
+      $maxBytes={5 * 1024 * 1024}
+      $prompt="Drag images here"
+      $browse="or click to browse"
+      $hint="PNG, JPG, WebP or GIF · up to 5MB · max 5 files"
+      $icon="ImageUp"
+      onFilesRejected={(rejections) =>
+        rejections.forEach(({ file, reason }) =>
+          addNotification(
+            reason === "type"
+              ? `${file.name} is not an accepted image type.`
+              : reason === "size"
+                ? `${file.name} is larger than 5MB.`
+                : `${file.name} skipped: at most 5 files.`,
+            { color: "error", autoHide: 5000 },
+          ),
+        )
+      }
+    />
+  );
+}
+
+function InlineDropzoneDemo() {
+  const { addNotification } = useToastNotifications();
+
+  return (
+    <Dropzone
+      id="dropzone-inline"
+      accept="image/*"
+      $inline
+      $maxBytes={5 * 1024 * 1024}
+      $prompt="Drag an image here"
+      $browse="or click to browse"
+      $icon="ImageUp"
+      onFilesRejected={(rejections) =>
+        rejections.forEach(({ file, reason }) =>
+          addNotification(
+            reason === "size"
+              ? `${file.name} is larger than 5MB.`
+              : `${file.name} is not an accepted image.`,
+            { color: "error", autoHide: 5000 },
+          ),
+        )
+      }
+    />
+  );
+}
+
+function AvatarDropzoneDemo() {
+  const { addNotification } = useToastNotifications();
+
+  const notifyRejection = ({ file, reason }: DropzoneRejection) =>
+    addNotification(
+      reason === "size"
+        ? `${file.name} is larger than 5MB.`
+        : `${file.name} is not an image.`,
+      { color: "error", autoHide: 5000 },
+    );
+
+  return (
+    <Flex $gap={20} $alignItems="center">
+      <AvatarDropzone
+        id="avatar-small"
+        $size="small"
+        $maxBytes={5 * 1024 * 1024}
+        onFileRejected={notifyRejection}
+      />
+      <AvatarDropzone
+        id="avatar-default"
+        $maxBytes={5 * 1024 * 1024}
+        onFileRejected={notifyRejection}
+      />
+      <AvatarDropzone
+        id="avatar-big"
+        $size="big"
+        $maxBytes={5 * 1024 * 1024}
+        onFileRejected={notifyRejection}
+      />
+    </Flex>
+  );
+}
 
 function ModalToastDemo() {
   const [isOpen, setIsOpen] = useState(false);
@@ -226,6 +319,12 @@ function App() {
             The inline variant drops the border and radius and uses tighter
             padding, for embedding inside cards or lists.
           </Accordion>
+          <Space $size={20} />
+          <DropzoneDemo />
+          <Space $size={20} />
+          <InlineDropzoneDemo />
+          <Space $size={20} />
+          <AvatarDropzoneDemo />
 
           <Space $size={40} />
           <hr />
