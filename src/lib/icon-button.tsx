@@ -1,7 +1,7 @@
 "use client";
 import React, { forwardRef } from "react";
 import styled, { css } from "styled-components";
-import { lighten, darken } from "polished";
+import { lighten, darken, rgba } from "polished";
 
 import { Theme, resetButton } from "./utils";
 
@@ -10,6 +10,7 @@ export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEl
   "aria-label": string;
   $size?: "default" | "big" | "small";
   $error?: boolean;
+  $active?: boolean;
 }
 
 const iconButtonSizes = {
@@ -23,6 +24,7 @@ export const iconButtonStyles = (
   $size?: "default" | "big" | "small",
   $error?: boolean,
   disabled?: boolean,
+  $active?: boolean,
 ) => {
   const { box, icon } = iconButtonSizes[$size ?? "default"];
 
@@ -32,6 +34,7 @@ export const iconButtonStyles = (
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    position: relative;
     width: ${box}px;
     height: ${box}px;
     border-radius: 50%;
@@ -83,6 +86,18 @@ export const iconButtonStyles = (
           `)
     }
 
+    /* "On" state (dropzone open, preview active, …): primary border + tint
+       on top of the base look. Reflected on aria-pressed for assistive tech. */
+    ${
+      !disabled &&
+      $active &&
+      css`
+        border-color: ${theme.colors.primary};
+        background: ${rgba(theme.colors.primary, theme.isDark ? 0.18 : 0.1)};
+        color: ${theme.colors.primary};
+      `
+    }
+
     ${
       disabled &&
       css`
@@ -96,15 +111,22 @@ export const iconButtonStyles = (
 };
 
 const StyledIconButton = styled.button<IconButtonProps>`
-  ${({ theme, $size, $error, disabled }) =>
-    iconButtonStyles(theme, $size, $error, disabled)}
+  ${({ theme, $size, $error, disabled, $active }) =>
+    iconButtonStyles(theme, $size, $error, disabled, $active)}
 `;
 
 function LocalIconButton(
   { ...props }: IconButtonProps,
   ref: React.Ref<HTMLButtonElement>,
 ) {
-  return <StyledIconButton type="button" {...props} ref={ref} />;
+  return (
+    <StyledIconButton
+      type="button"
+      aria-pressed={props.$active === undefined ? undefined : props.$active}
+      {...props}
+      ref={ref}
+    />
+  );
 }
 
 const IconButton = forwardRef(LocalIconButton);

@@ -298,6 +298,9 @@ function App() {
                 <IconButton aria-label="Edit">
                   <Icon name="Pencil" />
                 </IconButton>
+                <IconButton $active aria-label="Toggle preview">
+                  <Icon name="Eye" />
+                </IconButton>
                 <IconButton $error aria-label="Delete">
                   <Icon name="Trash2" />
                 </IconButton>
@@ -449,6 +452,9 @@ function App() {
                 <IconButton $size="big" aria-label="Edit">
                   <Icon name="Pencil" />
                 </IconButton>
+                <IconButton $size="big" $active aria-label="Toggle preview">
+                  <Icon name="Eye" />
+                </IconButton>
                 <IconButton $size="big" $error aria-label="Delete">
                   <Icon name="Trash2" />
                 </IconButton>
@@ -585,6 +591,9 @@ function App() {
                 </IconButton>
                 <IconButton $size="small" aria-label="Edit">
                   <Icon name="Pencil" />
+                </IconButton>
+                <IconButton $size="small" $active aria-label="Toggle preview">
+                  <Icon name="Eye" />
                 </IconButton>
                 <IconButton $size="small" $error aria-label="Delete">
                   <Icon name="Trash2" />
