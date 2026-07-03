@@ -166,6 +166,7 @@ const StyledAvatarDropzone = styled.button<{
   $hasImage?: boolean;
 }>`
   ${resetButton};
+  font-family: inherit;
   display: inline-flex;
   align-items: center;
   justify-content: center;

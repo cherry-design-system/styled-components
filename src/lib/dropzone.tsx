@@ -268,6 +268,7 @@ const StyledDropzone = styled.button<{
   $inline?: boolean;
 }>`
   ${resetButton};
+  font-family: inherit;
   display: flex;
   flex-direction: ${({ $inline }) => ($inline ? "row" : "column")};
   align-items: center;
@@ -335,7 +336,7 @@ const StyledDropPrompt = styled.span<{ theme: Theme; $inline?: boolean }>`
   flex-wrap: wrap;
   align-items: baseline;
   gap: ${({ $inline }) => ($inline ? "0 6px" : "2px")};
-  font-family: ${({ theme }) => theme.fonts.text};
+  font-family: inherit;
   font-size: ${({ theme }) => theme.fontSizes.text.xs};
   line-height: ${({ theme }) => theme.lineHeights.text.xs};
   font-weight: 600;
@@ -348,7 +349,7 @@ const StyledDropPrompt = styled.span<{ theme: Theme; $inline?: boolean }>`
 `;
 
 const StyledDropHint = styled.span<{ theme: Theme; $inline?: boolean }>`
-  font-family: ${({ theme }) => theme.fonts.text};
+  font-family: inherit;
   font-size: ${({ theme }) => theme.fontSizes.small.xs};
   line-height: ${({ theme }) => theme.lineHeights.small.xs};
   color: ${({ theme }) => theme.colors.gray};
@@ -416,7 +417,7 @@ const StyledThumbFile = styled.span<{ theme: Theme }>`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-family: ${({ theme }) => theme.fonts.text};
+    font-family: inherit;
     font-size: 10px;
     line-height: 1.2;
   }
