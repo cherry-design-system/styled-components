@@ -5,6 +5,22 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.1] - 2026-07-04
+
+### Added
+
+- `removeNotification(id)` on the toast context, returned by `useToastNotifications` alongside `addNotification`; each toast in `notifications` now carries a unique `id`
+- Toast stack is an `aria-live="polite"` region, so screen readers announce new toasts
+
+### Changed
+
+- Toast internals reworked: state and variants are typed `$` props on a new `StyledNotificationItem` instead of className strings, each toast manages its own enter/exit lifecycle, and the space collapse animates the toast's real height via `grid-template-rows` instead of a `max-height` guess, so entering and exiting toasts glide instead of snapping
+- Bottom-anchored toasts (`$bottom`) slide up from below instead of dropping down from above
+
+### Fixed
+
+- Dismissed and auto-hidden toasts are removed from state and the DOM after their exit animation instead of accumulating invisibly forever
+
 ## [0.2.0] - 2026-07-03
 
 ### Added
