@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import {
   Accordion,
@@ -77,6 +77,32 @@ function ToastPreview() {
     <IconButton aria-label="Reset toasts" onClick={fireDefaults}>
       <Icon name="RotateCcw" />
     </IconButton>
+  );
+}
+
+function ModalPreview() {
+  const [isOpen, setIsOpen] = useState(true);
+
+  return (
+    <>
+      {/* Same reset affordance as the toast preview: once the modal is
+          closed, a centered button brings it back. */}
+      {!isOpen && (
+        <IconButton aria-label="Reopen modal" onClick={() => setIsOpen(true)}>
+          <Icon name="RotateCcw" />
+        </IconButton>
+      )}
+      <Modal
+        $isOpen={isOpen}
+        $onClose={() => setIsOpen(false)}
+        $title="Modal Title"
+      >
+        <p>
+          This is the Cherry modal. It closes on Escape, on a click outside, or
+          with the close button in the corner.
+        </p>
+      </Modal>
+    </>
   );
 }
 
@@ -161,14 +187,7 @@ const previews: Record<string, React.ReactNode> = {
       placeholder="Placeholder"
     />
   ),
-  modal: (
-    <Modal $isOpen $onClose={() => {}} $title="Modal Title">
-      <p>
-        This is the Cherry modal. It closes on Escape, on a click outside, or
-        with the close button in the corner.
-      </p>
-    </Modal>
-  ),
+  modal: <ModalPreview />,
   password: (
     <Password
       $fullWidth
