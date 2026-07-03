@@ -106,25 +106,13 @@ export const StyledNotifications = styled.ul<{
   margin: 0;
   padding: 0;
   list-style: none;
-
-  ${({ $align }) =>
-    $align === "center" &&
-    css`
-      left: 50%;
-      transform: translateX(-50%);
-    `}
-
-  ${({ $align }) =>
-    $align === "right" &&
-    css`
-      right: 20px;
-    `}
-
-  ${({ $align }) =>
-    $align === "left" &&
-    css`
-      left: 20px;
-    `}
+  /* Full-width strip so the pill can use the whole viewport (minus margins)
+     before wrapping; alignment happens inside via the items' justify-items.
+     An offset anchor (e.g. left: 50%) would cap shrink-to-fit width and make
+     the text wrap early. The strip itself must not swallow clicks. */
+  left: 20px;
+  right: 20px;
+  pointer-events: none;
 
   ${({ $bottom }) =>
     $bottom
@@ -155,6 +143,8 @@ export const StyledNotificationItem = styled.li<{
   margin: 0;
   padding: 0;
   opacity: 0;
+  /* The row spans the full strip; only the pill itself may catch clicks
+     (enabled on .item while visible), so the page beside it stays clickable. */
   pointer-events: none;
   /* Slide in from the edge the stack is anchored to. */
   transform: translateY(${({ $bottom }) => ($bottom ? "20px" : "-20px")});
@@ -233,7 +223,6 @@ export const StyledNotificationItem = styled.li<{
     $visible &&
     css`
       opacity: 1;
-      pointer-events: auto;
       transform: translateY(0);
       grid-template-rows: 1fr;
       /* Enter mirrors the exit: grow the space first, then fade in. */
@@ -242,6 +231,10 @@ export const StyledNotificationItem = styled.li<{
         margin 0.25s ease,
         opacity 0.2s ease 0.15s,
         transform 0.2s ease 0.15s;
+
+      & .item {
+        pointer-events: auto;
+      }
 
       ${
         $bottom
