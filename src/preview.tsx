@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
 import {
   Accordion,
@@ -51,19 +51,33 @@ const StyledPlaceholder = styled.div`
 `;
 
 function ToastPreview() {
-  const { addNotification } = useToastNotifications();
+  const { addNotification, notifications } = useToastNotifications();
   const fired = useRef(false);
 
-  useEffect(() => {
-    if (fired.current) return;
-    fired.current = true;
+  const fireDefaults = () => {
     addNotification("Changes saved successfully.", { color: "success" });
     addNotification("Something went wrong.", { color: "error" });
     addNotification("This is an info toast.", { color: "info" });
+  };
+
+  // useLayoutEffect so the initial toasts exist before first paint and the
+  // reset button below doesn't flash on load.
+  useLayoutEffect(() => {
+    if (fired.current) return;
+    fired.current = true;
+    fireDefaults();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return null;
+  // Once every toast has been dismissed, offer a centered reset button that
+  // restores the three defaults and disappears while toasts are visible.
+  if (notifications.length > 0) return null;
+
+  return (
+    <IconButton aria-label="Reset toasts" onClick={fireDefaults}>
+      <Icon name="RotateCcw" />
+    </IconButton>
+  );
 }
 
 const previews: Record<string, React.ReactNode> = {
