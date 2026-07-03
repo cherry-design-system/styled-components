@@ -3,10 +3,11 @@ import React, {
   useCallback,
   useEffect,
   useRef,
+  useState,
   useSyncExternalStore,
 } from "react";
 import { createPortal } from "react-dom";
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { rgba } from "polished";
 
 import { Icon } from "./icon";
@@ -19,6 +20,11 @@ export interface ModalProps {
   $onClose: () => void;
   $title?: string;
   $width?: number;
+  $hideCloseButton?: boolean;
+  /** Enables restyling via styled(Modal); applied to the overlay root. The
+      inner parts expose class hooks: .modal-inner, .modal-close, .modal-title,
+      .modal-content. */
+  className?: string;
 }
 
 // Hydration-safe client detection: returns the server value (false) during the
@@ -34,8 +40,32 @@ function useIsClient() {
   );
 }
 
+// The modal mounts on open and unmounts once the exit animation finishes, so
+// closed modals keep nothing in the DOM and children (e.g. forms) reset their
+// state between openings. Keyframes (rather than transitions) make the enter
+// motion play on mount and give the exit a definite end event to unmount on.
+const overlayFadeIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+
+const overlayFadeOut = keyframes`
+  from { opacity: 1; }
+  to { opacity: 0; }
+`;
+
+const innerRiseIn = keyframes`
+  from { transform: translateY(40px); }
+  to { transform: translateY(0); }
+`;
+
+const innerSinkOut = keyframes`
+  from { transform: translateY(0); }
+  to { transform: translateY(40px); }
+`;
+
 const StyledModal = styled.div<{
-  $isOpen: boolean;
+  $isClosing: boolean;
   $width?: number;
   theme: Theme;
 }>`
@@ -49,15 +79,14 @@ const StyledModal = styled.div<{
   justify-content: center;
   align-items: center;
   z-index: 1010;
-  pointer-events: none;
-  opacity: 0;
-  transition: all 0.3s ease;
+  animation: ${({ $isClosing }) =>
+    $isClosing ? overlayFadeOut : overlayFadeIn}
+    0.3s ease both;
 
-  ${({ $isOpen }) =>
-    $isOpen &&
+  ${({ $isClosing }) =>
+    $isClosing &&
     css`
-      opacity: 1;
-      pointer-events: all;
+      pointer-events: none;
     `}
 
   & .modal-inner {
@@ -68,14 +97,8 @@ const StyledModal = styled.div<{
     width: 100%;
     margin: auto;
     position: relative;
-    transform: translateY(40px);
-    transition: all 0.3s ease;
-
-    ${({ $isOpen }) =>
-      $isOpen &&
-      css`
-        transform: translateY(0);
-      `}
+    animation: ${({ $isClosing }) => ($isClosing ? innerSinkOut : innerRiseIn)}
+      0.3s ease both;
 
     ${mq("lg")} {
       max-width: 500px;
@@ -140,10 +163,32 @@ const StyledModalContent = styled.div<{ theme: Theme }>`
   }
 `;
 
-function Modal({ children, $isOpen, $onClose, $title, $width }: ModalProps) {
+function Modal({
+  children,
+  $isOpen,
+  $onClose,
+  $title,
+  $width,
+  $hideCloseButton,
+  className,
+}: ModalProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const elmRef = useRef<HTMLSpanElement>(null);
   const isClient = useIsClient();
+
+  // Stays true while the exit animation plays so the DOM isn't removed until
+  // the animation completes. It flips to false only in the onAnimationEnd
+  // handler (an event callback, not an effect), which satisfies React 19
+  // lint rules.
+  const [shouldRender, setShouldRender] = useState($isOpen);
+
+  // When $isOpen goes false -> true, render immediately. This runs during
+  // render (not in an effect) and only reads props/state, which is safe.
+  if ($isOpen && !shouldRender) {
+    setShouldRender(true);
+  }
+
+  const isClosing = !$isOpen && shouldRender;
 
   const closeModal = useCallback(() => {
     $onClose();
@@ -164,27 +209,58 @@ function Modal({ children, $isOpen, $onClose, $title, $width }: ModalProps) {
 
   useOnClickOutside([elmRef, wrapperRef], $isOpen ? closeModal : () => {});
 
+  const handleAnimationEnd = useCallback(
+    (event: React.AnimationEvent<HTMLDivElement>) => {
+      // Only the overlay's own fade marks the end of the exit; ignore the
+      // bubbled animation events from .modal-inner.
+      if (event.target !== event.currentTarget) return;
+      if (!$isOpen) {
+        setShouldRender(false);
+      }
+    },
+    [$isOpen],
+  );
+
   // Portals are client-only; render nothing on the server and during the first
-  // client render so hydration matches, then portal once on the client.
-  if (!isClient) return null;
+  // client render so hydration matches, then portal once on the client. While
+  // fully closed, render nothing at all so children unmount and reset their
+  // state between openings.
+  if (!isClient || !shouldRender) return null;
 
   // Render into document.body so the fixed-position overlay is lifted out of
   // any transformed/overflow-clipped ancestor and always sits on top.
   return createPortal(
-    <StyledModal $isOpen={$isOpen} $width={$width}>
-      <div className="modal-inner" ref={wrapperRef}>
-        <span ref={elmRef}>
-          <StyledModalClose
-            $size="small"
-            onClick={closeModal}
-            className="modal-close"
-            aria-label="Close Modal"
-          >
-            <Icon name="X" />
-          </StyledModalClose>
-        </span>
-        {$title && <StyledModalTitle>{$title}</StyledModalTitle>}
-        <StyledModalContent>{children}</StyledModalContent>
+    <StyledModal
+      $isClosing={isClosing}
+      $width={$width}
+      className={className}
+      onAnimationEnd={handleAnimationEnd}
+    >
+      <div
+        className="modal-inner"
+        ref={wrapperRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label={$title}
+      >
+        {!$hideCloseButton && (
+          <span ref={elmRef}>
+            <StyledModalClose
+              $size="small"
+              onClick={closeModal}
+              className="modal-close"
+              aria-label="Close Modal"
+            >
+              <Icon name="X" />
+            </StyledModalClose>
+          </span>
+        )}
+        {$title && (
+          <StyledModalTitle className="modal-title">{$title}</StyledModalTitle>
+        )}
+        <StyledModalContent className="modal-content">
+          {children}
+        </StyledModalContent>
       </div>
     </StyledModal>,
     document.body,
