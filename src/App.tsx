@@ -634,7 +634,7 @@ const StyledFooterHeading = styled.h2`
 
 const StyledFooterText = styled.p`
   margin: 12px 0 0;
-  max-width: 48ch;
+  max-width: 430px;
   ${({ theme }) => styledText(theme)};
   color: ${({ theme }) => theme.colors.grayDark};
 `;
@@ -862,7 +862,7 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Visit cherry.al
+              Visit Cherry
               <Icon name="ArrowRight" size={18} />
             </StyledFooterCta>
           </StyledFooter>
