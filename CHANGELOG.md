@@ -5,7 +5,24 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.2.1] - 2026-07-04
+## [0.2.2] - 2026-07-03
+
+### Added
+
+- `Modal`: `$hideCloseButton` prop to omit the built-in close button
+- `Modal`: `className` passthrough on the overlay root, enabling `styled(Modal)` restyling; inner parts expose stable class hooks (`.modal-inner`, `.modal-close`, `.modal-title`, `.modal-content`)
+- `Modal`: `role="dialog"`, `aria-modal="true"`, and `aria-label` (from `$title`) on the dialog surface
+
+### Changed
+
+- **Breaking-ish:** `Modal` now unmounts its children once the exit animation finishes instead of keeping them mounted (hidden) while closed. Children such as forms reset their state between openings. The enter/exit motion is unchanged visually (fade + 40px rise) but is now driven by keyframes instead of transitions
+- `useOnClickOutside` subscribes its document listener once per mount (latest-ref pattern) instead of re-subscribing whenever callers pass inline ref arrays or callbacks
+
+### Fixed
+
+- `useOnClickOutside` ignores unattached (null) refs instead of suppressing the callback entirely when any ref in the array is not mounted
+
+## [0.2.1] - 2026-07-03
 
 ### Added
 
