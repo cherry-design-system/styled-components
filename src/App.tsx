@@ -5,6 +5,7 @@ import {
   AvatarDropzone,
   Box,
   Button,
+  buttonStyles,
   Col,
   Container,
   Dropzone,
@@ -617,6 +618,33 @@ const StyledDivider = styled.hr`
   border-top: 1px solid ${({ theme }) => theme.colors.grayLight};
 `;
 
+// Closing footer: a centered call-to-action that sends visitors home.
+const StyledFooter = styled.footer`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`;
+
+const StyledFooterHeading = styled.h2`
+  margin: 0;
+  ${({ theme }) => styledH2(theme)};
+  color: ${({ theme }) => theme.colors.dark};
+`;
+
+const StyledFooterText = styled.p`
+  margin: 12px 0 0;
+  max-width: 48ch;
+  ${({ theme }) => styledText(theme)};
+  color: ${({ theme }) => theme.colors.grayDark};
+`;
+
+// An anchor styled with the library's shared button treatment, so the CTA is a
+// real link (opens the home page) while matching the primary Button exactly.
+const StyledFooterCta = styled.a`
+  ${({ theme }) => buttonStyles(theme, "primary")};
+`;
+
 function App() {
   return (
     <ToastNotificationsProvider>
@@ -633,8 +661,9 @@ function App() {
                 to light and dark. Toggle the theme to see it react.
               </StyledLead>
             </div>
-            <ThemeToggle />
           </StyledHeader>
+          <Space $size={24} />
+          <ThemeToggle />
 
           <StyledDivider />
 
@@ -666,8 +695,10 @@ function App() {
             <TypeRow name="Code">
               <StyledBody>
                 Install with{" "}
-                <StyledInlineCode>pnpm add cherry</StyledInlineCode> and import
-                from the barrel.
+                <StyledInlineCode>
+                  pnpm add cherry-styled-components
+                </StyledInlineCode>{" "}
+                and import from the barrel.
               </StyledBody>
             </TypeRow>
           </Section>
@@ -812,6 +843,29 @@ function App() {
             <Space $size={16} />
             <AvatarDropzoneDemo />
           </Section>
+
+          <StyledDivider />
+
+          <StyledFooter>
+            <StyledCaption>Get started</StyledCaption>
+            <Space $size={16} />
+            <StyledFooterHeading>
+              Start building with Cherry
+            </StyledFooterHeading>
+            <StyledFooterText>
+              A white-label, fully themeable React component library. Drop it in
+              and ship a consistent, accessible UI in light and dark.
+            </StyledFooterText>
+            <Space $size={28} />
+            <StyledFooterCta
+              href="https://cherry.al"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit cherry.al
+              <Icon name="ArrowRight" size={18} />
+            </StyledFooterCta>
+          </StyledFooter>
         </MaxWidth>
         <Space $size={100} />
       </Container>
