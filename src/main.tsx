@@ -10,28 +10,29 @@ import App from "./App";
 import { Preview } from "./preview";
 import defaultPreviewColors from "./theme.json";
 
-// Component preview route for screenshots: /preview lists all components,
-// /preview/<name> renders one centered. Append ?theme=dark|light to force a
-// theme (persisted the same way ClientThemeProvider persists a toggle).
+// Component preview route for screenshots and embeds: /preview lists all
+// components, /preview/<name> renders one centered. Append ?theme=dark|light
+// to pin a theme for this document only. Pinning writes nothing to the cookie
+// or localStorage: docs embed a light and a dark iframe of the same origin
+// side by side, and a shared cookie would let the last loader flip the other.
 const previewMatch = window.location.pathname.match(
   /^\/preview(?:\/([\w-]*))?\/?$/,
 );
 const searchParams = new URLSearchParams(window.location.search);
-const forcedTheme = searchParams.get("theme");
-if (forcedTheme === "dark" || forcedTheme === "light") {
-  document.cookie = `theme=${forcedTheme};path=/;max-age=31536000;SameSite=Lax`;
-  localStorage.theme = forcedTheme;
-}
+const themeParam = searchParams.get("theme");
+const forcedTheme =
+  themeParam === "dark" || themeParam === "light" ? themeParam : undefined;
 
-// Resolve the initial theme synchronously (cookie, then localStorage, then the
-// OS preference) so the first render already has the right theme. This is the
-// client-only equivalent of the cookie read a server does in an SSR app.
+// Resolve the initial theme synchronously (forced param, then cookie, then
+// localStorage, then the OS preference) so the first render already has the
+// right theme. This is the client-only equivalent of the cookie read a server
+// does in an SSR app.
 const cookieTheme = document.cookie
   .split(";")
   .map((c) => c.trim())
   .find((c) => c.startsWith("theme="))
   ?.split("=")[1];
-const storedTheme = cookieTheme ?? localStorage.theme;
+const storedTheme = forcedTheme ?? cookieTheme ?? localStorage.theme;
 const initialTheme =
   storedTheme === "dark" ||
   (storedTheme !== "light" &&
@@ -77,9 +78,12 @@ if (previewMatch) {
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <StyledComponentsRegistry>
+      {/* When a theme is forced, pass only that theme and omit themeDark so
+          ClientThemeProvider skips its cookie/OS reconciliation on mount and
+          the pinned theme can never be flipped by another tab or iframe. */}
       <ClientThemeProvider
-        theme={previewTheme}
-        themeDark={previewThemeDark}
+        theme={forcedTheme === "dark" ? previewThemeDark : previewTheme}
+        themeDark={forcedTheme ? undefined : previewThemeDark}
         $initial={initialTheme}
       >
         {previewMatch ? <Preview name={previewMatch[1] ?? ""} /> : <App />}
