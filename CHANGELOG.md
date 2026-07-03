@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.7] - 2026-07-04
+
+### Fixed
+
+- `Dropzone` / `AvatarDropzone`: text now inherits the surrounding font family instead of pinning the theme's `fonts.text`, matching the `font-family: inherit` convention used by Button, Input, Select, and Textarea. The root `<button>` elements set `font-family: inherit` explicitly, since buttons don't inherit fonts by default
+
 ## [0.2.6] - 2026-07-04
 
 ### Fixed
