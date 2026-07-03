@@ -2,7 +2,7 @@
 import React, { forwardRef, useContext } from "react";
 import styled, { css } from "styled-components";
 import { rgba } from "polished";
-import { Theme, resetButton } from "./utils";
+import { Theme, resetButton, interactiveStyles } from "./utils";
 import { Icon } from "./icon";
 import { ThemeContext } from "./styled-components";
 
@@ -12,16 +12,18 @@ export interface ThemeToggleProps extends React.ButtonHTMLAttributes<HTMLButtonE
 
 const StyledThemeToggle = styled.button<{ theme: Theme; $hidden?: boolean }>`
   ${resetButton}
+  ${interactiveStyles}
   width: 56px;
   height: 30px;
   border-radius: 30px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
   position: relative;
   margin: auto 0;
-  transform: scale(1);
   background: ${({ theme }) => theme.colors.light};
-  border: 1px solid ${({ theme }) => theme.colors.grayLight};
-  transition: all 0.3s ease;
+  border-color: ${({ theme }) => theme.colors.grayLight};
 
   &::after {
     content: "";
@@ -51,33 +53,20 @@ const StyledThemeToggle = styled.button<{ theme: Theme; $hidden?: boolean }>`
     width: 16px;
     height: 16px;
     object-fit: contain;
-    margin: auto;
     transition: all 0.3s ease;
     position: relative;
     z-index: 2;
-  }
-
-  & .lucide-sun {
-    transform: translateX(1px);
   }
 
   & svg[stroke] {
     stroke: ${({ theme }) => theme.colors.primary};
   }
 
-  &:hover {
-    transform: scale(1.05);
-    color: ${({ theme }) =>
-      theme.isDark ? theme.colors.primaryLight : theme.colors.primaryDark};
-
-    & svg[stroke] {
+  @media (hover: hover) {
+    &:hover svg[stroke] {
       stroke: ${({ theme }) =>
         theme.isDark ? theme.colors.primaryLight : theme.colors.primaryDark};
     }
-  }
-
-  &:active {
-    transform: scale(0.97);
   }
 `;
 
