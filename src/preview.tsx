@@ -16,6 +16,8 @@ import {
   Password,
   Range,
   Select,
+  TabContent,
+  Tabs,
   Textarea,
   ThemeToggle,
   ToastNotifications,
@@ -167,6 +169,18 @@ const previews: Record<string, React.ReactNode> = {
     <Select $fullWidth $label="Select" id="select-preview">
       <option>Select</option>
     </Select>
+  ),
+  tabs: (
+    <Tabs>
+      <TabContent title="Overview">
+        The Cherry tabs group related content into panels. Arrow keys move
+        between tabs, and the panel updates instantly.
+      </TabContent>
+      <TabContent title="Details">
+        Each tab renders its own panel content.
+      </TabContent>
+      <TabContent title="Settings">Settings panel content.</TabContent>
+    </Tabs>
   ),
   "theme-toggle": <ThemeToggle />,
   textarea: (

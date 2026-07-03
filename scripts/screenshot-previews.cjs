@@ -59,6 +59,7 @@ const components = [
   "avatar-dropzone",
   "accordion",
   "accordion-inline",
+  "tabs",
   "modal",
   "toast",
   "theme-toggle",

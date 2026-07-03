@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.4] - 2026-07-03
+
+### Added
+
+- `Tabs` / `TabContent`: new tabbed-panels component with tablist/tab/tabpanel ARIA semantics, roving-tabindex arrow-key navigation (ArrowLeft/ArrowRight cycle, Home/End jump), and optional controlled selection via `activeTab` + `onTabChange` (`defaultActiveTab` for uncontrolled use)
+- `IconButton`: `$active` prop for a toggle-like "on" state (primary border, translucent primary background); reflected as `aria-pressed` when set
+
+### Changed
+
+- `ThemeToggle`: swapped the scale hover/press effects for the shared `interactiveStyles` hover border + focus ring, and aligned the sun/moon icons exactly with the sliding knob
+
 ## [0.2.3] - 2026-07-03
 
 ### Added

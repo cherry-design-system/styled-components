@@ -19,6 +19,8 @@ import {
   Range,
   Select,
   Space,
+  TabContent,
+  Tabs,
   Textarea,
   ThemeToggle,
   ToastNotifications,
@@ -322,6 +324,18 @@ function App() {
             The inline variant drops the border and radius and uses tighter
             padding, for embedding inside cards or lists.
           </Accordion>
+          <Space $size={20} />
+          <Tabs>
+            <TabContent title="Overview">
+              The Cherry tabs group related content into panels. Use the arrow
+              keys to move between tabs; Home and End jump to the edges.
+            </TabContent>
+            <TabContent title="Details">
+              Each tab renders its own panel content, and only the active panel
+              is mounted.
+            </TabContent>
+            <TabContent title="Settings">Settings panel content.</TabContent>
+          </Tabs>
           <Space $size={20} />
           <DropzoneDemo />
           <Space $size={20} />
