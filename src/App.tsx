@@ -3,11 +3,12 @@ import styled from "styled-components";
 import {
   Accordion,
   AvatarDropzone,
-  Container,
-  type DropzoneRejection,
+  Box,
   Button,
   Col,
+  Container,
   Dropzone,
+  type DropzoneRejection,
   Flex,
   Grid,
   Icon,
@@ -19,9 +20,18 @@ import {
   Range,
   Select,
   Space,
+  styledBlockquote,
+  styledCode,
+  styledH2,
+  styledH3,
+  styledH4,
+  styledHero3,
+  styledSmall,
+  styledText,
   TabContent,
   Tabs,
   Textarea,
+  type Theme,
   ThemeToggle,
   ToastNotifications,
   ToastNotificationsProvider,
@@ -29,16 +39,181 @@ import {
   useToastNotifications,
 } from "./lib";
 
-// Fills the grid column and bottom-aligns the icon buttons with a padding that
-// centers them on the form field next to them ((field height - button) / 2),
-// compensating for the label above the field.
-const StyledIconButtonRow = styled.div<{ $offset: number }>`
-  display: flex;
-  gap: 20px;
-  align-items: flex-end;
-  height: 100%;
-  padding-bottom: ${({ $offset }) => $offset}px;
+// ---------------------------------------------------------------------------
+// Demo-only presentation helpers. These live here (not in the library) so the
+// showcase reads as a design system: every component sits under a titled,
+// described section, and each control carries a caption so it is identifiable.
+// ---------------------------------------------------------------------------
+
+const StyledSectionTitle = styled.h2`
+  margin: 0;
+  ${({ theme }) => styledH3(theme)};
+  color: ${({ theme }) => theme.colors.dark};
 `;
+
+const StyledSectionNote = styled.p`
+  margin: 6px 0 0;
+  ${({ theme }) => styledSmall(theme)};
+  color: ${({ theme }) => theme.colors.gray};
+`;
+
+function Section({
+  title,
+  note,
+  children,
+}: {
+  title: string;
+  note?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section>
+      <StyledSectionTitle>{title}</StyledSectionTitle>
+      {note && <StyledSectionNote>{note}</StyledSectionNote>}
+      <Space $size={24} />
+      {children}
+    </section>
+  );
+}
+
+// Small uppercase caption used to label individual controls and size tiers.
+const StyledCaption = styled.span`
+  ${({ theme }) => styledSmall(theme)};
+  display: block;
+  color: ${({ theme }) => theme.colors.gray};
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+`;
+
+// Stacks a caption above any control so the selection inputs are identifiable.
+const StyledField = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+function Field({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <StyledField>
+      <StyledCaption>{label}</StyledCaption>
+      {children}
+    </StyledField>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Typography scale — showcases the responsive typography mixins.
+// ---------------------------------------------------------------------------
+
+const typeSample = (mixin: typeof styledText) => styled.p`
+  margin: 0;
+  color: ${({ theme }) => theme.colors.dark};
+  ${({ theme }) => mixin(theme)};
+`;
+
+const StyledHero3 = typeSample(styledHero3);
+const StyledTypeH2 = typeSample(styledH2);
+const StyledTypeH4 = typeSample(styledH4);
+const StyledBody = typeSample(styledText);
+
+const StyledBlockquote = styled.blockquote`
+  margin: 0;
+  padding-left: 20px;
+  border-left: 3px solid ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.grayDark};
+  ${({ theme }) => styledBlockquote(theme)};
+`;
+
+const StyledInlineCode = styled.code`
+  ${({ theme }) => styledCode(theme)};
+  font-family: ${({ theme }) => theme.fonts.mono};
+  background: ${({ theme }) => theme.colors.grayLight};
+  color: ${({ theme }) => theme.colors.dark};
+  padding: 2px 8px;
+  border-radius: ${({ theme }) => theme.spacing.radius.xs};
+`;
+
+const StyledTypeRow = styled.div`
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 20px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.grayLight};
+
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+
+function TypeRow({
+  name,
+  children,
+}: {
+  name: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <StyledTypeRow>
+      <StyledCaption>{name}</StyledCaption>
+      <div>{children}</div>
+    </StyledTypeRow>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Foundations — color tokens and elevation, straight from the theme.
+// ---------------------------------------------------------------------------
+
+const swatchTokens: { token: keyof Theme["colors"]; label: string }[] = [
+  { token: "primary", label: "Primary" },
+  { token: "secondary", label: "Secondary" },
+  { token: "tertiary", label: "Tertiary" },
+  { token: "gray", label: "Gray" },
+  { token: "success", label: "Success" },
+  { token: "error", label: "Error" },
+  { token: "warning", label: "Warning" },
+  { token: "info", label: "Info" },
+];
+
+const StyledSwatch = styled.div<{ $token: keyof Theme["colors"] }>`
+  height: 64px;
+  border-radius: ${({ theme }) => theme.spacing.radius.lg};
+  background: ${({ theme, $token }) => theme.colors[$token]};
+  border: 1px solid ${({ theme }) => theme.colors.grayLight};
+  box-shadow: ${({ theme }) => theme.shadows.xs};
+`;
+
+const StyledSwatchLabel = styled.div`
+  ${({ theme }) => styledSmall(theme)};
+  margin-top: 10px;
+  color: ${({ theme }) => theme.colors.dark};
+  font-weight: 600;
+`;
+
+const StyledSwatchValue = styled.div`
+  ${({ theme }) => styledSmall(theme)};
+  color: ${({ theme }) => theme.colors.gray};
+  font-family: ${({ theme }) => theme.fonts.mono};
+`;
+
+// Box carries the shared card treatment (bg, border, radius.lg); the elevation
+// tokens are layered on top so the shadow scale is visible in one place.
+const StyledElevation = styled(Box)<{ $level: keyof Theme["shadows"] }>`
+  box-shadow: ${({ theme, $level }) => theme.shadows[$level]};
+  text-align: center;
+`;
+
+// ---------------------------------------------------------------------------
+// Interactive demos.
+// ---------------------------------------------------------------------------
 
 function DropzoneDemo() {
   const { addNotification } = useToastNotifications();
@@ -136,8 +311,13 @@ function ModalToastDemo() {
 
   return (
     <>
-      <Flex $gap={20}>
-        <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
+      <Flex $gap={20} $wrap="wrap">
+        <Button
+          $icon={<Icon name="SquareArrowOutUpRight" size={18} />}
+          onClick={() => setIsOpen(true)}
+        >
+          Open Modal
+        </Button>
         <Button
           $variant="secondary"
           onClick={() =>
@@ -202,422 +382,436 @@ function ModalToastDemo() {
   );
 }
 
+// ---------------------------------------------------------------------------
+// Form-control tier — the same set of inputs rendered at one $size. Repeating
+// it for default / big / small demonstrates the responsive sizing scale.
+// ---------------------------------------------------------------------------
+
+type FieldSize = "default" | "big" | "small";
+
+// The library treats "default" as the absence of $size, so only forward a real
+// size value to keep the default tier on its natural props.
+const sizeProps = (size: FieldSize) =>
+  size === "default" ? {} : { $size: size };
+
+function FormTier({ size }: { size: FieldSize }) {
+  const s = sizeProps(size);
+  const suffix = size === "default" ? "" : `-${size}`;
+
+  return (
+    <Grid $xsCols={1} $lgCols={3} $gap={20}>
+      <Col $xsSpan={1} $lgSpan={2}>
+        <Grid $xsCols={1} $lgCols={2} $gap={20}>
+          <Input
+            {...s}
+            placeholder="Placeholder"
+            $fullWidth
+            $label="Input"
+            id={`input${suffix}`}
+          />
+          <Select {...s} $fullWidth $label="Select" id={`select${suffix}`}>
+            <option>Select</option>
+          </Select>
+          <Col $lgSpan={2}>
+            <Flex $gap={28} $wrap="wrap" $alignItems="flex-end">
+              <Field label="Checkbox">
+                <Flex $gap={12} $alignItems="center">
+                  <Input {...s} type="checkbox" id={`checkbox${suffix}-1`} />
+                  <Input
+                    {...s}
+                    type="checkbox"
+                    id={`checkbox${suffix}-2`}
+                    defaultChecked
+                  />
+                </Flex>
+              </Field>
+              <Field label="Radio">
+                <Flex $gap={12} $alignItems="center">
+                  <Input
+                    {...s}
+                    type="radio"
+                    id={`radio${suffix}-1`}
+                    name={`demo-radio${suffix}`}
+                  />
+                  <Input
+                    {...s}
+                    type="radio"
+                    id={`radio${suffix}-2`}
+                    name={`demo-radio${suffix}`}
+                    defaultChecked
+                  />
+                </Flex>
+              </Field>
+              <Field label="Range">
+                <Range {...s} />
+              </Field>
+              <Field label="Toggle">
+                <Flex $gap={12} $alignItems="center">
+                  <Toggle {...s} />
+                  <Toggle {...s} defaultChecked />
+                </Flex>
+              </Field>
+            </Flex>
+          </Col>
+        </Grid>
+      </Col>
+      <Textarea
+        {...s}
+        $label="Textarea"
+        $fullWidth
+        defaultValue="Textarea"
+        id={`textarea${suffix}`}
+      />
+      <Col $lgSpan={3}>
+        <Grid $xsCols={1} $lgCols={2} $gap={20}>
+          <Password
+            {...s}
+            $fullWidth
+            $label="Password"
+            id={`password${suffix}`}
+            placeholder="Password"
+          />
+          <Input
+            {...s}
+            $fullWidth
+            $label="Date"
+            id={`date${suffix}`}
+            type="date"
+          />
+        </Grid>
+      </Col>
+    </Grid>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Button tier — every variant, at one $size.
+// ---------------------------------------------------------------------------
+
+function ButtonTier({ size }: { size: FieldSize }) {
+  const s = sizeProps(size);
+
+  return (
+    <Grid $xsCols={1} $lgCols={2} $gap={20}>
+      <Col>
+        <Flex $gap={16} $wrap="wrap">
+          <Button {...s}>Primary</Button>
+          <Button {...s} $variant="secondary">
+            Secondary
+          </Button>
+          <Button {...s} $variant="tertiary">
+            Tertiary
+          </Button>
+        </Flex>
+      </Col>
+      <Col>
+        <Flex $gap={16} $wrap="wrap">
+          <Button {...s} $outline>
+            Primary
+          </Button>
+          <Button {...s} $variant="secondary" $outline>
+            Secondary
+          </Button>
+          <Button {...s} $variant="tertiary" $outline>
+            Tertiary
+          </Button>
+        </Flex>
+      </Col>
+      <Col $lgSpan={2}>
+        <Flex $gap={16} $wrap="wrap">
+          <Button {...s} $icon={<Icon name="Download" size={18} />}>
+            Icon left
+          </Button>
+          <Button
+            {...s}
+            $variant="secondary"
+            $iconPosition="right"
+            $icon={<Icon name="ArrowRight" size={18} />}
+          >
+            Icon right
+          </Button>
+          <Button {...s} $error>
+            Destructive
+          </Button>
+          <Button {...s} disabled>
+            Disabled
+          </Button>
+        </Flex>
+      </Col>
+    </Grid>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Icon-button tier — the interaction states, at one $size.
+// ---------------------------------------------------------------------------
+
+function IconButtonTier({ size }: { size: FieldSize }) {
+  const s = sizeProps(size);
+
+  return (
+    <Flex $gap={16} $alignItems="center">
+      <IconButton {...s} aria-label="Settings">
+        <Icon name="Settings" />
+      </IconButton>
+      <IconButton {...s} aria-label="Edit">
+        <Icon name="Pencil" />
+      </IconButton>
+      <IconButton {...s} $active aria-label="Toggle preview">
+        <Icon name="Eye" />
+      </IconButton>
+      <IconButton {...s} $error aria-label="Delete">
+        <Icon name="Trash2" />
+      </IconButton>
+      <IconButton {...s} disabled aria-label="Disabled">
+        <Icon name="X" />
+      </IconButton>
+    </Flex>
+  );
+}
+
+// A titled tier used to label the default / big / small repetitions.
+function Tier({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <>
+      <StyledCaption>{label}</StyledCaption>
+      <Space $size={16} />
+      {children}
+    </>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Page shell.
+// ---------------------------------------------------------------------------
+
+const StyledHeader = styled.header`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+`;
+
+const StyledTitle = styled.h1`
+  margin: 0;
+  ${({ theme }) => styledHero3(theme)};
+  color: ${({ theme }) => theme.colors.dark};
+`;
+
+const StyledLead = styled.p`
+  margin: 12px 0 0;
+  max-width: 52ch;
+  ${({ theme }) => styledText(theme)};
+  color: ${({ theme }) => theme.colors.grayDark};
+`;
+
+const StyledDivider = styled.hr`
+  margin: 56px 0;
+  border: none;
+  border-top: 1px solid ${({ theme }) => theme.colors.grayLight};
+`;
+
 function App() {
   return (
     <ToastNotificationsProvider>
       <ToastNotifications />
       <Container>
-        <Space $size={100} />
-        <MaxWidth $xs={845}>
-          <ThemeToggle />
-          <hr />
-          <Input $fullWidth $label="Input" id="data-1" type="date" />
-          <Space $size={20} />
-          <Grid $xsCols={1} $lgCols={3} $gap={20}>
-            <Col $xsSpan={1} $lgSpan={2}>
-              <Grid $xsCols={1} $lgCols={2} $gap={20}>
-                <Input
-                  placeholder="Placeholder"
-                  $fullWidth
-                  $label="Input"
-                  id="input-1"
-                />
-                <Select $fullWidth $label="Select" id="select-1">
-                  <option>Select</option>
-                </Select>
-                <Col $lgSpan={2}>
-                  <Flex
-                    $xsGap={10}
-                    $lgGap={20}
-                    $wrap="nowrap"
-                    $justifyContent="space-between"
-                  >
-                    <Input type="checkbox" id="checkbox-1" />
-                    <Input type="checkbox" id="checkbox-2" defaultChecked />
-                    <Input type="radio" id="radio-2" name="demo-radio" />
-                    <Input
-                      type="radio"
-                      id="radio-3"
-                      name="demo-radio"
-                      defaultChecked
-                    />
-                    <Range />
-                    <Toggle />
-                    <Toggle defaultChecked />
-                  </Flex>
-                </Col>
-              </Grid>
-            </Col>
-            <Textarea
-              $label="Textarea"
-              $fullWidth
-              defaultValue="Textarea"
-              id="textarea-1"
-            />
-          </Grid>
-          <Space $size={20} />
-          <Grid $xsCols={1} $lgCols={2} $gap={20}>
-            <Col>
-              <Flex $wrap="nowrap" $gap={20}>
-                <Button $fullWidth>Button</Button>
-                <Button $variant="secondary" $fullWidth>
-                  Button
-                </Button>
-                <Button $variant="tertiary" $fullWidth>
-                  Button
-                </Button>
-              </Flex>
-            </Col>
-            <Col>
-              <Flex $wrap="nowrap" $gap={20}>
-                <Button $outline $fullWidth>
-                  Button
-                </Button>
-                <Button $variant="secondary" $outline $fullWidth>
-                  Button
-                </Button>
-                <Button $variant="tertiary" $outline $fullWidth>
-                  Button
-                </Button>
-              </Flex>
-            </Col>
-          </Grid>
-          <Space $size={20} />
-          <Grid $xsCols={1} $lgCols={2} $gap={20}>
-            <Col>
-              <Password
-                $fullWidth
-                $label="Password"
-                id="password-1"
-                placeholder="Password"
-              />
-            </Col>
-            <Col>
-              <StyledIconButtonRow $offset={11}>
-                <IconButton aria-label="Settings">
-                  <Icon name="Settings" />
-                </IconButton>
-                <IconButton aria-label="Edit">
-                  <Icon name="Pencil" />
-                </IconButton>
-                <IconButton $active aria-label="Toggle preview">
-                  <Icon name="Eye" />
-                </IconButton>
-                <IconButton $error aria-label="Delete">
-                  <Icon name="Trash2" />
-                </IconButton>
-                <IconButton disabled aria-label="Disabled">
-                  <Icon name="X" />
-                </IconButton>
-              </StyledIconButtonRow>
-            </Col>
-          </Grid>
-          <Space $size={20} />
-          <ModalToastDemo />
-          <Space $size={20} />
-          <Accordion title="Accordion" defaultOpen>
-            This accordion is open by default. It animates open and close, and
-            the chevron rotates to match.
-          </Accordion>
-          <Space $size={20} />
-          <Accordion title="Accordion Inline" $inline>
-            The inline variant drops the border and radius and uses tighter
-            padding, for embedding inside cards or lists.
-          </Accordion>
-          <Space $size={20} />
-          <Tabs>
-            <TabContent title="Overview">
-              The Cherry tabs group related content into panels. Use the arrow
-              keys to move between tabs; Home and End jump to the edges.
-            </TabContent>
-            <TabContent title="Details">
-              Each tab renders its own panel content, and only the active panel
-              is mounted.
-            </TabContent>
-            <TabContent title="Settings">Settings panel content.</TabContent>
-          </Tabs>
-          <Space $size={20} />
-          <DropzoneDemo />
-          <Space $size={20} />
-          <InlineDropzoneDemo />
-          <Space $size={20} />
-          <AvatarDropzoneDemo />
+        <Space $size={80} />
+        <MaxWidth $xs={960}>
+          <StyledHeader>
+            <div>
+              <StyledTitle>Cherry Design System</StyledTitle>
+              <StyledLead>
+                A white-label React component library built with
+                styled-components. Every control below is themeable and adapts
+                to light and dark. Toggle the theme to see it react.
+              </StyledLead>
+            </div>
+            <ThemeToggle />
+          </StyledHeader>
 
-          <Space $size={40} />
-          <hr />
-          <Space $size={20} />
+          <StyledDivider />
 
-          {/* Big Size */}
-          <h2>Big</h2>
-          <Space $size={10} />
-          <Input
-            $size="big"
-            $fullWidth
-            $label="Input Big"
-            id="date-big"
-            type="date"
-          />
-          <Space $size={20} />
-          <Grid $xsCols={1} $lgCols={3} $gap={20}>
-            <Col $xsSpan={1} $lgSpan={2}>
-              <Grid $xsCols={1} $lgCols={2} $gap={20}>
-                <Input
-                  $size="big"
-                  placeholder="Placeholder"
-                  $fullWidth
-                  $label="Input Big"
-                  id="input-big"
-                />
-                <Select
-                  $size="big"
-                  $fullWidth
-                  $label="Select Big"
-                  id="select-big"
-                >
-                  <option>Select</option>
-                </Select>
-                <Col $lgSpan={2}>
-                  <Flex
-                    $xsGap={10}
-                    $lgGap={20}
-                    $wrap="nowrap"
-                    $justifyContent="space-between"
-                  >
-                    <Input $size="big" type="checkbox" id="checkbox-big-1" />
-                    <Input
-                      $size="big"
-                      type="checkbox"
-                      id="checkbox-big-2"
-                      defaultChecked
-                    />
-                    <Input
-                      $size="big"
-                      type="radio"
-                      id="radio-big-1"
-                      name="demo-radio-big"
-                    />
-                    <Input
-                      $size="big"
-                      type="radio"
-                      id="radio-big-2"
-                      name="demo-radio-big"
-                      defaultChecked
-                    />
-                    <Range $size="big" />
-                    <Toggle $size="big" />
-                    <Toggle $size="big" defaultChecked />
-                  </Flex>
-                </Col>
-              </Grid>
-            </Col>
-            <Textarea
-              $size="big"
-              $label="Textarea Big"
-              $fullWidth
-              defaultValue="Textarea"
-              id="textarea-big"
-            />
-          </Grid>
-          <Space $size={20} />
-          <Grid $xsCols={1} $lgCols={2} $gap={20}>
-            <Col>
-              <Flex $wrap="nowrap" $gap={20}>
-                <Button $size="big" $fullWidth>
-                  Button
-                </Button>
-                <Button $size="big" $variant="secondary" $fullWidth>
-                  Button
-                </Button>
-                <Button $size="big" $variant="tertiary" $fullWidth>
-                  Button
-                </Button>
-              </Flex>
-            </Col>
-            <Col>
-              <Flex $wrap="nowrap" $gap={20}>
-                <Button $size="big" $outline $fullWidth>
-                  Button
-                </Button>
-                <Button $size="big" $variant="secondary" $outline $fullWidth>
-                  Button
-                </Button>
-                <Button $size="big" $variant="tertiary" $outline $fullWidth>
-                  Button
-                </Button>
-              </Flex>
-            </Col>
-          </Grid>
-          <Space $size={20} />
-          <Grid $xsCols={1} $lgCols={2} $gap={20}>
-            <Col>
-              <Password
-                $size="big"
-                $fullWidth
-                $label="Password Big"
-                id="password-big"
-                placeholder="Password"
-              />
-            </Col>
-            <Col>
-              <StyledIconButtonRow $offset={14}>
-                <IconButton $size="big" aria-label="Settings">
-                  <Icon name="Settings" />
-                </IconButton>
-                <IconButton $size="big" aria-label="Edit">
-                  <Icon name="Pencil" />
-                </IconButton>
-                <IconButton $size="big" $active aria-label="Toggle preview">
-                  <Icon name="Eye" />
-                </IconButton>
-                <IconButton $size="big" $error aria-label="Delete">
-                  <Icon name="Trash2" />
-                </IconButton>
-                <IconButton $size="big" disabled aria-label="Disabled">
-                  <Icon name="X" />
-                </IconButton>
-              </StyledIconButtonRow>
-            </Col>
-          </Grid>
+          <Section
+            title="Typography"
+            note="A responsive type scale driven by theme tokens; sizes step up at the lg breakpoint."
+          >
+            <TypeRow name="Hero 3">
+              <StyledHero3>Cherry</StyledHero3>
+            </TypeRow>
+            <TypeRow name="Heading 2">
+              <StyledTypeH2>The quick brown fox</StyledTypeH2>
+            </TypeRow>
+            <TypeRow name="Heading 4">
+              <StyledTypeH4>The quick brown fox jumps over</StyledTypeH4>
+            </TypeRow>
+            <TypeRow name="Body">
+              <StyledBody>
+                The quick brown fox jumps over the lazy dog. Body copy uses the
+                text token with a relaxed line height for comfortable reading.
+              </StyledBody>
+            </TypeRow>
+            <TypeRow name="Quote">
+              <StyledBlockquote>
+                Design is not just what it looks like and feels like. Design is
+                how it works.
+              </StyledBlockquote>
+            </TypeRow>
+            <TypeRow name="Code">
+              <StyledBody>
+                Install with{" "}
+                <StyledInlineCode>pnpm add cherry</StyledInlineCode> and import
+                from the barrel.
+              </StyledBody>
+            </TypeRow>
+          </Section>
 
-          <Space $size={40} />
-          <hr />
-          <Space $size={20} />
+          <StyledDivider />
 
-          {/* Small Size */}
-          <h2>Small</h2>
-          <Space $size={10} />
-          <Input
-            $size="small"
-            $fullWidth
-            $label="Input Small"
-            id="date-small"
-            type="date"
-          />
-          <Space $size={20} />
-          <Grid $xsCols={1} $lgCols={3} $gap={20}>
-            <Col $xsSpan={1} $lgSpan={2}>
-              <Grid $xsCols={1} $lgCols={2} $gap={20}>
-                <Input
-                  $size="small"
-                  placeholder="Placeholder"
-                  $fullWidth
-                  $label="Input Small"
-                  id="input-small"
-                />
-                <Select
-                  $size="small"
-                  $fullWidth
-                  $label="Select Small"
-                  id="select-small"
-                >
-                  <option>Select</option>
-                </Select>
-                <Col $lgSpan={2}>
-                  <Flex
-                    $xsGap={10}
-                    $lgGap={20}
-                    $wrap="nowrap"
-                    $justifyContent="space-between"
-                  >
-                    <Input
-                      $size="small"
-                      type="checkbox"
-                      id="checkbox-small-1"
-                    />
-                    <Input
-                      $size="small"
-                      type="checkbox"
-                      id="checkbox-small-2"
-                      defaultChecked
-                    />
-                    <Input
-                      $size="small"
-                      type="radio"
-                      id="radio-small-1"
-                      name="demo-radio-small"
-                    />
-                    <Input
-                      $size="small"
-                      type="radio"
-                      id="radio-small-2"
-                      name="demo-radio-small"
-                      defaultChecked
-                    />
-                    <Range $size="small" />
-                    <Toggle $size="small" />
-                    <Toggle $size="small" defaultChecked />
-                  </Flex>
-                </Col>
-              </Grid>
-            </Col>
-            <Textarea
-              $size="small"
-              $label="Textarea Small"
-              $fullWidth
-              defaultValue="Textarea"
-              id="textarea-small"
-            />
-          </Grid>
-          <Space $size={20} />
-          <Grid $xsCols={1} $lgCols={2} $gap={20}>
-            <Col>
-              <Flex $wrap="nowrap" $gap={20}>
-                <Button $size="small" $fullWidth>
-                  Button
-                </Button>
-                <Button $size="small" $variant="secondary" $fullWidth>
-                  Button
-                </Button>
-                <Button $size="small" $variant="tertiary" $fullWidth>
-                  Button
-                </Button>
-              </Flex>
-            </Col>
-            <Col>
-              <Flex $wrap="nowrap" $gap={20}>
-                <Button $size="small" $outline $fullWidth>
-                  Button
-                </Button>
-                <Button $size="small" $variant="secondary" $outline $fullWidth>
-                  Button
-                </Button>
-                <Button $size="small" $variant="tertiary" $outline $fullWidth>
-                  Button
-                </Button>
-              </Flex>
-            </Col>
-          </Grid>
-          <Space $size={20} />
-          <Grid $xsCols={1} $lgCols={2} $gap={20}>
-            <Col>
-              <Password
-                $size="small"
-                $fullWidth
-                $label="Password Small"
-                id="password-small"
-                placeholder="Password"
-              />
-            </Col>
-            <Col>
-              <StyledIconButtonRow $offset={8}>
-                <IconButton $size="small" aria-label="Settings">
-                  <Icon name="Settings" />
-                </IconButton>
-                <IconButton $size="small" aria-label="Edit">
-                  <Icon name="Pencil" />
-                </IconButton>
-                <IconButton $size="small" $active aria-label="Toggle preview">
-                  <Icon name="Eye" />
-                </IconButton>
-                <IconButton $size="small" $error aria-label="Delete">
-                  <Icon name="Trash2" />
-                </IconButton>
-                <IconButton $size="small" disabled aria-label="Disabled">
-                  <Icon name="X" />
-                </IconButton>
-              </StyledIconButtonRow>
-            </Col>
-          </Grid>
+          <Section
+            title="Foundations"
+            note="Color and elevation tokens resolve per theme. The elevation cards are the Box component with shadow tokens layered on."
+          >
+            <StyledCaption>Color</StyledCaption>
+            <Space $size={16} />
+            <Grid $xsCols={2} $smCols={4} $lgCols={8} $gap={20}>
+              {swatchTokens.map(({ token, label }) => (
+                <div key={token}>
+                  <StyledSwatch $token={token} />
+                  <StyledSwatchLabel>{label}</StyledSwatchLabel>
+                  <StyledSwatchValue>{token}</StyledSwatchValue>
+                </div>
+              ))}
+            </Grid>
+
+            <Space $size={40} />
+
+            <StyledCaption>Elevation · Box</StyledCaption>
+            <Space $size={16} />
+            <Grid $xsCols={2} $lgCols={5} $gap={20}>
+              {(["xs", "sm", "md", "lg", "xl"] as const).map((level) => (
+                <StyledElevation key={level} $level={level} $padding={20}>
+                  <StyledSwatchValue>shadow.{level}</StyledSwatchValue>
+                </StyledElevation>
+              ))}
+            </Grid>
+          </Section>
+
+          <StyledDivider />
+
+          <Section
+            title="Buttons"
+            note="Three variants, each solid or outline, plus icon, destructive, and disabled states."
+          >
+            <Tier label="Default">
+              <ButtonTier size="default" />
+            </Tier>
+            <Space $size={32} />
+            <Tier label="Big">
+              <ButtonTier size="big" />
+            </Tier>
+            <Space $size={32} />
+            <Tier label="Small">
+              <ButtonTier size="small" />
+            </Tier>
+          </Section>
+
+          <StyledDivider />
+
+          <Section
+            title="Icon buttons"
+            note="Compact square buttons for toolbars: default, active, destructive, and disabled states."
+          >
+            <Tier label="Default">
+              <IconButtonTier size="default" />
+            </Tier>
+            <Space $size={28} />
+            <Tier label="Big">
+              <IconButtonTier size="big" />
+            </Tier>
+            <Space $size={28} />
+            <Tier label="Small">
+              <IconButtonTier size="small" />
+            </Tier>
+          </Section>
+
+          <StyledDivider />
+
+          <Section
+            title="Form controls"
+            note="Inputs, selects, textarea, password, and the selection controls, shown across the three size tiers."
+          >
+            <Tier label="Default">
+              <FormTier size="default" />
+            </Tier>
+            <Space $size={40} />
+            <Tier label="Big">
+              <FormTier size="big" />
+            </Tier>
+            <Space $size={40} />
+            <Tier label="Small">
+              <FormTier size="small" />
+            </Tier>
+          </Section>
+
+          <StyledDivider />
+
+          <Section
+            title="Overlays"
+            note="A focus-trapping modal and the toast notification system with color-coded intents."
+          >
+            <ModalToastDemo />
+          </Section>
+
+          <StyledDivider />
+
+          <Section
+            title="Disclosure"
+            note="Accordions and keyboard-navigable tabs for progressively revealing content."
+          >
+            <Accordion title="Accordion" defaultOpen>
+              This accordion is open by default. It animates open and close, and
+              the chevron rotates to match.
+            </Accordion>
+            <Space $size={20} />
+            <Accordion title="Accordion Inline" $inline>
+              The inline variant drops the border and radius and uses tighter
+              padding, for embedding inside cards or lists.
+            </Accordion>
+            <Space $size={24} />
+            <Tabs>
+              <TabContent title="Overview">
+                The Cherry tabs group related content into panels. Use the arrow
+                keys to move between tabs; Home and End jump to the edges.
+              </TabContent>
+              <TabContent title="Details">
+                Each tab renders its own panel content, and only the active
+                panel is mounted.
+              </TabContent>
+              <TabContent title="Settings">Settings panel content.</TabContent>
+            </Tabs>
+          </Section>
+
+          <StyledDivider />
+
+          <Section
+            title="File upload"
+            note="A full dropzone with constraints, a compact inline variant, and the avatar uploader in three sizes."
+          >
+            <DropzoneDemo />
+            <Space $size={20} />
+            <InlineDropzoneDemo />
+            <Space $size={28} />
+            <StyledCaption>Avatar · small / default / big</StyledCaption>
+            <Space $size={16} />
+            <AvatarDropzoneDemo />
+          </Section>
         </MaxWidth>
         <Space $size={100} />
       </Container>
