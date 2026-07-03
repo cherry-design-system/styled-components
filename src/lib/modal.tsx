@@ -21,10 +21,14 @@ export interface ModalProps {
   $title?: string;
   $width?: number;
   $hideCloseButton?: boolean;
-  /** Enables restyling via styled(Modal); applied to the overlay root. The
-      inner parts expose class hooks: .modal-inner, .modal-close, .modal-title,
-      .modal-content. */
+  /** Escape hatches for app-level restyling, both applied to the overlay
+      root. Note that wrapping with styled(Modal) does NOT work for the $-props
+      API (styled-components strips transient props before they reach the
+      wrapped component), so restyle by targeting a passed class instead. The
+      inner parts expose stable class hooks: .modal-inner, .modal-close,
+      .modal-title, .modal-content. */
   className?: string;
+  style?: React.CSSProperties;
 }
 
 // Hydration-safe client detection: returns the server value (false) during the
@@ -171,6 +175,7 @@ function Modal({
   $width,
   $hideCloseButton,
   className,
+  style,
 }: ModalProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const elmRef = useRef<HTMLSpanElement>(null);
@@ -234,6 +239,7 @@ function Modal({
       $isClosing={isClosing}
       $width={$width}
       className={className}
+      style={style}
       onAnimationEnd={handleAnimationEnd}
     >
       <div

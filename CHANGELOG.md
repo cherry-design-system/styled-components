@@ -5,12 +5,22 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.3] - 2026-07-03
+
+### Added
+
+- `Modal`: `style` passthrough on the overlay root, complementing `className` for app-level restyling
+
+### Fixed
+
+- `Modal`: corrected the restyling guidance in the prop docs. `styled(Modal)` cannot forward the `$`-props API, since styled-components strips transient props before they reach the wrapped component; restyle by passing a `className` and targeting the class hooks instead
+
 ## [0.2.2] - 2026-07-03
 
 ### Added
 
 - `Modal`: `$hideCloseButton` prop to omit the built-in close button
-- `Modal`: `className` passthrough on the overlay root, enabling `styled(Modal)` restyling; inner parts expose stable class hooks (`.modal-inner`, `.modal-close`, `.modal-title`, `.modal-content`)
+- `Modal`: `className` passthrough on the overlay root for app-level restyling; inner parts expose stable class hooks (`.modal-inner`, `.modal-close`, `.modal-title`, `.modal-content`)
 - `Modal`: `role="dialog"`, `aria-modal="true"`, and `aria-label` (from `$title`) on the dialog surface
 
 ### Changed
