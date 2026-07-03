@@ -1,32 +1,42 @@
 # Cherry React Library
 
 [![npm version](https://img.shields.io/npm/v/cherry-styled-components.svg?style=flat)](https://www.npmjs.com/package/cherry-styled-components)
-
-## Introduction
+[![license](https://img.shields.io/npm/l/cherry-styled-components.svg?style=flat)](https://github.com/cherry-design-system/styled-components/blob/main/LICENSE)
 
 Cherry Design System is a versatile foundation for projects. It offers a white label base, ready-to-use Figma designs, open-source React components, built-in support for theming and dark mode. Explore the [docs](https://cherry.al/) to create delightful user interfaces.
 
----
+## Installation
 
-# Installation
-
-This project requires Node.js v20+ installed.
+Install the package along with its peer dependencies:
 
 ```bash
-npm install
+npm install cherry-styled-components react react-dom styled-components
 ```
 
-To run the development environment, use the following command:
+## Quick Start
 
-```bash
-npm run dev
+Wrap your app in `CherryThemeProvider` and start using components. The provider injects the global styles and, when you pass `themeDark`, handles dark mode automatically:
+
+```tsx
+import {
+  Button,
+  CherryThemeProvider,
+  theme,
+  themeDark,
+} from "cherry-styled-components";
+
+export default function App() {
+  return (
+    <CherryThemeProvider theme={theme} themeDark={themeDark}>
+      <Button $variant="primary">Hello Cherry</Button>
+    </CherryThemeProvider>
+  );
+}
 ```
 
-To build the library for production, use the following command:
+The built-in `theme` and `themeDark` objects are a starting point; both are plain objects you can extend or replace to white-label the system. Styled props use a `$` prefix (`$variant`, `$size`, `$fullWidth`) so they never leak into the DOM.
 
-```bash
-npm run build
-```
+The library ships form components (Button, Input, Select, Textarea, Toggle, Range, Password, Checkbox, Radio, Dropzone, AvatarDropzone), layout primitives (Container, Grid, Col, Flex, Box, MaxWidth, Space), and interactive components (Accordion, Modal, Toast, ThemeToggle, Icon, IconButton). See the [component docs](https://cherry.al/) for the full API.
 
 ## Theming
 
@@ -97,11 +107,22 @@ if (!req.cookies.get("theme")?.value && hint) {
 
 In a client-only app (like this repo's demo, see `src/main.tsx`), resolve the initial theme synchronously from the cookie, `localStorage`, or `matchMedia` before rendering and pass it as `$initial`.
 
+## Development
+
+To work on the library itself, clone the repo and use pnpm. Node.js v20+ is required for the dev tooling.
+
+```bash
+pnpm install       # Install dependencies
+pnpm run dev       # Start the Vite dev server (demo app + previews)
+pnpm run build     # Build the library to dist/
+pnpm run format    # Format with Prettier
+```
+
 ## Component Previews
 
 The dev server ships with a preview route that renders a single component in isolation, centered on the page. It is meant for visual inspection and for taking automated screenshots (e.g. with Playwright).
 
-With `npm run dev` running:
+With `pnpm run dev` running:
 
 - `/preview` shows an index page linking to every available preview.
 - `/preview/<name>` renders one component centered inside a wrapper with the stable selector `#preview-box`.
@@ -206,3 +227,7 @@ For help, discussion about best practices, or any other conversation that would 
 For casual chit-chat with others using Cherry:
 
 [Join the Discord Server](https://discord.gg/6JvcWU5bke)
+
+## License
+
+[MIT](https://github.com/cherry-design-system/styled-components/blob/main/LICENSE)
