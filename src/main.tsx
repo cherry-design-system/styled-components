@@ -56,13 +56,11 @@ function mergeColors(base: typeof theme, overrides: unknown): typeof theme {
   return { ...base, colors: { ...base.colors, ...safe } };
 }
 
-let previewTheme = theme;
-let previewThemeDark = themeDark;
+// src/theme.json provides the default colors for both the demo app and the
+// previews; ?colors= overrides apply on top of it (previews only).
+let previewTheme = mergeColors(theme, defaultPreviewColors.default);
+let previewThemeDark = mergeColors(themeDark, defaultPreviewColors.dark);
 if (previewMatch) {
-  // src/theme.json provides the default preview colors; ?colors= overrides
-  // apply on top of it.
-  previewTheme = mergeColors(theme, defaultPreviewColors.default);
-  previewThemeDark = mergeColors(themeDark, defaultPreviewColors.dark);
   const colorsParam = searchParams.get("colors");
   if (colorsParam) {
     try {
