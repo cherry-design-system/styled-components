@@ -199,12 +199,10 @@ const StyledAvatarDropzone = styled.button<{
       background: ${rgba(theme.colors.primary, theme.isDark ? 0.12 : 0.05)};
     `}
 
-  @media (hover: hover) {
-    &:hover:not(:disabled) {
-      border-color: ${({ theme }) => theme.colors.primary};
-      background: ${({ theme }) =>
-        rgba(theme.colors.primary, theme.isDark ? 0.1 : 0.04)};
-    }
+  &:hover:not(:disabled) {
+    border-color: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) =>
+      rgba(theme.colors.primary, theme.isDark ? 0.1 : 0.04)};
   }
 
   &:focus {
@@ -240,10 +238,8 @@ const StyledAvatarRemove = styled.button<{ theme: Theme }>`
     height: 14px;
   }
 
-  @media (hover: hover) {
-    &:hover:not(:disabled) {
-      background: ${({ theme }) => theme.colors.error};
-    }
+  &:hover:not(:disabled) {
+    background: ${({ theme }) => theme.colors.error};
   }
 
   &:disabled {

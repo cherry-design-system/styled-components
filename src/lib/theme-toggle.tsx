@@ -62,11 +62,9 @@ const StyledThemeToggle = styled.button<{ theme: Theme; $hidden?: boolean }>`
     stroke: ${({ theme }) => theme.colors.primary};
   }
 
-  @media (hover: hover) {
-    &:hover svg[stroke] {
-      stroke: ${({ theme }) =>
-        theme.isDark ? theme.colors.primaryLight : theme.colors.primaryDark};
-    }
+  &:hover svg[stroke] {
+    stroke: ${({ theme }) =>
+      theme.isDark ? theme.colors.primaryLight : theme.colors.primaryDark};
   }
 `;
 

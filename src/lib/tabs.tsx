@@ -56,11 +56,9 @@ const StyledTabButton = styled.button<{ theme: Theme; $isActive: boolean }>`
           border-bottom-color: ${theme.colors.primary};
         `
       : css`
-          @media (hover: hover) {
-            &:hover {
-              color: ${theme.colors.primary};
-              background: ${rgba(theme.colors.primaryLight, 0.1)};
-            }
+          &:hover {
+            color: ${theme.colors.primary};
+            background: ${rgba(theme.colors.primaryLight, 0.1)};
           }
         `}
 `;

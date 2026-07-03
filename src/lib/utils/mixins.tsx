@@ -14,10 +14,8 @@ export const interactiveStyles = css<{ theme: Theme }>`
   border: solid 1px transparent;
   box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.primary};
 
-  @media (hover: hover) {
-    &:hover {
-      border-color: ${({ theme }) => theme.colors.primary};
-    }
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.primary};
   }
 
   &:focus {
@@ -40,10 +38,8 @@ export const errorInteractiveStyles = css<{ theme: Theme }>`
   border: solid 1px transparent;
   box-shadow: 0 0 0 0px ${({ theme }) => theme.colors.error};
 
-  @media (hover: hover) {
-    &:hover {
-      border-color: ${({ theme }) => theme.colors.error};
-    }
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.error};
   }
 
   &:focus {
