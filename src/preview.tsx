@@ -24,6 +24,7 @@ import {
   ToastNotificationsProvider,
   Toggle,
   useToastNotifications,
+  type Shadows,
 } from "./lib";
 
 const StyledStage = styled.main`
@@ -42,6 +43,41 @@ const StyledPreviewBox = styled.div`
   max-width: 100%;
   padding: 60px 40px;
 `;
+
+const StyledShadowGrid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+`;
+
+const StyledShadowTile = styled.div<{ $level: keyof Shadows }>`
+  align-items: center;
+  background: ${({ theme }) => theme.colors.light};
+  border-radius: ${({ theme }) => theme.spacing.radius.lg};
+  box-shadow: ${({ theme, $level }) => theme.shadows[$level]};
+  color: ${({ theme }) => theme.colors.dark};
+  display: flex;
+  font-family: ${({ theme }) => theme.fonts.mono};
+  font-size: 14px;
+  height: 100px;
+  justify-content: center;
+  width: 100px;
+`;
+
+function ShadowsPreview() {
+  const levels: Array<keyof Shadows> = ["xs", "sm", "md", "lg", "xl"];
+
+  return (
+    <StyledShadowGrid>
+      {levels.map((level) => (
+        <StyledShadowTile key={level} $level={level}>
+          {level}
+        </StyledShadowTile>
+      ))}
+    </StyledShadowGrid>
+  );
+}
 
 const StyledPlaceholder = styled.div`
   background: ${({ theme }) => theme.colors.primaryLight};
@@ -198,6 +234,7 @@ const previews: Record<string, React.ReactNode> = {
   ),
   radio: <Input type="radio" id="radio-preview" defaultChecked />,
   range: <Range />,
+  shadows: <ShadowsPreview />,
   select: (
     <Select $fullWidth $label="Select" id="select-preview">
       <option>Select</option>
