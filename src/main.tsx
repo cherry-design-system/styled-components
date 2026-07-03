@@ -8,6 +8,7 @@ import {
 } from "./lib/index.js";
 import App from "./App";
 import { Preview } from "./preview";
+import defaultPreviewColors from "./theme.json";
 
 // Component preview route for screenshots: /preview lists all components,
 // /preview/<name> renders one centered. Append ?theme=dark|light to force a
@@ -56,14 +57,20 @@ function mergeColors(base: typeof theme, overrides: unknown): typeof theme {
 
 let previewTheme = theme;
 let previewThemeDark = themeDark;
-const colorsParam = searchParams.get("colors");
-if (previewMatch && colorsParam) {
-  try {
-    const parsed = JSON.parse(colorsParam);
-    previewTheme = mergeColors(theme, parsed.default);
-    previewThemeDark = mergeColors(themeDark, parsed.dark);
-  } catch {
-    console.warn("Ignoring invalid ?colors= JSON");
+if (previewMatch) {
+  // src/theme.json provides the default preview colors; ?colors= overrides
+  // apply on top of it.
+  previewTheme = mergeColors(theme, defaultPreviewColors.default);
+  previewThemeDark = mergeColors(themeDark, defaultPreviewColors.dark);
+  const colorsParam = searchParams.get("colors");
+  if (colorsParam) {
+    try {
+      const parsed = JSON.parse(colorsParam);
+      previewTheme = mergeColors(previewTheme, parsed.default);
+      previewThemeDark = mergeColors(previewThemeDark, parsed.dark);
+    } catch {
+      console.warn("Ignoring invalid ?colors= JSON");
+    }
   }
 }
 

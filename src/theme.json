@@ -1,0 +1,46 @@
+{
+  "default": {
+    "primaryLight": "#fb7185",
+    "primary": "#BE123C",
+    "primaryDark": "#9F1239",
+    "secondaryLight": "#c4b5fd",
+    "secondary": "#8b5cf6",
+    "secondaryDark": "#5b21b6",
+    "tertiaryLight": "#fbbf24",
+    "tertiary": "#f59e0b",
+    "tertiaryDark": "#d97706",
+    "grayLight": "#f3f4f6",
+    "gray": "#9ca3af",
+    "grayDark": "#374151",
+    "success": "#10b981",
+    "error": "#f43f5e",
+    "warning": "#f59e0b",
+    "info": "#3b82f6",
+    "dark": "#000000",
+    "light": "#ffffff"
+  },
+  "dark": {
+    "primaryLight": "#fecdd3",
+    "primary": "#f43f5e",
+    "primaryDark": "#BE123C",
+    "secondaryLight": "#ddd6fe",
+    "secondary": "#a78bfa",
+    "secondaryDark": "#7c3aed",
+    "tertiaryLight": "#fed7aa",
+    "tertiary": "#fb923c",
+    "tertiaryDark": "#ea580c",
+    "grayLight": "#1f2937",
+    "gray": "#6b7280",
+    "grayDark": "#9ca3af",
+    "success": "#10b981",
+    "error": "#f43f5e",
+    "warning": "#f59e0b",
+    "info": "#3b82f6",
+    "dark": "#ffffff",
+    "light": "#000000"
+  },
+  "logo": {
+    "dark": "https://cherry.al/logo-dark.svg",
+    "light": "https://cherry.al/logo-light.svg"
+  }
+}

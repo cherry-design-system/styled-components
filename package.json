@@ -38,6 +38,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "build:demo": "vite build --mode demo",
     "format": "prettier --write .",
     "screenshots": "node scripts/screenshot-previews.cjs"
   },
