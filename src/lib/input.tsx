@@ -35,8 +35,8 @@ interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
 export const StyledInputWrapper: IStyledComponent<
   "web",
   React.HTMLAttributes<HTMLSpanElement> &
-    Pick<InputProps, "$label" | "$fullWidth" | "type">
-> = styled.span<Pick<InputProps, "$label" | "$fullWidth" | "type">>`
+    Pick<InputProps, "$label" | "$fullWidth" | "type" | "$size">
+> = styled.span<Pick<InputProps, "$label" | "$fullWidth" | "type" | "$size">>`
   display: inline-flex;
   flex-wrap: ${({ type }) =>
     type === "checkbox" || type === "radio" ? "nowrap" : "wrap"};
@@ -53,12 +53,12 @@ export const StyledInputWrapper: IStyledComponent<
   & .icon-calendar {
     position: absolute;
     top: 50%;
-    right: 17px;
+    right: ${({ $size }) => ($size === "small" ? "14px" : "17px")};
     left: initial;
     transform: translateY(-50%);
     pointer-events: none;
-    width: 24px;
-    height: 24px;
+    width: ${({ $size }) => ($size === "small" ? "18px" : "24px")};
+    height: ${({ $size }) => ($size === "small" ? "18px" : "24px")};
 
     @supports (-moz-appearance: none) {
       display: none;
@@ -206,6 +206,12 @@ const StyledInput = styled.input<InputProps>`
         ? `font-size: ${theme.fontSizes.inputSmall.lg};
 			line-height: ${theme.lineHeights.inputSmall.lg};
       padding: 12px 12px;
+
+      &::-webkit-calendar-picker-indicator {
+        right: 12px;
+        width: 18px;
+        height: 18px;
+      }
 	`
         : `font-size: ${theme.fontSizes.input.lg};
 			line-height: ${theme.lineHeights.input.lg};`}
@@ -443,6 +449,7 @@ function LocalInput(
       $fullWidth={props.$fullWidth}
       type={props.type}
       $label={props.$label}
+      $size={props.$size}
       className={props.$wrapperClassName}
     >
       {props.$label && (
