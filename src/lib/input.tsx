@@ -13,7 +13,6 @@ import {
 } from "./utils";
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  children?: React.ReactNode;
   $wrapperClassName?: string;
   $label?: string;
   $size?: "default" | "big" | "small";
