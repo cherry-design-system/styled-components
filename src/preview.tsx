@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import {
   Accordion,
@@ -25,6 +25,7 @@ import {
   Toggle,
   useToastNotifications,
   type Shadows,
+  type ToastColor,
 } from "./lib";
 
 const StyledStage = styled.main`
@@ -86,31 +87,53 @@ const StyledPlaceholder = styled.div`
   min-width: 40px;
 `;
 
+// Delay before the first toast fires and between each of the rest, so the
+// stack builds up one at a time starting a beat after the trigger.
+const TOAST_STAGGER_MS = 300;
+
+const DEFAULT_TOASTS: Array<{ text: string; color: ToastColor }> = [
+  { text: "Changes saved successfully.", color: "success" },
+  { text: "Something went wrong.", color: "error" },
+  { text: "This is an info toast.", color: "info" },
+];
+
 function ToastPreview() {
   const { addNotification, notifications } = useToastNotifications();
-  const fired = useRef(false);
+  const cancelPending = useRef<() => void>(() => {});
 
-  const fireDefaults = () => {
-    addNotification("Changes saved successfully.", { color: "success" });
-    addNotification("Something went wrong.", { color: "error" });
-    addNotification("This is an info toast.", { color: "info" });
-  };
+  // Reveal the defaults one at a time: the first fires TOAST_STAGGER_MS after
+  // this is called, each subsequent one TOAST_STAGGER_MS later. Returns a
+  // cleanup that cancels any fires still pending.
+  const fireDefaults = useCallback(() => {
+    // Drop any pending fires first so a restart can't stack overlapping runs.
+    cancelPending.current();
+    const timers = DEFAULT_TOASTS.map((toast, index) =>
+      window.setTimeout(
+        () => addNotification(toast.text, { color: toast.color }),
+        (index + 1) * TOAST_STAGGER_MS,
+      ),
+    );
+    cancelPending.current = () =>
+      timers.forEach((id) => window.clearTimeout(id));
+    return cancelPending.current;
+  }, [addNotification]);
 
-  // useLayoutEffect so the initial toasts exist before first paint and the
-  // reset button below doesn't flash on load.
-  useLayoutEffect(() => {
-    if (fired.current) return;
-    fired.current = true;
-    fireDefaults();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // Kick off the sequence 0.3s after the preview mounts. Returning the cleanup
+  // lets StrictMode's setup -> cleanup -> setup cancel and re-arm the timers,
+  // so the toasts fire exactly once and stay staggered.
+  useEffect(() => fireDefaults(), [fireDefaults]);
 
   // Once every toast has been dismissed, offer a centered reset button that
   // restores the three defaults and disappears while toasts are visible.
   if (notifications.length > 0) return null;
 
   return (
-    <IconButton aria-label="Reset toasts" onClick={fireDefaults}>
+    <IconButton
+      aria-label="Reset toasts"
+      onClick={() => {
+        fireDefaults();
+      }}
+    >
       <Icon name="RotateCcw" />
     </IconButton>
   );
