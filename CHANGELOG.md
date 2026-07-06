@@ -5,6 +5,14 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.9] - 2026-07-06
+
+### Changed
+
+- `Accordion`: the clickable title is now a native `<button type="button">` (with a button reset) instead of an `<h3 role="button">`, so it is keyboard-focusable and Enter/Space-activatable natively; `aria-expanded` is preserved, and a `:focus-visible` outline in the primary color was added for keyboard users
+- `Tabs`: tab labels bumped to `font-weight: 700` (was 600); the `:focus-visible` ring was retuned (corner `radius.xs` → `radius.lg`, inset `-4px` → `-2px`)
+- `Input`: removed the unused `children` prop from `InputProps`. `Input` renders a void `<input>`, so any children were silently ignored; dropping it from the type turns that into a compile-time error
+
 ## [0.2.8] - 2026-07-04
 
 ### Fixed
