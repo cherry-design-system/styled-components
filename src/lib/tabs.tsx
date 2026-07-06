@@ -24,7 +24,7 @@ const StyledTabButton = styled.button<{ theme: Theme; $isActive: boolean }>`
   min-width: fit-content;
   padding: 12px 20px;
   ${({ theme }) => styledText(theme)};
-  font-weight: 600;
+  font-weight: 700;
   color: ${({ theme }) => theme.colors.dark};
   border-bottom: solid 3px transparent;
   transition:
