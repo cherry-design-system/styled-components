@@ -21,11 +21,19 @@ const StyledAccordion = styled.div<{ theme: Theme; $inline?: boolean }>`
     `}
 `;
 
-const StyledAccordionTitle = styled.h3<{
+const StyledAccordionTitle = styled.button<{
   theme: Theme;
   $isOpen: boolean;
   $inline?: boolean;
 }>`
+  appearance: none;
+  border: none;
+  background: none;
+  font-family: inherit;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: 700;
   cursor: pointer;
   margin: 0;
   ${({ theme }) => styledText(theme)};
@@ -136,10 +144,10 @@ function Accordion({
   return (
     <StyledAccordion $inline={$inline} {...rest}>
       <StyledAccordionTitle
+        type="button"
         onClick={handleToggle}
         $isOpen={isOpen}
         $inline={$inline}
-        role="button"
         aria-expanded={isOpen}
       >
         {title} <Icon name="ChevronDown" />
