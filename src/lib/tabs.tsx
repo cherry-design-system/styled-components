@@ -40,12 +40,10 @@ const StyledTabButton = styled.button<{ theme: Theme; $isActive: boolean }>`
     border-right: solid 1px ${({ theme }) => theme.colors.grayLight};
   }
 
-  /* Inset rounded ring so it survives the tablist's clipped corners. The
-     ring replaces the bottom indicator while focused. */
   &:focus-visible {
-    border-radius: ${({ theme }) => theme.spacing.radius.xs};
+    border-radius: ${({ theme }) => theme.spacing.radius.lg};
     outline: solid 2px ${({ theme }) => theme.colors.primary};
-    outline-offset: -4px;
+    outline-offset: -2px;
     border-bottom-color: transparent;
   }
 

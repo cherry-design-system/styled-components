@@ -47,6 +47,12 @@ const StyledAccordionTitle = styled.button<{
     color: ${({ theme }) => theme.colors.primaryDark};
   }
 
+  &:focus-visible {
+    border-radius: ${({ theme }) => theme.spacing.radius.xs};
+    outline: solid 2px ${({ theme }) => theme.colors.primary};
+    border-bottom-color: transparent;
+  }
+
   & .lucide-chevron-down {
     position: absolute;
     top: 50%;
