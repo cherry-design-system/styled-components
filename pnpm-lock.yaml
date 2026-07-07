@@ -16,8 +16,8 @@ importers:
         version: 4.3.1
     devDependencies:
       '@swc/plugin-styled-components':
-        specifier: ^12.14.1
-        version: 12.14.1
+        specifier: ^12.15.0
+        version: 12.15.0
       '@types/node':
         specifier: ^26.1.0
         version: 26.1.0
@@ -937,8 +937,8 @@ packages:
   '@swc/helpers@0.5.15':
     resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
 
-  '@swc/plugin-styled-components@12.14.1':
-    resolution: {integrity: sha512-GPkSNHPl4mb47QKxBhpy6iDwigz7pInwxH9XHklfnW5NTevNkUvFB+YJZFv+h+WTFbsMPRInBlFkPCBs91vpug==}
+  '@swc/plugin-styled-components@12.15.0':
+    resolution: {integrity: sha512-9NrGLyiZAoQVmE0xgXJiMizaZYvrn37KyyL8x7oJa8e/ANlKtL4XxtjCNCIFI+WtiQgdE/NICQRpkK+kXtxjMg==}
 
   '@swc/types@0.1.27':
     resolution: {integrity: sha512-K6h3iUlqeM946U4sXFYeahefR1YBbXJvko+hv8WS8/0BNJ4OHiHRywMnQUJCqkR7Y9+hqQ1TvEpiKqUhz7NEFg==}
@@ -2300,7 +2300,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@swc/plugin-styled-components@12.14.1':
+  '@swc/plugin-styled-components@12.15.0':
     dependencies:
       '@swc/counter': 0.1.3
 
