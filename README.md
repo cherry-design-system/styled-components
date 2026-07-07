@@ -107,6 +107,25 @@ if (!req.cookies.get("theme")?.value && hint) {
 
 In a client-only app (like this repo's demo, see `src/main.tsx`), resolve the initial theme synchronously from the cookie, `localStorage`, or `matchMedia` before rendering and pass it as `$initial`.
 
+## AI assistant skill
+
+Cherry ships a guide that teaches Claude and other LLMs to build with the library correctly: use Cherry components for every button and form control, read design values from the theme instead of hardcoding them, and wire up the provider. It lives in [`skills/cherry-design-system`](./skills/cherry-design-system) and is documentation only (it is not part of the published npm package).
+
+Install it with the [`skills` CLI](https://github.com/vercel-labs/skills), a cross-agent installer that supports Claude Code, Cursor, Codex, and many others and detects your agent automatically:
+
+```bash
+# add to the current project
+npx -y skills add cherry-design-system/styled-components
+
+# preview what would be installed
+npx -y skills add cherry-design-system/styled-components --list
+
+# install globally for Claude Code, no prompts
+npx -y skills add cherry-design-system/styled-components --skill cherry-design-system -g -a claude-code -y
+```
+
+Update later with `npx skills update cherry-design-system`. `skills` is a third-party CLI; if you would rather not use it, an Agent Skill is just a folder, so copy `skills/cherry-design-system` into `.claude/skills/` (per project) or `~/.claude/skills/` (personal). For other agents, put the folder's `AGENTS.md` at your repo root. The `references/` files load on demand. See the [skill README](./skills/cherry-design-system/README.md) for per-tool setup.
+
 ## Development
 
 To work on the library itself, clone the repo and use pnpm. Node.js v20+ is required for the dev tooling.

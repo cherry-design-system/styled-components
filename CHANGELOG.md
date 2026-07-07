@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.2.9] - 2026-07-06
 
+### Added
+
+- AI assistant skill in `skills/cherry-design-system/`: a [Claude Agent Skill](https://docs.claude.com/en/docs/claude-code/skills) (`SKILL.md` plus `references/` covering setup, theme tokens, the full component API, and recipes) that teaches LLMs to build with Cherry correctly, always using Cherry components for buttons and form controls, reading design values from the theme, and wiring the provider. Includes a portable `AGENTS.md` for other agents and points at the live docs (`cherry.al/llms.txt` and per-page `.md`). Documentation only, not part of the published npm package; install with `npx skills add cherry-design-system/styled-components`
+
 ### Changed
 
 - `Accordion`: the clickable title is now a native `<button type="button">` (with a button reset) instead of an `<h3 role="button">`, so it is keyboard-focusable and Enter/Space-activatable natively; `aria-expanded` is preserved, and a `:focus-visible` outline in the primary color was added for keyboard users
