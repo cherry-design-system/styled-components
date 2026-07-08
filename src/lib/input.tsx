@@ -3,14 +3,13 @@ import React, { forwardRef } from "react";
 import styled, { css } from "styled-components";
 import type { IStyledComponent } from "styled-components";
 import {
-  IconCheck,
   formElementHeightStyles,
   fullWidthStyles,
   resetButton,
   resetInput,
   statusBorderStyles,
-  IconCalendar,
 } from "./utils";
+import { Icon } from "./icon";
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   $wrapperClassName?: string;
@@ -248,6 +247,7 @@ const StyledIconWrapper = styled.span<InputProps>`
     position: absolute;
     top: 50%;
     left: 50%;
+    color: ${({ theme }) => theme.colors.primary};
     transform: translate(-50%, -50%) scale(0.7);
     opacity: 0;
     pointer-events: none;
@@ -360,6 +360,10 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
     }
   }}
 
+	& ~ svg {
+		stroke-width: 6px;
+	}
+
 	&:checked ~ svg,
 	&:checked ~ em {
     opacity: 1;
@@ -431,7 +435,7 @@ function LocalInput(
             ref={ref}
           />
           {!props.disabled && props.type === "checkbox" ? (
-            <IconCheck />
+            <Icon name="Check" />
           ) : (
             <em />
           )}
@@ -470,7 +474,9 @@ function LocalInput(
           props.type === "datetime-local" ||
           props.type === "month" ||
           props.type === "week" ||
-          props.type === "time") && <IconCalendar className="icon-calendar" />}
+          props.type === "time") && (
+          <Icon name="CalendarDays" className="icon-calendar" />
+        )}
       </StyledCustomIconWrapper>
     </StyledInputWrapper>
   );

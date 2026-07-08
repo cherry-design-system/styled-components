@@ -2,13 +2,13 @@
 import React, { forwardRef } from "react";
 import styled, { IStyledComponent } from "styled-components";
 import {
-  IconArrow,
   formElementHeightStyles,
   fullWidthStyles,
   resetButton,
   resetInput,
   statusBorderStyles,
 } from "./utils";
+import { Icon } from "./icon";
 import { StyledInputWrapper, StyledLabel } from "./input";
 
 interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
@@ -87,6 +87,9 @@ export const StyledIconWrapper: IStyledComponent<"web", SelectProps> =
       position: absolute;
       top: 50%;
       right: 15px;
+      width: 24px;
+      height: 24px;
+      color: ${({ theme }) => theme.colors.primary};
       transform: translateY(-50%) rotate(0);
       transition: all 0.3s ease;
       pointer-events: none;
@@ -123,7 +126,7 @@ function LocalSelect(
         >
           {props.children}
         </StyledSelect>
-        <IconArrow aria-hidden="true" />
+        <Icon name="ChevronDown" />
       </StyledIconWrapper>
     </StyledInputWrapper>
   );
