@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.10] - 2026-07-08
+
+### Removed
+
+- **Breaking:** removed the custom `IconCheck`, `IconArrow`, and `IconCalendar` exports. They were hand-rolled SVGs duplicating existing Lucide glyphs. The form controls that used them now render the built-in `Icon` component instead: the checkbox check mark uses `Check`, the `Select` dropdown arrow uses `ChevronDown`, and the date/time calendar glyph uses `CalendarDays`. These icons now take their color from `currentColor` (the theme's primary color, applied via CSS) rather than a hard-coded stroke. The checkbox check mark renders with a 6px stroke, and the `Select` arrow now sizes to 24px to match the date/time calendar glyph. Replace any direct usage with `<Icon name="Check" />`, `<Icon name="ChevronDown" />`, or `<Icon name="CalendarDays" />`
+
 ## [0.2.9] - 2026-07-06
 
 ### Added
