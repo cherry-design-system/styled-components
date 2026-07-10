@@ -497,7 +497,7 @@ Pill-shaped sun/moon switch that calls `toggleTheme()` from `ThemeContext`. Must
 <Icon name="Check" aria-label="Done" />
 ```
 
-Names verified in use by the library (good examples): `ChevronDown`, `User`, `X`, `File`, `FileUp`, `Eye`, `EyeOff`, `Sun`, `MoonStar`, `CircleCheck`, `CircleX`, `TriangleAlert`, `Info`, `Settings`, `Search`, `Plus`, `Trash2`, `Check`.
+Names verified in use by the library (good examples): `ChevronDown`, `User`, `X`, `File`, `FileUp`, `Eye`, `EyeOff`, `Sun`, `MoonStar`, `CircleCheck`, `CircleX`, `TriangleAlert`, `Info`, `Settings`, `Search`, `Plus`, `Trash2`, `Check`, `CalendarDays`.
 
 ---
 
