@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.11] - 2026-07-12
+
+### Added
+
+- `ThemeToggle`: new `$shortcut` prop that binds the Cmd/Ctrl+Shift+L keyboard shortcut while the toggle is mounted, flipping between the light and dark theme without a click. Off by default, so existing toggles are unaffected. Like the button's click handler it calls `toggleTheme` from `ThemeContext`, and it stays a no-op until a `themeDark` is passed to the provider. The listener is bound to `window` and removed on unmount; it requires Shift and forbids Alt so it stays clear of the browser's Cmd/Ctrl+L address-bar shortcut
+
 ## [0.2.10] - 2026-07-08
 
 ### Removed

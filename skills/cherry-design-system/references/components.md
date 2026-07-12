@@ -470,9 +470,10 @@ addNotification("Something went wrong", { color: "error" }); // sticky
 
 Pill-shaped sun/moon switch that calls `toggleTheme()` from `ThemeContext`. Must be inside a Cherry provider. Exports: `ThemeToggle`, `ThemeToggleProps`. Extends `React.ButtonHTMLAttributes`.
 
-| prop      | type                        |
-| --------- | --------------------------- |
-| `$hidden` | `boolean` (`display: none`) |
+| prop        | type                                               |
+| ----------- | -------------------------------------------------- |
+| `$hidden`   | `boolean` (`display: none`)                        |
+| `$shortcut` | `boolean` (binds Cmd/Ctrl+Shift+L, off by default) |
 
 ```tsx
 <ThemeToggle />

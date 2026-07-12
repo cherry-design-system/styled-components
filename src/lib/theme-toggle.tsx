@@ -1,5 +1,5 @@
 "use client";
-import React, { forwardRef, useContext } from "react";
+import React, { forwardRef, useContext, useEffect } from "react";
 import styled, { css } from "styled-components";
 import { rgba } from "polished";
 import { Theme, resetButton, interactiveStyles } from "./utils";
@@ -8,6 +8,11 @@ import { ThemeContext } from "./styled-components";
 
 export interface ThemeToggleProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   $hidden?: boolean;
+  /**
+   * Binds the Cmd/Ctrl+Shift+L keyboard shortcut while the toggle is mounted,
+   * flipping between the light and dark theme without a click. Off by default.
+   */
+  $shortcut?: boolean;
 }
 
 const StyledThemeToggle = styled.button<{ theme: Theme; $hidden?: boolean }>`
@@ -69,10 +74,34 @@ const StyledThemeToggle = styled.button<{ theme: Theme; $hidden?: boolean }>`
 `;
 
 function LocalThemeToggle(
-  { onClick, ...props }: ThemeToggleProps,
+  { onClick, $shortcut = false, ...props }: ThemeToggleProps,
   ref: React.Ref<HTMLButtonElement>,
 ) {
   const { toggleTheme } = useContext(ThemeContext);
+
+  // Bind Cmd/Ctrl+Shift+L to the theme toggle while the button is mounted.
+  useEffect(() => {
+    if (!$shortcut) return;
+
+    function handleKeyDown(event: KeyboardEvent) {
+      // Cmd on macOS, Ctrl elsewhere. Require Shift and forbid Alt so the
+      // combo clears browser defaults: Cmd/Ctrl+L focuses the address bar, and
+      // adding Shift steps out of that reserved space.
+      if (
+        !(event.metaKey || event.ctrlKey) ||
+        !event.shiftKey ||
+        event.altKey
+      ) {
+        return;
+      }
+      if (event.key.toLowerCase() !== "l") return;
+      event.preventDefault();
+      toggleTheme();
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [$shortcut, toggleTheme]);
 
   return (
     <StyledThemeToggle
