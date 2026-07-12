@@ -663,7 +663,7 @@ function App() {
             </div>
           </StyledHeader>
           <Space $size={24} />
-          <ThemeToggle />
+          <ThemeToggle $shortcut />
 
           <StyledDivider />
 
