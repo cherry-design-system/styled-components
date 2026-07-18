@@ -43,7 +43,7 @@
     "screenshots": "node scripts/screenshot-previews.cjs"
   },
   "dependencies": {
-    "lucide-react": "^1.24.0",
+    "lucide-react": "^1.25.0",
     "polished": "^4.3.1"
   },
   "peerDependencies": {
@@ -67,9 +67,9 @@
     "react-dom": "^19.2.7",
     "rollup-plugin-preserve-directives": "^0.4.0",
     "sharp": "^0.35.3",
-    "styled-components": "^6.4.3",
+    "styled-components": "^6.4.4",
     "typescript": "^7.0.2",
-    "vite": "^8.1.4",
+    "vite": "^8.1.5",
     "vite-plugin-dts": "^5.0.3"
   }
 }
