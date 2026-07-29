@@ -2,11 +2,17 @@
 name: cherry-design-system
 repo: https://github.com/cherry-design-system/styled-components
 description: >
-  Guidance for building React UIs with the cherry-styled-components (Cherry
-  Design System) package. Use whenever writing or editing UI in a project that
-  depends on cherry-styled-components: choosing components, applying theme
-  tokens, wiring the theme provider, or ensuring every button, input, and other
-  control comes from Cherry instead of raw HTML or another component library.
+  Cherry Design System - the `cherry-styled-components` npm package (React +
+  TypeScript + styled-components v6). Use this skill when building, editing, or
+  reviewing any UI in a project that lists `cherry-styled-components` in its
+  package.json dependencies or devDependencies, or that imports from
+  'cherry-styled-components'. Covers component selection (Button, IconButton,
+  Input, Select, Textarea, Toggle, Modal, Tabs, Toast, layout primitives),
+  `$`-prefixed styling prop names and their allowed values, theme provider
+  wiring, dark mode, responsive breakpoints via mq(), and reading colors,
+  spacing, radii, shadows, and typography from theme tokens instead of
+  hardcoding them. Also use it to keep every button, input, and other control
+  coming from Cherry rather than raw HTML elements or another component library.
 license: MIT
 ---
 
