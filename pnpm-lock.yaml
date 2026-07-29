@@ -19,8 +19,8 @@ importers:
         specifier: ^12.15.0
         version: 12.15.0
       '@types/node':
-        specifier: ^26.1.1
-        version: 26.1.1
+        specifier: ^26.1.2
+        version: 26.1.2
       '@types/react':
         specifier: ^19.2.17
         version: 19.2.17
@@ -32,7 +32,7 @@ importers:
         version: 6.0.2
       '@vitejs/plugin-react-swc':
         specifier: ^4.3.2
-        version: 4.3.2(vite@8.1.5(@types/node@26.1.1))
+        version: 4.3.2(vite@8.1.5(@types/node@26.1.2))
       eslint-plugin-react-hooks:
         specifier: ^7.1.1
         version: 7.1.1(eslint@10.6.0)
@@ -59,7 +59,7 @@ importers:
         version: 0.4.0(rollup@4.62.2)
       sharp:
         specifier: ^0.35.3
-        version: 0.35.3(@types/node@26.1.1)
+        version: 0.35.3(@types/node@26.1.2)
       styled-components:
         specifier: ^6.4.4
         version: 6.4.4(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -68,10 +68,10 @@ importers:
         version: 7.0.2
       vite:
         specifier: ^8.1.5
-        version: 8.1.5(@types/node@26.1.1)
+        version: 8.1.5(@types/node@26.1.2)
       vite-plugin-dts:
         specifier: ^5.0.3
-        version: 5.0.3(rolldown@1.1.5)(rollup@4.62.2)(typescript@7.0.2)(vite@8.1.5(@types/node@26.1.1))
+        version: 5.0.3(rolldown@1.1.5)(rollup@4.62.2)(typescript@7.0.2)(vite@8.1.5(@types/node@26.1.2))
 
 packages:
 
@@ -958,8 +958,8 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
-  '@types/node@26.1.1':
-    resolution: {integrity: sha512-nxAkRSVkN1Y0JC1W8ky/fTfkGsMmcrRsbx+3XoZE+rMOX71kLYTV7fLXpqud1GpbpP5TuffXFqfX7fH2GgZREw==}
+  '@types/node@26.1.2':
+    resolution: {integrity: sha512-Vu4a5UFA9rIIFJ7rB/Vaafh9lrCQszopTCx6KjFboXTGQbPNasehVR5TEiithSDGyd1DEiUByggTZsg8jukeIg==}
 
   '@types/react-dom@19.2.3':
     resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
@@ -2455,7 +2455,7 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
-  '@types/node@26.1.1':
+  '@types/node@26.1.2':
     dependencies:
       undici-types: 8.3.0
 
@@ -2531,11 +2531,11 @@ snapshots:
     dependencies:
       '@typescript/old': typescript@6.0.3
 
-  '@vitejs/plugin-react-swc@4.3.2(vite@8.1.5(@types/node@26.1.1))':
+  '@vitejs/plugin-react-swc@4.3.2(vite@8.1.5(@types/node@26.1.2))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
       '@swc/core': 1.15.46
-      vite: 8.1.5(@types/node@26.1.1)
+      vite: 8.1.5(@types/node@26.1.2)
     transitivePeerDependencies:
       - '@swc/helpers'
 
@@ -3059,7 +3059,7 @@ snapshots:
       '@img/sharp-win32-x64': 0.34.5
     optional: true
 
-  sharp@0.35.3(@types/node@26.1.1):
+  sharp@0.35.3(@types/node@26.1.2):
     dependencies:
       '@img/colour': 1.1.0
       detect-libc: 2.1.2
@@ -3090,7 +3090,7 @@ snapshots:
       '@img/sharp-win32-arm64': 0.35.3
       '@img/sharp-win32-ia32': 0.35.3
       '@img/sharp-win32-x64': 0.35.3
-      '@types/node': 26.1.1
+      '@types/node': 26.1.2
 
   shebang-command@2.0.0:
     dependencies:
@@ -3158,7 +3158,7 @@ snapshots:
 
   undici-types@8.3.0: {}
 
-  unplugin-dts@1.0.3(rolldown@1.1.5)(rollup@4.62.2)(typescript@7.0.2)(vite@8.1.5(@types/node@26.1.1)):
+  unplugin-dts@1.0.3(rolldown@1.1.5)(rollup@4.62.2)(typescript@7.0.2)(vite@8.1.5(@types/node@26.1.2)):
     dependencies:
       '@rollup/pluginutils': 5.4.0(rollup@4.62.2)
       '@volar/typescript': 2.4.28
@@ -3172,7 +3172,7 @@ snapshots:
     optionalDependencies:
       rolldown: 1.1.5
       rollup: 4.62.2
-      vite: 8.1.5(@types/node@26.1.1)
+      vite: 8.1.5(@types/node@26.1.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -3193,12 +3193,12 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  vite-plugin-dts@5.0.3(rolldown@1.1.5)(rollup@4.62.2)(typescript@7.0.2)(vite@8.1.5(@types/node@26.1.1)):
+  vite-plugin-dts@5.0.3(rolldown@1.1.5)(rollup@4.62.2)(typescript@7.0.2)(vite@8.1.5(@types/node@26.1.2)):
     dependencies:
-      unplugin-dts: 1.0.3(rolldown@1.1.5)(rollup@4.62.2)(typescript@7.0.2)(vite@8.1.5(@types/node@26.1.1))
+      unplugin-dts: 1.0.3(rolldown@1.1.5)(rollup@4.62.2)(typescript@7.0.2)(vite@8.1.5(@types/node@26.1.2))
     optionalDependencies:
       rollup: 4.62.2
-      vite: 8.1.5(@types/node@26.1.1)
+      vite: 8.1.5(@types/node@26.1.2)
     transitivePeerDependencies:
       - '@rspack/core'
       - '@vue/language-core'
@@ -3208,7 +3208,7 @@ snapshots:
       - typescript
       - webpack
 
-  vite@8.1.5(@types/node@26.1.1):
+  vite@8.1.5(@types/node@26.1.2):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.5
@@ -3216,7 +3216,7 @@ snapshots:
       rolldown: 1.1.5
       tinyglobby: 0.2.17
     optionalDependencies:
-      '@types/node': 26.1.1
+      '@types/node': 26.1.2
       fsevents: 2.3.3
 
   vscode-uri@3.1.0: {}
