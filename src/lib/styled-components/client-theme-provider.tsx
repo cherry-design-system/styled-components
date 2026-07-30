@@ -31,6 +31,18 @@ function removeThemeInitStyle() {
   if (el) el.remove();
 }
 
+// Resolves a theme color for the `theme-color` meta tag. Apps that theme
+// through CSS custom properties store `var(--token)` in the theme object, and
+// a meta tag cannot resolve that itself, so read the computed value instead.
+function resolveColor(value: string): string {
+  const match = /^var\(\s*(--[^,)\s]+)\s*(?:,([^)]*))?\)$/.exec(value.trim());
+  if (!match) return value;
+  const computed = getComputedStyle(document.documentElement)
+    .getPropertyValue(match[1])
+    .trim();
+  return computed || match[2]?.trim() || value;
+}
+
 export interface ClientThemeProviderProps {
   children: React.ReactNode;
   theme: Theme;
@@ -73,6 +85,11 @@ function ClientThemeProvider({
 }: ClientThemeProviderProps) {
   const initialTheme = $initial === "dark" && themeDark ? themeDark : theme;
   const [overrideTheme, setOverrideTheme] = useState<Theme | null>(null);
+  // False until the mount reconciliation below has decided the real mode. The
+  // html `dark` class is not touched before then: themeInitScript may already
+  // have set it from the cookie for the first paint, and syncing it against the
+  // not-yet-reconciled server theme would strip it for a frame.
+  const [reconciled, setReconciled] = useState(false);
 
   const effectiveTheme = useMemo(
     () => overrideTheme ?? initialTheme,
@@ -86,6 +103,7 @@ function ClientThemeProvider({
   // client-side swap always reveals.
   useEffect(() => {
     if (!themeDark) {
+      setReconciled(true);
       removeThemeInitStyle();
       return;
     }
@@ -118,6 +136,7 @@ function ClientThemeProvider({
       const wantDark = cookieValue === "dark";
       if (initialTheme.isDark !== wantDark) {
         setOverrideTheme(wantDark ? themeDark : theme);
+        setReconciled(true);
         return;
       }
     } catch {
@@ -125,6 +144,7 @@ function ClientThemeProvider({
     }
 
     // Theme already correct (or detection failed): reveal the page now.
+    setReconciled(true);
     removeThemeInitStyle();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -135,17 +155,20 @@ function ClientThemeProvider({
     if (overrideTheme) removeThemeInitStyle();
   }, [overrideTheme]);
 
-  // Keep the html `dark` class in sync for CSS that keys off it.
+  // Keep the html `dark` class in sync for CSS that keys off it. Waits for
+  // reconciliation so the class themeInitScript set for the first paint is not
+  // stripped and re-added while the server's theme is still the active one.
   useEffect(() => {
+    if (!reconciled) return;
     document.documentElement.classList.toggle("dark", effectiveTheme.isDark);
-  }, [effectiveTheme.isDark]);
+  }, [effectiveTheme.isDark, reconciled]);
 
   // Keep the browser chrome / iOS Safari status bar in sync when the user
   // toggles the theme without a navigation. Drops any media-scoped fallbacks
   // so a single, unconditional value wins.
   useEffect(() => {
     if (!$themeColor) return;
-    const background = effectiveTheme.colors[$themeColor];
+    const background = resolveColor(effectiveTheme.colors[$themeColor]);
     let meta = document.querySelector<HTMLMetaElement>(
       'meta[name="theme-color"]',
     );

@@ -8,11 +8,17 @@ import React, {
 } from "react";
 import { createPortal } from "react-dom";
 import styled, { css, keyframes } from "styled-components";
-import { rgba } from "polished";
 
 import { Icon } from "./icon";
 import { IconButton } from "./icon-button";
-import { Theme, mq, styledH5, styledText, useOnClickOutside } from "./utils";
+import {
+  Theme,
+  alpha,
+  mq,
+  styledH5,
+  styledText,
+  useOnClickOutside,
+} from "./utils";
 
 export interface ModalProps {
   children: React.ReactNode;
@@ -78,7 +84,7 @@ const StyledModal = styled.div<{
   left: 0;
   width: 100%;
   height: 100%;
-  background: ${({ theme }) => rgba(theme.colors.primary, 0.5)};
+  background: ${({ theme }) => alpha(theme.colors.primary, 50)};
   display: flex;
   justify-content: center;
   align-items: center;

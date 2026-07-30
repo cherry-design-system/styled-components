@@ -7,11 +7,10 @@ import React, {
   useState,
 } from "react";
 import styled, { css } from "styled-components";
-import { rgba } from "polished";
 
 import { DropzoneRejection, matchesAccept } from "./dropzone";
 import { Icon } from "./icon";
-import { Theme, resetButton } from "./utils";
+import { Theme, alpha, resetButton } from "./utils";
 
 export interface AvatarDropzoneProps extends Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -197,13 +196,19 @@ const StyledAvatarDropzone = styled.button<{
     $dragOver &&
     css`
       border-color: ${theme.colors.primary};
-      background: ${rgba(theme.colors.primary, theme.isDark ? 0.12 : 0.05)};
+      background: ${alpha(theme.colors.primary, theme.isDark ? 12 : 5)};
+
+      /* Mode resolved from a \`dark\` class on <html> rather than the theme
+         object (no-flash static rendering): same tint, applied pre-hydration. */
+      :root.dark & {
+        background: ${alpha(theme.colors.primary, 12)};
+      }
     `}
 
   &:hover:not(:disabled) {
     border-color: ${({ theme }) => theme.colors.primary};
     background: ${({ theme }) =>
-      rgba(theme.colors.primary, theme.isDark ? 0.1 : 0.04)};
+      alpha(theme.colors.primary, theme.isDark ? 10 : 4)};
   }
 
   &:focus {
@@ -231,7 +236,7 @@ const StyledAvatarRemove = styled.button<{ theme: Theme }>`
   height: 22px;
   border-radius: 50%;
   color: #ffffff;
-  background: ${({ theme }) => rgba(theme.colors.dark, 0.6)};
+  background: ${({ theme }) => alpha(theme.colors.dark, 60)};
   transition: background 0.3s ease;
 
   & svg {

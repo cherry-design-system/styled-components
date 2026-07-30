@@ -1,9 +1,7 @@
 "use client";
 import React, { forwardRef } from "react";
 import styled, { css } from "styled-components";
-import { lighten, darken, rgba } from "polished";
-
-import { Theme, resetButton } from "./utils";
+import { Theme, alpha, resetButton, shade, tint } from "./utils";
 
 export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
@@ -42,7 +40,7 @@ export const iconButtonStyles = (
     border: solid 2px ${theme.colors.grayLight};
     color: ${$error ? theme.colors.error : theme.colors.grayDark};
     box-shadow: 0 0 0 0px
-      ${$error ? lighten(0.1, theme.colors.error) : theme.colors.primaryLight};
+      ${$error ? tint(theme.colors.error, 10) : theme.colors.primaryLight};
     transition: all 0.3s ease;
 
     & svg {
@@ -57,16 +55,16 @@ export const iconButtonStyles = (
             border-color: ${theme.colors.error};
 
             &:hover {
-              border-color: ${darken(0.1, theme.colors.error)};
-              color: ${darken(0.1, theme.colors.error)};
+              border-color: ${shade(theme.colors.error, 10)};
+              color: ${shade(theme.colors.error, 10)};
             }
 
             &:focus {
-              box-shadow: 0 0 0 4px ${lighten(0.1, theme.colors.error)};
+              box-shadow: 0 0 0 4px ${tint(theme.colors.error, 10)};
             }
 
             &:active {
-              box-shadow: 0 0 0 2px ${lighten(0.1, theme.colors.error)};
+              box-shadow: 0 0 0 2px ${tint(theme.colors.error, 10)};
             }
           `
         : css`
@@ -93,8 +91,14 @@ export const iconButtonStyles = (
       $active &&
       css`
         border-color: ${theme.colors.primary};
-        background: ${rgba(theme.colors.primary, theme.isDark ? 0.18 : 0.1)};
+        background: ${alpha(theme.colors.primary, theme.isDark ? 18 : 10)};
         color: ${theme.colors.primary};
+
+        /* Mode resolved from a \`dark\` class on <html> rather than the theme
+           object (no-flash static rendering): same tint, applied pre-hydration. */
+        :root.dark & {
+          background: ${alpha(theme.colors.primary, 18)};
+        }
       `
     }
 

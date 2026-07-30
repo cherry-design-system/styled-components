@@ -1,8 +1,7 @@
 "use client";
 import React, { forwardRef, useContext, useEffect } from "react";
 import styled, { css } from "styled-components";
-import { rgba } from "polished";
-import { Theme, resetButton, interactiveStyles } from "./utils";
+import { Theme, alpha, resetButton, interactiveStyles } from "./utils";
 import { Icon } from "./icon";
 import { ThemeContext } from "./styled-components";
 
@@ -38,7 +37,7 @@ const StyledThemeToggle = styled.button<{ theme: Theme; $hidden?: boolean }>`
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: ${({ theme }) => rgba(theme.colors.primaryLight, 0.2)};
+    background: ${({ theme }) => alpha(theme.colors.primaryLight, 20)};
     transition: all 0.3s ease;
     z-index: 1;
     ${({ theme }) =>
@@ -46,6 +45,13 @@ const StyledThemeToggle = styled.button<{ theme: Theme; $hidden?: boolean }>`
       css`
         transform: translateX(26px);
       `}
+  }
+
+  /* Apps that resolve the mode from a \`dark\` class on <html> before first
+     paint (see createThemeInitScript) get the knob in the right place
+     immediately, without waiting for the theme object to swap on mount. */
+  :root.dark &::after {
+    transform: translateX(26px);
   }
 
   ${({ $hidden }) =>
@@ -70,6 +76,10 @@ const StyledThemeToggle = styled.button<{ theme: Theme; $hidden?: boolean }>`
   &:hover svg[stroke] {
     stroke: ${({ theme }) =>
       theme.isDark ? theme.colors.primaryLight : theme.colors.primaryDark};
+  }
+
+  :root.dark &:hover svg[stroke] {
+    stroke: ${({ theme }) => theme.colors.primaryLight};
   }
 `;
 

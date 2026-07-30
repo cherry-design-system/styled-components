@@ -1,9 +1,8 @@
 "use client";
 import React, { useId, useRef, useState } from "react";
 import styled, { css } from "styled-components";
-import { rgba } from "polished";
 
-import { Theme, resetButton, styledText } from "./utils";
+import { Theme, alpha, resetButton, styledText } from "./utils";
 
 const StyledTabs = styled.div<{ theme: Theme }>`
   width: 100%;
@@ -56,7 +55,7 @@ const StyledTabButton = styled.button<{ theme: Theme; $isActive: boolean }>`
       : css`
           &:hover {
             color: ${theme.colors.primary};
-            background: ${rgba(theme.colors.primaryLight, 0.1)};
+            background: ${alpha(theme.colors.primaryLight, 10)};
           }
         `}
 `;

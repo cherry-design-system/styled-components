@@ -1,7 +1,22 @@
 "use client";
 import { css } from "styled-components";
-import { rgba } from "polished";
 import { Breakpoints, Theme, mq } from "./theme";
+
+/**
+ * Fades a color toward transparent. Native CSS rather than a JS color library
+ * so the input can be any valid CSS color value, including a `var(--token)`
+ * reference that only the browser can resolve.
+ */
+export const alpha = (color: string, percent: number) =>
+  `color-mix(in srgb, ${color} ${percent}%, transparent)`;
+
+/** Darkens a color by mixing it toward black. See `alpha` for why it is CSS. */
+export const shade = (color: string, percent: number) =>
+  `color-mix(in srgb, ${color} ${100 - percent}%, black)`;
+
+/** Lightens a color by mixing it toward white. See `alpha` for why it is CSS. */
+export const tint = (color: string, percent: number) =>
+  `color-mix(in srgb, ${color} ${100 - percent}%, white)`;
 
 /**
  * Hover/focus/active affordance for interactive surfaces (cards, tiles,
@@ -44,11 +59,11 @@ export const errorInteractiveStyles = css<{ theme: Theme }>`
 
   &:focus {
     border-color: ${({ theme }) => theme.colors.error};
-    box-shadow: 0 0 0 4px ${({ theme }) => rgba(theme.colors.error, 0.3)};
+    box-shadow: 0 0 0 4px ${({ theme }) => alpha(theme.colors.error, 30)};
   }
 
   &:active {
-    box-shadow: 0 0 0 2px ${({ theme }) => rgba(theme.colors.error, 0.3)};
+    box-shadow: 0 0 0 2px ${({ theme }) => alpha(theme.colors.error, 30)};
   }
 `;
 

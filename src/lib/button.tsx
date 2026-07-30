@@ -1,9 +1,25 @@
 "use client";
 import React, { forwardRef } from "react";
 import styled, { css } from "styled-components";
-import { lighten, darken } from "polished";
 
-import { Theme, formElementHeightStyles, resetButton } from "./utils";
+import {
+  Theme,
+  formElementHeightStyles,
+  resetButton,
+  shade,
+  tint,
+} from "./utils";
+
+// A filled button puts its label on a brand-colored background, so the text
+// takes the palette's contrasting end: `light` in light mode, `dark` in dark
+// mode. `darkFilledText` states that choice again as a rule scoped to a `dark`
+// class on <html>, which is what apps resolving the mode in CSS key off before
+// hydration can swap the theme object. It is additive: with a theme object that
+// is already dark, both paths resolve to the same color.
+const filledText = (theme: Theme) =>
+  theme.isDark ? theme.colors.dark : theme.colors.light;
+const darkFilledText = (theme: Theme) =>
+  `:root.dark & { color: ${theme.colors.dark}; }`;
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
@@ -33,7 +49,7 @@ export const buttonStyles = (
   font-weight: 600;
   white-space: nowrap;
   hyphens: auto;
-  color: ${theme.isDark ? theme.colors.dark : theme.colors.light};
+  color: ${filledText(theme)};
   text-decoration: none;
   transition: all 0.3s ease;
   text-align: center;
@@ -52,13 +68,8 @@ export const buttonStyles = (
     !disabled &&
     $variant === "primary" &&
     css`
-      color: ${
-        $outline
-          ? theme.colors.primary
-          : theme.isDark
-            ? theme.colors.dark
-            : theme.colors.light
-      };
+      color: ${$outline ? theme.colors.primary : filledText(theme)};
+      ${!$outline && darkFilledText(theme)}
       background: ${$outline ? "transparent" : theme.colors.primary};
       border: solid 2px ${theme.colors.primary};
       box-shadow: 0 0 0 0px ${theme.colors.primary};
@@ -83,13 +94,8 @@ export const buttonStyles = (
     !disabled &&
     $variant === "secondary" &&
     css`
-      color: ${
-        $outline
-          ? theme.colors.secondary
-          : theme.isDark
-            ? theme.colors.dark
-            : theme.colors.light
-      };
+      color: ${$outline ? theme.colors.secondary : filledText(theme)};
+      ${!$outline && darkFilledText(theme)}
       background: ${$outline ? "transparent" : theme.colors.secondary};
       border: solid 2px ${theme.colors.secondary};
       box-shadow: 0 0 0 0px ${theme.colors.secondary};
@@ -114,13 +120,8 @@ export const buttonStyles = (
     !disabled &&
     $variant === "tertiary" &&
     css`
-      color: ${
-        $outline
-          ? theme.colors.tertiary
-          : theme.isDark
-            ? theme.colors.dark
-            : theme.colors.light
-      };
+      color: ${$outline ? theme.colors.tertiary : filledText(theme)};
+      ${!$outline && darkFilledText(theme)}
       background: ${$outline ? "transparent" : theme.colors.tertiary};
       border: solid 2px ${theme.colors.tertiary};
       box-shadow: 0 0 0 0px ${theme.colors.tertiary};
@@ -145,29 +146,24 @@ export const buttonStyles = (
     !disabled &&
     $error &&
     css`
-      color: ${
-        $outline
-          ? theme.colors.error
-          : theme.isDark
-            ? theme.colors.dark
-            : theme.colors.light
-      };
+      color: ${$outline ? theme.colors.error : filledText(theme)};
+      ${!$outline && darkFilledText(theme)}
       background: ${$outline ? "transparent" : theme.colors.error};
       border: solid 2px ${theme.colors.error};
       box-shadow: 0 0 0 0px ${theme.colors.error};
 
       &:hover {
-        background: ${$outline ? "transparent" : darken(0.1, theme.colors.error)};
-        border-color: ${darken(0.1, theme.colors.error)};
-        ${$outline && `color: ${darken(0.1, theme.colors.error)}`};
+        background: ${$outline ? "transparent" : shade(theme.colors.error, 10)};
+        border-color: ${shade(theme.colors.error, 10)};
+        ${$outline && `color: ${shade(theme.colors.error, 10)}`};
       }
 
       &:focus {
-        box-shadow: 0 0 0 4px ${lighten(0.1, theme.colors.error)};
+        box-shadow: 0 0 0 4px ${tint(theme.colors.error, 10)};
       }
 
       &:active {
-        box-shadow: 0 0 0 2px ${lighten(0.1, theme.colors.error)};
+        box-shadow: 0 0 0 2px ${tint(theme.colors.error, 10)};
       }
     `
   }
