@@ -42,7 +42,6 @@ export default defineConfig(({ mode }) => {
               "react-dom",
               "react/jsx-runtime",
               "styled-components",
-              "polished",
               "lucide-react",
               "next/navigation",
             ],
