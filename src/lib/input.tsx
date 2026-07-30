@@ -361,11 +361,11 @@ const StyledRadioCheckboxInput = styled.input<InputProps>`
   }}
 
 	& ~ svg {
-		stroke-width: 6px;
-	}
+    stroke-width: 6px;
+  }
 
-	&:checked ~ svg,
-	&:checked ~ em {
+  &:checked ~ svg,
+  &:checked ~ em {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
