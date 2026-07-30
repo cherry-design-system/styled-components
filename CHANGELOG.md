@@ -5,6 +5,26 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.12] - 2026-07-30
+
+### Added
+
+- New `alpha(color, percent)`, `shade(color, percent)`, and `tint(color, percent)` color helpers in `utils/mixins.tsx`, exported from the package root. `alpha` fades a color to `percent` opacity, `shade` darkens it `percent` toward black, and `tint` lightens it `percent` toward white. They return a native CSS `color-mix(in srgb, ...)` string rather than a computed hex, so the input can be any valid CSS color, including a `var(--token)` reference that only the browser can resolve
+
+### Removed
+
+- The `polished` dependency. `Button`, `IconButton`, `AvatarDropzone`, `Dropzone`, `Modal`, `Tabs`, `ThemeToggle`, and the `errorInteractiveStyles` mixin now derive their shades with the new `alpha` / `shade` / `tint` helpers instead of `lighten` / `darken` / `rgba`, and `polished` is no longer listed as a build external. If your own code imported `polished` by way of Cherry's transitive dependency, install it directly
+
+### Fixed
+
+- `Button`, `IconButton`, `AvatarDropzone`, `Dropzone`, and `ThemeToggle` gained `:root.dark` selector fallbacks, so dark styling applies immediately from the pre-hydration `dark` class on `<html>` instead of waiting for the theme object to swap
+- `ClientThemeProvider`: the html `dark` class is no longer toggled before mount reconciliation has decided the real mode. `themeInitScript` may already have set the class from the cookie for the first paint, and syncing it against the not-yet-reconciled server theme stripped it for a frame
+- `ClientThemeProvider`: `$themeColor` now resolves CSS custom properties before writing the `theme-color` meta tag. Apps that theme through custom properties store `var(--token)` in the theme object, and a meta tag cannot resolve that value itself
+
+### Changed
+
+- Dependency bumps: `lucide-react` 1.27.0 → 1.28.0, `@vitejs/plugin-react-swc` 4.3.2 → 4.3.3
+
 ## [0.2.11] - 2026-07-12
 
 ### Added
