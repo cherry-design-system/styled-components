@@ -55,7 +55,21 @@ How Cherry itself uses these (follow the same conventions in your own components
 - **`primary`** is the interactive accent: default button fill, focus rings (via `primaryLight`), links, active tab, slider thumb. `primaryDark` is the hover state, `primaryLight` is the soft ring/tint.
 - **`grayLight`** is the default border color for inputs, cards, dividers. **`gray`** is placeholder / disabled text. **`grayDark`** is secondary/label text.
 - **status colors** (`success`, `error`, `warning`, `info`) drive `$error`/`$success` states and toast colors.
-- Derive shades with `polished` (`lighten`, `darken`, `rgba`) rather than inventing hex values: `${({ theme }) => darken(0.1, theme.colors.error)}`.
+- Derive shades with the exported `tint` / `shade` / `alpha` helpers rather than inventing hex values. Each takes a percentage: `shade(color, 10)` darkens 10% toward black, `tint(color, 10)` lightens 10% toward white, `alpha(color, 30)` fades to 30% opacity. They emit native CSS `color-mix()`, so any valid CSS color works as input, including `var(--token)`.
+
+  ```tsx
+  import styled from "styled-components";
+  import { alpha, shade } from "cherry-styled-components";
+
+  const Danger = styled.button`
+    background: ${({ theme }) => theme.colors.error};
+    box-shadow: 0 0 0 4px ${({ theme }) => alpha(theme.colors.error, 30)};
+
+    &:hover {
+      background: ${({ theme }) => shade(theme.colors.error, 10)};
+    }
+  `;
+  ```
 
 ---
 
@@ -191,6 +205,11 @@ Import these instead of re-writing the same CSS:
 | `fullWidthStyles($fullWidth)`                 | conditional `width: 100%`                                                                                           |
 | `statusBorderStyles($error, $success, theme)` | border color for error/success states                                                                               |
 | `formElementHeightStyles($size)`              | 40 / 50 / 60px height for `small` / `default` / `big`                                                               |
+| `alpha(color, percent)`                       | fade a color to `percent` opacity                                                                                   |
+| `shade(color, percent)`                       | darken a color by `percent` toward black                                                                            |
+| `tint(color, percent)`                        | lighten a color by `percent` toward white                                                                           |
+
+`alpha` / `shade` / `tint` return a native CSS `color-mix(in srgb, ...)` string rather than a computed hex, so they accept any valid CSS color, including a `var(--token)` the browser resolves at paint time. Cherry ships no JS color library.
 
 Responsive generators used by the layout primitives (rarely needed directly, but available): `generateGapStyles`, `generateColsStyles`, `generateColSpanStyles`, `generatePaddingStyles`, `generateJustifyContentStyles`, `generateAlignItemsStyles`, `generateAlignContentStyles`, `generateDirectionStyles`.
 

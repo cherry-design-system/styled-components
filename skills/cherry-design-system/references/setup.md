@@ -18,7 +18,7 @@ npm install cherry-styled-components react react-dom styled-components
 # or: pnpm add / yarn add
 ```
 
-`polished`, `lucide-react`, and `next/navigation` are also externalized by the build; `polished` and `lucide-react` come in as transitive deps. If your bundler complains about a missing peer, install `polished` and `lucide-react` explicitly.
+`lucide-react` and `next/navigation` are also externalized by the build; `lucide-react` comes in as a transitive dep. If your bundler complains about a missing peer, install `lucide-react` explicitly.
 
 ---
 

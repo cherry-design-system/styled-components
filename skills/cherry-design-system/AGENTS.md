@@ -49,7 +49,7 @@ Access tokens via the `theme` prop in styled-components: `${({ theme }) => theme
 - **Spacing:** `spacing.radius.xs` 6px / `.lg` 12px / `.xl` 30px; `spacing.padding`, `spacing.gridGap` (20px mobile, 40px desktop); `spacing.maxWidth`.
 - **Shadows:** `shadows.xs`..`shadows.xl`. **Type:** mixins `styledH1..H6`, `styledHero1..3`, `styledText`, `styledSmall`, etc.
 - **Breakpoints:** `mq("xs"|"sm"|"md"|"lg"|"xl"|"xxl"|"xxxl")` = min-width media query (`lg` = 992px). Mobile-first.
-- **Custom shades:** derive with `polished` (`lighten`, `darken`, `rgba`) from a token; do not invent hex.
+- **Custom shades:** derive from a token with the exported `tint(color, %)` / `shade(color, %)` / `alpha(color, %)` helpers; do not invent hex.
 - Use `theme.isDark` only when a value genuinely differs per theme.
 
 ## Custom components

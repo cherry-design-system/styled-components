@@ -511,4 +511,4 @@ Full setup is in `setup.md`. Exported from `cherry-styled-components`:
 - `StyledComponentsRegistry` (Next.js App Router style extraction).
 - `themeInitScript`, `createThemeInitScript(darkBackground?)`, `resolveTheme(cookieValue, theme, themeDark?)` (server-safe theming helpers).
 - `GlobalStyles(theme)` (base HTML/body resets; the providers render it for you unless you opt out).
-- `theme`, `themeDark`, and the `Theme` type, plus all the typography mixins and helpers documented in `theme.md`.
+- `theme`, `themeDark`, and the `Theme` type, plus all the typography mixins, style mixins, and the `alpha` / `shade` / `tint` color helpers documented in `theme.md`.

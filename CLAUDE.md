@@ -25,7 +25,7 @@ No test framework or lint script is configured. ESLint config exists (`.eslintrc
 - **Library entry:** `src/lib/index.ts` is the barrel export of all components and utilities
 - **Vite** config is `vite.config.js` (JS, not TS). Uses `@vitejs/plugin-react-swc` (with `@swc/plugin-styled-components` for displayName/SSR) and `vite-plugin-dts` for declaration generation
 - Build is ESM-only with `preserveModules` (one output file per source module under `dist/`); `rollup-plugin-preserve-directives` keeps the `"use client"` directives in the output
-- React, React DOM, and styled-components are peer dependencies; they plus `polished`, `lucide-react`, and `next/navigation` are externalized, not bundled
+- React, React DOM, and styled-components are peer dependencies; they plus `lucide-react` and `next/navigation` are externalized, not bundled
 - `src/main.tsx` / `src/App.tsx` is the demo app, not part of the library output. It also serves `/preview/<name>` routes that render single components in isolation for visual inspection and screenshots (see README for details)
 - Path alias: `@/*` maps to `./src/*` (configured in tsconfig.json)
 
@@ -64,7 +64,7 @@ Two complete theme objects (light and dark) defining: breakpoints (xs to xxxl), 
 - **`typography.tsx`**: Pre-built typography CSS mixins (`styledHero1`, `styledH1`, `styledBody`, etc.) using responsive font sizes from the theme
 - **`global.tsx`**: `GlobalStyles` factory for base HTML/body resets
 - **`icons.tsx`**: Icon name mapping for lucide-react
-- Color manipulation uses `polished` library (`lighten`, `darken`)
+- Color manipulation uses native CSS `color-mix()` via the `alpha`/`shade`/`tint` helpers in `mixins.tsx` (no JS color library, so `var(--token)` inputs resolve in the browser)
 
 ### SSR Support
 
