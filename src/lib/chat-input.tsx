@@ -12,6 +12,7 @@ import styled, { createGlobalStyle, css, keyframes } from "styled-components";
 import { Button } from "./button";
 import { ChatContext } from "./chat-provider";
 import { Icon } from "./icon";
+import { Spinner } from "./spinner";
 import { Theme, alpha, formElementHeightStyles } from "./utils";
 
 export interface ChatInputProps extends Omit<
@@ -109,15 +110,6 @@ const sparkleFloat = keyframes`
   }
 `;
 
-const spin = keyframes`
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-`;
-
 const conicStops = (colors: string[]) => [...colors, colors[0]].join(", ");
 
 const StyledChatForm = styled.form<{ theme: Theme }>`
@@ -130,14 +122,6 @@ const StyledChatForm = styled.form<{ theme: Theme }>`
   width: 100%;
   flex-shrink: 0;
   border-top: solid 1px ${({ theme }) => theme.colors.grayLight};
-
-  & .chat-send-loading {
-    animation: ${spin} 1s linear infinite;
-
-    @media (prefers-reduced-motion: reduce) {
-      animation: none;
-    }
-  }
 `;
 
 const StyledInputWrapper = styled.div<{
@@ -395,12 +379,17 @@ const StyledSendButton = styled(Button)`
   min-height: 0;
   position: relative;
 
-  & svg {
+  /* inset + margin centering rather than a translate transform: the Spinner
+     animates transform to rotate, which would overwrite the translate and
+     send the icon orbiting around the button's corner. The .lucide selector
+     is needed to outrank buttonStyles' "& .lucide { margin: auto 0 }", which
+     would otherwise zero the horizontal margin and pin the icon left. */
+  & svg,
+  & .lucide {
     transition: none;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
+    margin: auto;
   }
 `;
 
@@ -556,11 +545,7 @@ function LocalChatInput(
         disabled={loading || !hasContent}
         aria-label={loading ? "Loading response" : "Submit question"}
       >
-        {loading ? (
-          <Icon name="LoaderCircle" className="chat-send-loading" />
-        ) : (
-          <Icon name="ArrowUp" />
-        )}
+        {loading ? <Spinner /> : <Icon name="ArrowUp" />}
       </StyledSendButton>
     </StyledChatForm>
   );

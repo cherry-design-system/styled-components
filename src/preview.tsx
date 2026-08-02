@@ -28,6 +28,7 @@ import {
   Prose,
   Range,
   Select,
+  Spinner,
   TabContent,
   Tabs,
   Textarea,
@@ -500,6 +501,13 @@ const previews: Record<string, React.ReactNode> = {
     <Select $fullWidth $label="Select" id="select-preview">
       <option>Select</option>
     </Select>
+  ),
+  spinner: (
+    <Flex $gap={28} $alignItems="center">
+      <Spinner size={16} />
+      <Spinner />
+      <Spinner size={32} />
+    </Flex>
   ),
   tabs: (
     <Tabs>

@@ -230,6 +230,7 @@ The route is handled in `src/main.tsx` and the previews live in `src/preview.tsx
 | `modal`            | Modal, already open on a backdrop                      |
 | `password`         | Password field with label and placeholder              |
 | `prose`            | Markdown-style content with Cherry typography          |
+| `spinner`          | Rotating loading indicator in three sizes              |
 | `radio`            | Checked radio button                                   |
 | `range`            | Range slider                                           |
 | `select`           | Select with label                                      |

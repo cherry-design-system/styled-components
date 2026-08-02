@@ -30,6 +30,7 @@ export * from "./prose";
 export * from "./range";
 export * from "./select";
 export * from "./space";
+export * from "./spinner";
 export * from "./tabs";
 export * from "./textarea";
 export * from "./theme-toggle";

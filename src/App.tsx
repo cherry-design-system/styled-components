@@ -34,6 +34,7 @@ import {
   Range,
   Select,
   Space,
+  Spinner,
   styledBlockquote,
   styledCode,
   styledH2,
@@ -925,6 +926,22 @@ function App() {
             <Tier label="Small">
               <IconButtonTier size="small" />
             </Tier>
+          </Section>
+
+          <StyledDivider />
+
+          <Section
+            title="Spinner"
+            note="The shared loading indicator: a rotating lucide icon that sits still under prefers-reduced-motion. Any icon and size can stand in."
+          >
+            <Box $padding={20}>
+              <Flex $gap={28} $alignItems="center">
+                <Spinner size={16} />
+                <Spinner />
+                <Spinner size={32} />
+                <Spinner name="Loader" size={32} />
+              </Flex>
+            </Box>
           </Section>
 
           <StyledDivider />
