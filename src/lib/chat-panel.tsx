@@ -198,6 +198,35 @@ function LocalChatPanel(
 
   useLockBodyScroll(isModal);
 
+  // Every time an overlay panel comes into view, hand focus to the composer.
+  // Retried across frames because the panel is only focusable once its
+  // visibility has snapped; it stops as soon as focus lands anywhere inside
+  // the panel, so it never fights the user.
+  useEffect(() => {
+    if (!isOverlay || !isOpen) return;
+
+    let frame: number | null = null;
+    let attempts = 0;
+
+    const tryFocus = () => {
+      frame = null;
+      const input = inputRef.current;
+      const panel = panelRef.current;
+      if (!input || !panel) return;
+      const active = document.activeElement;
+      if (active instanceof HTMLElement && panel.contains(active)) return;
+      input.focus();
+      if (document.activeElement !== input && attempts++ < 30) {
+        frame = requestAnimationFrame(tryFocus);
+      }
+    };
+
+    frame = requestAnimationFrame(tryFocus);
+    return () => {
+      if (frame !== null) cancelAnimationFrame(frame);
+    };
+  }, [isOpen, isOverlay, inputRef]);
+
   // While modal, everything around the panel goes inert and focus that
   // escapes is pulled back to the composer.
   useEffect(() => {

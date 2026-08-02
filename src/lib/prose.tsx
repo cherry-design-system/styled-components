@@ -2,7 +2,19 @@
 import React, { forwardRef } from "react";
 import styled, { css } from "styled-components";
 
-import { Theme, alpha, styledSmall, styledText, thinScrollbar } from "./utils";
+import {
+  Theme,
+  alpha,
+  styledH1,
+  styledH2,
+  styledH3,
+  styledH4,
+  styledH5,
+  styledH6,
+  styledSmall,
+  styledText,
+  thinScrollbar,
+} from "./utils";
 
 export interface ProseProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
@@ -56,6 +68,34 @@ export const proseStyles = (theme: Theme, $compact?: boolean) => {
       margin: ${block} 0;
       padding: 0;
       color: ${theme.colors.dark};
+    }
+
+    /* Cherry's heading scale - without this the UA's em-relative heading
+       sizes apply, and against chat-sized base text an h6 renders ~9px.
+       Compact mode shifts each level down two steps so markdown headings
+       stay proportionate inside a chat bubble. */
+    & h1 {
+      ${($compact ? styledH3 : styledH1)(theme)};
+    }
+
+    & h2 {
+      ${($compact ? styledH4 : styledH2)(theme)};
+    }
+
+    & h3 {
+      ${($compact ? styledH5 : styledH3)(theme)};
+    }
+
+    & h4 {
+      ${($compact ? styledH6 : styledH4)(theme)};
+    }
+
+    & h5 {
+      ${($compact ? styledH6 : styledH5)(theme)};
+    }
+
+    & h6 {
+      ${styledH6(theme)};
     }
 
     /* Underline drawn with box-shadow so it sits clear of descenders and can

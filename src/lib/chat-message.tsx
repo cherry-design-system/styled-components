@@ -36,8 +36,25 @@ const StyledChatMessage = styled.div<{
   gap: 10px;
   width: 100%;
 
+  /* Exactly one chat text line tall, with the avatar centered inside: the
+     row's flex-end alignment pins this box to the message's last line, so a
+     one-liner shows the avatar dead-centered on the text and a multi-line
+     message centers it on the closing line, whatever the avatar's size. */
   & .chat-message-avatar {
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    height: calc(
+      ${({ theme }) => theme.fontSizes.text.xs} *
+        ${({ theme }) => theme.lineHeights.text.xs}
+    );
+
+    ${mq("lg")} {
+      height: calc(
+        ${({ theme }) => theme.fontSizes.small.lg} *
+          ${({ theme }) => theme.lineHeights.small.lg}
+      );
+    }
   }
 
   & .chat-message-content {
@@ -62,6 +79,13 @@ const StyledChatMessage = styled.div<{
              instead of stretching the bubble. */
           flex-direction: row-reverse;
 
+          /* The bubble's bottom padding sits between its last text line and
+             the row's bottom edge; lift the avatar by the same amount so it
+             still centers on the line, not on the padding. */
+          & .chat-message-avatar {
+            margin-bottom: 9px;
+          }
+
           & .chat-message-content {
             background: ${theme.colors.primary};
             color: ${filledTextColor(theme)};
@@ -82,6 +106,19 @@ const StyledChatMessage = styled.div<{
           & .chat-message-content {
             color: ${theme.colors.dark};
             width: 100%;
+          }
+
+          /* While a reply is taller than the scrollport, the avatar rides
+             the visible bottom edge instead of hiding below with the last
+             line, so the reply stays attributed while you read; once the end
+             scrolls into view it settles onto the closing line as before.
+             bottom: 0 on purpose: the offset resolves against the content
+             edge, inside the list's 20px padding, so any positive value
+             leaves the avatar hovering short of its resting spot at the
+             end while the padding already provides the visual gap. */
+          & .chat-message-avatar {
+            position: sticky;
+            bottom: 0;
           }
         `}
 `;
