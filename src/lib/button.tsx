@@ -4,22 +4,13 @@ import styled, { css } from "styled-components";
 
 import {
   Theme,
+  darkFilledTextRule as darkFilledText,
+  filledTextColor as filledText,
   formElementHeightStyles,
   resetButton,
   shade,
   tint,
 } from "./utils";
-
-// A filled button puts its label on a brand-colored background, so the text
-// takes the palette's contrasting end: `light` in light mode, `dark` in dark
-// mode. `darkFilledText` states that choice again as a rule scoped to a `dark`
-// class on <html>, which is what apps resolving the mode in CSS key off before
-// hydration can swap the theme object. It is additive: with a theme object that
-// is already dark, both paths resolve to the same color.
-const filledText = (theme: Theme) =>
-  theme.isDark ? theme.colors.dark : theme.colors.light;
-const darkFilledText = (theme: Theme) =>
-  `:root.dark & { color: ${theme.colors.dark}; }`;
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
