@@ -20,6 +20,7 @@
   "homepage": "https://cherry.al",
   "repository": "https://github.com/cherry-design-system/styled-components",
   "license": "MIT",
+  "packageManager": "pnpm@11.19.0",
   "engines": {
     "node": ">=18.0.0"
   },
