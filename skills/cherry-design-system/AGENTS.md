@@ -36,6 +36,8 @@ For Next.js App Router (flash-free SSR) use `ClientThemeProvider` + `StyledCompo
 - **Form:** `Button`, `IconButton`, `Input` (+ `type="checkbox|radio|date|email|..."`), `Password`, `Select`, `Textarea`, `Toggle`, `Range`, `Dropzone`, `AvatarDropzone`. Shared props: `$size` (`"default"|"big"|"small"`), `$error`, `$success`, `$fullWidth`, `$label`. `Button` also has `$variant` (`"primary"|"secondary"|"tertiary"`), `$outline`, `$icon`.
 - **Layout:** `Container`, `Box`, `Grid` (`$cols`, `$gap`), `Col` (`$span`), `Flex` (`$justifyContent`, `$alignItems`, `$direction`, `$gap`), `MaxWidth`, `Space` (`$size`). All take responsive variants per breakpoint (`$xs...` through `$xxxl...`).
 - **Interactive:** `Accordion` (`title`, `defaultOpen`/`open`), `Tabs` + `TabContent` (`title`), `Modal` (controlled via `$isOpen`/`$onClose`, `$title`, `$width`), Toast (`ToastNotificationsProvider` + `<ToastNotifications />` + `useToastNotifications()`), `ThemeToggle`.
+- **Display:** `Avatar` (`$src`/`$name`/`$icon`, `$size`, `$color`), `Callout` (`$type` `"note"|"info"|"warning"|"danger"|"success"`), `Prose` (styles rendered markdown, `$compact`), `Spinner` (loading indicator, default `LoaderCircle`).
+- **Chat kit:** `ChatProvider` + `useChat` (headless: transcript, open/close, streaming; the app supplies the transport via `onSend(question, { signal, history, setAssistant })` - Cherry never fetches), `ChatPanel` (`$variant` `"drawer"|"inline"|"fullscreen"`), `ChatMessageList`, `ChatMessage` (`$role`, `$avatar`), `ChatInput` and `ChatLauncher` (opt-in `$glow`), `ChatTyping`, `ChatSources`/`ChatSource`. See `references/components.md` for wiring.
 - **Icon:** `<Icon name="ChevronDown" size={20} />` - any lucide-react icon by PascalCase name.
 
 ## Theme cheat-sheet

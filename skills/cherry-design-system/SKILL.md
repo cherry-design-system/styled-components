@@ -7,7 +7,8 @@ description: >
   reviewing any UI in a project that lists `cherry-styled-components` in its
   package.json dependencies or devDependencies, or that imports from
   'cherry-styled-components'. Covers component selection (Button, IconButton,
-  Input, Select, Textarea, Toggle, Modal, Tabs, Toast, layout primitives),
+  Input, Select, Textarea, Toggle, Modal, Tabs, Toast, layout primitives, the
+  chat kit, Avatar, Callout, Prose, Spinner),
   `$`-prefixed styling prop names and their allowed values, theme provider
   wiring, dark mode, responsive breakpoints via mq(), and reading colors,
   spacing, radii, shadows, and typography from theme tokens instead of
@@ -94,6 +95,20 @@ export default function App() {
 | `Space`        | invisible spacer for vertical/horizontal rhythm                  |
 
 **Interactive:** `Accordion`, `Tabs` + `TabContent`, `Modal` (controlled via `$isOpen`/`$onClose`), Toast (`ToastNotificationsProvider` + `<ToastNotifications />` + `useToastNotifications()`), `ThemeToggle`.
+
+**Display:** `Avatar` (image/initials/icon, `$size`, `$color`), `Callout` (`$type` note/info/warning/danger/success), `Prose` (styles rendered markdown; `$compact`), `Spinner` (loading indicator, reduced-motion aware).
+
+**Chat kit** (transport-agnostic; the app supplies the transport via `onSend(question, { signal, history, setAssistant })` — Cherry never fetches):
+
+| component                    | use for                                                                    |
+| ---------------------------- | -------------------------------------------------------------------------- |
+| `ChatProvider` / `useChat`   | headless state: open/close + focus, transcript, streaming, Cmd/Ctrl+I      |
+| `ChatPanel`                  | shell: `$variant` `"drawer" \| "inline" \| "fullscreen"`, modal below `lg` |
+| `ChatMessageList`            | auto-follow scroll container                                               |
+| `ChatMessage`                | bubble: `$role`, `$avatar`                                                 |
+| `ChatInput`                  | auto-growing composer; opt-in `$glow`                                      |
+| `ChatLauncher`               | "Ask AI" pill toggling the panel; opt-in `$glow`                           |
+| `ChatTyping` / `ChatSources` | typing indicator, source chips                                             |
 
 **Icon:** `<Icon name="..." />` for any lucide-react icon by PascalCase name.
 

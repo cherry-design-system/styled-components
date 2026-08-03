@@ -177,6 +177,78 @@ function SaveButton() {
 
 ---
 
+## Chat assistant
+
+The chat kit is transport-agnostic: `ChatProvider` owns all state, and you hand it the transport via `onSend`. Call `setAssistant` once per chunk to stream into a single bubble; pass `signal` to `fetch` so `reset()` aborts cleanly. Full per-component API in `components.md`.
+
+```tsx
+import {
+  ChatProvider,
+  ChatPanel,
+  ChatMessageList,
+  ChatMessage,
+  ChatInput,
+  ChatLauncher,
+  ChatTyping,
+  Avatar,
+  useChat,
+} from "cherry-styled-components";
+
+function Transcript() {
+  const { messages, loading } = useChat();
+  return (
+    <ChatMessageList>
+      {messages.map((m) => (
+        <ChatMessage
+          key={m.id}
+          $role={m.role}
+          $avatar={
+            m.role === "assistant" && <Avatar $size="small" $icon="Bot" />
+          }
+        >
+          {m.content}
+        </ChatMessage>
+      ))}
+      {loading && <ChatTyping />}
+    </ChatMessageList>
+  );
+}
+
+export function Assistant({ children }: { children: React.ReactNode }) {
+  return (
+    <ChatProvider
+      onSend={async (question, { signal, history, setAssistant }) => {
+        const res = await fetch("/api/chat", {
+          method: "POST",
+          body: JSON.stringify({ question, history }),
+          signal,
+        });
+        const reader = res.body!.getReader();
+        const decoder = new TextDecoder();
+        let text = "";
+        for (;;) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          text += decoder.decode(value, { stream: true });
+          setAssistant(text, { text }); // patches the same bubble each call
+        }
+      }}
+    >
+      {children}
+      <ChatLauncher $glow />
+      <ChatPanel>
+        <Transcript />
+        <ChatInput $glow placeholder="Ask anything..." />
+      </ChatPanel>
+    </ChatProvider>
+  );
+}
+```
+
+To try the kit without a backend, render `<ChatProvider $showcase>` and type `help` in the chat: showcase commands are answered locally with live element demos.
+
+---
+
 ## Building a custom component that respects the system
 
 When Cherry has no component for what you need, build it with the same primitives so it stays on-theme and dark-mode-correct. The rules:
