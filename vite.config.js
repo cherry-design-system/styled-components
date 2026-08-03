@@ -9,6 +9,12 @@ export default defineConfig(({ mode }) => {
   const isDemo = mode === "demo";
 
   return {
+    server: {
+      // Allow the dev server to be reached over the private Tailscale tailnet
+      // (leading dot matches any host under it). Scoped on purpose - do not
+      // widen this to `true`, which would accept any Host header.
+      allowedHosts: [".taile7f725.ts.net"],
+    },
     plugins: [
       react({
         plugins: [

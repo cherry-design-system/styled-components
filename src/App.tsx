@@ -1,11 +1,23 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import styled from "styled-components";
 import {
   Accordion,
+  Avatar,
   AvatarDropzone,
   Box,
   Button,
   buttonStyles,
+  Callout,
+  ChatInput,
+  ChatLauncher,
+  ChatMessage,
+  ChatMessageList,
+  ChatPanel,
+  ChatProvider,
+  ChatSource,
+  ChatSources,
+  type ChatSendHandler,
+  ChatTyping,
   Col,
   Container,
   Dropzone,
@@ -18,9 +30,11 @@ import {
   MaxWidth,
   Modal,
   Password,
+  Prose,
   Range,
   Select,
   Space,
+  Spinner,
   styledBlockquote,
   styledCode,
   styledH2,
@@ -37,6 +51,7 @@ import {
   ToastNotifications,
   ToastNotificationsProvider,
   Toggle,
+  useChat,
   useToastNotifications,
 } from "./lib";
 
@@ -379,6 +394,147 @@ function ModalToastDemo() {
           </Button>
         </Flex>
       </Modal>
+    </>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Chat demo — the headless ChatProvider with a fake transport that streams a
+// canned reply through timers, so the full flow (typing indicator, streaming
+// into one bubble, sources) runs without a server.
+// ---------------------------------------------------------------------------
+
+const demoSend: ChatSendHandler = (question, { signal, setAssistant }) => {
+  const answer =
+    `You asked: "${question}". The provider owns the transcript, focus and ` +
+    `panel state; this demo's transport just streams a canned reply with ` +
+    `timers.`;
+
+  return new Promise<void>((resolve) => {
+    let length = 0;
+    const tick = () => {
+      if (signal.aborted) {
+        resolve();
+        return;
+      }
+      length = Math.min(length + 4, answer.length);
+      if (length < answer.length) {
+        setAssistant(answer.slice(0, length));
+        setTimeout(tick, 30);
+      } else {
+        setAssistant(answer, {
+          sources: [
+            { id: "1", label: "Getting Started", href: "#" },
+            { id: "2", label: "Theming", href: "#" },
+          ],
+        });
+        resolve();
+      }
+    };
+    setTimeout(tick, 600);
+  });
+};
+
+function ChatDemoTranscript() {
+  const { messages, loading, error } = useChat();
+  const last = messages[messages.length - 1];
+
+  return (
+    <ChatMessageList>
+      {messages.map((message) => (
+        <Fragment key={message.id}>
+          <ChatMessage
+            $role={message.role}
+            $avatar={
+              message.role === "assistant" ? (
+                <Avatar $size="small" $icon="Sparkles" $alt="Assistant" />
+              ) : undefined
+            }
+          >
+            {message.role === "assistant" &&
+            typeof message.content === "string" ? (
+              <Prose $compact>
+                <p>{message.content}</p>
+              </Prose>
+            ) : (
+              message.content
+            )}
+          </ChatMessage>
+          {message.sources && message.sources.length > 0 && (
+            <ChatSources>
+              {message.sources.map((source) => (
+                <ChatSource key={source.id} href={source.href}>
+                  {source.label}
+                </ChatSource>
+              ))}
+            </ChatSources>
+          )}
+        </Fragment>
+      ))}
+      {loading && last?.role !== "assistant" && <ChatTyping />}
+      {error && (
+        <Callout $type="danger">
+          <p>
+            <strong>Error:</strong> {error}
+          </p>
+        </Callout>
+      )}
+    </ChatMessageList>
+  );
+}
+
+function ChatDemoReset() {
+  const { reset } = useChat();
+
+  return (
+    <IconButton
+      onClick={reset}
+      aria-label="Reset chat history"
+      title="Reset chat history"
+    >
+      <Icon name="RotateCcw" />
+    </IconButton>
+  );
+}
+
+// One inline panel and one drawer, both regular Cherry elements by default;
+// the Toggle flips the same demos into their $glow versions.
+function ChatDemo() {
+  const [glow, setGlow] = useState(false);
+
+  return (
+    <>
+      <Toggle
+        id="chat-glow-toggle"
+        $label="Glow"
+        checked={glow}
+        onChange={(event) => setGlow(event.target.checked)}
+      />
+
+      <Space $size={28} />
+
+      <StyledCaption>Inline panel</StyledCaption>
+      <Space $size={16} />
+      <ChatProvider onSend={demoSend} shortcut={null}>
+        <div style={{ height: "420px" }}>
+          <ChatPanel $variant="inline" $actions={<ChatDemoReset />}>
+            <ChatDemoTranscript />
+            <ChatInput $glow={glow} />
+          </ChatPanel>
+        </div>
+      </ChatProvider>
+
+      <Space $size={28} />
+
+      <StyledCaption>Drawer · showcase commands</StyledCaption>
+      <Space $size={16} />
+      <ChatProvider onSend={demoSend} $showcase>
+        <ChatLauncher $glow={glow} />
+        <ChatPanel $actions={<ChatDemoReset />}>
+          <ChatDemoTranscript />
+          <ChatInput $glow={glow} />
+        </ChatPanel>
+      </ChatProvider>
     </>
   );
 }
@@ -775,6 +931,22 @@ function App() {
           <StyledDivider />
 
           <Section
+            title="Spinner"
+            note="The shared loading indicator: a rotating lucide icon that sits still under prefers-reduced-motion. Any icon and size can stand in."
+          >
+            <Box $padding={20}>
+              <Flex $gap={28} $alignItems="center">
+                <Spinner size={16} />
+                <Spinner />
+                <Spinner size={32} />
+                <Spinner name="Loader" size={32} />
+              </Flex>
+            </Box>
+          </Section>
+
+          <StyledDivider />
+
+          <Section
             title="Form controls"
             note="Inputs, selects, textarea, password, and the selection controls, shown across the three size tiers."
           >
@@ -842,6 +1014,45 @@ function App() {
             <StyledCaption>Avatar · small / default / big</StyledCaption>
             <Space $size={16} />
             <AvatarDropzoneDemo />
+          </Section>
+
+          <StyledDivider />
+
+          <Section
+            title="Chat"
+            note="A transport-agnostic chat kit: the headless provider owns panel state, focus and the transcript, while the app supplies onSend. The glow treatment is opt-in."
+          >
+            <ChatDemo />
+          </Section>
+
+          <StyledDivider />
+
+          <Section
+            title="Callouts & avatars"
+            note="Alert-semantic callouts that keep their meaning under any brand palette, and the avatar primitive with image, initials, and icon fallbacks."
+          >
+            <Flex $direction="column" $gap={20} $fullWidth>
+              <Callout $type="note">
+                <p>A note callout for supplementary details.</p>
+              </Callout>
+              <Callout $type="warning">
+                <p>A warning callout for things to watch out for.</p>
+              </Callout>
+              <Callout $type="danger">
+                <p>A danger callout for destructive outcomes.</p>
+              </Callout>
+              <Callout $type="success">
+                <p>A success callout for confirmations.</p>
+              </Callout>
+            </Flex>
+            <Space $size={28} />
+            <StyledCaption>Avatar · initials / icon / sizes</StyledCaption>
+            <Space $size={16} />
+            <Flex $gap={20} $alignItems="center">
+              <Avatar $size="small" $name="Ada Lovelace" />
+              <Avatar $name="Cherry" $color="secondary" />
+              <Avatar $size="big" $color="tertiary" $alt="Assistant" />
+            </Flex>
           </Section>
 
           <StyledDivider />

@@ -19,6 +19,32 @@ export const tint = (color: string, percent: number) =>
   `color-mix(in srgb, ${color} ${100 - percent}%, white)`;
 
 /**
+ * Text color for a label sitting on a brand-colored fill: the palette's
+ * contrasting end, `light` in light mode and `dark` in dark mode.
+ */
+export const filledTextColor = (theme: Theme) =>
+  theme.isDark ? theme.colors.dark : theme.colors.light;
+
+/**
+ * The same choice restated as a rule scoped to a `dark` class on <html>, which
+ * is what apps resolving the mode in CSS key off before hydration can swap the
+ * theme object. Additive: with an already-dark theme object both paths resolve
+ * to the same color. Interpolate alongside `filledTextColor`.
+ */
+export const darkFilledTextRule = (theme: Theme) =>
+  `:root.dark & { color: ${theme.colors.dark}; }`;
+
+/**
+ * Slim, theme-aware scrollbar for internal scroll areas (chat transcripts, code
+ * blocks, tables) so the chunky native bar doesn't stand out, especially in
+ * dark mode.
+ */
+export const thinScrollbar = css<{ theme: Theme }>`
+  scrollbar-width: thin;
+  scrollbar-color: ${({ theme }) => theme.colors.grayLight} transparent;
+`;
+
+/**
  * Hover/focus/active affordance for interactive surfaces (cards, tiles,
  * links-as-blocks): a transparent 1px border that picks up the primary color
  * on hover, with a soft focus ring. Pair with resetButton for clickable

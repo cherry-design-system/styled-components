@@ -1,10 +1,21 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import {
   Accordion,
+  Avatar,
   AvatarDropzone,
   Box,
   Button,
+  Callout,
+  ChatInput,
+  ChatLauncher,
+  ChatMessage,
+  ChatMessageList,
+  ChatPanel,
+  ChatProvider,
+  ChatSource,
+  ChatSources,
+  ChatTyping,
   Col,
   Dropzone,
   Flex,
@@ -14,8 +25,10 @@ import {
   Input,
   Modal,
   Password,
+  Prose,
   Range,
   Select,
+  Spinner,
   TabContent,
   Tabs,
   Textarea,
@@ -23,7 +36,9 @@ import {
   ToastNotifications,
   ToastNotificationsProvider,
   Toggle,
+  useChat,
   useToastNotifications,
+  type ChatSendHandler,
   type Shadows,
   type ToastColor,
 } from "./lib";
@@ -165,6 +180,149 @@ function ModalPreview() {
   );
 }
 
+// Fake transport for the chat previews: streams a canned answer with timers,
+// so the full streaming flow works without a server.
+const previewSend: ChatSendHandler = (question, { signal, setAssistant }) => {
+  const answer =
+    `You asked: "${question}". This reply is streamed locally with ` +
+    `timers - the provider owns the panel state and the transcript, while ` +
+    `the app owns the transport.`;
+
+  return new Promise<void>((resolve) => {
+    let length = 0;
+    const tick = () => {
+      if (signal.aborted) {
+        resolve();
+        return;
+      }
+      length = Math.min(length + 4, answer.length);
+      if (length < answer.length) {
+        setAssistant(answer.slice(0, length));
+        setTimeout(tick, 30);
+      } else {
+        setAssistant(answer, {
+          sources: [
+            { id: "1", label: "Getting Started", href: "#" },
+            { id: "2", label: "Theming", href: "#" },
+          ],
+        });
+        resolve();
+      }
+    };
+    setTimeout(tick, 600);
+  });
+};
+
+// Renders the provider's transcript: messages, per-message sources, the
+// typing indicator until the first streamed token, and errors.
+function ChatTranscript() {
+  const { messages, loading, error } = useChat();
+  const last = messages[messages.length - 1];
+
+  return (
+    <ChatMessageList>
+      {messages.map((message) => (
+        <React.Fragment key={message.id}>
+          <ChatMessage $role={message.role}>
+            {message.role === "assistant" &&
+            typeof message.content === "string" ? (
+              <Prose $compact>
+                <p>{message.content}</p>
+              </Prose>
+            ) : (
+              message.content
+            )}
+          </ChatMessage>
+          {message.sources && message.sources.length > 0 && (
+            <ChatSources>
+              {message.sources.map((source) => (
+                <ChatSource key={source.id} href={source.href}>
+                  {source.label}
+                </ChatSource>
+              ))}
+            </ChatSources>
+          )}
+        </React.Fragment>
+      ))}
+      {loading && last?.role !== "assistant" && <ChatTyping />}
+      {error && (
+        <Callout $type="danger">
+          <p>
+            <strong>Error:</strong> {error}
+          </p>
+        </Callout>
+      )}
+    </ChatMessageList>
+  );
+}
+
+function ChatResetButton() {
+  const { reset } = useChat();
+
+  return (
+    <IconButton
+      onClick={reset}
+      aria-label="Reset chat history"
+      title="Reset chat history"
+    >
+      <Icon name="RotateCcw" />
+    </IconButton>
+  );
+}
+
+function ChatDrawerPreview({ $glow }: { $glow?: boolean }) {
+  return (
+    <ChatProvider onSend={previewSend} $showcase>
+      <ChatLauncher $glow={$glow} />
+      <ChatPanel $actions={<ChatResetButton />}>
+        <ChatTranscript />
+        <ChatInput $glow={$glow} />
+      </ChatPanel>
+    </ChatProvider>
+  );
+}
+
+function ChatInlinePreview() {
+  return (
+    <ChatProvider onSend={previewSend} shortcut={null}>
+      <div style={{ width: "100%", height: "480px" }}>
+        <ChatPanel $variant="inline" $actions={<ChatResetButton />}>
+          <ChatTranscript />
+          <ChatInput />
+        </ChatPanel>
+      </div>
+    </ChatProvider>
+  );
+}
+
+function ChatFullscreenPreview() {
+  return (
+    <ChatProvider onSend={previewSend} shortcut={null}>
+      <ChatLauncher />
+      <ChatPanel $variant="fullscreen" $actions={<ChatResetButton />}>
+        <ChatTranscript />
+        <ChatInput />
+      </ChatPanel>
+    </ChatProvider>
+  );
+}
+
+// Standalone composer, no provider: controlled value plus an onSend prop.
+function ChatInputPreview({ $glow }: { $glow?: boolean }) {
+  const [value, setValue] = useState("");
+
+  return (
+    <div style={{ width: "100%" }}>
+      <ChatInput
+        value={value}
+        onValueChange={setValue}
+        onSend={() => setValue("")}
+        $glow={$glow}
+      />
+    </div>
+  );
+}
+
 const previews: Record<string, React.ReactNode> = {
   accordion: (
     <Accordion title="Accordion" defaultOpen>
@@ -178,6 +336,13 @@ const previews: Record<string, React.ReactNode> = {
       for embedding inside cards or lists.
     </Accordion>
   ),
+  avatar: (
+    <Flex $gap={20} $alignItems="center">
+      <Avatar $size="small" $name="Ada Lovelace" />
+      <Avatar $name="Cherry" $color="secondary" />
+      <Avatar $size="big" $color="tertiary" $alt="Assistant" />
+    </Flex>
+  ),
   "avatar-dropzone": <AvatarDropzone id="avatar-preview" />,
   box: (
     <Box style={{ padding: "40px" }}>
@@ -188,6 +353,51 @@ const previews: Record<string, React.ReactNode> = {
   "button-secondary": <Button $variant="secondary">Button</Button>,
   "button-tertiary": <Button $variant="tertiary">Button</Button>,
   "button-outline": <Button $outline>Button</Button>,
+  callout: (
+    <Flex $direction="column" $gap={20} $fullWidth>
+      <Callout $type="note">
+        <p>A note callout for supplementary details.</p>
+      </Callout>
+      <Callout $type="info">
+        <p>An info callout for neutral information.</p>
+      </Callout>
+      <Callout $type="warning">
+        <p>A warning callout for things to watch out for.</p>
+      </Callout>
+      <Callout $type="danger">
+        <p>A danger callout for destructive outcomes.</p>
+      </Callout>
+      <Callout $type="success">
+        <p>A success callout for confirmations.</p>
+      </Callout>
+    </Flex>
+  ),
+  chat: <ChatDrawerPreview />,
+  "chat-fullscreen": <ChatFullscreenPreview />,
+  "chat-glow": <ChatDrawerPreview $glow />,
+  "chat-inline": <ChatInlinePreview />,
+  "chat-input": <ChatInputPreview />,
+  "chat-input-glow": <ChatInputPreview $glow />,
+  "chat-launcher": (
+    <ChatProvider onSend={previewSend} shortcut={null}>
+      <ChatLauncher $glow />
+    </ChatProvider>
+  ),
+  "chat-message": (
+    <Flex $direction="column" $gap={20} $fullWidth>
+      <ChatMessage $role="user">How do I theme the components?</ChatMessage>
+      <ChatMessage $role="assistant">
+        <Prose $compact>
+          <p>
+            Wrap your app in <code>CherryThemeProvider</code> and pass a theme
+            object; every component reads its colors, spacing and typography
+            from it.
+          </p>
+        </Prose>
+      </ChatMessage>
+    </Flex>
+  ),
+  "chat-typing": <ChatTyping />,
   checkbox: <Input type="checkbox" id="checkbox-preview" defaultChecked />,
   dropzone: (
     <Dropzone
@@ -247,6 +457,35 @@ const previews: Record<string, React.ReactNode> = {
     />
   ),
   modal: <ModalPreview />,
+  prose: (
+    <Prose>
+      <h4>Rendered markdown</h4>
+      <p>
+        Prose styles <a href="#">links</a>, lists, tables and{" "}
+        <code>inline code</code> with Cherry typography.
+      </p>
+      <ul>
+        <li>First item</li>
+        <li>Second item</li>
+      </ul>
+      <div className="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>$compact</td>
+              <td>false</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </Prose>
+  ),
   password: (
     <Password
       $fullWidth
@@ -262,6 +501,13 @@ const previews: Record<string, React.ReactNode> = {
     <Select $fullWidth $label="Select" id="select-preview">
       <option>Select</option>
     </Select>
+  ),
+  spinner: (
+    <Flex $gap={28} $alignItems="center">
+      <Spinner size={16} />
+      <Spinner />
+      <Spinner size={32} />
+    </Flex>
   ),
   tabs: (
     <Tabs>

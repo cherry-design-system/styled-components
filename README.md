@@ -36,7 +36,55 @@ export default function App() {
 
 The built-in `theme` and `themeDark` objects are a starting point; both are plain objects you can extend or replace to white-label the system. Styled props use a `$` prefix (`$variant`, `$size`, `$fullWidth`) so they never leak into the DOM.
 
-The library ships form components (Button, Input, Select, Textarea, Toggle, Range, Password, Checkbox, Radio, Dropzone, AvatarDropzone), layout primitives (Container, Grid, Col, Flex, Box, MaxWidth, Space), and interactive components (Accordion, Modal, Toast, ThemeToggle, Icon, IconButton). See the [component docs](https://cherry.al/) for the full API.
+The library ships form components (Button, Input, Select, Textarea, Toggle, Range, Password, Checkbox, Radio, Dropzone, AvatarDropzone), layout primitives (Container, Grid, Col, Flex, Box, MaxWidth, Space), interactive components (Accordion, Modal, Toast, ThemeToggle, Icon, IconButton), content components (Prose, Callout, Avatar), and a chat kit (see below). See the [component docs](https://cherry.al/) for the full API.
+
+## Chat kit
+
+Cherry ships everything needed to build an AI-assistant chat UI, split into a headless provider and presentational components. The provider owns panel state, focus management, the transcript, and streaming bookkeeping; **the app owns the transport** — Cherry never fetches, parses SSE, or assumes an endpoint.
+
+```tsx
+import {
+  ChatInput,
+  ChatLauncher,
+  ChatMessage,
+  ChatMessageList,
+  ChatPanel,
+  ChatProvider,
+  Prose,
+  useChat,
+} from "cherry-styled-components";
+
+<ChatProvider
+  onSend={async (question, { signal, history, setAssistant }) => {
+    const res = await fetch("/api/chat", {
+      method: "POST",
+      body: JSON.stringify({ question, history }),
+      signal,
+    });
+    for await (const text of readMyStream(res)) {
+      setAssistant(text); // patches the same assistant bubble on each call
+    }
+    setAssistant(<Prose $compact>{renderMarkdown(text)}</Prose>, {
+      text, // plain-text mirror used for the next request's history
+      sources: [{ id: "1", label: "Docs", href: "/docs" }],
+    });
+  }}
+>
+  <ChatLauncher $glow />
+  <ChatPanel>
+    <MyTranscript /> {/* map useChat().messages into ChatMessageList */}
+    <ChatInput $glow />
+  </ChatPanel>
+</ChatProvider>;
+```
+
+- `ChatProvider` — headless state: `useChat()` returns `{ isOpen, open, close, toggle, messages, input, setInput, loading, error, send, ask, reset, inputRef }`. Props: `onSend`, `greeting`, `historyLimit`, `shortcut` (Cmd/Ctrl+I by default, `null` to disable), and `$showcase`.
+- `$showcase` — demo mode. Chat input matching a showcase command is answered locally with a live rendering of that element; everything else still goes to `onSend` (which becomes optional). `help` lists the commands: `list` (the component catalog), `callout`, `avatar`, `prose`, `sources`, and `typing`. Off by default — without `$showcase` every message goes to the transport.
+- `ChatPanel` — the shell. `$variant="drawer"` (fixed side panel, full-screen modal below `lg`), `"inline"` (flows with the page), or `"fullscreen"`. Handles dialog semantics, focus trapping, `inert` siblings, and body scroll locking while modal.
+- `ChatMessageList` — scroll container with stick-to-bottom behavior that releases when the reader scrolls up.
+- `ChatMessage` — `$role="user"` (filled bubble) or `"assistant"` (full-width, pair with `Prose` for markdown), plus an `$avatar` slot.
+- `ChatInput` — auto-growing composer; Enter submits, Shift+Enter breaks the line. `$glow` opts into the animated rainbow border and sparkles.
+- `ChatLauncher`, `ChatTyping`, `ChatSources`/`ChatSource` — the "Ask AI" pill, the typing indicator, and the source-chip row.
 
 ## Theming
 
@@ -150,33 +198,46 @@ The route is handled in `src/main.tsx` and the previews live in `src/preview.tsx
 
 ### Available previews
 
-| Name               | Renders                                           |
-| ------------------ | ------------------------------------------------- |
-| `accordion`        | Card accordion, open by default                   |
-| `accordion-inline` | Inline accordion variant, open by default         |
-| `avatar-dropzone`  | Empty avatar dropzone, default size               |
-| `box`              | Box surface with a placeholder block              |
-| `button`           | Primary filled button                             |
-| `button-secondary` | Secondary filled button                           |
-| `button-tertiary`  | Tertiary filled button                            |
-| `button-outline`   | Primary outline button                            |
-| `checkbox`         | Checked checkbox                                  |
-| `dropzone`         | Block dropzone with prompt, browse, and hint text |
-| `dropzone-inline`  | Inline dropzone variant                           |
-| `flex`             | Flex row with three placeholder blocks            |
-| `grid`             | Three-column grid with a full-width row           |
-| `icon`             | Cherry icon at 48px                               |
-| `icon-button`      | Icon button with a settings icon                  |
-| `input`            | Text input with label and placeholder             |
-| `modal`            | Modal, already open on a backdrop                 |
-| `password`         | Password field with label and placeholder         |
-| `radio`            | Checked radio button                              |
-| `range`            | Range slider                                      |
-| `select`           | Select with label                                 |
-| `textarea`         | Textarea with label and value                     |
-| `theme-toggle`     | Pill-shaped sun/moon theme switch                 |
-| `toast`            | Success, error, and info toasts, fired on mount   |
-| `toggle`           | Checked toggle                                    |
+| Name               | Renders                                                |
+| ------------------ | ------------------------------------------------------ |
+| `accordion`        | Card accordion, open by default                        |
+| `accordion-inline` | Inline accordion variant, open by default              |
+| `avatar`           | Avatar with initials and icon fallbacks, three sizes   |
+| `avatar-dropzone`  | Empty avatar dropzone, default size                    |
+| `box`              | Box surface with a placeholder block                   |
+| `button`           | Primary filled button                                  |
+| `button-secondary` | Secondary filled button                                |
+| `button-tertiary`  | Tertiary filled button                                 |
+| `button-outline`   | Primary outline button                                 |
+| `callout`          | The five callout intents stacked                       |
+| `chat`             | Chat drawer with launcher and fake streaming transport |
+| `chat-fullscreen`  | Fullscreen chat variant behind a launcher              |
+| `chat-glow`        | Chat drawer with the rainbow glow treatment            |
+| `chat-inline`      | Inline chat panel embedded in the page                 |
+| `chat-input`       | Standalone chat composer                               |
+| `chat-input-glow`  | Chat composer with the rainbow glow treatment          |
+| `chat-launcher`    | "Ask AI" launcher pill with glow                       |
+| `chat-message`     | Static user and assistant messages                     |
+| `chat-typing`      | Three-dot typing indicator                             |
+| `checkbox`         | Checked checkbox                                       |
+| `dropzone`         | Block dropzone with prompt, browse, and hint text      |
+| `dropzone-inline`  | Inline dropzone variant                                |
+| `flex`             | Flex row with three placeholder blocks                 |
+| `grid`             | Three-column grid with a full-width row                |
+| `icon`             | Cherry icon at 48px                                    |
+| `icon-button`      | Icon button with a settings icon                       |
+| `input`            | Text input with label and placeholder                  |
+| `modal`            | Modal, already open on a backdrop                      |
+| `password`         | Password field with label and placeholder              |
+| `prose`            | Markdown-style content with Cherry typography          |
+| `spinner`          | Rotating loading indicator in three sizes              |
+| `radio`            | Checked radio button                                   |
+| `range`            | Range slider                                           |
+| `select`           | Select with label                                      |
+| `textarea`         | Textarea with label and value                          |
+| `theme-toggle`     | Pill-shaped sun/moon theme switch                      |
+| `toast`            | Success, error, and info toasts, fired on mount        |
+| `toggle`           | Checked toggle                                         |
 
 Pure layout primitives with no visual output of their own (Container, Col, MaxWidth, Space) have no preview entry.
 
