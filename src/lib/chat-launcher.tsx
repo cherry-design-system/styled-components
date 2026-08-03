@@ -98,56 +98,45 @@ const StyledChatLauncher = styled.button<{
       position: relative;
       isolation: isolate;
 
-      /* The rainbow accent: a 2px band hugging the outside of the button's
-         own border, which stays solid 1px grayLight in every state. It plays
-         the role the primary border color has on the Cherry input. */
-      &::before {
+      /* The rainbow accent bands hugging the outside of the button's own
+         border, which stays solid 1px grayLight in every state. Three
+         FIXED-geometry layers - 1px (hover, ::before), 2px (active,
+         ::after), 4px (keyboard focus, .chat-launcher-ring) - that only
+         cross-fade opacity. Never animate their inset/border-radius: geometry
+         changes force the rotating gradient to repaint at a new size every
+         frame and the band visibly shakes; opacity fades composite smoothly,
+         which is exactly why the regular button's states feel smooth. All
+         three share the same gradient and angle, so overlapping layers
+         render identical pixels and fades read as the band growing. */
+      &::before,
+      &::after,
+      & .chat-launcher-ring {
         content: "";
         position: absolute;
-        inset: -2px;
-        border-radius: calc(${theme.spacing.radius.xs} + 2px);
         background: conic-gradient(
           from var(--cherry-gradient-angle),
           ${conicStops($glowColors)}
         );
         opacity: 0;
-        transition: all 0.3s ease;
+        transition: opacity 0.3s ease;
         animation: ${rotateGradient} 3s linear infinite;
         z-index: -1;
+        pointer-events: none;
       }
 
-      /* The focus/active ring, a dedicated element so it can carry its own
-         inner mask. On focus it floats: a crisp 4px rainbow band separated
-         from the accent by a 2px gap in the panel background (the span's
-         ::before). On press it snaps flush against the accent as a tight
-         2px band. The gap is what makes it read as its own ring instead of
-         blending into the accent and the blurred glow behind. */
-      & .chat-launcher-ring {
-        position: absolute;
-        /* Collapsed at the button's edge at rest so the ring grows from the
-           inside out, like the Cherry ring's box-shadow spread (0 -> 4px). */
-        inset: 0;
-        border-radius: ${theme.spacing.radius.xs};
-        background: conic-gradient(
-          from var(--cherry-gradient-angle),
-          ${conicStops($glowColors)}
-        );
-        opacity: 0;
-        transition: all 0.3s ease;
-        animation: ${rotateGradient} 3s linear infinite;
-        z-index: -2;
-        pointer-events: none;
+      &::before {
+        inset: -1px;
+        border-radius: calc(${theme.spacing.radius.xs} + 1px);
+      }
 
-        /* Masks the middle back to the surface color; the visible ring is
-           the band between the span's edge and this inset. */
-        &::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          border-radius: ${theme.spacing.radius.xs};
-          background: ${theme.colors.light};
-          transition: all 0.3s ease;
-        }
+      &::after {
+        inset: -2px;
+        border-radius: calc(${theme.spacing.radius.xs} + 2px);
+      }
+
+      & .chat-launcher-ring {
+        inset: -4px;
+        border-radius: calc(${theme.spacing.radius.xs} + 4px);
       }
 
       /* The radiating background glow: always softly on, stronger with
@@ -178,10 +167,10 @@ const StyledChatLauncher = styled.button<{
         }
       }
 
-      /* Same state map as the Cherry input: accent on hover and focus,
-         ring on focus, tighter ring while pressed. The rainbow replaces the
-         primary border and primaryLight ring interactiveStyles would paint,
-         while the button's own border stays solid 1px grayLight. */
+      /* State map, mirroring the Cherry ring scale in rainbow: 1px band on
+         hover, 4px band on focus (any focus, like the regular button's
+         :focus ring), 2px band while pressed. The button's own border stays
+         solid 1px grayLight throughout. */
       &:hover,
       &:focus,
       &:active {
@@ -189,36 +178,25 @@ const StyledChatLauncher = styled.button<{
         box-shadow: none;
       }
 
+      /* The 1px base band underlies every interactive state so fades of the
+         wider layers always read as growth from it. */
       &:hover::before,
       &:focus::before,
       &:active::before {
         opacity: 1;
       }
 
-      &:focus .chat-launcher-ring {
+      &:active::after {
         opacity: 1;
-        inset: -8px;
-        border-radius: calc(${theme.spacing.radius.xs} + 8px);
-
-        &::before {
-          inset: 4px;
-          border-radius: calc(${theme.spacing.radius.xs} + 4px);
-        }
       }
 
-      &:active .chat-launcher-ring {
+      &:focus .chat-launcher-ring {
         opacity: 1;
-        inset: -4px;
-        border-radius: calc(${theme.spacing.radius.xs} + 4px);
-
-        &::before {
-          inset: 2px;
-          border-radius: calc(${theme.spacing.radius.xs} + 2px);
-        }
       }
 
       &:hover .chat-launcher-glow,
-      &:focus .chat-launcher-glow {
+      &:focus .chat-launcher-glow,
+      &:active .chat-launcher-glow {
         opacity: 1;
       }
 
@@ -234,6 +212,7 @@ const StyledChatLauncher = styled.button<{
 
       @media (prefers-reduced-motion: reduce) {
         &::before,
+        &::after,
         & .chat-launcher-ring,
         & .chat-launcher-glow::before {
           animation: none;
