@@ -5,6 +5,28 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.13] - 2026-08-03
+
+### Added
+
+- Chat kit: a complete, transport-agnostic chat UI (`ChatProvider`/`useChat`, `ChatPanel`, `ChatMessageList`, `ChatMessage`, `ChatInput`, `ChatLauncher`, `ChatTyping`, `ChatSources`), ported and generalized from the doccupine-cli chat templates. The provider is headless: it owns panel open/close state with focus capture and restore, the transcript, and streaming bookkeeping via an `onSend(question, { signal, history, setAssistant })` contract supplied by the app, so Cherry never fetches. `ChatPanel` renders as a drawer, inline surface, or fullscreen, with dialog semantics below the `lg` breakpoint (focus trap, inert siblings, Escape to close, body scroll lock), and Cmd/Ctrl+I toggles the panel
+- Opt-in `$showcase` demo mode on `ChatProvider`: commands (`help`, `list`, `callout`, `avatar`, `prose`, `sources`, `typing`) are answered locally with live rendered element demos, no backend required
+- Opt-in `$glow` treatment on `ChatInput` and `ChatLauncher`: rotating rainbow border, inside-out focus/active rings matching Cherry's input state mechanics, ambient radiating glow, and sparkles
+- `Spinner` component: a rotating lucide icon (default `LoaderCircle`) with a 1s linear spin, disabled under `prefers-reduced-motion`. Its default color resolves from `theme.colors.dark` rather than inheritance, so it stays visible when the theme flips; an explicit `color` prop still wins. The chat send button now renders it in place of its local spin implementation
+- Supporting components `Avatar`, `Callout` (ported from doccupine-cli), and `Prose`
+- `useLockBodyScroll`, `useMediaQuery`, and `useBelowBreakpoint` hooks, exported from the package root
+- `thinScrollbar` mixin for slim internal scroll areas; `filledTextColor` and `darkFilledTextRule` extracted from `Button` into `utils/mixins.tsx` so other components can share them
+
+### Fixed
+
+- Chat drawer auto-scroll always lands on the last message: it re-arms with an instant jump whenever the panel opens or reopens, and follow re-engages on the rising edge of loading (a send) even if the reader had scrolled up
+- `ChatLauncher` glow transitions no longer shake: the rainbow accent is now three fixed-geometry gradient layers (1px hover, 2px pressed, 4px focus) sharing one conic gradient and cross-fading opacity, instead of a single band animating its geometry every frame
+- Chat polish: message avatars center on a one-line message and ride the visible bottom edge of replies taller than the scrollport; the composer receives focus each time an overlay panel opens; `Prose` headings use Cherry's typography mixins (shifted down two steps in `$compact` mode) instead of the browser's em-relative UA sizes
+
+### Changed
+
+- Dependency bumps: `vite` 8.1.5 → 8.2.0, `playwright-core` 1.62.0 → 1.62.1, `@types/react` 19.2.17 → 19.2.18, `@types/react-dom` 19.2.3 → 19.2.4
+
 ## [0.2.12] - 2026-07-30
 
 ### Added
