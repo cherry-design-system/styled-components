@@ -55,11 +55,15 @@ function LocalChatMessageList(
     streamingRef.current = streaming;
   }, [streaming]);
 
-  // Re-arm auto-scroll each time the panel opens; cancel any queued scroll
-  // when it closes so a hidden panel doesn't keep animating.
+  // Re-arm auto-scroll each time the panel opens - and jump (not smooth) on
+  // the next scroll so the drawer always comes into view already sitting at
+  // the last message. Cancel any queued scroll when it closes so a hidden
+  // panel doesn't keep animating.
+  const jumpNextScrollRef = useRef(false);
   useIsomorphicLayoutEffect(() => {
     if (isOpen) {
       shouldAutoScrollRef.current = true;
+      jumpNextScrollRef.current = true;
       return;
     }
 
@@ -69,8 +73,20 @@ function LocalChatMessageList(
     }
   }, [isOpen]);
 
+  // Sending always re-engages the follow, even if the reader had scrolled
+  // up: the rising edge of loading marks a question going out, and the
+  // sender's own message (plus the reply) must come into view.
+  const prevLoadingRef = useRef(loading);
+  useIsomorphicLayoutEffect(() => {
+    if (loading && !prevLoadingRef.current) {
+      shouldAutoScrollRef.current = true;
+    }
+    prevLoadingRef.current = loading;
+  }, [loading]);
+
   // Follow new content, coalesced to one scroll per frame. Smooth for
-  // discrete messages, instant while streaming or under reduced motion.
+  // discrete messages, instant while streaming, on open, or under reduced
+  // motion.
   useEffect(() => {
     if (!shouldAutoScrollRef.current) return;
     if (scrollFrameRef.current !== null) return;
@@ -82,9 +98,12 @@ function LocalChatMessageList(
       const reduceMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)",
       ).matches;
+      const jump = jumpNextScrollRef.current;
+      jumpNextScrollRef.current = false;
       scrollContainer.scrollTo({
         top: scrollContainer.scrollHeight,
-        behavior: reduceMotion || streamingRef.current ? "auto" : "smooth",
+        behavior:
+          reduceMotion || streamingRef.current || jump ? "auto" : "smooth",
       });
     });
   }, [children, isOpen, streaming]);
