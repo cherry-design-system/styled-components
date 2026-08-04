@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- `ChatLauncher`: the button is now pinned to the 30px compact header-control tier (`box-sizing: border-box; height: 30px`, inner row `height: 100%`) instead of hugging its content, so its height cannot drift with platform font metrics and always matches neighboring header controls like the docs search button; rendered output is unchanged in browsers where the content already resolved to 30px
+
 ### Fixed
 
 - `ChatProvider`: opening the panel (launcher click, Cmd/Ctrl+I, or `ask()` from a search modal) now commits the open with `flushSync` and focuses the composer synchronously inside the triggering gesture. iOS Safari ignores `focus()` — and never raises the keyboard — once the tap gesture has passed, so the previous deferred-only focus (`setTimeout`/`requestAnimationFrame`) opened the panel with an unfocused input on iPads and iPhones; the deferred focus remains as a fallback for lazily mounted composers

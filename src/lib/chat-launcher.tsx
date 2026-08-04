@@ -67,6 +67,11 @@ const StyledChatLauncher = styled.button<{
      glow mode); without this the UA's default outline draws on top of it. */
   outline: none;
   cursor: pointer;
+  /* Pinned to the compact header-control tier (the docs search button's
+     30px box) instead of hugging content, so the height cannot drift with
+     platform font metrics and always matches neighboring header controls. */
+  box-sizing: border-box;
+  height: 30px;
   background: ${({ theme }) => theme.colors.light};
   border: solid 1px ${({ theme }) => theme.colors.grayLight};
   color: ${({ theme }) =>
@@ -78,7 +83,8 @@ const StyledChatLauncher = styled.button<{
   font-weight: 600;
 
   & .chat-launcher-inner {
-    padding: 6px 8px;
+    padding: 0 8px;
+    height: 100%;
     display: flex;
     align-items: center;
     gap: 6px;
