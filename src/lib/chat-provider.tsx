@@ -7,6 +7,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { flushSync } from "react-dom";
 
 import { resolveShowcaseCommand } from "./chat-showcase";
 
@@ -239,9 +240,17 @@ function ChatProvider({
               : null;
     }
     isOpenRef.current = true;
-    setIsOpen(true);
+    // Committed synchronously so the composer can be focused while the
+    // triggering tap/click gesture is still active: iOS Safari ignores
+    // focus() (and never opens the keyboard) once the gesture has passed,
+    // which is exactly where a deferred focus would run. Flushing also
+    // unmounts anything the same gesture closed (the search modal), so its
+    // focus containment cannot steal this focus back.
+    flushSync(() => setIsOpen(true));
+    inputRef.current?.focus();
     if (focusTimeoutRef.current) clearTimeout(focusTimeoutRef.current);
-    // Deferred so the panel is visible (and therefore focusable) first.
+    // Deferred fallback for composers that mount asynchronously (lazy-loaded
+    // panels) and are not in the DOM yet during the flush above.
     focusTimeoutRef.current = setTimeout(() => {
       focusTimeoutRef.current = null;
       inputRef.current?.focus();

@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+
+- `ChatProvider`: opening the panel (launcher click, Cmd/Ctrl+I, or `ask()` from a search modal) now commits the open with `flushSync` and focuses the composer synchronously inside the triggering gesture. iOS Safari ignores `focus()` — and never raises the keyboard — once the tap gesture has passed, so the previous deferred-only focus (`setTimeout`/`requestAnimationFrame`) opened the panel with an unfocused input on iPads and iPhones; the deferred focus remains as a fallback for lazily mounted composers
+
 ## [0.2.13] - 2026-08-03
 
 ### Added
