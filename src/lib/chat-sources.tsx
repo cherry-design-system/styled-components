@@ -16,6 +16,13 @@ const StyledChatSources = styled.div`
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+
+  /* Inside a message the chips follow the answer body, which trims its own
+     trailing margin, so the row provides the separation itself. Standalone
+     (first-child) usage stays margin-free. */
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
 `;
 
 // A plain anchor so the library stays router-agnostic; pass `as={Link}` to
