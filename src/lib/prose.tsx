@@ -204,6 +204,13 @@ export const proseStyles = (theme: Theme, $compact?: boolean) => {
       ${thinScrollbar};
     }
 
+    /* An app's framed code block (a .code-wrapper root) carries the block
+       rhythm itself; the pre inside it must not double up. The list-item
+       rule further down keeps its tighter 10px inside lists. */
+    & .code-wrapper {
+      margin: ${block} 0;
+    }
+
     & .code-wrapper pre {
       margin: 0;
     }
