@@ -20,7 +20,7 @@
   "homepage": "https://cherry.al",
   "repository": "https://github.com/cherry-design-system/styled-components",
   "license": "MIT",
-  "packageManager": "pnpm@11.19.0",
+  "packageManager": "pnpm@11.20.0",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -61,7 +61,7 @@
     "@vitejs/plugin-react-swc": "^4.3.3",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",
-    "next": "^16.2.12",
+    "next": "^16.3.0",
     "playwright-core": "^1.62.1",
     "prettier": "^3.9.6",
     "react": "^19.2.8",
