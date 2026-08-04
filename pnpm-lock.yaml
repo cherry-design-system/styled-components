@@ -58,8 +58,8 @@ importers:
         specifier: ^0.35.3
         version: 0.35.3(@types/node@26.1.2)
       styled-components:
-        specifier: ^6.4.4
-        version: 6.4.4(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        specifier: ^6.5.0
+        version: 6.5.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       typescript:
         specifier: ^7.0.2
         version: 7.0.2
@@ -1450,8 +1450,8 @@ packages:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
 
-  styled-components@6.4.4:
-    resolution: {integrity: sha512-tJk5CmKUPMDoTsZQ8m0hHInBk9HFKUPSusqmbBuefDX+yUbMBWea2Ob/wdXFyHW8XZqXkprJscysAdKeGWNqlA==}
+  styled-components@6.5.0:
+    resolution: {integrity: sha512-WLnTRAIRJsmCQfPXoEDDd1YMML+ImxQ8YGVVg60FALxsn/rpWiQWSJCZDNfu/buAcBFnTUr8ev6CBR8rb7xLiQ==}
     engines: {node: '>= 16'}
     peerDependencies:
       css-to-react-native: '>= 3.2.0'
@@ -2766,7 +2766,7 @@ snapshots:
 
   source-map-js@1.2.1: {}
 
-  styled-components@6.4.4(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
+  styled-components@6.5.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       '@emotion/is-prop-valid': 1.4.0
       csstype: 3.2.3

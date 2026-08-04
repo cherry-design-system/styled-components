@@ -68,7 +68,7 @@
     "react-dom": "^19.2.8",
     "rollup-plugin-preserve-directives": "^0.4.0",
     "sharp": "^0.35.3",
-    "styled-components": "^6.4.4",
+    "styled-components": "^6.5.0",
     "typescript": "^7.0.2",
     "vite": "^8.2.0",
     "vite-plugin-dts": "^5.0.3"
