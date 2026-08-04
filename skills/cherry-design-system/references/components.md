@@ -703,7 +703,7 @@ Full setup is in `setup.md`. Exported from `cherry-styled-components`:
 - `CherryThemeProvider` (client-only provider) and `ThemeContext` (`{ setTheme, toggleTheme }`).
 - `ClientThemeProvider` + `ClientThemeProviderProps` (SSR-aware, flash-free).
 - `StyledComponentsRegistry` (Next.js App Router style extraction).
-- `themeInitScript`, `createThemeInitScript(darkBackground?)`, `resolveTheme(cookieValue, theme, themeDark?)` (server-safe theming helpers).
+- `themeInitScript`, `createThemeInitScript(darkBackground?, darkThemeColor?)`, `resolveTheme(cookieValue, theme, themeDark?)` (server-safe theming helpers).
 - `GlobalStyles(theme)` (base HTML/body resets; the providers render it for you unless you opt out).
 - `theme`, `themeDark`, and the `Theme` type, plus all the typography mixins, style mixins, and the `alpha` / `shade` / `tint` color helpers documented in `theme.md`.
 - Utility hooks: `useMediaQuery(query)`, `useBelowBreakpoint(size)` (theme breakpoint names), `useLockBodyScroll(isLocked)`, `useOnClickOutside(refs, handler)`.

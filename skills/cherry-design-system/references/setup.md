@@ -53,7 +53,7 @@ To avoid the initial dark-mode flash in a client-only app, you can instead use `
 
 Four pieces work together:
 
-1. `themeInitScript` in `<head>`: a blocking script that seeds the `theme` cookie from the OS preference and hides the body on a dark first paint so the light server render never flashes.
+1. `themeInitScript` in `<head>`: a blocking script that seeds the `theme` cookie from the OS preference and, on a dark first paint, hides the body and rewrites `<meta name="theme-color">` so neither the page nor the browser chrome flashes the light server render.
 2. `StyledComponentsRegistry`: collects styled-components styles during SSR (`useServerInsertedHTML`).
 3. `ClientThemeProvider`: renders with the server-resolved theme first (no flash), then reconciles against the cookie and OS preference on mount.
 4. The `theme` cookie, read in the server layout and passed as `$initial`.
@@ -144,7 +144,7 @@ export async function generateViewport() {
 }
 ```
 
-`createThemeInitScript(darkBackground)` lets you customize the pre-hydration dark background color (defaults to `#000`); `themeInitScript` is the default-configured version.
+`createThemeInitScript(darkBackground, darkThemeColor)` lets you customize the pre-hydration dark background color (defaults to `#000`) and the `<meta name="theme-color">` value the script writes on a dark first visit (defaults to `darkBackground`); `themeInitScript` is the default-configured version. When the provider uses a non-default `$themeColor`, pass that token's dark value as `darkThemeColor` so the pre-hydration tint matches — e.g. `createThemeInitScript(themeDark.colors.light, themeDark.colors.primary)` for `$themeColor="primary"`.
 
 ---
 
