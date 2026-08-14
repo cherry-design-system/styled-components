@@ -29,7 +29,7 @@ import {
 </CherryThemeProvider>;
 ```
 
-For Next.js App Router (flash-free SSR) use `ClientThemeProvider` + `StyledComponentsRegistry` + `themeInitScript`; see `references/setup.md`.
+For Next.js App Router (flash-free SSR) use `ClientThemeProvider` + `StyledComponentsRegistry` + `themeInitScript`; see `references/setup.md`. `StyledComponentsRegistry` is imported from `cherry-styled-components/next` (every other export comes from the package root).
 
 ## Components
 

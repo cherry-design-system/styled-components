@@ -431,6 +431,8 @@ Portal dialog rendered into `document.body`. Closes on Escape and outside click.
 
 The modal mounts on open and unmounts after the exit animation, so children (e.g. a form) reset between openings. `styled(Modal)` does **not** work for the `$`-props (styled-components strips transient props before they reach the wrapped component); restyle by passing `className` and targeting the stable inner class hooks: `.modal-inner`, `.modal-close`, `.modal-title`, `.modal-content`.
 
+Fields that open a native OS picker (`Select`, and `Input` of type `date`, `datetime-local`, `month`, `time`, `week`) are safe inside a modal: outside-click detection ignores the stray mouse events iOS emits when such a picker closes, so setting a date does not dismiss the dialog.
+
 ```tsx
 const [open, setOpen] = useState(false);
 
@@ -702,7 +704,7 @@ Full setup is in `setup.md`. Exported from `cherry-styled-components`:
 
 - `CherryThemeProvider` (client-only provider) and `ThemeContext` (`{ setTheme, toggleTheme }`).
 - `ClientThemeProvider` + `ClientThemeProviderProps` (SSR-aware, flash-free).
-- `StyledComponentsRegistry` (Next.js App Router style extraction).
+- `StyledComponentsRegistry` (Next.js App Router style extraction) — the one exception, imported from `cherry-styled-components/next`.
 - `themeInitScript`, `createThemeInitScript(darkBackground?, darkThemeColor?)`, `resolveTheme(cookieValue, theme, themeDark?)` (server-safe theming helpers).
 - `GlobalStyles(theme)` (base HTML/body resets; the providers render it for you unless you opt out).
 - `theme`, `themeDark`, and the `Theme` type, plus all the typography mixins, style mixins, and the `alpha` / `shade` / `tint` color helpers documented in `theme.md`.

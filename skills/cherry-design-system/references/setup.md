@@ -18,7 +18,9 @@ npm install cherry-styled-components react react-dom styled-components
 # or: pnpm add / yarn add
 ```
 
-`lucide-react` and `next/navigation` are also externalized by the build; `lucide-react` comes in as a transitive dep. If your bundler complains about a missing peer, install `lucide-react` explicitly.
+`lucide-react` is also externalized by the build and comes in as a transitive dep. If your bundler complains about a missing peer, install `lucide-react` explicitly.
+
+Nothing under the `cherry-styled-components` root import touches Next, so Vite, CRA, Remix, and plain Rollup consumers need no Next install and no bundler externals. The single Next-dependent export, `StyledComponentsRegistry`, lives behind the `cherry-styled-components/next` subpath and is the only thing that resolves `next/navigation`.
 
 ---
 
@@ -54,18 +56,15 @@ To avoid the initial dark-mode flash in a client-only app, you can instead use `
 Four pieces work together:
 
 1. `themeInitScript` in `<head>`: a blocking script that seeds the `theme` cookie from the OS preference and, on a dark first paint, hides the body and rewrites `<meta name="theme-color">` so neither the page nor the browser chrome flashes the light server render.
-2. `StyledComponentsRegistry`: collects styled-components styles during SSR (`useServerInsertedHTML`).
+2. `StyledComponentsRegistry`: collects styled-components styles during SSR (`useServerInsertedHTML`). Imported from `cherry-styled-components/next`, not the package root, because it is the only export that depends on Next.
 3. `ClientThemeProvider`: renders with the server-resolved theme first (no flash), then reconciles against the cookie and OS preference on mount.
 4. The `theme` cookie, read in the server layout and passed as `$initial`.
 
 ```tsx
 // app/layout.tsx  (server component)
 import { cookies } from "next/headers";
-import {
-  ClientThemeProvider,
-  StyledComponentsRegistry,
-  themeInitScript,
-} from "cherry-styled-components";
+import { StyledComponentsRegistry } from "cherry-styled-components/next";
+import { ClientThemeProvider, themeInitScript } from "cherry-styled-components";
 import { theme, themeDark } from "./theme"; // your own theme objects
 
 export default async function RootLayout({

@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.16] - 2026-08-14
+
+### Changed
+
+- **Breaking:** `StyledComponentsRegistry` now ships from the `cherry-styled-components/next` subpath instead of the package root. Update the import in your Next.js `layout.tsx`: `import { StyledComponentsRegistry } from "cherry-styled-components/next";`. Every other export is unchanged and still comes from `cherry-styled-components`. The registry is the only export that imports `next/navigation`, and re-exporting it from the barrel forced _every_ consumer to resolve Next just to import a `Button`: a plain Vite app importing nothing but `Button` failed to build with `Failed to resolve import "next/navigation"`, and `sideEffects: false` could not save it because resolution happens before tree-shaking. In practice the package only built inside Next, or for consumers who manually added `next/navigation` to their bundler externals. Vite, CRA, Remix, Astro, and plain Rollup consumers now need no Next install and no externals config
+- Dependency bumps: `lucide-react` 1.28.0 → 1.31.0, `styled-components` 6.5.0 → 6.5.2, `vite` 8.2.0 → 8.2.1, `next` 16.3.0 → 16.3.1, `@swc/plugin-styled-components` 12.15.0 → 12.19.0, `@types/node` 26.1.2 → 26.2.0, `eslint-plugin-react-refresh` 0.5.3 → 0.5.4
+
+### Fixed
+
+- `useOnClickOutside` (and with it `Modal`): a mousedown that no user press can account for is no longer read as a click outside while a native OS picker is engaged. iOS draws the pickers behind `<select>` and `<input type="date|datetime-local|month|time|week">` outside the web view, so the taps that drive them never reach the DOM; when the picker resolves, WebKit still emits a stray mousedown whose target sits outside the component, which dismissed the entire dialog the moment a user set a date inside a `Modal` on iPhone. The hook now records genuine presses (`pointerdown`/`touchstart`, capture phase, one shared listener set for all instances) and ignores events that arrive with no press behind them while such a control holds focus or gave it up within the last 400ms. Backdrop taps, the close button, Escape, and clicks inside behave exactly as before, including while a date field holds focus
+
 ## [0.2.15] - 2026-08-04
 
 ### Fixed

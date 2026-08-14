@@ -37,7 +37,15 @@ export default defineConfig(({ mode }) => {
           // Keep any demo-only public/ assets out of the published library dist.
           copyPublicDir: false,
           lib: {
-            entry: "src/lib/index.ts",
+            // The Next-only SSR registry needs its own entry: it is no longer
+            // re-exported from the barrel, so nothing reachable from
+            // src/lib/index.ts would pull it into the output otherwise. It
+            // backs the `cherry-styled-components/next` subpath export.
+            entry: {
+              index: "src/lib/index.ts",
+              "styled-components/registry":
+                "src/lib/styled-components/registry.tsx",
+            },
             name: "Cherry",
             formats: ["es"],
           },

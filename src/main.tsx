@@ -1,11 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {
-  ClientThemeProvider,
-  StyledComponentsRegistry,
-  theme,
-  themeDark,
-} from "./lib/index.js";
+// No StyledComponentsRegistry here: it exists to flush styles during a Next
+// server render, and this demo is a client-only SPA with no server pass to
+// insert into. It now lives behind `cherry-styled-components/next`.
+import { ClientThemeProvider, theme, themeDark } from "./lib/index.js";
 import App from "./App";
 import { Preview } from "./preview";
 import defaultPreviewColors from "./theme.json";
@@ -75,17 +73,15 @@ if (previewMatch) {
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <StyledComponentsRegistry>
-      {/* When a theme is forced, pass only that theme and omit themeDark so
-          ClientThemeProvider skips its cookie/OS reconciliation on mount and
-          the pinned theme can never be flipped by another tab or iframe. */}
-      <ClientThemeProvider
-        theme={forcedTheme === "dark" ? previewThemeDark : previewTheme}
-        themeDark={forcedTheme ? undefined : previewThemeDark}
-        $initial={initialTheme}
-      >
-        {previewMatch ? <Preview name={previewMatch[1] ?? ""} /> : <App />}
-      </ClientThemeProvider>
-    </StyledComponentsRegistry>
+    {/* When a theme is forced, pass only that theme and omit themeDark so
+        ClientThemeProvider skips its cookie/OS reconciliation on mount and
+        the pinned theme can never be flipped by another tab or iframe. */}
+    <ClientThemeProvider
+      theme={forcedTheme === "dark" ? previewThemeDark : previewTheme}
+      themeDark={forcedTheme ? undefined : previewThemeDark}
+      $initial={initialTheme}
+    >
+      {previewMatch ? <Preview name={previewMatch[1] ?? ""} /> : <App />}
+    </ClientThemeProvider>
   </React.StrictMode>,
 );

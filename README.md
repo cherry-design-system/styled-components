@@ -100,11 +100,10 @@ A Next.js App Router setup looks like this:
 ```tsx
 // app/layout.tsx (server component)
 import { cookies } from "next/headers";
-import {
-  ClientThemeProvider,
-  StyledComponentsRegistry,
-  themeInitScript,
-} from "cherry-styled-components";
+// StyledComponentsRegistry is the one export that depends on Next, so it ships
+// from the `/next` subpath instead of the package root.
+import { StyledComponentsRegistry } from "cherry-styled-components/next";
+import { ClientThemeProvider, themeInitScript } from "cherry-styled-components";
 import { theme, themeDark } from "./theme";
 
 export default async function RootLayout({ children }) {
