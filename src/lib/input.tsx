@@ -105,6 +105,14 @@ const StyledInput = styled.input<InputProps>`
     vertical-align: middle;
   }
 
+  /* iOS Safari renders the value of date/time inputs inside this
+     pseudo-element, which fills the (inline-flex) field and centers its text.
+     Force it left so date inputs line up with every other input. */
+  &::-webkit-date-and-time-value {
+    text-align: left;
+    margin: 0;
+  }
+
   &::-webkit-calendar-picker-indicator {
     background: transparent;
     cursor: pointer;
