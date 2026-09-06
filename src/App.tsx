@@ -1,6 +1,20 @@
 import { Fragment, useState } from "react";
 import styled from "styled-components";
 import {
+  ArrowRight,
+  Download,
+  Eye,
+  ImageUp,
+  Loader,
+  Pencil,
+  RotateCcw,
+  Settings,
+  Sparkles,
+  SquareArrowOutUpRight,
+  Trash2,
+  X,
+} from "lucide-react";
+import {
   Accordion,
   Avatar,
   AvatarDropzone,
@@ -244,7 +258,7 @@ function DropzoneDemo() {
       $prompt="Drag images here"
       $browse="or click to browse"
       $hint="PNG, JPG, WebP or GIF · up to 5MB · max 5 files"
-      $icon="ImageUp"
+      $icon={ImageUp}
       onFilesRejected={(rejections) =>
         rejections.forEach(({ file, reason }) =>
           addNotification(
@@ -272,7 +286,7 @@ function InlineDropzoneDemo() {
       $maxBytes={5 * 1024 * 1024}
       $prompt="Drag an image here"
       $browse="or click to browse"
-      $icon="ImageUp"
+      $icon={ImageUp}
       onFilesRejected={(rejections) =>
         rejections.forEach(({ file, reason }) =>
           addNotification(
@@ -329,7 +343,7 @@ function ModalToastDemo() {
     <>
       <Flex $gap={20} $wrap="wrap">
         <Button
-          $icon={<Icon name="SquareArrowOutUpRight" size={18} />}
+          $icon={<Icon icon={SquareArrowOutUpRight} size={18} />}
           onClick={() => setIsOpen(true)}
         >
           Open Modal
@@ -447,7 +461,7 @@ function ChatDemoTranscript() {
             $role={message.role}
             $avatar={
               message.role === "assistant" ? (
-                <Avatar $size="small" $icon="Sparkles" $alt="Assistant" />
+                <Avatar $size="small" $icon={Sparkles} $alt="Assistant" />
               ) : undefined
             }
           >
@@ -492,7 +506,7 @@ function ChatDemoReset() {
       aria-label="Reset chat history"
       title="Reset chat history"
     >
-      <Icon name="RotateCcw" />
+      <Icon icon={RotateCcw} />
     </IconButton>
   );
 }
@@ -676,14 +690,14 @@ function ButtonTier({ size }: { size: FieldSize }) {
       </Col>
       <Col $lgSpan={2}>
         <Flex $gap={16} $wrap="wrap">
-          <Button {...s} $icon={<Icon name="Download" size={18} />}>
+          <Button {...s} $icon={<Icon icon={Download} size={18} />}>
             Icon left
           </Button>
           <Button
             {...s}
             $variant="secondary"
             $iconPosition="right"
-            $icon={<Icon name="ArrowRight" size={18} />}
+            $icon={<Icon icon={ArrowRight} size={18} />}
           >
             Icon right
           </Button>
@@ -709,19 +723,19 @@ function IconButtonTier({ size }: { size: FieldSize }) {
   return (
     <Flex $gap={16} $alignItems="center">
       <IconButton {...s} aria-label="Settings">
-        <Icon name="Settings" />
+        <Icon icon={Settings} />
       </IconButton>
       <IconButton {...s} aria-label="Edit">
-        <Icon name="Pencil" />
+        <Icon icon={Pencil} />
       </IconButton>
       <IconButton {...s} $active aria-label="Toggle preview">
-        <Icon name="Eye" />
+        <Icon icon={Eye} />
       </IconButton>
       <IconButton {...s} $error aria-label="Delete">
-        <Icon name="Trash2" />
+        <Icon icon={Trash2} />
       </IconButton>
       <IconButton {...s} disabled aria-label="Disabled">
-        <Icon name="X" />
+        <Icon icon={X} />
       </IconButton>
     </Flex>
   );
@@ -939,7 +953,7 @@ function App() {
                 <Spinner size={16} />
                 <Spinner />
                 <Spinner size={32} />
-                <Spinner name="Loader" size={32} />
+                <Spinner icon={Loader} size={32} />
               </Flex>
             </Box>
           </Section>
@@ -1074,7 +1088,7 @@ function App() {
               rel="noopener noreferrer"
             >
               Visit Cherry
-              <Icon name="ArrowRight" size={18} />
+              <Icon icon={ArrowRight} size={18} />
             </StyledFooterCta>
           </StyledFooter>
         </MaxWidth>

@@ -38,17 +38,19 @@ Renders a `<button>`. Use for **every** clickable action. Extends `React.ButtonH
 | `$outline`      | `boolean`                                                           | filled      |
 | `$fullWidth`    | `boolean`                                                           | auto width  |
 | `$error`        | `boolean` (destructive red styling, overrides variant)              | -           |
-| `$icon`         | `React.ReactNode` (a rendered element, e.g. `<Icon name="Plus" />`) | -           |
+| `$icon`         | `React.ReactNode` (a rendered element, e.g. `<Icon icon={Plus} />`) | -           |
 | `$iconPosition` | `"left" \| "right"`                                                 | `"left"`    |
 | `disabled`      | native `boolean`                                                    | -           |
 
 ```tsx
 <Button $variant="primary" $size="big" onClick={save}>Save</Button>
-<Button $variant="secondary" $outline $icon={<Icon name="Plus" />}>Add item</Button>
-<Button $error $icon={<Icon name="Trash2" />} $iconPosition="left">Delete</Button>
+import { Plus, Trash2 } from "lucide-react";
+
+<Button $variant="secondary" $outline $icon={<Icon icon={Plus} />}>Add item</Button>
+<Button $error $icon={<Icon icon={Trash2} />} $iconPosition="left">Delete</Button>
 ```
 
-Note: on Button, `$icon` is a **rendered node**. (On Dropzone/AvatarDropzone it is a lucide **name string**. Do not confuse them.)
+Note: on Button, `$icon` is a **rendered node** only. On Dropzone, AvatarDropzone, Avatar, Callout and ChatPanel it is an `IconSource`: pass the imported component (`$icon={Plus}`) so the component sizes it, or a rendered element. Never a string.
 
 ## IconButton
 
@@ -63,7 +65,7 @@ Circular icon-only button. Pass the icon as `children`. Sets `type="button"`. `a
 
 ```tsx
 <IconButton aria-label="Settings" onClick={openSettings}>
-  <Icon name="Settings" />
+  <Icon icon={Settings} />
 </IconButton>
 ```
 
@@ -92,7 +94,7 @@ Renders a labelled `<input>`. Self-closing. Extends `React.InputHTMLAttributes` 
   value={email}
   onChange={(e) => setEmail(e.target.value)}
 />
-<Input id="q" $icon={<Icon name="Search" />} placeholder="Search" />
+<Input id="q" $icon={<Icon icon={Search} />} placeholder="Search" /> // import { Search } from "lucide-react"
 <Input id="amount" $error type="number" $label="Amount" />
 ```
 
@@ -209,18 +211,18 @@ Styled `<input type="range">` slider. Native `min` / `max` / `step` / `value` / 
 
 Drag-and-drop file input with thumbnails, per-file remove, and validation. Exports: `Dropzone`, `DropzoneProps`, `DropzoneRejection`, `DropzoneRejectionReason`, `matchesAccept`. Extends `Omit<React.InputHTMLAttributes<HTMLInputElement>, "type" | "value" | "onChange" | "children">`.
 
-| prop                                    | type                                                                 | default                      |
-| --------------------------------------- | -------------------------------------------------------------------- | ---------------------------- |
-| `$prompt`                               | `string`                                                             | `"Drag & drop files here"`   |
-| `$browse`                               | `string` (secondary line)                                            | -                            |
-| `$hint`                                 | `string`                                                             | -                            |
-| `$icon`                                 | lucide **name string** (`React.ComponentProps<typeof Icon>["name"]`) | `"FileUp"`                   |
-| `$inline`                               | `boolean` (compact horizontal)                                       | -                            |
-| `$maxFiles`                             | `number`                                                             | `Infinity` (when `multiple`) |
-| `$maxBytes`                             | `number` (per file)                                                  | -                            |
-| `onFilesChange`                         | `(files: File[]) => void`                                            | -                            |
-| `onFilesRejected`                       | `(rejections: DropzoneRejection[]) => void`                          | -                            |
-| native `accept`, `multiple`, `disabled` |                                                                      |                              |
+| prop                                    | type                                                            | default                      |
+| --------------------------------------- | --------------------------------------------------------------- | ---------------------------- |
+| `$prompt`                               | `string`                                                        | `"Drag & drop files here"`   |
+| `$browse`                               | `string` (secondary line)                                       | -                            |
+| `$hint`                                 | `string`                                                        | -                            |
+| `$icon`                                 | `IconSource` (imported lucide component, or a rendered element) | `FileUp`                     |
+| `$inline`                               | `boolean` (compact horizontal)                                  | -                            |
+| `$maxFiles`                             | `number`                                                        | `Infinity` (when `multiple`) |
+| `$maxBytes`                             | `number` (per file)                                             | -                            |
+| `onFilesChange`                         | `(files: File[]) => void`                                       | -                            |
+| `onFilesRejected`                       | `(rejections: DropzoneRejection[]) => void`                     | -                            |
+| native `accept`, `multiple`, `disabled` |                                                                 |                              |
 
 `DropzoneRejectionReason = "type" | "size" | "count"`. `DropzoneRejection = { file: File; reason: DropzoneRejectionReason }`. `matchesAccept(file, accept?)` mirrors the native accept filter.
 
@@ -242,15 +244,15 @@ Drag-and-drop file input with thumbnails, per-file remove, and validation. Expor
 
 Circular single-image drop target with preview and a remove button. Exports: `AvatarDropzone`, `AvatarDropzoneProps`. Extends `Omit<React.InputHTMLAttributes<HTMLInputElement>, "type" | "value" | "onChange" | "children" | "multiple">`.
 
-| prop                        | type                                                  | default                      |
-| --------------------------- | ----------------------------------------------------- | ---------------------------- |
-| `$size`                     | `"default" \| "big" \| "small"` (box 96 / 128 / 64px) | `"default"`                  |
-| `$icon`                     | lucide **name string**                                | `"User"`                     |
-| `$maxBytes`                 | `number`                                              | -                            |
-| `aria-label`                | `string`                                              | `"Upload profile picture"`   |
-| `onFileChange`              | `(file: File \| null) => void`                        | -                            |
-| `onFileRejected`            | `(rejection: DropzoneRejection) => void`              | -                            |
-| native `accept`, `disabled` |                                                       | `accept` default `"image/*"` |
+| prop                        | type                                                            | default                      |
+| --------------------------- | --------------------------------------------------------------- | ---------------------------- |
+| `$size`                     | `"default" \| "big" \| "small"` (box 96 / 128 / 64px)           | `"default"`                  |
+| `$icon`                     | `IconSource` (imported lucide component, or a rendered element) | `User`                       |
+| `$maxBytes`                 | `number`                                                        | -                            |
+| `aria-label`                | `string`                                                        | `"Upload profile picture"`   |
+| `onFileChange`              | `(file: File \| null) => void`                                  | -                            |
+| `onFileRejected`            | `(rejection: DropzoneRejection) => void`                        | -                            |
+| native `accept`, `disabled` |                                                                 | `accept` default `"image/*"` |
 
 ```tsx
 <AvatarDropzone $size="big" onFileChange={(file) => setAvatar(file)} />
@@ -485,22 +487,28 @@ Pill-shaped sun/moon switch that calls `toggleTheme()` from `ThemeContext`. Must
 
 # Icon
 
-`<Icon>` wraps any [lucide-react](https://lucide.dev/icons/) icon, referenced by its **PascalCase name string**. Returns `null` for an unknown name. Exports: `Icon`, `IconProps` (`= keyof typeof icons`, the whole lucide catalog).
+`<Icon>` renders one icon component: `icon={Glyph}` with `import { Glyph } from "lucide-react"`. It tree-shakes to that one glyph, renders on the server, and has no loading gap. `lucide-react` is a peer dependency, so the app lists it in its own `dependencies`. The prop is typed `IconComponent`, any component that accepts `IconGlyphProps` (`size`, `color`, `className`, `aria-label`, `aria-hidden`, `role`), so a custom SVG component works too.
 
-| prop         | type                              | notes                                               |
-| ------------ | --------------------------------- | --------------------------------------------------- |
-| `name`       | lucide name string (**required**) | e.g. `"ChevronDown"`, `"Search"`, `"Trash2"`        |
-| `size`       | `number`                          | px                                                  |
-| `color`      | `string`                          | defaults to `currentColor`                          |
-| `className`  | `string`                          |                                                     |
-| `aria-label` | `string`                          | when set, `role="img"`; when omitted, `aria-hidden` |
+Exports: `Icon`, `IconProps` (its props), `IconComponent`, `IconGlyphProps`, `IconSource` (`IconComponent | ReactElement`, what `$icon`-style props accept) and `renderIcon(source, props?)` (renders an `IconSource`: an element as given, a component through `Icon`).
+
+| prop         | type                                 | notes                                               |
+| ------------ | ------------------------------------ | --------------------------------------------------- |
+| `icon`       | `IconComponent` (imported component) | required                                            |
+| `size`       | `number`                             | px                                                  |
+| `color`      | `string`                             | defaults to `currentColor`                          |
+| `className`  | `string`                             |                                                     |
+| `aria-label` | `string`                             | when set, `role="img"`; when omitted, `aria-hidden` |
 
 ```tsx
-<Icon name="Search" size={20} />
-<Icon name="Check" aria-label="Done" />
+import { Check, Search } from "lucide-react";
+
+<Icon icon={Search} size={20} />
+<Icon icon={Check} aria-label="Done" />
 ```
 
-Names verified in use by the library (good examples): `ChevronDown`, `User`, `X`, `File`, `FileUp`, `Eye`, `EyeOff`, `Sun`, `MoonStar`, `CircleCheck`, `CircleX`, `TriangleAlert`, `Info`, `Settings`, `Search`, `Plus`, `Trash2`, `Check`, `CalendarDays`.
+## DynamicIcon (`cherry-styled-components/dynamic`)
+
+Only for an icon chosen at runtime (CMS content, user settings): `import { DynamicIcon } from "cherry-styled-components/dynamic"` then `<DynamicIcon name={post.iconName} />`. The name is resolved on demand through `lucide-react/dynamic`; the glyph renders once its chunk has loaded and nothing before, on the server included. Accepts lucide's PascalCase export name (`"ChevronDown"`) or kebab id (`"chevron-down"`); an unknown name renders nothing. Same `size`, `color`, `className` and `aria-label` props as `Icon`. Importing the subpath brings lucide's dynamic import map into the app (one small chunk per icon in most bundlers); nothing on the main entry does, so never import it for an icon the code already knows. In a `$icon`-style prop pass it as an element: `$icon={<DynamicIcon name={n} />}`. Exports: `DynamicIcon`, `DynamicIconProps`, `IconName`.
 
 ---
 
@@ -516,13 +524,13 @@ Circular identity badge rendered as a `<span>`. Shows the image when `$src` is s
 | `$src`   | `string` (image URL)                                       | -           |
 | `$alt`   | `string`                                                   | -           |
 | `$name`  | `string` (initials source, e.g. `"Ada Lovelace"` → `"AL"`) | -           |
-| `$icon`  | lucide name string (fallback when no image and no name)    | `"User"`    |
+| `$icon`  | `IconSource` (fallback when no image and no name)          | `User`      |
 | `$color` | `"primary" \| "secondary" \| "tertiary" \| "gray"`         | `"primary"` |
 
 ```tsx
 <Avatar $name="Ada Lovelace" $color="secondary" />
 <Avatar $src="/me.png" $alt="Profile photo" $size="big" />
-<Avatar $icon="Bot" $size="small" />
+<Avatar $icon={Bot} $size="small" /> // import { Bot } from "lucide-react"
 ```
 
 ## Callout
@@ -532,12 +540,12 @@ Tinted message box for asides and alerts. Exports: `Callout`, `CalloutProps`, `C
 | prop        | type                                                     | default           |
 | ----------- | -------------------------------------------------------- | ----------------- |
 | `$type`     | `"note" \| "info" \| "warning" \| "danger" \| "success"` | untinted          |
-| `$icon`     | lucide name string (overrides the type's icon)           | picked by `$type` |
+| `$icon`     | `IconSource` (overrides the type's icon)                 | picked by `$type` |
 | `$hideIcon` | `boolean`                                                | -                 |
 
 ```tsx
 <Callout $type="warning">Unsaved changes will be lost.</Callout>
-<Callout $type="note" $icon="Lightbulb">Tip: press Cmd+K.</Callout>
+<Callout $type="note" $icon={Lightbulb}>Tip: press Cmd+K.</Callout> // import { Lightbulb } from "lucide-react"
 ```
 
 ## Prose
@@ -557,12 +565,12 @@ Typography wrapper for rendered markdown/rich text: styles headings, links, list
 
 Rotating loading indicator wrapping `<Icon>`. Respects `prefers-reduced-motion` (animation off). Default color resolves from `theme.colors.dark` so it stays visible in both modes; an explicit `color` wins. Exports: `Spinner`, `SpinnerProps`.
 
-| prop         | type               | default             |
-| ------------ | ------------------ | ------------------- |
-| `name`       | lucide name string | `"LoaderCircle"`    |
-| `size`       | `number` (px)      | icon default        |
-| `color`      | `string`           | `theme.colors.dark` |
-| `aria-label` | `string`           | -                   |
+| prop         | type            | default             |
+| ------------ | --------------- | ------------------- |
+| `icon`       | `IconComponent` | `LoaderCircle`      |
+| `size`       | `number` (px)   | icon default        |
+| `color`      | `string`        | `theme.colors.dark` |
+| `aria-label` | `string`        | -                   |
 
 ```tsx
 <Spinner size={20} aria-label="Loading" />
@@ -600,7 +608,7 @@ The shell: header (title, actions, close button) around your content. Extends `R
 | `$side`            | `"left" \| "right"` (drawer edge)         | `"right"`        |
 | `$width`           | `number` (drawer width from `lg` up)      | `420`            |
 | `$title`           | `React.ReactNode \| null`                 | `"AI Assistant"` |
-| `$titleIcon`       | lucide name string \| `null`              | `"Sparkles"`     |
+| `$titleIcon`       | `IconSource` \| `null`                    | `Sparkles`       |
 | `$actions`         | `React.ReactNode` (extra header controls) | -                |
 | `$hideCloseButton` | `boolean`                                 | -                |
 
@@ -659,6 +667,7 @@ import {
   Avatar,
   useChat,
 } from "cherry-styled-components";
+import { Bot } from "lucide-react";
 
 function Transcript() {
   const { messages, loading } = useChat();
@@ -668,7 +677,7 @@ function Transcript() {
         <ChatMessage
           key={m.id}
           $role={m.role}
-          $avatar={<Avatar $size="small" $icon="Bot" />}
+          $avatar={<Avatar $size="small" $icon={Bot} />}
         >
           {m.content}
         </ChatMessage>

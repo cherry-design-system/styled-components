@@ -1,11 +1,12 @@
 "use client";
 import styled, { keyframes } from "styled-components";
+import { LoaderCircle } from "lucide-react";
 
-import { Icon, IconProps } from "./icon";
+import { Icon, type IconComponent } from "./icon";
 
 export interface SpinnerProps {
-  /** Lucide icon to rotate. */
-  name?: IconProps;
+  /** The icon to rotate: an imported lucide component. Defaults to `LoaderCircle`. */
+  icon?: IconComponent;
   color?: string;
   size?: number;
   className?: string;
@@ -34,8 +35,8 @@ const StyledSpinner = styled(Icon)`
   }
 `;
 
-const Spinner = ({ name = "LoaderCircle", ...props }: SpinnerProps) => (
-  <StyledSpinner name={name} {...props} />
+const Spinner = ({ icon = LoaderCircle, ...props }: SpinnerProps) => (
+  <StyledSpinner icon={icon} {...props} />
 );
 
 export { Spinner };

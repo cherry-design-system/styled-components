@@ -37,14 +37,18 @@ export default defineConfig(({ mode }) => {
           // Keep any demo-only public/ assets out of the published library dist.
           copyPublicDir: false,
           lib: {
-            // The Next-only SSR registry needs its own entry: it is no longer
-            // re-exported from the barrel, so nothing reachable from
-            // src/lib/index.ts would pull it into the output otherwise. It
-            // backs the `cherry-styled-components/next` subpath export.
+            // Modules the barrel does not re-export need their own entry, or
+            // nothing reachable from src/lib/index.ts would pull them into the
+            // output. Each backs a subpath export: the Next-only SSR registry
+            // is `cherry-styled-components/next`, the name-based icon resolver
+            // is `cherry-styled-components/dynamic`. The resolver stays off the
+            // main entry on purpose: it imports lucide's dynamic import map,
+            // so only apps that import the subpath carry it.
             entry: {
               index: "src/lib/index.ts",
               "styled-components/registry":
                 "src/lib/styled-components/registry.tsx",
+              "icon-dynamic": "src/lib/icon-dynamic.tsx",
             },
             name: "Cherry",
             formats: ["es"],
@@ -57,6 +61,10 @@ export default defineConfig(({ mode }) => {
               "react/jsx-runtime",
               "styled-components",
               "lucide-react",
+              // The /dynamic entry imports the `lucide-react/dynamic` subpath;
+              // it must stay external too, or lucide's whole dynamic import
+              // map would be bundled into dist/icon-dynamic.js.
+              /^lucide-react\//,
               "next/navigation",
             ],
             plugins: [preserveDirectives()],

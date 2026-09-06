@@ -9,7 +9,8 @@ import React, {
 import styled, { css } from "styled-components";
 
 import { DropzoneRejection, matchesAccept } from "./dropzone";
-import { Icon } from "./icon";
+import { User, X } from "lucide-react";
+import { Icon, renderIcon, type IconSource } from "./icon";
 import { Theme, alpha, resetButton } from "./utils";
 
 export interface AvatarDropzoneProps extends Omit<
@@ -18,8 +19,8 @@ export interface AvatarDropzoneProps extends Omit<
 > {
   /** Visual scale, following the IconButton size scale. */
   $size?: "default" | "big" | "small";
-  /** Lucide icon shown while no picture is selected. */
-  $icon?: React.ComponentProps<typeof Icon>["name"];
+  /** Icon shown while no picture is selected: an imported lucide component, or a rendered element. */
+  $icon?: IconSource;
   /** Maximum file size in bytes. */
   $maxBytes?: number;
   /** Accessible label for the drop target. */
@@ -39,7 +40,7 @@ const avatarSizes = {
 function LocalAvatarDropzone(
   {
     $size,
-    $icon = "User",
+    $icon = User,
     $maxBytes,
     "aria-label": ariaLabel = "Upload profile picture",
     onFileChange,
@@ -112,7 +113,7 @@ function LocalAvatarDropzone(
           setFile(e.dataTransfer.files);
         }}
       >
-        {previewUrl ? <img src={previewUrl} alt="" /> : <Icon name={$icon} />}
+        {previewUrl ? <img src={previewUrl} alt="" /> : renderIcon($icon)}
       </StyledAvatarDropzone>
       {previewUrl && (
         <StyledAvatarRemove
@@ -121,7 +122,7 @@ function LocalAvatarDropzone(
           onClick={removeFile}
           disabled={disabled}
         >
-          <Icon name="X" />
+          <Icon icon={X} />
         </StyledAvatarRemove>
       )}
       <input

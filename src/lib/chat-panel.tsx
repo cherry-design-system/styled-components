@@ -3,7 +3,8 @@ import React, { forwardRef, useContext, useEffect, useRef } from "react";
 import styled, { css } from "styled-components";
 
 import { ChatContext } from "./chat-provider";
-import { Icon, IconProps } from "./icon";
+import { Sparkles, X } from "lucide-react";
+import { Icon, renderIcon, type IconSource } from "./icon";
 import { IconButton } from "./icon-button";
 import { Theme, mq, useBelowBreakpoint, useLockBodyScroll } from "./utils";
 
@@ -23,7 +24,8 @@ export interface ChatPanelProps extends React.HTMLAttributes<HTMLDivElement> {
   $width?: number;
   /** Header title. Pass null to render no header text. */
   $title?: React.ReactNode;
-  $titleIcon?: IconProps | null;
+  /** Header icon: an imported lucide component, or a rendered element. Pass null for none. */
+  $titleIcon?: IconSource | null;
   /** Extra header controls (reset button, …), placed before the close button. */
   $actions?: React.ReactNode;
   $hideCloseButton?: boolean;
@@ -175,7 +177,7 @@ function LocalChatPanel(
     $side = "right",
     $width = DEFAULT_WIDTH,
     $title = "AI Assistant",
-    $titleIcon = "Sparkles",
+    $titleIcon = Sparkles,
     $actions,
     $hideCloseButton,
     "aria-label": ariaLabel,
@@ -328,7 +330,7 @@ function LocalChatPanel(
       {showHeader && (
         <div className="chat-header">
           <span className="chat-header-title">
-            {$titleIcon && <Icon name={$titleIcon} />}
+            {$titleIcon && renderIcon($titleIcon)}
             {$title !== null && <h3>{$title}</h3>}
           </span>
           <span className="chat-header-actions">
@@ -339,7 +341,7 @@ function LocalChatPanel(
                 aria-label="Close chat"
                 title="Close chat"
               >
-                <Icon name="X" />
+                <Icon icon={X} />
               </IconButton>
             )}
           </span>

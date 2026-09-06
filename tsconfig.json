@@ -9,7 +9,7 @@
     "emitDeclarationOnly": true,
     "outDir": "./types",
     "esModuleInterop": true,
-    "module": "ES6",
+    "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,

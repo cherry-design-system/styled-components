@@ -9,6 +9,7 @@ import {
   resetInput,
   statusBorderStyles,
 } from "./utils";
+import { CalendarDays, Check } from "lucide-react";
 import { Icon } from "./icon";
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -443,7 +444,7 @@ function LocalInput(
             ref={ref}
           />
           {!props.disabled && props.type === "checkbox" ? (
-            <Icon name="Check" />
+            <Icon icon={Check} />
           ) : (
             <em />
           )}
@@ -483,7 +484,7 @@ function LocalInput(
           props.type === "month" ||
           props.type === "week" ||
           props.type === "time") && (
-          <Icon name="CalendarDays" className="icon-calendar" />
+          <Icon icon={CalendarDays} className="icon-calendar" />
         )}
       </StyledCustomIconWrapper>
     </StyledInputWrapper>

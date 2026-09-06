@@ -9,6 +9,7 @@ import React, {
 import { createPortal } from "react-dom";
 import styled, { css, keyframes } from "styled-components";
 
+import { X } from "lucide-react";
 import { Icon } from "./icon";
 import { IconButton } from "./icon-button";
 import {
@@ -263,7 +264,7 @@ function Modal({
               className="modal-close"
               aria-label="Close Modal"
             >
-              <Icon name="X" />
+              <Icon icon={X} />
             </StyledModalClose>
           </span>
         )}

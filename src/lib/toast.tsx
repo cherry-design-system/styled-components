@@ -10,7 +10,8 @@ import React, {
 } from "react";
 import styled, { css } from "styled-components";
 
-import { Icon } from "./icon";
+import { CircleCheck, CircleX, Info, TriangleAlert, X } from "lucide-react";
+import { Icon, type IconComponent } from "./icon";
 import { IconButton } from "./icon-button";
 import { Theme } from "./utils";
 
@@ -29,14 +30,11 @@ type Toast = {
   autoHide: number;
 };
 
-const statusIcons: Record<
-  ToastColor,
-  React.ComponentProps<typeof Icon>["name"]
-> = {
-  success: "CircleCheck",
-  error: "CircleX",
-  warning: "TriangleAlert",
-  info: "Info",
+const statusIcons: Record<ToastColor, IconComponent> = {
+  success: CircleCheck,
+  error: CircleX,
+  warning: TriangleAlert,
+  info: Info,
 };
 
 // Full exit transition: 150ms while the pill fades out, then 250ms while the
@@ -342,7 +340,7 @@ function NotificationItem({
       <span className="item-wrapper">
         <span className="item">
           <span className="status-icon">
-            <Icon name={statusIcons[notification.color] || statusIcons.info} />
+            <Icon icon={statusIcons[notification.color] ?? statusIcons.info} />
           </span>
           <span className="message">{notification.text}</span>
           <IconButton
@@ -351,7 +349,7 @@ function NotificationItem({
             aria-label="Dismiss notification"
             onClick={() => setPhase("exiting")}
           >
-            <Icon name="X" />
+            <Icon icon={X} />
           </IconButton>
         </span>
       </span>

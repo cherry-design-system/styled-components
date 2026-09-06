@@ -5,6 +5,21 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.17] - 2026-09-06
+
+### Added
+
+- `Icon` takes an `icon` prop: an imported lucide component, `import { ArrowRight } from "lucide-react"` then `<Icon icon={ArrowRight} />`. It costs exactly that glyph, tree-shakes, and renders on the server. The prop is typed `IconComponent`, any component that accepts `IconGlyphProps` (`size`, `color`, `className` and the aria attributes), so a custom SVG component or another icon set works as well
+- `cherry-styled-components/dynamic` subpath exporting `DynamicIcon`, for an icon chosen at runtime (CMS content, user settings): `<DynamicIcon name="arrow-right" />` resolves the name on demand through `lucide-react/dynamic`, accepts lucide's PascalCase export name or kebab-case id, and renders nothing for an unknown name. The glyph appears after hydration and never in server-rendered HTML. Only apps that import the subpath carry lucide's dynamic import map, which bundlers turn into one small chunk per icon; nothing on the main entry references it. Also exports `IconName`, the accepted names, and `DynamicIconProps`
+- `IconSource` (`IconComponent | ReactElement`, what `$icon`-style props accept) and `renderIcon(source, props)` (renders one, for components that forward such a prop) are exported. `Avatar`, `AvatarDropzone` and `Dropzone` (`$icon`), `Callout` (`$icon`), `ChatPanel` (`$titleIcon`) and `Spinner` (`icon`) take an imported component, which they size, or a rendered element, used as given, so a runtime-chosen icon is `$icon={<DynamicIcon name={n} />}`
+
+### Changed
+
+- **Breaking:** `<Icon name="...">` is gone from the main entry; `Icon` renders only an `icon` component. Move every call site to `icon={ImportedGlyph}`; for a name that comes from data, import `DynamicIcon` from `cherry-styled-components/dynamic`. The `$icon`-style props above no longer accept a string, and `Spinner` drops `name`. `IconProps` is now the props interface of `Icon`, as on every other component; the name union it used to be lives on as `IconName` in the `/dynamic` subpath
+- **Breaking:** `lucide-react` is a peer dependency instead of a dependency. Apps import glyphs from it themselves now, so they install it alongside Cherry; one copy shared by the app and the library keeps every glyph bundled once
+- Every internal component imports the glyphs it draws straight from `lucide-react`: `X` for Modal and Toast, `ChevronDown` for Select and Accordion, `Sun` and `MoonStar` for ThemeToggle, and so on. Until now the shared `Icon` did `icons[name]` over the full lucide map, so mounting any Select, Modal, Toast, Input, Spinner or ThemeToggle shipped all 1,800 icons, roughly 500 KB (133 KB gzipped), on every page of every consumer whatever the app itself imported. The demo app's entry bundle drops from 864 KB to 355 KB
+- `tsconfig.json` sets `module` to `ESNext` (was `ES6`); the published output is unchanged
+
 ## [0.2.16] - 2026-08-14
 
 ### Changed

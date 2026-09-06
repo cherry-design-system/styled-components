@@ -11,6 +11,7 @@ import styled, { createGlobalStyle, css, keyframes } from "styled-components";
 
 import { Button } from "./button";
 import { ChatContext } from "./chat-provider";
+import { ArrowUp } from "lucide-react";
 import { Icon } from "./icon";
 import { Spinner } from "./spinner";
 import { Theme, alpha, formElementHeightStyles } from "./utils";
@@ -545,7 +546,7 @@ function LocalChatInput(
         disabled={loading || !hasContent}
         aria-label={loading ? "Loading response" : "Submit question"}
       >
-        {loading ? <Spinner /> : <Icon name="ArrowUp" />}
+        {loading ? <Spinner /> : <Icon icon={ArrowUp} />}
       </StyledSendButton>
     </StyledChatForm>
   );

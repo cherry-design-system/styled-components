@@ -10,7 +10,7 @@ Cherry Design System is a versatile foundation for projects. It offers a white l
 Install the package along with its peer dependencies:
 
 ```bash
-npm install cherry-styled-components react react-dom styled-components
+npm install cherry-styled-components react react-dom styled-components lucide-react
 ```
 
 ## Quick Start
@@ -37,6 +37,8 @@ export default function App() {
 The built-in `theme` and `themeDark` objects are a starting point; both are plain objects you can extend or replace to white-label the system. Styled props use a `$` prefix (`$variant`, `$size`, `$fullWidth`) so they never leak into the DOM.
 
 The library ships form components (Button, Input, Select, Textarea, Toggle, Range, Password, Checkbox, Radio, Dropzone, AvatarDropzone), layout primitives (Container, Grid, Col, Flex, Box, MaxWidth, Space), interactive components (Accordion, Modal, Toast, ThemeToggle, Icon, IconButton), content components (Prose, Callout, Avatar), and a chat kit (see below). See the [component docs](https://cherry.al/) for the full API.
+
+Icons come from [lucide](https://lucide.dev/icons/), a peer dependency. Pass an imported component, `<Icon icon={ArrowRight} />`, which ships only that glyph and renders on the server. Component icon props such as Avatar's `$icon` take the same component, or a rendered element. For an icon chosen at runtime, import `DynamicIcon` from `cherry-styled-components/dynamic`: it resolves a name on demand, and only apps that import that subpath carry lucide's dynamic import map.
 
 ## Chat kit
 

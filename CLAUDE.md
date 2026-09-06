@@ -23,9 +23,10 @@ No test framework or lint script is configured. ESLint config exists (`.eslintrc
 ### Entry Point & Build
 
 - **Library entry:** `src/lib/index.ts` is the barrel export of all components and utilities
+- **Subpath entries:** modules the barrel does not re-export get their own Vite lib entry, each backing a `package.json` export: `cherry-styled-components/next` (`src/lib/styled-components/registry.tsx`) and `cherry-styled-components/dynamic` (`src/lib/icon-dynamic.tsx`)
 - **Vite** config is `vite.config.js` (JS, not TS). Uses `@vitejs/plugin-react-swc` (with `@swc/plugin-styled-components` for displayName/SSR) and `vite-plugin-dts` for declaration generation
 - Build is ESM-only with `preserveModules` (one output file per source module under `dist/`); `rollup-plugin-preserve-directives` keeps the `"use client"` directives in the output
-- React, React DOM, and styled-components are peer dependencies; they plus `lucide-react` and `next/navigation` are externalized, not bundled
+- React, React DOM, styled-components and lucide-react are peer dependencies; they (including the `lucide-react/dynamic` subpath) and `next/navigation` are externalized, not bundled
 - `src/main.tsx` / `src/App.tsx` is the demo app, not part of the library output. It also serves `/preview/<name>` routes that render single components in isolation for visual inspection and screenshots (see README for details)
 - Path alias: `@/*` maps to `./src/*` (configured in tsconfig.json)
 
@@ -56,14 +57,13 @@ Two complete theme objects (light and dark) defining: breakpoints (xs to xxxl), 
 - **Form:** Button, Input (also Checkbox/Radio via `type`), Select, Textarea, Toggle, Range, Password, Dropzone, AvatarDropzone. All support `$size`, `$fullWidth`; form inputs also support `$label`, `$error`/`$success`
 - **Layout:** Container, Grid, Col, Flex, Box, MaxWidth, Space. All support responsive props per breakpoint (e.g., `$xsCols`, `$lgCols`)
 - **Interactive:** Accordion, Modal, Toast (`ToastNotificationsProvider` + `useToastNotifications`), ThemeToggle, IconButton
-- **Icon:** Wrapper around `lucide-react` icons accessed by name string
+- **Icon:** `<Icon icon={ImportedGlyph} />` renders an imported lucide component (static, tree-shaken to that glyph, server-rendered). The prop is an `IconComponent`, any component taking `IconGlyphProps`. Internal components import their glyphs from `lucide-react` directly. `$icon`-style props take an `IconSource` (component or rendered element) and render it via `renderIcon`. Name-based rendering lives only in the `cherry-styled-components/dynamic` subpath (`icon-dynamic.tsx`, its own build entry, never imported by the main entry): `DynamicIcon` resolves a name through `lucide-react/dynamic`, so only apps that import the subpath carry lucide's dynamic import map. Never add an import of `icon-dynamic.tsx` to anything the barrel reaches
 
 ### Shared Utilities (`src/lib/utils/`)
 
 - **`mixins.tsx`**: CSS helper functions (`resetButton`, `resetInput`, `fullWidthStyles`, `statusBorderStyles`, `formElementHeightStyles`) and responsive style generators (`generateGapStyles`, `generateColsStyles`, etc.)
 - **`typography.tsx`**: Pre-built typography CSS mixins (`styledHero1`, `styledH1`, `styledBody`, etc.) using responsive font sizes from the theme
 - **`global.tsx`**: `GlobalStyles` factory for base HTML/body resets
-- **`icons.tsx`**: Icon name mapping for lucide-react
 - Color manipulation uses native CSS `color-mix()` via the `alpha`/`shade`/`tint` helpers in `mixins.tsx` (no JS color library, so `var(--token)` inputs resolve in the browser)
 
 ### SSR Support

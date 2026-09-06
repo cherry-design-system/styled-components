@@ -2,6 +2,7 @@
 import React, { forwardRef, useContext, useEffect } from "react";
 import styled, { css } from "styled-components";
 import { Theme, alpha, resetButton, interactiveStyles } from "./utils";
+import { MoonStar, Sun } from "lucide-react";
 import { Icon } from "./icon";
 import { ThemeContext } from "./styled-components";
 
@@ -124,8 +125,8 @@ function LocalThemeToggle(
       }}
       ref={ref}
     >
-      <Icon name="Sun" />
-      <Icon name="MoonStar" />
+      <Icon icon={Sun} />
+      <Icon icon={MoonStar} />
     </StyledThemeToggle>
   );
 }

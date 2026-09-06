@@ -10,7 +10,7 @@ This file is self-contained. For the full API and token tables, see `skills/cher
 2. **Every form control is a Cherry component:** `Input`, `Select`, `Textarea`, `Toggle`, `Range`, `Password`, `Dropzone`, `AvatarDropzone`. Checkbox and radio are `<Input type="checkbox">` / `<Input type="radio">` (no separate export). Never raw `<input>`/`<select>`/`<textarea>`.
 3. **Never hardcode design values.** Read colors, spacing, radii, shadows, and font sizes from `theme` inside styled-components. Use typography mixins for text and `mq()` for breakpoints.
 4. **Styling props are `$`-prefixed** (`$variant`, `$size`, `$fullWidth`, `$error`) and stay within their literal unions (`$size` is only `"default" | "big" | "small"`).
-5. **Wrap the app in a Cherry provider,** use layout primitives (`Container`/`Grid`/`Col`/`Flex`/`Box`/`MaxWidth`/`Space`) over ad-hoc divs, and render icons with `<Icon name="..." />`.
+5. **Wrap the app in a Cherry provider,** use layout primitives (`Container`/`Grid`/`Col`/`Flex`/`Box`/`MaxWidth`/`Space`) over ad-hoc divs, and render icons with `<Icon icon={Glyph} />` (`Glyph` imported from `lucide-react`; `DynamicIcon` from `cherry-styled-components/dynamic` only for runtime-chosen icons, loaded on demand).
 
 ## Provider quick start
 
@@ -38,7 +38,7 @@ For Next.js App Router (flash-free SSR) use `ClientThemeProvider` + `StyledCompo
 - **Interactive:** `Accordion` (`title`, `defaultOpen`/`open`), `Tabs` + `TabContent` (`title`), `Modal` (controlled via `$isOpen`/`$onClose`, `$title`, `$width`), Toast (`ToastNotificationsProvider` + `<ToastNotifications />` + `useToastNotifications()`), `ThemeToggle`.
 - **Display:** `Avatar` (`$src`/`$name`/`$icon`, `$size`, `$color`), `Callout` (`$type` `"note"|"info"|"warning"|"danger"|"success"`), `Prose` (styles rendered markdown, `$compact`), `Spinner` (loading indicator, default `LoaderCircle`).
 - **Chat kit:** `ChatProvider` + `useChat` (headless: transcript, open/close, streaming; the app supplies the transport via `onSend(question, { signal, history, setAssistant })` - Cherry never fetches), `ChatPanel` (`$variant` `"drawer"|"inline"|"fullscreen"`), `ChatMessageList`, `ChatMessage` (`$role`, `$avatar`), `ChatInput` and `ChatLauncher` (opt-in `$glow`), `ChatTyping`, `ChatSources`/`ChatSource`. See `references/components.md` for wiring.
-- **Icon:** `<Icon name="ChevronDown" size={20} />` - any lucide-react icon by PascalCase name.
+- **Icon:** `import { ChevronDown } from "lucide-react"` then `<Icon icon={ChevronDown} size={20} />` - static, tree-shaken to that glyph; `lucide-react` is a peer dependency the app installs. `$icon`-style props take the imported glyph or a rendered element. Only when the icon is chosen at runtime: `import { DynamicIcon } from "cherry-styled-components/dynamic"` then `<DynamicIcon name="chevron-down" />` (resolves on demand, renders after load, pulls lucide's dynamic import map into the app).
 
 ## Theme cheat-sheet
 

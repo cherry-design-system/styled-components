@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
+import { ChevronDown } from "lucide-react";
 import { Icon } from "./icon";
 import { Theme, styledText } from "./utils";
 
@@ -156,7 +157,7 @@ function Accordion({
         $inline={$inline}
         aria-expanded={isOpen}
       >
-        {title} <Icon name="ChevronDown" />
+        {title} <Icon icon={ChevronDown} />
       </StyledAccordionTitle>
       <StyledAccordionContent $isOpen={isOpen}>
         <StyledAccordionInner>

@@ -2,7 +2,14 @@
 import React, { forwardRef } from "react";
 import styled, { css } from "styled-components";
 
-import { Icon, IconProps } from "./icon";
+import {
+  Check,
+  CircleAlert,
+  Info,
+  OctagonAlert,
+  TriangleAlert,
+} from "lucide-react";
+import { renderIcon, type IconComponent, type IconSource } from "./icon";
 import { Theme, styledSmall } from "./utils";
 
 export type CalloutType = "note" | "info" | "warning" | "danger" | "success";
@@ -10,8 +17,8 @@ export type CalloutType = "note" | "info" | "warning" | "danger" | "success";
 export interface CalloutProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   $type?: CalloutType;
-  /** Overrides the icon the type would pick, or supplies one when untyped. */
-  $icon?: IconProps;
+  /** Overrides the icon the type would pick, or supplies one when untyped: an imported lucide component, or a rendered element. */
+  $icon?: IconSource;
   /** Renders without an icon. */
   $hideIcon?: boolean;
 }
@@ -44,12 +51,12 @@ const calloutTints: Record<CalloutType, { light: Tint; dark: Tint }> = {
   },
 };
 
-const calloutIcons: Record<CalloutType, IconProps> = {
-  note: "CircleAlert",
-  info: "Info",
-  warning: "TriangleAlert",
-  danger: "OctagonAlert",
-  success: "Check",
+const calloutIcons: Record<CalloutType, IconComponent> = {
+  note: CircleAlert,
+  info: Info,
+  warning: TriangleAlert,
+  danger: OctagonAlert,
+  success: Check,
 };
 
 const tintStyles = (tint: Tint) => css`
@@ -120,14 +127,12 @@ function LocalCallout(
   { children, $type, $icon, $hideIcon, ...props }: CalloutProps,
   ref: React.Ref<HTMLDivElement>,
 ) {
-  const iconName = $icon ?? ($type ? calloutIcons[$type] : undefined);
+  const icon = $icon ?? ($type ? calloutIcons[$type] : undefined);
 
   return (
     <StyledCallout $type={$type} {...props} ref={ref}>
-      {!$hideIcon && iconName && (
-        <span className="callout-icon">
-          <Icon name={iconName} size={16} />
-        </span>
+      {!$hideIcon && icon && (
+        <span className="callout-icon">{renderIcon(icon, { size: 16 })}</span>
       )}
       <span className="callout-content">{children}</span>
     </StyledCallout>

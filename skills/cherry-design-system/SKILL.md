@@ -43,7 +43,7 @@ Component code docs live under `/code/<name>` (`/code/button`, `/code/toast`, `/
 
 4. **Styling props are `$`-prefixed** (`$variant`, `$size`, `$fullWidth`, `$error`) and must stay within their allowed literal unions (e.g. `$size` is only `"default" | "big" | "small"`).
 
-5. **Wrap the app in a Cherry provider**, use the layout primitives (`Container`, `Grid`, `Col`, `Flex`, `Box`, `MaxWidth`, `Space`) instead of ad-hoc `<div>` + CSS, and render icons with `<Icon name="..." />` (lucide names).
+5. **Wrap the app in a Cherry provider**, use the layout primitives (`Container`, `Grid`, `Col`, `Flex`, `Box`, `MaxWidth`, `Space`) instead of ad-hoc `<div>` + CSS, and render icons with `<Icon icon={Glyph} />` where `Glyph` is imported from `lucide-react` (only for an icon chosen at runtime, `DynamicIcon` from `cherry-styled-components/dynamic`; it loads on demand and renders after hydration).
 
 When Cherry has no component for something, build it as a styled-component that reads theme tokens and reuses Cherry mixins (`resetButton`, `interactiveStyles`); do not drop to raw hardcoded CSS. See `references/recipes.md`.
 
@@ -110,7 +110,7 @@ export default function App() {
 | `ChatLauncher`               | "Ask AI" pill toggling the panel; opt-in `$glow`                           |
 | `ChatTyping` / `ChatSources` | typing indicator, source chips                                             |
 
-**Icon:** `<Icon name="..." />` for any lucide-react icon by PascalCase name.
+**Icon:** `import { Search } from "lucide-react"` then `<Icon icon={Search} />` (static, one glyph, server-rendered); `lucide-react` is a peer dependency, so the app lists it in its own dependencies. `$icon`-style props (Avatar, Dropzone, AvatarDropzone, Callout, ChatPanel `$titleIcon`) take an imported glyph or a rendered element. Only for an icon chosen at runtime: `import { DynamicIcon } from "cherry-styled-components/dynamic"` then `<DynamicIcon name="..." />`; it resolves on demand, renders after load, and brings lucide's dynamic import map into the app.
 
 ## Verify your work
 

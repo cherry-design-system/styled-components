@@ -8,6 +8,7 @@ import {
   resetInput,
   statusBorderStyles,
 } from "./utils";
+import { ChevronDown } from "lucide-react";
 import { Icon } from "./icon";
 import { StyledInputWrapper, StyledLabel } from "./input";
 
@@ -126,7 +127,7 @@ function LocalSelect(
         >
           {props.children}
         </StyledSelect>
-        <Icon name="ChevronDown" />
+        <Icon icon={ChevronDown} />
       </StyledIconWrapper>
     </StyledInputWrapper>
   );

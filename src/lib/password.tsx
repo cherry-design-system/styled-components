@@ -2,6 +2,7 @@
 import React, { forwardRef, useState } from "react";
 import styled, { css } from "styled-components";
 
+import { Eye, EyeOff } from "lucide-react";
 import { Icon } from "./icon";
 import { IconButton } from "./icon-button";
 import { Input, InputProps } from "./input";
@@ -65,7 +66,7 @@ function LocalPassword(
           title={show ? "Hide password" : "Show password"}
           onClick={() => setShow((prev) => !prev)}
         >
-          <Icon name={show ? "EyeOff" : "Eye"} />
+          <Icon icon={show ? EyeOff : Eye} />
         </IconButton>
       </StyledPasswordReveal>
     </StyledPassword>

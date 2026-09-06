@@ -2,7 +2,8 @@
 import React, { forwardRef } from "react";
 import styled, { css } from "styled-components";
 
-import { Icon, IconProps } from "./icon";
+import { User } from "lucide-react";
+import { renderIcon, type IconSource } from "./icon";
 import { Theme, darkFilledTextRule, filledTextColor } from "./utils";
 
 export type AvatarSize = "small" | "default" | "big";
@@ -15,8 +16,8 @@ export interface AvatarProps extends React.HTMLAttributes<HTMLSpanElement> {
   $alt?: string;
   /** Full name or label; the first letters of its first two words are shown. */
   $name?: string;
-  /** Fallback icon used when there is no image and no name. */
-  $icon?: IconProps;
+  /** Fallback icon used when there is no image and no name: an imported lucide component, or a rendered element. */
+  $icon?: IconSource;
   $color?: AvatarColor;
 }
 
@@ -85,7 +86,7 @@ function LocalAvatar(
     $src,
     $alt,
     $name,
-    $icon = "User",
+    $icon = User,
     $color,
     ...props
   }: AvatarProps,
@@ -110,7 +111,7 @@ function LocalAvatar(
       ) : initials ? (
         initials
       ) : (
-        <Icon name={$icon} size={avatarSizes[$size].icon} />
+        renderIcon($icon, { size: avatarSizes[$size].icon })
       )}
     </StyledAvatar>
   );

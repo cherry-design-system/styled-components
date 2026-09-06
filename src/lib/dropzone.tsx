@@ -8,7 +8,8 @@ import React, {
 } from "react";
 import styled, { css } from "styled-components";
 
-import { Icon } from "./icon";
+import { File as FileIcon, FileUp, X } from "lucide-react";
+import { Icon, renderIcon, type IconSource } from "./icon";
 import { Theme, alpha, mq, resetButton } from "./utils";
 
 export type DropzoneRejectionReason = "type" | "size" | "count";
@@ -28,8 +29,8 @@ export interface DropzoneProps extends Omit<
   $browse?: string;
   /** Optional smaller hint line (accepted types / limits). */
   $hint?: string;
-  /** Lucide icon shown in the rounded-square tile. */
-  $icon?: React.ComponentProps<typeof Icon>["name"];
+  /** Icon shown in the rounded-square tile: an imported lucide component, or a rendered element. */
+  $icon?: IconSource;
   /** Compact, flush variant: horizontal layout, tighter padding, and a
       transparent background so it sits on whatever surface it's embedded in
       (a form row, modal, or list) next to regular inputs. */
@@ -75,7 +76,7 @@ function LocalDropzone(
     $prompt = "Drag & drop files here",
     $browse,
     $hint,
-    $icon = "FileUp",
+    $icon = FileUp,
     $inline,
     $maxFiles,
     $maxBytes,
@@ -192,9 +193,7 @@ function LocalDropzone(
           addFiles(e.dataTransfer.files);
         }}
       >
-        <StyledDropIcon $inline={$inline}>
-          <Icon name={$icon} />
-        </StyledDropIcon>
+        <StyledDropIcon $inline={$inline}>{renderIcon($icon)}</StyledDropIcon>
         <StyledDropPrompt $inline={$inline}>
           {$prompt}
           {$browse ? <span>{$browse}</span> : null}
@@ -226,7 +225,7 @@ function LocalDropzone(
                 <img src={item.previewUrl} alt={item.file.name} />
               ) : (
                 <StyledThumbFile>
-                  <Icon name="File" />
+                  <Icon icon={FileIcon} />
                   <span>{item.file.name}</span>
                 </StyledThumbFile>
               )}
@@ -236,7 +235,7 @@ function LocalDropzone(
                 onClick={() => removeItem(item.key)}
                 disabled={disabled}
               >
-                <Icon name="X" />
+                <Icon icon={X} />
               </StyledThumbRemove>
             </StyledThumb>
           ))}

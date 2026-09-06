@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import { Cherry, ImageUp, RotateCcw, Settings } from "lucide-react";
 import {
   Accordion,
   Avatar,
@@ -149,7 +150,7 @@ function ToastPreview() {
         fireDefaults();
       }}
     >
-      <Icon name="RotateCcw" />
+      <Icon icon={RotateCcw} />
     </IconButton>
   );
 }
@@ -163,7 +164,7 @@ function ModalPreview() {
           closed, a centered button brings it back. */}
       {!isOpen && (
         <IconButton aria-label="Reopen modal" onClick={() => setIsOpen(true)}>
-          <Icon name="RotateCcw" />
+          <Icon icon={RotateCcw} />
         </IconButton>
       )}
       <Modal
@@ -265,7 +266,7 @@ function ChatResetButton() {
       aria-label="Reset chat history"
       title="Reset chat history"
     >
-      <Icon name="RotateCcw" />
+      <Icon icon={RotateCcw} />
     </IconButton>
   );
 }
@@ -406,7 +407,7 @@ const previews: Record<string, React.ReactNode> = {
       $prompt="Drag images here"
       $browse="or click to browse"
       $hint="PNG, JPG, WebP or GIF · up to 5MB"
-      $icon="ImageUp"
+      $icon={ImageUp}
     />
   ),
   "dropzone-inline": (
@@ -416,7 +417,7 @@ const previews: Record<string, React.ReactNode> = {
       $inline
       $prompt="Drag an image here"
       $browse="or click to browse"
-      $icon="ImageUp"
+      $icon={ImageUp}
     />
   ),
   flex: (
@@ -442,10 +443,10 @@ const previews: Record<string, React.ReactNode> = {
       </Col>
     </Grid>
   ),
-  icon: <Icon name="Cherry" size={48} />,
+  icon: <Icon icon={Cherry} size={48} />,
   "icon-button": (
     <IconButton aria-label="Settings">
-      <Icon name="Settings" />
+      <Icon icon={Settings} />
     </IconButton>
   ),
   input: (

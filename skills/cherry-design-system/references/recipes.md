@@ -193,6 +193,7 @@ import {
   Avatar,
   useChat,
 } from "cherry-styled-components";
+import { Bot } from "lucide-react";
 
 function Transcript() {
   const { messages, loading } = useChat();
@@ -203,7 +204,7 @@ function Transcript() {
           key={m.id}
           $role={m.role}
           $avatar={
-            m.role === "assistant" && <Avatar $size="small" $icon="Bot" />
+            m.role === "assistant" && <Avatar $size="small" $icon={Bot} />
           }
         >
           {m.content}

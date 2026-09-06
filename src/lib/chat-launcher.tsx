@@ -3,6 +3,7 @@ import React, { forwardRef, useContext } from "react";
 import styled, { createGlobalStyle, css, keyframes } from "styled-components";
 
 import { ChatContext } from "./chat-provider";
+import { Sparkles } from "lucide-react";
 import { Icon } from "./icon";
 import { Theme, alpha, interactiveStyles } from "./utils";
 
@@ -259,7 +260,7 @@ function LocalChatLauncher(
         <span className="chat-launcher-inner">
           {children ?? (
             <>
-              <Icon name="Sparkles" />
+              <Icon icon={Sparkles} />
               Ask AI
             </>
           )}
