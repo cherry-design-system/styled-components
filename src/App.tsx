@@ -620,6 +620,13 @@ function FormTier({ size }: { size: FieldSize }) {
                 <Flex $gap={12} $alignItems="center">
                   <Toggle {...s} />
                   <Toggle {...s} defaultChecked />
+                  <Toggle {...s} disabled aria-label="Disabled, off" />
+                  <Toggle
+                    {...s}
+                    disabled
+                    defaultChecked
+                    aria-label="Disabled, on"
+                  />
                 </Flex>
               </Field>
             </Flex>

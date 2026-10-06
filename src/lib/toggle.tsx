@@ -110,21 +110,27 @@ const StyledToggle = styled.input<ToggleProps>`
     box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primaryLight};
   }
 
-  ${({ disabled, theme }) =>
-    disabled &&
-    `cursor: not-allowed;
+  /* Disabled wins over checked. The :checked fill above outranked the old
+     disabled rule, so a disabled toggle that was also checked kept its
+     primary fill under a gray knob and border. Matching on :disabled (which
+     also covers a disabled fieldset) and listing the checked case explicitly
+     makes the gray rule the more specific one. */
+  &:disabled {
+    cursor: not-allowed;
+  }
 
-		& ~ .fake-toggle {
-			border-color: ${theme.colors.gray};
+  &:disabled ~ .fake-toggle,
+  &:disabled:checked ~ .fake-toggle {
+    border-color: ${({ theme }) => theme.colors.gray};
 
-			&::before {
-				background: ${theme.colors.grayLight};
-			}
+    &::before {
+      background: ${({ theme }) => theme.colors.grayLight};
+    }
 
-			&::after {
-				background: ${theme.colors.gray};
-			}
-		}`}
+    &::after {
+      background: ${({ theme }) => theme.colors.gray};
+    }
+  }
 `;
 
 function LocalToggle(

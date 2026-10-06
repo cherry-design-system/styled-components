@@ -5,6 +5,13 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.18] - 2026-10-06
+
+### Fixed
+
+- A `Toggle` that is both `disabled` and checked is grayed out like a disabled unchecked one. The checked fill rule outranked the disabled rule, so a locked-on switch (a "Necessary cookies, always on" row, for example) kept its primary fill under a gray knob and border and looked half broken. The disabled styles now match on `:disabled`, which also covers a toggle inside a disabled `<fieldset>`, and explicitly win over the checked state
+- The demo's Toggle row shows the disabled off and disabled on states, so the case is visible at every size
+
 ## [0.2.17] - 2026-09-06
 
 ### Added
