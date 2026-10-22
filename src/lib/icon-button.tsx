@@ -35,6 +35,10 @@ export const iconButtonStyles = (
     position: relative;
     width: ${box}px;
     height: ${box}px;
+    min-width: ${box}px;
+    max-width: ${box}px;
+    min-height: ${box}px;
+    max-height: ${box}px;
     border-radius: 50%;
     background: ${theme.colors.light};
     border: solid 2px ${theme.colors.grayLight};

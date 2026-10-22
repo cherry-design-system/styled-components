@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.19] - 2026-10-22
+
+### Fixed
+
+- `IconButton` keeps its circle when a parent rule sets the width or height of the buttons inside it. A container with `& button { width: auto }` (a common way to stretch or reset an action row) overrode the fixed size and collapsed the button into a narrow oval around its glyph; `width: 100%` stretched it into a pill. The box is now pinned with matching `min-`/`max-` width and height, so only the `$size` prop decides it
+
 ## [0.2.18] - 2026-10-06
 
 ### Fixed
