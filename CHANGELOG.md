@@ -5,6 +5,14 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.20] - 2026-10-23
+
+### Added
+
+- `Modal`s stack. A modal opened over an open one (a "confirm with a code" step over a form, say) no longer shows on top of it: the open modal's card sinks out first, then the new card rises in over the same backdrop, and closing the top one plays it backwards. The modal underneath stays mounted while it is covered, so whatever was typed in it is still there when it comes back, and it ignores Escape and clicks outside, which belong to the modal on top. Before, both cards showed at once, and a click inside the top modal counted as a click outside the one under it, which closed it
+- `$stack` on `Modal` (default `true`). Pass `$stack={false}` to keep the previous behaviour for that modal: it neither hides the modals under it nor steps aside for the ones opened over it
+- `useModalLayer(open)` puts a full-page layer that is not a `Modal` (an outage screen, a sign-in wall) on the same stack while `open`: an open modal fades away under it and comes back once it is gone. Returns whether another layer covers it
+
 ## [0.2.19] - 2026-10-22
 
 ### Fixed

@@ -419,7 +419,7 @@ Tabs extends `Omit<React.HTMLAttributes<HTMLDivElement>, "onChange">`:
 
 ## Modal
 
-Portal dialog rendered into `document.body`. Closes on Escape and outside click. **Controlled with `$`-prefixed props** (unusual: the open/close props carry `$`). Exports: `Modal`, `ModalProps`.
+Portal dialog rendered into `document.body`. Closes on Escape and outside click. **Controlled with `$`-prefixed props** (unusual: the open/close props carry `$`). Exports: `Modal`, `ModalProps`, `useModalLayer`.
 
 | prop                 | type                             | notes                                           |
 | -------------------- | -------------------------------- | ----------------------------------------------- |
@@ -429,9 +429,12 @@ Portal dialog rendered into `document.body`. Closes on Escape and outside click.
 | `$title`             | `string`                         | header + `aria-label`                           |
 | `$width`             | `number` (px, applies from `lg`) | default 500                                     |
 | `$hideCloseButton`   | `boolean`                        | -                                               |
+| `$stack`             | `boolean` (default `true`)       | `false` opts out of stacking                    |
 | `className`, `style` |                                  | restyle hooks (see below)                       |
 
 The modal mounts on open and unmounts after the exit animation, so children (e.g. a form) reset between openings. `styled(Modal)` does **not** work for the `$`-props (styled-components strips transient props before they reach the wrapped component); restyle by passing `className` and targeting the stable inner class hooks: `.modal-inner`, `.modal-close`, `.modal-title`, `.modal-content`.
+
+Modals stack: a modal opened over an open one hides it (its card sinks out, then the new card rises in over the same backdrop) and closing the top one brings it back. The covered modal stays mounted, so its form keeps what was typed, and ignores Escape and outside clicks. `$stack={false}` opts a modal out. A full-page layer that is not a Modal (an outage screen) joins the stack with `useModalLayer(open)`, so open modals fade away under it.
 
 Fields that open a native OS picker (`Select`, and `Input` of type `date`, `datetime-local`, `month`, `time`, `week`) are safe inside a modal: outside-click detection ignores the stray mouse events iOS emits when such a picker closes, so setting a date does not dismiss the dialog.
 

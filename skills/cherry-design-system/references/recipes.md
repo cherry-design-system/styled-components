@@ -110,7 +110,7 @@ function Dashboard() {
 
 ## Modal with a form inside
 
-Modal is controlled via `$isOpen` / `$onClose`. The body unmounts when closed, so a form inside resets between openings.
+Modal is controlled via `$isOpen` / `$onClose`. The body unmounts when closed, so a form inside resets between openings. A modal opened over it (a confirmation step) hides it until that one closes, without unmounting it, so the form keeps its values.
 
 ```tsx
 const [open, setOpen] = useState(false);

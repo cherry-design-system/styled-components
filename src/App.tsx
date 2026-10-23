@@ -337,6 +337,7 @@ function AvatarDropzoneDemo() {
 
 function ModalToastDemo() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isCodeOpen, setIsCodeOpen] = useState(false);
   const { addNotification } = useToastNotifications();
 
   return (
@@ -395,6 +396,9 @@ function ModalToastDemo() {
           <Button $outline onClick={() => setIsOpen(false)}>
             Cancel
           </Button>
+          <Button $variant="secondary" onClick={() => setIsCodeOpen(true)}>
+            Confirm with a code
+          </Button>
           <Button
             onClick={() => {
               setIsOpen(false);
@@ -405,6 +409,34 @@ function ModalToastDemo() {
             }}
           >
             Confirm
+          </Button>
+        </Flex>
+      </Modal>
+      <Modal
+        $isOpen={isCodeOpen}
+        $onClose={() => setIsCodeOpen(false)}
+        $title="Enter your code"
+      >
+        <p>
+          A modal opened over another one. The first steps aside and comes back
+          once this one closes.
+        </p>
+        <hr />
+        <Flex $gap={20} $justifyContent="flex-end">
+          <Button $outline onClick={() => setIsCodeOpen(false)}>
+            Back
+          </Button>
+          <Button
+            onClick={() => {
+              setIsCodeOpen(false);
+              setIsOpen(false);
+              addNotification("Confirmed with a code.", {
+                color: "success",
+                autoHide: 4000,
+              });
+            }}
+          >
+            Verify
           </Button>
         </Flex>
       </Modal>
