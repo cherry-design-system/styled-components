@@ -94,7 +94,7 @@ export default function App() {
 | `MaxWidth`     | width constraint                                                 |
 | `Space`        | invisible spacer for vertical/horizontal rhythm                  |
 
-**Interactive:** `Accordion`, `Tabs` + `TabContent`, `Modal` (controlled via `$isOpen`/`$onClose`), Toast (`ToastNotificationsProvider` + `<ToastNotifications />` + `useToastNotifications()`), `ThemeToggle`.
+**Interactive:** `Accordion`, `Tabs` + `TabContent`, `Modal` (controlled via `$isOpen`/`$onClose`; stacks, one card shown at a time), Toast (`ToastNotificationsProvider` + `<ToastNotifications />` + `useToastNotifications()`), `ThemeToggle`.
 
 **Display:** `Avatar` (image/initials/icon, `$size`, `$color`), `Callout` (`$type` note/info/warning/danger/success), `Prose` (styles rendered markdown; `$compact`), `Spinner` (loading indicator, reduced-motion aware).
 
