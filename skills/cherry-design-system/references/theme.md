@@ -49,10 +49,12 @@ So text is always `theme.colors.dark` and surfaces are always `theme.colors.ligh
 | `info`           | `#06b6d4` | `#06b6d4` |
 | `dark`           | `#000000` | `#ffffff` |
 | `light`          | `#ffffff` | `#000000` |
+| `onPrimary`      | (unset)   | (unset)   |
 
 How Cherry itself uses these (follow the same conventions in your own components):
 
 - **`primary`** is the interactive accent: default button fill, focus rings (via `primaryLight`), links, active tab, slider thumb. `primaryDark` is the hover state, `primaryLight` is the soft ring/tint.
+- **`onPrimary`** (optional, unset in the built-in themes) is the label color on a `primary` fill: the primary `Avatar`'s initials, the sent `ChatMessage` bubble's text and the primary `Button`'s label. Unset, those labels take the palette's contrasting end (`light` in the light theme, `dark` in the dark one). Set it when that end does not read on your primary (see White-labeling).
 - **`grayLight`** is the default border color for inputs, cards, dividers. **`gray`** is placeholder / disabled text. **`grayDark`** is secondary/label text.
 - **status colors** (`success`, `error`, `warning`, `info`) drive `$error`/`$success` states and toast colors.
 - Derive shades with the exported `tint` / `shade` / `alpha` helpers rather than inventing hex values. Each takes a percentage: `shade(color, 10)` darkens 10% toward black, `tint(color, 10)` lightens 10% toward white, `alpha(color, 30)` fades to 30% opacity. They emit native CSS `color-mix()`, so any valid CSS color works as input, including `var(--token)`.
@@ -208,6 +210,8 @@ Import these instead of re-writing the same CSS:
 | `alpha(color, percent)`                       | fade a color to `percent` opacity                                                                                   |
 | `shade(color, percent)`                       | darken a color by `percent` toward black                                                                            |
 | `tint(color, percent)`                        | lighten a color by `percent` toward white                                                                           |
+| `filledTextColor(theme, fill?)`               | text color on a brand-colored fill; pass `"primary"` for a primary fill so a theme's `onPrimary` applies            |
+| `darkFilledTextRule(theme, fill?)`            | the same choice as a `:root.dark &` rule, for apps that flip the mode with a class before hydration                 |
 
 `alpha` / `shade` / `tint` return a native CSS `color-mix(in srgb, ...)` string rather than a computed hex, so they accept any valid CSS color, including a `var(--token)` the browser resolves at paint time. Cherry ships no JS color library.
 
@@ -249,5 +253,20 @@ export const themeDark: Theme = {
 ```
 
 You may also change spacing, radii, fonts, or the type scale the same way. Keep the `Theme` shape intact so every component keeps type-checking.
+
+**Bright primaries need `onPrimary`.** Labels on a primary fill default to `light` in the light theme and `dark` (white) in the dark theme. If your primary is a bright color in either mode (an orange, a yellow, a lime), white text on it fails contrast (often around 2.5:1, against WCAG AA's 4.5:1). Set `onPrimary` in that mode to an ink that reads, and check it reaches 4.5:1:
+
+```ts
+export const themeDark: Theme = {
+  ...baseDark,
+  colors: {
+    ...baseDark.colors,
+    primary: "#ff7a1a",
+    onPrimary: "#0e0c0b", // dark ink on the bright orange: 7.5:1
+  },
+};
+```
+
+The primary `Avatar`, the sent `ChatMessage` bubble and the primary `Button` pick it up. In your own components, color text on a primary fill with `filledTextColor(theme, "primary")` (plus `darkFilledTextRule(theme, "primary")` if the app flips dark mode with a class) rather than `theme.colors.light`, so the same theme setting applies.
 
 Rule of thumb: when a design hands you a raw value, map it to the nearest existing token, or add a token to the theme. Do not hardcode the raw value in a component.

@@ -39,7 +39,7 @@ Component code docs live under `/code/<name>` (`/code/button`, `/code/toast`, `/
 
 2. **Every form control is a Cherry component.** Use `Input`, `Select`, `Textarea`, `Toggle`, `Range`, `Password`, `Dropzone`, `AvatarDropzone`. Checkbox and radio are `<Input type="checkbox">` / `<Input type="radio">` (there is no separate export). Never a raw `<input>`, `<select>`, or `<textarea>`.
 
-3. **Never hardcode design values.** Read colors, spacing, radii, shadows, and font sizes from the theme inside styled-components: `theme.colors.primary`, `theme.spacing.radius.lg`, `theme.shadows.md`. Use the typography mixins (`styledH1`, `styledText`, ...) for text and `mq("lg")` for breakpoints. `theme.colors.dark` is the ink/foreground and `theme.colors.light` is the surface/background; they swap in dark mode, which is what makes components adapt.
+3. **Never hardcode design values.** Read colors, spacing, radii, shadows, and font sizes from the theme inside styled-components: `theme.colors.primary`, `theme.spacing.radius.lg`, `theme.shadows.md`. Use the typography mixins (`styledH1`, `styledText`, ...) for text and `mq("lg")` for breakpoints. `theme.colors.dark` is the ink/foreground and `theme.colors.light` is the surface/background; they swap in dark mode, which is what makes components adapt. Text on a `primary` fill uses the optional `theme.colors.onPrimary` when a theme sets it (needed for bright primaries; see `references/theme.md`).
 
 4. **Styling props are `$`-prefixed** (`$variant`, `$size`, `$fullWidth`, `$error`) and must stay within their allowed literal unions (e.g. `$size` is only `"default" | "big" | "small"`).
 
