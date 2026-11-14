@@ -5,6 +5,13 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.22] - 2026-11-14
+
+### Added
+
+- An optional `primaryFill` color in the theme: the fill of the solid primary surfaces (the primary `Button`, the sent `ChatMessage` bubble, the primary `Avatar`), whose label is `onPrimary`. Set it when `primary` is too bright to carry a label but right for accents: the fills take the deeper shade and links, rings and outlines keep `primary`. The filled primary button's hover is a 10% shade of it. Themes without `primaryFill` render exactly as before
+- `primaryFillColor` and `primaryFillHoverColor` mixins, for your own primary-filled surfaces
+
 ## [0.2.21] - 2026-11-14
 
 ### Added

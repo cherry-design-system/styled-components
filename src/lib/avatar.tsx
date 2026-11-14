@@ -4,7 +4,12 @@ import styled, { css } from "styled-components";
 
 import { User } from "lucide-react";
 import { renderIcon, type IconSource } from "./icon";
-import { Theme, darkFilledTextRule, filledTextColor } from "./utils";
+import {
+  Theme,
+  darkFilledTextRule,
+  filledTextColor,
+  primaryFillColor,
+} from "./utils";
 
 export type AvatarSize = "small" | "default" | "big";
 export type AvatarColor = "primary" | "secondary" | "tertiary" | "gray";
@@ -28,7 +33,7 @@ const avatarSizes: Record<AvatarSize, { box: number; icon: number }> = {
 };
 
 const avatarColors: Record<AvatarColor, (theme: Theme) => string> = {
-  primary: (theme) => theme.colors.primary,
+  primary: (theme) => primaryFillColor(theme),
   secondary: (theme) => theme.colors.secondary,
   tertiary: (theme) => theme.colors.tertiary,
   gray: (theme) => theme.colors.grayDark,

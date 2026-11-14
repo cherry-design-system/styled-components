@@ -222,6 +222,14 @@ export interface Colors<TString = string> {
    * contrasting end, as `filledTextColor` describes.
    */
   onPrimary?: TString;
+  /**
+   * Optional fill for the solid primary surfaces (the primary button, the
+   * sent chat bubble, the primary avatar), whose label is `onPrimary`. Set it
+   * when the theme's `primary` is too bright to carry a label but still right
+   * for accents (links, rings, outlines): the fills take this deeper shade
+   * and the accents keep `primary`. Without it the fills use `primary`.
+   */
+  primaryFill?: TString;
 }
 
 export interface Shadows<TString = string> {
