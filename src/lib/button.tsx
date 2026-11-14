@@ -7,6 +7,8 @@ import {
   darkFilledTextRule as darkFilledText,
   filledTextColor as filledText,
   formElementHeightStyles,
+  primaryFillColor,
+  primaryFillHoverColor,
   resetButton,
   shade,
   tint,
@@ -61,13 +63,16 @@ export const buttonStyles = (
     css`
       color: ${$outline ? theme.colors.primary : filledText(theme, "primary")};
       ${!$outline && darkFilledText(theme, "primary")}
-      background: ${$outline ? "transparent" : theme.colors.primary};
-      border: solid 2px ${theme.colors.primary};
+      background: ${$outline ? "transparent" : primaryFillColor(theme)};
+      border: solid 2px
+        ${$outline ? theme.colors.primary : primaryFillColor(theme)};
       box-shadow: 0 0 0 0px ${theme.colors.primary};
 
       &:hover {
-        background: ${$outline ? "transparent" : theme.colors.primaryDark};
-        border-color: ${theme.colors.primaryDark};
+        background: ${$outline ? "transparent" : primaryFillHoverColor(theme)};
+        border-color: ${
+          $outline ? theme.colors.primaryDark : primaryFillHoverColor(theme)
+        };
         ${$outline && `color: ${theme.colors.primaryDark}`};
       }
 
