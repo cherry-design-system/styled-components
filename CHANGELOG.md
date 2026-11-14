@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.21] - 2026-11-14
+
+### Added
+
+- An optional `onPrimary` color in the theme: the label color for text on a `primary` fill. Set it when neither `light` nor `dark` reads on the theme's primary, such as a bright dark-mode primary that light text cannot sit on
+- `filledTextColor` and `darkFilledTextRule` take an optional fill (`"primary"` or `"other"`, the default). On a primary fill they return the theme's `onPrimary` when it has one (in `darkFilledTextRule`, only for a dark theme object, which knows its dark value); otherwise the palette's contrasting end, as before
+
+### Fixed
+
+- The primary `Avatar`, the sent `ChatMessage` bubble and the primary `Button` use the theme's `onPrimary` when it sets one. A theme whose dark-mode primary is a bright color (an orange, a yellow) showed light initials and text on it at about 2.5:1; it can now give a dark label that reads. Themes without `onPrimary` render exactly as before
+
 ## [0.2.20] - 2026-10-23
 
 ### Added

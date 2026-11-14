@@ -88,8 +88,8 @@ const StyledChatMessage = styled.div<{
 
           & .chat-message-content {
             background: ${theme.colors.primary};
-            color: ${filledTextColor(theme)};
-            ${darkFilledTextRule(theme)};
+            color: ${filledTextColor(theme, "primary")};
+            ${darkFilledTextRule(theme, "primary")};
             padding: 9px 14px;
             border-radius: 16px 16px 4px 16px;
             margin-left: auto;

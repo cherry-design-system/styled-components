@@ -18,21 +18,41 @@ export const shade = (color: string, percent: number) =>
 export const tint = (color: string, percent: number) =>
   `color-mix(in srgb, ${color} ${100 - percent}%, white)`;
 
+/** Which fill a label sits on, so a theme's `onPrimary` can answer for its own. */
+export type FilledTextFill = "primary" | "other";
+
 /**
- * Text color for a label sitting on a brand-colored fill: the palette's
+ * Text color for a label sitting on a brand-colored fill: the theme's
+ * `onPrimary` on a primary fill when it sets one, else the palette's
  * contrasting end, `light` in light mode and `dark` in dark mode.
  */
-export const filledTextColor = (theme: Theme) =>
-  theme.isDark ? theme.colors.dark : theme.colors.light;
+export const filledTextColor = (
+  theme: Theme,
+  fill: FilledTextFill = "other",
+) =>
+  fill === "primary" && theme.colors.onPrimary
+    ? theme.colors.onPrimary
+    : theme.isDark
+      ? theme.colors.dark
+      : theme.colors.light;
 
 /**
  * The same choice restated as a rule scoped to a `dark` class on <html>, which
  * is what apps resolving the mode in CSS key off before hydration can swap the
  * theme object. Additive: with an already-dark theme object both paths resolve
- * to the same color. Interpolate alongside `filledTextColor`.
+ * to the same color. A dark theme object's `onPrimary` answers for a primary
+ * fill; a light one under the class cannot know the dark value, so it keeps
+ * the palette's `dark`. Interpolate alongside `filledTextColor`.
  */
-export const darkFilledTextRule = (theme: Theme) =>
-  `:root.dark & { color: ${theme.colors.dark}; }`;
+export const darkFilledTextRule = (
+  theme: Theme,
+  fill: FilledTextFill = "other",
+) =>
+  `:root.dark & { color: ${
+    fill === "primary" && theme.isDark && theme.colors.onPrimary
+      ? theme.colors.onPrimary
+      : theme.colors.dark
+  }; }`;
 
 /**
  * Slim, theme-aware scrollbar for internal scroll areas (chat transcripts, code
