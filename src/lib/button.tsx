@@ -59,8 +59,8 @@ export const buttonStyles = (
     !disabled &&
     $variant === "primary" &&
     css`
-      color: ${$outline ? theme.colors.primary : filledText(theme)};
-      ${!$outline && darkFilledText(theme)}
+      color: ${$outline ? theme.colors.primary : filledText(theme, "primary")};
+      ${!$outline && darkFilledText(theme, "primary")}
       background: ${$outline ? "transparent" : theme.colors.primary};
       border: solid 2px ${theme.colors.primary};
       box-shadow: 0 0 0 0px ${theme.colors.primary};

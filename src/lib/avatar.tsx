@@ -52,6 +52,8 @@ const StyledAvatar = styled.span<{
 }>`
   ${({ theme, $size = "default", $color = "primary" }) => {
     const { box } = avatarSizes[$size];
+    // A primary avatar takes the theme's own label for primary, if it has one.
+    const fill = $color === "primary" ? "primary" : "other";
 
     return css`
       display: inline-flex;
@@ -63,12 +65,12 @@ const StyledAvatar = styled.span<{
       height: ${box}px;
       border-radius: 50%;
       background: ${avatarColors[$color](theme)};
-      color: ${filledTextColor(theme)};
+      color: ${filledTextColor(theme, fill)};
       font-size: ${Math.round(box * 0.38)}px;
       line-height: 1;
       font-weight: 600;
       user-select: none;
-      ${darkFilledTextRule(theme)};
+      ${darkFilledTextRule(theme, fill)};
 
       & img {
         width: 100%;

@@ -168,7 +168,10 @@ function ClientThemeProvider({
   // so a single, unconditional value wins.
   useEffect(() => {
     if (!$themeColor) return;
-    const background = resolveColor(effectiveTheme.colors[$themeColor]);
+    // `onPrimary` is optional in a theme; nothing to paint when it is unset.
+    const color = effectiveTheme.colors[$themeColor];
+    if (!color) return;
+    const background = resolveColor(color);
     let meta = document.querySelector<HTMLMetaElement>(
       'meta[name="theme-color"]',
     );

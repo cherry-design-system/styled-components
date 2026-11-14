@@ -213,6 +213,15 @@ export interface Colors<TString = string> {
 
   dark: TString;
   light: TString;
+
+  /**
+   * Optional label color for text on a `primary` fill (a primary button, a
+   * sent chat bubble, a primary avatar). Set it when neither `light` nor
+   * `dark` reads on the theme's primary, e.g. a bright dark-mode primary
+   * that a light label cannot sit on. Without it the fill takes the palette's
+   * contrasting end, as `filledTextColor` describes.
+   */
+  onPrimary?: TString;
 }
 
 export interface Shadows<TString = string> {
