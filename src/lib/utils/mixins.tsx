@@ -18,7 +18,6 @@ export const shade = (color: string, percent: number) =>
 export const tint = (color: string, percent: number) =>
   `color-mix(in srgb, ${color} ${100 - percent}%, white)`;
 
-/** Which fill a label sits on, so a theme's `onPrimary` can answer for its own. */
 /** The solid primary fill: the theme's `primaryFill`, else `primary`. */
 export const primaryFillColor = (theme: Theme) =>
   theme.colors.primaryFill ?? theme.colors.primary;
@@ -29,6 +28,7 @@ export const primaryFillHoverColor = (theme: Theme) =>
     ? shade(theme.colors.primaryFill, 10)
     : theme.colors.primaryDark;
 
+/** Which fill a label sits on, so a theme's `onPrimary` can answer for its own. */
 export type FilledTextFill = "primary" | "other";
 
 /**
