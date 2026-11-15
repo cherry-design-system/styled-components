@@ -52,7 +52,7 @@ Access tokens via the `theme` prop in styled-components: `${({ theme }) => theme
 - **Shadows:** `shadows.xs`..`shadows.xl`. **Type:** mixins `styledH1..H6`, `styledHero1..3`, `styledText`, `styledSmall`, etc.
 - **Breakpoints:** `mq("xs"|"sm"|"md"|"lg"|"xl"|"xxl"|"xxxl")` = min-width media query (`lg` = 992px). Mobile-first.
 - **Custom shades:** derive from a token with the exported `tint(color, %)` / `shade(color, %)` / `alpha(color, %)` helpers; do not invent hex.
-- Use `theme.isDark` only when a value genuinely differs per theme.
+- Use `theme.isDark` only when a value genuinely differs per theme. It is optional: a theme whose colors are CSS variables serves both modes from one object and leaves it out, so in shared components prefer the optional mode tokens (`colors.accent`, `link`, `onFilled`, `primaryTintHover` / `Drop` / `Active`, `shadows.toast`) and their mixins (`accentColor`, `linkColor`, `primaryTintColor`), which fall back to the `isDark` choice when a theme leaves them unset.
 
 ## Custom components
 
