@@ -1,7 +1,14 @@
 "use client";
 import React, { forwardRef } from "react";
 import styled, { css } from "styled-components";
-import { Theme, alpha, resetButton, shade, tint } from "./utils";
+import {
+  Theme,
+  darkPrimaryTintRule,
+  primaryTintColor,
+  resetButton,
+  shade,
+  tint,
+} from "./utils";
 
 export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
@@ -95,14 +102,12 @@ export const iconButtonStyles = (
       $active &&
       css`
         border-color: ${theme.colors.primary};
-        background: ${alpha(theme.colors.primary, theme.isDark ? 18 : 10)};
+        background: ${primaryTintColor(theme, "active")};
         color: ${theme.colors.primary};
 
         /* Mode resolved from a \`dark\` class on <html> rather than the theme
            object (no-flash static rendering): same tint, applied pre-hydration. */
-        :root.dark & {
-          background: ${alpha(theme.colors.primary, 18)};
-        }
+        ${darkPrimaryTintRule(theme, "active")}
       `
     }
 

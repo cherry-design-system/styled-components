@@ -134,7 +134,7 @@ function ClientThemeProvider({
       // instantly. The body is revealed by the effect below once that swap
       // has committed, so the corrected theme paints first.
       const wantDark = cookieValue === "dark";
-      if (initialTheme.isDark !== wantDark) {
+      if (Boolean(initialTheme.isDark) !== wantDark) {
         setOverrideTheme(wantDark ? themeDark : theme);
         setReconciled(true);
         return;
@@ -160,7 +160,10 @@ function ClientThemeProvider({
   // stripped and re-added while the server's theme is still the active one.
   useEffect(() => {
     if (!reconciled) return;
-    document.documentElement.classList.toggle("dark", effectiveTheme.isDark);
+    document.documentElement.classList.toggle(
+      "dark",
+      Boolean(effectiveTheme.isDark),
+    );
   }, [effectiveTheme.isDark, reconciled]);
 
   // Keep the browser chrome / iOS Safari status bar in sync when the user
@@ -198,9 +201,12 @@ function ClientThemeProvider({
     setTheme(effectiveTheme.isDark ? theme : themeDark);
   };
 
-  const GlobalStylesComponent = $globalStyles
-    ? GlobalStyles(effectiveTheme)
-    : null;
+  // createGlobalStyle builds a new component, so a fresh one per render
+  // would remount and re-inject the global sheet on every update.
+  const GlobalStylesComponent = useMemo(
+    () => ($globalStyles ? GlobalStyles(effectiveTheme) : null),
+    [$globalStyles, effectiveTheme],
+  );
 
   return (
     <StyledThemeProvider theme={effectiveTheme}>

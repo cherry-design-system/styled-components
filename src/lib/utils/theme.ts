@@ -230,6 +230,48 @@ export interface Colors<TString = string> {
    * and the accents keep `primary`. Without it the fills use `primary`.
    */
   primaryFill?: TString;
+
+  /*
+   * Optional mode tokens. A theme whose colors are CSS variables (one theme
+   * object for both modes, the mode switched by a class or attribute) cannot
+   * answer `isDark`, so it states the colors that differ by mode here. Each
+   * one falls back to the `isDark` choice it replaces when absent, so a pair
+   * of light and dark theme objects renders exactly as before.
+   */
+  /**
+   * Hover and emphasis text on a surface (Prose links on hover, the
+   * ChatSources and ChatLauncher text, the ThemeToggle glyph on hover).
+   * Without it: `primaryDark` in light mode, `primaryLight` in dark mode.
+   */
+  accent?: TString;
+  /**
+   * The color of links in `GlobalStyles`. Without it: `primary` in light
+   * mode, `dark` in dark mode.
+   */
+  link?: TString;
+  /**
+   * The label on a filled control that is not primary (a secondary,
+   * tertiary or error Button, a colored Avatar), and on a primary fill when
+   * the theme sets no `onPrimary`. Without it: `light` in light mode,
+   * `dark` in dark mode.
+   */
+  onFilled?: TString;
+  /**
+   * The primary tint behind a hovered Dropzone or AvatarDropzone. Without
+   * it: `primary` at 4% in light mode, 10% in dark mode.
+   */
+  primaryTintHover?: TString;
+  /**
+   * The primary tint behind a Dropzone or AvatarDropzone while a file is
+   * dragged over it. Without it: `primary` at 5% in light mode, 12% in dark
+   * mode.
+   */
+  primaryTintDrop?: TString;
+  /**
+   * The primary tint behind an active (`$active`) IconButton. Without it:
+   * `primary` at 10% in light mode, 18% in dark mode.
+   */
+  primaryTintActive?: TString;
 }
 
 export interface Shadows<TString = string> {
@@ -238,6 +280,11 @@ export interface Shadows<TString = string> {
   md: TString;
   lg: TString;
   xl: TString;
+  /**
+   * Optional: the Toast's shadow. Without it: `xs` in light mode, `sm` in
+   * dark mode (see the mode tokens on `Colors`).
+   */
+  toast?: TString;
 }
 
 export interface Fonts<TString = string> {
@@ -310,5 +357,11 @@ export interface Theme {
   fonts: Fonts;
   fontSizes: FontSizes;
   lineHeights: LineHeights;
-  isDark: boolean;
+  /**
+   * Whether this theme object holds the dark palette. Optional: a theme
+   * whose colors are CSS variables serves both modes and leaves it out,
+   * setting the mode tokens (`colors.accent`, `colors.onFilled`, ...)
+   * instead. Absent reads as light.
+   */
+  isDark?: boolean;
 }

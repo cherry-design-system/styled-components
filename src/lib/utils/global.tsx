@@ -1,6 +1,7 @@
 "use client";
 import { createGlobalStyle } from "styled-components";
 import { Theme } from "./theme";
+import { linkColor } from "./mixins";
 
 const GlobalStyles = (theme: Theme) => createGlobalStyle`
 html,
@@ -52,7 +53,7 @@ ol li {
 }
 
 a {
-	color: ${theme.isDark ? theme.colors.dark : theme.colors.primary};
+	color: ${linkColor(theme)};
 }
 
 ol,

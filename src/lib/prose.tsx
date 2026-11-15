@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 
 import {
   Theme,
+  accentColor,
   alpha,
   styledH1,
   styledH2,
@@ -21,11 +22,6 @@ export interface ProseProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Tightens the vertical rhythm for dense contexts such as chat bubbles. */
   $compact?: boolean;
 }
-
-// The palette has no dedicated accent token, so hover/emphasis text takes the
-// end of the primary ramp that contrasts with the current surface.
-const accent = (theme: Theme) =>
-  theme.isDark ? theme.colors.primaryLight : theme.colors.primaryDark;
 
 /**
  * Styles for rendered markdown: links, lists, tables, code, media and
@@ -108,7 +104,7 @@ export const proseStyles = (theme: Theme, $compact?: boolean) => {
       box-shadow: 0 2px 0 0 ${theme.colors.primary};
 
       &:hover {
-        color: ${accent(theme)};
+        color: ${accentColor(theme)};
         box-shadow: 0 1px 0 0 ${theme.colors.primary};
       }
 

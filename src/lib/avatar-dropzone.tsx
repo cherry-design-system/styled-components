@@ -11,7 +11,13 @@ import styled, { css } from "styled-components";
 import { DropzoneRejection, matchesAccept } from "./dropzone";
 import { User, X } from "lucide-react";
 import { Icon, renderIcon, type IconSource } from "./icon";
-import { Theme, alpha, resetButton } from "./utils";
+import {
+  Theme,
+  alpha,
+  darkPrimaryTintRule,
+  primaryTintColor,
+  resetButton,
+} from "./utils";
 
 export interface AvatarDropzoneProps extends Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -197,19 +203,16 @@ const StyledAvatarDropzone = styled.button<{
     $dragOver &&
     css`
       border-color: ${theme.colors.primary};
-      background: ${alpha(theme.colors.primary, theme.isDark ? 12 : 5)};
+      background: ${primaryTintColor(theme, "drop")};
 
       /* Mode resolved from a \`dark\` class on <html> rather than the theme
          object (no-flash static rendering): same tint, applied pre-hydration. */
-      :root.dark & {
-        background: ${alpha(theme.colors.primary, 12)};
-      }
+      ${darkPrimaryTintRule(theme, "drop")}
     `}
 
   &:hover:not(:disabled) {
     border-color: ${({ theme }) => theme.colors.primary};
-    background: ${({ theme }) =>
-      alpha(theme.colors.primary, theme.isDark ? 10 : 4)};
+    background: ${({ theme }) => primaryTintColor(theme, "hover")};
   }
 
   &:focus {

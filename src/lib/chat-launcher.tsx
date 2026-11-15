@@ -5,7 +5,7 @@ import styled, { createGlobalStyle, css, keyframes } from "styled-components";
 import { ChatContext } from "./chat-provider";
 import { Sparkles } from "lucide-react";
 import { Icon } from "./icon";
-import { Theme, alpha, interactiveStyles } from "./utils";
+import { Theme, accentColor, alpha, interactiveStyles } from "./utils";
 
 export interface ChatLauncherProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
@@ -75,8 +75,7 @@ const StyledChatLauncher = styled.button<{
   height: 30px;
   background: ${({ theme }) => theme.colors.light};
   border: solid 1px ${({ theme }) => theme.colors.grayLight};
-  color: ${({ theme }) =>
-    theme.isDark ? theme.colors.primaryLight : theme.colors.primaryDark};
+  color: ${({ theme }) => accentColor(theme)};
   border-radius: ${({ theme }) => theme.spacing.radius.xs};
   padding: 0;
   font-size: 12px;

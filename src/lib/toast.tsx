@@ -183,7 +183,8 @@ export const StyledNotificationItem = styled.li<{
     background: ${({ theme }) => theme.colors.light};
     border: solid 1px ${({ theme }) => theme.colors.grayLight};
     box-shadow: ${({ theme }) =>
-      theme.isDark ? theme.shadows.sm : theme.shadows.xs};
+      theme.shadows.toast ??
+      (theme.isDark ? theme.shadows.sm : theme.shadows.xs)};
     color: ${({ theme }) => theme.colors.dark};
     font-size: ${({ theme }) => theme.fontSizes.small.lg};
     line-height: ${({ theme }) => theme.lineHeights.small.lg};

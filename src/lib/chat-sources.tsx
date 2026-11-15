@@ -2,7 +2,7 @@
 import React, { forwardRef } from "react";
 import styled from "styled-components";
 
-import { Theme, alpha, interactiveStyles } from "./utils";
+import { Theme, accentColor, alpha, interactiveStyles } from "./utils";
 
 export interface ChatSourcesProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
@@ -52,8 +52,7 @@ const StyledChatSource = styled.a<{ theme: Theme }>`
   }
 
   &:hover {
-    color: ${({ theme }) =>
-      theme.isDark ? theme.colors.primaryLight : theme.colors.primaryDark};
+    color: ${({ theme }) => accentColor(theme)};
   }
 `;
 

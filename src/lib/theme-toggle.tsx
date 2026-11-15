@@ -1,7 +1,13 @@
 "use client";
 import React, { forwardRef, useContext, useEffect } from "react";
 import styled, { css } from "styled-components";
-import { Theme, alpha, resetButton, interactiveStyles } from "./utils";
+import {
+  Theme,
+  accentColor,
+  alpha,
+  resetButton,
+  interactiveStyles,
+} from "./utils";
 import { MoonStar, Sun } from "lucide-react";
 import { Icon } from "./icon";
 import { ThemeContext } from "./styled-components";
@@ -75,13 +81,17 @@ const StyledThemeToggle = styled.button<{ theme: Theme; $hidden?: boolean }>`
   }
 
   &:hover svg[stroke] {
-    stroke: ${({ theme }) =>
-      theme.isDark ? theme.colors.primaryLight : theme.colors.primaryDark};
+    stroke: ${({ theme }) => accentColor(theme)};
   }
 
-  :root.dark &:hover svg[stroke] {
-    stroke: ${({ theme }) => theme.colors.primaryLight};
-  }
+  /* Skipped when the theme sets \`accent\`, which already follows the mode. */
+  ${({ theme }) =>
+    !theme.colors.accent &&
+    css`
+      :root.dark &:hover svg[stroke] {
+        stroke: ${theme.colors.primaryLight};
+      }
+    `}
 `;
 
 function LocalThemeToggle(

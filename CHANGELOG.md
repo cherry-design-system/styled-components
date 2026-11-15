@@ -5,6 +5,23 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.23] - 2026-11-15
+
+### Added
+
+- Optional mode tokens in the theme, for a theme whose colors are CSS variables (one theme object for both modes, the mode switched by a `dark` class on `<html>` or a `data-theme` attribute, so a switch repaints without re-rendering): `colors.accent` (hover and emphasis text), `colors.link` (links in `GlobalStyles`), `colors.onFilled` (the label on a filled control), `colors.primaryTintHover`, `colors.primaryTintDrop` and `colors.primaryTintActive` (the primary tints behind a hovered or dragged-over `Dropzone` and `AvatarDropzone` and an active `IconButton`) and `shadows.toast`. Each replaces a `theme.isDark` choice and falls back to it when unset, so themes without them render exactly as before
+- `accentColor`, `linkColor`, `primaryTintColor` and `darkPrimaryTintRule` mixins, for the same choices in your own components
+
+### Changed
+
+- `isDark` is optional in the `Theme` type. Absent reads as light
+- `darkFilledTextRule` returns an empty rule when the theme sets `onFilled`, whose value already follows the mode; the `:root.dark` tint rules of the dropzones, the active `IconButton` and the `ThemeToggle` glyph are skipped the same way when the theme sets their token
+- `Callout` also follows a `data-theme="dark"` or `data-theme="light"` ancestor, so a section forced into one mode keeps that mode's tint
+
+### Fixed
+
+- `CherryThemeProvider` and `ClientThemeProvider` build their global styles once per theme instead of on every render, which re-injected the global sheet on each update
+
 ## [0.2.22] - 2026-11-14
 
 ### Added
