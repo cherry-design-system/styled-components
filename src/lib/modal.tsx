@@ -198,11 +198,11 @@ const StyledModal = styled.div<{
   /* Covered, stacked or back on top, the overlay keeps the same fade-in
      animation name, so it never restarts and the backdrop holds still. */
   animation: ${({ $isClosing, $layer }) =>
-    $isClosing
-      ? overlayFadeOut
-      : $layer === "under-cover"
-        ? overlayHide
-        : overlayFadeIn}
+      $isClosing
+        ? overlayFadeOut
+        : $layer === "under-cover"
+          ? overlayHide
+          : overlayFadeIn}
     0.3s ease both;
 
   /* A stacked modal shares the backdrop of the one under it; if that one
