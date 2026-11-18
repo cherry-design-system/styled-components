@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, createContext, useContext, useState } from "react";
 import styled from "styled-components";
 import {
   ArrowRight,
@@ -335,14 +335,31 @@ function AvatarDropzoneDemo() {
   );
 }
 
+// Demo-only: lets the toast demo move the app's single toast stack around,
+// so every position can be tried from one page (and from a phone).
+const TOAST_POSITIONS = [
+  "top-center",
+  "top-left",
+  "top-right",
+  "bottom-center",
+  "bottom-left",
+  "bottom-right",
+] as const;
+type ToastPosition = (typeof TOAST_POSITIONS)[number];
+
+const ToastPositionContext = createContext<
+  [ToastPosition, (position: ToastPosition) => void]
+>(["top-center", () => {}]);
+
 function ModalToastDemo() {
   const [isOpen, setIsOpen] = useState(false);
   const [isCodeOpen, setIsCodeOpen] = useState(false);
-  const { addNotification } = useToastNotifications();
+  const { addNotification, promiseNotification } = useToastNotifications();
+  const [toastPosition, setToastPosition] = useContext(ToastPositionContext);
 
   return (
     <>
-      <Flex $gap={20} $wrap="wrap">
+      <Flex $gap={20} $wrap="wrap" $alignItems="center">
         <Button
           $icon={<Icon icon={SquareArrowOutUpRight} size={18} />}
           onClick={() => setIsOpen(true)}
@@ -352,35 +369,111 @@ function ModalToastDemo() {
         <Button
           $variant="secondary"
           onClick={() =>
-            addNotification("Changes saved successfully.", {
+            addNotification("Changes saved", {
               color: "success",
+              description: "Your profile is up to date.",
               autoHide: 4000,
             })
           }
         >
-          Success Toast
+          Success
         </Button>
         <Button
           $error
           onClick={() =>
-            addNotification("Something went wrong.", {
+            addNotification("Upload failed", {
               color: "error",
-              autoHide: 4000,
+              description: "The file is over 10 MB.",
+              autoHide: 6000,
+              action: {
+                label: "Retry",
+                onClick: () =>
+                  addNotification("Uploaded", {
+                    color: "success",
+                    autoHide: 3000,
+                  }),
+              },
             })
           }
         >
-          Error Toast
+          Error + action
         </Button>
         <Button
           $variant="tertiary"
           onClick={() =>
-            addNotification("This toast stays until dismissed.", {
-              color: "info",
+            addNotification("Storage almost full", {
+              color: "warning",
+              description: "You have used 92% of your 5 GB.",
+              autoHide: 5000,
             })
           }
         >
-          Info Toast
+          Warning
         </Button>
+        <Button
+          $outline
+          onClick={() =>
+            addNotification("Update ready", {
+              color: "info",
+              description: "This one stays until you dismiss it.",
+            })
+          }
+        >
+          Info (sticky)
+        </Button>
+        <Button
+          $outline
+          onClick={() =>
+            promiseNotification(
+              new Promise((resolve, reject) =>
+                setTimeout(
+                  () => (Math.random() < 0.75 ? resolve(null) : reject()),
+                  2000,
+                ),
+              ),
+              {
+                loading: "Publishing your post",
+                success: "Post published",
+                error: "Couldn't publish",
+              },
+            ).catch(() => {})
+          }
+        >
+          Promise
+        </Button>
+        <Button
+          $outline
+          onClick={() =>
+            addNotification("Message archived", {
+              color: "default",
+              autoHide: 5000,
+              action: {
+                label: "Undo",
+                onClick: () =>
+                  addNotification("Message restored", {
+                    color: "default",
+                    autoHide: 3000,
+                  }),
+              },
+            })
+          }
+        >
+          Undo
+        </Button>
+        <Select
+          aria-label="Toast position"
+          $size="small"
+          value={toastPosition}
+          onChange={(event) =>
+            setToastPosition(event.target.value as ToastPosition)
+          }
+        >
+          {TOAST_POSITIONS.map((position) => (
+            <option key={position} value={position}>
+              {position}
+            </option>
+          ))}
+        </Select>
       </Flex>
       <Modal
         $isOpen={isOpen}
@@ -855,285 +948,301 @@ const StyledFooterCta = styled.a`
 `;
 
 function App() {
+  const toastPositionState = useState<ToastPosition>("top-center");
+  const [toastPosition] = toastPositionState;
+  const [toastEdge, toastAlign] = toastPosition.split("-") as [
+    "top" | "bottom",
+    "center" | "left" | "right",
+  ];
+
   return (
-    <ToastNotificationsProvider>
-      <ToastNotifications />
-      <Container>
-        <Space $size={80} />
-        <MaxWidth $xs={960}>
-          <StyledHeader>
-            <div>
-              <StyledTitle>Cherry Design System</StyledTitle>
-              <StyledLead>
-                A white-label React component library built with
-                styled-components. Every control below is themeable and adapts
-                to light and dark. Toggle the theme to see it react.
-              </StyledLead>
-            </div>
-          </StyledHeader>
-          <Space $size={24} />
-          <ThemeToggle $shortcut />
-
-          <StyledDivider />
-
-          <Section
-            title="Typography"
-            note="A responsive type scale driven by theme tokens; sizes step up at the lg breakpoint."
-          >
-            <TypeRow name="Hero 3">
-              <StyledHero3>Cherry</StyledHero3>
-            </TypeRow>
-            <TypeRow name="Heading 2">
-              <StyledTypeH2>The quick brown fox</StyledTypeH2>
-            </TypeRow>
-            <TypeRow name="Heading 4">
-              <StyledTypeH4>The quick brown fox jumps over</StyledTypeH4>
-            </TypeRow>
-            <TypeRow name="Body">
-              <StyledBody>
-                The quick brown fox jumps over the lazy dog. Body copy uses the
-                text token with a relaxed line height for comfortable reading.
-              </StyledBody>
-            </TypeRow>
-            <TypeRow name="Quote">
-              <StyledBlockquote>
-                Design is not just what it looks like and feels like. Design is
-                how it works.
-              </StyledBlockquote>
-            </TypeRow>
-            <TypeRow name="Code">
-              <StyledBody>
-                Install with{" "}
-                <StyledInlineCode>
-                  pnpm add cherry-styled-components
-                </StyledInlineCode>{" "}
-                and import from the barrel.
-              </StyledBody>
-            </TypeRow>
-          </Section>
-
-          <StyledDivider />
-
-          <Section
-            title="Foundations"
-            note="Color and elevation tokens resolve per theme. The elevation cards are the Box component with shadow tokens layered on."
-          >
-            <StyledCaption>Color</StyledCaption>
-            <Space $size={16} />
-            <Grid $xsCols={2} $smCols={4} $lgCols={8} $gap={20}>
-              {swatchTokens.map(({ token, label }) => (
-                <div key={token}>
-                  <StyledSwatch $token={token} />
-                  <StyledSwatchLabel>{label}</StyledSwatchLabel>
-                  <StyledSwatchValue>{token}</StyledSwatchValue>
-                </div>
-              ))}
-            </Grid>
-
-            <Space $size={40} />
-
-            <StyledCaption>Elevation · Box</StyledCaption>
-            <Space $size={16} />
-            <Grid $xsCols={2} $lgCols={5} $gap={20}>
-              {(["xs", "sm", "md", "lg", "xl"] as const).map((level) => (
-                <StyledElevation key={level} $level={level} $padding={20}>
-                  <StyledSwatchValue>shadow.{level}</StyledSwatchValue>
-                </StyledElevation>
-              ))}
-            </Grid>
-          </Section>
-
-          <StyledDivider />
-
-          <Section
-            title="Buttons"
-            note="Three variants, each solid or outline, plus icon, destructive, and disabled states."
-          >
-            <Tier label="Default">
-              <ButtonTier size="default" />
-            </Tier>
-            <Space $size={32} />
-            <Tier label="Big">
-              <ButtonTier size="big" />
-            </Tier>
-            <Space $size={32} />
-            <Tier label="Small">
-              <ButtonTier size="small" />
-            </Tier>
-          </Section>
-
-          <StyledDivider />
-
-          <Section
-            title="Icon buttons"
-            note="Compact square buttons for toolbars: default, active, destructive, and disabled states."
-          >
-            <Tier label="Default">
-              <IconButtonTier size="default" />
-            </Tier>
-            <Space $size={28} />
-            <Tier label="Big">
-              <IconButtonTier size="big" />
-            </Tier>
-            <Space $size={28} />
-            <Tier label="Small">
-              <IconButtonTier size="small" />
-            </Tier>
-          </Section>
-
-          <StyledDivider />
-
-          <Section
-            title="Spinner"
-            note="The shared loading indicator: a rotating lucide icon that sits still under prefers-reduced-motion. Any icon and size can stand in."
-          >
-            <Box $padding={20}>
-              <Flex $gap={28} $alignItems="center">
-                <Spinner size={16} />
-                <Spinner />
-                <Spinner size={32} />
-                <Spinner icon={Loader} size={32} />
-              </Flex>
-            </Box>
-          </Section>
-
-          <StyledDivider />
-
-          <Section
-            title="Form controls"
-            note="Inputs, selects, textarea, password, and the selection controls, shown across the three size tiers."
-          >
-            <Tier label="Default">
-              <FormTier size="default" />
-            </Tier>
-            <Space $size={40} />
-            <Tier label="Big">
-              <FormTier size="big" />
-            </Tier>
-            <Space $size={40} />
-            <Tier label="Small">
-              <FormTier size="small" />
-            </Tier>
-          </Section>
-
-          <StyledDivider />
-
-          <Section
-            title="Overlays"
-            note="A focus-trapping modal and the toast notification system with color-coded intents."
-          >
-            <ModalToastDemo />
-          </Section>
-
-          <StyledDivider />
-
-          <Section
-            title="Disclosure"
-            note="Accordions and keyboard-navigable tabs for progressively revealing content."
-          >
-            <Accordion title="Accordion" defaultOpen>
-              This accordion is open by default. It animates open and close, and
-              the chevron rotates to match.
-            </Accordion>
-            <Space $size={20} />
-            <Accordion title="Accordion Inline" $inline>
-              The inline variant drops the border and radius and uses tighter
-              padding, for embedding inside cards or lists.
-            </Accordion>
+    <ToastPositionContext.Provider value={toastPositionState}>
+      <ToastNotificationsProvider>
+        <ToastNotifications
+          $align={toastAlign}
+          $bottom={toastEdge === "bottom"}
+        />
+        <Container>
+          <Space $size={80} />
+          <MaxWidth $xs={960}>
+            <StyledHeader>
+              <div>
+                <StyledTitle>Cherry Design System</StyledTitle>
+                <StyledLead>
+                  A white-label React component library built with
+                  styled-components. Every control below is themeable and adapts
+                  to light and dark. Toggle the theme to see it react.
+                </StyledLead>
+              </div>
+            </StyledHeader>
             <Space $size={24} />
-            <Tabs>
-              <TabContent title="Overview">
-                The Cherry tabs group related content into panels. Use the arrow
-                keys to move between tabs; Home and End jump to the edges.
-              </TabContent>
-              <TabContent title="Details">
-                Each tab renders its own panel content, and only the active
-                panel is mounted.
-              </TabContent>
-              <TabContent title="Settings">Settings panel content.</TabContent>
-            </Tabs>
-          </Section>
+            <ThemeToggle $shortcut />
 
-          <StyledDivider />
+            <StyledDivider />
 
-          <Section
-            title="File upload"
-            note="A full dropzone with constraints, a compact inline variant, and the avatar uploader in three sizes."
-          >
-            <DropzoneDemo />
-            <Space $size={20} />
-            <InlineDropzoneDemo />
-            <Space $size={28} />
-            <StyledCaption>Avatar · small / default / big</StyledCaption>
-            <Space $size={16} />
-            <AvatarDropzoneDemo />
-          </Section>
-
-          <StyledDivider />
-
-          <Section
-            title="Chat"
-            note="A transport-agnostic chat kit: the headless provider owns panel state, focus and the transcript, while the app supplies onSend. The glow treatment is opt-in."
-          >
-            <ChatDemo />
-          </Section>
-
-          <StyledDivider />
-
-          <Section
-            title="Callouts & avatars"
-            note="Alert-semantic callouts that keep their meaning under any brand palette, and the avatar primitive with image, initials, and icon fallbacks."
-          >
-            <Flex $direction="column" $gap={20} $fullWidth>
-              <Callout $type="note">
-                <p>A note callout for supplementary details.</p>
-              </Callout>
-              <Callout $type="warning">
-                <p>A warning callout for things to watch out for.</p>
-              </Callout>
-              <Callout $type="danger">
-                <p>A danger callout for destructive outcomes.</p>
-              </Callout>
-              <Callout $type="success">
-                <p>A success callout for confirmations.</p>
-              </Callout>
-            </Flex>
-            <Space $size={28} />
-            <StyledCaption>Avatar · initials / icon / sizes</StyledCaption>
-            <Space $size={16} />
-            <Flex $gap={20} $alignItems="center">
-              <Avatar $size="small" $name="Ada Lovelace" />
-              <Avatar $name="Cherry" $color="secondary" />
-              <Avatar $size="big" $color="tertiary" $alt="Assistant" />
-            </Flex>
-          </Section>
-
-          <StyledDivider />
-
-          <StyledFooter>
-            <StyledCaption>Get started</StyledCaption>
-            <Space $size={16} />
-            <StyledFooterHeading>
-              Start building with Cherry
-            </StyledFooterHeading>
-            <StyledFooterText>
-              A white-label, fully themeable React component library. Drop it in
-              and ship a consistent, accessible UI in light and dark.
-            </StyledFooterText>
-            <Space $size={28} />
-            <StyledFooterCta
-              href="https://cherry.al"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Section
+              title="Typography"
+              note="A responsive type scale driven by theme tokens; sizes step up at the lg breakpoint."
             >
-              Visit Cherry
-              <Icon icon={ArrowRight} size={18} />
-            </StyledFooterCta>
-          </StyledFooter>
-        </MaxWidth>
-        <Space $size={100} />
-      </Container>
-    </ToastNotificationsProvider>
+              <TypeRow name="Hero 3">
+                <StyledHero3>Cherry</StyledHero3>
+              </TypeRow>
+              <TypeRow name="Heading 2">
+                <StyledTypeH2>The quick brown fox</StyledTypeH2>
+              </TypeRow>
+              <TypeRow name="Heading 4">
+                <StyledTypeH4>The quick brown fox jumps over</StyledTypeH4>
+              </TypeRow>
+              <TypeRow name="Body">
+                <StyledBody>
+                  The quick brown fox jumps over the lazy dog. Body copy uses
+                  the text token with a relaxed line height for comfortable
+                  reading.
+                </StyledBody>
+              </TypeRow>
+              <TypeRow name="Quote">
+                <StyledBlockquote>
+                  Design is not just what it looks like and feels like. Design
+                  is how it works.
+                </StyledBlockquote>
+              </TypeRow>
+              <TypeRow name="Code">
+                <StyledBody>
+                  Install with{" "}
+                  <StyledInlineCode>
+                    pnpm add cherry-styled-components
+                  </StyledInlineCode>{" "}
+                  and import from the barrel.
+                </StyledBody>
+              </TypeRow>
+            </Section>
+
+            <StyledDivider />
+
+            <Section
+              title="Foundations"
+              note="Color and elevation tokens resolve per theme. The elevation cards are the Box component with shadow tokens layered on."
+            >
+              <StyledCaption>Color</StyledCaption>
+              <Space $size={16} />
+              <Grid $xsCols={2} $smCols={4} $lgCols={8} $gap={20}>
+                {swatchTokens.map(({ token, label }) => (
+                  <div key={token}>
+                    <StyledSwatch $token={token} />
+                    <StyledSwatchLabel>{label}</StyledSwatchLabel>
+                    <StyledSwatchValue>{token}</StyledSwatchValue>
+                  </div>
+                ))}
+              </Grid>
+
+              <Space $size={40} />
+
+              <StyledCaption>Elevation · Box</StyledCaption>
+              <Space $size={16} />
+              <Grid $xsCols={2} $lgCols={5} $gap={20}>
+                {(["xs", "sm", "md", "lg", "xl"] as const).map((level) => (
+                  <StyledElevation key={level} $level={level} $padding={20}>
+                    <StyledSwatchValue>shadow.{level}</StyledSwatchValue>
+                  </StyledElevation>
+                ))}
+              </Grid>
+            </Section>
+
+            <StyledDivider />
+
+            <Section
+              title="Buttons"
+              note="Three variants, each solid or outline, plus icon, destructive, and disabled states."
+            >
+              <Tier label="Default">
+                <ButtonTier size="default" />
+              </Tier>
+              <Space $size={32} />
+              <Tier label="Big">
+                <ButtonTier size="big" />
+              </Tier>
+              <Space $size={32} />
+              <Tier label="Small">
+                <ButtonTier size="small" />
+              </Tier>
+            </Section>
+
+            <StyledDivider />
+
+            <Section
+              title="Icon buttons"
+              note="Compact square buttons for toolbars: default, active, destructive, and disabled states."
+            >
+              <Tier label="Default">
+                <IconButtonTier size="default" />
+              </Tier>
+              <Space $size={28} />
+              <Tier label="Big">
+                <IconButtonTier size="big" />
+              </Tier>
+              <Space $size={28} />
+              <Tier label="Small">
+                <IconButtonTier size="small" />
+              </Tier>
+            </Section>
+
+            <StyledDivider />
+
+            <Section
+              title="Spinner"
+              note="The shared loading indicator: a rotating lucide icon that sits still under prefers-reduced-motion. Any icon and size can stand in."
+            >
+              <Box $padding={20}>
+                <Flex $gap={28} $alignItems="center">
+                  <Spinner size={16} />
+                  <Spinner />
+                  <Spinner size={32} />
+                  <Spinner icon={Loader} size={32} />
+                </Flex>
+              </Box>
+            </Section>
+
+            <StyledDivider />
+
+            <Section
+              title="Form controls"
+              note="Inputs, selects, textarea, password, and the selection controls, shown across the three size tiers."
+            >
+              <Tier label="Default">
+                <FormTier size="default" />
+              </Tier>
+              <Space $size={40} />
+              <Tier label="Big">
+                <FormTier size="big" />
+              </Tier>
+              <Space $size={40} />
+              <Tier label="Small">
+                <FormTier size="small" />
+              </Tier>
+            </Section>
+
+            <StyledDivider />
+
+            <Section
+              title="Overlays"
+              note="A focus-trapping modal and the toast notification system with color-coded intents."
+            >
+              <ModalToastDemo />
+            </Section>
+
+            <StyledDivider />
+
+            <Section
+              title="Disclosure"
+              note="Accordions and keyboard-navigable tabs for progressively revealing content."
+            >
+              <Accordion title="Accordion" defaultOpen>
+                This accordion is open by default. It animates open and close,
+                and the chevron rotates to match.
+              </Accordion>
+              <Space $size={20} />
+              <Accordion title="Accordion Inline" $inline>
+                The inline variant drops the border and radius and uses tighter
+                padding, for embedding inside cards or lists.
+              </Accordion>
+              <Space $size={24} />
+              <Tabs>
+                <TabContent title="Overview">
+                  The Cherry tabs group related content into panels. Use the
+                  arrow keys to move between tabs; Home and End jump to the
+                  edges.
+                </TabContent>
+                <TabContent title="Details">
+                  Each tab renders its own panel content, and only the active
+                  panel is mounted.
+                </TabContent>
+                <TabContent title="Settings">
+                  Settings panel content.
+                </TabContent>
+              </Tabs>
+            </Section>
+
+            <StyledDivider />
+
+            <Section
+              title="File upload"
+              note="A full dropzone with constraints, a compact inline variant, and the avatar uploader in three sizes."
+            >
+              <DropzoneDemo />
+              <Space $size={20} />
+              <InlineDropzoneDemo />
+              <Space $size={28} />
+              <StyledCaption>Avatar · small / default / big</StyledCaption>
+              <Space $size={16} />
+              <AvatarDropzoneDemo />
+            </Section>
+
+            <StyledDivider />
+
+            <Section
+              title="Chat"
+              note="A transport-agnostic chat kit: the headless provider owns panel state, focus and the transcript, while the app supplies onSend. The glow treatment is opt-in."
+            >
+              <ChatDemo />
+            </Section>
+
+            <StyledDivider />
+
+            <Section
+              title="Callouts & avatars"
+              note="Alert-semantic callouts that keep their meaning under any brand palette, and the avatar primitive with image, initials, and icon fallbacks."
+            >
+              <Flex $direction="column" $gap={20} $fullWidth>
+                <Callout $type="note">
+                  <p>A note callout for supplementary details.</p>
+                </Callout>
+                <Callout $type="warning">
+                  <p>A warning callout for things to watch out for.</p>
+                </Callout>
+                <Callout $type="danger">
+                  <p>A danger callout for destructive outcomes.</p>
+                </Callout>
+                <Callout $type="success">
+                  <p>A success callout for confirmations.</p>
+                </Callout>
+              </Flex>
+              <Space $size={28} />
+              <StyledCaption>Avatar · initials / icon / sizes</StyledCaption>
+              <Space $size={16} />
+              <Flex $gap={20} $alignItems="center">
+                <Avatar $size="small" $name="Ada Lovelace" />
+                <Avatar $name="Cherry" $color="secondary" />
+                <Avatar $size="big" $color="tertiary" $alt="Assistant" />
+              </Flex>
+            </Section>
+
+            <StyledDivider />
+
+            <StyledFooter>
+              <StyledCaption>Get started</StyledCaption>
+              <Space $size={16} />
+              <StyledFooterHeading>
+                Start building with Cherry
+              </StyledFooterHeading>
+              <StyledFooterText>
+                A white-label, fully themeable React component library. Drop it
+                in and ship a consistent, accessible UI in light and dark.
+              </StyledFooterText>
+              <Space $size={28} />
+              <StyledFooterCta
+                href="https://cherry.al"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Cherry
+                <Icon icon={ArrowRight} size={18} />
+              </StyledFooterCta>
+            </StyledFooter>
+          </MaxWidth>
+          <Space $size={100} />
+        </Container>
+      </ToastNotificationsProvider>
+    </ToastPositionContext.Provider>
   );
 }
 

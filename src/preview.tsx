@@ -41,7 +41,7 @@ import {
   useToastNotifications,
   type ChatSendHandler,
   type Shadows,
-  type ToastColor,
+  type ToastConfig,
 } from "./lib";
 
 const StyledStage = styled.main`
@@ -107,10 +107,23 @@ const StyledPlaceholder = styled.div`
 // stack builds up one at a time starting a beat after the trigger.
 const TOAST_STAGGER_MS = 300;
 
-const DEFAULT_TOASTS: Array<{ text: string; color: ToastColor }> = [
-  { text: "Changes saved successfully.", color: "success" },
-  { text: "Something went wrong.", color: "error" },
-  { text: "This is an info toast.", color: "info" },
+const DEFAULT_TOASTS: Array<{ text: string } & ToastConfig> = [
+  {
+    text: "Changes saved",
+    color: "success",
+    description: "Your profile is up to date.",
+  },
+  {
+    text: "Upload failed",
+    color: "error",
+    description: "The file is over 10 MB.",
+    action: { label: "Retry", onClick: () => {} },
+  },
+  {
+    text: "Update ready",
+    color: "info",
+    description: "Version 2.4 installs on restart.",
+  },
 ];
 
 function ToastPreview() {
@@ -125,7 +138,10 @@ function ToastPreview() {
     cancelPending.current();
     const timers = DEFAULT_TOASTS.map((toast, index) =>
       window.setTimeout(
-        () => addNotification(toast.text, { color: toast.color }),
+        () => {
+          const { text, ...config } = toast;
+          addNotification(text, config);
+        },
         (index + 1) * TOAST_STAGGER_MS,
       ),
     );

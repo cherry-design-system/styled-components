@@ -237,7 +237,7 @@ The route is handled in `src/main.tsx` and the previews live in `src/preview.tsx
 | `select`           | Select with label                                      |
 | `textarea`         | Textarea with label and value                          |
 | `theme-toggle`     | Pill-shaped sun/moon theme switch                      |
-| `toast`            | Success, error, and info toasts, fired on mount        |
+| `toast`            | Success, error, and info toast deck, fired on mount    |
 | `toggle`           | Checked toggle                                         |
 
 Pure layout primitives with no visual output of their own (Container, Col, MaxWidth, Space) have no preview entry.

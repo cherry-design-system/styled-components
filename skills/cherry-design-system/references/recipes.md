@@ -129,7 +129,7 @@ const [open, setOpen] = useState(false);
 
 ## Toast notifications
 
-Provider + one renderer near the root, then push from anywhere with the hook.
+Provider + one renderer near the root, then push from anywhere with the hook. Prefer `promiseNotification` for async work: one toast that spins, then turns into the result.
 
 ```tsx
 // root
@@ -140,22 +140,28 @@ Provider + one renderer near the root, then push from anywhere with the hook.
 
 // in a component
 function SaveButton() {
-  const { addNotification } = useToastNotifications();
+  const { promiseNotification } = useToastNotifications();
   return (
     <Button
-      onClick={async () => {
-        try {
-          await save();
-          addNotification("Saved", { color: "success", autoHide: 4000 });
-        } catch {
-          addNotification("Save failed", { color: "error" }); // sticky
-        }
-      }}
+      onClick={() =>
+        promiseNotification(save(), {
+          loading: "Saving",
+          success: "Saved",
+          error: "Save failed",
+        }).catch(() => {})
+      }
     >
       Save
     </Button>
   );
 }
+
+// a failure the user can act on
+addNotification("Upload failed", {
+  color: "error",
+  description: "The file is over 10 MB.",
+  action: { label: "Retry", onClick: retry },
+});
 ```
 
 ## Tabs and Accordion

@@ -5,6 +5,28 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.24] - 2026-11-18
+
+### Added
+
+- `Toast`: a redesigned card. A colored icon tile whose glyph draws itself in once the card lands, a bold title, an optional `description` line, an optional `action` button (a small Cherry `Button` that runs `onClick` and then dismisses) and a close badge on the corner that shows on hover or focus (always on touch screens)
+- `Toast`: two more colors. `"default"` has no icon tile, for plain messages like "Message archived"; `"loading"` shows the `Spinner` and never hides itself
+- `Toast`: a collapsed deck. The newest toast sits in front and older ones peek out behind it, smaller, with their content hidden. Hovering, focusing or tapping the stack fans it out and pauses auto-hide, which also pauses while the tab is hidden. Swipe a toast toward its edge or sideways to dismiss it, or press Escape while it has focus
+- `ToastNotifications` props `$expand` (keep every toast fanned out, the old list look) and `$visibleToasts` (how many show at once, default `3`)
+- `useToastNotifications()` returns `updateNotification(id, update)` to change a toast in place, `dismissNotification(id)` to remove one with its exit animation, and `promiseNotification(task, { loading, success, error }, config?)`, which shows a loading toast and swaps it to success or error when the promise settles (settled toasts hide after 4 seconds unless `autoHide` says otherwise)
+- `ToastConfig` gains `description`, `action`, `dismissible` (close badge and swipe, default `true`) and `id` (reuse an id to replace that toast in place). New exported types: `ToastAction`, `ToastUpdate`, `ToastPromiseMessages`, `ToastNotification`
+- `ThemedGlobalStyles`: Cherry's global styles as one component that reads the active theme from the `ThemeProvider`
+
+### Changed
+
+- `addNotification` returns the new toast's id
+- A toast's text is typed `React.ReactNode` instead of `string`. Existing calls are unaffected
+- The toast stack is a fixed-width column (`min(380px, 100vw - 40px)`) anchored by `$align` and `$bottom`, instead of a full-width strip of pills
+
+### Fixed
+
+- `CherryThemeProvider` and `ClientThemeProvider` no longer crash in development with "Rendered fewer hooks than expected". Since 0.2.23 they built the global style component inside `useMemo`, and styled-components' development build calls a hook whenever a styled component is created, which React rejects there. Both providers now render the module-level `ThemedGlobalStyles`. Production builds were not affected
+
 ## [0.2.23] - 2026-11-15
 
 ### Added

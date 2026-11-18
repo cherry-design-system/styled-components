@@ -453,12 +453,19 @@ const [open, setOpen] = useState(false);
 
 ## Toast notifications
 
-Three pieces: wrap the app in `ToastNotificationsProvider`, render one `<ToastNotifications />` (the visual stack), and call `useToastNotifications()` in components to push toasts. Exports: `ToastNotificationsProvider`, `ToastNotifications`, `useToastNotifications`, `ToastNotificationsContext`, `ToastNotificationsProps`, `ToastConfig`, `ToastColor`, `ToastAlign`, `StyledNotifications`, `StyledNotificationItem`.
+Three pieces: wrap the app in `ToastNotificationsProvider`, render one `<ToastNotifications />` (the visual stack), and call `useToastNotifications()` in components to push toasts. Exports: `ToastNotificationsProvider`, `ToastNotifications`, `useToastNotifications`, `ToastNotificationsContext`, `ToastNotificationsProps`, `ToastConfig`, `ToastUpdate`, `ToastAction`, `ToastPromiseMessages`, `ToastNotification`, `ToastColor`, `ToastAlign`, `StyledNotifications`, `StyledNotificationItem`.
 
-- `ToastColor = "info" | "success" | "error" | "warning"`, `ToastAlign = "center" | "left" | "right"`.
-- `ToastConfig = { color?: ToastColor; autoHide?: number }`. `autoHide` is milliseconds; `0` (default) means sticky (manual dismiss only).
-- `useToastNotifications()` returns `{ notifications, addNotification(text, config?), removeNotification(id) }`.
-- `ToastNotifications` props: `$align` (default `"center"`), `$bottom` (top when false).
+Each toast is a card: a colored icon tile (none for `default`, a spinner for `loading`), a bold title, an optional description, an optional action button and a close badge on the corner. Toasts collapse into a deck (newest in front, older ones peeking behind); hovering, focusing or tapping the stack fans it out and pauses auto-hide. Swipe or Escape dismisses.
+
+- `ToastColor = "default" | "info" | "success" | "error" | "warning" | "loading"`, `ToastAlign = "center" | "left" | "right"`.
+- `ToastConfig = { color?; autoHide?; description?: ReactNode; action?: { label: string; onClick: () => void }; dismissible?: boolean; id?: number }`. `color` defaults to `"info"`. `autoHide` is milliseconds; `0` (default) is sticky. `loading` is always sticky. `dismissible` (default `true`) controls the close badge and swipe. Passing an existing `id` replaces that toast in place. The action runs `onClick`, then dismisses.
+- `useToastNotifications()` returns:
+  - `notifications`
+  - `addNotification(text, config?)`, which returns the toast's id; `text` is any `ReactNode` and renders as the title
+  - `updateNotification(id, { text?, ...config })` to change a live toast in place
+  - `dismissNotification(id)` to remove it with the exit animation; `removeNotification(id)` removes it immediately
+  - `promiseNotification(task, { loading, success, error }, config?)`, which shows a `loading` toast and swaps it to `success` or `error` when `task` (a promise or a function returning one) settles. `success`/`error` may be functions of the result/error. Settled toasts hide after 4000ms unless `config.autoHide` says otherwise. Returns the task's promise, so handle its rejection
+- `ToastNotifications` props: `$align` (default `"center"`), `$bottom` (top when false), `$expand` (keep every toast fanned out instead of collapsing into a deck), `$visibleToasts` (how many show at once, default `3`).
 
 ```tsx
 // once, high in the tree:
@@ -468,9 +475,22 @@ Three pieces: wrap the app in `ToastNotificationsProvider`, render one `<ToastNo
 </ToastNotificationsProvider>;
 
 // anywhere inside:
-const { addNotification } = useToastNotifications();
-addNotification("Saved successfully", { color: "success", autoHide: 4000 });
-addNotification("Something went wrong", { color: "error" }); // sticky
+const { addNotification, promiseNotification } = useToastNotifications();
+addNotification("Changes saved", {
+  color: "success",
+  description: "Your profile is up to date.",
+  autoHide: 4000,
+});
+addNotification("Message archived", {
+  color: "default",
+  autoHide: 5000,
+  action: { label: "Undo", onClick: restore },
+});
+promiseNotification(publish(), {
+  loading: "Publishing your post",
+  success: "Post published",
+  error: (error) => `Couldn't publish: ${String(error)}`,
+}).catch(() => {});
 ```
 
 ## ThemeToggle
@@ -718,6 +738,6 @@ Full setup is in `setup.md`. Exported from `cherry-styled-components`:
 - `ClientThemeProvider` + `ClientThemeProviderProps` (SSR-aware, flash-free).
 - `StyledComponentsRegistry` (Next.js App Router style extraction) — the one exception, imported from `cherry-styled-components/next`.
 - `themeInitScript`, `createThemeInitScript(darkBackground?, darkThemeColor?)`, `resolveTheme(cookieValue, theme, themeDark?)` (server-safe theming helpers).
-- `GlobalStyles(theme)` (base HTML/body resets; the providers render it for you unless you opt out).
+- `GlobalStyles(theme)` (base HTML/body resets for one fixed theme; call it once at module level, never during render). `ThemedGlobalStyles` is the same styles reading the active theme from the `ThemeProvider`; the providers render it for you unless you opt out.
 - `theme`, `themeDark`, and the `Theme` type, plus all the typography mixins, style mixins, and the `alpha` / `shade` / `tint` color helpers documented in `theme.md`.
 - Utility hooks: `useMediaQuery(query)`, `useBelowBreakpoint(size)` (theme breakpoint names), `useLockBodyScroll(isLocked)`, `useOnClickOutside(refs, handler)`.
