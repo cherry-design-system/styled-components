@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useMemo, useState } from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import { GlobalStyles, Theme } from "../utils";
+import { ThemedGlobalStyles, Theme } from "../utils";
 import { ThemeContext } from "./theme-provider";
 
 const THEME_COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
@@ -201,17 +201,10 @@ function ClientThemeProvider({
     setTheme(effectiveTheme.isDark ? theme : themeDark);
   };
 
-  // createGlobalStyle builds a new component, so a fresh one per render
-  // would remount and re-inject the global sheet on every update.
-  const GlobalStylesComponent = useMemo(
-    () => ($globalStyles ? GlobalStyles(effectiveTheme) : null),
-    [$globalStyles, effectiveTheme],
-  );
-
   return (
     <StyledThemeProvider theme={effectiveTheme}>
       <ThemeContext.Provider value={{ setTheme, toggleTheme }}>
-        {GlobalStylesComponent && <GlobalStylesComponent />}
+        {$globalStyles && <ThemedGlobalStyles />}
         {children}
       </ThemeContext.Provider>
     </StyledThemeProvider>

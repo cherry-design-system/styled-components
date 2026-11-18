@@ -1,7 +1,7 @@
 "use client";
-import React, { createContext, useEffect, useMemo, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import { GlobalStyles, Theme } from "../utils";
+import { ThemedGlobalStyles, Theme } from "../utils";
 
 interface ThemeContextProps {
   setTheme: React.Dispatch<React.SetStateAction<Theme>>;
@@ -45,17 +45,10 @@ function CherryThemeProvider({
     document.documentElement.classList.toggle("dark", Boolean(next.isDark));
   };
 
-  // createGlobalStyle builds a new component, so a fresh one per render
-  // would remount and re-inject the global sheet on every update.
-  const GlobalStylesComponent = useMemo(
-    () => GlobalStyles(currentTheme),
-    [currentTheme],
-  );
-
   return (
     <StyledThemeProvider theme={currentTheme}>
       <ThemeContext.Provider value={{ setTheme, toggleTheme }}>
-        <GlobalStylesComponent />
+        <ThemedGlobalStyles />
         {children}
       </ThemeContext.Provider>
     </StyledThemeProvider>
