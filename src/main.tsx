@@ -3,7 +3,12 @@ import ReactDOM from "react-dom/client";
 // No StyledComponentsRegistry here: it exists to flush styles during a Next
 // server render, and this demo is a client-only SPA with no server pass to
 // insert into. It now lives behind `cherry-styled-components/next`.
-import { ClientThemeProvider, theme, themeDark } from "./lib/index.js";
+import {
+  ClientThemeProvider,
+  theme,
+  themeDark,
+  themeInitScript,
+} from "./lib/index.js";
 import App from "./App";
 import { Preview } from "./preview";
 import defaultPreviewColors from "./theme.json";
@@ -21,22 +26,16 @@ const themeParam = searchParams.get("theme");
 const forcedTheme =
   themeParam === "dark" || themeParam === "light" ? themeParam : undefined;
 
-// Resolve the initial theme synchronously (forced param, then cookie, then
-// localStorage, then the OS preference) so the first render already has the
-// right theme. This is the client-only equivalent of the cookie read a server
-// does in an SSR app.
-const cookieTheme = document.cookie
-  .split(";")
-  .map((c) => c.trim())
-  .find((c) => c.startsWith("theme="))
-  ?.split("=")[1];
-const storedTheme = forcedTheme ?? cookieTheme ?? localStorage.theme;
-const initialTheme =
-  storedTheme === "dark" ||
-  (storedTheme !== "light" &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ? "dark"
-    : "light";
+// Put the page in its mode before the first render, as an SSR app does with
+// themeInitScript in its <head>: an inline script runs as soon as it is
+// inserted. A pinned preview just takes its mode.
+if (forcedTheme) {
+  document.documentElement.classList.toggle("dark", forcedTheme === "dark");
+} else {
+  const init = document.createElement("script");
+  init.textContent = themeInitScript;
+  document.head.appendChild(init);
+}
 
 // Optional color overrides for previews: ?colors=<URI-encoded JSON> shaped
 // like { default: { primary: "#..." }, dark: { ... } }. Only valid CSS color
@@ -73,13 +72,12 @@ if (previewMatch) {
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    {/* When a theme is forced, pass only that theme and omit themeDark so
-        ClientThemeProvider skips its cookie/OS reconciliation on mount and
-        the pinned theme can never be flipped by another tab or iframe. */}
+    {/* $mode pins a forced theme: nothing is stored, so another tab or
+        iframe can never flip it. */}
     <ClientThemeProvider
-      theme={forcedTheme === "dark" ? previewThemeDark : previewTheme}
-      themeDark={forcedTheme ? undefined : previewThemeDark}
-      $initial={initialTheme}
+      theme={previewTheme}
+      themeDark={previewThemeDark}
+      $mode={forcedTheme}
     >
       {previewMatch ? <Preview name={previewMatch[1] ?? ""} /> : <App />}
     </ClientThemeProvider>

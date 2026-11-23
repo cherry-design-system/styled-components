@@ -22,28 +22,28 @@ export const tint = (color: string, percent: number) =>
 export const primaryFillColor = (theme: Theme) =>
   theme.colors.primaryFill ?? theme.colors.primary;
 
-/** The solid primary fill on hover: a shade of `primaryFill`, else `primaryDark`. */
+/**
+ * The solid primary fill on hover: the theme's `primaryFillHover`, else a
+ * shade of `primaryFill`, else `primaryDark`.
+ */
 export const primaryFillHoverColor = (theme: Theme) =>
-  theme.colors.primaryFill
+  theme.colors.primaryFillHover ??
+  (theme.colors.primaryFill
     ? shade(theme.colors.primaryFill, 10)
-    : theme.colors.primaryDark;
+    : theme.colors.primaryDark);
 
-/**
- * Hover and emphasis text on a surface: the theme's `accent` when it sets
- * one, else the end of the primary ramp that contrasts with the mode,
- * `primaryDark` in light mode and `primaryLight` in dark mode.
- */
+// The mode tokens below are always set under Cherry's providers (filled per
+// mode by createThemeVariables). The fallbacks only apply to a theme object
+// used outside them, such as one passed straight to GlobalStyles(), and are
+// the light-mode defaults.
+
+/** Hover and emphasis text on a surface: the theme's `accent`. */
 export const accentColor = (theme: Theme) =>
-  theme.colors.accent ??
-  (theme.isDark ? theme.colors.primaryLight : theme.colors.primaryDark);
+  theme.colors.accent ?? theme.colors.primaryDark;
 
-/**
- * The link color: the theme's `link` when it sets one, else `primary` in
- * light mode and `dark` in dark mode.
- */
+/** The link color: the theme's `link`. */
 export const linkColor = (theme: Theme) =>
-  theme.colors.link ??
-  (theme.isDark ? theme.colors.dark : theme.colors.primary);
+  theme.colors.link ?? theme.colors.primary;
 
 /** Which primary tint a surface takes: hovered, dragged over, or active. */
 export type PrimaryTintKind = "hover" | "drop" | "active";
@@ -54,48 +54,27 @@ const primaryTintTokens = {
   active: "primaryTintActive",
 } as const;
 
-/** The fallback amounts of `primary`, in percent: [light mode, dark mode]. */
-const primaryTintAmounts: Record<PrimaryTintKind, [number, number]> = {
-  hover: [4, 10],
-  drop: [5, 12],
-  active: [10, 18],
+/** The light-mode amounts of `primary`, in percent, outside the providers. */
+const primaryTintAmounts: Record<PrimaryTintKind, number> = {
+  hover: 4,
+  drop: 5,
+  active: 10,
 };
 
 /**
  * A primary tint behind a surface: the theme's `primaryTintHover`,
- * `primaryTintDrop` or `primaryTintActive` when it sets one, else `primary`
- * faded to the mode's amount.
+ * `primaryTintDrop` or `primaryTintActive`.
  */
-export const primaryTintColor = (theme: Theme, kind: PrimaryTintKind) => {
-  const [light, dark] = primaryTintAmounts[kind];
-  return (
-    theme.colors[primaryTintTokens[kind]] ??
-    alpha(theme.colors.primary, theme.isDark ? dark : light)
-  );
-};
-
-/**
- * The dark-mode tint restated as a rule scoped to a `dark` class on <html>,
- * for apps that resolve the mode in CSS before hydration can swap the theme
- * object. Empty when the theme sets the token: a token already follows the
- * mode, and the rule would override it inside a light-mode island.
- */
-export const darkPrimaryTintRule = (theme: Theme, kind: PrimaryTintKind) =>
-  theme.colors[primaryTintTokens[kind]]
-    ? ""
-    : `:root.dark & { background: ${alpha(
-        theme.colors.primary,
-        primaryTintAmounts[kind][1],
-      )}; }`;
+export const primaryTintColor = (theme: Theme, kind: PrimaryTintKind) =>
+  theme.colors[primaryTintTokens[kind]] ??
+  alpha(theme.colors.primary, primaryTintAmounts[kind]);
 
 /** Which fill a label sits on, so a theme's `onPrimary` can answer for its own. */
 export type FilledTextFill = "primary" | "other";
 
 /**
  * Text color for a label sitting on a brand-colored fill: the theme's
- * `onPrimary` on a primary fill when it sets one, else the theme's
- * `onFilled`, else the palette's contrasting end, `light` in light mode and
- * `dark` in dark mode.
+ * `onPrimary` on a primary fill when it sets one, else `onFilled`.
  */
 export const filledTextColor = (
   theme: Theme,
@@ -103,29 +82,7 @@ export const filledTextColor = (
 ) =>
   fill === "primary" && theme.colors.onPrimary
     ? theme.colors.onPrimary
-    : (theme.colors.onFilled ??
-      (theme.isDark ? theme.colors.dark : theme.colors.light));
-
-/**
- * The same choice restated as a rule scoped to a `dark` class on <html>, which
- * is what apps resolving the mode in CSS key off before hydration can swap the
- * theme object. Additive: with an already-dark theme object both paths resolve
- * to the same color. A dark theme object's `onPrimary` answers for a primary
- * fill; a light one under the class cannot know the dark value, so it keeps
- * the palette's `dark`. Empty when the theme sets `onFilled`: its tokens
- * already follow the mode. Interpolate alongside `filledTextColor`.
- */
-export const darkFilledTextRule = (
-  theme: Theme,
-  fill: FilledTextFill = "other",
-) =>
-  theme.colors.onFilled
-    ? ""
-    : `:root.dark & { color: ${
-        fill === "primary" && theme.isDark && theme.colors.onPrimary
-          ? theme.colors.onPrimary
-          : theme.colors.dark
-      }; }`;
+    : (theme.colors.onFilled ?? theme.colors.light);
 
 /**
  * Slim, theme-aware scrollbar for internal scroll areas (chat transcripts, code

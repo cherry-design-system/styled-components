@@ -4,7 +4,6 @@ import styled, { css } from "styled-components";
 
 import {
   Theme,
-  darkFilledTextRule as darkFilledText,
   filledTextColor as filledText,
   formElementHeightStyles,
   primaryFillColor,
@@ -62,7 +61,6 @@ export const buttonStyles = (
     $variant === "primary" &&
     css`
       color: ${$outline ? theme.colors.primary : filledText(theme, "primary")};
-      ${!$outline && darkFilledText(theme, "primary")}
       background: ${$outline ? "transparent" : primaryFillColor(theme)};
       border: solid 2px
         ${$outline ? theme.colors.primary : primaryFillColor(theme)};
@@ -91,7 +89,6 @@ export const buttonStyles = (
     $variant === "secondary" &&
     css`
       color: ${$outline ? theme.colors.secondary : filledText(theme)};
-      ${!$outline && darkFilledText(theme)}
       background: ${$outline ? "transparent" : theme.colors.secondary};
       border: solid 2px ${theme.colors.secondary};
       box-shadow: 0 0 0 0px ${theme.colors.secondary};
@@ -117,7 +114,6 @@ export const buttonStyles = (
     $variant === "tertiary" &&
     css`
       color: ${$outline ? theme.colors.tertiary : filledText(theme)};
-      ${!$outline && darkFilledText(theme)}
       background: ${$outline ? "transparent" : theme.colors.tertiary};
       border: solid 2px ${theme.colors.tertiary};
       box-shadow: 0 0 0 0px ${theme.colors.tertiary};
@@ -143,7 +139,6 @@ export const buttonStyles = (
     $error &&
     css`
       color: ${$outline ? theme.colors.error : filledText(theme)};
-      ${!$outline && darkFilledText(theme)}
       background: ${$outline ? "transparent" : theme.colors.error};
       border: solid 2px ${theme.colors.error};
       box-shadow: 0 0 0 0px ${theme.colors.error};

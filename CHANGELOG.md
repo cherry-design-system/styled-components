@@ -5,6 +5,32 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2026-11-23
+
+Light and dark mode now switch through CSS variables. The theme your components see is one object for both modes, whose colors and shadows are `var(--cherry-...)` references, and the mode is a `dark` class on `<html>`. A switch flips the class and the browser repaints: no styled component renders again (538 re-renders and 921 CSS transitions per toggle on the demo page before, none now), and the page changes at once instead of fading control by control. Every component looks exactly as in 0.2.24 in both modes.
+
+### Added
+
+- `createThemeVariables(theme, themeDark?)`: builds the CSS-variable theme, the stylesheet behind it (light values on `:root`, dark ones on `:root.dark`) and both resolved palettes. The providers call it for you; it is server-safe, for rendering the stylesheet or reading the palettes in server code
+- `useColorMode()`: the mode in force, the visitor's preference (`"light"`, `"dark"` or `"system"`), `setPreference` and `toggleTheme`. Only components that call it render again when the mode switches
+- `useResolvedTheme()`: the theme with real color values for the mode in force, plus `isDark`, for code that hands a theme color to something CSS does not style (a canvas, a JS color library, an editor theme)
+- `modes()`: wraps a styled interpolation written against `theme.isDark` and emits CSS that follows the mode, so most existing `isDark` branches migrate by wrapping them: `${modes(({ theme }) => (theme.isDark ? theme.colors.gray : theme.colors.grayLight))}`. `modeValue(light, dark)` is the plain-CSS form
+- A "system" preference: visitors who never choose a mode follow the OS, live. An explicit choice is stored as `themePreference` in localStorage, and the mode in force is mirrored to the `theme` cookie
+- `$mode` prop on both providers: pins a mode without storing anything (toggling does nothing while it is set)
+- `colors.primaryFillHover`: an optional token for the hover shade of the solid primary fill
+- `ThemeInitScriptOptions` type
+
+### Changed
+
+- **Breaking:** `Theme.isDark` is gone. Components receive one theme for both modes, so a style can no longer branch on the mode in JS; TypeScript now flags every `theme.isDark` read. Replace each one with a mode token (`accent`, `link`, `onFilled`, `primaryTint*`, `shadows.toast`), a `:root.dark &` rule, or `modes()`. Remove `isDark` from your own theme objects
+- **Breaking:** theme colors and shadows are CSS variables inside styled components, so JS code that parses or computes with them (polished's `darken()`, `rgba()`, `readableColor()` and the like) gets `var(--cherry-color-primary)` instead of a hex value. Use the native `color-mix()` helpers `alpha`, `shade` and `tint`, or read real values from `useResolvedTheme()`
+- **Breaking:** `ThemeContext` provides `{ toggleTheme, setPreference }`. `setTheme(themeObject)` is gone: call `setPreference("light" | "dark" | "system")`
+- **Breaking:** `createThemeInitScript()` takes an options object, `{ themeColor?: { light, dark } | false }`, instead of `(darkBackground, darkThemeColor)`. The script now sets the `dark` class before the first paint on every load (not only the first visit), so it no longer hides the page or needs a background color. Keep rendering `themeInitScript` (or your own instance) in the document `<head>` of a server-rendered app
+- **Breaking:** `darkFilledTextRule` and `darkPrimaryTintRule` are removed; the mode tokens they patched now always follow the mode. `accentColor`, `linkColor`, `primaryTintColor` and `filledTextColor` read the tokens
+- `CherryThemeProvider` and `ClientThemeProvider` share one implementation and keep their props (`theme`, `themeDark`, `$themeColor`, `$globalStyles`). `$initial` now only sets the mode `useColorMode()` reports during the server render; the colors no longer depend on it. Without `themeDark` the page stays light
+- The providers render the variables as a plain `<style data-cherry-theme>` element, outside styled-components, whose CSS preprocessor drops the empty custom properties `modeValue()` relies on
+- A mode switch turns transitions off for the frame that paints it (`.theme-switching` on `<html>`), so colors change at once. The `ThemeToggle` knob jumps instead of sliding for the same reason
+
 ## [0.2.24] - 2026-11-18
 
 ### Added

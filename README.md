@@ -15,7 +15,7 @@ npm install cherry-styled-components react react-dom styled-components lucide-re
 
 ## Quick Start
 
-Wrap your app in `CherryThemeProvider` and start using components. The provider injects the global styles and, when you pass `themeDark`, handles dark mode automatically:
+Wrap your app in `CherryThemeProvider` and start using components. The provider injects the global styles and, when you pass `themeDark`, handles dark mode automatically: it follows the OS until the visitor picks a mode, and switches through CSS variables without re-rendering your components:
 
 ```tsx
 import {
@@ -90,12 +90,65 @@ import {
 
 ## Theming
 
-Cherry ships two theme providers:
+Cherry ships two theme providers. Both take a light `theme` and an optional `themeDark` (plain objects with real color values) and share one implementation:
 
-- `CherryThemeProvider` - the original client-only provider. It resolves the theme from `localStorage` and the OS preference after mount. Simple, but in a server-rendered app the first paint is always the light theme.
-- `ClientThemeProvider` - the SSR-aware provider for flash-free dark mode. The server resolves the `theme` cookie and passes `$initial`, so the first paint is already correct. On mount it reconciles against the cookie and OS preference (Safari and Firefox don't send color-scheme client hints, so their first server render can guess wrong) and swaps in place. Theme changes persist to the `theme` cookie and `localStorage` directly; no API route is needed.
+- `ClientThemeProvider` - the full provider. Props: `theme`, `themeDark`, `$initial`, `$mode`, `$themeColor` (keeps `<meta name="theme-color">` on a theme color, `"light"` by default, `false` to disable) and `$globalStyles` (pass `false` to skip Cherry's global styles).
+- `CherryThemeProvider` - the same provider without the `theme-color` meta sync, kept as the name client-only apps have used. Props: `theme`, `themeDark`, `$mode`.
 
-Both providers expose `setTheme` and `toggleTheme` through `ThemeContext`, and the `ThemeToggle` component works under either.
+Light and dark mode switch through CSS variables. The provider runs `createThemeVariables(theme, themeDark)`, which turns the two objects into one theme for both modes: every color and shadow your styled components read is a CSS variable (`theme.colors.primary` is `var(--cherry-color-primary)`, `theme.shadows.md` is `var(--cherry-shadow-md)`). The light values are declared on `:root` and the dark ones on `:root.dark`, in a plain `<style data-cherry-theme>` element the provider renders. The mode is the `dark` class on `<html>`: a switch flips the class and the browser repaints, without rendering any styled component again. Transitions are turned off for the frame that paints the switch (`.theme-switching` on `<html>`), so the page changes at once. Without `themeDark` the page stays light.
+
+The visitor's preference is `"light"`, `"dark"` or `"system"`:
+
+- An explicit choice (a `ThemeToggle` click, `setPreference`) is stored in `localStorage` as `themePreference`. A `theme` entry in `localStorage`, written by Cherry before 0.3, also counts as an explicit choice.
+- Without one, the page follows the OS preference, live.
+- The mode in force is mirrored to the `theme` cookie, for server code that wants it. The cookie only decides the mode when storage is blocked.
+
+`$mode="light"` or `$mode="dark"` pins the mode: the page shows it whatever the visitor's preference, nothing is stored, and toggling does nothing.
+
+`ThemeContext` provides `{ toggleTheme, setPreference }`, and the `ThemeToggle` component works under either provider. `setPreference("light" | "dark" | "system")` picks a mode, or hands it back to the OS. Its value never changes, so reading it does not re-render a component when the mode switches.
+
+Most code never needs the mode in JS: a color that differs by mode is a theme token, a `:root.dark &` rule, or `modes()` (see [Migrating to 0.3](#migrating-to-03)). For the rest there are two hooks, and only components that call them render again on a switch:
+
+- `useColorMode()` returns `{ mode, preference, setPreference, toggleTheme }`.
+- `useResolvedTheme()` returns the theme with real color values for the mode in force, plus `isDark`, for code that hands a theme color to something CSS does not style (a canvas, a JS color library, an editor theme).
+
+```tsx
+import { useEffect, useRef } from "react";
+import {
+  Select,
+  useColorMode,
+  useResolvedTheme,
+  type ColorModePreference,
+} from "cherry-styled-components";
+
+function ModePicker() {
+  const { preference, setPreference } = useColorMode();
+  return (
+    <Select
+      value={preference}
+      onChange={(e) => setPreference(e.target.value as ColorModePreference)}
+    >
+      <option value="system">System</option>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </Select>
+  );
+}
+
+function Swatch() {
+  const ref = useRef<HTMLCanvasElement>(null);
+  const theme = useResolvedTheme(); // real values: theme.colors.primary is a hex
+  useEffect(() => {
+    const context = ref.current?.getContext("2d");
+    if (!context) return;
+    context.fillStyle = theme.colors.primary;
+    context.fillRect(0, 0, 40, 40);
+  }, [theme]);
+  return <canvas ref={ref} width={40} height={40} />;
+}
+```
+
+### Server-rendered apps
 
 A Next.js App Router setup looks like this:
 
@@ -108,14 +161,18 @@ import { StyledComponentsRegistry } from "cherry-styled-components/next";
 import { ClientThemeProvider, themeInitScript } from "cherry-styled-components";
 import { theme, themeDark } from "./theme";
 
-export default async function RootLayout({ children }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const cookieTheme = (await cookies()).get("theme")?.value;
 
   return (
-    <html lang="en">
+    // The init script sets the `dark` class before React hydrates.
+    <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Seeds the theme cookie and prevents the dark-mode flash in
-            browsers without color-scheme client hints. */}
+        {/* Puts the page in the visitor's mode before the first paint. */}
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body>
@@ -134,7 +191,15 @@ export default async function RootLayout({ children }) {
 }
 ```
 
-For the best first-visit experience in Chrome, also opt into color-scheme client hints in your middleware so the very first server render matches the OS preference:
+`themeInitScript` is a blocking script for the document `<head>`. On every load it makes the same decision as the provider (stored preference, else the OS) and sets the `dark` class on `<html>` before the first paint, so the server render arrives in the right mode with nothing hidden. It also keeps the `theme` cookie and the `theme-color` meta in step. `createThemeInitScript(options)` builds a custom one: `themeColor: { light, dark }` sets the meta values for each mode (use the values of the token `$themeColor` tracks; the default is Cherry's `light` token, white and black), and `themeColor: false` leaves the meta alone.
+
+```ts
+const initScript = createThemeInitScript({
+  themeColor: { light: "#ffffff", dark: "#0b0b0b" },
+});
+```
+
+The colors never depend on the server render, so `$initial` only sets the mode `useColorMode()` reports during it. Pass the `theme` cookie's value when you read it, as above, so components that read the mode render the right thing on the server. To have that value on a first visit in Chrome, opt into color-scheme client hints in your middleware:
 
 ```ts
 // middleware.ts
@@ -152,9 +217,49 @@ if (!req.cookies.get("theme")?.value && hint) {
 }
 ```
 
-`resolveTheme(cookieValue, theme, themeDark)` is exported for other server code that needs the active theme object, e.g. `generateViewport` for the initial `theme-color`.
+`resolveTheme(cookieValue, theme, themeDark)` is exported for other server code that needs the active theme object, e.g. `generateViewport` for the initial `theme-color`. `createThemeVariables`, `modeValue`, `createThemeInitScript`, `themeInitScript` and `resolveTheme` are server-safe. Cherry's default `theme` and `themeDark` exports come from a `"use client"` module, so server code that reads theme values (for `createThemeVariables`, `resolveTheme` or a viewport color) must pass its own theme objects.
 
-In a client-only app (like this repo's demo, see `src/main.tsx`), resolve the initial theme synchronously from the cookie, `localStorage`, or `matchMedia` before rendering and pass it as `$initial`.
+In a client-only app, run `themeInitScript` before the first render so the first paint is already in the right mode, as this repo's demo does in `src/main.tsx`:
+
+```ts
+import { themeInitScript } from "cherry-styled-components";
+
+const init = document.createElement("script");
+init.textContent = themeInitScript;
+document.head.appendChild(init); // an inline script runs as soon as it is inserted
+```
+
+## Migrating to 0.3
+
+0.3 replaces the theme object swap with CSS variables. Your providers keep their `theme` and `themeDark` props; what changes is code that reads the mode or computes with theme colors.
+
+- **`theme.isDark` is gone.** Components receive one theme for both modes, so a style cannot branch on the mode in JS, and TypeScript flags every read. Replace each one with:
+  - a mode token, when Cherry has one: `colors.accent`, `link`, `onFilled`, `primaryTintHover` / `primaryTintDrop` / `primaryTintActive`, `shadows.toast`. The providers fill every one you leave out, per mode;
+  - a `:root.dark &` rule, for a block that only applies in dark mode;
+  - `modes()`, which wraps an interpolation written against `theme.isDark` and emits CSS that follows the mode. Most branches migrate by wrapping them. `modeValue(light, dark)` is the plain-CSS form.
+
+  ```tsx
+  import styled from "styled-components";
+  import { modes, type Theme } from "cherry-styled-components";
+
+  // Before: border-color: ${({ theme }) => (theme.isDark ? gray : grayLight)}
+  const Card = styled.div<{ theme: Theme }>`
+    border-color: ${modes(({ theme }) =>
+      theme.isDark ? theme.colors.gray : theme.colors.grayLight,
+    )};
+
+    :root.dark & {
+      outline: 1px solid ${({ theme }) => theme.colors.grayDark};
+    }
+  `;
+  ```
+
+- **Remove `isDark` from your own theme objects.** The `Theme` type no longer has it.
+- **No JS color math on theme values.** Inside styled components the colors are `var(--cherry-color-...)` strings, so `darken()`, `rgba()`, `readableColor()` and the like from polished (or any JS color library) break. Use Cherry's `alpha`, `shade` and `tint`, which emit native `color-mix()`, or read real values from `useResolvedTheme()`.
+- **`setTheme` is gone.** `ThemeContext` provides `{ toggleTheme, setPreference }`: call `setPreference("light" | "dark" | "system")` instead of `setTheme(themeObject)`.
+- **`createThemeInitScript` takes options.** `createThemeInitScript(darkBackground, darkThemeColor)` becomes `createThemeInitScript({ themeColor: { light, dark } })`, or `{ themeColor: false }`. The script no longer hides the page, so it needs no background color. Keep rendering it in the `<head>` of a server-rendered app.
+- **`darkFilledTextRule` and `darkPrimaryTintRule` are removed.** The mode tokens they patched follow the mode now: drop the calls and keep `filledTextColor` / `primaryTintColor`.
+- **`$initial` only affects `useColorMode()`** during the server render. Use `$mode` to pin a mode.
 
 ## AI assistant skill
 
@@ -250,7 +355,7 @@ Append `?theme=dark` or `?theme=light` to any preview URL to force a theme:
 /preview/button?theme=dark
 ```
 
-The value is persisted to the `theme` cookie and `localStorage`, exactly like a `ThemeToggle` click, and the demo resolves it synchronously before the first render. It persists for subsequent navigations in the same browser context, so always pass the parameter explicitly when comparing themes to avoid leakage from a previous visit.
+The demo sets the `dark` class before the first render and pins the mode with the provider's `$mode` prop. Nothing is stored: the cookie and `localStorage` stay untouched, toggling does nothing on that page, and another tab or a later visit without the parameter is unaffected. Without the parameter the page uses the visitor's preference, so always pass it explicitly when comparing themes.
 
 ### Custom theme colors
 

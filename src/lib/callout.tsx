@@ -107,23 +107,19 @@ const StyledCallout = styled.div<{ theme: Theme; $type?: CalloutType }>`
     }
   }
 
-  /* Light values are the default; dark mode is applied twice on purpose, once
-     from the theme object and once from a \`dark\` class on <html>, so the tint
-     is right both for apps that swap the theme and for apps that resolve the
-     mode in CSS before hydration. Same approach as the filled Button.
+  /* Light values are the default; dark mode comes from the \`dark\` class on
+     <html>, which the theme providers set.
 
-     The tints are fixed alert colors, not theme tokens, so a theme whose
-     colors are CSS variables (no \`isDark\`) cannot hand them over. Its mode
-     scopes are read instead: a \`data-theme\` attribute on an ancestor
+     The tints are fixed alert colors, not theme tokens, so the mode scopes
+     are read directly: a \`data-theme\` attribute on an ancestor
      ("dark" or "light") wins over the class on <html>, so a section forced
      into one mode keeps that mode's tint. The \`:root\` prefix matches the
      class rule's specificity, and the light scope comes last, so a light
      section inside a dark one resolves to light. */
-  ${({ $type, theme }) =>
+  ${({ $type }) =>
     $type &&
     css`
       ${tintStyles(calloutTints[$type].light)};
-      ${theme.isDark && tintStyles(calloutTints[$type].dark)};
 
       :root.dark &,
       :root [data-theme="dark"] & {

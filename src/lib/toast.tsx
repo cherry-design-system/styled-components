@@ -15,12 +15,7 @@ import { X } from "lucide-react";
 import { Button } from "./button";
 import { Icon } from "./icon";
 import { Spinner } from "./spinner";
-import {
-  Theme,
-  darkFilledTextRule,
-  filledTextColor,
-  resetButton,
-} from "./utils";
+import { Theme, filledTextColor, resetButton } from "./utils";
 
 export type ToastColor =
   "default" | "info" | "success" | "error" | "warning" | "loading";
@@ -361,9 +356,7 @@ export const StyledNotificationItem = styled.li<{
     border-radius: calc(${({ theme }) => theme.spacing.radius.lg} + 10px);
     background: ${({ theme }) => theme.colors.light};
     border: solid 1px ${({ theme }) => theme.colors.grayLight};
-    box-shadow: ${({ theme }) =>
-      theme.shadows.toast ??
-      (theme.isDark ? theme.shadows.sm : theme.shadows.xs)};
+    box-shadow: ${({ theme }) => theme.shadows.toast ?? theme.shadows.xs};
   }
 
   /* Natural-height content, measured to lay out the deck. Back toasts in a
@@ -489,7 +482,6 @@ const StyledTile = styled.span<{
       : css`
           background: ${theme.colors[$color]};
           color: ${filledTextColor(theme)};
-          ${darkFilledTextRule(theme)}
         `}
 
   ${reducedMotion}

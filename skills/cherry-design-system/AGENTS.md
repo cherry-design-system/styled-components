@@ -4,13 +4,14 @@ This project uses **Cherry** (`cherry-styled-components`), a React + TypeScript 
 
 This file is self-contained. For the full API and token tables, see `skills/cherry-design-system/references/` (`setup.md`, `theme.md`, `components.md`, `recipes.md`). Those are an offline snapshot; [cherry.al](https://cherry.al) is the live source of truth. When a detail is missing or an API may have changed, fetch it: `https://cherry.al/llms.txt` (index), `https://cherry.al/llms-full.txt` (everything), or append `.md` to any page (e.g. `https://cherry.al/code/button.md`). Fetch the full output; do not truncate it.
 
-## The 5 rules
+## The 6 rules
 
 1. **Every button is a Cherry button.** `<Button>` for actions, `<IconButton aria-label="...">` for icon-only. Never raw `<button>` or another library's button.
 2. **Every form control is a Cherry component:** `Input`, `Select`, `Textarea`, `Toggle`, `Range`, `Password`, `Dropzone`, `AvatarDropzone`. Checkbox and radio are `<Input type="checkbox">` / `<Input type="radio">` (no separate export). Never raw `<input>`/`<select>`/`<textarea>`.
 3. **Never hardcode design values.** Read colors, spacing, radii, shadows, and font sizes from `theme` inside styled-components. Use typography mixins for text and `mq()` for breakpoints.
 4. **Styling props are `$`-prefixed** (`$variant`, `$size`, `$fullWidth`, `$error`) and stay within their literal unions (`$size` is only `"default" | "big" | "small"`).
 5. **Wrap the app in a Cherry provider,** use layout primitives (`Container`/`Grid`/`Col`/`Flex`/`Box`/`MaxWidth`/`Space`) over ad-hoc divs, and render icons with `<Icon icon={Glyph} />` (`Glyph` imported from `lucide-react`; `DynamicIcon` from `cherry-styled-components/dynamic` only for runtime-chosen icons, loaded on demand).
+6. **Dark mode is CSS, never a JS branch.** One theme object serves both modes: inside styled components its colors and shadows are CSS variables (`var(--cherry-color-primary)`) and the mode is the `dark` class on `<html>`. `theme.isDark` does not exist; never read it or add it to a theme object. A value that differs by mode is a mode token, a `:root.dark &` rule, or `modes()`. Never run JS color math on theme colors.
 
 ## Provider quick start
 
@@ -29,7 +30,7 @@ import {
 </CherryThemeProvider>;
 ```
 
-For Next.js App Router (flash-free SSR) use `ClientThemeProvider` + `StyledComponentsRegistry` + `themeInitScript`; see `references/setup.md`. `StyledComponentsRegistry` is imported from `cherry-styled-components/next` (every other export comes from the package root).
+For Next.js App Router use `ClientThemeProvider` + `StyledComponentsRegistry` + `themeInitScript` in `<head>` (it sets the `dark` class before the first paint); see `references/setup.md`. Pass `$mode="light"` or `"dark"` to pin a mode without storing anything. `StyledComponentsRegistry` is imported from `cherry-styled-components/next` (every other export comes from the package root).
 
 ## Components
 
@@ -52,7 +53,8 @@ Access tokens via the `theme` prop in styled-components: `${({ theme }) => theme
 - **Shadows:** `shadows.xs`..`shadows.xl`. **Type:** mixins `styledH1..H6`, `styledHero1..3`, `styledText`, `styledSmall`, etc.
 - **Breakpoints:** `mq("xs"|"sm"|"md"|"lg"|"xl"|"xxl"|"xxxl")` = min-width media query (`lg` = 992px). Mobile-first.
 - **Custom shades:** derive from a token with the exported `tint(color, %)` / `shade(color, %)` / `alpha(color, %)` helpers; do not invent hex.
-- Use `theme.isDark` only when a value genuinely differs per theme. It is optional: a theme whose colors are CSS variables serves both modes from one object and leaves it out, so in shared components prefer the optional mode tokens (`colors.accent`, `link`, `onFilled`, `primaryTintHover` / `Drop` / `Active`, `shadows.toast`) and their mixins (`accentColor`, `linkColor`, `primaryTintColor`), which fall back to the `isDark` choice when a theme leaves them unset.
+- **Values that differ by mode:** every color and shadow is a CSS variable that follows the `dark` class on `<html>`, so `colors.dark`/`colors.light` etc. adapt on their own. For a value of your own, use in this order: a mode token (`colors.accent`, `link`, `onFilled`, `primaryTintHover` / `Drop` / `Active`, `shadows.toast`, filled per mode by the providers, also via `accentColor`, `linkColor`, `primaryTintColor`, `filledTextColor`), a `:root.dark &` rule, or `modes(({ theme }) => (theme.isDark ? a : b))` (its `isDark` is supplied by `modes()`; the theme has none). `modeValue(light, dark)` is the plain-CSS form.
+- **JS needs:** `useResolvedTheme()` returns the theme with real values for the mode in force (plus `isDark`), for a canvas, chart or editor theme; `useColorMode()` returns `{ mode, preference, setPreference, toggleTheme }`. Both re-render on a switch, so use them only where CSS cannot do the job. Switch modes with `ThemeToggle` or `ThemeContext`'s `toggleTheme` / `setPreference("light" | "dark" | "system")`; there is no `setTheme`.
 
 ## Custom components
 
@@ -62,6 +64,7 @@ When Cherry has no component for a need, build a styled-component that reads the
 
 - Use raw `<button>`/`<input>`/`<select>`/`<textarea>`, or import another UI library (MUI, Chakra, shadcn, ...).
 - Hardcode `#hex`/named colors, `px` font sizes, or literal breakpoints. Use tokens, mixins, and `mq()`.
+- Read `theme.isDark`, branch a style on the mode in JS, or run JS color math (`darken`, `rgba`, `readableColor`, a color library) on theme colors. Use mode tokens, `:root.dark &`, `modes()`, and `alpha`/`shade`/`tint`.
 - Use inline `style={{ ... }}` for styling. It bypasses the theme (no tokens, no dark mode, no hover/focus, no breakpoints); build a `styled` component with theme tokens, or use Cherry layout props (`$padding`, `$gap`, `$fullWidth`).
 - Write styling props without the `$` prefix.
 - Wrap `Modal` with `styled(Modal)` (it strips the `$`-props); restyle via `className` targeting `.modal-inner`/`.modal-content`/`.modal-title`/`.modal-close`.
