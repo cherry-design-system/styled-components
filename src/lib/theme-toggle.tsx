@@ -47,16 +47,10 @@ const StyledThemeToggle = styled.button<{ theme: Theme; $hidden?: boolean }>`
     background: ${({ theme }) => alpha(theme.colors.primaryLight, 20)};
     transition: all 0.3s ease;
     z-index: 1;
-    ${({ theme }) =>
-      theme.isDark &&
-      css`
-        transform: translateX(26px);
-      `}
   }
 
-  /* Apps that resolve the mode from a \`dark\` class on <html> before first
-     paint (see createThemeInitScript) get the knob in the right place
-     immediately, without waiting for the theme object to swap on mount. */
+  /* The mode is the \`dark\` class on <html>, set before first paint by
+     createThemeInitScript, so the knob starts in the right place. */
   :root.dark &::after {
     transform: translateX(26px);
   }
@@ -83,15 +77,6 @@ const StyledThemeToggle = styled.button<{ theme: Theme; $hidden?: boolean }>`
   &:hover svg[stroke] {
     stroke: ${({ theme }) => accentColor(theme)};
   }
-
-  /* Skipped when the theme sets \`accent\`, which already follows the mode. */
-  ${({ theme }) =>
-    !theme.colors.accent &&
-    css`
-      :root.dark &:hover svg[stroke] {
-        stroke: ${theme.colors.primaryLight};
-      }
-    `}
 `;
 
 function LocalThemeToggle(

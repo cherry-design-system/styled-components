@@ -495,7 +495,7 @@ promiseNotification(publish(), {
 
 ## ThemeToggle
 
-Pill-shaped sun/moon switch that calls `toggleTheme()` from `ThemeContext`. Must be inside a Cherry provider. Exports: `ThemeToggle`, `ThemeToggleProps`. Extends `React.ButtonHTMLAttributes`.
+Pill-shaped sun/moon switch that calls `toggleTheme()` from `ThemeContext` (storing the choice as an explicit preference). Must be inside a Cherry provider. Its knob position follows the `dark` class on `<html>`, so it is right from the first paint and never re-renders on a switch; the knob jumps rather than slides, because transitions are off for the frame that paints a switch. It does nothing while the provider pins the mode with `$mode`. Exports: `ThemeToggle`, `ThemeToggleProps`. Extends `React.ButtonHTMLAttributes`.
 
 | prop        | type                                               |
 | ----------- | -------------------------------------------------- |
@@ -734,10 +734,12 @@ function Transcript() {
 
 Full setup is in `setup.md`. Exported from `cherry-styled-components`:
 
-- `CherryThemeProvider` (client-only provider) and `ThemeContext` (`{ setTheme, toggleTheme }`).
-- `ClientThemeProvider` + `ClientThemeProviderProps` (SSR-aware, flash-free).
+- `ClientThemeProvider` + `ClientThemeProviderProps` (the full provider: `theme`, `themeDark`, `$initial`, `$mode`, `$themeColor`, `$globalStyles`) and `CherryThemeProvider` (the same without the `theme-color` sync).
+- `ThemeContext` (`{ toggleTheme, setPreference }`, type `ThemeContextProps`; no `setTheme`), `ColorModeContext`, `ThemeVariablesContext`.
+- `useColorMode()` (`{ mode, preference, setPreference, toggleTheme }`) and `useResolvedTheme()` (the theme with real values for the mode in force, plus `isDark`), with the types `ColorMode` (`"light" | "dark"`), `ColorModePreference` (adds `"system"`), `ColorModeState` and `ResolvedTheme`.
 - `StyledComponentsRegistry` (Next.js App Router style extraction) — the one exception, imported from `cherry-styled-components/next`.
-- `themeInitScript`, `createThemeInitScript(darkBackground?, darkThemeColor?)`, `resolveTheme(cookieValue, theme, themeDark?)` (server-safe theming helpers).
+- `themeInitScript`, `createThemeInitScript({ themeColor?: { light, dark } | false })` with its `ThemeInitScriptOptions` type, `resolveTheme(cookieValue, theme, themeDark?)`, `createThemeVariables(theme, themeDark?)` with its `ThemeVariables` type, and `modeValue(light, dark)` (server-safe theming helpers).
+- `modes()` and its `ModeTheme` type: a style that differs by mode, written against `theme.isDark` (see `theme.md`, Light and dark mode).
 - `GlobalStyles(theme)` (base HTML/body resets for one fixed theme; call it once at module level, never during render). `ThemedGlobalStyles` is the same styles reading the active theme from the `ThemeProvider`; the providers render it for you unless you opt out.
 - `theme`, `themeDark`, and the `Theme` type, plus all the typography mixins, style mixins, and the `alpha` / `shade` / `tint` color helpers documented in `theme.md`.
 - Utility hooks: `useMediaQuery(query)`, `useBelowBreakpoint(size)` (theme breakpoint names), `useLockBodyScroll(isLocked)`, `useOnClickOutside(refs, handler)`.

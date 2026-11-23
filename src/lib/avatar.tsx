@@ -4,12 +4,7 @@ import styled, { css } from "styled-components";
 
 import { User } from "lucide-react";
 import { renderIcon, type IconSource } from "./icon";
-import {
-  Theme,
-  darkFilledTextRule,
-  filledTextColor,
-  primaryFillColor,
-} from "./utils";
+import { Theme, filledTextColor, primaryFillColor } from "./utils";
 
 export type AvatarSize = "small" | "default" | "big";
 export type AvatarColor = "primary" | "secondary" | "tertiary" | "gray";
@@ -75,7 +70,6 @@ const StyledAvatar = styled.span<{
       line-height: 1;
       font-weight: 600;
       user-select: none;
-      ${darkFilledTextRule(theme, fill)};
 
       & img {
         width: 100%;

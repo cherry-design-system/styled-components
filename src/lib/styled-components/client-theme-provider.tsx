@@ -1,214 +1,178 @@
 "use client";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useSyncExternalStore } from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import { ThemedGlobalStyles, Theme } from "../utils";
-import { ThemeContext } from "./theme-provider";
-
-const THEME_COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
-
-function readThemeCookie(): "light" | "dark" | undefined {
-  const cookie = document.cookie
-    .split(";")
-    .map((c) => c.trim())
-    .find((c) => c.startsWith("theme="));
-  const value = cookie ? cookie.split("=")[1] : undefined;
-  return value === "dark" ? "dark" : value === "light" ? "light" : undefined;
-}
-
-function persistTheme(value: "light" | "dark") {
-  document.cookie = `theme=${value};path=/;max-age=${THEME_COOKIE_MAX_AGE};SameSite=Lax`;
-  try {
-    if (typeof localStorage !== "undefined") localStorage.theme = value;
-  } catch {
-    // storage unavailable (private mode); the cookie still holds the choice
-  }
-}
-
-// Removes the flash-prevention style injected by themeInitScript, which hides
-// the body until the correct theme is applied.
-function removeThemeInitStyle() {
-  const el = document.getElementById("__theme-init");
-  if (el) el.remove();
-}
-
-// Resolves a theme color for the `theme-color` meta tag. Apps that theme
-// through CSS custom properties store `var(--token)` in the theme object, and
-// a meta tag cannot resolve that itself, so read the computed value instead.
-function resolveColor(value: string): string {
-  const match = /^var\(\s*(--[^,)\s]+)\s*(?:,([^)]*))?\)$/.exec(value.trim());
-  if (!match) return value;
-  const computed = getComputedStyle(document.documentElement)
-    .getPropertyValue(match[1])
-    .trim();
-  return computed || match[2]?.trim() || value;
-}
+import {
+  ThemedGlobalStyles,
+  createThemeVariables,
+  type ColorMode,
+  type Theme,
+} from "../utils";
+import {
+  DARK_MODE_QUERY,
+  followSystemMode,
+  applyColorMode,
+  getColorModeState,
+  setColorModePreference,
+  subscribeColorMode,
+  toggleColorMode,
+  type ColorModeState,
+} from "./color-mode";
+import {
+  ColorModeContext,
+  ThemeContext,
+  ThemeVariablesContext,
+  type ThemeContextProps,
+} from "./theme-provider";
 
 export interface ClientThemeProviderProps {
   children: React.ReactNode;
+  /** The light theme, with real color values. */
   theme: Theme;
+  /** The dark theme, with real color values. Without it the page stays light. */
   themeDark?: Theme;
   /**
-   * The theme the server resolved from the `theme` cookie for the first
-   * render. Omit in client-only apps and resolve it before mounting instead.
+   * The mode of the server render, for `useColorMode()` only: the colors do
+   * not depend on it, since createThemeInitScript sets the mode before the
+   * first paint. Pass the `theme` cookie's value when the server reads it.
    */
-  $initial?: "light" | "dark";
+  $initial?: ColorMode;
   /**
-   * Keeps a `theme-color` meta tag in sync with the active theme so browser
-   * chrome (e.g. the iOS Safari status bar) matches the page. Pass the name
-   * of the theme color to track, or false to disable. A key (not a function)
-   * so it stays serializable across the server/client component boundary.
-   * Defaults to "light".
+   * Pins the mode: the page shows it whatever the visitor's preference, and
+   * nothing is stored. Toggling does nothing while it is set.
+   */
+  $mode?: ColorMode;
+  /**
+   * Keeps a `theme-color` meta tag on this theme color, so browser chrome
+   * (e.g. the iOS Safari status bar) matches the page. Pass the name of the
+   * theme color to track, or false to disable. Defaults to "light".
    */
   $themeColor?: keyof Theme["colors"] | false;
   /**
-   * Renders Cherry's GlobalStyles for the active theme. Pass false when the
-   * app provides its own global styles.
+   * Renders Cherry's GlobalStyles. Pass false when the app provides its own
+   * global styles.
    */
   $globalStyles?: boolean;
 }
 
+const SERVER_STATE: Record<ColorMode, ColorModeState> = {
+  light: { mode: "light", preference: "system" },
+  dark: { mode: "dark", preference: "system" },
+};
+
+const LIVE_CONTEXT: ThemeContextProps = {
+  toggleTheme: toggleColorMode,
+  setPreference: setColorModePreference,
+};
+
+const PINNED_CONTEXT: ThemeContextProps = {
+  toggleTheme: () => {},
+  setPreference: () => {},
+};
+
 /**
- * SSR-aware theme provider. Renders with the server-resolved theme on the
- * first paint (no dark-mode flash), reconciles it against the `theme` cookie
- * and OS preference on mount (Safari/Firefox don't send client hints, so
- * their first server render can guess wrong), and exposes setTheme /
- * toggleTheme through ThemeContext. Theme changes persist to the `theme`
- * cookie and localStorage; no API route is needed.
+ * Cherry's theme provider. It hands styled-components one theme for both
+ * modes, whose colors and shadows are CSS variables (createThemeVariables),
+ * and declares the light values on `:root` and the dark ones on `:root.dark`.
+ * The mode is that `dark` class on <html>: switching flips it and the browser
+ * repaints, without any styled component rendering again. Only components
+ * reading `useColorMode()` or `useResolvedTheme()` do.
+ *
+ * The visitor's choice (light, dark or system) persists to localStorage, and
+ * the mode in force to the `theme` cookie. Render createThemeInitScript in the
+ * document head so the first paint is already in the right mode.
  */
 function ClientThemeProvider({
   children,
   theme,
   themeDark,
   $initial = "light",
+  $mode,
   $themeColor = "light",
   $globalStyles = true,
 }: ClientThemeProviderProps) {
-  const initialTheme = $initial === "dark" && themeDark ? themeDark : theme;
-  const [overrideTheme, setOverrideTheme] = useState<Theme | null>(null);
-  // False until the mount reconciliation below has decided the real mode. The
-  // html `dark` class is not touched before then: themeInitScript may already
-  // have set it from the cookie for the first paint, and syncing it against the
-  // not-yet-reconciled server theme would strip it for a frame.
-  const [reconciled, setReconciled] = useState(false);
+  const variables = useMemo(
+    () => createThemeVariables(theme, themeDark),
+    [theme, themeDark],
+  );
+  const pinned: ColorMode | null = $mode ?? (themeDark ? null : "light");
 
-  const effectiveTheme = useMemo(
-    () => overrideTheme ?? initialTheme,
-    [overrideTheme, initialTheme],
+  const stored = useSyncExternalStore(
+    subscribeColorMode,
+    getColorModeState,
+    () => SERVER_STATE[$initial],
+  );
+  const mode = pinned ?? stored.mode;
+  const preference = pinned ?? stored.preference;
+
+  useEffect(() => {
+    applyColorMode(mode, { persist: !pinned, themeColor: $themeColor });
+  }, [mode, pinned, $themeColor]);
+
+  // "system" follows the OS live.
+  useEffect(() => {
+    if (pinned || preference !== "system" || !window.matchMedia) return;
+    const media = window.matchMedia(DARK_MODE_QUERY);
+    media.addEventListener("change", followSystemMode);
+    return () => media.removeEventListener("change", followSystemMode);
+  }, [pinned, preference]);
+
+  const setters = pinned ? PINNED_CONTEXT : LIVE_CONTEXT;
+  const modeValue = useMemo(
+    () => ({ mode, preference, ...setters }),
+    [mode, preference, setters],
   );
 
-  // Reconcile the server-rendered theme with the user's actual preference.
-  // The swap happens IN PLACE rather than via a server round-trip: the
-  // blocking themeInitScript hides the body on a dark first visit, and if the
-  // reveal depended on a refresh that stalled, the page would stay blank. A
-  // client-side swap always reveals.
-  useEffect(() => {
-    if (!themeDark) {
-      setReconciled(true);
-      removeThemeInitStyle();
-      return;
-    }
-    try {
-      let cookieValue = readThemeCookie();
-
-      // Migrate a legacy localStorage preference into the cookie so users of
-      // the previous localStorage-based system keep their choice.
-      if (!cookieValue && typeof localStorage !== "undefined") {
-        const stored = localStorage.theme;
-        if (stored === "dark" || stored === "light") {
-          persistTheme(stored);
-          cookieValue = stored;
-        }
-      }
-
-      if (!cookieValue) {
-        // Fallback: themeInitScript should have set this; derive from the OS.
-        const prefersDark =
-          typeof window !== "undefined" &&
-          window.matchMedia &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches;
-        cookieValue = prefersDark ? "dark" : "light";
-        persistTheme(cookieValue);
-      }
-
-      // If the server guessed the wrong theme, swap it on the client
-      // instantly. The body is revealed by the effect below once that swap
-      // has committed, so the corrected theme paints first.
-      const wantDark = cookieValue === "dark";
-      if (Boolean(initialTheme.isDark) !== wantDark) {
-        setOverrideTheme(wantDark ? themeDark : theme);
-        setReconciled(true);
-        return;
-      }
-    } catch {
-      // ignore; the page is revealed below
-    }
-
-    // Theme already correct (or detection failed): reveal the page now.
-    setReconciled(true);
-    removeThemeInitStyle();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // Reveal the page once a corrected theme has committed, so the right theme
-  // paints before the body becomes visible (no flash of the wrong theme).
-  useEffect(() => {
-    if (overrideTheme) removeThemeInitStyle();
-  }, [overrideTheme]);
-
-  // Keep the html `dark` class in sync for CSS that keys off it. Waits for
-  // reconciliation so the class themeInitScript set for the first paint is not
-  // stripped and re-added while the server's theme is still the active one.
-  useEffect(() => {
-    if (!reconciled) return;
-    document.documentElement.classList.toggle(
-      "dark",
-      Boolean(effectiveTheme.isDark),
-    );
-  }, [effectiveTheme.isDark, reconciled]);
-
-  // Keep the browser chrome / iOS Safari status bar in sync when the user
-  // toggles the theme without a navigation. Drops any media-scoped fallbacks
-  // so a single, unconditional value wins.
-  useEffect(() => {
-    if (!$themeColor) return;
-    // `onPrimary` is optional in a theme; nothing to paint when it is unset.
-    const color = effectiveTheme.colors[$themeColor];
-    if (!color) return;
-    const background = resolveColor(color);
-    let meta = document.querySelector<HTMLMetaElement>(
-      'meta[name="theme-color"]',
-    );
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.name = "theme-color";
-      document.head.appendChild(meta);
-    }
-    meta.removeAttribute("media");
-    meta.content = background;
-    document
-      .querySelectorAll('meta[name="theme-color"][media]')
-      .forEach((m) => m.remove());
-  }, [effectiveTheme, $themeColor]);
-
-  const setTheme: React.Dispatch<React.SetStateAction<Theme>> = (action) => {
-    const next = typeof action === "function" ? action(effectiveTheme) : action;
-    setOverrideTheme(next);
-    persistTheme(next.isDark ? "dark" : "light");
-  };
-
-  const toggleTheme = () => {
-    if (!themeDark) return;
-    setTheme(effectiveTheme.isDark ? theme : themeDark);
-  };
-
-  return (
-    <StyledThemeProvider theme={effectiveTheme}>
-      <ThemeContext.Provider value={{ setTheme, toggleTheme }}>
+  // Built once per theme, so a mode switch re-renders none of it.
+  const content = useMemo(
+    () => (
+      <StyledThemeProvider theme={variables.theme}>
+        {/* A plain <style>, not a styled-components global style: stylis
+            drops the empty custom properties modeValue() relies on. */}
+        <style
+          data-cherry-theme=""
+          dangerouslySetInnerHTML={{ __html: variables.css }}
+        />
         {$globalStyles && <ThemedGlobalStyles />}
         {children}
-      </ThemeContext.Provider>
-    </StyledThemeProvider>
+      </StyledThemeProvider>
+    ),
+    [variables, $globalStyles, children],
+  );
+
+  return (
+    <ThemeContext.Provider value={setters}>
+      <ThemeVariablesContext.Provider value={variables}>
+        <ColorModeContext.Provider value={modeValue}>
+          {content}
+        </ColorModeContext.Provider>
+      </ThemeVariablesContext.Provider>
+    </ThemeContext.Provider>
   );
 }
 
-export { ClientThemeProvider };
+/**
+ * ClientThemeProvider without the theme-color meta sync. Kept as the name
+ * apps without server rendering have used.
+ */
+function CherryThemeProvider({
+  children,
+  theme,
+  themeDark,
+  $mode,
+}: Pick<
+  ClientThemeProviderProps,
+  "children" | "theme" | "themeDark" | "$mode"
+>) {
+  return (
+    <ClientThemeProvider
+      theme={theme}
+      themeDark={themeDark}
+      $mode={$mode}
+      $themeColor={false}
+    >
+      {children}
+    </ClientThemeProvider>
+  );
+}
+
+export { ClientThemeProvider, CherryThemeProvider };

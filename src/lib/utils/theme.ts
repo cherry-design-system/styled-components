@@ -158,7 +158,6 @@ export const theme: Theme = {
   fonts,
   fontSizes,
   lineHeights,
-  isDark: false,
 };
 
 export const themeDark: Theme = {
@@ -169,7 +168,6 @@ export const themeDark: Theme = {
   fonts,
   fontSizes,
   lineHeights,
-  isDark: true,
 };
 
 export interface Breakpoints<TNumber = number> {
@@ -230,13 +228,18 @@ export interface Colors<TString = string> {
    * and the accents keep `primary`. Without it the fills use `primary`.
    */
   primaryFill?: TString;
+  /**
+   * Optional hover shade of the solid primary fill. Without it: `primaryFill`
+   * mixed 10% toward black when the theme sets `primaryFill`, else
+   * `primaryDark`.
+   */
+  primaryFillHover?: TString;
 
   /*
-   * Optional mode tokens. A theme whose colors are CSS variables (one theme
-   * object for both modes, the mode switched by a class or attribute) cannot
-   * answer `isDark`, so it states the colors that differ by mode here. Each
-   * one falls back to the `isDark` choice it replaces when absent, so a pair
-   * of light and dark theme objects renders exactly as before.
+   * Mode tokens: colors whose default differs between the light and the dark
+   * theme. The providers fill in every one you leave out, per mode, with the
+   * default described on it (see `createThemeVariables`), so the components
+   * read them as CSS variables that follow the mode. Set one to override it.
    */
   /**
    * Hover and emphasis text on a surface (Prose links on hover, the
@@ -357,11 +360,4 @@ export interface Theme {
   fonts: Fonts;
   fontSizes: FontSizes;
   lineHeights: LineHeights;
-  /**
-   * Whether this theme object holds the dark palette. Optional: a theme
-   * whose colors are CSS variables serves both modes and leaves it out,
-   * setting the mode tokens (`colors.accent`, `colors.onFilled`, ...)
-   * instead. Absent reads as light.
-   */
-  isDark?: boolean;
 }

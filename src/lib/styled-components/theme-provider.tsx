@@ -1,58 +1,75 @@
 "use client";
-import React, { createContext, useEffect, useState } from "react";
-import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import { ThemedGlobalStyles, Theme } from "../utils";
+import { createContext, useContext } from "react";
+import {
+  createThemeVariables,
+  theme as defaultTheme,
+  themeDark as defaultThemeDark,
+  type ColorMode,
+  type ResolvedTheme,
+  type ThemeVariables,
+} from "../utils";
+import type { ColorModePreference } from "./color-mode";
 
-interface ThemeContextProps {
-  setTheme: React.Dispatch<React.SetStateAction<Theme>>;
+export type { ColorModePreference, ColorModeState } from "./color-mode";
+
+export interface ThemeContextProps {
+  /** Switches to the other mode and remembers it. */
   toggleTheme: () => void;
+  /** Picks a mode, or "system" to follow the OS, and remembers it. */
+  setPreference: (preference: ColorModePreference) => void;
 }
 
+/**
+ * The mode setters, for controls like ThemeToggle. Its value never changes, so
+ * reading it does not re-render a component when the mode switches; read
+ * `useColorMode()` for the mode itself.
+ */
 export const ThemeContext = createContext<ThemeContextProps>({
-  setTheme: () => {},
   toggleTheme: () => {},
+  setPreference: () => {},
 });
 
-function CherryThemeProvider({
-  children,
-  theme,
-  themeDark,
-}: {
-  children: React.ReactNode;
-  theme: Theme;
-  themeDark?: Theme;
-}) {
-  const [currentTheme, setTheme] = useState(theme);
-  useEffect(() => {
-    if (!themeDark) return setTheme(theme);
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-      setTheme(themeDark);
-    } else {
-      document.documentElement.classList.remove("dark");
-      setTheme(theme);
-    }
-  }, [theme, themeDark]);
-  const toggleTheme = () => {
-    if (!themeDark) return;
-    const next = currentTheme.isDark ? theme : themeDark;
-    setTheme(next);
-    localStorage.theme = next.isDark ? "dark" : "light";
-    document.documentElement.classList.toggle("dark", Boolean(next.isDark));
-  };
-
-  return (
-    <StyledThemeProvider theme={currentTheme}>
-      <ThemeContext.Provider value={{ setTheme, toggleTheme }}>
-        <ThemedGlobalStyles />
-        {children}
-      </ThemeContext.Provider>
-    </StyledThemeProvider>
-  );
+export interface ColorModeContextValue extends ThemeContextProps {
+  /** The mode in force. */
+  mode: ColorMode;
+  /** What the visitor picked: a fixed mode, or whatever the OS is set to. */
+  preference: ColorModePreference;
 }
 
-export { CherryThemeProvider };
+export const ColorModeContext = createContext<ColorModeContextValue>({
+  mode: "light",
+  preference: "system",
+  toggleTheme: () => {},
+  setPreference: () => {},
+});
+
+/** The provider's theme variables and resolved palettes. */
+export const ThemeVariablesContext = createContext<ThemeVariables | null>(null);
+
+/**
+ * The mode in force, the visitor's preference, and the setters. Components
+ * reading it render again when the mode switches, so read it only for what CSS
+ * cannot do (a canvas, an image per mode); a color that differs by mode is a
+ * theme token, a `:root.dark &` rule or `modes()`.
+ */
+export function useColorMode(): ColorModeContextValue {
+  return useContext(ColorModeContext);
+}
+
+let fallbackVariables: ThemeVariables | null = null;
+
+/**
+ * The theme with real values (not CSS variables) for the mode in force, plus
+ * `isDark`: for code that hands a theme color to something CSS does not style,
+ * such as a canvas, a JS color library or an editor theme. Components using
+ * it render again when the mode switches.
+ */
+export function useResolvedTheme(): ResolvedTheme {
+  const { mode } = useColorMode();
+  let variables = useContext(ThemeVariablesContext);
+  if (!variables) {
+    fallbackVariables ??= createThemeVariables(defaultTheme, defaultThemeDark);
+    variables = fallbackVariables;
+  }
+  return mode === "dark" ? variables.dark : variables.light;
+}

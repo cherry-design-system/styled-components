@@ -2,13 +2,7 @@
 import React, { forwardRef } from "react";
 import styled, { css } from "styled-components";
 
-import {
-  Theme,
-  darkFilledTextRule,
-  filledTextColor,
-  mq,
-  primaryFillColor,
-} from "./utils";
+import { Theme, filledTextColor, mq, primaryFillColor } from "./utils";
 
 export type ChatMessageRole = "user" | "assistant";
 
@@ -95,7 +89,6 @@ const StyledChatMessage = styled.div<{
           & .chat-message-content {
             background: ${primaryFillColor(theme)};
             color: ${filledTextColor(theme, "primary")};
-            ${darkFilledTextRule(theme, "primary")};
             padding: 9px 14px;
             border-radius: 16px 16px 4px 16px;
             margin-left: auto;

@@ -10,14 +10,7 @@ import styled, { css } from "styled-components";
 
 import { File as FileIcon, FileUp, X } from "lucide-react";
 import { Icon, renderIcon, type IconSource } from "./icon";
-import {
-  Theme,
-  alpha,
-  darkPrimaryTintRule,
-  mq,
-  primaryTintColor,
-  resetButton,
-} from "./utils";
+import { Theme, alpha, mq, primaryTintColor, resetButton } from "./utils";
 
 export type DropzoneRejectionReason = "type" | "size" | "count";
 
@@ -294,10 +287,6 @@ const StyledDropzone = styled.button<{
     css`
       border-color: ${theme.colors.primary};
       background: ${primaryTintColor(theme, "drop")};
-
-      /* Mode resolved from a \`dark\` class on <html> rather than the theme
-         object (no-flash static rendering): same tint, applied pre-hydration. */
-      ${darkPrimaryTintRule(theme, "drop")}
     `}
 
   &:hover:not(:disabled) {

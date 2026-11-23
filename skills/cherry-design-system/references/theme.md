@@ -2,7 +2,9 @@
 
 Every color, spacing value, radius, shadow, and font size in a Cherry app comes from the theme object. Read tokens from the theme inside styled-components; do not hardcode raw values. This file is the full token catalog plus the helpers for consuming it.
 
-The two built-in theme objects are `theme` (light) and `themeDark` (dark). Both are plain objects with the same shape (the `Theme` interface) and are passed to the provider. To white-label, extend or replace them while keeping the shape (see the end of this file).
+The two built-in theme objects are `theme` (light) and `themeDark` (dark). Both are plain objects with real values and the same shape (the `Theme` interface), and are passed to the provider. To white-label, extend or replace them while keeping the shape (see the end of this file).
+
+The provider turns the pair into **one theme for both modes**: inside styled components every color and shadow is a CSS variable (`theme.colors.primary` is `var(--cherry-color-primary)`, `theme.shadows.md` is `var(--cherry-shadow-md)`), with the light values on `:root` and the dark ones on `:root.dark`. The mode is the `dark` class on `<html>`, so switching it repaints without rendering any styled component again. The tables below list the values behind the variables.
 
 ```ts
 import { theme, themeDark, type Theme } from "cherry-styled-components";
@@ -21,7 +23,7 @@ import { theme, themeDark, type Theme } from "cherry-styled-components";
 
 So text is always `theme.colors.dark` and surfaces are always `theme.colors.light`, in **both** themes. Never write `color: #000` or `color: black`; write `color: ${({ theme }) => theme.colors.dark}`. This is what makes a component automatically correct in dark mode.
 
-`theme.isDark` is a boolean you can branch on when a value genuinely differs between themes (e.g. picking a shadow strength). It is optional: a theme whose colors are CSS variables serves both modes from one object and leaves it out, so prefer a token (Cherry reads the optional mode tokens below) over a branch in shared components.
+There is no `theme.isDark` (removed in 0.3): the theme your components see is the same in both modes. When a value genuinely differs between modes, use a mode token, a `:root.dark &` rule or `modes()` (see Light and dark mode below).
 
 ---
 
@@ -29,39 +31,40 @@ So text is always `theme.colors.dark` and surfaces are always `theme.colors.ligh
 
 `theme.colors.*`. Three brand families (each with `Light` / base / `Dark`), a neutral gray family, four status colors, and the two semantic ink/surface tokens above.
 
-| token            | light     | dark      |
-| ---------------- | --------- | --------- |
-| `primaryLight`   | `#91aec4` | `#79C5FF` |
-| `primary`        | `#4d6f8b` | `#6198C6` |
-| `primaryDark`    | `#194569` | `#339DF4` |
-| `secondaryLight` | `#a4b17b` | `#a4b17b` |
-| `secondary`      | `#5c6e46` | `#5c6e46` |
-| `secondaryDark`  | `#354c2b` | `#354c2b` |
-| `tertiaryLight`  | `#ebccb9` | `#ebccb9` |
-| `tertiary`       | `#816b5a` | `#816b5a` |
-| `tertiaryDark`   | `#675445` | `#675445` |
-| `grayLight`      | `#e5e7eb` | `#1a1a1a` |
-| `gray`           | `#9ca3af` | `#454444` |
-| `grayDark`       | `#4b5563` | `#808080` |
-| `success`        | `#84cc16` | `#84cc16` |
-| `error`          | `#ef4444` | `#ef4444` |
-| `warning`        | `#eab308` | `#eab308` |
-| `info`           | `#06b6d4` | `#06b6d4` |
-| `dark`           | `#000000` | `#ffffff` |
-| `light`          | `#ffffff` | `#000000` |
-| `onPrimary`      | (unset)   | (unset)   |
-| `primaryFill`    | (unset)   | (unset)   |
-| `accent`         | (unset)   | (unset)   |
-| `link`           | (unset)   | (unset)   |
-| `onFilled`       | (unset)   | (unset)   |
-| `primaryTint*`   | (unset)   | (unset)   |
+| token              | light     | dark      |
+| ------------------ | --------- | --------- |
+| `primaryLight`     | `#91aec4` | `#79C5FF` |
+| `primary`          | `#4d6f8b` | `#6198C6` |
+| `primaryDark`      | `#194569` | `#339DF4` |
+| `secondaryLight`   | `#a4b17b` | `#a4b17b` |
+| `secondary`        | `#5c6e46` | `#5c6e46` |
+| `secondaryDark`    | `#354c2b` | `#354c2b` |
+| `tertiaryLight`    | `#ebccb9` | `#ebccb9` |
+| `tertiary`         | `#816b5a` | `#816b5a` |
+| `tertiaryDark`     | `#675445` | `#675445` |
+| `grayLight`        | `#e5e7eb` | `#1a1a1a` |
+| `gray`             | `#9ca3af` | `#454444` |
+| `grayDark`         | `#4b5563` | `#808080` |
+| `success`          | `#84cc16` | `#84cc16` |
+| `error`            | `#ef4444` | `#ef4444` |
+| `warning`          | `#eab308` | `#eab308` |
+| `info`             | `#06b6d4` | `#06b6d4` |
+| `dark`             | `#000000` | `#ffffff` |
+| `light`            | `#ffffff` | `#000000` |
+| `onPrimary`        | (unset)   | (unset)   |
+| `primaryFill`      | (unset)   | (unset)   |
+| `primaryFillHover` | (unset)   | (unset)   |
+| `accent`           | (filled)  | (filled)  |
+| `link`             | (filled)  | (filled)  |
+| `onFilled`         | (filled)  | (filled)  |
+| `primaryTint*`     | (filled)  | (filled)  |
 
 How Cherry itself uses these (follow the same conventions in your own components):
 
 - **`primary`** is the interactive accent: default button fill, focus rings (via `primaryLight`), links, active tab, slider thumb. `primaryDark` is the hover state, `primaryLight` is the soft ring/tint.
 - **`onPrimary`** (optional, unset in the built-in themes) is the label color on a `primary` fill: the primary `Avatar`'s initials, the sent `ChatMessage` bubble's text and the primary `Button`'s label. Unset, those labels take the palette's contrasting end (`light` in the light theme, `dark` in the dark one). Set it when that end does not read on your primary (see White-labeling).
-- **`primaryFill`** (optional, unset in the built-in themes) is the fill of those same solid primary surfaces (the primary `Button`, the sent `ChatMessage` bubble, the primary `Avatar`); the filled button's hover is a 10% shade of it. Unset, they fill with `primary`. Set it when `primary` is right for accents (links, rings, outlines, accent text) but too bright to carry a label: the fills take the deeper shade and the accents keep `primary`.
-- **Mode tokens** (optional, unset in the built-in themes): `accent` (hover and emphasis text: Prose links on hover, ChatSources, ChatLauncher, the ThemeToggle glyph on hover; unset, `primaryDark` in light and `primaryLight` in dark), `link` (links in `GlobalStyles`; unset, `primary` in light and `dark` in dark), `onFilled` (the label on a non-primary fill, and on a primary fill without `onPrimary`; unset, `light` in light and `dark` in dark), `primaryTintHover` / `primaryTintDrop` / `primaryTintActive` (the primary tints behind a hovered or dragged-over Dropzone and AvatarDropzone and an active IconButton; unset, `primary` at 4/5/10% in light and 10/12/18% in dark), and `shadows.toast` (unset, `xs` in light and `sm` in dark). They exist for themes whose colors are CSS variables (see Theming through CSS variables); a light and dark pair of objects can ignore them.
+- **`primaryFill`** (optional, unset in the built-in themes) is the fill of those same solid primary surfaces (the primary `Button`, the sent `ChatMessage` bubble, the primary `Avatar`); the filled button's hover is a 10% shade of it. Unset, they fill with `primary`. Set it when `primary` is right for accents (links, rings, outlines, accent text) but too bright to carry a label: the fills take the deeper shade and the accents keep `primary`. `primaryFillHover` (optional) sets that hover shade explicitly; unset, it is `primaryFill` mixed 10% toward black, or `primaryDark` without `primaryFill`.
+- **Mode tokens** (optional in your theme objects; the providers fill every one you leave out, per mode, so under a provider they are always set): `accent` (hover and emphasis text: Prose links on hover, ChatSources, ChatLauncher, the ThemeToggle glyph on hover; unset, `primaryDark` in light and `primaryLight` in dark), `link` (links in `GlobalStyles`; unset, `primary` in light and `dark` in dark), `onFilled` (the label on a non-primary fill, and on a primary fill without `onPrimary`; unset, `light` in light and `dark` in dark), `primaryTintHover` / `primaryTintDrop` / `primaryTintActive` (the primary tints behind a hovered or dragged-over Dropzone and AvatarDropzone and an active IconButton; unset, `primary` at 4/5/10% in light and 10/12/18% in dark), and `shadows.toast` (unset, `xs` in light and `sm` in dark). Set one in either theme object to override that mode's default. Read them in your own components wherever the value should differ by mode.
 - **`grayLight`** is the default border color for inputs, cards, dividers. **`gray`** is placeholder / disabled text. **`grayDark`** is secondary/label text.
 - **status colors** (`success`, `error`, `warning`, `info`) drive `$error`/`$success` states and toast colors.
 - Derive shades with the exported `tint` / `shade` / `alpha` helpers rather than inventing hex values. Each takes a percentage: `shade(color, 10)` darkens 10% toward black, `tint(color, 10)` lightens 10% toward white, `alpha(color, 30)` fades to 30% opacity. They emit native CSS `color-mix()`, so any valid CSS color works as input, including `var(--token)`.
@@ -105,8 +108,8 @@ Five elevation steps `xs`, `sm`, `md`, `lg`, `xl`. Light shadows are dark rgba; 
 
 ```ts
 box-shadow: ${({ theme }) => theme.shadows.md};
-// theme-aware strength:
-box-shadow: ${({ theme }) => (theme.isDark ? theme.shadows.sm : theme.shadows.xs)};
+// a different strength per mode: a mode token, or modes() (see Light and dark mode)
+box-shadow: ${({ theme }) => theme.shadows.toast}; // xs in light, sm in dark
 ```
 
 Light values:
@@ -205,30 +208,75 @@ Cherry is mobile-first: the base rule is the `xs` value; each `mq()` layers the 
 
 Import these instead of re-writing the same CSS:
 
-| mixin                                         | use for                                                                                                                                    |
-| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `resetButton`                                 | strip native button chrome (appearance, border, background, padding, outline) before styling a clickable element                           |
-| `resetInput`                                  | baseline for a custom text field                                                                                                           |
-| `interactiveStyles`                           | hover/focus/active border + soft primary focus ring for clickable surfaces (cards, tiles). Pair with `resetButton`.                        |
-| `errorInteractiveStyles`                      | same affordance in the error red, for destructive actions                                                                                  |
-| `fullWidthStyles($fullWidth)`                 | conditional `width: 100%`                                                                                                                  |
-| `statusBorderStyles($error, $success, theme)` | border color for error/success states                                                                                                      |
-| `formElementHeightStyles($size)`              | 40 / 50 / 60px height for `small` / `default` / `big`                                                                                      |
-| `alpha(color, percent)`                       | fade a color to `percent` opacity                                                                                                          |
-| `shade(color, percent)`                       | darken a color by `percent` toward black                                                                                                   |
-| `tint(color, percent)`                        | lighten a color by `percent` toward white                                                                                                  |
-| `primaryFillColor(theme)`                     | the solid primary fill: the theme's `primaryFill`, else `primary`                                                                          |
-| `primaryFillHoverColor(theme)`                | that fill on hover: a 10% shade of `primaryFill`, else `primaryDark`                                                                       |
-| `filledTextColor(theme, fill?)`               | text color on a brand-colored fill; pass `"primary"` for a primary fill so a theme's `onPrimary` applies                                   |
-| `darkFilledTextRule(theme, fill?)`            | the same choice as a `:root.dark &` rule, for apps that flip the mode with a class before hydration (empty when the theme sets `onFilled`) |
-| `accentColor(theme)`                          | hover and emphasis text: the theme's `accent`, else `primaryDark` in light and `primaryLight` in dark                                      |
-| `linkColor(theme)`                            | the link color: the theme's `link`, else `primary` in light and `dark` in dark                                                             |
-| `primaryTintColor(theme, kind)`               | the primary tint behind a `"hover"`, `"drop"` or `"active"` surface: the theme's token, else `primary` faded                               |
-| `darkPrimaryTintRule(theme, kind)`            | that tint's dark value as a `:root.dark &` rule (empty when the theme sets the token)                                                      |
+| mixin                                         | use for                                                                                                             |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `resetButton`                                 | strip native button chrome (appearance, border, background, padding, outline) before styling a clickable element    |
+| `resetInput`                                  | baseline for a custom text field                                                                                    |
+| `interactiveStyles`                           | hover/focus/active border + soft primary focus ring for clickable surfaces (cards, tiles). Pair with `resetButton`. |
+| `errorInteractiveStyles`                      | same affordance in the error red, for destructive actions                                                           |
+| `fullWidthStyles($fullWidth)`                 | conditional `width: 100%`                                                                                           |
+| `statusBorderStyles($error, $success, theme)` | border color for error/success states                                                                               |
+| `formElementHeightStyles($size)`              | 40 / 50 / 60px height for `small` / `default` / `big`                                                               |
+| `alpha(color, percent)`                       | fade a color to `percent` opacity                                                                                   |
+| `shade(color, percent)`                       | darken a color by `percent` toward black                                                                            |
+| `tint(color, percent)`                        | lighten a color by `percent` toward white                                                                           |
+| `primaryFillColor(theme)`                     | the solid primary fill: the theme's `primaryFill`, else `primary`                                                   |
+| `primaryFillHoverColor(theme)`                | that fill on hover: the theme's `primaryFillHover`, else a 10% shade of `primaryFill`, else `primaryDark`           |
+| `filledTextColor(theme, fill?)`               | text color on a brand-colored fill; pass `"primary"` for a primary fill so a theme's `onPrimary` applies            |
+| `accentColor(theme)`                          | hover and emphasis text: the `accent` mode token                                                                    |
+| `linkColor(theme)`                            | the link color: the `link` mode token                                                                               |
+| `primaryTintColor(theme, kind)`               | the primary tint behind a `"hover"`, `"drop"` or `"active"` surface: the `primaryTint*` mode token                  |
 
-`alpha` / `shade` / `tint` return a native CSS `color-mix(in srgb, ...)` string rather than a computed hex, so they accept any valid CSS color, including a `var(--token)` the browser resolves at paint time. Cherry ships no JS color library.
+`alpha` / `shade` / `tint` return a native CSS `color-mix(in srgb, ...)` string rather than a computed hex, so they accept any valid CSS color, including the `var(--cherry-color-...)` values theme colors are. Cherry ships no JS color library, and you must not run one on theme colors: polished's `darken()`, `rgba()`, `readableColor()` and the like cannot parse a `var()`.
 
 Responsive generators used by the layout primitives (rarely needed directly, but available): `generateGapStyles`, `generateColsStyles`, `generateColSpanStyles`, `generatePaddingStyles`, `generateJustifyContentStyles`, `generateAlignItemsStyles`, `generateAlignContentStyles`, `generateDirectionStyles`.
+
+---
+
+## Light and dark mode
+
+Every color and shadow token already follows the mode, so most components need nothing: `color: ${({ theme }) => theme.colors.dark}` is ink in both modes. For a value of your own that differs by mode, pick the first that fits:
+
+1. **A mode token**: `colors.accent`, `link`, `onFilled`, `primaryTintHover` / `primaryTintDrop` / `primaryTintActive`, `shadows.toast`, or their mixins (`accentColor`, `linkColor`, `filledTextColor`, `primaryTintColor`). The providers fill them per mode.
+2. **A `:root.dark &` rule**, for a block that only applies in dark mode.
+3. **`modes()`**, for a one-off choice. It wraps an interpolation written against `theme.isDark`, runs it once per mode and emits CSS that follows the mode. That `isDark` is supplied by `modes()` (its parameter is a `ModeTheme`); the real theme has none. `modeValue(light, dark)` is the plain-CSS form, a single value that switches with the mode.
+
+```tsx
+import styled from "styled-components";
+import { modes, modeValue, type Theme } from "cherry-styled-components";
+
+const Panel = styled.div<{ theme: Theme }>`
+  color: ${({ theme }) => theme.colors.dark}; /* follows the mode already */
+  border: 1px solid
+    ${modes(({ theme }) =>
+      theme.isDark ? theme.colors.gray : theme.colors.grayLight,
+    )};
+  box-shadow: ${({ theme }) => theme.shadows.toast}; /* a mode token */
+  opacity: ${modeValue("1", "0.9")};
+
+  :root.dark & {
+    backdrop-filter: blur(8px);
+  }
+`;
+```
+
+Never read `theme.isDark` (it is gone, and TypeScript flags it), never branch a style on the mode in JS, and never run JS color math on theme colors. Use `alpha` / `shade` / `tint` for derived shades.
+
+When JS needs the mode or a real color, for something CSS does not style (a canvas, a chart library, an editor theme), use the hooks. Components that call them render again on a switch, so use them only there:
+
+- `useResolvedTheme()`: the theme with real values (hex, not `var()`) for the mode in force, plus `isDark`.
+- `useColorMode()`: `{ mode, preference, setPreference, toggleTheme }`, where `mode` is `"light" | "dark"` and `preference` adds `"system"`.
+
+```tsx
+import { useResolvedTheme } from "cherry-styled-components";
+
+function useChartColors() {
+  const theme = useResolvedTheme();
+  return { line: theme.colors.primary, grid: theme.colors.grayLight };
+}
+```
+
+`createThemeVariables(theme, themeDark?)` is what the providers call: it returns `{ theme, light, dark, css }` (the variable theme, both resolved palettes, and the stylesheet). It is server-safe; call it yourself only to read the palettes or render the stylesheet in server code.
 
 ---
 
@@ -283,8 +331,8 @@ export const themeDark: Theme = {
 
 (A dark `onPrimary` on the bright primary, with no `primaryFill`, also passes contrast, but it puts dark text on the orange fills in dark mode only, and those labels look inconsistent between modes.)
 
-The primary `Avatar`, the sent `ChatMessage` bubble and the primary `Button` pick both up. In your own components, fill a labelled primary surface with `primaryFillColor(theme)` (hover: `primaryFillHoverColor(theme)`) and color its text with `filledTextColor(theme, "primary")` (plus `darkFilledTextRule(theme, "primary")` if the app flips dark mode with a class), never `theme.colors.primary` and `theme.colors.light`, so the theme's settings apply. Fills with no label on them (dots, bars, rings, slider tracks) stay on `primary`.
+The primary `Avatar`, the sent `ChatMessage` bubble and the primary `Button` pick both up. In your own components, fill a labelled primary surface with `primaryFillColor(theme)` (hover: `primaryFillHoverColor(theme)`) and color its text with `filledTextColor(theme, "primary")` , never `theme.colors.primary` and `theme.colors.light`, so the theme's settings apply. Fills with no label on them (dots, bars, rings, slider tracks) stay on `primary`.
 
-**Theming through CSS variables.** A theme may hold `var(--token)` references instead of values, one object for both modes, with the light and dark values in CSS custom properties and the mode switched by a `dark` class on `<html>` (or a `data-theme` attribute on a section). Switching the mode then repaints without re-rendering React. Such a theme leaves `isDark` out and sets the mode tokens (`accent`, `link`, `onFilled`, `primaryTintHover`, `primaryTintDrop`, `primaryTintActive`, `shadows.toast`) to variables of their own, so no component has to know the mode. The `Callout`'s alert tints are fixed colors, not tokens: under such a theme it follows `:root.dark` and the nearest `[data-theme="dark"]` or `[data-theme="light"]` ancestor.
+Write white-label themes with real values in both objects; the provider makes the variables. Do not put `isDark` in a theme object (the `Theme` type no longer has it).
 
 Rule of thumb: when a design hands you a raw value, map it to the nearest existing token, or add a token to the theme. Do not hardcode the raw value in a component.

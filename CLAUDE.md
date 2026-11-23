@@ -42,15 +42,16 @@ Each component is a single file directly under `src/lib/` (flat structure, no su
 
 **Styled props use `$` prefix** (e.g., `$variant`, `$fullWidth`) to prevent DOM attribute pollution. This is a styled-components v6 convention.
 
-### Theming System (`src/lib/utils/theme.ts`)
+### Theming System (`src/lib/utils/theme.ts`, `theme-variables.ts`)
 
-Two complete theme objects (light and dark) defining: breakpoints (xs to xxxl), colors (primary/secondary/tertiary + status), spacing, shadows, and typography (font sizes, line heights, all responsive).
+Apps pass two theme objects with real values (light and dark) defining: breakpoints (xs to xxxl), colors (primary/secondary/tertiary + status + optional mode tokens), spacing, shadows, and typography (font sizes, line heights, all responsive). Styled components see one theme for both modes: `createThemeVariables(theme, themeDark)` turns every color and shadow into `var(--cherry-color-<key>)` / `var(--cherry-shadow-<key>)`, fills the mode tokens (`accent`, `link`, `onFilled`, `primaryTint*`, `shadows.toast`) per mode, and builds the stylesheet (light values on `:root`, dark on `:root.dark`).
 
 - `mq()` helper generates `@media screen and (min-width: ...)` queries from breakpoint names
-- `CherryThemeProvider` (`src/lib/styled-components/theme-provider.tsx`) wraps styled-components' ThemeProvider, handles system dark mode detection, persists preference to localStorage, and toggles a `"dark"` class on `document.documentElement`. Client-only: first SSR paint is always light
-- `ClientThemeProvider` (`src/lib/styled-components/client-theme-provider.tsx`) is the SSR-aware provider for flash-free dark mode: the server resolves the `theme` cookie and passes `$initial`; on mount it reconciles against cookie and OS preference. Persists to the `theme` cookie and localStorage
-- `themeInitScript` (`src/lib/styled-components/theme-init.ts`) is an inline `<head>` script that seeds the cookie and prevents the dark-mode flash; `resolveTheme(cookieValue, theme, themeDark)` resolves the active theme object in server code
-- Both providers expose `setTheme`/`toggleTheme` via `ThemeContext`; `ThemeToggle` works under either
+- The mode is the `dark` class on `<html>`; a switch re-renders no styled component, and `.theme-switching` turns transitions off for that frame. `Theme` has no `isDark`: style a mode difference with a mode token, a `:root.dark &` rule, or `modes()` (`src/lib/utils/modes.ts`, which runs an `isDark` interpolation for both modes; `modeValue(light, dark)` is the plain-CSS form). Never do JS color math on theme colors; use `alpha`/`shade`/`tint`
+- `ClientThemeProvider` (`src/lib/styled-components/client-theme-provider.tsx`) is the one implementation: renders the variables as a plain `<style data-cherry-theme>` (stylis drops the empty custom properties `modeValue` needs), takes `$initial` (what `useColorMode()` reports during SSR only), `$mode` (pins, stores nothing), `$themeColor`, `$globalStyles`. `CherryThemeProvider` wraps it without the theme-color sync. Without `themeDark` the page stays light
+- `color-mode.ts` holds the preference store (light | dark | system): explicit choice in localStorage `themePreference`, legacy localStorage `theme` counts as explicit, else the OS (followed live); the `theme` cookie mirrors the mode and only decides when storage is blocked
+- `themeInitScript` / `createThemeInitScript({ themeColor })` (`src/lib/styled-components/theme-init.ts`, server-safe) is an inline `<head>` script that sets the `dark` class before first paint on every load; `resolveTheme(cookieValue, theme, themeDark)` resolves the active theme object in server code
+- `ThemeContext` exposes `{ toggleTheme, setPreference }` (stable, no re-render); `useColorMode()` and `useResolvedTheme()` (real values plus `isDark`) re-render on a switch; `ThemeToggle` works under either provider
 
 ### Component Categories
 
