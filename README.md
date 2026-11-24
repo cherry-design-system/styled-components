@@ -1,9 +1,35 @@
-# Cherry React Library
+<div align="center">
+  <a href="https://cherry.al/">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset=".github/assets/cherry-mark-dark.svg" />
+      <img src=".github/assets/cherry-mark-light.svg" alt="cherry" width="120" height="120" />
+    </picture>
+  </a>
 
-[![npm version](https://img.shields.io/npm/v/cherry-styled-components.svg?style=flat)](https://www.npmjs.com/package/cherry-styled-components)
-[![license](https://img.shields.io/npm/l/cherry-styled-components.svg?style=flat)](https://github.com/cherry-design-system/styled-components/blob/main/LICENSE)
+  <h1>cherry</h1>
 
-Cherry Design System is a versatile foundation for projects. It offers a white label base, ready-to-use Figma designs, open-source React components, built-in support for theming and dark mode. Explore the [docs](https://cherry.al/) to create delightful user interfaces.
+  <p>
+    A white-label design system for React, designed in Figma.<br />
+    Theming and dark mode built in. Open source under MIT.
+  </p>
+
+  <p>
+    <a href="https://www.npmjs.com/package/cherry-styled-components"><img src="https://img.shields.io/npm/v/cherry-styled-components.svg?style=flat" alt="npm version" /></a>
+    <a href="https://github.com/cherry-design-system/styled-components/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/cherry-styled-components.svg?style=flat" alt="license" /></a>
+  </p>
+
+  <p>
+    <code>npm install cherry-styled-components</code>
+  </p>
+
+  <p>
+    <a href="https://cherry.al/">Docs</a> ·
+    <a href="#quick-start">Quick start</a> ·
+    <a href="#theming">Theming</a> ·
+    <a href="https://github.com/cherry-design-system/styled-components/discussions">Discussions</a> ·
+    <a href="https://discord.gg/6JvcWU5bke">Discord</a>
+  </p>
+</div>
 
 ## Installation
 
