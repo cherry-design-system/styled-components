@@ -31,6 +31,15 @@
   </p>
 </div>
 
+> [!TIP]
+> **cherry 2.0 is out as [`@cherry-design-system/react`](https://www.npmjs.com/package/@cherry-design-system/react).** Plain CSS with no styled-components runtime, Server Components ready, accessible by default. Starting a new project? Use it instead:
+>
+> ```bash
+> pnpm add @cherry-design-system/react lucide-react
+> ```
+>
+> Existing apps can keep using this package. Source and docs for 2.0: [cherry-design-system/react](https://github.com/cherry-design-system/react).
+
 ## Installation
 
 Install the package along with its peer dependencies:
